@@ -11,6 +11,13 @@
     position: relative;
   }
 
+  img.dark {
+    display: none;
+  }
+  img.light {
+    display: block;
+  }
+
   #site-logo {
     width: 48px;
     height: 48px;
@@ -381,6 +388,13 @@
 
     // Positioning context for the mobile navigation icon
     position: relative;
+  }
+
+  img.light {
+    display: none;
+  }
+  img.dark {
+    display: block;
   }
 
   #site-logo {
