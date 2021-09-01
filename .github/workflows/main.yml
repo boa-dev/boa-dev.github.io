@@ -12,7 +12,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: 2.7.3 # Version in https://pages.github.com/versions/
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Check build
