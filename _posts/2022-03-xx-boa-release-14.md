@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Boa JS engine release v0.14"
+author: Boa Developers
+---
+
+Boa v0.14 is here! After almost 6 months of development, we are very happy to present you the newest release of the Boa JavaScript engine.
+It makes it easy to embed a JS engine in your projects, and you can even use it from webassembly. See the [about](/about) page for more info.
+
+We currently support part of the language. In this release, our conformance has grown from 41.01% to 46.85% in the official ECMAScript Test Suite (Test262).
+The engine now passes 41,386 tests, coming from 33,192 in Boa 0.13 (24.7% increase), and we have closed 35 issues and merged 108 pull requests.
+You can check the full list of changes [here](https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md).
+
+The biggest change in this release has definitely been the switch of the main implementation to a Virtual Machine. The JavaScript code first gets parsed into AST,
+then compiled into op-codes, and finally executed in the VM. This adds some extra steps, which have reduced the performance of the engine, but on the other hand,
+this opens the door for many great features in the future (we're looking at you, async/await), and allows some nicer optimizations in the parsing and compilation
+phases in which we have already started working (such as [#1829](https://github.com/boa-dev/boa/pull/1829) and [#1849](https://github.com/boa-dev/boa/pull/1849)).
+
+This move towards a VM has also brought one great new feature, generator execution ([#1790](https://github.com/boa-dev/boa/pull/1790)).
