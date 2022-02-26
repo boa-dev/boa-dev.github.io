@@ -4,7 +4,7 @@ title: "Boa JS engine enables financial contributions"
 author: Boa Developers
 ---
 
-In the past months, due to the big and steady progress on Boa, we have received multiple requests to contribute with Boa
+In the past months, due to the big and steady progress on Boa, we have received multiple requests to contribute to Boa
 financially. From now on, anyone can contribute with either a recurring donation, or a one-time contribution in our
 [OpenCollective page](https://opencollective.com/boa).
 
