@@ -12,7 +12,7 @@ financially. From now on, anyone can contribute with either a recurring donation
 
 Being able to receive financial contributions won't directly show a change in Boa development, but depending on how much
 funding we get, we are already planning next steps. Having more motivated contributors would be the first step. We all
-want to spend more of our free time in boa, and receiving a financial compensation for it is definitely makin the team
+want to spend more of our free time in boa, and receiving a financial compensation for it is definitely making the team
 members eager to continue contributing.
 
 But that is not our only idea. We would like to create a reproducible benchmarking platform. Currently, we just use GitHub
