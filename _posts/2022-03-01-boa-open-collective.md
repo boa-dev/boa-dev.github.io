@@ -5,7 +5,7 @@ author: Boa Developers
 ---
 
 In the past months, due to the big and steady progress on Boa, we have received multiple requests to contribute with Boa
-financially. From now on, anyone can contribute with either a recurring donationk, or a one-time contribution in our
+financially. From now on, anyone can contribute with either a recurring donation, or a one-time contribution in our
 [OpenCollective page](https://opencollective.com/boa).
 
 # What does this mean for Boa?
