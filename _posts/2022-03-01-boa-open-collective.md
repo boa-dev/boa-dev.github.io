@@ -16,8 +16,8 @@ want to spend more of our free time in boa, and receiving a financial compensati
 members eager to continue contributing.
 
 But that is not our only idea. We would like to create a reproducible benchmarking platform. Currently, we just use GitHub
-actions for benchmarking. While this is useful to get some general ideas on how do changes affect to the performance of the
-engine, but they have a high variability (up to 10%). This means that we can definitely see changes if they are big, but it's
+actions for benchmarking, which is useful to get some general ideas on how some changes affect the performance of the
+engine. However, they have a high variability (up to 10%), meaning that we can definitely see changes if they are big, but it's
 impossible to see differences if changes are minimal (1-2%, for example). Having the infrastructure to do proper performance
 testing would require using dedicated CPUs, for example, which could be financed using the Boa Open Collective.
 
