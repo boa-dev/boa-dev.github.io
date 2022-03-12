@@ -62,7 +62,7 @@
   figure,
   table,
   %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: calc(calc($spacing-unit / 2));
   }
 
   /**
@@ -135,7 +135,7 @@
   blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
+    padding-left: calc(calc($spacing-unit / 2));
     font-size: 18px;
     letter-spacing: -1px;
     font-style: italic;
@@ -186,8 +186,8 @@
     @include media-query($on-laptop) {
       max-width: -webkit-calc(800px - (#{$spacing-unit}));
       max-width: calc(800px - (#{$spacing-unit}));
-      padding-right: $spacing-unit / 2;
-      padding-left: $spacing-unit / 2;
+      padding-right: calc(calc($spacing-unit / 2));
+      padding-left: calc(calc($spacing-unit / 2));
     }
   }
 
@@ -277,7 +277,7 @@
   figure,
   table,
   %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: calc(calc($spacing-unit / 2));
   }
 
   /**
@@ -350,7 +350,7 @@
   blockquote {
     color: inherit;
     border-left: 4px solid #5c6773;
-    padding-left: $spacing-unit / 2;
+    padding-left: calc($spacing-unit / 2);
     font-size: 18px;
     letter-spacing: -1px;
     font-style: italic;
@@ -401,8 +401,8 @@
     @include media-query($on-laptop) {
       max-width: -webkit-calc(800px - (#{$spacing-unit}));
       max-width: calc(800px - (#{$spacing-unit}));
-      padding-right: $spacing-unit / 2;
-      padding-left: $spacing-unit / 2;
+      padding-right: calc(calc($spacing-unit / 2));
+      padding-left: calc(calc($spacing-unit / 2));
     }
   }
 
