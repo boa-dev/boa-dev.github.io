@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "watch:sass": "sass css:_site/css --watch",
-    "start": "npm run watch:eleventy & npm run watch:sass"
+    "start": "npm run watch:eleventy & npm run watch:sass",
+    "build": "npx sass css:_site/css && npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",

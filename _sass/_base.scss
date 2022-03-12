@@ -153,7 +153,6 @@
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
   }
 
   code {
@@ -368,7 +367,7 @@
     font-size: 15px;
     border: none;
     border-radius: 3px;
-    background-color: #191f26;
+    // background-color: #191f26;
   }
 
   code {
@@ -378,6 +377,7 @@
   pre {
     padding: 8px 12px;
     overflow-x: auto;
+    background: #0f1419;
 
     > code {
       border: 0;

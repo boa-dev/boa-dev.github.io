@@ -8,12 +8,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/setup-node@v2
         with:
-          ruby-version: 2.7.3 # Version in https://pages.github.com/versions/
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-
-      - name: Check build
-        run: bundle exec jekyll build
+          node-version: "16"
+      - name: build
+        run: npm run build
