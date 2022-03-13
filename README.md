@@ -9,16 +9,12 @@ This project has been forked from the awesome [GitHub repo] of the [RustLang blo
 [github repo]: https://github.com/rust-lang/blog.rust-lang.org
 [github pages]: https://pages.github.com/
 
-## How to use it
+## How to start
 
-- [Fork the repository](https://help.github.com/articles/fork-a-repo/) to your own github account
-- [Clone your forked repository](https://help.github.com/articles/cloning-a-repository/)
-- Run `bundle install`
-- Run `bundle exec jekyll serve --config _config_dev.yml`
+- Run `npm i`
+- Run `npm start`
 
-A deeper guide on how to setup a jekyll blog can be found [here](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/). I'll probably create one too if it helps.
-
-The theme and layout can be found under \_includes / \_layouts \_sass and / css.
+This uses https://www.11ty.dev/
 
 The favicon is [here](favicon.ico).
 

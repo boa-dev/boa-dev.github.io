@@ -1,0 +1,33 @@
+{
+  "name": "boa-dev.github.io",
+  "version": "1.0.0",
+  "description": "The home of Boa's blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "watch:sass": "sass css:_site/css --watch",
+    "start": "npm run watch:eleventy & npm run watch:sass",
+    "build": "npx sass css:_site/css && npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boa-dev/boa-dev.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boa-dev/boa-dev.github.io/issues"
+  },
+  "homepage": "https://github.com/boa-dev/boa-dev.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "eleventy-xml-plugin": "^0.1.0",
+    "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "@kevingimbel/eleventy-plugin-mermaid": "^1.1.0"
+  }
+}
