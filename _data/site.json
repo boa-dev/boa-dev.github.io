@@ -3,5 +3,7 @@
   "url": "https://boa-dev.github.io",
   "logo": "/images/logo.png",
   "title": "Boa",
-  "description": "The blog and website for Boa"
+  "description": "The blog and website for Boa",
+  "github_username": "boa-dev",
+  "twitter_username": "boa_engine"
 }
