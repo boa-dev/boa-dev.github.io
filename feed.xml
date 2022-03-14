@@ -4,7 +4,7 @@
   <description>The blog and website for Boa</description>
   <link href="https://boa-dev.github.io/feed.xml" rel="self"/>
   <link href="https://boa-dev.github.io/"/>
-  <updated>2022-03-14T22:17:36Z</updated>
+  <updated>2022-03-14T22:25:21Z</updated>
   <id>https://boa-dev.github.io/</id>
   <author>
     <name>Boa Developers</name>
@@ -229,7 +229,6 @@ We are looking to do code generation which can then be interpreted. This gradual
 &lt;h2&gt;Thank You&lt;/h2&gt;
 &lt;p&gt;This has been the biggest release yet, there have been many features and fixes. We want to thank all the &lt;a href=&quot;https://github.com/boa-dev/boa/graphs/contributors?from=2021-06-01&amp;amp;to=2021-09-26&amp;amp;type=c&quot;&gt;contributors&lt;/a&gt; in this release, whether it was features, fixes or raising bugs.&lt;/p&gt;
 &lt;p&gt;If you&#39;re interested in contributing to Boa, we have some &lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22&quot;&gt;&amp;quot;good first issues&amp;quot;&lt;/a&gt; and &lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22&quot;&gt;&amp;quot;issues where help is wanted&amp;quot;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;
 </content>
   </entry>
 </feed>
