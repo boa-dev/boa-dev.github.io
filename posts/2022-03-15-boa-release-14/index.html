@@ -132,16 +132,16 @@
 <p>Boa v0.14 is here! After almost 6 months of development, we are very happy to present you the newest release of the Boa
 JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from webassembly. See
 the <a href="/about">about</a> page for more info. Together with this release, we present you: A new way to contribute to Boa, a virtual machine, usable examples and much more.</p>
-<p>Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 41.01% to 48.72 %
-in the official ECMAScript Test Suite (Test262). The engine now passes 43,039 tests, coming from 33,192 in Boa 0.13
-(29.7% increase), and we have closed 36 issues and merged 112 pull requests. You can check the full list of changes
+<p>Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 41.01% to 49.74%
+in the official ECMAScript Test Suite (Test262). The engine now passes 43,986 tests, coming from 33,192 in Boa 0.13
+(32.5% increase), and we have closed 40 issues and merged 137 pull requests. You can check the full list of changes
 <a href="https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md">here</a>, and the full information on conformance
 <a href="https://boa-dev.github.io/boa/test262/">here</a>.</p>
 <h2>Boa has moved</h2>
 <p>First off, some breaking changes!
-Boa is now <code>boa_engine</code> on crates.io. This should bring it in line with our other packages, and allows us to resolve the casing issue we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old <code>Boa</code> crate will no longer recieve any updates.</p>
+Boa is now <code>boa_engine</code> on crates.io. This should bring it in line with our other packages, and allows us to resolve the casing issue we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old <code>Boa</code> crate will no longer receive any updates.</p>
 <h2>New ECMAScript features</h2>
-<p>Boa v0.14 now adds support for <code>AggregateError</code>, <code>Typed Arrays</code>, <code>Proxy</code>, <code>toLocaleString()</code>, <code>DataView</code>, <code>Symbol.prototype.valueOf</code>, <code>Array.prototype.at()</code> and <a href="https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md">more</a>. There's also been serveral bug fixes and internal improvements, such as <a href="https://github.com/boa-dev/boa/pull/1684">switching to Bors</a> for our CI management.</p>
+<p>Boa v0.14 now adds support for <code>AggregateError</code>, <code>Typed Arrays</code>, <code>Proxy</code>, <code>toLocaleString()</code>, <code>DataView</code>, <code>Symbol.prototype.valueOf</code>, <code>Array.prototype.at()</code> and <a href="https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md">more</a>. There's also been several bug fixes and internal improvements, such as <a href="https://github.com/boa-dev/boa/pull/1684">switching to Bors</a> for our CI management.</p>
 <h2>Writing a VM</h2>
 <p>The biggest change in this release has definitely been the switch of the main implementation to a Virtual Machine. The
 JavaScript code first gets parsed into AST, then compiled into op-codes, and finally executed in the VM. This adds some
@@ -151,7 +151,6 @@ extra steps, which, for now, have reduced the performance of the engine. We hope
 <p><img src="/images/2022-03-15/boa_architecture.png" alt="img"></p>
 <h2>String interning</h2>
 <p>@Razican has done some great work on the string interner for Boa. Interning allows many types to not contain heap-allocated strings, and just contain a <code>NonZeroUsize</code> instead, which can then be placed onto the stack.</p>
-<p>TODO: @Razican can we add more here?</p>
 <p><a href="https://github.com/boa-dev/boa/pull/1765#issuecomment-1019474176">Benchmarks</a> improved overall.</p>
 <h2>Boa opens financial contributions</h2>
 <p>In the past months, due to the big and steady progress on Boa, we have received multiple requests to contribute to Boa
@@ -185,7 +184,7 @@ our Criterion benchmark comparison GitHub <a href="https://github.com/boa-dev/cr
 <p>We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
 engine. Feel free to contact us in <a href="https://discord.gg/tUFFk9Y">Discord</a>.</p>
 <h3>Thank You</h3>
-<p>Last but certainly not least, a big <strong>Thank You</strong> to the countributors of Boa, especially to all the new contributors we had since the last release.</p>
+<p>Last but certainly not least, a big <strong>Thank You</strong> to the contributors of Boa, especially to all the new contributors we had since the last release.</p>
 
   </article>
 
