@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="/css/center-img.css">
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="canonical" href="https://boa-dev.github.io/posts/2022-03-15-boa-release-14/">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon-32x32.png">
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:description" content="The blog and website for Boa" />
+    <meta property="og:title" content="" />
+
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@boa_engine" />
@@ -139,15 +143,16 @@ in the official ECMAScript Test Suite (Test262). The engine now passes 43,986 te
 <a href="https://boa-dev.github.io/boa/test262/">here</a>.</p>
 <h2>Boa has moved</h2>
 <p>First off, some breaking changes!
-Boa is now <code>boa_engine</code> on crates.io. This should bring it in line with our other packages, and allows us to resolve the casing issue we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old <code>Boa</code> crate will no longer receive any updates.</p>
+Boa is now <a href="https://crates.io/crates/boa_engine"><code>boa_engine</code></a> on crates.io. This should bring it in line with our other packages, and allows us to resolve the <a href="https://github.com/boa-dev/boa/issues/230">casing issue</a> we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old <code>Boa</code> crate will no longer receive any updates.</p>
 <h2>New ECMAScript features</h2>
-<p>Boa v0.14 now adds support for <code>AggregateError</code>, <code>Typed Arrays</code>, <code>Proxy</code>, <code>toLocaleString()</code>, <code>DataView</code>, <code>Symbol.prototype.valueOf</code>, <code>Array.prototype.at()</code> and <a href="https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md">more</a>. There's also been several bug fixes and internal improvements, such as <a href="https://github.com/boa-dev/boa/pull/1684">switching to Bors</a> for our CI management.</p>
-<h2>Writing a VM</h2>
+<p>Boa v0.14 ships with support for <code>Object.getOwnPropertyNames</code>, <code>Object.getOwnPropertySymbols</code>, <code>Object.prototype.hasOwnProperty</code>, <code>Array.from</code>, <code>AggregateError</code>, <code>Typed Arrays</code>, <code>Proxy</code>, <code>toLocaleString()</code>, <code>Symbol.prototype.valueOf</code>, <code>Array.prototype.at()</code>, <code>String.fromCharCode</code>, <code>Object.hasOwn</code>, <code>Object.fromEntries</code>, <code>Proxy</code>, <code>Array.prototype.findLast</code>, <code>Array.prototype.findLastIndex</code>, <code>console.trace</code>, <code>String.raw( template, ...substitutions )</code>, and <a href="https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md">more</a>. There's also been several bug fixes and internal improvements, such as <a href="https://github.com/boa-dev/boa/pull/1684">switching to Bors</a> for our CI management.</p>
+<h2>Virtual Machine</h2>
 <p>The biggest change in this release has definitely been the switch of the main implementation to a Virtual Machine. The
 JavaScript code first gets parsed into AST, then compiled into op-codes, and finally executed in the VM. This adds some
 extra steps, which, for now, have reduced the performance of the engine. We hope to fix some of these degradations over the course of the next few releases so hang tight. The new VM opens the door for many great features in the future (we're looking at you, async/await), and allows some nicer optimizations in the parsing and compilation phases in which we have already started working (such as <a href="https://github.com/boa-dev/boa/pull/1829">#1829</a> and
 <a href="https://github.com/boa-dev/boa/pull/1849">#1849</a>).</p>
-<p>This move towards a VM has also brought one great new feature, generator execution (<a href="https://github.com/boa-dev/boa/pull/1790">#1790</a>).</p>
+<p>This move towards a VM has also brought one great new feature, generator execution (<a href="https://github.com/boa-dev/boa/pull/1790">#1790</a>).
+You can find out more about how to use the VM <a href="https://github.com/boa-dev/boa/blob/main/docs/vm.md">here</a>.</p>
 <img class="light" src="/images/2022-03-15/boa_architecture_light.svg" />
 <img class="dark" src="/images/2022-03-15/boa_architecture_dark.svg" />
 <br />
@@ -165,10 +170,17 @@ actions for benchmarking, which is useful to get some general ideas on how some 
 engine. However, they have a high variability (up to 10%), meaning that we can definitely see changes if they are big, but it's
 impossible to see differences if changes are minimal (1-2%, for example). Having the infrastructure to do proper performance
 testing would require using dedicated CPUs, for example, which could be financed using the Boa Open Collective.</p>
-<p>On the development side, there are some very big projects that require deep involvement from the team. Having
-<a href="https://github.com/boa-dev/boa/projects/3">async/await support</a>, or implementing the
-<a href="https://github.com/boa-dev/boa/issues/64">module system</a> is one of our priorities, and blocks much of our conformance.
-Implementing a <a href="https://github.com/boa-dev/boa/discussions/1531">proper API</a> for Rust crates that want to embed Boa as they
+<p>On the development side, there are some very big projects that require deep involvement from the team. Priorities include (not neccesarily in order):</p>
+<ul>
+<li><a href="https://github.com/boa-dev/boa/projects/3">async/await support</a>.</li>
+<li>Better <a href="https://github.com/boa-dev/boa/projects/5">completion records</a> implementation</li>
+<li>Performance improvement across the board.</li>
+<li>Future implementation of Shapes/Hidden Classes.</li>
+<li>Being able to measure against other engines.</li>
+<li>Improved conformance of the EcmaScript specification.</li>
+<li>Integration with <a href="https://github.com/unicode-org/icu4x">ICU4X</a> for Intl and future Temporal implementation.</li>
+</ul>
+<p>Implementing a <a href="https://github.com/boa-dev/boa/discussions/1531">proper API</a> for Rust crates that want to embed Boa as they
 like, or a <a href="https://github.com/boa-dev/boa/issues/332">C API</a> so that other software, not written in Rust, can use Boa,
 are also a priority, and implementing all the new built-in objects to achieve 100% conformance with the ECMAScript
 specification is also a must. All this takes time, and we will need to finance developers working on these big issues.</p>
@@ -183,7 +195,22 @@ our Criterion benchmark comparison GitHub <a href="https://github.com/boa-dev/cr
 <p>We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
 engine. Feel free to contact us in <a href="https://discord.gg/tUFFk9Y">Discord</a>.</p>
 <h3>Thank You</h3>
-<p>Last but certainly not least, a big <strong>Thank You</strong> to the contributors of Boa, especially to all the new contributors we had since the last release.</p>
+<p>Last but certainly not least, a big <strong>Thank You</strong> to all the contributors of Boa.
+It's not often we list them but we would like to say thank you to the new contributors who joined for the last release.</p>
+<h4>Thank you New Contributors</h4>
+<ul>
+<li><a href="https://github.com/abhishekc-sharma">@abhishekc-sharma</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1612">#1612</a></li>
+<li><a href="https://github.com/kevinputera">@kevinputera</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1606">#1606</a></li>
+<li><a href="https://github.com/nrabulinski">@nrabulinski</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1614">#1614</a></li>
+<li><a href="https://github.com/hle0">@hle0</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1618">#1618</a></li>
+<li><a href="https://github.com/nekevss">@nekevss</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1613">#1613</a></li>
+<li><a href="https://github.com/lowr">@lowr</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1628">#1628</a></li>
+<li><a href="https://github.com/Nimpruda">@Nimpruda</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1634">#1634</a></li>
+<li><a href="https://github.com/atouchet">@atouchet</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1638">#1638</a></li>
+<li><a href="https://github.com/praveenbakkal">@praveenbakkal</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1680">#1680</a></li>
+<li><a href="https://github.com/bsinky">@bsinky</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1665">#1665</a></li>
+<li><a href="https://github.com/TheDoctor314">@TheDoctor314</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/1691">#1691</a></li>
+</ul>
 
   </article>
 
