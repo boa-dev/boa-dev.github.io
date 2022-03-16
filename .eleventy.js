@@ -10,6 +10,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   // Copy images across
   eleventyConfig.addPassthroughCopy("images");
+  // Favicon
+  eleventyConfig.addPassthroughCopy("favicon-32x32.png");
   // Convert sass and copy across
   eleventyConfig.setBrowserSyncConfig({
     files: "./_site/css/**/*.css",

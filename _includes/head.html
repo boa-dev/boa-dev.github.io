@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="{{ "/css/center-img.css" }}">
     <link rel="stylesheet" href="{{ "/css/prism.css" }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-    <link rel="shortcut icon" href="{{ "/favicon.ico" }}">
+    <link rel="shortcut icon" href="{{ "/favicon-32x32.png" }}">
+    <meta property="og:image" content="{{ site.logo }}" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@{{ site.twitter_username }}" />
