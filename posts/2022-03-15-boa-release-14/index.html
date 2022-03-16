@@ -143,7 +143,7 @@ in the official ECMAScript Test Suite (Test262). The engine now passes 43,986 te
 <a href="https://boa-dev.github.io/boa/test262/">here</a>.</p>
 <h2>Boa has moved</h2>
 <p>First off, some breaking changes!
-Boa is now <a href="https://crates.io/crates/boa_engine"><code>boa_engine</code></a> on crates.io. This should bring it in line with our other packages, and allows us to resolve the <a href="https://github.com/boa-dev/boa/issues/230">casing issue</a> we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old <code>Boa</code> crate will no longer receive any updates.</p>
+Boa is now <a href="https://crates.io/crates/boa_engine"><code>boa_engine</code></a> on crates.io. This should bring it in line with our other packages, and allows us to resolve the <a href="https://github.com/boa-dev/boa/issues/230">casing issue</a> we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old <a href="https://crates.io/crates/boa"><code>Boa</code></a> crate will no longer receive any updates.</p>
 <h2>New ECMAScript features</h2>
 <p>Boa v0.14 ships with support for <code>Object.getOwnPropertyNames</code>, <code>Object.getOwnPropertySymbols</code>, <code>Object.prototype.hasOwnProperty</code>, <code>Array.from</code>, <code>AggregateError</code>, <code>Typed Arrays</code>, <code>Proxy</code>, <code>toLocaleString()</code>, <code>Symbol.prototype.valueOf</code>, <code>Array.prototype.at()</code>, <code>String.fromCharCode</code>, <code>Object.hasOwn</code>, <code>Object.fromEntries</code>, <code>Proxy</code>, <code>Array.prototype.findLast</code>, <code>Array.prototype.findLastIndex</code>, <code>console.trace</code>, <code>String.raw( template, ...substitutions )</code>, and <a href="https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md">more</a>. There's also been several bug fixes and internal improvements, such as <a href="https://github.com/boa-dev/boa/pull/1684">switching to Bors</a> for our CI management.</p>
 <h2>Virtual Machine</h2>
@@ -172,7 +172,7 @@ impossible to see differences if changes are minimal (1-2%, for example). Having
 testing would require using dedicated CPUs, for example, which could be financed using the Boa Open Collective.</p>
 <p>On the development side, there are some very big projects that require deep involvement from the team. Priorities include (not neccesarily in order):</p>
 <ul>
-<li><a href="https://github.com/boa-dev/boa/projects/3">async/await support</a>.</li>
+<li><a href="https://github.com/boa-dev/boa/projects/3">Async/Await support</a>.</li>
 <li>Better <a href="https://github.com/boa-dev/boa/projects/5">completion records</a> implementation</li>
 <li>Performance improvement across the board.</li>
 <li>Future implementation of Shapes/Hidden Classes.</li>

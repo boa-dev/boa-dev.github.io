@@ -4,7 +4,7 @@
   <description>The blog and website for Boa</description>
   <link href="https://boa-dev.github.io/feed.xml" rel="self"/>
   <link href="https://boa-dev.github.io/"/>
-  <updated>2022-03-16T15:51:34Z</updated>
+  <updated>2022-03-16T17:36:46Z</updated>
   <id>https://boa-dev.github.io/</id>
   <author>
     <name>Boa Developers</name>
@@ -229,6 +229,93 @@ We are looking to do code generation which can then be interpreted. This gradual
 &lt;h2&gt;Thank You&lt;/h2&gt;
 &lt;p&gt;This has been the biggest release yet, there have been many features and fixes. We want to thank all the &lt;a href=&quot;https://github.com/boa-dev/boa/graphs/contributors?from=2021-06-01&amp;amp;to=2021-09-26&amp;amp;type=c&quot;&gt;contributors&lt;/a&gt; in this release, whether it was features, fixes or raising bugs.&lt;/p&gt;
 &lt;p&gt;If you&#39;re interested in contributing to Boa, we have some &lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22&quot;&gt;&amp;quot;good first issues&amp;quot;&lt;/a&gt; and &lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22&quot;&gt;&amp;quot;issues where help is wanted&amp;quot;&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Boa release v0.14</title>
+    <link href="https://boa-dev.github.io/posts/2022-03-15-boa-release-14/"/>
+    <updated>2022-03-15T00:00:00Z</updated>
+    <id>https://boa-dev.github.io/posts/2022-03-15-boa-release-14/</id>
+    <content type="html">&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Boa v0.14 is here! After almost 6 months of development, we are very happy to present you the newest release of the Boa
+JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from webassembly. See
+the &lt;a href=&quot;https://boa-dev.github.io/about&quot;&gt;about&lt;/a&gt; page for more info. Together with this release, we present you: A new way to contribute to Boa, a virtual machine, usable examples and much more.&lt;/p&gt;
+&lt;p&gt;Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 41.01% to 49.74%
+in the official ECMAScript Test Suite (Test262). The engine now passes 43,986 tests, coming from 33,192 in Boa 0.13
+(32.5% increase), and we have closed 40 issues and merged 137 pull requests. You can check the full list of changes
+&lt;a href=&quot;https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md&quot;&gt;here&lt;/a&gt;, and the full information on conformance
+&lt;a href=&quot;https://boa-dev.github.io/boa/test262/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Boa has moved&lt;/h2&gt;
+&lt;p&gt;First off, some breaking changes!
+Boa is now &lt;a href=&quot;https://crates.io/crates/boa_engine&quot;&gt;&lt;code&gt;boa_engine&lt;/code&gt;&lt;/a&gt; on crates.io. This should bring it in line with our other packages, and allows us to resolve the &lt;a href=&quot;https://github.com/boa-dev/boa/issues/230&quot;&gt;casing issue&lt;/a&gt; we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old &lt;a href=&quot;https://crates.io/crates/boa&quot;&gt;&lt;code&gt;Boa&lt;/code&gt;&lt;/a&gt; crate will no longer receive any updates.&lt;/p&gt;
+&lt;h2&gt;New ECMAScript features&lt;/h2&gt;
+&lt;p&gt;Boa v0.14 ships with support for &lt;code&gt;Object.getOwnPropertyNames&lt;/code&gt;, &lt;code&gt;Object.getOwnPropertySymbols&lt;/code&gt;, &lt;code&gt;Object.prototype.hasOwnProperty&lt;/code&gt;, &lt;code&gt;Array.from&lt;/code&gt;, &lt;code&gt;AggregateError&lt;/code&gt;, &lt;code&gt;Typed Arrays&lt;/code&gt;, &lt;code&gt;Proxy&lt;/code&gt;, &lt;code&gt;toLocaleString()&lt;/code&gt;, &lt;code&gt;Symbol.prototype.valueOf&lt;/code&gt;, &lt;code&gt;Array.prototype.at()&lt;/code&gt;, &lt;code&gt;String.fromCharCode&lt;/code&gt;, &lt;code&gt;Object.hasOwn&lt;/code&gt;, &lt;code&gt;Object.fromEntries&lt;/code&gt;, &lt;code&gt;Proxy&lt;/code&gt;, &lt;code&gt;Array.prototype.findLast&lt;/code&gt;, &lt;code&gt;Array.prototype.findLastIndex&lt;/code&gt;, &lt;code&gt;console.trace&lt;/code&gt;, &lt;code&gt;String.raw( template, ...substitutions )&lt;/code&gt;, and &lt;a href=&quot;https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md&quot;&gt;more&lt;/a&gt;. There&#39;s also been several bug fixes and internal improvements, such as &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1684&quot;&gt;switching to Bors&lt;/a&gt; for our CI management.&lt;/p&gt;
+&lt;h2&gt;Virtual Machine&lt;/h2&gt;
+&lt;p&gt;The biggest change in this release has definitely been the switch of the main implementation to a Virtual Machine. The
+JavaScript code first gets parsed into AST, then compiled into op-codes, and finally executed in the VM. This adds some
+extra steps, which, for now, have reduced the performance of the engine. We hope to fix some of these degradations over the course of the next few releases so hang tight. The new VM opens the door for many great features in the future (we&#39;re looking at you, async/await), and allows some nicer optimizations in the parsing and compilation phases in which we have already started working (such as &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1829&quot;&gt;#1829&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/boa-dev/boa/pull/1849&quot;&gt;#1849&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;This move towards a VM has also brought one great new feature, generator execution (&lt;a href=&quot;https://github.com/boa-dev/boa/pull/1790&quot;&gt;#1790&lt;/a&gt;).
+You can find out more about how to use the VM &lt;a href=&quot;https://github.com/boa-dev/boa/blob/main/docs/vm.md&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;img class=&quot;light&quot; src=&quot;https://boa-dev.github.io/images/2022-03-15/boa_architecture_light.svg&quot; /&gt;
+&lt;img class=&quot;dark&quot; src=&quot;https://boa-dev.github.io/images/2022-03-15/boa_architecture_dark.svg&quot; /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Boa opens financial contributions&lt;/h2&gt;
+&lt;p&gt;In the past months, due to the big and steady progress on Boa, we have received multiple requests to contribute to Boa
+financially. From now on, anyone can contribute with either a recurring donation, or a one-time contribution in our
+&lt;a href=&quot;https://opencollective.com/boa&quot;&gt;OpenCollective page&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;What does this mean for Boa?&lt;/h3&gt;
+&lt;p&gt;Being able to receive financial contributions won&#39;t directly show a change in Boa development, but depending on how much
+funding we get, we are already planning next steps. Having more motivated contributors would be the first step. We all
+want to spend more of our free time in boa, and receiving a financial compensation for it is definitely making the team
+members eager to continue contributing.&lt;/p&gt;
+&lt;p&gt;But that is not our only idea. We would like to create a reproducible benchmarking platform. Currently, we just use GitHub
+actions for benchmarking, which is useful to get some general ideas on how some changes affect the performance of the
+engine. However, they have a high variability (up to 10%), meaning that we can definitely see changes if they are big, but it&#39;s
+impossible to see differences if changes are minimal (1-2%, for example). Having the infrastructure to do proper performance
+testing would require using dedicated CPUs, for example, which could be financed using the Boa Open Collective.&lt;/p&gt;
+&lt;p&gt;On the development side, there are some very big projects that require deep involvement from the team. Priorities include (not neccesarily in order):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/boa-dev/boa/projects/3&quot;&gt;Async/Await support&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Better &lt;a href=&quot;https://github.com/boa-dev/boa/projects/5&quot;&gt;completion records&lt;/a&gt; implementation&lt;/li&gt;
+&lt;li&gt;Performance improvement across the board.&lt;/li&gt;
+&lt;li&gt;Future implementation of Shapes/Hidden Classes.&lt;/li&gt;
+&lt;li&gt;Being able to measure against other engines.&lt;/li&gt;
+&lt;li&gt;Improved conformance of the EcmaScript specification.&lt;/li&gt;
+&lt;li&gt;Integration with &lt;a href=&quot;https://github.com/unicode-org/icu4x&quot;&gt;ICU4X&lt;/a&gt; for Intl and future Temporal implementation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Implementing a &lt;a href=&quot;https://github.com/boa-dev/boa/discussions/1531&quot;&gt;proper API&lt;/a&gt; for Rust crates that want to embed Boa as they
+like, or a &lt;a href=&quot;https://github.com/boa-dev/boa/issues/332&quot;&gt;C API&lt;/a&gt; so that other software, not written in Rust, can use Boa,
+are also a priority, and implementing all the new built-in objects to achieve 100% conformance with the ECMAScript
+specification is also a must. All this takes time, and we will need to finance developers working on these big issues.&lt;/p&gt;
+&lt;h3&gt;Can I contribute differently?&lt;/h3&gt;
+&lt;p&gt;If financial contribution is not your strength, you can contribute by asking to be assigned to one of our
+&lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee&quot;&gt;open issues&lt;/a&gt;, and asking for mentoring if you
+don&#39;t know your way around the engine. Our &lt;a href=&quot;https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md&quot;&gt;contribution guide&lt;/a&gt;
+should help you here. If you are more used to working with JavaScript or frontend web development, we also
+welcome help to improve our web presence, either in &lt;a href=&quot;https://github.com/boa-dev/boa-dev.github.io&quot;&gt;our website&lt;/a&gt;, or in
+our &lt;a href=&quot;https://github.com/boa-dev/boa/issues/820&quot;&gt;testing representation&lt;/a&gt; page or benchmarks page. You can also contribute to
+our Criterion benchmark comparison GitHub &lt;a href=&quot;https://github.com/boa-dev/criterion-compare-action&quot;&gt;action&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
+engine. Feel free to contact us in &lt;a href=&quot;https://discord.gg/tUFFk9Y&quot;&gt;Discord&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Thank You&lt;/h3&gt;
+&lt;p&gt;Last but certainly not least, a big &lt;strong&gt;Thank You&lt;/strong&gt; to all the contributors of Boa.
+It&#39;s not often we list them but we would like to say thank you to the new contributors who joined for the last release.&lt;/p&gt;
+&lt;h4&gt;Thank you New Contributors&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/abhishekc-sharma&quot;&gt;@abhishekc-sharma&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1612&quot;&gt;#1612&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/kevinputera&quot;&gt;@kevinputera&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1606&quot;&gt;#1606&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nrabulinski&quot;&gt;@nrabulinski&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1614&quot;&gt;#1614&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/hle0&quot;&gt;@hle0&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1618&quot;&gt;#1618&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nekevss&quot;&gt;@nekevss&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1613&quot;&gt;#1613&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lowr&quot;&gt;@lowr&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1628&quot;&gt;#1628&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Nimpruda&quot;&gt;@Nimpruda&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1634&quot;&gt;#1634&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/atouchet&quot;&gt;@atouchet&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1638&quot;&gt;#1638&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/praveenbakkal&quot;&gt;@praveenbakkal&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1680&quot;&gt;#1680&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bsinky&quot;&gt;@bsinky&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1665&quot;&gt;#1665&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/TheDoctor314&quot;&gt;@TheDoctor314&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1691&quot;&gt;#1691&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
 </feed>
