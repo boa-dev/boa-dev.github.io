@@ -232,7 +232,6 @@ figure {
     margin: 0;
     padding: 0;
   }
-
   /**
   * Basic styling
   */
@@ -244,7 +243,6 @@ figure {
     color: #c5c5c5;
     background-color: #0f1419;
   }
-
   /**
   * Set `margin-bottom` to maintain vertical rhythm
   */
@@ -264,7 +262,6 @@ figure,
 table {
     margin-bottom: 15px;
   }
-
   /**
   * Images
   */
@@ -272,18 +269,15 @@ table {
     max-width: 100%;
     vertical-align: middle;
   }
-
   /**
   * Figures
   */
   figure > img {
     display: block;
   }
-
   figcaption {
     font-size: 14px;
   }
-
   /**
   * Lists
   */
@@ -291,12 +285,10 @@ table {
 ol {
     margin-left: 30px;
   }
-
   li > ul,
 li > ol {
     margin-bottom: 0;
   }
-
   /**
   * Headings
   */
@@ -309,7 +301,6 @@ h6 {
     font-weight: 300;
     color: #fff;
   }
-
   /**
   * Links
   */
@@ -324,7 +315,6 @@ h6 {
     color: #0096cf;
     text-decoration: underline;
   }
-
   /**
   * Blockquotes
   */
@@ -339,7 +329,6 @@ h6 {
   blockquote > :last-child {
     margin-bottom: 0;
   }
-
   /**
   * Code formatting
   */
@@ -349,11 +338,9 @@ code {
     border: none;
     border-radius: 3px;
   }
-
   code {
     padding: 0 0.2em;
   }
-
   pre {
     padding: 8px 12px;
     overflow-x: auto;
@@ -364,7 +351,6 @@ code {
     padding-right: 0;
     padding-left: 0;
   }
-
   /**
   * Wrapper
   */
@@ -381,19 +367,15 @@ code {
     display: table;
     clear: both;
   }
-
   /**
   * Clearfix
   */
-
   /**
   * Icons
   */
-
   /**
   * Text styling
   */
-
   /**
   * Code higlighting
   */
@@ -1084,7 +1066,6 @@ img.light {
     width: -webkit-calc(50% - (30px / 2));
     width: calc(50% - (30px / 2));
   }
-
   .footer-col-3 {
     width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2));
@@ -1181,22 +1162,18 @@ img.light {
     min-height: 56px;
     position: relative;
   }
-
   img.light {
     display: none;
   }
-
   img.dark {
     display: block;
   }
-
   #site-logo {
     width: 48px;
     height: 48px;
     padding: 5px 0;
     filter: invert(100%);
   }
-
   .site-title {
     font-size: 26px;
     line-height: 56px;
@@ -1207,7 +1184,6 @@ img.light {
   .site-title, .site-title:visited {
     color: #fff;
   }
-
   .site-nav {
     float: right;
     line-height: 56px;
@@ -1222,15 +1198,12 @@ img.light {
   .site-nav .page-link:not(:first-child) {
     margin-left: 20px;
   }
-
   /**
     * Site footer
     */
-
   /**
     * Page content
     */
-
   /**
     * Posts
     */
@@ -1342,7 +1315,6 @@ img.light {
     width: -webkit-calc(50% - (30px / 2));
     width: calc(50% - (30px / 2));
   }
-
   .footer-col-3 {
     width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2));
