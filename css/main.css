@@ -29,7 +29,7 @@ figure {
 * Basic styling
 */
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
@@ -236,7 +236,7 @@ figure {
   * Basic styling
   */
   body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     font-weight: 300;
@@ -478,7 +478,7 @@ html.dark figure {
   padding: 0;
 }
 html.dark body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
@@ -672,7 +672,7 @@ html.default figure {
   padding: 0;
 }
 html.default body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
@@ -847,7 +847,7 @@ img.light {
   bottom: 5px;
 }
 .toggle-mode .icon .font-sun-o:before {
-  content: "🌣";
+  content: "☀";
 }
 .toggle-mode .icon .font-moon-o:before {
   content: "☽";
@@ -1680,7 +1680,7 @@ html.default .toggle-mode .icon i.font {
   bottom: 5px;
 }
 html.default .toggle-mode .icon .font-sun-o:before {
-  content: "🌣";
+  content: "☀";
 }
 html.default .toggle-mode .icon .font-moon-o:before {
   content: "☽";

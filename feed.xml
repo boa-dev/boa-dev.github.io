@@ -4,7 +4,7 @@
   <description>The blog and website for Boa</description>
   <link href="https://boa-dev.github.io/feed.xml" rel="self"/>
   <link href="https://boa-dev.github.io/"/>
-  <updated>2022-06-03T20:21:48Z</updated>
+  <updated>2022-06-10T22:32:32Z</updated>
   <id>https://boa-dev.github.io/</id>
   <author>
     <name>Boa Developers</name>
@@ -315,6 +315,83 @@ It&#39;s not often we list them but we would like to say thank you to the new co
 &lt;li&gt;&lt;a href=&quot;https://github.com/praveenbakkal&quot;&gt;@praveenbakkal&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1680&quot;&gt;#1680&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/bsinky&quot;&gt;@bsinky&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1665&quot;&gt;#1665&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/TheDoctor314&quot;&gt;@TheDoctor314&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1691&quot;&gt;#1691&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Boa release v0.15</title>
+    <link href="https://boa-dev.github.io/posts/2022-06-10-boa-release-15/"/>
+    <updated>2022-06-10T00:00:00Z</updated>
+    <id>https://boa-dev.github.io/posts/2022-06-10-boa-release-15/</id>
+    <content type="html">&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Boa v0.15 is now available! After around 3 months of development, we are very happy to present you the newest release of the
+Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from WebAssembly. See
+the &lt;a href=&quot;https://boa-dev.github.io/about&quot;&gt;about&lt;/a&gt; page for more info.&lt;/p&gt;
+&lt;p&gt;Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 49.74% to 62.29%
+in the official ECMAScript Test Suite (Test262). The engine now passes 56,372 tests, coming from 43,986 in Boa 0.14
+(28.1% increase), and we have closed 18 issues and merged 58 pull requests. You can check the full list of changes
+&lt;a href=&quot;https://github.com/boa-dev/boa/blob/v0.15/CHANGELOG.md&quot;&gt;here&lt;/a&gt;, and the full information on conformance
+&lt;a href=&quot;https://boa-dev.github.io/boa/test262/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;New ECMAScript features&lt;/h2&gt;
+&lt;p&gt;While there are only a few big new features in this release, there are a lot of fixes for existing features that should enable
+many more JavaScript programs to execute correctly. For a detailed list checkout the
+&lt;a href=&quot;https://github.com/boa-dev/boa/blob/v0.15/CHANGELOG.md&quot;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Support for Classes&lt;/h3&gt;
+&lt;p&gt;With this new release boa ships with support for ECMAScript Classes. While not all features are implemented, most basic
+functionality should work as expected.&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Rectangle&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;height&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  &lt;span class=&quot;token function&quot;&gt;calcArea&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;calcArea&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Rectangle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;r&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;calcArea&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 8&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Support for &lt;code&gt;eval()&lt;/code&gt; and &lt;code&gt;Function()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;While &lt;code&gt;eval()&lt;/code&gt; is one of the less popular Javascript features, many tests in the ECMAScript Test Suite use it. For a
+better representation of passing tests and to fully comply with the specification we have implemented it and the similar
+&lt;code&gt;Function()&lt;/code&gt; constructor. We would like to echo the mdn docs and point out to
+&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#never_use_eval!&quot;&gt;Never use eval()!&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token function&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;console.log(&quot;Never use eval()!&quot;)&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; f &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;arg&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;console.log(&quot;This is also a very &quot; + arg + &quot; idea!&quot;)&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;bad&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https://github.com/raskad&quot;&gt;@raskad&lt;/a&gt; for working on classes, &lt;code&gt;eval()&lt;/code&gt; and &lt;code&gt;Function()&lt;/code&gt;, among many other things!&lt;/p&gt;
+&lt;h2&gt;Regaining Performance&lt;/h2&gt;
+&lt;p&gt;After moving from an AST based execution to our Virtual Machine we observed performance losses in some of our benchmarks. We
+found out that the root-cause of these losses was a single &lt;code&gt;format!()&lt;/code&gt; call in the hot-path of the VM. Our assumption was that
+the formatting logic would be optimized out by rustc or llvm, because it was used as an argument to an empty (feature-gated)
+function. After replacing the &lt;code&gt;format!()&lt;/code&gt; call with a &lt;code&gt;&amp;amp;&#39;static str&lt;/code&gt; the expected optimization took place and we were back to
+previous performance levels. For more details check out &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1973&quot;&gt;#1973&lt;/a&gt; for the changes and
+some discussion about this issue. Thanks to &lt;a href=&quot;https://github.com/pdogr&quot;&gt;@pdogr&lt;/a&gt; for finding the issue and contributing a fix.&lt;/p&gt;
+&lt;h2&gt;Starting work on Internationalization&lt;/h2&gt;
+&lt;p&gt;ECMAScript specifies an Internationalization API through the &lt;code&gt;Intl&lt;/code&gt; global object. We have started implementing many internal
+functions and structures to provide the &lt;code&gt;Intl&lt;/code&gt; object in boa. To take advantage of existing work in this space we have started
+integrating the &lt;a href=&quot;https://github.com/unicode-org/icu4x&quot;&gt;ICU4X library&lt;/a&gt; into boa. Thanks to
+&lt;a href=&quot;https://github.com/NorbertGarfield&quot;&gt;@NorbertGarfield&lt;/a&gt; and &lt;a href=&quot;https://github.com/jedel1043&quot;&gt;@jedel1043&lt;/a&gt; for their continued work
+on this topic.&lt;/p&gt;
+&lt;h2&gt;Rust Wrappers for Javascript Objects&lt;/h2&gt;
+&lt;p&gt;We have started the implementation of wrappers around built-in Javascript objects like &lt;code&gt;Array&lt;/code&gt;. These Rust types make it easy
+to work with Javascript objects in Rust and provide a type safe abstraction around them. Many of these wrappers are not
+implemented yet and may be a good place to start contributing to boa. If you are interested, check out the
+&lt;a href=&quot;https://github.com/boa-dev/boa/issues/2098&quot;&gt;tracking issue&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;How can you contribute to Boa?&lt;/h2&gt;
+&lt;p&gt;In March, boa opened financial contributions on its &lt;a href=&quot;https://opencollective.com/boa&quot;&gt;OpenCollective page&lt;/a&gt;. Since then, we have
+to thank Demergent Labs, a company using Boa in the Internet Computer that has decided to sponsor us, and Clemens
+Koza, who is our first backer! We are already thinking on how we will use these contributions to improve how we develop Boa.&lt;/p&gt;
+&lt;p&gt;If financial contribution is not your strength, you can contribute by asking to be assigned to one of our
+&lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee&quot;&gt;open issues&lt;/a&gt;, and asking for mentoring if you
+don&#39;t know your way around the engine. Our &lt;a href=&quot;https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md&quot;&gt;contribution guide&lt;/a&gt;
+should help you here. If you are more used to working with JavaScript or frontend web development, we also
+welcome help to improve our web presence, either in &lt;a href=&quot;https://github.com/boa-dev/boa-dev.github.io&quot;&gt;our website&lt;/a&gt;, or in
+our &lt;a href=&quot;https://github.com/boa-dev/boa/issues/820&quot;&gt;testing representation&lt;/a&gt; page or benchmarks page. You can also contribute to
+our Criterion benchmark comparison GitHub &lt;a href=&quot;https://github.com/boa-dev/criterion-compare-action&quot;&gt;action&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
+engine. Feel free to contact us in &lt;a href=&quot;https://discord.gg/tUFFk9Y&quot;&gt;Discord&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Thank You&lt;/h3&gt;
+&lt;p&gt;Last but certainly not least, a big &lt;strong&gt;Thank You&lt;/strong&gt; to
+&lt;a href=&quot;https://github.com/boa-dev/boa/graphs/contributors?from=2022-03-16&amp;amp;to=2022-06-10&amp;amp;type=c&quot;&gt;all the contributors&lt;/a&gt; of this Boa
+release. We would like to particularly thank our new contributors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lupd&quot;&gt;@lupd&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1979&quot;&gt;#1979&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/NorbertGarfield&quot;&gt;@NorbertGarfield&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1963&quot;&gt;#1963&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/pdogr&quot;&gt;@pdogr&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1968&quot;&gt;#1968&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/kilotaras&quot;&gt;@kilotaras&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1959&quot;&gt;#1959&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tsutton&quot;&gt;@tsutton&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1999&quot;&gt;#1999&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/manthanabc&quot;&gt;@manthanabc&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1957&quot;&gt;#1957&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lastmjs&quot;&gt;@lastmjs&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1990&quot;&gt;#1990&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/YXL76&quot;&gt;@YXL76&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/2042&quot;&gt;#2042&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>
