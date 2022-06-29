@@ -28,6 +28,6 @@
     "sass": "^1.53.0"
   },
   "dependencies": {
-    "@kevingimbel/eleventy-plugin-mermaid": "^1.1.0"
+    "@kevingimbel/eleventy-plugin-mermaid": "^2.0.0"
   }
 }
