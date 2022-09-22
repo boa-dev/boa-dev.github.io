@@ -46,13 +46,20 @@ makes it easier to use Promises within javascript. We have implemented async fun
 `for await...of` loops and the `await` keyword. While not all tests pass for these features yet, the basic functionality
 should work.
 
-## Dense/Packed JavaScript arrays
+## Dense/Packed JavaScript Arrays
 
-TODO see https://github.com/boa-dev/boa/pull/2167
+JavaScript Arrays are regular objects whose values are stored as indexed properties. Because arrays have no fixed
+length, values can be assigned to any possible index without any of the previous indices being used. Due to this
+behavior indexed properties are stored in a map instead of in a vector, as the vector would allocate a lot of unused
+memory if a high index is used. We have implemented an optimization to make it possible to use optimized vector storage
+for array values, as long as indices are not assigned out of order. To learn more about this optimization take a look at
+the PR [#2167](https://github.com/boa-dev/boa/pull/2167).
 
 ## Support for URI encoding and decoding functions
 
-TODO see https://github.com/boa-dev/boa/pull/2267
+This version for Boa ships with support for the built-in URI encoding and decoding functions `encodeURI`, `decodeURI`,
+`encodeURIComponent` and `decodeURIComponent`. With the exception of UTF-16 related test, all test in the relevant 262
+test suites pass for these functions.
 
 ## How can you contribute to Boa?
 
