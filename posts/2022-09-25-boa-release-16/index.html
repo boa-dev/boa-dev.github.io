@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Boa</title>
+    <title>Boa release v0.16 - Boa</title>
     <meta name="description" content="The blog and website for Boa">
     <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml" />
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/center-img.css">
     <link rel="stylesheet" href="/css/prism.css">
-    <link rel="canonical" href="https://boa-dev.github.io/">
+    <link rel="canonical" href="https://boa-dev.github.io/posts/2022-09-25-boa-release-16/">
     <link rel="shortcut icon" href="/favicon-32x32.png">
     <meta property="og:image" content="/images/logo.png" />
     <meta property="og:description" content="The blog and website for Boa" />
@@ -28,7 +28,7 @@
     
     <meta name="twitter:description" content="The blog and website for Boa" />
     
-    <meta name="twitter:url" content="/">
+    <meta name="twitter:url" content="/posts/2022-09-25-boa-release-16/">
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
     <noscript>
@@ -127,83 +127,72 @@
 
     <div class="page-content">
       <div class="wrapper">
-        
-<div class="home">
-  <p>
-    Boa is an experimental Javascript lexer, parser and compiler written in Rust. Currently, it has support for some of the language. It can be embedded in Rust projects fairly easily and also used from the command line.  
-Boa also exists to serve as a Rust implementation of the EcmaScript specification, there will be areas where we can utilise Rust and its fantastic ecosystem to make a fast, concurrent and safe engine.
-  </p>
-  <h1 class="page-heading">Posts</h1>
+        <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Sep 25, 2022</span>
+  <header class="post-header">
+    <h1 class="post-title">Boa release v0.16</h1>
+    <p class="post-meta">Sep 25, 2022 • Boa Developers</p>
+  </header>
 
-        <h2>
-          <a class="post-link" href='/posts/2022-09-25-boa-release-16/'>Boa release v0.16</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 10, 2022</span>
+  <article class="post-content">
+    <h2>Summary</h2>
+<p>Boa v0.16 is now available! After around 3 months of development, we are very happy to present you the newest release of
+the Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from
+WebAssembly. See the <a href="/about">about</a> page for more info.</p>
+<p>Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 62.29% to 74.53%
+in the official ECMAScript Test Suite (Test262). The engine now passes 68,612 tests, coming from 56,372 in Boa 0.15
+(21.7% increase), and we have closed 9 issues and merged 59 pull requests. You can check the full list of changes
+<a href="https://github.com/boa-dev/boa/blob/v0.16/CHANGELOG.md">here</a>, and the full information on conformance
+<a href="https://boa-dev.github.io/boa/test262/">here</a>.</p>
+<h2>New ECMAScript features</h2>
+<h3>Support for Promises</h3>
+<p>With this new release Boa ships support for ECMAScript Promises. All tests in the 262 test suite <code>built-ins/Promise</code> pass.
+Promises enable asynchronous operations to be executed via an internal job queue. Starting with our work on Promises,
+we have stopped ignoring the 262 tests that are flagged as <code>async</code>. We also have enabled our 262 test runner to work
+with asynchronous tests. We would like to thank <a href="https://github.com/aaronmunsters">@aaronmunsters</a> for proposing
+the initial PR for Promises (<a href="https://github.com/boa-dev/boa/pull/1923">#1923</a>) that we then could expand on.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// This program will print:</span><br><span class="token comment">//    1. End of synchronous execution.</span><br><span class="token comment">//    2. The Promise has been resolved.</span><br><br><span class="token keyword">let</span> promise <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>promise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"2. The Promise has been resolved."</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"1. End of synchronous execution."</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3>Support for Async/Await</h3>
+<p>The implementation of Promises has enabled us to implement async functions and the await keyword. The async/await syntax
+makes it easier to use Promises within javascript. We have implemented async functions, async generators,
+<code>for await...of</code> loops and the <code>await</code> keyword. While not all tests pass for these features yet, the basic functionality
+should work.</p>
+<h2>Dense/Packed JavaScript Arrays</h2>
+<p>JavaScript Arrays are regular objects whose values are stored as indexed properties. Because arrays have no fixed
+length, values can be assigned to any possible index without any of the previous indices being used. Due to this
+behavior indexed properties are stored in a map instead of in a vector, as the vector would allocate a lot of unused
+memory if a high index is used. We have implemented an optimization to make it possible to use optimized vector storage
+for array values, as long as indices are not assigned out of order. This has improved the performance of arrays around
+<strong>45%</strong> for arrays without empty slots. To learn more about this optimization take a look at the PR
+<a href="https://github.com/boa-dev/boa/pull/2167">#2167</a>.</p>
+<h2>Support for URI encoding and decoding functions</h2>
+<p>This version for Boa ships with support for the built-in URI encoding and decoding functions <code>encodeURI</code>, <code>decodeURI</code>,
+<code>encodeURIComponent</code> and <code>decodeURIComponent</code>. With the exception of UTF-16 related test, all test in the relevant 262
+test suites pass for these functions.</p>
+<h2>How can you contribute to Boa?</h2>
+<p>In March, Boa opened financial contributions on its <a href="https://opencollective.com/boa">OpenCollective page</a>.
+If financial contribution is not your strength, you can contribute by asking to be assigned to one of our
+<a href="https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee">open issues</a>, and asking for mentoring if you
+don't know your way around the engine. Our <a href="https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md">contribution guide</a>
+should help you here. If you are more used to working with JavaScript or frontend web development, we also
+welcome help to improve our web presence, either in <a href="https://github.com/boa-dev/boa-dev.github.io">our website</a>, or in
+our <a href="https://github.com/boa-dev/boa/issues/820">testing representation</a> page or benchmarks page. You can also contribute to
+our Criterion benchmark comparison GitHub <a href="https://github.com/boa-dev/criterion-compare-action">action</a>.</p>
+<p>We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
+engine. Feel free to contact us in <a href="https://discord.gg/tUFFk9Y">Discord</a>.</p>
+<h3>Thank You</h3>
+<p>Last but certainly not least, a big <strong>Thank You</strong> to
+<a href="https://github.com/boa-dev/boa/graphs/contributors?from=2022-06-11&amp;to=2022-09-25&amp;type=c">all the contributors</a>
+of this Boa release. We would like to particularly thank our new contributors:</p>
+<ul>
+<li><a href="https://github.com/CYBAI">@CYBAI</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/2108">#2108</a></li>
+<li><a href="https://github.com/udhaykumarbala">@udhaykumarbala</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/2245">#2245</a></li>
+<li><a href="https://github.com/tunz">@tunz</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/2261">#2261</a></li>
+<li><a href="https://github.com/anuvratsingh">@anuvratsingh</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/2162">#2162</a></li>
+<li><a href="https://github.com/creampnx-x">@creampnx-x</a> who made their first contribution in <a href="https://github.com/boa-dev/boa/pull/2274">#2274</a></li>
+</ul>
 
-        <h2>
-          <a class="post-link" href='/posts/2022-06-10-boa-release-15/'>Boa release v0.15</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Mar 15, 2022</span>
-
-        <h2>
-          <a class="post-link" href='/posts/2022-03-15-boa-release-14/'>Boa release v0.14</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 30, 2021</span>
-
-        <h2>
-          <a class="post-link" href='/2021/09/30/boa-release-13.html'>Boa release v0.13</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 7, 2021</span>
-
-        <h2>
-          <a class="post-link" href='/2021/06/07/boa-release-12.html'>Boa release v0.12</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 14, 2021</span>
-
-        <h2>
-          <a class="post-link" href='/2021/01/14/boa-release-11.html'>Boa release v0.11</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 2, 2020</span>
-
-        <h2>
-          <a class="post-link" href='/2020/10/02/boa-release-10.html'>Boa release v0.10</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jul 3, 2020</span>
-
-        <h2>
-          <a class="post-link" href='/2020/07/03/boa-release-09.html'>Boa v0.9: measureme & optimisations</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 

@@ -4,7 +4,7 @@
   <description>The blog and website for Boa</description>
   <link href="https://boa-dev.github.io/feed.xml" rel="self"/>
   <link href="https://boa-dev.github.io/"/>
-  <updated>2022-08-17T10:52:35Z</updated>
+  <updated>2022-09-25T16:21:08Z</updated>
   <id>https://boa-dev.github.io/</id>
   <author>
     <name>Boa Developers</name>
@@ -392,6 +392,70 @@ release. We would like to particularly thank our new contributors:&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/manthanabc&quot;&gt;@manthanabc&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1957&quot;&gt;#1957&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/lastmjs&quot;&gt;@lastmjs&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/1990&quot;&gt;#1990&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/YXL76&quot;&gt;@YXL76&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/2042&quot;&gt;#2042&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Boa release v0.16</title>
+    <link href="https://boa-dev.github.io/posts/2022-09-25-boa-release-16/"/>
+    <updated>2022-09-25T00:00:00Z</updated>
+    <id>https://boa-dev.github.io/posts/2022-09-25-boa-release-16/</id>
+    <content type="html">&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Boa v0.16 is now available! After around 3 months of development, we are very happy to present you the newest release of
+the Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from
+WebAssembly. See the &lt;a href=&quot;https://boa-dev.github.io/about&quot;&gt;about&lt;/a&gt; page for more info.&lt;/p&gt;
+&lt;p&gt;Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 62.29% to 74.53%
+in the official ECMAScript Test Suite (Test262). The engine now passes 68,612 tests, coming from 56,372 in Boa 0.15
+(21.7% increase), and we have closed 9 issues and merged 59 pull requests. You can check the full list of changes
+&lt;a href=&quot;https://github.com/boa-dev/boa/blob/v0.16/CHANGELOG.md&quot;&gt;here&lt;/a&gt;, and the full information on conformance
+&lt;a href=&quot;https://boa-dev.github.io/boa/test262/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;New ECMAScript features&lt;/h2&gt;
+&lt;h3&gt;Support for Promises&lt;/h3&gt;
+&lt;p&gt;With this new release Boa ships support for ECMAScript Promises. All tests in the 262 test suite &lt;code&gt;built-ins/Promise&lt;/code&gt; pass.
+Promises enable asynchronous operations to be executed via an internal job queue. Starting with our work on Promises,
+we have stopped ignoring the 262 tests that are flagged as &lt;code&gt;async&lt;/code&gt;. We also have enabled our 262 test runner to work
+with asynchronous tests. We would like to thank &lt;a href=&quot;https://github.com/aaronmunsters&quot;&gt;@aaronmunsters&lt;/a&gt; for proposing
+the initial PR for Promises (&lt;a href=&quot;https://github.com/boa-dev/boa/pull/1923&quot;&gt;#1923&lt;/a&gt;) that we then could expand on.&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// This program will print:&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;//    1. End of synchronous execution.&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;//    2. The Promise has been resolved.&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; promise &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2. The Promise has been resolved.&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;1. End of synchronous execution.&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Support for Async/Await&lt;/h3&gt;
+&lt;p&gt;The implementation of Promises has enabled us to implement async functions and the await keyword. The async/await syntax
+makes it easier to use Promises within javascript. We have implemented async functions, async generators,
+&lt;code&gt;for await...of&lt;/code&gt; loops and the &lt;code&gt;await&lt;/code&gt; keyword. While not all tests pass for these features yet, the basic functionality
+should work.&lt;/p&gt;
+&lt;h2&gt;Dense/Packed JavaScript Arrays&lt;/h2&gt;
+&lt;p&gt;JavaScript Arrays are regular objects whose values are stored as indexed properties. Because arrays have no fixed
+length, values can be assigned to any possible index without any of the previous indices being used. Due to this
+behavior indexed properties are stored in a map instead of in a vector, as the vector would allocate a lot of unused
+memory if a high index is used. We have implemented an optimization to make it possible to use optimized vector storage
+for array values, as long as indices are not assigned out of order. This has improved the performance of arrays around
+&lt;strong&gt;45%&lt;/strong&gt; for arrays without empty slots. To learn more about this optimization take a look at the PR
+&lt;a href=&quot;https://github.com/boa-dev/boa/pull/2167&quot;&gt;#2167&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Support for URI encoding and decoding functions&lt;/h2&gt;
+&lt;p&gt;This version for Boa ships with support for the built-in URI encoding and decoding functions &lt;code&gt;encodeURI&lt;/code&gt;, &lt;code&gt;decodeURI&lt;/code&gt;,
+&lt;code&gt;encodeURIComponent&lt;/code&gt; and &lt;code&gt;decodeURIComponent&lt;/code&gt;. With the exception of UTF-16 related test, all test in the relevant 262
+test suites pass for these functions.&lt;/p&gt;
+&lt;h2&gt;How can you contribute to Boa?&lt;/h2&gt;
+&lt;p&gt;In March, Boa opened financial contributions on its &lt;a href=&quot;https://opencollective.com/boa&quot;&gt;OpenCollective page&lt;/a&gt;.
+If financial contribution is not your strength, you can contribute by asking to be assigned to one of our
+&lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee&quot;&gt;open issues&lt;/a&gt;, and asking for mentoring if you
+don&#39;t know your way around the engine. Our &lt;a href=&quot;https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md&quot;&gt;contribution guide&lt;/a&gt;
+should help you here. If you are more used to working with JavaScript or frontend web development, we also
+welcome help to improve our web presence, either in &lt;a href=&quot;https://github.com/boa-dev/boa-dev.github.io&quot;&gt;our website&lt;/a&gt;, or in
+our &lt;a href=&quot;https://github.com/boa-dev/boa/issues/820&quot;&gt;testing representation&lt;/a&gt; page or benchmarks page. You can also contribute to
+our Criterion benchmark comparison GitHub &lt;a href=&quot;https://github.com/boa-dev/criterion-compare-action&quot;&gt;action&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
+engine. Feel free to contact us in &lt;a href=&quot;https://discord.gg/tUFFk9Y&quot;&gt;Discord&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Thank You&lt;/h3&gt;
+&lt;p&gt;Last but certainly not least, a big &lt;strong&gt;Thank You&lt;/strong&gt; to
+&lt;a href=&quot;https://github.com/boa-dev/boa/graphs/contributors?from=2022-06-11&amp;amp;to=2022-09-25&amp;amp;type=c&quot;&gt;all the contributors&lt;/a&gt;
+of this Boa release. We would like to particularly thank our new contributors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/CYBAI&quot;&gt;@CYBAI&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/2108&quot;&gt;#2108&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/udhaykumarbala&quot;&gt;@udhaykumarbala&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/2245&quot;&gt;#2245&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/tunz&quot;&gt;@tunz&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/2261&quot;&gt;#2261&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/anuvratsingh&quot;&gt;@anuvratsingh&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/2162&quot;&gt;#2162&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/creampnx-x&quot;&gt;@creampnx-x&lt;/a&gt; who made their first contribution in &lt;a href=&quot;https://github.com/boa-dev/boa/pull/2274&quot;&gt;#2274&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>
