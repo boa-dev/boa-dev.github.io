@@ -4,7 +4,7 @@
   <description>The blog and website for Boa</description>
   <link href="https://boa-dev.github.io/feed.xml" rel="self"/>
   <link href="https://boa-dev.github.io/"/>
-  <updated>2022-10-24T11:09:00Z</updated>
+  <updated>2022-10-24T13:37:00Z</updated>
   <id>https://boa-dev.github.io/</id>
   <author>
     <name>Boa Developers</name>
@@ -475,7 +475,7 @@ Furthermore, many of our users will prefer to use a more common scripting langua
 JavaScript.&lt;/p&gt;
 &lt;p&gt;This is where Boa enters the scene. Boa is a Javascript engine fully written in Rust. Currently, it
 can be used in places where you need most of the JavaScript language to work, even though, we would
-advise to wait to get all our &lt;a href=&quot;https://github.com/orgs/boa-dev/projects/2/views/1&quot;&gt;known blocker bugs&lt;/a&gt; solved before using this for critical
+advise to wait to get all our &lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=64+162+718+773+2068+1930+1922+1917+1900+1848+1805+1570+1402+1307+1180+is%3Aopen&quot;&gt;known blocker bugs&lt;/a&gt; solved before using this for critical
 workloads. You can check how conformant we are with the official ECMAScript specification
 &lt;a href=&quot;https://boa-dev.github.io/boa/test262/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;And, before going further, we would like to mention that you can contribute to Boa by solving one
