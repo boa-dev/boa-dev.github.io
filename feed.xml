@@ -4,7 +4,7 @@
   <description>The blog and website for Boa</description>
   <link href="https://boa-dev.github.io/feed.xml" rel="self"/>
   <link href="https://boa-dev.github.io/"/>
-  <updated>2022-10-24T10:52:53Z</updated>
+  <updated>2022-10-24T11:09:00Z</updated>
   <id>https://boa-dev.github.io/</id>
   <author>
     <name>Boa Developers</name>
@@ -479,7 +479,7 @@ advise to wait to get all our &lt;a href=&quot;https://github.com/orgs/boa-dev/p
 workloads. You can check how conformant we are with the official ECMAScript specification
 &lt;a href=&quot;https://boa-dev.github.io/boa/test262/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;And, before going further, we would like to mention that you can contribute to Boa by solving one
-of the &lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22%2CHacktoberfest%2CE-Easy%2C%22good+first+issue%22+no%3Aassignee&quot;&gt;issues&lt;/a&gt; where we need especial help, and we now also accept financial contributions
+of the &lt;a href=&quot;https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22%2CHacktoberfest%2CE-Easy%2C%22good+first+issue%22+no%3Aassignee&quot;&gt;issues&lt;/a&gt; where we need special help, and we now also accept financial contributions
 in &lt;a href=&quot;https://opencollective.com/boa&quot;&gt;our OpenCollective&lt;/a&gt; page.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note: You can see more examples of integrating Boa in &lt;a href=&quot;https://github.com/boa-dev/boa/tree/main/boa_examples&quot;&gt;our repository&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Starting from scratch&lt;/h2&gt;
