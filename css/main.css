@@ -214,21 +214,21 @@ b {
   * Reset some basic elements
   */
   body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-hr,
-dl,
-dd,
-ol,
-ul,
-figure {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  hr,
+  dl,
+  dd,
+  ol,
+  ul,
+  figure {
     margin: 0;
     padding: 0;
   }
@@ -247,19 +247,19 @@ figure {
   * Set `margin-bottom` to maintain vertical rhythm
   */
   h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-ul,
-ol,
-dl,
-figure,
-table {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  ul,
+  ol,
+  dl,
+  figure,
+  table {
     margin-bottom: 15px;
   }
   /**
@@ -282,22 +282,22 @@ table {
   * Lists
   */
   ul,
-ol {
+  ol {
     margin-left: 30px;
   }
   li > ul,
-li > ol {
+  li > ol {
     margin-bottom: 0;
   }
   /**
   * Headings
   */
   h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 300;
     color: #fff;
   }
@@ -333,7 +333,7 @@ h6 {
   * Code formatting
   */
   pre,
-code {
+  code {
     font-size: 15px;
     border: none;
     border-radius: 3px;
@@ -401,7 +401,7 @@ code {
 }
 @media (prefers-color-scheme: dark) {
   strong,
-b {
+  b {
     font-weight: bold;
   }
 }
@@ -1062,7 +1062,7 @@ img.light {
 
 @media screen and (max-width: 800px) {
   .footer-col-1,
-.footer-col-2 {
+  .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
     width: calc(50% - (30px / 2));
   }
@@ -1267,7 +1267,7 @@ img.light {
 }
 @media (prefers-color-scheme: dark) {
   .contact-list,
-.social-media-list {
+  .social-media-list {
     list-style: none;
     margin-left: 0;
   }
@@ -1311,7 +1311,7 @@ img.light {
 }
 @media screen and (prefers-color-scheme: dark) and (max-width: 800px) {
   .footer-col-1,
-.footer-col-2 {
+  .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
     width: calc(50% - (30px / 2));
   }
@@ -1548,7 +1548,7 @@ html.dark .footer-col-3 {
 }
 @media screen and (max-width: 800px) {
   html.dark .footer-col-1,
-html.dark .footer-col-2 {
+  html.dark .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
     width: calc(50% - (30px / 2));
   }
@@ -1879,7 +1879,7 @@ html.default .footer-col-3 {
 }
 @media screen and (max-width: 800px) {
   html.default .footer-col-1,
-html.default .footer-col-2 {
+  html.default .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
     width: calc(50% - (30px / 2));
   }
