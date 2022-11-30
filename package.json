@@ -4,11 +4,8 @@
   "description": "The home of Boa's blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "sass css:_site/css --watch",
-    "start": "npm run watch:eleventy & npm run watch:sass",
-    "build": "npx sass css:_site/css && npx @11ty/eleventy"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -28,6 +25,7 @@
     "sass": "^1.56.1"
   },
   "dependencies": {
-    "@kevingimbel/eleventy-plugin-mermaid": "^2.0.0"
+    "@kevingimbel/eleventy-plugin-mermaid": "^2.0.0",
+    "eleventy-sass": "^2.1.3"
   }
 }
