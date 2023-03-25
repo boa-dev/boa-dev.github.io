@@ -1,35 +1,41 @@
-# Boa Blog website
+# Website
 
-This is the boilerplate code that allows you to quickly setup a blog that looks like the [RustLang blog].
-It can easily be run on [GitHub pages].
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-This project has been forked from the awesome [GitHub repo] of the [RustLang blog].
+### Installation
 
-[rustlang blog]: https://blog.rust-lang.org/
-[github repo]: https://github.com/rust-lang/blog.rust-lang.org
-[github pages]: https://pages.github.com/
+```
+$ yarn
+```
 
-## How to start
+### Local Development
 
-- Run `npm i`
-- Run `npm start`
+```
+$ yarn start
+```
 
-This uses https://www.11ty.dev/
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-The favicon is [here](favicon.ico).
+### Build
 
-## License
+```
+$ yarn build
+```
 
-The Rust Programming Language Blog is primarily distributed under the terms of
-CC-BY 4.0.
-So is this boilerplate.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-See [LICENSE](LICENSE) for details.
+### Deployment
 
-## Code of conduct
+Using SSH:
 
-Any project I create and I take part of respects the [Rust Code of Conduct](CODE_OF_CONDUCT.md).
+```
+$ USE_SSH=true yarn deploy
+```
 
-If there is any issue send me a message and I will make sure the code is respected.
+Not using SSH:
 
-Happy blogging and happy coding ! :)
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
