@@ -1,9 +1,9 @@
 {
   "baseurl": "/",
-  "url": "https://boa-dev.github.io",
+  "url": "https://boajs.dev",
   "logo": "/images/logo.png",
   "title": "Boa",
-  "description": "The blog and website for Boa",
+  "description": "The Boa JavaScript engine",
   "github_username": "boa-dev",
   "twitter_username": "boa_engine"
 }
