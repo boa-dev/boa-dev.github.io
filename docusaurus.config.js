@@ -11,10 +11,10 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://boajs.dev",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/boa-dev.github.io/",
   trailingSlash: false,
 
   // GitHub pages deployment config.
@@ -44,11 +44,26 @@ const config = {
             "https://github.com/boa-dev/boa-dev.github.io/tree/main/docs",
         },
         blog: {
+          sortPosts: "descending",
+          postsPerPage: "ALL",
+          blogSidebarCount: "ALL",
           showReadingTime: true,
+          feedOptions: {
+            type: "all",
+            createFeedItems: async (params) => {
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params;
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 10),
+                ...rest,
+              });
+            },
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        pages: {},
       }),
     ],
   ],
@@ -73,7 +88,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "/playground",
+            href: "/Playground",
             label: "Playground",
             position: "right",
           },
@@ -144,11 +159,10 @@ const config = {
       },
     }),
   plugins: [
-    function configureWebpack() {
+    function custom() {
       return {
         name: "custom-docusaurus-plugin",
         configureWebpack(config, isServer, utils) {
-          const { getJSLoader } = utils;
           return {
             experiments: {
               asyncWebAssembly: true,

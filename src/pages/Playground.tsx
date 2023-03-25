@@ -1,6 +1,5 @@
 import Editor from "@monaco-editor/react";
 import Layout from "@theme/Layout";
-import { evaluate } from "@ZackMitkin/boa";
 import React from "react";
 
 const initialCode = `function greet(targetName) {
@@ -12,7 +11,23 @@ greet('World')
 
 export default function BoaPlayground() {
   const [input, setInput] = React.useState(initialCode);
-  const output = React.useMemo(() => evaluate(input), [input]);
+  const [evaluate, setEvaluate] = React.useState(null);
+
+  React.useEffect(() => {
+    import("@ZackMitkin/boa").then(({ evaluate }) =>
+      setEvaluate(() => evaluate)
+    );
+  }, []);
+
+  const output = React.useMemo(() => {
+    if (evaluate !== null) {
+      try {
+        return evaluate(input);
+      } catch (e) {
+        return e;
+      }
+    }
+  }, [input, evaluate]);
 
   return (
     <Layout title="Playground" description="Boa Playground">
