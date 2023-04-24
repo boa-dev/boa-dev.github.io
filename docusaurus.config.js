@@ -88,7 +88,12 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "/Playground",
+            href: "/conformance",
+            label: "Conformance",
+            position: "right",
+          },
+          {
+            href: "/playground",
             label: "Playground",
             position: "right",
           },
