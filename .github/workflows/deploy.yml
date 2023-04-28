@@ -17,6 +17,8 @@ jobs:
       - run: npm ci
       - name: build
         run: npm run build
+      - name: Add CNAME to site
+        run: echo "boajs.dev" > ./_site/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
