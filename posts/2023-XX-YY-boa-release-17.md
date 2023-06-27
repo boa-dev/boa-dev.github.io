@@ -41,10 +41,14 @@ specification which includes some useful hooks to customize module loading, maki
 several sources, fetch modules from an URL and even asynchronously load and parse them to avoid blocking execution; see
 the [`ModuleLoader`][mod_loader] for more information.
 
-We also implemented a simple loader the default module loader, which should fulfill most of the simpler use cases:
+We also implemented a simple loader (currently the default module loader), which should fulfill most of the simpler use cases:
 
 ```rust
+// Creates a new module loader that uses the current directory to resolve module imports.  
 let loader = &SimpleModuleLoader::new(Path::new(".")).unwrap();
+
+// Need to convert it to either a `&dyn ModuleLoader` or a `Rc<dyn ModuleLoader>` in order
+// to pass it to the context.
 let dyn_loader: &dyn ModuleLoader = loader;
 let mut context = &mut Context::builder().module_loader(dyn_loader).build().unwrap();
 
@@ -52,12 +56,20 @@ let source = Source::from_bytes("1 + 3");
 
 let module = Module::parse(source, None, context).unwrap();
 
+// `main.mjs` or any of its imports could import `main.mjs` itself, so we
+// insert it into the loader for good measure.
 loader.insert(Path::new("main.mjs").to_path_buf(), module.clone());
 
+// All modules use promises to signal completion of its lifecycle.
+// The utility method `load_link_evaluate` calls `load`, then `link` and
+// finally `evaluate`, returning an error if any call fails.
 let promise = module.load_link_evaluate(context).unwrap();
 
+// Important to push the job queue forward! Otherwise, the modules won't progress
+// on their lifecycle.
 context.run_jobs();
 
+// All modules return `undefined` if they're successfully evaluated.
 assert_eq!(promise.state().unwrap(), PromiseState::Fulfilled(JsValue::undefined()));
 ```
 
