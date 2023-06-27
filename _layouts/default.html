@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
-
   {% include "head.html" %}
 
   <body>
-
     {% include "header.html" %}
 
     <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+      <div class="wrapper">{{ content }}</div>
     </div>
 
     <script src="https://opencollective.com/boa/banner.js"></script>
 
     {% include "footer.html" %}
-
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
   </body>
-
 </html>

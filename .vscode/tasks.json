@@ -5,7 +5,11 @@
       "script": "start",
       "problemMatcher": [],
       "label": "npm: start",
-      "detail": "npm run watch:eleventy & npm run watch:sass"
+      "detail": "npm run watch:eleventy & npm run watch:sass",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }

@@ -174,17 +174,20 @@
  * Wrapper
  */
   .wrapper {
-    max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
     max-width: calc(800px - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
-    @include clearfix();
 
     @include media-query($on-laptop) {
-      max-width: -webkit-calc(800px - (#{$spacing-unit}));
       max-width: calc(800px - (#{$spacing-unit}));
+      padding-right: calc(calc($spacing-unit / 2));
+      padding-left: calc(calc($spacing-unit / 2));
+    }
+
+    @include media-query($on-desktop) {
+      max-width: calc(1200px - (#{$spacing-unit}));
       padding-right: calc(calc($spacing-unit / 2));
       padding-left: calc(calc($spacing-unit / 2));
     }
@@ -390,17 +393,20 @@
   * Wrapper
   */
   .wrapper {
-    max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
     max-width: calc(800px - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
-    @include clearfix();
 
     @include media-query($on-laptop) {
-      max-width: -webkit-calc(800px - (#{$spacing-unit}));
       max-width: calc(800px - (#{$spacing-unit}));
+      padding-right: calc(calc($spacing-unit / 2));
+      padding-left: calc(calc($spacing-unit / 2));
+    }
+
+    @include media-query-min($on-desktop) {
+      max-width: calc(1200px - (#{$spacing-unit}));
       padding-right: calc(calc($spacing-unit / 2));
       padding-left: calc(calc($spacing-unit / 2));
     }
