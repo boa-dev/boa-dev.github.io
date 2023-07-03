@@ -186,7 +186,7 @@
       padding-left: calc(calc($spacing-unit / 2));
     }
 
-    @include media-query($on-desktop) {
+    @include media-query-min($on-desktop) {
       max-width: calc(1200px - (#{$spacing-unit}));
       padding-right: calc(calc($spacing-unit / 2));
       padding-left: calc(calc($spacing-unit / 2));

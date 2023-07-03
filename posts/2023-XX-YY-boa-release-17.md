@@ -44,7 +44,7 @@ the [`ModuleLoader`][mod_loader] for more information.
 We also implemented a simple loader (currently the default module loader), which should fulfill most of the simpler use cases:
 
 ```rust
-// Creates a new module loader that uses the current directory to resolve module imports.  
+// Creates a new module loader that uses the current directory to resolve module imports.
 let loader = &SimpleModuleLoader::new(Path::new(".")).unwrap();
 
 // Need to convert it to either a `&dyn ModuleLoader` or a `Rc<dyn ModuleLoader>` in order
@@ -79,6 +79,14 @@ For a more extensive, descriptive example that uses a real directory, you can ch
 [mod_loader]: https://boajs.dev/boa/doc/boa_engine/module/trait.ModuleLoader.html
 [mod_example]: https://github.com/boa-dev/boa/blob/main/boa_examples/src/bin/modules.rs
 
+### Spec Version Conformance
+
+Something we get asked a lot is _"Do you support ES5 or ES6"_? or _"How far away are you from supporting ESX"_?
+We're pleased to say we've updated our conformance board to show you how we're doing across ES versions.
+
+Just navigate to our [Test262 Dashboard](https://boajs.dev/boa/test262/), select "Test Results" on our main branch, then you can then use the dropdown underneath to see how we're doing on each version.
+ES5 and ES6 are very close, you can see we're only a few tests away from them being fully implemented.
+
 ### Optimizations
 
 #### Constant folding optimization
@@ -97,7 +105,7 @@ the optimized program benefits from reduced execution time and improved overall 
 Hidden Classes (called "Shapes" internally to avoid confusion with JavaScript classes) are an alternative way to
 structure objects that stores the property keys (string or symbol) (i.e. `object.propertyName`) and its attributes
 (writable, enumerable, configurable) as transitions from a root shape, and the values as a dense array. This is
-different from the traditional way of storing properties as a hashmap from property keys to values. 
+different from the traditional way of storing properties as a hashmap from property keys to values.
 
 The shapes create a transition tree, where the transitions are property names and prototype changes starting from a root
 shape (no properties, no prototype).
@@ -119,8 +127,6 @@ the objects share the same shape.
 
 For a more in depth explanation of how shared shapes work in boa see `shapes.md`
 [here](https://github.com/boa-dev/boa/blob/main/docs/shapes.md).
-
-TO-DO: explain the enhancements of new optimizations (inline catching)
 
 ### Debug object
 
@@ -199,10 +205,37 @@ let str = TestStruct::try_from_js(&result, context)?;
 println!("{str:?}");
 ```
 
-TO-DO: 
+#### Source API
+
+We have introduced a new `Source API` to Boa.
+The new API represents JavaScript stored from a path or `None` if it's coming from a plain string.
+
+This change improves the display of `boa_tester` to show the path of the tests being run. It also enables hyperlinks to directly jump to the tested file from the VS terminal.
+This will further help with error displays and debugging in the future.
+
+```rust
+use boa_engine::{Context, Source};
+
+fn main() {
+    let js_file_path = "./scripts/helloworld.js";
+
+    match Source::from_filepath(Path::new(js_file_path)) {
+    ...
+```
+
+See Boa's [examples](https://github.com/boa-dev/boa/tree/main/boa_examples/src/bin) for more examples on how its used.
+
+#### Hooks and Job Queues
+
+In this release we have added `HostHooks` and `JobQueue` traits to `Context`. This will allow hosts to implement custom event loops and other host specific functionality.
+This makes Boa more configurable for users and any future runtimes which need to add a more complex event loop, such as Tokio or Mio.
+
+As a result of this change, Boa's CLI will run all jobs until the queue is empty, even if a Job returns an `Err`.`
+
+TO-DO:
+
 - new closure APIs
 - host hooks & job queue APIs
-- Source API
 - async functions
 
 [js_promise]: https://docs.rs/boa_engine/0.17.0/boa_engine/object/builtins/struct.JsPromise.html
@@ -333,8 +366,8 @@ let msg = js_string!(&greeting, &NAME, utf16!("Nice to meet you!"));
 assert_eq!(&msg, utf16!("Hello, human! Nice to meet you!"));
 ```
 
-TO-DO: 
+TO-DO:
+
 - Lazy errors
 - AST documentation
 - new GC
-- spec version conformance

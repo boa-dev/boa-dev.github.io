@@ -17,7 +17,9 @@
 
     {% include "footer.html" %}
     <script>
-      mermaid.initialize({ startOnLoad: true });
+      window.addEventListener("load", () => {
+        mermaid.initialize({ startOnLoad: true });
+      });
     </script>
   </body>
 </html>
