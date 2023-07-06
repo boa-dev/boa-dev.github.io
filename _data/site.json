@@ -5,5 +5,7 @@
   "title": "Boa",
   "description": "The Boa JavaScript engine",
   "github_username": "boa-dev",
-  "twitter_username": "boa_engine"
+  "twitter_username": "boa_engine",
+  "mastodon_link": "https://fosstodon.org/@boa_engine",
+  "mastodon_username": "@boa_engine@fosstodon.org"
 }
