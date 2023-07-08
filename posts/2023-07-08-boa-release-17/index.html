@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Boa release v0.17 - Boa</title>
+    <meta name="description" content="The Boa JavaScript engine">
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/center-img.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <link rel="canonical" href="https://boajs.dev/posts/2023-07-08-boa-release-17/">
+    <link rel="shortcut icon" href="/favicon-32x32.png">
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:description" content="The Boa JavaScript engine" />
+    <meta property="og:title" content="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@boa_engine" />
+    <meta name="twitter:title" content="" />
+    
+    <meta name="twitter:description" content="The Boa JavaScript engine" />
+    
+    <meta name="twitter:url" content="/posts/2023-07-08-boa-release-17/">
+    <script defer src="https://unpkg.com/mermaid@10.2.3/dist/mermaid.min.js"></script>
+    <noscript>
+        <style>
+            .site-switch-theme {display:none;}
+        </style>
+    </noscript>
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <script type="text/javascript">
+    // By calling this on DOM Ready rather than window.load means we should have our
+    // preferred color and classes set before the user sees the page (no flash)
+    document.addEventListener("DOMContentLoaded", () => {
+      detectColorScheme();
+    });
+
+    function applyTheme() {
+      const checkbox = window.document.getElementById("toggleTheme");
+      window.document.getElementsByTagName(
+        "html"
+      )[0].className = window.document.getElementById("toggleTheme").checked
+        ? "dark"
+        : "default";
+      localStorage.setItem(
+        "theme",
+        window.document.getElementsByTagName("html")[0].className
+      );
+    }
+
+    //determines if the user has a set theme
+    function detectColorScheme() {
+      let theme = "default"; //default to light
+
+      //local storage is used to override OS theme settings
+      if (localStorage.getItem("theme")) {
+        theme = localStorage.getItem("theme");
+      } else if (!window.matchMedia) {
+        //matchMedia method not supported
+        return false;
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        //OS theme setting detected as dark
+        theme = "dark";
+      }
+
+      //dark theme preferred, set document with a `data-theme` attribute
+      window.document.getElementsByTagName("html")[0].className = theme;
+      localStorage.setItem("theme", theme);
+      if (theme === "dark") {
+        window.document.getElementById("toggleTheme").checked = true;
+      }
+    }
+  </script>
+  <div class="wrapper">
+    <a class="site-title" href="/">
+      <img id="site-logo" src="/images/logo.png" /> Boa</a>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        <a href="/about">About</a> |
+        <a href="https://github.com/boa-dev/boa">Github</a> |
+        <a href="/boa/dev/bench/">Benchmarks</a> |
+        <a href="/boa/test262/">Conformance</a> |
+        <a href="/boa/playground">Playground</a> |
+        <a href="https://docs.rs/boa_engine">Docs</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper"><div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Boa release v0.17</h1>
+    <p class="post-meta">Jul 8, 2023 • Boa Developers</p>
+  </header>
+
+  <article class="post-content">
+    <h2>Summary</h2>
+<p>Boa v0.17 is now available! This is one of the biggest Boa releases since the project started, and after around 7 months
+of development, we are very happy to present you the latest release of the Boa JavaScript engine. Boa makes it easy to
+embed a JS engine in your projects, and you can even use it from WebAssembly. See the <a href="/about">about</a> page for more info.</p>
+<p>In this release, our conformance has grown from 74.53% to 78.74% in the official ECMAScript Test Suite (Test262). While
+this might look as a small increase, we now pass <strong>6,079</strong> more tests than in the previous version. In any case, the big
+changes in this release are not related to conformance, but to huge internal enhancements and new APIs that you will be
+able to use.</p>
+<p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.17/CHANGELOG.md">here</a>, and the full information on conformance <a href="https://boajs.dev/boa/test262/">here</a>.</p>
+<p>Moreover, this big release was partly possible thanks to a grant by <a href="https://litprotocol.com/">Lit Protocol</a>. Thanks to
+this grant, we were able to remunerate 2 team members for their 20h/week work each during three and a half months. If
+you wish to sponsor Boa, you can do so by donating to our <a href="https://opencollective.com/boa">open collective</a>. You can also check
+<a href="https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3AE-Easy">easy</a> or <a href="https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22">good first issues</a>.</p>
+<p>Furthermore, we now have a new domain for Boa, <a href="https://boajs.dev">boajs.dev</a>.</p>
+<h2>Highlights</h2>
+<h3>Modules</h3>
+<p>Boa finally has a module system! This implementation tries to closely follow ECMAScript's <a href="https://tc39.es/ecma262/#sec-modules"><strong>Modules</strong></a>
+specification which includes some useful hooks to customize module loading, making it possible to load modules from
+several sources, fetch modules from an URL and even asynchronously load and parse them to avoid blocking execution; see
+the <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/module/trait.ModuleLoader.html"><code>ModuleLoader</code></a> for more information.</p>
+<p>We also implemented a simple loader (currently the default module loader), which should fulfill most of the simpler use cases:</p>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">// Creates a new module loader that uses the current directory to resolve module imports.</span>
+<span class="token keyword">let</span> loader <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token class-name">SimpleModuleLoader</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">Path</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Need to convert it to either a `&amp;dyn ModuleLoader` or a `Rc&lt;dyn ModuleLoader>` in order</span>
+<span class="token comment">// to pass it to the context.</span>
+<span class="token keyword">let</span> dyn_loader<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token keyword">dyn</span> <span class="token class-name">ModuleLoader</span> <span class="token operator">=</span> loader<span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token keyword">mut</span> context <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token class-name">Context</span><span class="token punctuation">::</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">module_loader</span><span class="token punctuation">(</span>dyn_loader<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> source <span class="token operator">=</span> <span class="token class-name">Source</span><span class="token punctuation">::</span><span class="token function">from_bytes</span><span class="token punctuation">(</span><span class="token string">"1 + 3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> module <span class="token operator">=</span> <span class="token class-name">Module</span><span class="token punctuation">::</span><span class="token function">parse</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> <span class="token class-name">None</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// `main.mjs` or any of its imports could import `main.mjs` itself, so we</span>
+<span class="token comment">// insert it into the loader for good measure.</span>
+loader<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token class-name">Path</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token string">"main.mjs"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">to_path_buf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> module<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// All modules use promises to signal completion of its lifecycle.</span>
+<span class="token comment">// The utility method `load_link_evaluate` calls `load`, then `link` and</span>
+<span class="token comment">// finally `evaluate`, returning an error if any call fails.</span>
+<span class="token keyword">let</span> promise <span class="token operator">=</span> module<span class="token punctuation">.</span><span class="token function">load_link_evaluate</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Important to push the job queue forward! Otherwise, the modules won't progress</span>
+<span class="token comment">// on their lifecycle.</span>
+context<span class="token punctuation">.</span><span class="token function">run_jobs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// All modules return `undefined` if they're successfully evaluated.</span>
+<span class="token macro property">assert_eq!</span><span class="token punctuation">(</span>promise<span class="token punctuation">.</span><span class="token function">state</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">PromiseState</span><span class="token punctuation">::</span><span class="token class-name">Fulfilled</span><span class="token punctuation">(</span><span class="token class-name">JsValue</span><span class="token punctuation">::</span><span class="token function">undefined</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>For a more extensive, descriptive example that uses a real directory, you can check out <a href="https://github.com/boa-dev/boa/blob/v0.17/boa_examples/src/bin/modules.rs"><strong>boa_examples</strong></a>.</p>
+<h3>Spec Version Conformance</h3>
+<p>Something we get asked a lot is <em>&quot;Do you support ES5 or ES6&quot;</em>? or <em>&quot;How far away are you from supporting ESX&quot;</em>?
+We're pleased to say we've updated our conformance board to show you how we're doing across ES versions.</p>
+<p>Just navigate to our <a href="https://boajs.dev/boa/test262/">Test262 Dashboard</a>, select &quot;Test Results&quot; on our main branch, and
+then you can use the dropdown underneath to see how we're doing on each version. ES5 and ES6 are very close, you can see
+we're only a few tests away from them being fully implemented.</p>
+<h3>Optimizations</h3>
+<h4>Constant folding optimization</h4>
+<p>Constant folding expression is a powerful compiler optimization technique that significantly enhances the efficiency and
+performance of compiled programs. This optimization, now incorporated in the latest release, aims to reduce runtime
+overhead by evaluating constant expressions at compile-time.</p>
+<p>With constant folding expression optimization, the compiler analyzes expressions involving constants and replaces them
+with their computed results. This process allows the compiler to transform arithmetic operations, comparisons, and
+logical expressions into simplified forms, removing unnecessary runtime computations. By eliminating these computations,
+the optimized program benefits from reduced execution time and improved overall performance.</p>
+<h4>Object Shapes (Hidden classes)</h4>
+<p>Hidden Classes (called &quot;Shapes&quot; internally to avoid confusion with JavaScript classes) are an alternative way to
+structure objects that stores the property keys (string or symbol) (i.e. <code>object.propertyName</code>) and its attributes
+(writable, enumerable, configurable) as transitions from a root shape, and the values as a dense array. This is
+different from the traditional way of storing properties as a hashmap from property keys to values.</p>
+<p>The shapes create a transition tree, where the transitions are property names and prototype changes starting from a root
+shape (no properties, no prototype).</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// Shape 1: prototype `Object.prototype` and properties: empty</span>
+o<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">10</span>   <span class="token comment">// Shape 2: prototype `Object.prototype` and properties: 'a'</span>
+o<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">20</span>   <span class="token comment">// Shape 3: prototype `Object.prototype` and properties: 'a', 'b'</span>
+
+<span class="token keyword">let</span> o2 <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment">// Shape 2: prototype `Object.prototype` and properties: 'a'</span>
+o2<span class="token punctuation">.</span>d <span class="token operator">=</span> <span class="token number">50</span>           <span class="token comment">// Shape 4: prototype `Object.prototype` and properties: 'a', 'd' -- fork from shape 2</span></code></pre>
+<p>This separation of property keys and values allows for objects with the same property names to share the same shape,
+which reduces memory consumption and unlocks the possibility for other optimizations such as inline caching.</p>
+<p>Note: When creating objects with the same property keys, it's best to create them in the same order, this ensures that
+the objects share the same shape.</p>
+<p>For a more in depth explanation of how shared shapes work in boa see <code>shapes.md</code>
+<a href="https://github.com/boa-dev/boa/blob/v0.17/docs/shapes.md">here</a>.</p>
+<h3>Debug object</h3>
+<p>The <code>$boa</code> debug object has been implemented for convenient JavaScript debugging using Boa's CLI interface. If you want
+to use it, you will need to run the Boa CLI / REPL with the <code>--debug-object</code> command line flag.</p>
+<p>The <code>$boa</code> debug object is divided into modules, so that you can trigger the garbage collection with <code>$boa.gc.collect()</code>,
+or get the bytecode of a function by running <code>$boa.function.bytecode(fn_name)</code>. You can also trace function invocations,
+handle compiler optimizations, set runtime limits and inspect object shapes.</p>
+<p>You can find all the documentation <a href="https://github.com/boa-dev/boa/blob/v0.17/docs/boa_object.md">here</a>.</p>
+<h3>New APIs</h3>
+<p>We have added new built-in object wrappers, such as <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/object/builtins/struct.JsPromise.html"><code>JsPromise</code></a>, <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/object/builtins/struct.JsRegExp.html"><code>JsRegExp</code></a>,
+<a href="https://docs.rs/boa_engine/0.17.0/boa_engine/object/builtins/struct.JsGenerator.html"><code>JsGenerator</code></a>, <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/object/builtins/struct.JsDate.html"><code>JsDate</code></a> and <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/object/builtins/struct.JsDataView.html"><code>JsDataView</code></a>. You can check all of them
+<a href="https://docs.rs/boa_engine/0.17.0/boa_engine/object/builtins/index.html">here</a>.</p>
+<p>We also want to present you a new trait that we have developed to make it easier for you to interoperate between Rust
+and JavaScript: <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/value/trait.TryFromJs.html"><code>TryFromJs</code></a>. All built-ins and Rust basic types that exist in JavaScript implement this
+trait, and it adds a new static method to them that allows you to convert a [<code>JsValue</code>][js_value] into a Rust structure.
+You can also convert any <code>JsValue</code> to a <code>TryFromJs</code> Rust type with <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/enum.JsValue.html#method.try_js_into"><code>JsValue::try_js_into()</code></a> function.</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> js_str <span class="token operator">=</span> <span class="token string">r#"
+let x = /[a-z0-9]@[a-z0-9]/;
+x;
+"#</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> js <span class="token operator">=</span> <span class="token class-name">Source</span><span class="token punctuation">::</span><span class="token function">from_bytes</span><span class="token punctuation">(</span>js_str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token keyword">mut</span> context <span class="token operator">=</span> <span class="token class-name">Context</span><span class="token punctuation">::</span><span class="token function">default</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> res <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">eval</span><span class="token punctuation">(</span>js<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> rs_regexp<span class="token punctuation">:</span> <span class="token class-name">JsRegExp</span> <span class="token operator">=</span> res<span class="token punctuation">.</span><span class="token function">try_js_into</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> test_result <span class="token operator">=</span> rs_regexp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"hello@domain"</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">;</span>
+<span class="token macro property">assert!</span><span class="token punctuation">(</span>test_result<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Moreover, you can derive <code>TryFromJs</code> for any Rust structure, and in the case that you want to manually convert some of
+the struct attributes, you can override it:</p>
+<pre class="language-rust"><code class="language-rust"><span class="token comment">/// Converts the value lossly.</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">lossy_conversion</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token class-name">JsValue</span><span class="token punctuation">,</span> _context<span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token class-name">Context</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">JsResult</span><span class="token operator">&lt;</span><span class="token keyword">i16</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">match</span> value <span class="token punctuation">{</span>
+        <span class="token class-name">JsValue</span><span class="token punctuation">::</span><span class="token class-name">Rational</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token class-name">Ok</span><span class="token punctuation">(</span>r<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">i16</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token class-name">JsValue</span><span class="token punctuation">::</span><span class="token class-name">Integer</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token class-name">Ok</span><span class="token punctuation">(</span><span class="token operator">*</span>i <span class="token keyword">as</span> <span class="token keyword">i16</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        _ <span class="token operator">=></span> <span class="token class-name">Err</span><span class="token punctuation">(</span><span class="token class-name">JsNativeError</span><span class="token punctuation">::</span><span class="token function">typ</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">with_message</span><span class="token punctuation">(</span><span class="token string">"cannot convert value to an i16"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">into</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token attribute attr-name">#[derive(Debug, TryFromJs)]</span>
+<span class="token keyword">struct</span> <span class="token type-definition class-name">TestStruct</span> <span class="token punctuation">{</span>
+    inner<span class="token punctuation">:</span> <span class="token keyword">bool</span><span class="token punctuation">,</span>
+    hello<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span>
+    <span class="token comment">// You can override the conversion of an attribute.</span>
+    <span class="token attribute attr-name">#[boa(from_js_with = <span class="token string">"lossy_conversion"</span>)]</span>
+    my_float<span class="token punctuation">:</span> <span class="token keyword">i16</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> js_str <span class="token operator">=</span> <span class="token string">r#"
+let x = {
+    inner: false,
+    hello: "World",
+    my_float: 2.9,
+};
+x;
+"#</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> context <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token class-name">Context</span><span class="token punctuation">::</span><span class="token function">default</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">eval</span><span class="token punctuation">(</span><span class="token class-name">Source</span><span class="token punctuation">::</span><span class="token function">from_bytes</span><span class="token punctuation">(</span>js_str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token keyword">str</span> <span class="token operator">=</span> <span class="token class-name">TestStruct</span><span class="token punctuation">::</span><span class="token function">try_from_js</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>result<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">;</span>
+
+<span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{str:?}"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Source API</h4>
+<p>We have introduced a new <code>Source API</code> to Boa. The new API represents JavaScript stored from a path or <code>None</code> if it's
+coming from a plain string.</p>
+<p>This change improves the display of <code>boa_tester</code> to show the path of the tests being run. It also enables hyperlinks to
+directly jump to the tested file from the VS terminal. This will further help with error displays and debugging in the
+future.</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">boa_engine<span class="token punctuation">::</span></span><span class="token punctuation">{</span><span class="token class-name">Context</span><span class="token punctuation">,</span> <span class="token class-name">Source</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> js_file_path <span class="token operator">=</span> <span class="token string">"./scripts/helloworld.js"</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">match</span> <span class="token class-name">Source</span><span class="token punctuation">::</span><span class="token function">from_filepath</span><span class="token punctuation">(</span><span class="token class-name">Path</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span>js_file_path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">...</span></code></pre>
+<p>See Boa's <a href="https://github.com/boa-dev/boa/tree/v0.17/boa_examples/src/bin">examples</a> for more examples on how its used.</p>
+<h4>Hooks and Job Queues</h4>
+<p>In this release we have added <code>HostHooks</code> and <code>JobQueue</code> traits to <code>Context</code>. This will allow hosts to implement custom
+event loops and other host specific functionality. This makes Boa more configurable for users and any future runtimes
+which need to add a more complex event loop, such as Tokio or Mio.</p>
+<p>As a result of this change, Boa's CLI will run all jobs until the queue is empty, even if a Job returns an <code>Err</code>.`</p>
+<h3>New Builtins</h3>
+<h4><code>Intl</code></h4>
+<p>Boa now has internationalization support! Although we are still working on full compliance with the
+<a href="https://tc39.es/ecma402/"><code>ecma402</code> specification</a>, we have a couple of <code>Intl</code> utilities in place:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator"><code>Intl.Collator</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat"><code>Intl.ListFormat</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator"><code>Intl.Locale</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter"><code>Intl.Segmenter</code></a></li>
+</ul>
+<p>Internationalization data can be pretty expensive at times: the default data included by Boa is 10.6 MB, which is why
+we allow customizing the data provider used by the engine with the <a href="https://boajs.dev/boa/doc/boa_engine/context/struct.ContextBuilder.html#method.icu_provider"><code>ContextBuilder::icu_provider</code></a> hook.
+For more information on how to generate custom internationalization data, you can check out the
+<a href="https://github.com/unicode-org/icu4x/blob/main/docs/tutorials/data_management.md#data-management-in-icu4x"><strong>data management tutorial</strong></a> from <a href="https://github.com/unicode-org/icu4x"><code>icu4x</code></a>, the internationalization library used in Boa. Shoutout to the
+<code>icu4x</code> team, who are the ones that made all of this possible!</p>
+<p>Additionally, we added an <code>intl</code> feature flag, which is enabled by default but can be disabled to reduce Boa's binary
+size.</p>
+<h4><code>WeakRef</code>, <code>WeakSet</code> and <code>WeakMap</code></h4>
+<p>We've implemented support for weak references to garbage collected objects. This allowed us to implement some builtins
+like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef/WeakRef"><code>WeakRef</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"><code>WeakSet</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"><code>WeakMap</code></a>. However, garbage collectors are unpredictable! A garbage
+collector could collect at unexpected moments, extend the lifetime of unreachable objects and even leak, which is why
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef#avoid_where_possible">mozilla recommends avoiding using those builtins where possible</a>.</p>
+<h3>Fuzzing</h3>
+<p>This release of Boa contains new functionalities in the <code>boa_ast</code> crate to support grammar aware fuzzing. The visitor
+pattern that is implemented for the AST makes it easy to traverse the AST and either collect information or apply
+modifications. In addition to the fuzzer, we also use the visitor pattern in multiple syntax directed operations. The
+AST now implements the <code>Arbitrary</code> trait from the <a href="https://docs.rs/arbitrary/latest/arbitrary/"><code>Arbitrary</code></a> crate to generate inputs for fuzzers. Based
+on these features we currently have three fuzzers targeting the parser, bytecompiler and vm. The fuzzers have already
+helped us finding multiple panics that we previously had no tests for.</p>
+<p>We want to extend a huge thanks to <a href="https://github.com/addisoncrump">@addisoncrump</a> as they have contributed not only
+the fuzzers but also the visitor pattern implementation and the additional bits needed to successfully fuzz Boa.</p>
+<h3>New Crates</h3>
+<p>This release of Boa will also mark the release of some new boa crates that contain various aspects of Boa's ECMAScript
+implementation.</p>
+<h4>boa_parser</h4>
+<p>Boa's <code>boa_parser</code> crate contains a lexer and parser that targets the latest ECMAScript language specification.</p>
+<h4>boa_ast</h4>
+<p>Boa's <code>boa_ast</code> crate contains an ECMAScript abstract syntax tree implementation of Declaration, Statement, and
+Expression Parse Nodes.</p>
+<h4>boa_runtime</h4>
+<p>Boa's <code>boa_runtime</code> crate contains an example runtime along with basic runtime features and functionality for runtime
+implementors. Note: this crate will contain any WEB API feature implementations or APIs that are not designated by the
+ECMAScript specification.</p>
+<h3>Other internal enhancements</h3>
+<p>There have also been a various number of other internal enhancements made.</p>
+<h4>Split Node into Statement / Declaration / Expression</h4>
+<p>In the last release, Boa's AST used a <code>Node</code> enum to represent both the <code>Statement</code>, <code>Declaration</code> and <code>Expression</code>
+parse nodes. One of the large internal improvements made for this release was to split <code>Node</code> into <code>Statement</code>,
+<code>Declaration</code>, and <code>Expression</code> nodes. This refactor involved not only large changes to the AST but also further changes
+to the bytecompiler and parser. The split also brings us closer in line with the ECMAScript specification.</p>
+<h4>UTF-16 strings</h4>
+<p>With this release, Boa's <code>JsString</code>s are now implemented as utf-16 encoded strings. Along with the new <code>JsString</code>, there
+are two provided macros: <code>js_string!</code> for creating a new <code>JsString</code> from a <code>&amp;str</code>, and <code>utf16!</code> for creating a utf-16
+array literal from a <code>&amp;str</code>.</p>
+<p>You can create a utf-16 array literal from any utf-8 <code>str</code>.</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">const</span> <span class="token constant">HELLO</span><span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token punctuation">[</span><span class="token keyword">u16</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token macro property">utf16!</span><span class="token punctuation">(</span><span class="token string">"Hi! :)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You can create a <code>JsString</code> from a string literal with the <code>js_string</code> macro.</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">let</span> hw <span class="token operator">=</span> <span class="token macro property">js_string!</span><span class="token punctuation">(</span><span class="token string">"Hello, world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token macro property">assert_eq!</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>hw<span class="token punctuation">,</span> <span class="token macro property">utf16!</span><span class="token punctuation">(</span><span class="token string">"Hello, world!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You can also pass any number of <code>&amp;[u16]</code> string values as arguments to create a new <code>JsString</code>.</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">const</span> <span class="token constant">NAME</span><span class="token punctuation">:</span> <span class="token operator">&amp;</span><span class="token punctuation">[</span><span class="token keyword">u16</span><span class="token punctuation">]</span>  <span class="token operator">=</span> <span class="token macro property">utf16!</span><span class="token punctuation">(</span><span class="token string">"human! "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token macro property">js_string!</span><span class="token punctuation">(</span><span class="token string">"Hello, "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> msg <span class="token operator">=</span> <span class="token macro property">js_string!</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>greeting<span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token constant">NAME</span><span class="token punctuation">,</span> <span class="token macro property">utf16!</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token macro property">assert_eq!</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">,</span> <span class="token macro property">utf16!</span><span class="token punctuation">(</span><span class="token string">"Hello, human! Nice to meet you!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2>Conclusions</h2>
+<p>If you reached so far, you probably understand how big this release was, and you can find even more changes in the
+<a href="https://github.com/boa-dev/boa/blob/v0.17/CHANGELOG.md">full changelog</a>. Boa is now becoming a real option for many projects, which shows with the amount of
+financial support we have received these last months. Nevertheless, going forward, we need your help to get to a 1.0
+version. Whether you are good with Rust, JavaScript, documentation or development, we have multiple
+<a href="https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22">good first issues</a>, and places where we <a href="https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">need help</a>, both in Boa's
+<a href="https://github.com/boa-dev/boa">main repository</a> and <a href="https://github.com/boa-dev">others</a> around it.</p>
+<p>Once again, big thanks to <a href="https://github.com/boa-dev/boa/graphs/contributors?from=2022-10-24&amp;to=2023-07-05&amp;type=c">all the contributors</a> of this release!!</p>
+
+  </article>
+
+</div>
+</div>
+    </div>
+
+    <script
+      fetchpriority="low"
+      defer
+      src="https://opencollective.com/boa/banner.js"
+    ></script>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-4">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/boa-dev">
+              <span class="icon icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path
+                    fill="#828282"
+                    d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"
+                  />
+                </svg>
+              </span>
+
+              <span class="username">boa-dev</span>
+            </a>
+          </li>
+           
+          <li>
+            <a href="https://twitter.com/boa_engine">
+              <span class="icon icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path
+                    fill="#828282"
+                    d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"
+                  />
+                </svg>
+              </span>
+
+              <span class="username">boa_engine</span>
+            </a>
+          </li>
+           
+          <li>
+            <a rel="me" href="https://fosstodon.org/@boa_engine">
+              <span class="icon icon--mastodon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+                  <path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+                </svg>
+              </span>
+
+              <span class="username">@boa_engine@fosstodon.org</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-4">
+        <p class="text">The Boa JavaScript engine</p>
+      </div>
+
+      <div class="footer-col footer-col-4">
+        <div class="toggle-mode">
+          <div class="icon">
+            <i class="font font-sun-o" aria-hidden="true"></i>
+          </div>
+          <div class="toggle-switch">
+            <label class="switch" title="Toggle Light/Dark Mode">
+              <input
+                type="checkbox"
+                role="switch"
+                id="toggleTheme"
+                onclick="applyTheme()"
+              />
+              <div class="slider round"></div>
+            </label>
+          </div>
+          <div class="icon">
+            <i class="font font-moon-o" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script>
+      window.addEventListener("load", () => {
+        mermaid.initialize({ startOnLoad: true });
+      });
+    </script>
+  </body>
+</html>

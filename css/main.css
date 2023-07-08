@@ -160,22 +160,22 @@ pre > code {
 * Wrapper
 */
 .wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
   max-width: calc(800px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px;
 }
-.wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    max-width: calc(1200px - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -355,17 +355,11 @@ b {
   * Wrapper
   */
   .wrapper {
-    max-width: -webkit-calc(800px - (30px * 2));
     max-width: calc(800px - (30px * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: 30px;
     padding-left: 30px;
-  }
-  .wrapper:after {
-    content: "";
-    display: table;
-    clear: both;
   }
   /**
   * Clearfix
@@ -382,8 +376,14 @@ b {
 }
 @media screen and (prefers-color-scheme: dark) and (max-width: 800px) {
   .wrapper {
-    max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media screen and (prefers-color-scheme: dark) and (min-width: 1440px) {
+  .wrapper {
+    max-width: calc(1200px - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -566,22 +566,22 @@ html.dark pre > code {
   padding-left: 0;
 }
 html.dark .wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
   max-width: calc(800px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px;
 }
-html.dark .wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 @media screen and (max-width: 800px) {
   html.dark .wrapper {
-    max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  html.dark .wrapper {
+    max-width: calc(1200px - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -759,22 +759,22 @@ html.default pre > code {
   padding-left: 0;
 }
 html.default .wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
   max-width: calc(800px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px;
 }
-html.default .wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 @media screen and (max-width: 800px) {
   html.default .wrapper {
-    max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  html.default .wrapper {
+    max-width: calc(1200px - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }

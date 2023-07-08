@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -29,8 +28,7 @@
     <meta name="twitter:description" content="The Boa JavaScript engine" />
     
     <meta name="twitter:url" content="/">
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <script defer src="https://unpkg.com/mermaid@10.2.3/dist/mermaid.min.js"></script>
     <noscript>
         <style>
             .site-switch-theme {display:none;}
@@ -40,7 +38,6 @@
 
 
   <body>
-
     <header class="site-header">
   <script type="text/javascript">
     // By calling this on DOM Ready rather than window.load means we should have our
@@ -105,7 +102,6 @@
 
     <div class="page-content">
       <div class="wrapper">
-        
 <div class="home">
   <p>Boa is an experimental Javascript lexer, parser and compiler written in Rust.
     Currently, it has support for some of the language. It can be embedded in Rust
@@ -117,6 +113,14 @@
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
+    
+      <li>
+        <span class="post-meta">Jul 8, 2023</span>
+
+        <h2>
+          <a class="post-link" href='/posts/2023-07-08-boa-release-17/'>Boa release v0.17</a>
+        </h2>
+      </li>
     
       <li>
         <span class="post-meta">Oct 24, 2022</span>
@@ -195,11 +199,14 @@
   <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 
 </div>
-
-      </div>
+</div>
     </div>
 
-    <script src="https://opencollective.com/boa/banner.js"></script>
+    <script
+      fetchpriority="low"
+      defer
+      src="https://opencollective.com/boa/banner.js"
+    ></script>
 
     <footer class="site-footer">
   <div class="wrapper">
@@ -282,7 +289,10 @@
   </div>
 </footer>
 
-
+    <script>
+      window.addEventListener("load", () => {
+        mermaid.initialize({ startOnLoad: true });
+      });
+    </script>
   </body>
-
 </html>
