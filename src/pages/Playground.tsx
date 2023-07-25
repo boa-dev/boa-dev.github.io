@@ -14,7 +14,7 @@ export default function BoaPlayground() {
   const [evaluate, setEvaluate] = React.useState(null);
 
   React.useEffect(() => {
-    import("@ZackMitkin/boa").then(({ evaluate }) =>
+    import("@razican/boa_wasm").then(({ evaluate }) =>
       setEvaluate(() => evaluate)
     );
   }, []);
