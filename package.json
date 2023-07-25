@@ -1,7 +1,17 @@
 {
-  "name": "boa-dev-github-io",
+  "name": "boajs-dev",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boa-dev/boa-dev.github.io.git"
+  },
+  "author": "Boa developers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boa-dev/boa-dev.github.io/issues"
+  },
+  "homepage": "https://github.com/boa-dev/boa-dev.github.io#readme",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -46,6 +56,6 @@
     ]
   },
   "engines": {
-    "node": ">=16.14"
+    "node": ">=18.17"
   }
 }
