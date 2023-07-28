@@ -2,46 +2,22 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Welcome to Boa!
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Boa is an experimental Javascript lexer, parser and compiler written in Rust. Currently, it has support for some of the language. It can be embedded in Rust projects fairly easily and also used from the command line.
 
-## Getting Started
+Boa also exists to serve as a Rust implementation of the EcmaScript specification, there will be areas where we can utilise Rust and its fantastic ecosystem to make a fast, concurrent and safe engine.
 
-Get started by **creating a new site**.
+Boa publishes the following crates:
+* boa_ast - Boa’s ECMAScript Abstract Syntax Tree.
+* boa_engine - Boa’s implementation of ECMAScript builtin objects and execution.
+* boa_gc - Boa’s garbage collector.
+* boa_interner - Boa’s string interner.
+* boa_parser - Boa’s lexer and parser.
+* boa_profiler - Boa’s code profiler.
+* boa_icu_provider - Boa’s ICU4X data provider.
+* boa_runtime - Boa’s WebAPI features.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Feel free to make yourself comfortable: we definitely have.
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+New to Rust? Feel free to check out some resources [here](./resources)

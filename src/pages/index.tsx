@@ -17,9 +17,23 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro"
+            to="/playground"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            Visit Boa Playground
+          </Link>
+        </div>
+        <div>
+          <Link
+            className={"button button--secondary " + styles.buttonMargin}
+            href="https://docs.rs/Boa/latest/boa"
+            >
+            Release Documentation
+          </Link>
+          <Link
+            className={"button button--secondary " + styles.buttonMargin}
+            href="https://boajs.dev/boa/doc/boa_engine/index.html"
+            >
+            Dev Documentation
           </Link>
         </div>
       </div>

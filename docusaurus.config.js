@@ -7,14 +7,14 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Boa JS",
-  tagline: "Javascript runtime written in Rust",
-  favicon: "img/favicon.ico",
+  tagline: "An ECMAScript engine written in Rust",
+  favicon: "img/classic_logo.png",
 
   // Set the production url of your site here
   url: "https://boajs.dev",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/boa-dev.github.io/",
+  baseUrl: "/",
   trailingSlash: false,
 
   // GitHub pages deployment config.
@@ -72,19 +72,19 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/classic_logo.png",
       navbar: {
         title: "Boa",
         logo: {
           alt: "My Site Logo",
-          src: "img/logo.png",
+          src: "img/classic_logo.png",
         },
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "infoSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "Learn More",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
@@ -110,13 +110,12 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
         links: [
           {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Learn More",
                 to: "/docs/intro",
               },
             ],

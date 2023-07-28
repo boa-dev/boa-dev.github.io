@@ -1,0 +1,19 @@
+
+.rowLayout {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 95vh;
+}
+
+.columnEditor {
+    height: 70vh;
+    margin-top: 2.5em;
+}
+
+.columnOutput {
+    width: 30%;
+    min-width: 200px;
+    margin-top: 2.5em;
+    padding-inline: 3em;
+}
