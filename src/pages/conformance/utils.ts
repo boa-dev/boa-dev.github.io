@@ -70,23 +70,23 @@ export function mapToTestResult(unmappedValue: any): TestResult {
 export function mapToSpecEditionEnum(unmappedValue: any): SpecEdition {
     switch (Number(unmappedValue)) {
         case 5:
-            return SpecEdition.ES5
+            return SpecEdition.es5
         case 6:
-            return SpecEdition.ES6
+            return SpecEdition.es6
         case 7:
-            return SpecEdition.ES7
+            return SpecEdition.es7
         case 8:
-            return SpecEdition.ES8
+            return SpecEdition.es8
         case 9:
-            return SpecEdition.ES9
+            return SpecEdition.es9
         case 10:
-            return SpecEdition.ES10
+            return SpecEdition.es10
         case 11:
-            return SpecEdition.ES11
+            return SpecEdition.es11
         case 12:
-            return SpecEdition.ES12
+            return SpecEdition.es12
         case 13:
-            return SpecEdition.ES13
+            return SpecEdition.es13
         default:
             return SpecEdition.ESNext
     }

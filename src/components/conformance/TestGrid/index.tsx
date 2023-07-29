@@ -1,16 +1,21 @@
 import React from "react";
-import { TestOutcome, TestResult } from "@site/src/pages/conformance/types";
+import { SpecEdition, TestOutcome, TestResult } from "@site/src/pages/conformance/types";
 
 import styles from "./styles.module.css";
 
 type TestGridProps = {
     tests: TestResult[]
+    esFlag: string | null
 }
 
 export default function TestGrid(props: TestGridProps): JSX.Element {
     return (
         <div className={styles.testGrid}>
-            {props.tests.map((test)=>{
+            {props.esFlag
+            ? props.tests.filter(test=>test.edition <= SpecEdition[props.esFlag]).map((test)=>{
+                return <TestGridItem key={test.strict ? test.name + "-strict" : test.name} test={test} />
+            })
+            : props.tests.map((test)=>{
                 return <TestGridItem key={test.strict ? test.name + "-strict" : test.name} test={test} />
             })}
         </div>

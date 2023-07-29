@@ -52,14 +52,14 @@ export enum TestOutcome {
 }
 
 export enum SpecEdition {
-    ES5 = 5,
-    ES6,
-    ES7,
-    ES8,
-    ES9,
-    ES10,
-    ES11,
-    ES12,
-    ES13,
+    es5 = 5,
+    es6,
+    es7,
+    es8,
+    es9,
+    es10,
+    es11,
+    es12,
+    es13,
     ESNext,
 }

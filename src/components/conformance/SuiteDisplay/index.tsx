@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 
 type SuiteDisplayProps = {
     currentSuite: SuiteResult,
+    esFlag: string | null,
     navigateToSuite: (string) => void,
 }
 
@@ -19,8 +20,8 @@ export default function SuiteDisplay(props: SuiteDisplayProps): JSX.Element {
 
     return (
         <div className={styles.suiteDisplay}>
-            {props.currentSuite.suites ? <SuiteSelector suites={props.currentSuite.suites} navigateToSuite={props.navigateToSuite}/>: null}
-            {props.currentSuite.tests ? <SuiteDataContainer suite={props.currentSuite} /> : null}
+            {props.currentSuite.suites ? <SuiteSelector suites={props.currentSuite.suites} esFlag={props.esFlag} navigateToSuite={props.navigateToSuite}/>: null}
+            {props.currentSuite.tests ? <SuiteDataContainer suite={props.currentSuite} esFlag={props.esFlag} /> : null}
         </div>
     )
 }

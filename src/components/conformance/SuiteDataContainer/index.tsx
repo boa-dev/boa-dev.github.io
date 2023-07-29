@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 
 type SuiteDataProps = {
     suite: SuiteResult
+    esFlag: string | null
 }
 
 export default function SuiteDataContainer(props: SuiteDataProps): JSX.Element {
@@ -22,6 +23,7 @@ export default function SuiteDataContainer(props: SuiteDataProps): JSX.Element {
 
 type DataCardProps = {
     suite: SuiteResult
+    esFlag: string | null
 }
 
 function DataCard(props: DataCardProps): JSX.Element {
@@ -33,7 +35,7 @@ function DataCard(props: DataCardProps): JSX.Element {
                     <h3>{props.suite.name}</h3>
                 </div>
                 <div className="card__body" style={{overflowY: "auto", maxHeight: "35em"}}>
-                    <TestGrid tests={props.suite.tests} />
+                    <TestGrid tests={props.suite.tests} esFlag={props.esFlag} />
                 </div>
             </div>
         </div>
