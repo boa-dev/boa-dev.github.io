@@ -23,7 +23,7 @@ function Version(props): JSX.Element {
     return(
         <div className={styles.versionCard}>
             <div className={styles.versionTitle}><b>{"Release: " + props.version.tagName}</b></div>
-            <button className={"button button--secondary button--sm"} value={props.version.tagName} onClick={()=>props.setNewVersion(props.version)}>View Results</button>
+            <button className={"button button--primary button--sm"} value={props.version.tagName} onClick={()=>props.setNewVersion(props.version)}>View Results</button>
         </div>
     )
 }

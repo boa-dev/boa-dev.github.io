@@ -13,6 +13,13 @@ export default function Conformance() {
   const [releaseRecords, setReleaseRecords] = React.useState<VersionItem[] | null>(null);
 
   React.useEffect(()=> {
+    const validateReleaseVersion = (releaseTag: string) => {
+      const version = releaseTag.split(".");
+      // Check if correct version tag is present and major release is 1+
+      const versionTagValidated = version[0].includes("v") && parseInt(version[0].replace("v", "")) > 0
+      return versionTagValidated || (10 <= parseInt(version[1]))
+    }
+
     // TODO: Create header file that tracks version tag and tag results?
     const fetchMainHeader = async() => {
       const response = await fetch("https://boajs.dev/boa/test262/refs/heads/main/latest.json");
@@ -22,7 +29,9 @@ export default function Conformance() {
     const fetchReleases = async() => {
       const response = await fetch("https://api.github.com/repos/boa-dev/boa/releases");
       const releases = await response.json()
-      return releases.map((release) => {
+      return releases
+        .filter(potentialRelease=> validateReleaseVersion(potentialRelease.tag_name))
+        .map((release) => {
           return {
               tagName: release.tag_name,
               fetchUrl: `https://boajs.dev/boa/test262/refs/tags/${release.tag_name}/latest.json`

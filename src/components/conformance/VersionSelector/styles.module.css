@@ -11,7 +11,8 @@
     flex-direction: row;
     padding: 0.5em;
     margin: 0.5em;
-    outline: black solid 2px;
+    outline: var(--ifm-color-emphasis-400) solid 2px;
+    background-color: var(--ifm-card-background-color);
     border-radius: 0.25em;
 }
 
