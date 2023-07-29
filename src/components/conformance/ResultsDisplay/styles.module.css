@@ -1,0 +1,19 @@
+
+.resultsDisplay {
+    display:flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.resultsNav {
+    height: 5vh;
+    width: 100%;
+    padding: 0.75em;
+}
+
+.navLink:hover {
+    cursor:pointer;
+}

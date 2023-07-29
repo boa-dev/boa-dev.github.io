@@ -1,0 +1,21 @@
+
+.versionSelector {
+    height: 80vh;
+    width: 20em;
+    padding: 0.5em;
+    overflow-y: auto;
+}
+
+.versionCard {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+    margin: 0.5em;
+    outline: black solid 2px;
+    border-radius: 0.25em;
+}
+
+.versionTitle {
+    margin: 0.5em 1em;
+    width: 8em;
+}

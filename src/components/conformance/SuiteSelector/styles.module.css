@@ -1,0 +1,31 @@
+.suiteSelector {
+    height: 70vh;
+    width: 30em;
+    padding: 0.5em;
+    overflow-y:auto;
+}
+
+.suiteCard {
+    display: flex;
+    flex-direction: row;
+    height: 3em;
+    padding: 0.5em;
+    margin: 0.5em;
+    outline: black solid 2px;
+    border-radius: 0.25em;
+}
+
+.suiteCard:hover {
+    cursor: pointer
+}
+
+.suiteCardTitle {
+    min-width: 7em;
+    padding-top: 0.15em;
+}
+
+.suiteCardResults {
+    min-width: 8em;
+    margin: 0 0.5em;
+    padding-top: 0.25em;
+}

@@ -1,0 +1,5 @@
+.suiteDisplay {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}

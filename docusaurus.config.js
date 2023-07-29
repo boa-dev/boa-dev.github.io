@@ -88,13 +88,13 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "/conformance",
-            label: "Conformance",
+            href: "/playground",
+            label: "Playground",
             position: "right",
           },
           {
-            href: "/playground",
-            label: "Playground",
+            href: "/conformance",
+            label: "Conformance",
             position: "right",
           },
           {
@@ -109,6 +109,7 @@ const config = {
           },
         ],
       },
+      // TODO: Configure footer for Boa socials
       footer: {
         links: [
           {

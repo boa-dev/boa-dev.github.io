@@ -1,0 +1,12 @@
+
+.dataContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.dataCardContainer {
+    min-width: 10em;
+    width: 60%;
+    max-height: 30em;
+    margin: 2.5em;
+}
