@@ -7,7 +7,7 @@ import ResultsDisplay from "@site/src/components/conformance/ResultsDisplay";
 
 import styles from "./styles.module.css";
 
-// TODO: Add header file to speed up statisic fetching
+// TODO: Add header file to speed up statisic fetching for initial render?
 export default function Conformance() {
   const [version, setVersion] = React.useState<VersionItem | null>(null);
   const [releaseRecords, setReleaseRecords] = React.useState<VersionItem[] | null>(null);
@@ -18,12 +18,6 @@ export default function Conformance() {
       // Check if correct version tag is present and major release is 1+
       const versionTagValidated = version[0].includes("v") && parseInt(version[0].replace("v", "")) > 0
       return versionTagValidated || (10 <= parseInt(version[1]))
-    }
-
-    // TODO: Create header file that tracks version tag and tag results?
-    const fetchMainHeader = async() => {
-      const response = await fetch("https://boajs.dev/boa/test262/refs/heads/main/latest.json");
-      return await response.json()
     }
 
     const fetchReleases = async() => {
@@ -46,10 +40,6 @@ export default function Conformance() {
 
   fetchReleases()
       .then(releases => setReleaseRecords([mainVersion, ...releases]))
-
-    fetchMainHeader()
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
   }, [])
 
   const setNewVersion = (newVersion: VersionItem) => {

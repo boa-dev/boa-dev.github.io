@@ -1,0 +1,11 @@
+
+.testContainer {
+    width: 90%;
+    height: 20em;
+    margin: 1em;
+}
+
+.testEditor {
+    height: 15em;
+    width: 60vw
+}

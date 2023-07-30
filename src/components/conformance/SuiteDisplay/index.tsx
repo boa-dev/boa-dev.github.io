@@ -8,20 +8,15 @@ import styles from "./styles.module.css";
 type SuiteDisplayProps = {
     currentSuite: SuiteResult,
     esFlag: string | null,
+    t262Path: string,
     navigateToSuite: (string) => void,
 }
 
 export default function SuiteDisplay(props: SuiteDisplayProps): JSX.Element {
-
-    // TODO: Remove the below -> Primarily serves for debugging/visibilty in console.
-    React.useEffect(()=> {
-        console.log(props.currentSuite)
-    }, [props.currentSuite])
-
     return (
         <div className={styles.suiteDisplay}>
             {props.currentSuite.suites ? <SuiteSelector suites={props.currentSuite.suites} esFlag={props.esFlag} navigateToSuite={props.navigateToSuite}/>: null}
-            {props.currentSuite.tests ? <SuiteDataContainer suite={props.currentSuite} esFlag={props.esFlag} /> : null}
+            {props.currentSuite.tests ? <SuiteDataContainer suite={props.currentSuite} esFlag={props.esFlag} t262Path={props.t262Path} /> : null}
         </div>
     )
 }

@@ -1,12 +1,3 @@
-.testGrid {
-    min-height: 8em;
-    min-width: 8em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0.75em;
-}
-
 .testGridItem {
     width: 1.5em;
     height: 1.5em;

@@ -20,15 +20,6 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
             .then((data)=> {
                 const resultInfo = mapToResultInfo(data);
                 setActiveResults(resultInfo);
-                setCurrentSuite(resultInfo.results);
-            })
-    }, [])
-
-    React.useEffect(()=>{
-        fetchResults(props.activeVersion)
-            .then((data)=> {
-                const resultInfo = mapToResultInfo(data);
-                setActiveResults(resultInfo);
                 setCurrentSuite(resultInfo.results)
             });
 
@@ -36,23 +27,23 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
     }, [props.activeVersion])
 
     React.useEffect(()=>{
-        if (activeResults) {
-            let newSuiteTarget: SuiteResult | null = null;
-            for(const target of testPath) {
-                if (target == props.activeVersion.tagName) {
-                    newSuiteTarget = activeResults.results
-                }
+        if (!activeResults) return;
 
-                // Suites must exist here for the path value to be valid.
-                for(const suite of newSuiteTarget.suites) {
-                    if (suite.name === target) {
-                        newSuiteTarget = suite
-                    }
-                }
+        let newSuiteTarget: SuiteResult | null = null;
+        for(const target of testPath) {
+            if (target == props.activeVersion.tagName) {
+                newSuiteTarget = activeResults.results
             }
 
-            setCurrentSuite(newSuiteTarget);
+            // Suites must exist here for the path value to be valid.
+            for(const suite of newSuiteTarget.suites) {
+                if (suite.name === target) {
+                    newSuiteTarget = suite
+                }
+            }
         }
+
+        setCurrentSuite(newSuiteTarget);
     }, [testPath])
 
     const fetchResults = async(version) => {
@@ -73,10 +64,14 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         setEsVersionFlag(nulledFlag)
     }
 
+    const t262Path = (): string => {
+        return [activeResults.test262Commit, "test", ...testPath.slice(1, testPath.length)].join("/")
+    }
+
     return (
         <div className={styles.resultsDisplay}>
             <ResultNavigation navPath={testPath} sliceNavToIndex={sliceNavToIndex} setEcmaScriptFlag={setEcmaScriptFlag} />
-            {activeResults && currentSuite ? <SuiteDisplay currentSuite={currentSuite} esFlag={esVersionFlag} navigateToSuite={navigateToSuite} /> : null}
+            {activeResults && currentSuite ? <SuiteDisplay currentSuite={currentSuite} esFlag={esVersionFlag} t262Path={t262Path()} navigateToSuite={navigateToSuite} /> : null}
         </div>
     )
 }

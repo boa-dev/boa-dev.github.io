@@ -4,26 +4,28 @@ import { SpecEdition, TestOutcome, TestResult } from "@site/src/pages/conformanc
 import styles from "./styles.module.css";
 
 type TestGridProps = {
-    tests: TestResult[]
-    esFlag: string | null
+    tests: TestResult[],
+    esFlag: string | null,
+    selectTest: (string)=>void,
 }
 
 export default function TestGrid(props: TestGridProps): JSX.Element {
     return (
-        <div className={styles.testGrid}>
+        <>
             {props.esFlag
             ? props.tests.filter(test=>test.edition <= SpecEdition[props.esFlag]).map((test)=>{
-                return <TestGridItem key={test.strict ? test.name + "-strict" : test.name} test={test} />
+                return <TestGridItem key={test.strict ? test.name + "-strict" : test.name} test={test} selectTest={props.selectTest} />
             })
             : props.tests.map((test)=>{
-                return <TestGridItem key={test.strict ? test.name + "-strict" : test.name} test={test} />
+                return <TestGridItem key={test.strict ? test.name + "-strict" : test.name} test={test} selectTest={props.selectTest} />
             })}
-        </div>
+        </>
     )
 }
 
 type TestItemProps = {
-    test: TestResult
+    test: TestResult,
+    selectTest: (string)=>void,
 }
 
 function TestGridItem(props: TestItemProps): JSX.Element {
@@ -43,6 +45,7 @@ function TestGridItem(props: TestItemProps): JSX.Element {
         <>
             <div
                 className={testResult}
+                onClick={()=>props.selectTest(props.test.name + ".js")}
                 title={props.test.strict
                     ? "(strict) " + props.test.name + ".js"
                     : props.test.name + ".js"}
