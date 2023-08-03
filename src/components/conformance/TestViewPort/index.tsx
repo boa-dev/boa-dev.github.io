@@ -15,26 +15,6 @@ export default function TestViewPort(props: TestViewPortProps): JSX.Element {
     const tc39raw = "https://raw.githubusercontent.com/tc39/test262/";
     const tc39Home = "https://github.com/tc39/test262/blob/main/";
 
-    // Weird ResizeObserverError handling hack.
-    // Relevant Links:
-    //  - https://stackoverflow.com/questions/75774800/how-to-stop-resizeobserver-loop-limit-exceeded-error-from-appearing-in-react-a/76107850#76107850
-    //  - https://stackoverflow.com/questions/64238740/how-to-ignore-the-resizeobserver-loop-limit-exceeded-in-testcafe
-    //
-    // The error itself seems to be a benign error and is being triggered by monaco editor resizing in this layout.
-    const resizeObserverHack = (e) => {
-        if (e.message === 'ResizeObserver loop completed with undelivered notifications.') {
-            e.stopImmediatePropagation();
-        }
-    }
-
-    React.useEffect(() => {
-        window.addEventListener('error', resizeObserverHack);
-
-        return () => {
-            window.removeEventListener('error', resizeObserverHack)
-        }
-    }, []);
-
     React.useEffect(()=> {
         const fetchRaw = async(requestPath) => {
             const response = await fetch(requestPath);
@@ -61,16 +41,24 @@ export default function TestViewPort(props: TestViewPortProps): JSX.Element {
             <div className="card">
                 <div className="card__header">
                     <h3>{"Test: " + props.testName}</h3>
-                    <a href={generateLink()} >Visit Repo</a>
+                    <a href={generateLink()} target="_blank">Visit Repo</a>
                 </div>
                 <div className="card__body" style={{overflow: "auto"}}>
-                    <Editor
-                        className={styles.testEditor}
-                        theme="vs-dark"
-                        language="javascript"
-                        options={{minimap: {enabled: false}}}
-                        value = {testContent}
-                    />
+                    {/*
+                        The div here is needed to set editor size.
+                        Monaco editor auto resizes and so does card body,
+                        so they cause a resize observer error without a
+                        div container.
+                    */}
+                    <div className={styles.editorContainer}>
+                        <Editor
+                            className={styles.testEditor}
+                            theme="vs-dark"
+                            language="javascript"
+                            options={{minimap: {enabled: false}}}
+                            value = {testContent}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

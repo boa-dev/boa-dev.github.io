@@ -1,11 +1,15 @@
 
 .testContainer {
     width: 90%;
-    height: 20em;
+    height: 35%;
     margin: 1em;
 }
 
+.editorContainer {
+    height: 25vh;
+    width: 55vw
+}
+
 .testEditor {
-    height: 15em;
-    width: 60vw
+    height: 100%;
 }
