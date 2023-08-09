@@ -9,13 +9,11 @@ interface SelectorProps {
 
 export default function VersionSelector(props: SelectorProps): JSX.Element {
     return (
-        <section>
-            <div className={styles.versionSelector}>
-                {props.availableVersions.map((version)=>{
-                    return <Version key={version.tagName} setNewVersion={props.setNewVersion} version={version} />
-                })}
-            </div>
-        </section>
+        <div className={styles.versionSelector}>
+            {props.availableVersions.map((version)=>{
+                return <Version key={version.tagName} setNewVersion={props.setNewVersion} version={version} />
+            })}
+        </div>
     )
 }
 

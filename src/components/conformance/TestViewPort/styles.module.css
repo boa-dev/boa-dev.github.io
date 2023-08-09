@@ -13,3 +13,14 @@
 .testEditor {
     height: 100%;
 }
+
+@media screen and (max-width: 996px) {
+    .testContainer {
+        width: 92vw;
+    }
+
+    .editorContainer {
+        height: 50vh;
+        width: 80vw;
+    }
+}

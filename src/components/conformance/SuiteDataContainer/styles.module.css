@@ -2,12 +2,12 @@
 .dataContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 100vh;
 }
 
 .dataCardContainer {
-    min-width: 10em;
+    min-width: 5em;
     width: 90%;
     margin: 1em;
 }
@@ -15,9 +15,20 @@
 .gridStyle {
     min-height: 8em;
     max-height: 12em;
-    min-width: 8em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     overflow-y: auto;
+}
+
+@media screen and (max-width: 996px) {
+    .dataContainer {
+        padding: 1rem;
+        min-height: 50vh;
+    }
+
+    .dataCardContainer {
+        min-width: 9em;
+        width: 92vw;
+    }
 }

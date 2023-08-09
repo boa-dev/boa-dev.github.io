@@ -1,7 +1,16 @@
 
 .mainLayout {
     height: 85vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
+    padding: 12px;
     flex-direction: row;
+}
+
+@media screen and (max-width: 996px) {
+    .mainLayout {
+        height:auto;
+        min-height: 100vh;
+        flex-direction: column;
+    }
 }

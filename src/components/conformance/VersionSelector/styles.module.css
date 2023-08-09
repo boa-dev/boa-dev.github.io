@@ -1,16 +1,16 @@
-
 .versionSelector {
     height: 85vh;
-    width: 20em;
-    padding: 0.5em;
+    width: 22rem;
+    min-width: 22rem;
     overflow-y: auto;
 }
 
 .versionCard {
     display: flex;
     flex-direction: row;
+    width: 18rem;
     padding: 0.5em;
-    margin: 0.5em;
+    margin: 0.75rem 0;
     outline: var(--ifm-color-emphasis-400) solid 2px;
     background-color: var(--ifm-card-background-color);
     border-radius: 0.25em;
@@ -19,4 +19,15 @@
 .versionTitle {
     margin: 0.5em 1em;
     width: 8em;
+}
+
+@media screen and (max-width: 996px) {
+    .versionSelector {
+        height: 25vh;
+        width: 100vw;
+    }
+
+    .versionCard {
+        margin: 0.75rem auto;
+    }
 }

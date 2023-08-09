@@ -11,11 +11,11 @@ interface BannerProps {
 
 export default function ConformanceBanner(props: BannerProps): JSX.Element {
     return (
-        <section className={styles.bannerSection}>
+        <div className={styles.bannerSection}>
             {props.focusItems.map((item)=>{
                 return <BannerCard key={item.tagName} setNewVersion={props.setNewVersion} item={item} />
             })}
-        </section>
+        </div>
     )
 }
 

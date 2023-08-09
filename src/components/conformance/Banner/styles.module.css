@@ -4,11 +4,27 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 5em 15em;
+    padding: 5rem 15rem;
 }
 
 .cardContainer {
-    width: 20em;
-    height: 20em;
+    width: 20rem;
+    height: 20rem;
     margin: 5em 2.5em;
+}
+
+@media screen and (max-height: 996px) {
+    .bannerSection {
+        min-height: 90vh;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        padding: 0;
+    }
+
+    .cardContainer {
+        width: 17rem;
+        width: 17rem;
+        margin: 0.125rem auto;
+    }
 }

@@ -1,6 +1,7 @@
 .suiteSelector {
     height: 75vh;
-    width: 30em;
+    width: 30rem;
+    min-width: 25rem;
     padding: 0.5em;
     overflow-y:auto;
 }
@@ -9,6 +10,7 @@
     display: flex;
     flex-direction: row;
     height: 3em;
+    min-width: 20rem;
     padding: 0.5em;
     margin: 0.5em;
     outline: var(--ifm-color-emphasis-400) solid 2px;
@@ -23,10 +25,37 @@
 .suiteCardTitle {
     min-width: 7em;
     padding-top: 0.15em;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .suiteCardResults {
     min-width: 8em;
     margin: 0 0.5em;
     padding-top: 0.25em;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+    .suiteSelector{
+        height: 35vh;
+        padding: 0.5rem auto;
+        width: 100vw;
+    }
+
+    .suiteCard {
+        width: 20rem;
+        margin: 0.5rem auto;
+    }
+
+    .suiteCardTitle {
+        word-wrap: break-word;
+        overflow:hidden;
+    }
+
+    .suiteCardResults {
+        word-wrap: break-word;
+        overflow: hidden;
+    }
 }

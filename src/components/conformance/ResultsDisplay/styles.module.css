@@ -24,3 +24,17 @@
     width: 6em;
     padding: 0.25em;
 }
+
+@media screen and (max-height: 996px) {
+    .resultsDisplay {
+        height: auto;
+        width:100vw;
+    }
+
+    .resultsNav {
+        min-height: 3.5rem;
+        height:auto;
+        width:100vw;
+        padding: 1rem auto;
+    }
+}
