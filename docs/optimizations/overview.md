@@ -8,4 +8,4 @@ Currently, we are primarily focused on conformance with the ECMAScript Test262 t
 
 There are some optimizations that we are beginning to add, and we hope to add more soon!
 
-Have an idea for an optimization that isn't covered? Feel free to contribute!
+Have an idea for an optimization that isn't implemented yet? Feel free to contribute!

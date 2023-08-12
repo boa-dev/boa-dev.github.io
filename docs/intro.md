@@ -8,7 +8,7 @@ Boa is an experimental Javascript lexer, parser and compiler written in Rust. Cu
 
 Boa also exists to serve as a Rust implementation of the EcmaScript specification, there will be areas where we can utilise Rust and its fantastic ecosystem to make a fast, concurrent and safe engine.
 
-Boa publishes the following crates:
+Boa currently publishes the following crates:
 * boa_ast - Boa’s ECMAScript Abstract Syntax Tree.
 * boa_engine - Boa’s implementation of ECMAScript builtin objects and execution.
 * boa_gc - Boa’s garbage collector.

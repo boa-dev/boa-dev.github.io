@@ -1,7 +1,6 @@
 .suiteSelector {
     height: 75vh;
     width: 30rem;
-    min-width: 25rem;
     padding: 0.5em;
     overflow-y:auto;
 }
