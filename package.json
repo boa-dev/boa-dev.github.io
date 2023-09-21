@@ -25,7 +25,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "eleventy-xml-plugin": "^0.1.0",
-    "sass": "^1.66.1"
+    "sass": "^1.68.0"
   },
   "dependencies": {
     "@kevingimbel/eleventy-plugin-mermaid": "^2.1.0"
