@@ -2,6 +2,7 @@
 sidebar_position: 4
 ---
 # VM Execution Flowgraph
+
 We can also get the VM instructions flowgraph, which is a visual representation of the instruction flow.
 
 The `Start` (in green) and `End` (in red) node in the graph represents the start and end point of execution.

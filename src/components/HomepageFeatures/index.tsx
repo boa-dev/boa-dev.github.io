@@ -10,41 +10,38 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Contributions Welcome',
+    title: 'Written in Rust',
     Svg: require('@site/static/img/new_logo_black.svg').default,
     description: (
       <>
-        We encourage anyone who's interested to contribute!
+        Boa hopes to bring Rust safety garuantees to the world of JS engines.
       </>
     ),
   },
   {
-    title: 'Feature 2',
-    Svg: require('@site/static/img/new_logo_blue.svg').default,
-    description: (
-      <>
-        Some second feature that may be nice.
-      </>
-    ),
-  },
-  {
-    title: 'Written in Rust',
+    title: 'Aims for ECMAScript Conformance',
     Svg: require('@site/static/img/new_logo_yellow.svg').default,
     description: (
       <>
-        We like rust, and so should you *crab noises*
+        Boa currently passes more than 75% of ECMAScripts test262 test suite.
+      </>
+    ),
+  },
+  {
+    title: "Open Source",
+    Svg: require('@site/static/img/new_logo_blue.svg').default,
+    description: (
+      <>
+        Boa is an open source project and hosted on GitHub. Contributions are always welcome!
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
+      <div className="text--center padding-horiz--md padding-vert--xl">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>

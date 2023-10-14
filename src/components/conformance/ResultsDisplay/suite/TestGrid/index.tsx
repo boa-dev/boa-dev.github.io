@@ -1,5 +1,5 @@
 import React from "react";
-import { SpecEdition, TestOutcome, TestResult } from "@site/src/pages/conformance/types";
+import { SpecEdition, TestOutcome, TestResult } from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
 

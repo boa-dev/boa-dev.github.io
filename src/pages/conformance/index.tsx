@@ -1,6 +1,6 @@
 import Layout from "@theme/Layout";
 import React from "react";
-import { VersionItem } from "./types";
+import { VersionItem } from "@site/src/components/conformance/types";
 import VersionSelector from "@site/src/components/conformance/VersionSelector";
 import ConformanceBanner from "@site/src/components/conformance/Banner";
 import ResultsDisplay from "@site/src/components/conformance/ResultsDisplay";

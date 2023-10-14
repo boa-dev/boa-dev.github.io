@@ -1,5 +1,5 @@
 import React from "react";
-import { SuiteResult } from "@site/src/pages/conformance/types";
+import { SuiteResult } from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
 

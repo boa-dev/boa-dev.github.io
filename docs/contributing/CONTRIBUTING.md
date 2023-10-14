@@ -55,7 +55,7 @@ Development
 
 #### Tasks
 
-There are some pre-defined tasks in [tasks.json](.vscode/tasks.json)
+Boa has some pre-defined tasks in ".vscode/tasks.json"
 
 - Build - shift+cmd/ctrl+b should build and run cargo. You should be able to make changes and run this task.
 - Test - (there is no shortcut, you'll need to make one) - Runs `Cargo Test`.

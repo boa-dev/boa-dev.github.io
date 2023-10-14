@@ -1,5 +1,5 @@
 import React from "react";
-import { VersionItem } from "@site/src/pages/conformance/types";
+import { VersionItem } from "@site/src/components/conformance/types";
 import styles from "./styles.module.css";
 
 interface SelectorProps {

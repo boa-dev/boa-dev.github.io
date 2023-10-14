@@ -1,6 +1,8 @@
 .versionSelector {
     height: 85vh;
     width: 22rem;
+    display: flex;
+    flex-direction: column;
     min-width: 22rem;
     overflow-y: auto;
 }
@@ -8,9 +10,10 @@
 .versionCard {
     display: flex;
     flex-direction: row;
+    height: 5rem;
     width: 18rem;
     padding: 0.5em;
-    margin: 0.75rem 0;
+    margin: 0.5rem 0;
     outline: var(--ifm-color-emphasis-400) solid 2px;
     background-color: var(--ifm-card-background-color);
     border-radius: 0.25em;
@@ -23,11 +26,13 @@
 
 @media screen and (max-width: 996px) {
     .versionSelector {
-        height: 25vh;
+        height: 6rem;
         width: 100vw;
+        flex-direction: row;
     }
 
     .versionCard {
-        margin: 0.75rem auto;
+        height: 4rem;
+        margin: 0.25rem 0.5rem;
     }
 }

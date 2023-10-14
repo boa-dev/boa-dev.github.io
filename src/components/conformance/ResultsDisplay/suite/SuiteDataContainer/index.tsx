@@ -1,7 +1,7 @@
 import React from "react";
 import TestGrid from "../TestGrid";
 import TestViewPort from "../TestViewPort";
-import { SuiteResult } from "@site/src/pages/conformance/types";
+import { SuiteResult } from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
 

@@ -87,6 +87,7 @@ const config = {
             label: "Learn More",
           },
           { to: "/blog", label: "Blog", position: "left" },
+          { to: "/about", label: "About", position: "left"},
           {
             href: "/playground",
             label: "Playground",
@@ -98,7 +99,7 @@ const config = {
             position: "right",
           },
           {
-            href: "https://docs.rs/Boa/latest/boa",
+            href: "https://docs.rs/boa_engine/latest",
             label: "API Docs",
             position: "right",
           },
@@ -116,6 +117,10 @@ const config = {
             title: "Docs",
             items: [
               {
+                label: "About",
+                to: "/about",
+              },
+              {
                 label: "Learn More",
                 to: "/docs/intro",
               },
@@ -125,16 +130,12 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
                 label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                href: "https://discord.gg/tUFFk9Ys",
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "Mastadon",
+                href: "https://fosstodon.org/@boa_engine",
               },
             ],
           },
@@ -150,8 +151,12 @@ const config = {
                 href: "https://github.com/boa-dev/boa",
               },
               {
-                label: "API",
-                href: "https://docs.rs/Boa/latest/boa",
+                label: "Release API",
+                href: "https://docs.rs/boa_engine/latest",
+              },
+              {
+                label: "Development API",
+                href: "https://boajs.dev/boa/doc/boa_engine/index.html",
               },
             ],
           },

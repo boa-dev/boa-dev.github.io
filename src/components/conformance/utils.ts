@@ -1,4 +1,4 @@
-import { ResultInfo, SpecEdition, SuiteResult, TestOutcome, TestResult, TestStats, VersionedStats } from "@site/src/pages/conformance/types"
+import { ResultInfo, SpecEdition, SuiteResult, TestOutcome, TestResult, TestStats, VersionedStats } from "@site/src/components/conformance/types"
 
 // Function for converting an http response of boa_tester's `ResultInfo` to ResultInfo
 export function mapToResultInfo(unmappedValue: any): ResultInfo {

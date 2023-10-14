@@ -1,7 +1,7 @@
 import React from "react";
 import SuiteSelector from "../SuiteSelector"
 import SuiteDataContainer from "../SuiteDataContainer";
-import { SuiteResult } from "@site/src/pages/conformance/types";
+import { SuiteResult } from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
 

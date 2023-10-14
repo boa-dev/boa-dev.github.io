@@ -1,7 +1,7 @@
 import React from 'react';
 import SuiteDisplay from './suite/SuiteDisplay';
-import { ResultInfo, VersionItem, SuiteResult, SpecEdition } from '@site/src/pages/conformance/types';
-import { mapToResultInfo } from '@site/src/pages/conformance/utils';
+import { ResultInfo, VersionItem, SuiteResult, SpecEdition } from '@site/src/components/conformance/types';
+import { mapToResultInfo } from '@site/src/components/conformance/utils';
 
 import styles from "./styles.module.css";
 
@@ -15,7 +15,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
     const [currentSuite, setCurrentSuite] = React.useState<SuiteResult | null>(null);
     const [esVersionFlag, setEsVersionFlag] = React.useState<string | null>(null);
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         fetchResults(props.activeVersion)
             .then((data)=> {
                 const resultInfo = mapToResultInfo(data);
@@ -118,7 +118,7 @@ type DropDownProps = {
     setEcmaScriptFlag: (string) => void
 }
 
-function EcmaScriptVersionDropdown(props): JSX.Element {
+function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
     const [dropdownValue, setDropdownValue] = React.useState("");
 
     const handleVersionSelection = (e) => {

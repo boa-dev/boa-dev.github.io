@@ -1,6 +1,6 @@
 import React from "react";
-import { VersionItem, TestStats } from "@site/src/pages/conformance/types";
-import { mapToTestStats } from "@site/src/pages/conformance/utils";
+import { VersionItem, TestStats } from "@site/src/components/conformance/types";
+import { mapToTestStats } from "@site/src/components/conformance/utils";
 
 import styles from "./styles.module.css";
 
