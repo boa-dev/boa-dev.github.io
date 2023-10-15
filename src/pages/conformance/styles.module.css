@@ -3,7 +3,7 @@
     height: 85vh;
     width: 100vw;
     display: flex;
-    padding: 12px;
+    padding: 0.75rem;
     flex-direction: row;
 }
 

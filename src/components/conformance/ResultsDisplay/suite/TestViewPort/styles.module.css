@@ -1,26 +1,29 @@
 
 .testContainer {
-    width: 90%;
+    width: calc(100vw - 50rem);
     height: 35%;
-    margin: 1em;
+    padding: 0.75rem;
 }
 
 .editorContainer {
     height: 25vh;
-    width: 55vw
+    width: calc(100vw - 55rem)
 }
 
 .testEditor {
     height: 100%;
+    width: calc(100vw - 55rem)
 }
 
 @media screen and (max-width: 996px) {
     .testContainer {
-        width: 92vw;
+        width: 80vw;
+        height: 90vh;
+        margin: 0 auto;
     }
 
     .editorContainer {
-        height: 50vh;
-        width: 80vw;
+        height: 45vh;
+        width: 75vw;
     }
 }

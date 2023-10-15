@@ -40,7 +40,7 @@ export default function TestViewPort(props: TestViewPortProps): JSX.Element {
         <div className={styles.testContainer}>
             <div className="card">
                 <div className="card__header">
-                    <h3>{"Test: " + props.testName}</h3>
+                    <h3 style={{wordWrap: "break-word", whiteSpace: "nowrap", overflow: "hidden"}}>{"Test: " + props.testName}</h3>
                     <a href={generateLink()} target="_blank">Visit Repo</a>
                 </div>
                 <div className="card__body" style={{overflow: "auto"}}>

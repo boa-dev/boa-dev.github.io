@@ -40,7 +40,7 @@
     .suiteSelector{
         height: 35vh;
         padding: 0.5rem auto;
-        width: 100vw;
+        width: 100%;
     }
 
     .suiteCard {

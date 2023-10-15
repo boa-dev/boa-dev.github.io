@@ -28,7 +28,7 @@
 @media screen and (max-height: 996px) {
     .resultsDisplay {
         height: auto;
-        width:100vw;
+        width:calc(100vw-12px);
     }
 
     .resultsNav {
