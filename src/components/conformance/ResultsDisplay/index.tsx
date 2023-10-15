@@ -27,11 +27,12 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
     }, [props.activeVersion])
 
     React.useEffect(()=>{
+        // Return early if activeResults is null.
         if (!activeResults) return;
 
         let newSuiteTarget: SuiteResult | null = null;
         for(const target of testPath) {
-            if (target == props.activeVersion.tagName) {
+            if (target === props.activeVersion.tagName) {
                 newSuiteTarget = activeResults.results
             }
 
@@ -46,25 +47,33 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         setCurrentSuite(newSuiteTarget);
     }, [testPath])
 
-    const fetchResults = async(version) => {
+    // Fetches the version results
+    const fetchResults = async(version: VersionItem) => {
         const response = await fetch(version.fetchUrl);
         return await response.json();
     }
 
+    // Navigates to a suite by adding the SuiteName to the test path array.
     const navigateToSuite = (newSuiteName: string) => {
         setTestPath(testPath => [...testPath, newSuiteName])
     }
 
+    // Removes a value or values from the test path array.
+    //
+    // Used by breadcrumbs for navigation.
     const sliceNavToIndex = (nonInclusiveIndex: number) => {
         setTestPath(testPath => [...testPath.slice(0, nonInclusiveIndex)])
     }
 
+    // Sets the ECMAScript version flag value.
     const setEcmaScriptFlag = (flag: string) => {
         let nulledFlag = flag ? flag : null;
         setEsVersionFlag(nulledFlag)
     }
 
+    // Create the t262 URL from testPath with the results commit
     const t262Path = (): string => {
+        // NOTE: testPath[0] === activeBoaReleaseTag
         return [activeResults.test262Commit, "test", ...testPath.slice(1, testPath.length)].join("/")
     }
 
@@ -86,12 +95,17 @@ function ResultNavigation(props: ResultsNavProps): JSX.Element {
 
     return (
         <div className={styles.resultsNav}>
-            {/* TODO: Add ECMAScript version dropdown here. */}
             <EcmaScriptVersionDropdown setEcmaScriptFlag={props.setEcmaScriptFlag} />
             <nav aria-label="breadcrumbs" style={{padding: "0.25em"}} >
                 <ul className="breadcrumbs">
                     {props.navPath.map((pathItem, idx, arr)=>{
-                        return <NavItem key={pathItem} itemName={pathItem} index={idx} sliceNavToIndex={props.sliceNavToIndex} breadcrumbValue={idx + 1 === arr.length ? "breadcrumbs__item breadcrumbs__item--active" : "breadcrumbs__item"} />
+                        return <NavItem
+                            key={pathItem}
+                            itemName={pathItem}
+                            index={idx}
+                            sliceNavToIndex={props.sliceNavToIndex}
+                            breadcrumbValue={idx + 1 === arr.length ? "breadcrumbs__item breadcrumbs__item--active" : "breadcrumbs__item"}
+                        />
                     })}
                 </ul>
             </nav>

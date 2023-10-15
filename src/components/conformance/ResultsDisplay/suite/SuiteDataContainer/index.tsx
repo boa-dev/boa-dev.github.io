@@ -14,6 +14,12 @@ type SuiteDataProps = {
 export default function SuiteDataContainer(props: SuiteDataProps): JSX.Element {
     const [selectedTest, setSelectedTest] = React.useState<string | null>(null);
 
+    // Unselect a test if the underlying test262 path has been changed.
+    React.useEffect(()=>{
+        setSelectedTest(null);
+    }, [props.t262Path])
+
+    // Set the user's selected test to be displayed in the ViewPort.
     const selectTest = (testName: string) => {
         setSelectedTest(testName)
     }
