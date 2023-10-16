@@ -1,0 +1,50 @@
+
+.testViewerCard {
+    width: calc(100vw - 50rem);
+    height: calc(100vh - 10rem);
+    padding: 0.75rem;
+}
+
+.editorContainer {
+    height: 24rem;
+    width: calc(100vw - 54rem)
+}
+
+.testTitle {
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+    .testViewerCard {
+        margin: 0.25rem auto;
+        padding:0;
+        width: 90vw;
+        height: 75vh;
+    }
+
+    .editorContainer {
+        width: calc(90vw - 1.5rem);
+    }
+
+    .testTitle {
+        word-wrap: normal;
+        white-space: normal;
+        overflow: visible;
+    }
+}
+
+.headerOptions {
+    display: flex;
+    flex-direction: row;
+}
+
+.headerOptions > * {
+    margin-right: 0.5rem;
+}
+
+.testEditor {
+    height: 100%;
+    width: calc(100vw - 55rem)
+}

@@ -29,6 +29,7 @@
     .resultsDisplay {
         height: auto;
         width:calc(100vw-12px);
+        overflow-y:auto;
     }
 
     .resultsNav {

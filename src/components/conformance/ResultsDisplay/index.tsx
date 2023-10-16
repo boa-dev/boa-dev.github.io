@@ -1,5 +1,5 @@
 import React from 'react';
-import SuiteDisplay from './suite/SuiteDisplay';
+import SuiteDisplay from './components/SuiteDisplay';
 import { ResultInfo, VersionItem, SuiteResult, SpecEdition } from '@site/src/components/conformance/types';
 import { mapToResultInfo } from '@site/src/components/conformance/utils';
 

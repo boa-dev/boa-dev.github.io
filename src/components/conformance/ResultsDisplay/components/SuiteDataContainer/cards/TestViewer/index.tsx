@@ -3,12 +3,13 @@ import React from "react";
 import styles from "./styles.module.css";
 import { Editor } from "@monaco-editor/react";
 
-type TestViewPortProps = {
+type TestViewerProps = {
     testName: string,
     t262Path: string,
+    backToGrid: () => void,
 }
 
-export default function TestViewPort(props: TestViewPortProps): JSX.Element {
+export default function TestViewer(props: TestViewerProps): JSX.Element {
     const [testContent, setTestContent] = React.useState<string | null>(null);
 
     // path constants
@@ -37,11 +38,14 @@ export default function TestViewPort(props: TestViewPortProps): JSX.Element {
     }
 
     return (
-        <div className={styles.testContainer}>
+        <div className={styles.testViewerCard}>
             <div className="card">
                 <div className="card__header">
-                    <h3 style={{wordWrap: "break-word", whiteSpace: "nowrap", overflow: "hidden"}}>{"Test: " + props.testName}</h3>
-                    <a href={generateLink()} target="_blank">Visit Repo</a>
+                    <h3 className={styles.testTitle}>{"Test: " + props.testName}</h3>
+                    <div className={styles.headerOptions}>
+                        <button className={"button button--primary button--sm"} onClick={props.backToGrid}>Back</button>
+                        <a href={generateLink()} target="_blank">Visit Repo</a>
+                    </div>
                 </div>
                 <div className="card__body" style={{overflow: "auto"}}>
                     {/*
