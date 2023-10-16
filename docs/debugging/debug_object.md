@@ -30,21 +30,19 @@ The debug object currently has the below modules implemented:
 
 If there is any functionality currently missing that you think may be helpful, please feel free to submit an issue or Pull Request!
 
-TODO: Determine the fate of the below.
-
-We can now do `$boa.gc.collect()`, which force triggers a GC collect.
-
-
-
 ## `$boa.gc`
 
-This module contains functions that are related the garbage collector. It currently has the `.collect()` method.
+This module contains functions that are related the garbage collector.
+
+### Function `$boa.gc.collect()`
+
+#### Args (0): none
+
+This function triggers the GC to scan the heap and collect garbage.
 
 ```JavaScript
 $boa.gc.collect()
-```
 
-This force triggers the GC to scan the heap and collect garbage.
 
 ## `$boa.function`
 
