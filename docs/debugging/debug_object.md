@@ -42,7 +42,7 @@ This function triggers the GC to scan the heap and collect garbage.
 
 ```JavaScript
 $boa.gc.collect()
-
+```
 
 ## `$boa.function`
 
