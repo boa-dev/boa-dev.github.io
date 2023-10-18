@@ -21,4 +21,4 @@ Boa currently publishes the following crates:
 
 The goal of the following documentation is to provide a reference guide for the current design of Boa and it's most current features.
 
-New to Rust? Feel free to check out some resources [here](./resources)
+New to Rust or JavaScript interpreters? Feel free to check out some resources [here](./resources)

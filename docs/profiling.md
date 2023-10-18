@@ -6,15 +6,17 @@ sidebar_position: 7
 
 ![Example](../static/doc-img/profiler.png)
 
-It's possible to get a full profile of Boa in action.  
+It's possible to get a full profile of Boa in action.
 Sometimes this is needed to figure out where it is spending most of it's time.
 
 We use a crate called [measureme](https://github.com/rust-lang/measureme), which helps us keep track of timing functions during runtime.
 
-When the "profiler" flag is enabled, you compile with the profiler and it is called throughout the interpreter.  
+When the "profiler" flag is enabled, you compile with the profiler and it is called throughout the interpreter.
 when the feature flag is not enabled, you have an empty dummy implementation that is just no ops. rustc should completely optimize that away. So there should be no performance downgrade from these changes
 
 ## Prerequisites
+
+Before continuing, please make sure the below prerequisites have been met.
 
 - [Crox](https://github.com/rust-lang/measureme/blob/master/crox/README.md)
 - [summarize (Optional)](https://github.com/rust-lang/measureme/blob/master/summarize/README.md)
@@ -25,15 +27,15 @@ You can run boa using the "profiler" feature flag to enable profiling. Seeing as
 
 `cargo run --release --features boa_engine/profiler ../tests/js/test.js`
 
-Once finished you should see some trace files left in the directory (boa_cli in this case).  
+Once finished you should see some trace files left in the directory (boa_cli in this case).
 In the same directory as the `.events, string_data, string_index` files run `crox my_trace` or whatever the name of the files are. This will generate a chrome_profiler.json file, you can load this into Chrome Dev tools.
 
 ### Summarize
 
-If you just want a summary of what functions were ran the most or where the most time was spent you can run `summarize`.  
+If you just want a summary of what functions were ran the most or where the most time was spent you can run `summarize`.
 This is the same as above except instead of calling `$ crox my_trace` you call `$ summarize summarize my_trace`. This will generate something like below:
 
-```
+```md
 +---------------------------------------+-----------+-----------------+----------+------------+
 | Item                                  | Self time | % of total time | Time     | Item count |
 +---------------------------------------+-----------+-----------------+----------+------------+
@@ -61,8 +63,6 @@ This is the same as above except instead of calling `$ crox my_trace` you call `
 +---------------------------------------+-----------+-----------------+----------+------------+
 ```
 
-## More Info
+## More Information
 
-- https://blog.rust-lang.org/inside-rust/2020/02/25/intro-rustc-self-profile.html
-- https://github.com/rust-lang/measureme
-- https://github.com/rust-lang/measureme/blob/master/crox/README.md
+For more information, please see the [profiling resources](./resources#profiling)

@@ -252,7 +252,7 @@ This module contains helpful functions for getting information about a shape of 
 
 ### Function `$boa.shape.id()`
 
-#### Args (1): target (object)
+#### Args (1): id_target (object)
 
 Returns the pointer of the object's shape in memory as a string encoded in hexadecimal format.
 
@@ -263,7 +263,7 @@ $boa.shape.id({}) // '0x7FC35A046258'
 
 ### Function `$boa.shape.type()`
 
-#### Args (1): target (object)
+#### Args (1): type_target (object)
 
 Returns the object's shape type.
 
