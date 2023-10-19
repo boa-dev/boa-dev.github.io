@@ -11,7 +11,7 @@ const initialCode = `function greet(targetName) {
 greet('World')
 `;
 
-// TODO: Add configure bar for horizontal/vertical editor flip and trace output?
+// Potenital TODO: Add configure bar for horizontal/vertical editor flip and trace output?
 export default function BoaPlayground() {
   const [input, setInput] = React.useState(initialCode);
   const [evaluate, setEvaluate] = React.useState(null);
@@ -34,16 +34,17 @@ export default function BoaPlayground() {
 
   return (
     <Layout title="Playground" description="Boa Playground">
-      <div className={styles.rowLayout}>
-        <Editor
-          className={styles.columnEditor}
-          theme="vs-dark"
-          language="javascript"
-          options={{ minimap: { enabled: false } }}
-          value={input}
-          onChange={setInput}
-        />
-        <div className={styles.columnOutput}>
+      <div className={styles.playgroundLayout}>
+        <div className={styles.playgroundEditor} >
+          <Editor
+            theme="vs-dark"
+            language="javascript"
+            options={{ minimap: { enabled: false } }}
+            value={input}
+            onChange={setInput}
+          />
+        </div>
+        <div className={styles.playgroundOutput}>
           <h1>Output</h1>
           {`> ${output ?? ""}`}
         </div>

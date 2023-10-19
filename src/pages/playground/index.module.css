@@ -1,19 +1,35 @@
 
-.rowLayout {
+.playgroundLayout {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     height: 95vh;
 }
 
-.columnEditor {
-    height: 70vh;
-    margin-top: 2.5em;
+.playgroundEditor {
+    height: calc(95vh- 0.5rem);
+    padding-top: 0.5rem;
+    width: calc(100vw - 24rem);
 }
 
-.columnOutput {
-    width: 30%;
-    min-width: 200px;
-    margin-top: 2.5em;
-    padding-inline: 3em;
+.playgroundOutput {
+    width: 24rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 996px) {
+    .playgroundLayout {
+        flex-direction: column;
+    }
+
+    .playgroundEditor {
+        height: calc(70vh - 0.5rem);
+        width: 100vw;
+    }
+
+    .playgroundOutput {
+        height: 20vh;
+        width: 100%;
+        padding: 0.5rem;
+    }
 }

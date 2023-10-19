@@ -124,6 +124,14 @@ const config = {
                 label: "Learn More",
                 to: "/docs/intro",
               },
+              {
+                label: "Release API",
+                href: "https://docs.rs/boa_engine/latest",
+              },
+              {
+                label: "Development API",
+                href: "https://boajs.dev/boa/doc/boa_engine/index.html",
+              },
             ],
           },
           {
@@ -149,14 +157,6 @@ const config = {
               {
                 label: "GitHub",
                 href: "https://github.com/boa-dev/boa",
-              },
-              {
-                label: "Release API",
-                href: "https://docs.rs/boa_engine/latest",
-              },
-              {
-                label: "Development API",
-                href: "https://boajs.dev/boa/doc/boa_engine/index.html",
               },
             ],
           },
