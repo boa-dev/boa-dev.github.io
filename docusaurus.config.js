@@ -99,6 +99,11 @@ const config = {
             position: "right",
           },
           {
+            href: "https://boajs.dev/boa/dev/bench/",
+            label: "Benchmarks",
+            position: "right"
+          },
+          {
             href: "https://docs.rs/boa_engine/latest",
             label: "API Docs",
             position: "right",
