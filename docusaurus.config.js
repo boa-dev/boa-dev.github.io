@@ -43,23 +43,7 @@ const config = {
           editUrl:
             "https://github.com/boa-dev/boa-dev.github.io/tree/main/docs",
         },
-        blog: {
-          sortPosts: "descending",
-          postsPerPage: "ALL",
-          blogSidebarCount: "ALL",
-          showReadingTime: true,
-          feedOptions: {
-            type: "all",
-            createFeedItems: async (params) => {
-              const { blogPosts, defaultCreateFeedItems, ...rest } = params;
-              return defaultCreateFeedItems({
-                // keep only the 10 most recent blog posts in the feed
-                blogPosts: blogPosts.filter((item, index) => index < 10),
-                ...rest,
-              });
-            },
-          },
-        },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -87,7 +71,7 @@ const config = {
             label: "Learn More",
           },
           { to: "/blog", label: "Blog", position: "left" },
-          { to: "/about", label: "About", position: "left"},
+          { to: "/about", label: "About", position: "left" },
           {
             href: "/playground",
             label: "Playground",
@@ -101,7 +85,7 @@ const config = {
           {
             href: "https://boajs.dev/boa/dev/bench/",
             label: "Benchmarks",
-            position: "right"
+            position: "right",
           },
           {
             href: "https://docs.rs/boa_engine/latest",
@@ -186,6 +170,26 @@ const config = {
         },
       };
     },
+    [
+      "./plugins/blog-plugin",
+      {
+        sortPosts: "descending",
+        postsPerPage: "ALL",
+        blogSidebarCount: "ALL",
+        showReadingTime: true,
+        feedOptions: {
+          type: "all",
+          createFeedItems: async (params) => {
+            const { blogPosts, defaultCreateFeedItems, ...rest } = params;
+            return defaultCreateFeedItems({
+              // keep only the 10 most recent blog posts in the feed
+              blogPosts: blogPosts.filter((item, index) => index < 10),
+              ...rest,
+            });
+          },
+        },
+      },
+    ],
   ],
 };
 
