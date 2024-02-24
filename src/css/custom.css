@@ -28,24 +28,28 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #f3ff00;
+[data-theme="dark"] {
+  --ifm-color-primary: #f9ff87e3;
   --ifm-color-primary-dark: #dbe600;
   --ifm-color-primary-darker: #cfd900;
   --ifm-color-primary-darkest: #aab300;
   --ifm-color-primary-light: #f4ff1a;
   --ifm-color-primary-lighter: #f5ff26;
-  --ifm-color-primary-lightest:#f7ff4d;
+  --ifm-color-primary-lightest: #f7ff4d;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   /* Custom footer color */
   --ifm-footer-background-color: #353535;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   /*Layout background color */
   --ifm-background-color: #505050;
 
   /*Navbar color*/
   --ifm-background-surface-color: #353535;
+}
+
+.footer__links {
+  text-align: center;
 }

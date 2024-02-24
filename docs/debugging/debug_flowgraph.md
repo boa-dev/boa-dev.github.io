@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 ---
+
 # VM Execution Flowgraph
 
 We can also get the VM instructions flowgraph, which is a visual representation of the instruction flow.
@@ -13,7 +14,7 @@ The push and pop evironment pairs match colors and are connected by a dotted lin
 
 You can use the `--flowgraph` (or `--flowgraph=mermaid` for [mermaid][mermaid] format) flag which outputs
 [graphviz][graphviz] format by default, and pipe it to `dot` (from the `graphviz` package which is installed
-on most linux distros by default) or use an online editor like: <https://dreampuf.github.io/GraphvizOnline> to
+on most linux distros by default) or use an online editor like [here](https://dreampuf.github.io/GraphvizOnline) to
 view the graph.
 
 ```bash
