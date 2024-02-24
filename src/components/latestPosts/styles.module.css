@@ -1,3 +1,38 @@
+.latestPostsWrap {
+  display: grid;
+  gap: 0 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.card {
+  max-width: 15em;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card p {
+  /* return to white */
+  color: var(--ifm-font-color-base);
+}
 .wrap {
-  margin-top: 16px;
+  padding-top: 16px;
+}
+
+/** In mobile view, reduce the padding */
+@media screen and (max-width: 1100px) {
+  /* Have colums on the first row and 3 columns on the second row */
+  .latestPostsWrap {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .card {
+    justify-content: space-between;
+  }
+}
+
+/** In mobile view, reduce the padding */
+@media screen and (max-width: 600px) {
+  .latestPostsWrap {
+    grid-template-columns: 1fr 1fr;
+  }
 }
