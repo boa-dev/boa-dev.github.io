@@ -49,3 +49,7 @@ html[data-theme="dark"] {
   /*Navbar color*/
   --ifm-background-surface-color: #353535;
 }
+
+.footer__links {
+  text-align: center;
+}
