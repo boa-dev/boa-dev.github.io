@@ -42,7 +42,7 @@ of JavaScript files by running `cargo run -- file1.js file2.js` and so on.
 ### Web Assembly
 
 If you want to develop on the web assembly side you can run `yarn serve` and then go
-to <http://localhost:8080>.
+to http://localhost:8080.
 
 ### Setup
 
@@ -67,12 +67,11 @@ Start VSCode in container mode (you may need the docker container plugin) and us
 ## Documentation
 
 We have specific documentation for development, updated on each commit to the `main` branch, with all the private
-methods visible here: <https://boajs.dev/boa/doc/>
+methods visible here: https://boajs.dev/boa/doc/
 
 ## Communication
 
-We have a Discord server, feel free to ask questions here:
-<https://discord.gg/tUFFk9Y>
+We have a Discord server, feel free to ask questions [here](https://discord.gg/tUFFk9Y)
 
 [issues]: https://github.com/boa-dev/boa/issues
 [rustup]: https://rustup.rs/
