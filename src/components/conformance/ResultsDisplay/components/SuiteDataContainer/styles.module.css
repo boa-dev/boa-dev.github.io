@@ -1,18 +1,15 @@
-
 .dataContainer {
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    height: 70vh;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  height: 70vh;
 }
 
-
 @media screen and (max-width: 996px) {
-    .dataContainer {
-        width: 100%;
-        min-height: 50vh;
-        height: auto;
-        padding: 0.5rem;
-    }
-
+  .dataContainer {
+    width: 100%;
+    min-height: 50vh;
+    height: auto;
+    padding: 0.5rem;
+  }
 }

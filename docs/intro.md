@@ -10,14 +10,14 @@ Boa also exists to serve as a Rust implementation of the EcmaScript specificatio
 
 Boa currently publishes the following crates:
 
-* boa_ast - Boa’s ECMAScript Abstract Syntax Tree.
-* boa_engine - Boa’s implementation of ECMAScript builtin objects and execution.
-* boa_gc - Boa’s garbage collector.
-* boa_interner - Boa’s string interner.
-* boa_parser - Boa’s lexer and parser.
-* boa_profiler - Boa’s code profiler.
-* boa_icu_provider - Boa’s ICU4X data provider.
-* boa_runtime - Boa’s WebAPI features.
+- boa_ast - Boa’s ECMAScript Abstract Syntax Tree.
+- boa_engine - Boa’s implementation of ECMAScript builtin objects and execution.
+- boa_gc - Boa’s garbage collector.
+- boa_interner - Boa’s string interner.
+- boa_parser - Boa’s lexer and parser.
+- boa_profiler - Boa’s code profiler.
+- boa_icu_provider - Boa’s ICU4X data provider.
+- boa_runtime - Boa’s WebAPI features.
 
 The goal of the following documentation is to provide a reference guide for the current design of Boa and it's most current features.
 

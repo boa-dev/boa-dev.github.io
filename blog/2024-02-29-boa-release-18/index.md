@@ -7,8 +7,9 @@ author: Boa Developers
 
 ## Summary
 
-Boa v0.18 is now available! After 7 months of development we are very happy to present you the latest release of the Boa JavaScript engine. Boa makes it easy to
-embed a JS engine in your projects, and you can even use it from WebAssembly. See the [about](/about) page for more info.
+Boa v0.18 is now available! After 7 months of development we are very happy to present you the latest release of the Boa
+JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from WebAssembly.
+See the [about](/about) page for more info.
 
 In this release, our conformance has grown from 78.74% to 84.64% in the official ECMAScript Test Suite (Test262). While
 this might look as a small increase, we now pass **6,079** more tests than in the previous version. In any case, the big
@@ -35,12 +36,14 @@ Furthermore, we now have a new domain for Boa, [boajs.dev][boajs].
 
 ### We're on [test262.fyi](https://test262.fyi/)!
 
-Thanks to the amazing work of [CanadaHonk](https://twitter.com/CanadaHonk), Boa is now listed on [test262.fyi](https://test262.fyi/). This is a great achievement for us and we are very proud to be listed alongside other major JavaScript engines. It should be much easier for users to compare Boa's conformance tests with other engines.
+Thanks to the amazing work of [CanadaHonk](https://twitter.com/CanadaHonk), Boa is now listed on
+[test262.fyi](https://test262.fyi/). This is a great achievement for us and we are very proud to be listed alongside
+other major JavaScript engines. It should be much easier for users to compare Boa's conformance tests with other engines.
 
 <div class="conformance_set">
 
-![conformance](./conformance_dark.png)
-![conformance_time](./conformance_time_dark.png)
+<!-- ![conformance](./conformance_dark.png)
+![conformance_time](./conformance_time_dark.png) -->
 
 </div>
 

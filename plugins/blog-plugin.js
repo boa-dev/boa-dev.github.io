@@ -1,6 +1,6 @@
-const blogPluginExports = require("@docusaurus/plugin-content-blog");
+import blogPluginExports from "@docusaurus/plugin-content-blog";
 
-const defaultBlogPlugin = blogPluginExports.default;
+const defaultBlogPlugin = blogPluginExports;
 
 async function blogPluginExtended(...pluginArgs) {
   const blogPluginInstance = await defaultBlogPlugin(...pluginArgs);
@@ -44,7 +44,7 @@ async function blogPluginExtended(...pluginArgs) {
   };
 }
 
-module.exports = {
+export default {
   ...blogPluginExports,
   default: blogPluginExtended,
 };

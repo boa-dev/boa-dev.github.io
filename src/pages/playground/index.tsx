@@ -1,7 +1,7 @@
 import Editor from "@monaco-editor/react";
 import Layout from "@theme/Layout";
 import React from "react";
-
+import Heading from "@theme/Heading";
 import styles from "./index.module.css";
 
 const initialCode = `function greet(targetName) {
@@ -18,7 +18,7 @@ export default function BoaPlayground() {
 
   React.useEffect(() => {
     import("@razican/boa_wasm").then(({ evaluate }) =>
-      setEvaluate(() => evaluate)
+      setEvaluate(() => evaluate),
     );
   }, []);
 
@@ -35,7 +35,7 @@ export default function BoaPlayground() {
   return (
     <Layout title="Playground" description="Boa Playground">
       <div className={styles.playgroundLayout}>
-        <div className={styles.playgroundEditor} >
+        <div className={styles.playgroundEditor}>
           <Editor
             theme="vs-dark"
             language="javascript"
@@ -45,7 +45,7 @@ export default function BoaPlayground() {
           />
         </div>
         <div className={styles.playgroundOutput}>
-          <h1>Output</h1>
+          <Heading as="h1">Output</Heading>
           {`> ${output ?? ""}`}
         </div>
       </div>

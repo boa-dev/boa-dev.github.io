@@ -1,46 +1,45 @@
-
 .testGridCard {
-    width: calc(100vw - 50rem);
-    height: calc(100vh - 10rem);
-    padding: 0.75rem;
+  width: calc(100vw - 50rem);
+  height: calc(100vh - 10rem);
+  padding: 0.75rem;
 }
 
 @media screen and (max-width: 996px) {
-    .testGridCard {
-        margin: 0.25rem auto;
-        padding: 0;
-        height: 75vh;
-        width: 90vw;
-    }
+  .testGridCard {
+    margin: 0.25rem auto;
+    padding: 0;
+    height: 75vh;
+    width: 90vw;
+  }
 }
 
 .gridStyle {
-    min-height: 8rem;
-    max-height: 24rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow-y: auto;
+  min-height: 8rem;
+  max-height: 24rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
 }
 
 .testGridItem {
-    width: 1.5em;
-    height: 1.5em;
-    margin: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0.5em;
 }
 
 .testGridItem:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .passed {
-    background-color: var(--ifm-color-success);
+  background-color: var(--ifm-color-success);
 }
 
 .ignored {
-    background-color: var(--ifm-color-warning);
+  background-color: var(--ifm-color-warning);
 }
 
 .failed {
-    background-color: var(--ifm-color-danger);
+  background-color: var(--ifm-color-danger);
 }

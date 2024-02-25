@@ -1,41 +1,40 @@
-
 .resultsDisplay {
-    display:flex;
-    flex-direction: column;
-    height: 85vh;
-    width: 100%;
-    min-width: 300px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  width: 100%;
+  min-width: 300px;
+  overflow: hidden;
 }
 
 .resultsNav {
-    display:flex;
-    flex-direction: row;
-    height: 5vh;
-    width: 100%;
-    padding: 0.75em;
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+  width: 100%;
+  padding: 0.75em;
 }
 
 .navLink:hover {
-    cursor:pointer;
+  cursor: pointer;
 }
 
 .dropdownContainer {
-    width: 6em;
-    padding: 0.25em;
+  width: 6em;
+  padding: 0.25em;
 }
 
 @media screen and (max-height: 996px) {
-    .resultsDisplay {
-        height: auto;
-        width:calc(100vw-12px);
-        overflow-y:auto;
-    }
+  .resultsDisplay {
+    height: auto;
+    width: calc(100vw-12px);
+    overflow-y: auto;
+  }
 
-    .resultsNav {
-        min-height: 3.5rem;
-        height:auto;
-        width:100vw;
-        padding: 1rem auto;
-    }
+  .resultsNav {
+    min-height: 3.5rem;
+    height: auto;
+    width: 100vw;
+    padding: 1rem auto;
+  }
 }

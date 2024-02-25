@@ -1,12 +1,14 @@
 import clsx from "clsx";
 import React from "react";
 import styles from "./styles.module.css";
+import Heading from "@theme/Heading";
+import Link from "@docusaurus/Link";
 
 export default function LatestPosts({ recentPosts }) {
   console.log(recentPosts);
   return (
     <div className={clsx("container", styles.wrap)}>
-      <h2>Latest posts</h2>
+      <Heading as="h2">Latest posts</Heading>
       <section className={clsx(styles.latestPostsWrap)}>
         {recentPosts.map(({ content: BlogPostContent }) => (
           // key={BlogPostContent.metadata.permalink}
@@ -14,13 +16,13 @@ export default function LatestPosts({ recentPosts }) {
           // assets={BlogPostContent.assets}
           // metadata={BlogPostContent.metadata}
           // truncated={BlogPostContent.metadata.truncated}
-          <a
+          <Link
             className={clsx("card", styles.card)}
             key={BlogPostContent.metadata.permalink}
-            href={BlogPostContent.metadata.permalink}
+            to={BlogPostContent.metadata.permalink}
           >
             <div className="card__header">
-              <h3>{BlogPostContent.metadata.title}</h3>
+              <Heading as="h3">{BlogPostContent.metadata.title}</Heading>
             </div>
             <div className="card__body">
               <p>
@@ -30,11 +32,11 @@ export default function LatestPosts({ recentPosts }) {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
-                  }
+                  },
                 )}
               </p>
             </div>
-          </a>
+          </Link>
           //   <BlogPostContent />
         ))}
       </section>

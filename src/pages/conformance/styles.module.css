@@ -1,16 +1,15 @@
-
 .mainLayout {
-    height: 85vh;
-    width: 100vw;
-    display: flex;
-    padding: 0.75rem;
-    flex-direction: row;
+  height: 85vh;
+  width: 100vw;
+  display: flex;
+  padding: 0.75rem;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 996px) {
-    .mainLayout {
-        height:auto;
-        min-height: 100vh;
-        flex-direction: column;
-    }
+  .mainLayout {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 }

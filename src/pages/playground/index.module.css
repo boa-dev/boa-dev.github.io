@@ -1,35 +1,34 @@
-
 .playgroundLayout {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    height: 95vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 95vh;
 }
 
 .playgroundEditor {
-    height: calc(95vh- 0.5rem);
-    padding-top: 0.5rem;
-    width: calc(100vw - 24rem);
+  height: calc(95vh- 0.5rem);
+  padding-top: 0.5rem;
+  width: calc(100vw - 24rem);
 }
 
 .playgroundOutput {
-    width: 24rem;
-    padding: 1rem;
+  width: 24rem;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 996px) {
-    .playgroundLayout {
-        flex-direction: column;
-    }
+  .playgroundLayout {
+    flex-direction: column;
+  }
 
-    .playgroundEditor {
-        height: calc(70vh - 0.5rem);
-        width: 100vw;
-    }
+  .playgroundEditor {
+    height: calc(70vh - 0.5rem);
+    width: 100vw;
+  }
 
-    .playgroundOutput {
-        height: 20vh;
-        width: 100%;
-        padding: 0.5rem;
-    }
+  .playgroundOutput {
+    height: 20vh;
+    width: 100%;
+    padding: 0.5rem;
+  }
 }

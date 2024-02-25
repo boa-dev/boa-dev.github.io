@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 ---
+
 # Debuggers
 
 There are also other methods of debugging listed below.
