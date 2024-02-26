@@ -128,7 +128,7 @@ const config: Config = {
               href: "https://discord.gg/tUFFk9Ys",
             },
             {
-              label: "Mastadon",
+              label: "Mastodon",
               href: "https://fosstodon.org/@boa_engine",
             },
           ],
