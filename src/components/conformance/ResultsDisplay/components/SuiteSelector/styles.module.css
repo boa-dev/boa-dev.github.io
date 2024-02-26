@@ -1,62 +1,62 @@
 .suiteSelector {
-    height: 75vh;
-    width: 30rem;
-    padding: 0.5em;
-    overflow-y:auto;
+  height: 75vh;
+  width: 30rem;
+  padding: 0.5em;
+  overflow-y: auto;
 }
 
 .suiteCard {
-    display: flex;
-    flex-direction: row;
-    height: 3em;
-    min-width: 20rem;
-    padding: 0.5em;
-    margin: 0.5em;
-    outline: var(--ifm-color-emphasis-400) solid 2px;
-    background-color: var(--ifm-card-background-color);
-    border-radius: 0.25em;
+  display: flex;
+  flex-direction: row;
+  height: 3em;
+  min-width: 20rem;
+  padding: 0.5em;
+  margin: 0.5em;
+  outline: var(--ifm-color-emphasis-400) solid 2px;
+  background-color: var(--ifm-card-background-color);
+  border-radius: 0.25em;
 }
 
 .suiteCard:hover {
-    cursor: pointer
+  cursor: pointer;
 }
 
 .suiteCardTitle {
-    min-width: 7em;
-    padding-top: 0.15em;
-    word-wrap: break-word;
-    overflow: hidden;
+  min-width: 7em;
+  padding-top: 0.15em;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .suiteCardResults {
-    min-width: 8em;
-    margin: 0 0.5em;
-    padding-top: 0.25em;
-    word-wrap: break-word;
-    overflow: hidden;
+  min-width: 8em;
+  margin: 0 0.5em;
+  padding-top: 0.25em;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 996px) {
-    .suiteSelector{
-        height: auto;
-        min-height: 5rem;
-        max-height: 12rem;
-        padding: 0.5rem auto;
-        width: 100%;
-    }
+  .suiteSelector {
+    height: auto;
+    min-height: 5rem;
+    max-height: 12rem;
+    padding: 0.5rem auto;
+    width: 100%;
+  }
 
-    .suiteCard {
-        width: 20rem;
-        margin: 0.5rem auto;
-    }
+  .suiteCard {
+    width: 20rem;
+    margin: 0.5rem auto;
+  }
 
-    .suiteCardTitle {
-        word-wrap: break-word;
-        overflow:hidden;
-    }
+  .suiteCardTitle {
+    word-wrap: break-word;
+    overflow: hidden;
+  }
 
-    .suiteCardResults {
-        word-wrap: break-word;
-        overflow: hidden;
-    }
+  .suiteCardResults {
+    word-wrap: break-word;
+    overflow: hidden;
+  }
 }

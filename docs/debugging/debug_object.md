@@ -20,13 +20,13 @@ it accessible to Boa when the source code is executed.
 
 The debug object currently has the below modules implemented:
 
-* [`gc`](./debug_object#boagc)
-* [`function`](./debug_object#boafunction)
-* [`object`](./debug_object#boaobject)
-* [`optimizer`](./debug_object#boaoptimizer)
-* [`realm`](./debug_object#boarealm)
-* [`shape`](./debug_object#boashape)
-* [`limits`](./debug_object#boalimits)
+- [`gc`](./debug_object#boagc)
+- [`function`](./debug_object#boafunction)
+- [`object`](./debug_object#boaobject)
+- [`optimizer`](./debug_object#boaoptimizer)
+- [`realm`](./debug_object#boarealm)
+- [`shape`](./debug_object#boashape)
+- [`limits`](./debug_object#boalimits)
 
 If there is any functionality currently missing that you think may be helpful, please feel free to submit an issue or Pull Request!
 
