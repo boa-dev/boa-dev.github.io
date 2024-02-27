@@ -54,7 +54,6 @@ We hope to show a full blog post on Temporal in the future, but for now, here is
 TODO show an example of Temporal being used
 
 ```rust
-// Creates a new module loader that uses the current directory to resolve module imports.
 
 ````
 
