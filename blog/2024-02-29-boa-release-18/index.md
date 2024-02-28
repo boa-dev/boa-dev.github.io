@@ -45,17 +45,53 @@ Below is a screenshot showing Boa being 83% conformance with the latest tests an
 
 The majority of our work over the past few months has been on the Temporal API. The Temporal API is a new set of built-in objects and functions that provide a modern, ECMAScript language standard for date and time manipulation. The Temporal API is designed to be a more modern replacement for the `Date` object, and it provides a more feature-rich and flexible API for working with dates and times.
 
-It is currently a [stage 3 proposal](https://tc39.es/proposal-temporal/docs/) and we are working alongside the TC39 champions to put together a solid implementation. As Temporal is such a large implementation we have done most of the work outside of Boa so that it can be used in other projects. You can find the Temporal implementation in the [temporal_rs](https://github.com/boa-dev/temporal).
+It is currently a [stage 3 proposal](https://tc39.es/proposal-temporal/docs/) and we are working alongside the TC39 champions to put together a solid implementation. As Temporal is such a large implementation, we have done most of the work outside of Boa so that it can be used in other projects. This work can be found in the [temporal_rs](https://github.com/boa-dev/temporal/) repository.
 
-We hope to show a full blog post on Temporal in the future, but for now, here is a small example of how to use it:
+We hope to release a full blog post on Temporal in the future, but for now, here is a couple small examples of Temporal in JavaScript and Rust:
 
-````rust
+<!-- TODO: Adjust below date to the release date. -->
+```javascript
+// JavaScript's Temporal built-in object.
 
-TODO show an example of Temporal being used
+// For example, you can customize you're own calendar implementations!
+class CustomCalendar extends Temporal.Calendar {
+  constructor() {
+      super("iso8601");
+  }
+  inLeapYear(dateLike) {
+      messageInACalendar = "It's a message in a Calendar!";
+      return dateLike.daysInYear === 366;
+  }
+}
+
+let messageInACalendar;
+// Construct the CustomCalendar.
+const calendar = new CustomCalendar();
+
+const boaReleaseDay = new Temporal.PlainDate(2024, 3, 1, calendar);
+const leap = boaReleaseDay.inLeapYear;
+
+messageInACalendar
+// Outputs: "It's a message in a Calendar!"
+
+```
 
 ```rust
+// Rust's `temporal_rs` crate
+use temporal_rs::{components::{calendar::CalendarSlot, Date}, options::ArithmeticOverflow };
+use std::str::FromStr;
 
-````
+// Create a Calendar slot value from a string
+let calendar = CalendarSlot::<()>::from_str("iso8601").unwrap();
+
+// Create a date. The date can be made to either reject or constrain the input.
+let date = Date::<()>::new(2024, 3, 1, calendar, ArithmeticOverflow::Reject).unwrap();
+
+assert_eq!(date.iso_year(), date.year().unwrap());
+
+```
+
+If you're interested in learning more or helping contribute to Temporal, feel free to check out `temporal_rs`'s issues!
 
 ### Spec Version Conformance
 
