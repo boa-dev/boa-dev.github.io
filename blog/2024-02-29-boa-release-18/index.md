@@ -50,17 +50,18 @@ It is currently a [stage 3 proposal](https://tc39.es/proposal-temporal/docs/) an
 We hope to release a full blog post on Temporal in the future, but for now, here is a couple small examples of Temporal in JavaScript and Rust:
 
 <!-- TODO: Adjust below date to the release date. -->
+
 ```javascript
 // JavaScript's Temporal built-in object.
 
 // For example, you can customize you're own calendar implementations!
 class CustomCalendar extends Temporal.Calendar {
   constructor() {
-      super("iso8601");
+    super("iso8601");
   }
   inLeapYear(dateLike) {
-      messageInACalendar = "It's a message in a Calendar!";
-      return dateLike.daysInYear === 366;
+    messageInACalendar = "It's a message in a Calendar!";
+    return dateLike.daysInYear === 366;
   }
 }
 
@@ -71,9 +72,8 @@ const calendar = new CustomCalendar();
 const boaReleaseDay = new Temporal.PlainDate(2024, 3, 1, calendar);
 const leap = boaReleaseDay.inLeapYear;
 
-messageInACalendar
+messageInACalendar;
 // Outputs: "It's a message in a Calendar!"
-
 ```
 
 ```rust
@@ -91,7 +91,28 @@ assert_eq!(date.iso_year(), date.year().unwrap());
 
 ```
 
-If you're interested in learning more or helping contribute to Temporal, feel free to check out `temporal_rs`'s issues!
+If you're interested in learning more or helping contribute to Temporal, feel free to check out [`temporal_rs`](https://github.com/boa-dev/temporal/)'s issues!
+
+## RegExp
+
+Over the past 7 months there has been some effort poured into an improved implementation of RegExp.
+
+Thank you [@dirkdev98](https://github.com/dirkdev98) who added support for [RegExp.prototype.hasIndicies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices), on top of this there have been some changes by our core developers to make the engine adhere to the specification more. This involves bug fixes around the toString() method and improving the spec conformance in the constructor and the `RegExp.prototype.match` method
+
+Here is a table showing the progress of RegExp between v0.17 and v0.18:
+
+| Test262 | v0.17 (July 2023) | v0.18 (Feb 2024) |
+| ------- | ----------------- | ---------------- |
+| Total   | 1,690             | 1,695            |
+| Pass    | 915               | 1,502            |
+| Fail    | 90                | 1                |
+| Skipped | 9685              | 192              |
+
+That's a whopping 587 more tests passed! We only have a single failure in this area now which is around [unicode full case folding](https://github.com/tc39/test262/blob/6f7ae1f311a7b01ef2358de7f4f6fd42c3ae3839/test/built-ins/RegExp/unicode_full_case_folding.js)
+
+## Shared Array Buffer
+
+[SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) has been implemented and merged in this release.
 
 ### Spec Version Conformance
 
