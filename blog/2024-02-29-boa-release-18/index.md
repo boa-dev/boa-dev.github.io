@@ -137,7 +137,7 @@ The remaining skipped tests are all related to stage 3 proposals.
 
 ## Shared Array Buffer + Atomics
 
-The [SharedArrayBuffer] and [Atomic] builtins have been implemented in this release.
+The [SharedArrayBuffer] and [Atomics] builtins have been implemented in this release.
 This means embedders can now orchestrate `Context`s running on separate threads to execute
 shared work between them.
 
