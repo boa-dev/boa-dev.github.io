@@ -224,7 +224,7 @@ const nf = new Intl.NumberFormat("bn", {
 console.log(nf.format(10003.1234)) // ১০,০০৩.১২
 ```
 
-However, we need to mention that `Intl.NumberFormat` is NOT feature complete at the moment, and it
+However, we need to mention that `Intl.NumberFormat` is NOT feature complete at the moment, since it
 only allows formatting numbers in the standard notation with no currencies or units. We're still
 working on adding the missing features, but we hope that this initial prototype is at least useful
 for some use cases.
