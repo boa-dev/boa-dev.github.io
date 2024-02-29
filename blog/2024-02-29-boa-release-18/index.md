@@ -123,7 +123,7 @@ around the `RegExp()`, `RegExp.toString()` and `RegExp.match()` methods
 Here is a table showing the progress of RegExp between v0.17 and v0.18:
 
 | Test262 | v0.17 (July 2023) | v0.18 (Feb 2024) |
-| ------- | ----------------- | ---------------- |
+|---------|-------------------|------------------|
 | Total   | 1,915             | 1,920            |
 | Pass    | 1,071             | 1,878            |
 | Fail    | 132               | 2                |
@@ -241,11 +241,23 @@ for some use cases.
 
 // TODO
 
-### Optimizations
+## Optimizations
 
-## Inline Caching
+The following benchmarks are taken from the v8 benchmark suite:
 
-// TODO
+| Boa Version | Richards | DeltaBlue | Crypto | RayTrace | EarleyBoyer | Splay | NavierStokes | Total |
+|-------------|----------|-----------|--------|----------|-------------|-------|--------------|-------|
+| v0.16       | 29.0     | 29.2      | 42.1   | 107      | 105         | 111   | 15.4         | 49.1  |
+| v0.17       | 34.3     | 39.1      | 49.1   | 134      | 119         | 141   | 11.9         | 56.2  |
+| v0.18       | 49.8     | 53.9      | 52.1   | 161      | 152         | 154   | 102          | 91.5  |
+
+### Inline Caching
+
+With the implementation of the Hidden Maps (object shapes) in version `v0.17`, we are able to implement inline caching, the concept is based on the observations that the objects that occur at a particular property access are often of the same object shape. In those cases, performance can be greatly increased by storing the result of a property lookup "inline" directly at the property access bytecode. To facilitate this process, property accesses are assigned different states. Initially, a property access is considered to be uninitialized.
+
+Once we reach a particular uninitialized property access, it performs the dynamic lookup, stores the result and changes its state to be a weak reference to the objects shape. If we reach the same property access again, it retrieves the stored shape and directly accesses the objects dense storagi, without doing a property lookup.
+
+Currently we do eager monomorphic inline caching, so there is plently of room for improvement, which we plan to do for future releases!
 
 ## Conclusions
 
