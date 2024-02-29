@@ -97,18 +97,20 @@ If you're interested in learning more or helping contribute to Temporal, feel fr
 
 Over the past 7 months there has been some effort poured into an improved implementation of RegExp.
 
-Thank you [@dirkdev98](https://github.com/dirkdev98) who added support for [RegExp.prototype.hasIndicies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices), on top of this there have been some changes by our core developers to make the engine adhere to the specification more. This involves bug fixes around the toString() method and improving the spec conformance in the constructor and the `RegExp.prototype.match` method
+Thank you [@dirkdev98](https://github.com/dirkdev98) who added support for [RegExp.prototype.hasIndicies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices). On top of this there have been some changes by our core developers to make the engine adhere to the specification more. This involves bug fixes around the `toString()` method and improving the spec conformance in the constructor and the `RegExp.prototype.match` method.
 
 Here is a table showing the progress of RegExp between v0.17 and v0.18:
 
 | Test262 | v0.17 (July 2023) | v0.18 (Feb 2024) |
 | ------- | ----------------- | ---------------- |
-| Total   | 1,690             | 1,695            |
-| Pass    | 915               | 1,502            |
-| Fail    | 90                | 1                |
-| Skipped | 9685              | 192              |
+| Total   | 1,915             | 1,920            |
+| Pass    | 1,071             | 1,878            |
+| Fail    | 132               | 2                |
+| Skipped | 712               | 40               |
 
-That's a whopping 587 more tests passed! We only have a single failure in this area now which is around [unicode full case folding](https://github.com/tc39/test262/blob/6f7ae1f311a7b01ef2358de7f4f6fd42c3ae3839/test/built-ins/RegExp/unicode_full_case_folding.js)
+That's a whopping 807 more tests passed!
+We only have two failing tests left and both are cause by unicode 15.1 support.
+The remaining skipped tests are all related to stage 3 proposals.
 
 ## Shared Array Buffer
 
