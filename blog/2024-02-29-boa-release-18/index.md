@@ -253,11 +253,41 @@ The following benchmarks are taken from the v8 benchmark suite:
 
 ### Inline Caching
 
-With the implementation of the Hidden Maps (object shapes) in version `v0.17`, we are able to implement inline caching, the concept is based on the observations that the objects that occur at a particular property access are often of the same object shape. In those cases, performance can be greatly increased by storing the result of a property lookup "inline" directly at the property access bytecode. To facilitate this process, property accesses are assigned different states. Initially, a property access is considered to be uninitialized.
+Thanks to the implementation of Object Shapes in version `v0.17`, we were able to further improve the
+performance of the engine by implementing Inline Caching. The concept of Inline Caching is based on
+the idea that a property access for a variable will usually only be applied to objects of similar Shapes.
+To picture this, let's examine the following code:
 
-Once we reach a particular uninitialized property access, it performs the dynamic lookup, stores the result and changes its state to be a weak reference to the objects shape. If we reach the same property access again, it retrieves the stored shape and directly accesses the objects dense storagi, without doing a property lookup.
+```js
+function attach(obj1, obj2) {
+  obj1.attach = obj2.getHandler();
+}
+```
+On interpreters that don't implement any kind of caching, the previous code would have to make a
+property lookup for the `getHandler` method every time that method is called. This is really inefficient
+for a simple reason: `getHandler` could be inside `obj2`, or it could be inside `obj2.prototype`,
+or it could be inside `obj2.prototype.prototype`... `getHandler` could be anywhere on the
+inheritance chain of `obj2`!
 
-Currently we do eager monomorphic inline caching, so there is plently of room for improvement, which we plan to do for future releases!
+The easy approach to solve this is to cache the method lookup inside `obj2` itself using an associative
+map of some sorts. This is nice, but also a bit wasteful because we would be allocating a new
+associative map for all instances of `obj2`, even if the map is only really used inside `attach`.
+
+What then? Well, we can apply the "inline" part of an inline cache now! Just allocate an array of
+all property accesses within the `attach` function and assign an index to every one of them.
+Initially, a property access is uninitialized. Once we reach a particular uninitialized property access,
+it performs the dynamic lookup and changes its corresponding array slot to be a
+weak reference to the object's shape. If we reach the same property access again, we can retrieve the
+stored shape and directly access the object's dense storage without doing a property lookup!
+
+However, there's a caveat. If `obj2.getHandler` is evaluated twice with objects of different shapes,
+the stored shape would be invalid for the second property access. In this case, we can rollback the
+access to the uninitialized state and make a manual property lookup once again.
+This is known as monomorphic inline caching. There's also polymorphic inline caching, which
+stores several shapes per access instead of rolling back to the uninitialized state.
+
+Currently we do eager monomorphic inline caching, so there is plently of room for improvements that
+we're planning to do in the future!
 
 ## Conclusions
 
