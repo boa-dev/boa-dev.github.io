@@ -34,7 +34,7 @@ some code instead.
 
 ## Highlights
 
-### We're on [test262.fyi](https://test262.fyi/)!
+### We're on [test262.fyi](https://test262.fyi/)
 
 Thanks to the amazing work of [CanadaHonk](https://twitter.com/CanadaHonk), Boa is now listed on
 [test262.fyi](https://test262.fyi/)! This is a daily runner of the official test262 test suite that
@@ -60,7 +60,6 @@ It is currently a [stage 3 proposal](https://tc39.es/proposal-temporal/docs/) an
 alongside the TC39 champions to put together a solid implementation. Since Temporal is such an
 extensive specification, we have done most of the work outside of Boa so that it can be used in other
 projects. This work can be found in the [temporal_rs](https://github.com/boa-dev/temporal/) repository.
-
 
 We hope to release a full blog post on Temporal in the future, but for now, here is a couple small
 examples of Temporal in JavaScript and Rust:
@@ -123,7 +122,7 @@ around the `RegExp()`, `RegExp.toString()` and `RegExp.match()` methods
 Here is a table showing the progress of RegExp between v0.17 and v0.18:
 
 | Test262 | v0.17 (July 2023) | v0.18 (Feb 2024) |
-|---------|-------------------|------------------|
+| ------- | ----------------- | ---------------- |
 | Total   | 1,915             | 1,920            |
 | Pass    | 1,071             | 1,878            |
 | Fail    | 132               | 2                |
@@ -155,12 +154,12 @@ send(worker2, int32);
 // On worker1
 int32 = receive();
 Atomics.wait(int32, 0, 0);
-console.log(int32[0]) // 123
+console.log(int32[0]); // 123
 
 // On worker2
 int32 = receive();
 console.log(int32[0]); // 0
-Atomics.store(int32, 0 , 123);
+Atomics.store(int32, 0, 123);
 Atomics.notify(int32, 0, 1);
 ```
 
@@ -198,30 +197,30 @@ const suffixes = new Map([
 ]);
 
 const getSuffix = (n) => {
-  return suffixes.get(pr.select(n))
-}
+  return suffixes.get(pr.select(n));
+};
 
-console.log(getSuffix(0)) // "th"
-console.log(getSuffix(1)) // "st"
-console.log(getSuffix(2)) // "nd"
-console.log(getSuffix(3)) // "rd"
-console.log(getSuffix(4)) // "th"
+console.log(getSuffix(0)); // "th"
+console.log(getSuffix(1)); // "st"
+console.log(getSuffix(2)); // "nd"
+console.log(getSuffix(3)); // "rd"
+console.log(getSuffix(4)); // "th"
 
-console.log(getSuffix(21)) // "st"
-console.log(getSuffix(42)) // "nd"
-console.log(getSuffix(73)) // "th"
+console.log(getSuffix(21)); // "st"
+console.log(getSuffix(42)); // "nd"
+console.log(getSuffix(73)); // "th"
 ```
 
 On the same vein, [`Intl.NumberFormat`] objects can format numbers in a language-sensitive way:
 
 ```js
 const nf = new Intl.NumberFormat("bn", {
-    useGrouping: "min2",
-    minimumSignificantDigits: 3,
-    maximumSignificantDigits: 7
+  useGrouping: "min2",
+  minimumSignificantDigits: 3,
+  maximumSignificantDigits: 7,
 });
 
-console.log(nf.format(10003.1234)) // ১০,০০৩.১২
+console.log(nf.format(10003.1234)); // ১০,০০৩.১২
 ```
 
 However, we need to mention that `Intl.NumberFormat` is NOT feature complete at the moment, since it
@@ -303,16 +302,16 @@ const array = [1, 2, 3, 4, 5];
 // `Object.groupBy` groups items by arbitrary key.
 // In this case, we're grouping by even/odd keys
 Object.groupBy(array, (num, index) => {
-  return num % 2 === 0 ? 'even': 'odd';
+  return num % 2 === 0 ? "even" : "odd";
 });
 // =>  { odd: [1, 3, 5], even: [2, 4] }
 
 // `Map.groupBy` returns items in a Map, and is useful for grouping
 // using an object key.
-const odd  = { odd: true };
+const odd = { odd: true };
 const even = { even: true };
 Map.groupBy(array, (num, index) => {
-  return num % 2 === 0 ? even: odd;
+  return num % 2 === 0 ? even : odd;
 });
 // =>  Map { {odd: true}: [1, 3, 5], {even: true}: [2, 4] }
 ```
@@ -355,23 +354,21 @@ console.log(buffer3.byteLength); // 12
 buffer3.transfer(20); // RangeError: Invalid array buffer length
 ```
 
-## Miscellaneous updates
-
-// TODO
-
 ## Optimizations
 
-The following benchmarks are taken from the v8 benchmark suite:
+The following benchmarks below are taken from the [v8 benchmark suite](https://github.com/mozilla/arewefastyet/tree/master/benchmarks/v8-v7). This benchmark is deprecated, but is useful in this context to show the performance improvements between versions.
+
+(higher numbers are better)
 
 | Boa Version | Richards | DeltaBlue | Crypto | RayTrace | EarleyBoyer | Splay | NavierStokes | Total |
-|-------------|----------|-----------|--------|----------|-------------|-------|--------------|-------|
+| ----------- | -------- | --------- | ------ | -------- | ----------- | ----- | ------------ | ----- |
 | v0.16       | 29.0     | 29.2      | 42.1   | 107      | 105         | 111   | 15.4         | 49.1  |
 | v0.17       | 34.3     | 39.1      | 49.1   | 134      | 119         | 141   | 11.9         | 56.2  |
 | v0.18       | 49.8     | 53.9      | 52.1   | 161      | 152         | 154   | 102          | 91.5  |
 
 ### Inline Caching
 
-Thanks to the implementation of Object Shapes in version `v0.17`, we were able to further improve the
+Thanks to the implementation of [Object Shapes](https://github.com/boa-dev/boa/blob/main/docs/shapes.md) in version `v0.17`, we were able to further improve the
 performance of the engine by implementing Inline Caching. The concept of Inline Caching is based on
 the idea that a property access for a variable will usually only be applied to objects of similar Shapes.
 To picture this, let's examine the following code:
@@ -381,6 +378,7 @@ function attach(obj1, obj2) {
   obj1.attach = obj2.getHandler();
 }
 ```
+
 On interpreters that don't implement any kind of caching, the previous code would have to make a
 property lookup for the `getHandler` method every time that method is called. This is really inefficient
 for a simple reason: `getHandler` could be inside `obj2`, or it could be inside `obj2.prototype`,
@@ -407,6 +405,33 @@ stores several shapes per access instead of rolling back to the uninitialized st
 Currently we do eager monomorphic inline caching, so there is plently of room for improvements that
 we're planning to do in the future!
 
-## Conclusions
+## Road to 1.0
 
+As Boa is being used by more projects it is important we can provide a stable and reliable API. We don't feel like we're quite there yet, but after a discussion with the team we have decided to aim for a 1.0 release in the near future. This will be a big milestone for us and we hope to have a lot of new features and improvements to show off by then.
 
+We will keep our focus on the public API for those embedding Boa. We will also be working on improving the performance of the engine. If you wanted to offer feedback on the API feel free to reach out to us via Github or Discord.
+
+You can keep an eye on the project to reach 1.0 [here](https://github.com/orgs/boa-dev/projects/2/views/1). We hopefully don't forsee this project getting much bigger as most issues such as spec conformance or performance are a going-concern.
+
+## Conclusion
+
+### How can you support Boa?
+
+Boa is an independent JavaScript engine implementing the ECMAScript specification, we rely on the support of the community to keep it going. If you want to support us, you can do so by donating to our [open collective](https://opencollective.com/boa). Proceeeds here go towards this very website, the domain name, and remunerating members of the team who have worked on the features released.
+
+If financial contribution is not your strength, you can contribute by asking to be assigned to one of our
+[open issues](https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee), and asking for mentoring if you
+don't know your way around the engine. Our [contribution guide](https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md)
+should help you here. If you are more used to working with JavaScript or frontend web development, we also
+welcome help to improve our web presence, either in [our website](https://github.com/boa-dev/boa-dev.github.io), or in
+our [testing representation](https://github.com/boa-dev/boa/issues/820) page or benchmarks page. You can also contribute to
+our Criterion benchmark comparison GitHub [action](https://github.com/boa-dev/criterion-compare-action).
+
+We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
+engine. Feel free to contact us in [Discord](https://discord.gg/tUFFk9Y).
+
+### Thank You
+
+Once again, big thanks to [all the contributors][contributors] of this release!!
+
+[contributors]: https://github.com/boa-dev/boa/graphs/contributors?from=2023-07-08&to=2024-03-05&type=c
