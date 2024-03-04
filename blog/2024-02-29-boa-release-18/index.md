@@ -235,7 +235,125 @@ for some use cases.
 
 ## Builtins updates
 
-// TODO
+While this new release is filled with shiny new features and APIs, it should be noted that the
+ECMAScript 262 specification is constantly evolving, which is why there are also a lot of small
+changes and additions to existing builtins that keep Boa updated to the latest revisions of the
+specification.
+
+All examples were taken from the [Mozilla Web Docs](developer.mozilla.org)
+
+### [findLast and findLastIndex on TypedArray](https://github.com/boa-dev/boa/pull/3135)
+
+```js
+function isPrime(element) {
+  if (element % 2 === 0 || element < 2) {
+    return false;
+  }
+  for (let factor = 3; factor <= Math.sqrt(element); factor += 2) {
+    if (element % factor === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+let uint8 = new Uint8Array([4, 6, 8, 12]);
+console.log(uint8.findLast(isPrime)); // undefined (no primes in array)
+uint8 = new Uint8Array([4, 5, 7, 8, 9, 11, 12]);
+console.log(uint8.findLast(isPrime)); // 11
+```
+
+### [String.prototype.isWellFormed and String.prototype.toWellFormed](https://github.com/boa-dev/boa/pull/3187)
+
+```js
+const illFormed = "https://example.com/search?q=\uD800";
+
+try {
+  encodeURI(illFormed);
+} catch (e) {
+  console.log(e); // URIError: URI malformed
+}
+
+if (illFormed.isWellFormed()) {
+  console.log(encodeURI(illFormed));
+} else {
+  console.warn("Ill-formed strings encountered."); // Ill-formed strings encountered.
+}
+```
+
+### [Change Array by copy](https://github.com/boa-dev/boa/pull/3412)
+
+```js
+const months = ["Mar", "Jan", "Feb", "Dec"];
+const sortedMonths = months.toSorted();
+console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+console.log(months); // ['Mar', 'Jan', 'Feb', 'Dec']
+
+const values = [1, 10, 21, 2];
+const sortedValues = values.toSorted((a, b) => a - b);
+console.log(sortedValues); // [1, 2, 10, 21]
+console.log(values); // [1, 10, 21, 2]
+```
+
+### [Grouping functions](https://github.com/boa-dev/boa/pull/3420)
+
+```js
+const array = [1, 2, 3, 4, 5];
+
+// `Object.groupBy` groups items by arbitrary key.
+// In this case, we're grouping by even/odd keys
+Object.groupBy(array, (num, index) => {
+  return num % 2 === 0 ? 'even': 'odd';
+});
+// =>  { odd: [1, 3, 5], even: [2, 4] }
+
+// `Map.groupBy` returns items in a Map, and is useful for grouping
+// using an object key.
+const odd  = { odd: true };
+const even = { even: true };
+Map.groupBy(array, (num, index) => {
+  return num % 2 === 0 ? even: odd;
+});
+// =>  Map { {odd: true}: [1, 3, 5], {even: true}: [2, 4] }
+```
+
+### [Resizable buffers](https://github.com/boa-dev/boa/pull/3634)
+
+```js
+const buffer = new ArrayBuffer(8, { maxByteLength: 16 });
+
+console.log(buffer.byteLength); // 8
+
+buffer.resize(12);
+
+console.log(buffer.byteLength); // 12
+```
+
+### [Transferrable buffers](https://github.com/boa-dev/boa/pull/3649)
+
+```js
+const buffer = new ArrayBuffer(8, { maxByteLength: 16 });
+const view = new Uint8Array(buffer);
+view[1] = 2;
+view[7] = 4;
+
+// Copy the buffer to a smaller size
+const buffer2 = buffer.transfer(4);
+console.log(buffer2.byteLength); // 4
+console.log(buffer2.maxByteLength); // 16
+const view2 = new Uint8Array(buffer2);
+console.log(view2[1]); // 2
+console.log(view2[7]); // undefined
+buffer2.resize(8);
+console.log(view2[7]); // 0
+
+// Copy the buffer to a larger size within maxByteLength
+const buffer3 = buffer2.transfer(12);
+console.log(buffer3.byteLength); // 12
+
+// Copy the buffer to a larger size than maxByteLength
+buffer3.transfer(20); // RangeError: Invalid array buffer length
+```
 
 ## Miscellaneous updates
 
