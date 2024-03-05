@@ -137,8 +137,8 @@ const config: Config = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
+              label: "RSS",
+              href: "https://boajs.dev/blog/rss.xml",
             },
             {
               label: "GitHub",

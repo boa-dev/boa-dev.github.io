@@ -19,6 +19,11 @@ implemented for this release.
 You can check the full list of changes [here][changelog], and the full information on conformance
 [here][conformance].
 
+This release also marks a major update to the design of our website! We're looking forward to adding some
+additional features to learn more about Boa and writing more blog posts about using Boa and breaking
+down implementation details in the future. Subscrive to our [RSS feed][feed] if you're interested in
+staying up to date!
+
 This big release was partly possible thanks to those who have [supported us](https://opencollective.com/boa).
 Thanks to funds we've received we have been able to renew our domain name, remunerate members of the
 team who have worked on the features released, and discuss the possibility of using dedicated servers
@@ -28,6 +33,7 @@ some code instead.
 
 [changelog]: https://github.com/boa-dev/boa/blob/v0.18/CHANGELOG.md
 [conformance]: https://boajs.dev/boa/test262/
+[feed]: https://boajs.dev/boa/blog/rss.xml
 [collective]: https://opencollective.com/boa
 [easy_issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3AE-Easy
 [first_issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
@@ -61,10 +67,10 @@ alongside the TC39 champions to put together a solid implementation. Since Tempo
 extensive specification, we have done most of the work outside of Boa so that it can be used in other
 projects. This work can be found in the [temporal_rs](https://github.com/boa-dev/temporal/) repository.
 
-We hope to release a full blog post on Temporal in the future, but for now, here is a couple small
-examples of Temporal in JavaScript and Rust:
+We hope to release a full blog post on Temporal in the future, but for now, let's look at a couple small
+examples of Temporal.
 
-<!-- TODO: Adjust below date to the release date. -->
+In JavaScript:
 
 ```javascript
 // JavaScript's Temporal built-in object.
@@ -84,12 +90,14 @@ let messageInACalendar;
 // Construct the CustomCalendar.
 const calendar = new CustomCalendar();
 
-const boaReleaseDay = new Temporal.PlainDate(2024, 3, 1, calendar);
+const boaReleaseDay = new Temporal.PlainDate(2024, 3, 6, calendar);
 const leap = boaReleaseDay.inLeapYear;
 
 messageInACalendar;
 // Outputs: "It's a message in a Calendar!"
 ```
+
+In Rust:
 
 ```rust
 // Rust's `temporal_rs` crate
@@ -100,14 +108,17 @@ use std::str::FromStr;
 let calendar = CalendarSlot::<()>::from_str("iso8601").unwrap();
 
 // Create a date. The date can be made to either reject or constrain the input.
-let date = Date::<()>::new(2024, 3, 1, calendar, ArithmeticOverflow::Reject).unwrap();
+let date = Date::<()>::new(2024, 3, 6, calendar, ArithmeticOverflow::Reject).unwrap();
 
 assert_eq!(date.iso_year(), date.year().unwrap());
 
 ```
 
-If you're interested in learning more or you want to contribute to Temporal, feel free to check out
-[`temporal_rs`](https://github.com/boa-dev/temporal/)'s issues!
+Please note that Temporal is still an experimental feature, and while a lot of progress
+has been made, there is still more work to be completed until it is production ready.
+
+If you're interested in learning more or want to contribute to the native Rust implementation of
+Temporal, feel free to check out `temporal_rs`'s [issues](https://github.com/boa-dev/temporal/issues)!
 
 ## RegExp
 
@@ -129,6 +140,7 @@ Here is a table showing the progress of RegExp between v0.17 and v0.18:
 | Skipped | 712               | 40               |
 
 That's a whopping 807 more tests passed!
+
 We only have two failing tests left and both are caused by the lack of Unicode 15.1 support.
 The remaining skipped tests are all related to stage 3 proposals.
 
