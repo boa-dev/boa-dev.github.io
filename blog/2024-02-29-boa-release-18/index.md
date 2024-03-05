@@ -19,8 +19,7 @@ implemented for this release.
 You can check the full list of changes [here][changelog], and the full information on conformance
 [here][conformance].
 
-You probably noticed that something seems different... This release marks a major update to the design of our website! We'd like to thank [@ZackMitkin](https://github.com/ZackMitkin) for being the one that started the
-work on this nifty redesign.
+You probably noticed that something seems different... This release marks a major update to the design of our website! We'd like to thank [@ZackMitkin](https://github.com/ZackMitkin) for being the one that started the work on this nifty redesign.
 We're planning to add some additional pages to learn more about the APIs that
 Boa exposes.
 Additionally, expect some more blog posts from us in the future! We would like
