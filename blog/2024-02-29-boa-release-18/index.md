@@ -239,7 +239,7 @@ ECMAScript 262 specification is constantly evolving, which is why there are also
 changes and additions to existing builtins that keep Boa updated to the latest revisions of the
 specification.
 
-All examples were taken from the [Mozilla Web Docs](developer.mozilla.org)
+All examples were taken from the [Mozilla Web Docs](developer.mozilla.org).
 
 ### [findLast and findLastIndex on TypedArray](https://github.com/boa-dev/boa/pull/3135)
 
@@ -354,9 +354,237 @@ console.log(buffer3.byteLength); // 12
 buffer3.transfer(20); // RangeError: Invalid array buffer length
 ```
 
+## APIs updates
+
+### Experimental features
+
+Some of you might have noticed that the previous section contained a builtin addition that isn't
+technically a "spec addition", but a "proposal for a spec addition". To clarify, the
+[`ArrayBuffer.prototype.transfer` and friends][transfer] proposal is, at the time of the publication
+of this post, still at stage 3 on the [TC39 Process]. Generally, stages 3 and below need to be
+gated by implementors; this avoids exposing APIs to users that may change in the future.
+
+Mirroring this general idea, we introduced a new `experimental` feature for the `boa_engine` crate.
+Enabling this feature will make it possible to test future proposals for the ECMAScript specification
+using Boa, but we do not recommend enabling the feature in production environments.
+
+We're still trying to [find a way to enable experimental features in a more granular way][feats],
+since the current flag allows enabling either all or no experimental features; definitely not ideal.
+So, expect some API changes in the future around this. But for now, have fun testing the new proposals!
+
+[transfer]: https://github.com/tc39/proposal-arraybuffer-transfer
+[TC39 Process]: https://tc39.es/process-document/
+[feats]: https://github.com/boa-dev/boa/issues/3377
+
+### `[[HostDefined]]` fields
+
+In this version, we introduced a new API to attach custom data to realms, scripts and modules.
+The [`HostDefined`] struct is a more composable way of attaching custom data. Instead of attaching
+only a single type casted to an `Any`, you can insert many types to the `HostDefined` map, and
+every separate type will have its own value stored inside the map.
+
+```rust
+// Example snippet taken from https://github.com/boa-dev/boa/blob/main/examples/src/bin/host_defined.rs
+// Check that file for a more extensive example.
+
+/// Custom host-defined struct that has some state, and can be shared between JavaScript and rust.
+#[derive(Default, Trace, Finalize, JsData)]
+struct CustomHostDefinedStruct {
+    #[unsafe_ignore_trace]
+    counter: usize,
+}
+
+// We create a new `Context` to create a new Javascript executor.
+let mut context = Context::default();
+
+// Get the realm from the context.
+let realm = context.realm().clone();
+
+// Insert a default CustomHostDefinedStruct.
+realm
+    .host_defined_mut()
+    .insert_default::<CustomHostDefinedStruct>();
+
+assert!(realm.host_defined().has::<CustomHostDefinedStruct>());
+
+// Get the [[HostDefined]] field from the realm and downcast it to our concrete type.
+let host_defined = realm.host_defined();
+let Some(host_defined) = host_defined.get::<CustomHostDefinedStruct>() else {
+    return Err(JsNativeError::typ()
+    .with_message("Realm does not have HostDefined field")
+    .into());
+};
+
+// Assert that the [[HostDefined]] field is in it's initial state.
+assert_eq!(host_defined.counter, 0);
+
+```
+
+[`HostDefined`]: https://docs.rs/boa_engine/0.18.0/boa_engine/struct.HostDefined.html
+
+### `Class` redesign + API enhancements
+
+There were some small improvements made to our `Class` trait API, including a way to cache
+custom `Class` implementors into the `Context` itself for easy access to the constructor and
+prototype objects. This is part of an ongoing effort about
+[improving the APIs around the `Class` trait][class].
+
+```rust
+// An example of what this new API allows
+// Assume there's already a `Person` struct that implements `Class`.
+
+let mut context = Context::default();
+context
+  .register_global_class::<Person>()
+  .expect("the Person builtin shouldn't exist");
+
+// Previously, the line below had to be done manually using something like
+// let prototype = context
+//     .global_object()
+//     .get(js_string!("Person"), context)
+//     .unwrap()
+//     .as_object()
+//     .cloned()
+//     .unwrap()
+//     .get(js_string("prototype"), context)
+//     .unwrap()
+//     .as_object()
+//     .cloned()
+//     .unwrap();
+// Yeah... it's a handful.
+let prototype = context.get_global_class::<Person>().unwrap().prototype();
+```
+
+[class]: https://github.com/boa-dev/boa/issues/3314
+
+### Runtime limits
+
+// TODO
+
+### Synthetic modules
+
+We added support for creating synthetic modules from Rust code. This allows exposing a set of
+functions and properties to other modules without having to evaluate Javascript code.
+
+```rust
+// Taken from https://github.com/boa-dev/boa/blob/main/examples/src/bin/synthetic.rs
+// See the file for the full example.
+
+// ...
+
+let sum = FunctionObjectBuilder::new(
+        context.realm(),
+        NativeFunction::from_fn_ptr(|_, args, ctx| {
+            args.get_or_undefined(0).add(args.get_or_undefined(1), ctx)
+        }),
+    )
+    .length(2)
+    .name(js_string!("sum"))
+    .build();
+
+// ...
+
+let operations = Module::synthetic(
+    // Make sure to list all exports beforehand.
+    &[
+        js_string!("sum"),
+        // ...
+    ],
+    // The initializer is evaluated every time a module imports this synthetic module,
+    // so we avoid creating duplicate objects by capturing and cloning them instead.
+    SyntheticModuleInitializer::from_copy_closure_with_captures(
+        |module, fns, _| {
+            println!("Running initializer!");
+            module.set_export(&js_string!("sum"), fns.0.clone().into())?;
+            // ...
+            Ok(())
+        },
+        (sum, /* ... */),
+    ),
+    None,
+    context,
+)
+
+loader.insert(
+    PathBuf::from("./scripts/modules")
+        .canonicalize()?
+        .join("operations.mjs"),
+    operations,
+);
+
+// ...
+
+```
+
+### Async eval
+
+Due to popular demand, we added some APIs that allow running scripts in an asynchronous way, making
+it possible to share some workload between async tasks and the execution of the engine itself.
+Note that, by the single-threaded nature of JS engines, all futures returned by Boa cannot implement
+neither `Send` nor `Sync`.
+
+```rust
+let context = &mut Context::default();
+let src = Source::from_bytes(r#"
+  let array = new Array([15, 20, 35, 123, 65, 12]);
+  array.sort();
+  console.log(array);
+"#);
+let src = Script::parse(src, None, context).unwrap();
+let task = async move {
+  let result = src.evaluate_async(context).await.unwrap();
+  println!("{:?}", result.display());
+}
+block_on(join!(long_task(), task));
+
+```
+
+### `JsErasedError`
+
+Don't you hate when you try to `?` a `Result<T, JsError>` and the compiler just complains saying
+something like
+```rust
+error[E0277]: `Rc<num_bigint::bigint::BigInt>` cannot be sent between threads safely
+   --> tests/tester/src/main.rs:190:52
+    |
+190 |     Context::default().eval(Source::from_bytes(""))?;
+    |                                                    ^ `Rc<num_bigint::bigint::BigInt>` cannot be sent between threads safely
+    |
+    = help: within `JsError`, the trait `Send` is not implemented for `Rc<num_bigint::bigint::BigInt>`
+    = help: the following other types implement trait `FromResidual<R>`:
+              <Result<T, F> as FromResidual<Yeet<E>>>
+              <Result<T, F> as FromResidual<Result<Infallible, E>>>
+```
+
+Well, say no more to missing `Send`s in your daily life! We present to you, `JsErasedError`!
+
+Jokes aside, using `JsError` is difficult from an embedder's perspective because `JsError` can be
+any arbitrary value, including non-`Send` values such as `JsObject`, `JsString` or `JsBigInt`.
+This makes `JsError` automatically incompatible with libraries like `anyhow` or `eyre` that expect
+only `Send` errors.
+
+To solve this, we introduced a new `JsError::into_erased` method which returns a thread-safe
+version of `JsError` that is compatible with `anyhow`, `eyre` and other error-reporting libraries.
+
+```rust
+fn main() -> eyre::Result<()> {
+    let context = &mut Context::default();
+    let value = context
+        .eval(Source::from_bytes(""))
+        .map_err(|err| err.into_erased(context))?; // No compiler errors!
+}
+```
+
+Why not call it `JsSendError` instead of `JsErasedError`? Well, it is generally not possible to
+convert a `JsError` into a `JsErasedError` without losing some information in the conversion. However,
+`JsSendError` gave the appearance of being `JsError` but `Send`, which is really not true. Hence,
+we decided to call it `JsErasedError` to emphasize that the conversion is not lossless. Though, feel
+free to ping us if you have a better name for it!
+
 ## Optimizations
 
-The following benchmarks below are taken from the [v8 benchmark suite](https://github.com/mozilla/arewefastyet/tree/master/benchmarks/v8-v7). This benchmark is deprecated, but is useful in this context to show the performance improvements between versions.
+The following benchmarks below are taken from the [v8 benchmark suite]. This benchmark is deprecated,
+but is useful in this context to show the performance improvements between versions.
 
 (higher numbers are better)
 
@@ -366,12 +594,15 @@ The following benchmarks below are taken from the [v8 benchmark suite](https://g
 | v0.17       | 34.3     | 39.1      | 49.1   | 134      | 119         | 141   | 11.9         | 56.2  |
 | v0.18       | 49.8     | 53.9      | 52.1   | 161      | 152         | 154   | 102          | 91.5  |
 
+[v8 benchmark suite]: https://github.com/mozilla/arewefastyet/tree/master/benchmarks/v8-v7
+
 ### Inline Caching
 
-Thanks to the implementation of [Object Shapes](https://github.com/boa-dev/boa/blob/main/docs/shapes.md) in version `v0.17`, we were able to further improve the
-performance of the engine by implementing Inline Caching. The concept of Inline Caching is based on
-the idea that a property access for a variable will usually only be applied to objects of similar Shapes.
-To picture this, let's examine the following code:
+Thanks to the implementation of [Object Shapes](https://github.com/boa-dev/boa/blob/main/docs/shapes.md)
+in version `v0.17`, we were able to further improve the performance of the engine by implementing
+Inline Caching. The concept of Inline Caching is based on the idea that a property access for a
+variable will usually only be applied to objects of similar Shapes. To picture this, let's examine
+the following code:
 
 ```js
 function attach(obj1, obj2) {
@@ -382,7 +613,7 @@ function attach(obj1, obj2) {
 On interpreters that don't implement any kind of caching, the previous code would have to make a
 property lookup for the `getHandler` method every time that method is called. This is really inefficient
 for a simple reason: `getHandler` could be inside `obj2`, or it could be inside `obj2.prototype`,
-or it could be inside `obj2.prototype.prototype`... `getHandler` could be anywhere on the
+or it could be inside `obj2.prototype.prototype`... in fact, `getHandler` could be anywhere on the
 inheritance chain of `obj2`!
 
 The easy approach to solve this is to cache the method lookup inside `obj2` itself using an associative
@@ -407,28 +638,45 @@ we're planning to do in the future!
 
 ## Road to 1.0
 
-As Boa is being used by more projects it is important we can provide a stable and reliable API. We don't feel like we're quite there yet, but after a discussion with the team we have decided to aim for a 1.0 release in the near future. This will be a big milestone for us and we hope to have a lot of new features and improvements to show off by then.
+As Boa is being used by more projects it is important we can provide a stable and reliable API. We
+don't feel like we're quite there yet, but after a discussion with the team we have decided to aim
+for a 1.0 release in the near future. This will be a big milestone for us and we hope to have a lot
+of new features and improvements to show off by then.
 
-We will keep our focus on the public API for those embedding Boa. We will also be working on improving the performance of the engine. If you wanted to offer feedback on the API feel free to reach out to us via Github or Discord.
+We will keep our focus on the public API for those embedding Boa. We will also be working on improving
+the performance of the engine. If you wanted to offer feedback on the API feel free to reach out to
+us via Github or Discord.
 
-You can keep an eye on the project to reach 1.0 [here](https://github.com/orgs/boa-dev/projects/2/views/1). We hopefully don't forsee this project getting much bigger as most issues such as spec conformance or performance are a going-concern.
+You can keep an eye on the project to reach 1.0 [here](https://github.com/orgs/boa-dev/projects/2/views/1).
+We hopefully don't forsee this project getting much bigger as most issues such as spec conformance
+or performance are a going-concern.
 
 ## Conclusion
 
 ### How can you support Boa?
 
-Boa is an independent JavaScript engine implementing the ECMAScript specification, we rely on the support of the community to keep it going. If you want to support us, you can do so by donating to our [open collective](https://opencollective.com/boa). Proceeeds here go towards this very website, the domain name, and remunerating members of the team who have worked on the features released.
+Boa is an independent JavaScript engine implementing the ECMAScript specification, we rely on the
+support of the community to keep it going. If you want to support us, you can do so by donating to
+our [open collective]. Proceeeds here go towards this very website, the domain name, and remunerating
+members of the team who have worked on the features released.
 
-If financial contribution is not your strength, you can contribute by asking to be assigned to one of our
-[open issues](https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee), and asking for mentoring if you
-don't know your way around the engine. Our [contribution guide](https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md)
-should help you here. If you are more used to working with JavaScript or frontend web development, we also
-welcome help to improve our web presence, either in [our website](https://github.com/boa-dev/boa-dev.github.io), or in
-our [testing representation](https://github.com/boa-dev/boa/issues/820) page or benchmarks page. You can also contribute to
-our Criterion benchmark comparison GitHub [action](https://github.com/boa-dev/criterion-compare-action).
+If financial contribution is not your strength, you can contribute by asking to be assigned to one of
+our [open issues], and asking for mentoring if you don't know your way around the engine. Our
+[contribution guide] should help you here. If you are more used to working with JavaScript or frontend
+web development, we also welcome help to improve our web presence, either in [our website], or in our
+[testing representation] page or benchmarks page. You can also contribute to our Criterion benchmark
+comparison GitHub [action].
 
-We are also looking to improve the documentation of the engine, both for developers of the engine itself and for users of the
-engine. Feel free to contact us in [Discord](https://discord.gg/tUFFk9Y).
+We are also looking to improve the documentation of the engine, both for developers of the engine
+itself and for users of the engine. Feel free to contact us in [Discord].
+
+[open collective]: https://opencollective.com/boa
+[open issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee
+[contribution guide]: https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md
+[our website]: https://github.com/boa-dev/boa-dev.github.io
+[testing representation]: https://github.com/boa-dev/boa/issues/820
+[action]: https://github.com/boa-dev/criterion-compare-action
+[Discord]: https://discord.gg/tUFFk9Y
 
 ### Thank You
 
