@@ -51,11 +51,6 @@ changes pushed to their main branch.
 This is a great achievement for us and we are very proud to be listed alongside other major JavaScript
 engines. It should be much easier for users to compare Boa's conformance tests with other engines.
 
-Below is a screenshot showing Boa being 83% conformance with the latest tests and to the right
-statistics on the time taken to performa a full test run in comparison to other engines.
-
-![img](./conformance_dark.webp)
-
 ### Temporal
 
 A lot of work has been put over the past few months on the Temporal API. The Temporal API is a new
@@ -124,6 +119,7 @@ Temporal, feel free to check out `temporal_rs`'s [issues](https://github.com/boa
 
 Over the past 7 months there has been some effort poured into an improved implementation of RegExp.
 This includes:
+
 - Support for [`RegExp.prototype.hasIndices`] (Thanks to @dirkdev98!).
 - Support for Unicode sets, aka the `v` flag.
 - Support for UTF-16 text searches.
@@ -581,6 +577,7 @@ block_on(join!(long_task(), task));
 
 Don't you hate when you try to `?` a `Result<T, JsError>` and the compiler just complains saying
 something like
+
 ```rust
 error[E0277]: `Rc<num_bigint::bigint::BigInt>` cannot be sent between threads safely
    --> tests/tester/src/main.rs:190:52
