@@ -123,12 +123,11 @@ Temporal, feel free to check out `temporal_rs`'s [issues](https://github.com/boa
 ## RegExp
 
 Over the past 7 months there has been some effort poured into an improved implementation of RegExp.
-
-Thanks to [@dirkdev98](https://github.com/dirkdev98) who added support for
-[RegExp.prototype.hasIndices][has_indices]. On top of this there have been some changes by our core
-developers to make the engine adhere to the specification more. This involves other new features
-such as support for Unicode sets with the `v` flag, proper support for UTF-16 searches, and fixes
-around the `RegExp()`, `RegExp.toString()` and `RegExp.match()` methods
+This includes:
+- Support for [`RegExp.prototype.hasIndices`] (Thanks to @dirkdev98!).
+- Support for Unicode sets, aka the `v` flag.
+- Support for UTF-16 text searches.
+- General fixes around `RegExp()`, `RegExp.toString()` and `RegExp.match()`.
 
 Here is a table showing the progress of RegExp between v0.17 and v0.18:
 
@@ -144,7 +143,7 @@ That's a whopping 807 more tests passed!
 We only have two failing tests left and both are caused by the lack of Unicode 15.1 support.
 The remaining skipped tests are all related to stage 3 proposals.
 
-[has_indices]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices
+[`RegExp.prototype.hasIndices`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices
 
 ## Shared Array Buffer + Atomics
 
@@ -374,7 +373,7 @@ Some of you might have noticed that the previous section contained a builtin add
 technically a "spec addition", but a "proposal for a spec addition". To clarify, the
 [`ArrayBuffer.prototype.transfer` and friends][transfer] proposal is, at the time of the publication
 of this post, still at stage 3 on the [TC39 Process]. Generally, stages 3 and below need to be
-gated by implementors; this avoids exposing APIs to users that may change in the future.
+gated by implementors; this avoids exposing experimental APIs to users.
 
 Mirroring this general idea, we introduced a new `experimental` feature for the `boa_engine` crate.
 Enabling this feature will make it possible to test future proposals for the ECMAScript specification
@@ -471,7 +470,34 @@ let prototype = context.get_global_class::<Person>().unwrap().prototype();
 
 ### Runtime limits
 
-// TODO
+We added new APIs to limit the execution of the engine at runtime! This new API has some limitations
+such as being unable to track limits inside native Rust functions, and we're still working on offering
+more options for other runtime limits such as heap size limits, but we hope this is at least useful
+for some users.
+
+```rust
+// Snippet taken from https://github.com/boa-dev/boa/blob/main/examples/src/bin/runtime_limits.rs
+// Check that file for the full example.
+// Create the JavaScript context.
+let mut context = Context::default();
+
+// Set the context's runtime limit on loops to 10 iterations.
+context.runtime_limits_mut().set_loop_iteration_limit(10);
+
+// Here we exceed the limit by 1 iteration and a `RuntimeLimit` error is thrown.
+//
+// This error cannot be caught in JavaScript, it can only be caught in Rust code.
+let result = context.eval(Source::from_bytes(
+    r"
+        try {
+            for (let i = 0; i < 12; ++i) { }
+        } catch (e) {
+
+        }
+    ",
+));
+assert!(result.is_err());
+```
 
 ### Synthetic modules
 
