@@ -19,11 +19,14 @@ implemented for this release.
 You can check the full list of changes [here][changelog], and the full information on conformance
 [here][conformance].
 
-You probably noticed that something seems different... This release marks a major update to the design of our website! We'd like to thank [@ZackMitkin](https://github.com/ZackMitkin) for being the one that started the work on this nifty redesign.
+You probably noticed that something seems different... This release marks a major update to the design
+of our website, and the introduction of our new logo!
+We'd like to thank [@ZackMitkin](https://github.com/ZackMitkin) for being the one that started the
+work on this nifty redesign, and [@kelbazz](https://github.com/kelbazz) for designing the logo.
 We're planning to add some additional pages to learn more about the APIs that Boa exposes.
-Additionally, expect some more blog posts from us in the future! We would like
-to write about how to use certain APIs, design challenges that we encountered
-while developing the engine, and internal implementation details.
+Additionally, expect some more blog posts from us in the future! We would like to write about how to
+use certain APIs, design challenges that we encountered while developing the engine, and internal
+implementation details.
 Subscribe to our [RSS feed][feed] if you're interested in staying up to date!
 
 This big release was partly possible thanks to those who have [supported us](https://opencollective.com/boa).
