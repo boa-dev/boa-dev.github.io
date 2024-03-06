@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkboajs_dev=self.webpackChunkboajs_dev||[]).push([[9267],{8289:s=>{s.exports=JSON.parse('[{"label":"post","permalink":"/blog/tags/post","count":11}]')}}]);
