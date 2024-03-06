@@ -1,6 +1,6 @@
-import { themes } from "prism-react-renderer";
-import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import type { Config } from "@docusaurus/types";
+import { themes } from "prism-react-renderer";
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -8,7 +8,7 @@ const darkCodeTheme = themes.dracula;
 const config: Config = {
   title: "Boa JS",
   tagline: "An ECMAScript engine written in Rust",
-  favicon: "img/classic_logo.png",
+  favicon: "img/new_logo_yellow.svg",
 
   // Set the production url of your site here
   url: "https://boajs.dev",
@@ -53,12 +53,13 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/classic_logo.png",
+    image: "img/new_logo_yellow.svg",
     navbar: {
       title: "Boa",
       logo: {
         alt: "My Site Logo",
-        src: "img/classic_logo.png",
+        src: "img/new_logo_blue.svg",
+        srcDark: "img/new_logo_yellow.svg",
       },
       items: [
         {
@@ -137,8 +138,8 @@ const config: Config = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
+              label: "RSS",
+              href: "https://boajs.dev/blog/rss.xml",
             },
             {
               label: "GitHub",
