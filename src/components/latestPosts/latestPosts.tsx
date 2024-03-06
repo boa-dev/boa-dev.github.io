@@ -1,11 +1,9 @@
-import clsx from "clsx";
-import React from "react";
-import styles from "./styles.module.css";
-import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
+import Heading from "@theme/Heading";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 export default function LatestPosts({ recentPosts }) {
-  console.log(recentPosts);
   return (
     <div className={clsx("container", styles.wrap)}>
       <Heading as="h2">Latest posts</Heading>
@@ -32,7 +30,7 @@ export default function LatestPosts({ recentPosts }) {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
-                  },
+                  }
                 )}
               </p>
             </div>
