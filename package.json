@@ -30,6 +30,7 @@
     "@docusaurus/core": "^3.1.1",
     "@docusaurus/plugin-content-pages": "^3.1.1",
     "@docusaurus/preset-classic": "^3.1.1",
+    "@docusaurus/theme-mermaid": "^3.1.1",
     "@mdx-js/react": "^3.0.1",
     "@monaco-editor/react": "^4.6.0",
     "@razican/boa_wasm": "^0.17.0",
@@ -41,17 +42,17 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@docusaurus/eslint-plugin": "^3.1.1",
     "@docusaurus/module-type-aliases": "^3.1.1",
+    "@docusaurus/plugin-client-redirects": "^3.1.1",
     "@docusaurus/tsconfig": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
-    "typescript": "^5.3.3",
-    "prettier": "3.2.5",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "@docusaurus/eslint-plugin": "^3.1.1",
-    "@docusaurus/plugin-client-redirects": "^3.1.1"
+    "prettier": "3.2.5",
+    "typescript": "^5.3.3"
   },
   "browserslist": {
     "production": [

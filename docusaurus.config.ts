@@ -51,6 +51,11 @@ const config: Config = {
     ],
   ],
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
   themeConfig: {
     // Replace with your project's social card
     image: "img/new_logo_yellow.svg",
@@ -153,6 +158,9 @@ const config: Config = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
       additionalLanguages: ["rust", "toml"],
+    },
+    mermaid: {
+      theme: { light: 'dark', dark: 'dark' },
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
