@@ -188,6 +188,22 @@ const config: Config = {
         },
       },
     ],
+    // This is a fix for the flashing 404 page on URLs with a trailing slash:
+    //
+    // See: https://github.com/facebook/docusaurus/issues/5077
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        createRedirects(existingPath: string) {
+          if (!existingPath.endsWith("/")) {
+            return `${existingPath}/`;
+          }
+
+          // Return a falsy value: no redirect created
+          return undefined;
+        },
+      },
+    ]
   ],
 };
 
