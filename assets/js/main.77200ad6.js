@@ -398,7 +398,7 @@ const i18n_namespaceObject = /*#__PURE__*/JSON.parse('{"defaultLocale":"en","loc
 // EXTERNAL MODULE: ./.docusaurus/codeTranslations.json
 var codeTranslations = __webpack_require__(2654);
 ;// CONCATENATED MODULE: ./.docusaurus/site-metadata.json
-const site_metadata_namespaceObject = /*#__PURE__*/JSON.parse('{"docusaurusVersion":"3.1.1","siteVersion":"0.0.0","pluginVersions":{"docusaurus-plugin-content-docs":{"type":"package","name":"@docusaurus/plugin-content-docs","version":"3.1.1"},"docusaurus-plugin-content-pages":{"type":"package","name":"@docusaurus/plugin-content-pages","version":"3.1.1"},"docusaurus-plugin-sitemap":{"type":"package","name":"@docusaurus/plugin-sitemap","version":"3.1.1"},"docusaurus-theme-classic":{"type":"package","name":"@docusaurus/theme-classic","version":"3.1.1"},"custom-docusaurus-plugin":{"type":"local"},"docusaurus-plugin-content-blog":{"type":"project"}}}');
+const site_metadata_namespaceObject = /*#__PURE__*/JSON.parse('{"docusaurusVersion":"3.1.1","siteVersion":"0.0.0","pluginVersions":{"docusaurus-plugin-content-docs":{"type":"package","name":"@docusaurus/plugin-content-docs","version":"3.1.1"},"docusaurus-plugin-content-pages":{"type":"package","name":"@docusaurus/plugin-content-pages","version":"3.1.1"},"docusaurus-plugin-sitemap":{"type":"package","name":"@docusaurus/plugin-sitemap","version":"3.1.1"},"docusaurus-theme-classic":{"type":"package","name":"@docusaurus/theme-classic","version":"3.1.1"},"custom-docusaurus-plugin":{"type":"local"},"docusaurus-plugin-content-blog":{"type":"project"},"docusaurus-plugin-client-redirects":{"type":"package","name":"@docusaurus/plugin-client-redirects","version":"3.1.1"}}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(4848);
 ;// CONCATENATED MODULE: ./node_modules/@docusaurus/core/lib/client/docusaurusContext.js
@@ -8029,6 +8029,10 @@ __webpack_require__.r(__webpack_exports__);
           "type": "all"
         }
       }
+    ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {}
     ]
   ],
   "baseUrlIssueBanner": true,
