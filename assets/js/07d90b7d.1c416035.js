@@ -233,7 +233,7 @@ function _createMdxContent(props) {
         href: "https://github.com/kelbazz",
         children: "@kelbazz"
       }), " for designing the logo.\nWe're planning to add some additional pages to learn more about the APIs that Boa exposes.\nAdditionally, expect some more blog posts from us in the future! We would like to write about how to\nuse certain APIs, design challenges that we encountered while developing the engine, and internal\nimplementation details.\nSubscribe to our ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/blog/rss.xml",
+        href: "https://boajs.dev/blog/rss.xml",
         children: "RSS feed"
       }), " if you're interested in staying up to date!"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
