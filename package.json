@@ -33,7 +33,7 @@
     "@docusaurus/theme-mermaid": "^3.1.1",
     "@mdx-js/react": "^3.0.1",
     "@monaco-editor/react": "^4.6.0",
-    "@razican/boa_wasm": "^0.17.0",
+    "@boa-dev/boa_wasm": "^0.18.0",
     "chart.js": "^4.4.1",
     "clsx": "^2.1.0",
     "prism-react-renderer": "^2.3.1",
