@@ -85,11 +85,11 @@ const toc = [{
 }, {
   "value": "RegExp",
   "id": "regexp",
-  "level": 2
+  "level": 3
 }, {
   "value": "Shared Array Buffer + Atomics",
   "id": "shared-array-buffer--atomics",
-  "level": 2
+  "level": 3
 }, {
   "value": "Intl updates",
   "id": "intl-updates",
@@ -312,7 +312,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/temporal/issues",
         children: "issues"
       }), "!"]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
       id: "regexp",
       children: "RegExp"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
@@ -392,7 +392,7 @@ function _createMdxContent(props) {
       children: "That's a whopping 807 more tests passed!"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
       children: "We only have two failing tests left and both are caused by the lack of Unicode 15.1 support.\nThe remaining skipped tests are all related to stage 3 proposals."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
       id: "shared-array-buffer--atomics",
       children: "Shared Array Buffer + Atomics"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
