@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[786],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4828],{
 
-/***/ 6583:
+/***/ 9525:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -39,7 +39,7 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 19.54,
+  "readingTime": 19.53,
   "hasTruncateMarker": false,
   "authors": [
     {
@@ -324,7 +324,10 @@ function _createMdxContent(props) {
           children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
             children: "RegExp.prototype.hasIndices"
           })
-        }), " (Thanks to @dirkdev98!)."]
+        }), " (Thanks to ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
+          href: "https://github.com/dirkdev98",
+          children: "@dirkdev98"
+        }), "!)."]
       }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.li, {
         children: ["Support for Unicode sets, aka the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
           children: "v"
@@ -724,9 +727,9 @@ function _createMdxContent(props) {
         children: "JsError"
       }), " but ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         children: "Send"
-      }), ", which is really not true. Hence,\nwe decided to call it ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+      }), ", which is really not true. ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         children: "JsErasedError"
-      }), " to emphasize that the conversion is not lossless. Though, feel\nfree to ping us if you have a better name for it!"]
+      }), ",\non the other hand, makes it clear the conversion is not lossless. Feel free to ping us if you have a\nbetter name for it though!"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "optimizations",
       children: "Optimizations"
