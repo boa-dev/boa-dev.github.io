@@ -7792,7 +7792,7 @@ __webpack_require__.r(__webpack_exports__);
           "items": [
             {
               "label": "Discord",
-              "href": "https://discord.gg/tUFFk9Ys"
+              "href": "https://discord.gg/tUFFk9Y"
             },
             {
               "label": "Mastodon",
