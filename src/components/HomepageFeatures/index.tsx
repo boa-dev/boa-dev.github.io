@@ -17,18 +17,18 @@ const FeatureList: FeatureItem[] = [
     title: "Written in Rust",
     Svg: new_logo_black,
     description: (
-      <>Boa hopes to bring Rust safety garuantees to the world of JS engines.</>
+      <>Boa brings Rust's memory safety guarantees to the world of JS engines.</>
     ),
   },
   {
     title: "Aims for ECMAScript Conformance",
     Svg: new_logo_yellow,
     description: (
-      <>Boa currently passes more than 75% of ECMAScripts test262 test suite.</>
+      <>Boa passes more than 80% of ECMAScripts test262 test suite.</>
     ),
   },
   {
-    title: "Open Source",
+    title: "Free and Open Source",
     Svg: new_logo_blue,
     description: (
       <>
