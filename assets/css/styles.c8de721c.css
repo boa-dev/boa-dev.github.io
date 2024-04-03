@@ -3135,6 +3135,10 @@ html[data-theme="dark"] {
   text-align: center;
 }
 
+.navbar--fixed-top {
+  margin-bottom: 24px;
+}
+
 .features_t9lD {
   display: flex;
   align-items: center;
@@ -3315,6 +3319,18 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar_mb4j {
  * LICENSE file in the root directory of this source tree.
  */
 
+.iconEdit_Z9Sw {
+  margin-right: 0.3em;
+  vertical-align: sub;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 .toggle_vylO {
   width: 2rem;
   height: 2rem;
@@ -3342,29 +3358,6 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar_mb4j {
 
 .toggleButtonDisabled_aARS {
   cursor: not-allowed;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.iconEdit_Z9Sw {
-  margin-right: 0.3em;
-  vertical-align: sub;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.darkNavbarColorModeToggle_X3D1:hover {
-  background: var(--ifm-color-gray-800);
 }
 
 /**
@@ -3402,6 +3395,32 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
 .hash-link:focus,
 *:hover > .hash-link {
   opacity: 1;
+}
+
+.cards-wrap_fyqw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.benchmark-card-header_B2CI {
+  margin-bottom: 24px;
+}
+
+.benchmark-card_zF5C {
+  margin-bottom: 24px;
+  width: 44vw;
+}
+
+@media screen and (max-width: 996px) {
+  .cards-wrap_fyqw {
+    display: block;
+  }
+
+  .benchmark-card_zF5C {
+    margin-bottom: 24px;
+    width: 100%;
+  }
 }
 
 /**
@@ -3737,6 +3756,17 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
     height: 4rem;
     margin: 0.25rem 0.5rem;
   }
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.darkNavbarColorModeToggle_X3D1:hover {
+  background: var(--ifm-color-gray-800);
 }
 
 /**
@@ -4343,6 +4373,11 @@ body {
 .tag_Nnez {
   display: inline-block;
   margin: 0.5rem 0.5rem 0 1rem;
+}
+
+.container_kxXC {
+  width: 90vw;
+  align-self: center;
 }
 
 .latestPostsWrap_wV06 {
