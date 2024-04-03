@@ -1,0 +1,25 @@
+.cards-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.benchmark-card-header {
+  margin-bottom: 24px;
+}
+
+.benchmark-card {
+  margin-bottom: 24px;
+  width: 44vw;
+}
+
+@media screen and (max-width: 996px) {
+  .cards-wrap {
+    display: block;
+  }
+
+  .benchmark-card {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+}

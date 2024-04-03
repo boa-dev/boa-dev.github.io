@@ -53,3 +53,7 @@ html[data-theme="dark"] {
 .footer__links {
   text-align: center;
 }
+
+.navbar--fixed-top {
+  margin-bottom: 24px;
+}

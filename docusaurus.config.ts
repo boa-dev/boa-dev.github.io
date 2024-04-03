@@ -54,7 +54,7 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ["@docusaurus/theme-mermaid"],
 
   themeConfig: {
     // Replace with your project's social card
@@ -86,7 +86,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://boajs.dev/boa/dev/bench/",
+          href: "/benchmarks",
           label: "Benchmarks",
           position: "right",
         },
@@ -160,7 +160,7 @@ const config: Config = {
       additionalLanguages: ["rust", "toml"],
     },
     mermaid: {
-      theme: { light: 'dark', dark: 'dark' },
+      theme: { light: "dark", dark: "dark" },
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
@@ -211,7 +211,7 @@ const config: Config = {
           return undefined;
         },
       },
-    ]
+    ],
   ],
 };
 
