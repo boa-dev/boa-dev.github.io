@@ -64,16 +64,10 @@ const buildChartFromBenchmark = async (name: string) => {
       </div>
       <div className={styles["cards-wrap"]}>
         <div className={`card ${styles["benchmark-card"]}`}>
-          <Line
-            data={data}
-            options={{ plugins: { title: { display: true, text: name } } }}
-          ></Line>
+          <Line data={data}></Line>
         </div>
         <div className={`card ${styles["benchmark-card"]}`}>
-          <Bar
-            data={barData}
-            options={{ plugins: { title: { display: true, text: name } } }}
-          ></Bar>
+          <Bar data={barData}></Bar>
         </div>
       </div>
     </div>
