@@ -30,13 +30,7 @@ function HomepageHeader() {
             className={"button button--secondary " + styles.buttonMargin}
             href="https://docs.rs/boa_engine/latest/boa_engine/"
           >
-            Release Documentation
-          </Link>
-          <Link
-            className={"button button--secondary " + styles.buttonMargin}
-            href="https://boajs.dev/boa/doc/boa_engine/index.html"
-          >
-            Dev Documentation
+            Documentation
           </Link>
         </div>
       </div>

@@ -117,12 +117,8 @@ const config: Config = {
               to: "/docs/intro",
             },
             {
-              label: "Release API",
+              label: "API Documentation",
               href: "https://docs.rs/boa_engine/latest",
-            },
-            {
-              label: "Development API",
-              href: "https://boajs.dev/boa/doc/boa_engine/index.html",
             },
           ],
         },
