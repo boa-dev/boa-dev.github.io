@@ -39,7 +39,7 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 11.345,
+  "readingTime": 11.325,
   "hasTruncateMarker": false,
   "authors": [
     {
@@ -473,11 +473,8 @@ function _createMdxContent(props) {
         })
       }), "\n"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Internationalization data can be pretty expensive at times: the default data included by Boa is 10.6 MB, which is why\nwe allow customizing the data provider used by the engine with the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/doc/boa_engine/context/struct.ContextBuilder.html#method.icu_provider",
-        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-          children: "ContextBuilder::icu_provider"
-        })
+      children: ["Internationalization data can be pretty expensive at times: the default data included by Boa is 10.6 MB, which is why\nwe allow customizing the data provider used by the engine with the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+        children: "ContextBuilder::icu_provider"
       }), " hook.\nFor more information on how to generate custom internationalization data, you can check out the\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
         href: "https://github.com/unicode-org/icu4x/blob/main/docs/tutorials/data_management.md#data-management-in-icu4x",
         children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.strong, {

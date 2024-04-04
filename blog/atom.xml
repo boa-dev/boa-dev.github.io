@@ -353,7 +353,7 @@ which need to add a more complex event loop, such as Tokio or Mio.</p>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter" target="_blank" rel="noopener noreferrer"><code>Intl.Segmenter</code></a></li>
 </ul>
 <p>Internationalization data can be pretty expensive at times: the default data included by Boa is 10.6 MB, which is why
-we allow customizing the data provider used by the engine with the <a href="https://boajs.dev/boa/doc/boa_engine/context/struct.ContextBuilder.html#method.icu_provider" target="_blank" rel="noopener noreferrer"><code>ContextBuilder::icu_provider</code></a> hook.
+we allow customizing the data provider used by the engine with the <code>ContextBuilder::icu_provider</code> hook.
 For more information on how to generate custom internationalization data, you can check out the
 <a href="https://github.com/unicode-org/icu4x/blob/main/docs/tutorials/data_management.md#data-management-in-icu4x" target="_blank" rel="noopener noreferrer"><strong>data management tutorial</strong></a> from <a href="https://github.com/unicode-org/icu4x" target="_blank" rel="noopener noreferrer"><code>icu4x</code></a>, the internationalization library used in Boa. Shoutout to the
 <code>icu4x</code> team, who are the ones that made all of this possible!</p>

@@ -79,10 +79,6 @@ const toc = [{
   "id": "tasks",
   "level": 4
 }, {
-  "value": "Documentation",
-  "id": "documentation",
-  "level": 2
-}, {
   "value": "Communication",
   "id": "communication",
   "level": 2
@@ -191,16 +187,6 @@ function _createMdxContent(props) {
       }), "\n"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
       children: "If you don't want to install everything on your machine, you can use the Dockerfile.\nStart VSCode in container mode (you may need the docker container plugin) and use the Dockerfile."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
-      id: "documentation",
-      children: "Documentation"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["We have specific documentation for development, updated on each commit to the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "main"
-      }), " branch, with all the private\nmethods visible here: ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/doc/",
-        children: "https://boajs.dev/boa/doc/"
-      })]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "communication",
       children: "Communication"
