@@ -64,11 +64,6 @@ Boa has some pre-defined tasks in ".vscode/tasks.json"
 If you don't want to install everything on your machine, you can use the Dockerfile.
 Start VSCode in container mode (you may need the docker container plugin) and use the Dockerfile.
 
-## Documentation
-
-We have specific documentation for development, updated on each commit to the `main` branch, with all the private
-methods visible here: https://boajs.dev/boa/doc/
-
 ## Communication
 
 We have a Discord server, feel free to ask questions [here](https://discord.gg/tUFFk9Y)
