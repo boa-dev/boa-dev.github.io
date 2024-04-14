@@ -1,5 +1,9 @@
 import React from "react";
-import { VersionItem, TestStats, ConformanceState } from "@site/src/components/conformance/types";
+import {
+  VersionItem,
+  TestStats,
+  ConformanceState,
+} from "@site/src/components/conformance/types";
 import {
   createState,
   mapToTestStats,

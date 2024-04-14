@@ -1,6 +1,9 @@
 import React from "react";
 import { useHistory } from "@docusaurus/router";
-import { ConformanceState, VersionItem } from "@site/src/components/conformance/types";
+import {
+  ConformanceState,
+  VersionItem,
+} from "@site/src/components/conformance/types";
 import styles from "./styles.module.css";
 import { createState } from "../utils";
 

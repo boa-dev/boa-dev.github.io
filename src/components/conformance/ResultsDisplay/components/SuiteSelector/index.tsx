@@ -12,16 +12,18 @@ type SelectorProps = {
 export default function SuiteSelector(props: SelectorProps): JSX.Element {
   return (
     <div className={styles.suiteSelector}>
-      {props.suites.map((suite) => {
-        return (
-          <SuiteItem
-            key={suite.name}
-            suite={suite}
-            esFlag={props.esFlag}
-            navigateToSuite={props.navigateToSuite}
-          />
-        );
-      })}
+      {props.suites
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((suite) => {
+          return (
+            <SuiteItem
+              key={suite.name}
+              suite={suite}
+              esFlag={props.esFlag}
+              navigateToSuite={props.navigateToSuite}
+            />
+          );
+        })}
     </div>
   );
 }
