@@ -4,13 +4,14 @@ import {
   TestOutcome,
   TestResult,
   SuiteResult,
+  ConformanceState,
 } from "@site/src/components/conformance/types";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 
 type TestsGridProps = {
+  state: ConformanceState;
   suite: SuiteResult;
-  esFlag: string | null;
   selectTest: (string) => void;
 };
 
@@ -26,7 +27,7 @@ export default function TestsGrid(props: TestsGridProps): JSX.Element {
         <div className={cardBodyClass}>
           <Grid
             tests={props.suite.tests}
-            esFlag={props.esFlag}
+            esFlag={props.state.ecmaScriptVersion}
             selectTest={props.selectTest}
           />
         </div>

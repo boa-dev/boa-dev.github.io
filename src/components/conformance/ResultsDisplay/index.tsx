@@ -4,46 +4,70 @@ import {
   ResultInfo,
   VersionItem,
   SuiteResult,
-  SpecEdition,
+  ConformanceState,
 } from "@site/src/components/conformance/types";
-import { mapToResultInfo } from "@site/src/components/conformance/utils";
+import ResultNavigation from "./nav";
+import {
+  createState,
+  mapToResultInfo,
+} from "@site/src/components/conformance/utils";
+import { useHistory } from "@docusaurus/router";
 
 import styles from "./styles.module.css";
 
 type ResultsProps = {
-  activeVersion: VersionItem;
+  state: ConformanceState;
 };
 
 export default function ResultsDisplay(props: ResultsProps): JSX.Element {
-  const [activeResults, setActiveResults] = React.useState<ResultInfo | null>(
-    null,
-  );
-  const [testPath, setTestPath] = React.useState<string[]>([
-    props.activeVersion.tagName,
-  ]);
   const [currentSuite, setCurrentSuite] = React.useState<SuiteResult | null>(
     null,
   );
-  const [esVersionFlag, setEsVersionFlag] = React.useState<string | null>(null);
+
+  // Refs
+  const activeResults = React.useRef<undefined | ResultInfo>();
+
+  const history = useHistory<ConformanceState>();
 
   React.useEffect(() => {
-    fetchResults(props.activeVersion).then((data) => {
-      const resultInfo = mapToResultInfo(data);
-      setActiveResults(resultInfo);
-      setCurrentSuite(resultInfo.results);
-    });
+    // If the version is correctly synced
+    if (props.state.version.tagName !== activeResults.current?.version) {
+      updateActiveResults().then((results) => {
+        activeResults.current = results;
+        const foundSuite = findResultsFromPath(results);
+        setCurrentSuite(foundSuite);
+      });
+      // Return to prevent further execution.
+      return;
+    }
 
-    setTestPath([props.activeVersion.tagName]);
-  }, [props.activeVersion]);
+    // TODO / NOTE: there may be a bug with version swapping. TBD.
+    // Return early if for some reason activeResults.current is undefined
+    if (!activeResults.current) return;
 
-  React.useEffect(() => {
-    // Return early if activeResults is null.
-    if (!activeResults) return;
+    // Results should be defined from the check on activeResults.current
+    const foundSuite = findResultsFromPath(activeResults.current);
+    setCurrentSuite(foundSuite);
+  }, [props.state]);
 
-    let newSuiteTarget: SuiteResult | null = null;
-    for (const target of testPath) {
-      if (target === props.activeVersion.tagName) {
-        newSuiteTarget = activeResults.results;
+  // Fetches the version results
+  const fetchResults = async (version: VersionItem) => {
+    const response = await fetch(version.fetchUrl);
+    return await response.json();
+  };
+
+  const updateActiveResults = async (): Promise<ResultInfo> => {
+    const data = await fetchResults(props.state.version);
+    return mapToResultInfo(props.state.version.tagName, data);
+    // setCurrentSuite(resultInfo.results);
+  };
+
+  const findResultsFromPath = (activeResultsInfo: ResultInfo): SuiteResult => {
+    let newSuiteTarget: SuiteResult | undefined = undefined;
+    for (const target of props.state.testPath) {
+      if (target === props.state.version.tagName) {
+        newSuiteTarget = activeResultsInfo.results;
+        continue;
       }
 
       // Suites must exist here for the path value to be valid.
@@ -53,142 +77,85 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         }
       }
     }
-
-    setCurrentSuite(newSuiteTarget);
-  }, [testPath]);
-
-  // Fetches the version results
-  const fetchResults = async (version: VersionItem) => {
-    const response = await fetch(version.fetchUrl);
-    return await response.json();
+    return newSuiteTarget;
   };
 
   // Navigates to a suite by adding the SuiteName to the test path array.
   const navigateToSuite = (newSuiteName: string) => {
-    setTestPath((testPath) => [...testPath, newSuiteName]);
+    const newPath = [...props.state.testPath, newSuiteName];
+    history.push({
+      pathname: "/conformance",
+      state: createState(
+        props.state.version,
+        newPath,
+        props.state.ecmaScriptVersion,
+      ),
+    });
   };
 
   // Removes a value or values from the test path array.
   //
   // Used by breadcrumbs for navigation.
   const sliceNavToIndex = (nonInclusiveIndex: number) => {
-    setTestPath((testPath) => [...testPath.slice(0, nonInclusiveIndex)]);
+    const slicedPath = [...props.state.testPath.slice(0, nonInclusiveIndex)];
+    history.push({
+      pathname: "/conformance",
+      state: createState(
+        props.state.version,
+        slicedPath,
+        props.state.ecmaScriptVersion,
+      ),
+    });
   };
 
   // Sets the ECMAScript version flag value.
   const setEcmaScriptFlag = (flag: string) => {
-    const nulledFlag = flag ? flag : null;
-    setEsVersionFlag(nulledFlag);
+    const nulledFlag = flag ? flag : undefined;
+    history.push({
+      pathname: "/conformance",
+      state: createState(props.state.version, props.state.testPath, nulledFlag),
+    });
+  };
+
+  // Sets a selected test.
+  const setSelectedTest = (test: string | undefined) => {
+    history.push({
+      pathname: "/conformance",
+      state: createState(
+        props.state.version,
+        props.state.testPath,
+        props.state.ecmaScriptVersion,
+        test,
+      ),
+    });
   };
 
   // Create the t262 URL from testPath with the results commit
   const t262Path = (): string => {
     // NOTE: testPath[0] === activeBoaReleaseTag
     return [
-      activeResults.test262Commit,
+      activeResults.current.test262Commit,
       "test",
-      ...testPath.slice(1, testPath.length),
+      ...props.state.testPath.slice(1, props.state.testPath.length),
     ].join("/");
   };
 
   return (
     <div className={styles.resultsDisplay}>
       <ResultNavigation
-        navPath={testPath}
+        navPath={props.state.testPath}
         sliceNavToIndex={sliceNavToIndex}
         setEcmaScriptFlag={setEcmaScriptFlag}
       />
-      {activeResults && currentSuite ? (
+      {currentSuite ? (
         <SuiteDisplay
+          state={props.state}
           currentSuite={currentSuite}
-          esFlag={esVersionFlag}
           t262Path={t262Path()}
           navigateToSuite={navigateToSuite}
+          setSelectedTest={(test) => setSelectedTest(test)}
         />
       ) : null}
-    </div>
-  );
-}
-
-type ResultsNavProps = {
-  navPath: string[];
-  sliceNavToIndex: (number) => void;
-  setEcmaScriptFlag: (string) => void;
-};
-
-function ResultNavigation(props: ResultsNavProps): JSX.Element {
-  return (
-    <div className={styles.resultsNav}>
-      <EcmaScriptVersionDropdown setEcmaScriptFlag={props.setEcmaScriptFlag} />
-      <nav aria-label="breadcrumbs" style={{ padding: "0.25em" }}>
-        <ul className="breadcrumbs">
-          {props.navPath.map((pathItem, idx, arr) => {
-            return (
-              <NavItem
-                key={pathItem}
-                itemName={pathItem}
-                index={idx}
-                sliceNavToIndex={props.sliceNavToIndex}
-                breadcrumbValue={
-                  idx + 1 === arr.length
-                    ? "breadcrumbs__item breadcrumbs__item--active"
-                    : "breadcrumbs__item"
-                }
-              />
-            );
-          })}
-        </ul>
-      </nav>
-    </div>
-  );
-}
-
-type NavItemProps = {
-  itemName: string;
-  index: number;
-  breadcrumbValue: string;
-  sliceNavToIndex: (number) => void;
-};
-
-function NavItem(props: NavItemProps): JSX.Element {
-  return (
-    <li className={props.breadcrumbValue}>
-      <a
-        className={styles.navLink}
-        onClick={() => props.sliceNavToIndex(props.index + 1)}
-      >
-        {props.itemName}
-      </a>
-    </li>
-  );
-}
-
-type DropDownProps = {
-  setEcmaScriptFlag: (string) => void;
-};
-
-function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
-  const [dropdownValue, setDropdownValue] = React.useState("");
-
-  const handleVersionSelection = (e) => {
-    setDropdownValue(e.target.value);
-    props.setEcmaScriptFlag(e.target.value);
-  };
-
-  return (
-    <div className={styles.dropdownContainer}>
-      <select value={dropdownValue} onChange={handleVersionSelection}>
-        <option value={""}>All</option>
-        {Object.keys(SpecEdition)
-          .filter((v) => isNaN(Number(v)))
-          .map((key) => {
-            return (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            );
-          })}
-      </select>
     </div>
   );
 }
