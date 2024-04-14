@@ -1,11 +1,11 @@
 import React from "react";
-import { SpecEdition } from "../types";
+import { ConformanceState, SpecEdition } from "../types";
 
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 
 type ResultsNavProps = {
-  navPath: string[];
+  state: ConformanceState;
   sliceNavToIndex: (number) => void;
   setEcmaScriptFlag: (string) => void;
 };
@@ -13,9 +13,9 @@ type ResultsNavProps = {
 export default function ResultNavigation(props: ResultsNavProps): JSX.Element {
   return (
     <div className={styles.resultsNav}>
-      <EcmaScriptVersionDropdown setEcmaScriptFlag={props.setEcmaScriptFlag} />
+      <EcmaScriptVersionDropdown setEcmaScriptFlag={props.setEcmaScriptFlag} esVersionValue={props.state.ecmaScriptVersion} />
       <NavBreadCrumbs
-        navPath={props.navPath}
+        navPath={props.state.testPath}
         sliceNavToIndex={props.sliceNavToIndex}
       />
     </div>
@@ -74,13 +74,20 @@ function NavItem(props: NavItemProps): JSX.Element {
 // Below implements the ECMAScript Version Dropdown component
 
 type DropDownProps = {
+  esVersionValue: string;
   setEcmaScriptFlag: (string) => void;
 };
 
 function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
-  const [dropdownValue, setDropdownValue] = React.useState("");
+  const [dropdownValue, setDropdownValue] = React.useState(props.esVersionValue ? props.esVersionValue : "");
+
+  // Update the flag when props.esVersionValue is changed
+  React.useEffect(()=>{
+    setDropdownValue(props.esVersionValue)
+  }, [props.esVersionValue])
 
   const handleVersionSelection = (e) => {
+    // Update the display value and set the flag.
     setDropdownValue(e.target.value);
     props.setEcmaScriptFlag(e.target.value);
   };

@@ -143,7 +143,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   return (
     <div className={styles.resultsDisplay}>
       <ResultNavigation
-        navPath={props.state.testPath}
+        state={props.state}
         sliceNavToIndex={sliceNavToIndex}
         setEcmaScriptFlag={setEcmaScriptFlag}
       />
