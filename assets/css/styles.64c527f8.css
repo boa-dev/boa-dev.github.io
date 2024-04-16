@@ -3458,7 +3458,7 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
   font-size: 0.8rem;
 }
 
-.bannerSection_CQlB {
+.bannerSection_ggv5 {
   height: 65vh;
   display: flex;
   flex-direction: row;
@@ -3466,21 +3466,21 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
   padding: 8rem;
 }
 
-.cardContainer_de9X {
+.cardContainer_hFQm {
   width: 22rem;
   height: 22rem;
   padding: 5rem 2.5rem;
 }
 
 @media screen and (max-width: 996px) {
-  .bannerSection_CQlB {
+  .bannerSection_ggv5 {
     min-height: 40rem;
     flex-direction: column;
     width: 100%;
     padding: 0.5rem;
   }
 
-  .cardContainer_de9X {
+  .cardContainer_hFQm {
     width: 18rem;
     width: 18rem;
     margin: auto;
