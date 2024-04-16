@@ -1,4 +1,5 @@
 import {
+  ConformanceState,
   ResultInfo,
   SpecEdition,
   SuiteResult,
@@ -6,7 +7,24 @@ import {
   TestResult,
   TestStats,
   VersionedStats,
+  VersionItem,
 } from "@site/src/components/conformance/types";
+
+// Creates the state object from provided args
+export function createState(
+  version: VersionItem,
+  testPath?: string[],
+  ecmaScriptVersion?: string,
+  selectedTest?: string,
+): ConformanceState {
+  testPath = testPath ? testPath : [version.tagName];
+  return {
+    version,
+    testPath,
+    ecmaScriptVersion,
+    selectedTest,
+  };
+}
 
 // Interface for the http response of boa_tester's `ResultInfo`
 interface HttpResultInfo {
@@ -16,8 +34,12 @@ interface HttpResultInfo {
 }
 
 // Function for converting an http response of boa_tester's `ResultInfo` to ResultInfo
-export function mapToResultInfo(unmappedValue: HttpResultInfo): ResultInfo {
+export function mapToResultInfo(
+  version: string,
+  unmappedValue: HttpResultInfo,
+): ResultInfo {
   return {
+    version,
     commit: unmappedValue.c,
     test262Commit: unmappedValue.u,
     results: mapToSuiteResult(unmappedValue.r),

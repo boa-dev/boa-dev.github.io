@@ -30,7 +30,7 @@ export default function LatestPosts({ recentPosts }) {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
-                  }
+                  },
                 )}
               </p>
             </div>

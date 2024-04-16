@@ -25,7 +25,7 @@ ChartJS.register(
   Tooltip,
   Legend,
   Colors,
-  BarElement
+  BarElement,
 );
 
 export function BenchmarkGraphs() {
@@ -52,7 +52,7 @@ export function BenchmarkGraphs() {
 
 const buildChartFromBenchmark = async (name: string) => {
   const data = await fetchData(
-    `https://raw.githubusercontent.com/boa-dev/data/main/bench/results/${name}.json`
+    `https://raw.githubusercontent.com/boa-dev/data/main/bench/results/${name}.json`,
   );
 
   const barData = getBarChartData(data);
@@ -79,7 +79,7 @@ const fetchData = async (url: string) => {
   const data = await response.json();
   return {
     labels: data.labels.map((epoch: number) =>
-      new Date(epoch).toLocaleDateString()
+      new Date(epoch).toLocaleDateString(),
     ),
     datasets: [
       {

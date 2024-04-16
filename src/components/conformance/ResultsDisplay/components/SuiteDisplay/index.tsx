@@ -1,15 +1,19 @@
 import React from "react";
 import SuiteSelector from "../SuiteSelector";
 import SuiteDataContainer from "../SuiteDataContainer";
-import { SuiteResult } from "@site/src/components/conformance/types";
+import {
+  ConformanceState,
+  SuiteResult,
+} from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
 
 type SuiteDisplayProps = {
   currentSuite: SuiteResult;
-  esFlag: string | null;
+  state: ConformanceState;
   t262Path: string;
   navigateToSuite: (string) => void;
+  setSelectedTest: (string) => void;
 };
 
 export default function SuiteDisplay(props: SuiteDisplayProps): JSX.Element {
@@ -18,15 +22,16 @@ export default function SuiteDisplay(props: SuiteDisplayProps): JSX.Element {
       {props.currentSuite.suites ? (
         <SuiteSelector
           suites={props.currentSuite.suites}
-          esFlag={props.esFlag}
+          esFlag={props.state.ecmaScriptVersion}
           navigateToSuite={props.navigateToSuite}
         />
       ) : null}
       {props.currentSuite.tests ? (
         <SuiteDataContainer
+          state={props.state}
           suite={props.currentSuite}
-          esFlag={props.esFlag}
           t262Path={props.t262Path}
+          setSelectedTest={props.setSelectedTest}
         />
       ) : null}
     </div>

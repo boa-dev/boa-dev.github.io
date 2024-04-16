@@ -17,7 +17,9 @@ const FeatureList: FeatureItem[] = [
     title: "Written in Rust",
     Svg: new_logo_black,
     description: (
-      <>Boa brings Rust's memory safety guarantees to the world of JS engines.</>
+      <>
+        Boa brings Rust's memory safety guarantees to the world of JS engines.
+      </>
     ),
   },
   {

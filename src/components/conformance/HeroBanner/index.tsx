@@ -1,26 +1,27 @@
 import React from "react";
-import { VersionItem, TestStats } from "@site/src/components/conformance/types";
-import { mapToTestStats } from "@site/src/components/conformance/utils";
+import {
+  VersionItem,
+  TestStats,
+  ConformanceState,
+} from "@site/src/components/conformance/types";
+import {
+  createState,
+  mapToTestStats,
+} from "@site/src/components/conformance/utils";
+import { useHistory } from "@docusaurus/router";
 import Heading from "@theme/Heading";
 
 import styles from "./styles.module.css";
 
 interface BannerProps {
   focusItems: VersionItem[];
-  setNewVersion: (newVersion: VersionItem) => void;
 }
 
-export default function ConformanceBanner(props: BannerProps): JSX.Element {
+export default function ConformanceHeroBanner(props: BannerProps): JSX.Element {
   return (
     <div className={styles.bannerSection}>
       {props.focusItems.map((item) => {
-        return (
-          <BannerCard
-            key={item.tagName}
-            setNewVersion={props.setNewVersion}
-            item={item}
-          />
-        );
+        return <BannerCard key={item.tagName} item={item} />;
       })}
     </div>
   );
@@ -28,6 +29,8 @@ export default function ConformanceBanner(props: BannerProps): JSX.Element {
 
 function BannerCard(props) {
   const [stats, setStats] = React.useState<TestStats | null>(null);
+
+  const history = useHistory<ConformanceState>();
 
   React.useEffect(() => {
     const fetchStats = async () => {
@@ -81,7 +84,12 @@ function BannerCard(props) {
         <div className="card__footer">
           <button
             className="button button--block button--primary"
-            onClick={() => props.setNewVersion(props.item)}
+            onClick={() =>
+              history.push({
+                pathname: "/conformance",
+                state: createState(props.item),
+              })
+            }
           >
             View Results
           </button>

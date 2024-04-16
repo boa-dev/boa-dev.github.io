@@ -1,39 +1,36 @@
 import React from "react";
 import TestsGrid from "./cards/TestGrid";
 import TestViewer from "./cards/TestViewer";
-import { SuiteResult } from "@site/src/components/conformance/types";
+import {
+  ConformanceState,
+  SuiteResult,
+} from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
 
 type SuiteDataProps = {
   suite: SuiteResult;
-  esFlag: string | null;
+  state: ConformanceState;
   t262Path: string;
+  setSelectedTest: (string) => void;
 };
 
 export default function SuiteDataContainer(props: SuiteDataProps): JSX.Element {
-  const [selectedTest, setSelectedTest] = React.useState<string | null>(null);
-
-  // Unselect a test if the underlying test262 path has been changed.
-  React.useEffect(() => {
-    setSelectedTest(null);
-  }, [props.t262Path]);
-
   // Set the user's selected test to be displayed in the ViewPort.
   const selectTest = (testName: string) => {
-    setSelectedTest(testName);
+    props.setSelectedTest(testName);
   };
 
   const clearTest = () => {
-    setSelectedTest(null);
+    props.setSelectedTest(undefined);
   };
 
   // Add a TestViewer to look up and display the test262.
   return (
     <div className={styles.dataContainer}>
-      {selectedTest ? (
+      {props.state.selectedTest ? (
         <TestViewer
-          testName={selectedTest}
+          testName={props.state.selectedTest}
           t262Path={props.t262Path}
           backToGrid={() => clearTest()}
         />

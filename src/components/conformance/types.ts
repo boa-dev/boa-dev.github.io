@@ -1,3 +1,14 @@
+// The main global state of the conformance page.
+//
+// This state is fed into the History object and dictates
+// what renders.
+export type ConformanceState = {
+  version: VersionItem;
+  testPath: string[];
+  ecmaScriptVersion: string | undefined;
+  selectedTest: string | undefined;
+};
+
 export type VersionItem = {
   tagName: string;
   fetchUrl: string;
@@ -11,6 +22,7 @@ export type TestStats = {
 };
 
 export type ResultInfo = {
+  version: string;
   commit: string;
   test262Commit: string;
   results: SuiteResult;
