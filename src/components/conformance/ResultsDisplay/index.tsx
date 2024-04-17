@@ -5,6 +5,7 @@ import {
   VersionItem,
   SuiteResult,
   ConformanceState,
+  SortOption,
 } from "@site/src/components/conformance/types";
 import ResultNavigation from "./nav";
 import {
@@ -113,7 +114,25 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
     const nulledFlag = flag ? flag : undefined;
     history.push({
       pathname: "/conformance",
-      state: createState(props.state.version, props.state.testPath, nulledFlag),
+      state: createState(
+        props.state.version,
+        props.state.testPath,
+        nulledFlag,
+        props.state.sortOption,
+      ),
+    });
+  };
+
+  // Sets the sorting option
+  const setSortOption = (option: string) => {
+    history.push({
+      pathname: "/conformance",
+      state: createState(
+        props.state.version,
+        props.state.testPath,
+        props.state.ecmaScriptVersion,
+        option,
+      ),
     });
   };
 
@@ -125,6 +144,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         props.state.version,
         props.state.testPath,
         props.state.ecmaScriptVersion,
+        props.state.sortOption,
         test,
       ),
     });
@@ -146,6 +166,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         state={props.state}
         sliceNavToIndex={sliceNavToIndex}
         setEcmaScriptFlag={setEcmaScriptFlag}
+        setSortOption={setSortOption}
       />
       {currentSuite ? (
         <SuiteDisplay

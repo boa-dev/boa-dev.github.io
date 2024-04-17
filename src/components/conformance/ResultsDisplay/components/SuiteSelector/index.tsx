@@ -1,19 +1,29 @@
 import React from "react";
-import { SuiteResult, TestStats } from "@site/src/components/conformance/types";
+import {
+  ConformanceState,
+  SortOption,
+  SuiteResult,
+  TestStats,
+} from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
+import { availableSortingOptions } from "../../../utils";
 
 type SelectorProps = {
+  state: ConformanceState;
   suites: SuiteResult[];
   esFlag: string | null;
   navigateToSuite: (string) => void;
 };
 
 export default function SuiteSelector(props: SelectorProps): JSX.Element {
+  const option: SortOption[] = availableSortingOptions.filter(
+    (v) => v.id === props.state.sortOption,
+  );
   return (
     <div className={styles.suiteSelector}>
       {props.suites
-        .sort((a, b) => a.name.localeCompare(b.name))
+        .sort(option[0].callback)
         .filter((suite) => {
           const stats: TestStats =
             suite.versionedStats[props.esFlag] ?? suite.stats;

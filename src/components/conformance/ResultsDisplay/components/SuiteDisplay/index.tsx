@@ -21,8 +21,8 @@ export default function SuiteDisplay(props: SuiteDisplayProps): JSX.Element {
     <div className={styles.suiteDisplay}>
       {props.currentSuite.suites ? (
         <SuiteSelector
+          state={props.state}
           suites={props.currentSuite.suites}
-          esFlag={props.state.ecmaScriptVersion}
           navigateToSuite={props.navigateToSuite}
         />
       ) : null}

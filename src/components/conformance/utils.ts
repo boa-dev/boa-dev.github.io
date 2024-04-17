@@ -1,6 +1,7 @@
 import {
   ConformanceState,
   ResultInfo,
+  SortOption,
   SpecEdition,
   SuiteResult,
   TestOutcome,
@@ -15,16 +16,32 @@ export function createState(
   version: VersionItem,
   testPath?: string[],
   ecmaScriptVersion?: string,
+  sortOption?: string,
   selectedTest?: string,
 ): ConformanceState {
   testPath = testPath ? testPath : [version.tagName];
+  sortOption = sortOption ? sortOption : availableSortingOptions[0].id;
   return {
     version,
     testPath,
     ecmaScriptVersion,
+    sortOption,
     selectedTest,
   };
 }
+
+export const availableSortingOptions: SortOption[] = [
+  {
+    id: "alpha",
+    name: "Alphabetical",
+    callback: (a, b) => a.name.localeCompare(b.name),
+  },
+  {
+    id: "reverse",
+    name: "Reverse Alpha",
+    callback: (a, b) => -a.name.localeCompare(b.name),
+  },
+];
 
 // Interface for the http response of boa_tester's `ResultInfo`
 interface HttpResultInfo {
