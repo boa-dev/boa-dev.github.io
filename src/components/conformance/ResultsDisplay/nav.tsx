@@ -15,18 +15,22 @@ type ResultsNavProps = {
 export default function ResultNavigation(props: ResultsNavProps): JSX.Element {
   return (
     <div className={styles.resultsNav}>
-      <EcmaScriptVersionDropdown
-        setEcmaScriptFlag={props.setEcmaScriptFlag}
-        esVersionValue={props.state.ecmaScriptVersion}
-      />
-      <SortingDropdown
-        sortValue={props.state.sortOption}
-        setSortOption={props.setSortOption}
-      />
-      <NavBreadCrumbs
-        navPath={props.state.testPath}
-        sliceNavToIndex={props.sliceNavToIndex}
-      />
+      <div className={styles.navSection}>
+        <EcmaScriptVersionDropdown
+          setEcmaScriptFlag={props.setEcmaScriptFlag}
+          esVersionValue={props.state.ecmaScriptVersion}
+        />
+        <SortingDropdown
+          sortValue={props.state.sortOption}
+          setSortOption={props.setSortOption}
+        />
+      </div>
+      <div className={styles.navSection}>
+        <NavBreadCrumbs
+          navPath={props.state.testPath}
+          sliceNavToIndex={props.sliceNavToIndex}
+        />
+      </div>
     </div>
   );
 }

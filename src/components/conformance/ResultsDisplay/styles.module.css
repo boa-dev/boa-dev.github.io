@@ -15,6 +15,11 @@
   padding: 0.75em;
 }
 
+.navSection {
+  display: flex;
+  flex-direction: row;
+}
+
 .navLink:hover {
   cursor: pointer;
 }
@@ -27,16 +32,29 @@
   padding: 0.5rem 0;
 }
 
-@media screen and (max-height: 996px) {
+@media screen and (max-width: 996px) {
   .resultsDisplay {
     height: auto;
     width: calc(100vw-12px);
     overflow-y: auto;
   }
 
-  .resultsNav {
-    height: 3.5rem;
+  .navSection {
+    min-height: 2.5rem;
+    height: auto;
     width: 100vw;
-    padding: 0.75rem auto;
+  }
+
+  .resultsNav {
+    height: auto;
+    flex-direction: column;
+    width: 100vw;
+    padding: 0;
+  }
+
+  .dropdownContainer {
+    padding: 0.25rem 0;
+    width: 10.5rem;
+    height: 2rem;
   }
 }
