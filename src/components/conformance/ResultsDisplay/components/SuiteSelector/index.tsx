@@ -19,7 +19,6 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
           return versionStats.total !== 0;
         })
         .map((suite) => {
-          console.log(`${suite.name}:`, suite);
           return (
             <SuiteItem
               key={suite.name}
