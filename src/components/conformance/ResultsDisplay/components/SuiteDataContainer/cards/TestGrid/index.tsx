@@ -93,6 +93,7 @@ function GridItem(props: GridItemProps): JSX.Element {
       <div
         className={testResult}
         onClick={() => props.selectTest(props.test.name + ".js")}
+        aria-label={props.test.name}
         title={
           props.test.strict
             ? "(strict) " + props.test.name + ".js"
