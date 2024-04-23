@@ -12,7 +12,6 @@ import { availableSortingOptions } from "../../../utils";
 type SelectorProps = {
   state: ConformanceState;
   suites: SuiteResult[];
-  esFlag: string | null;
   navigateToSuite: (string) => void;
 };
 
@@ -26,7 +25,7 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
         .sort(option[0].callback)
         .filter((suite) => {
           const stats: TestStats =
-            suite.versionedStats[props.esFlag] ?? suite.stats;
+            suite.versionedStats[props.state.ecmaScriptVersion] ?? suite.stats;
           return stats.total !== 0;
         })
         .map((suite) => {
@@ -34,7 +33,7 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
             <SuiteItem
               key={suite.name}
               suite={suite}
-              esFlag={props.esFlag}
+              esFlag={props.state.ecmaScriptVersion}
               navigateToSuite={props.navigateToSuite}
             />
           );
