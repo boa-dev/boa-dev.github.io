@@ -1,5 +1,5 @@
 import React from "react";
-import { SuiteResult } from "@site/src/components/conformance/types";
+import { SuiteResult, TestStats } from "@site/src/components/conformance/types";
 
 import styles from "./styles.module.css";
 
@@ -14,6 +14,10 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
     <div className={styles.suiteSelector}>
       {props.suites
         .sort((a, b) => a.name.localeCompare(b.name))
+        .filter((suite) => {
+          let versionStats: TestStats = suite.versionedStats[props.esFlag];
+          return versionStats.total !== 0;
+        })
         .map((suite) => {
           return (
             <SuiteItem
