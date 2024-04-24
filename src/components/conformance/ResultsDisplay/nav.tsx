@@ -132,7 +132,7 @@ type SortProps = {
 };
 
 function SortingDropdown(props: SortProps): JSX.Element {
-  const [sortValue, setSortValue] = React.useState<string | undefined>();
+  const [sortValue, setSortValue] = React.useState<string>(props.sortValue ? props.sortValue : "alpha");
 
   React.useEffect(() => {
     setSortValue(props.sortValue);

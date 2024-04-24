@@ -90,6 +90,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         props.state.version,
         newPath,
         props.state.ecmaScriptVersion,
+        props.state.sortOption,
       ),
     });
   };
@@ -105,6 +106,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         props.state.version,
         slicedPath,
         props.state.ecmaScriptVersion,
+        props.state.sortOption,
       ),
     });
   };
