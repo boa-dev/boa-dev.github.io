@@ -15,8 +15,9 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
       {props.suites
         .sort((a, b) => a.name.localeCompare(b.name))
         .filter((suite) => {
-          let versionStats: TestStats = suite.versionedStats[props.esFlag];
-          return versionStats.total !== 0;
+          const stats: TestStats =
+            suite.versionedStats[props.esFlag] ?? suite.stats;
+          return stats.total !== 0;
         })
         .map((suite) => {
           return (
