@@ -10,9 +10,14 @@
 .resultsNav {
   display: flex;
   flex-direction: row;
-  height: 5vh;
+  height: 3.5rem;
   width: 100%;
   padding: 0.75em;
+}
+
+.navSection {
+  display: flex;
+  flex-direction: row;
 }
 
 .navLink:hover {
@@ -20,21 +25,36 @@
 }
 
 .dropdownContainer {
-  width: 6em;
-  padding: 0.25em;
+  display: flex;
+  flex-direction: row;
+  width: 12rem;
+  height: 2.5rem;
+  padding: 0.5rem 0;
 }
 
-@media screen and (max-height: 996px) {
+@media screen and (max-width: 996px) {
   .resultsDisplay {
     height: auto;
     width: calc(100vw-12px);
     overflow-y: auto;
   }
 
-  .resultsNav {
-    min-height: 3.5rem;
+  .navSection {
+    min-height: 2.5rem;
     height: auto;
     width: 100vw;
-    padding: 1rem auto;
+  }
+
+  .resultsNav {
+    height: auto;
+    flex-direction: column;
+    width: 100vw;
+    padding: 0;
+  }
+
+  .dropdownContainer {
+    padding: 0.25rem 0;
+    width: 10.5rem;
+    height: 2rem;
   }
 }

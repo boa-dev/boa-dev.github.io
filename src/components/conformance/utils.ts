@@ -1,6 +1,7 @@
 import {
   ConformanceState,
   ResultInfo,
+  SortOption,
   SpecEdition,
   SuiteResult,
   TestOutcome,
@@ -15,16 +16,105 @@ export function createState(
   version: VersionItem,
   testPath?: string[],
   ecmaScriptVersion?: string,
+  sortOption?: string,
   selectedTest?: string,
 ): ConformanceState {
   testPath = testPath ? testPath : [version.tagName];
+  sortOption = sortOption ? sortOption : availableSortingOptions[0].id;
   return {
     version,
     testPath,
     ecmaScriptVersion,
+    sortOption,
     selectedTest,
   };
 }
+
+export const availableSortingOptions: SortOption[] = [
+  {
+    id: "alpha",
+    name: "Alphabetical",
+    callback: (a, b) => a.name.localeCompare(b.name),
+  },
+  {
+    id: "reverse",
+    name: "Reverse Alpha",
+    callback: (a, b) => -a.name.localeCompare(b.name),
+  },
+  {
+    id: "most-passed",
+    name: "Most Passed",
+    callback: (a, b) => b.stats.passed - a.stats.passed,
+  },
+  {
+    id: "least-passed",
+    name: "Least Passed",
+    callback: (a, b) => a.stats.passed - b.stats.passed,
+  },
+  {
+    id: "most-pass-percentage",
+    name: "Most Passed (%)",
+    callback: (a, b) =>
+      b.stats.total -
+      a.stats.total +
+      b.stats.passed / b.stats.total -
+      a.stats.passed / a.stats.total,
+  },
+  {
+    id: "least-pass-percentage",
+    name: "Least Passed (%)",
+    callback: (a, b) =>
+      b.stats.total -
+      a.stats.total +
+      a.stats.passed / a.stats.total -
+      b.stats.passed / b.stats.total,
+  },
+  {
+    id: "most-ignored",
+    name: "Most Ignored",
+    callback: (a, b) => b.stats.ignored - a.stats.ignored,
+  },
+  {
+    id: "least-ignored",
+    name: "Least Ignored",
+    callback: (a, b) => a.stats.ignored - b.stats.ignored,
+  },
+  {
+    id: "most-fail",
+    name: "Most Failed",
+    callback: (a, b) =>
+      b.stats.total -
+      (b.stats.passed + b.stats.ignored) -
+      (a.stats.total - (a.stats.passed + a.stats.ignored)),
+  },
+  {
+    id: "least-fail",
+    name: "Least Failed",
+    callback: (a, b) =>
+      a.stats.total -
+      (a.stats.passed + a.stats.ignored) -
+      (b.stats.total - (b.stats.passed + b.stats.ignored)),
+  },
+  {
+    id: "most-fail-percentage",
+    name: "Most Failed (%)",
+    callback: (a, b) =>
+      b.stats.total -
+      a.stats.total +
+      (b.stats.total - (b.stats.passed + b.stats.ignored)) -
+      (a.stats.total - (a.stats.passed + a.stats.ignored)),
+  },
+  {
+    id: "least-fail-percentage",
+    name: "Least Failed (%)",
+    callback: (a, b) =>
+      b.stats.total -
+      a.stats.total +
+      (a.stats.total - b.stats.total) +
+      a.stats.passed / a.stats.total -
+      b.stats.passed / b.stats.total,
+  },
+];
 
 // Interface for the http response of boa_tester's `ResultInfo`
 interface HttpResultInfo {

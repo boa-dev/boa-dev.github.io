@@ -1,26 +1,36 @@
 import React from "react";
-import { ConformanceState, SpecEdition } from "../types";
+import { ConformanceState, SortOption, SpecEdition } from "../types";
 
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
+import { availableSortingOptions } from "../utils";
 
 type ResultsNavProps = {
   state: ConformanceState;
   sliceNavToIndex: (number) => void;
   setEcmaScriptFlag: (string) => void;
+  setSortOption: (string) => void;
 };
 
 export default function ResultNavigation(props: ResultsNavProps): JSX.Element {
   return (
     <div className={styles.resultsNav}>
-      <EcmaScriptVersionDropdown
-        setEcmaScriptFlag={props.setEcmaScriptFlag}
-        esVersionValue={props.state.ecmaScriptVersion}
-      />
-      <NavBreadCrumbs
-        navPath={props.state.testPath}
-        sliceNavToIndex={props.sliceNavToIndex}
-      />
+      <div className={styles.navSection}>
+        <EcmaScriptVersionDropdown
+          setEcmaScriptFlag={props.setEcmaScriptFlag}
+          esVersionValue={props.state.ecmaScriptVersion}
+        />
+        <SortingDropdown
+          sortValue={props.state.sortOption}
+          setSortOption={props.setSortOption}
+        />
+      </div>
+      <div className={styles.navSection}>
+        <NavBreadCrumbs
+          navPath={props.state.testPath}
+          sliceNavToIndex={props.sliceNavToIndex}
+        />
+      </div>
     </div>
   );
 }
@@ -32,11 +42,11 @@ type BreadCrumbProps = {
 
 function NavBreadCrumbs(props: BreadCrumbProps) {
   return (
-    <nav aria-label="breadcrumbs" style={{ padding: "0.25em" }}>
+    <nav aria-label="breadcrumbs" style={{ padding: "0.5em" }}>
       <ul className="breadcrumbs">
         {props.navPath.map((pathItem, idx, arr) => {
           return (
-            <NavItem
+            <BreadCrumbItem
               key={pathItem}
               itemName={pathItem}
               index={idx}
@@ -54,14 +64,14 @@ function NavBreadCrumbs(props: BreadCrumbProps) {
   );
 }
 
-type NavItemProps = {
+type BreadCrumbItemProps = {
   itemName: string;
   index: number;
   breadcrumbValue: string;
   sliceNavToIndex: (number) => void;
 };
 
-function NavItem(props: NavItemProps): JSX.Element {
+function BreadCrumbItem(props: BreadCrumbItemProps): JSX.Element {
   return (
     <li className={props.breadcrumbValue}>
       <Link
@@ -99,6 +109,7 @@ function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
 
   return (
     <div className={styles.dropdownContainer}>
+      <h4 style={{ padding: "0.125rem 0.5rem", height: "5" }}>ES Version:</h4>
       <select value={dropdownValue} onChange={handleVersionSelection}>
         <option value={""}>All</option>
         {Object.keys(SpecEdition)
@@ -110,6 +121,42 @@ function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
               </option>
             );
           })}
+      </select>
+    </div>
+  );
+}
+
+type SortProps = {
+  sortValue: string;
+  setSortOption: (string) => void;
+};
+
+function SortingDropdown(props: SortProps): JSX.Element {
+  const [sortValue, setSortValue] = React.useState<string>(props.sortValue ? props.sortValue : "alpha");
+
+  React.useEffect(() => {
+    setSortValue(props.sortValue);
+  }, [props.sortValue]);
+
+  const handleSortSelection = (e) => {
+    setSortValue(e.target.value);
+    const option = availableSortingOptions.filter(
+      (v) => v.id === e.target.value,
+    );
+    props.setSortOption(option[0].id);
+  };
+
+  return (
+    <div className={styles.dropdownContainer}>
+      <h4 style={{ padding: "0.125rem 0.5rem", height: "5" }}>Sort:</h4>
+      <select value={sortValue} onChange={handleSortSelection}>
+        {availableSortingOptions.map((key) => {
+          return (
+            <option key={key.id} value={key.id}>
+              {key.name}
+            </option>
+          );
+        })}
       </select>
     </div>
   );

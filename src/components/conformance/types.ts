@@ -6,6 +6,7 @@ export type ConformanceState = {
   version: VersionItem;
   testPath: string[];
   ecmaScriptVersion: string | undefined;
+  sortOption: string;
   selectedTest: string | undefined;
 };
 
@@ -14,12 +15,13 @@ export type VersionItem = {
   fetchUrl: string;
 };
 
-export type TestStats = {
-  total: number;
-  passed: number;
-  ignored: number;
-  panic: number;
+export type SortOption = {
+  id: string;
+  name: string;
+  callback: (a: SuiteResult, b: SuiteResult) => number;
 };
+
+// The below types are specific to test result types.
 
 export type ResultInfo = {
   version: string;
@@ -47,6 +49,13 @@ export type VersionedStats = {
   es11: TestStats;
   es12: TestStats;
   es13: TestStats;
+};
+
+export type TestStats = {
+  total: number;
+  passed: number;
+  ignored: number;
+  panic: number;
 };
 
 export type TestResult = {
