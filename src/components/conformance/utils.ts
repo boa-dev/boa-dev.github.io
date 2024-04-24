@@ -77,7 +77,7 @@ export const availableSortingOptions: SortOption[] = [
   {
     id: "least-ignored",
     name: "Least Ignored",
-    callback: (a, b) => a.stats.passed - b.stats.passed,
+    callback: (a, b) => a.stats.ignored - b.stats.ignored,
   },
   {
     id: "most-fail",
