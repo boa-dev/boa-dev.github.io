@@ -3651,7 +3651,8 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
   display: flex;
   flex-direction: column;
   width: 85%;
-  height: 70vh;
+  height: 75vh;
+  padding: 0.5rem;
 }
 
 @media screen and (max-width: 996px) {
@@ -3690,9 +3691,14 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
 .resultsNav_Dp3n {
   display: flex;
   flex-direction: row;
-  height: 5vh;
+  height: 3.5rem;
   width: 100%;
   padding: 0.75em;
+}
+
+.navSection_Alop {
+  display: flex;
+  flex-direction: row;
 }
 
 .navLink_t6a5:hover {
@@ -3700,22 +3706,37 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
 }
 
 .dropdownContainer_HXCv {
-  width: 6em;
-  padding: 0.25em;
+  display: flex;
+  flex-direction: row;
+  width: 12rem;
+  height: 2.5rem;
+  padding: 0.5rem 0;
 }
 
-@media screen and (max-height: 996px) {
+@media screen and (max-width: 996px) {
   .resultsDisplay_Mrfa {
     height: auto;
     width: calc(100vw-12px);
     overflow-y: auto;
   }
 
-  .resultsNav_Dp3n {
-    min-height: 3.5rem;
+  .navSection_Alop {
+    min-height: 2.5rem;
     height: auto;
     width: 100vw;
-    padding: 1rem auto;
+  }
+
+  .resultsNav_Dp3n {
+    height: auto;
+    flex-direction: column;
+    width: 100vw;
+    padding: 0;
+  }
+
+  .dropdownContainer_HXCv {
+    padding: 0.25rem 0;
+    width: 10.5rem;
+    height: 2rem;
   }
 }
 
