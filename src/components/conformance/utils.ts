@@ -54,20 +54,20 @@ export const availableSortingOptions: SortOption[] = [
   {
     id: "most-pass-percentage",
     name: "Most Passed (%)",
-    callback: (a, b) =>
-      b.stats.total -
-      a.stats.total +
-      b.stats.passed / b.stats.total -
-      a.stats.passed / a.stats.total,
+    callback: (a, b) => {
+      const p1 = a.stats.passed / a.stats.total;
+      const p2 = b.stats.passed / b.stats.total;
+      return p1 === p2 ? b.stats.total - a.stats.total : p2 - p1;
+    },
   },
   {
     id: "least-pass-percentage",
     name: "Least Passed (%)",
-    callback: (a, b) =>
-      b.stats.total -
-      a.stats.total +
-      a.stats.passed / a.stats.total -
-      b.stats.passed / b.stats.total,
+    callback: (a, b) => {
+      const p1 = a.stats.passed / a.stats.total;
+      const p2 = b.stats.passed / b.stats.total;
+      return p1 === p2 ? b.stats.total - a.stats.total : p1 - p2;
+    },
   },
   {
     id: "most-ignored",
@@ -98,21 +98,20 @@ export const availableSortingOptions: SortOption[] = [
   {
     id: "most-fail-percentage",
     name: "Most Failed (%)",
-    callback: (a, b) =>
-      b.stats.total -
-      a.stats.total +
-      (b.stats.total - (b.stats.passed + b.stats.ignored)) -
-      (a.stats.total - (a.stats.passed + a.stats.ignored)),
+    callback: (a, b) => {
+      const p1 = (b.stats.passed + b.stats.ignored) / b.stats.total;
+      const p2 = (a.stats.passed + a.stats.ignored) / a.stats.total;
+      return p2 === p1 ? b.stats.total - a.stats.total : p2 - p1;
+    },
   },
   {
     id: "least-fail-percentage",
     name: "Least Failed (%)",
-    callback: (a, b) =>
-      b.stats.total -
-      a.stats.total +
-      (a.stats.total - b.stats.total) +
-      a.stats.passed / a.stats.total -
-      b.stats.passed / b.stats.total,
+    callback: (a, b) => {
+      const p1 = (b.stats.passed + b.stats.ignored) / b.stats.total;
+      const p2 = (a.stats.passed + a.stats.ignored) / a.stats.total;
+      return p2 === p1 ? b.stats.total - a.stats.total : p1 - p2;
+    },
   },
 ];
 
