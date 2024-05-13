@@ -24,6 +24,10 @@ html[data-theme="dark"] {
   .heroBanner {
     padding: 2rem;
   }
+
+  .buttons {
+    flex-direction: column;
+  }
 }
 
 .buttons {
@@ -32,6 +36,6 @@ html[data-theme="dark"] {
   justify-content: center;
 }
 
-.buttonMargin {
-  margin: 1em 0.5em;
+.buttons>a {
+  margin: 0.5rem;
 }
