@@ -8,6 +8,7 @@ import {
 } from "@site/src/components/conformance/types";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
+import clsx from "clsx";
 
 type TestsGridProps = {
   state: ConformanceState;
@@ -16,19 +17,23 @@ type TestsGridProps = {
 };
 
 export default function TestsGrid(props: TestsGridProps): JSX.Element {
+  const [hoverName, setHoverName] = React.useState<undefined | String>()
   const cardBodyClass = "card__body " + styles.gridStyle;
+
+  const title = hoverName ? "Test: " + hoverName : "Suite: " + props.suite.name;
 
   return (
     <div className={styles.testGridCard}>
       <div className="card">
-        <div className="card__header">
-          <Heading as="h3">{props.suite.name}</Heading>
+        <div className={clsx("card__header", styles.testGridHeader)}>
+          <Heading as="h3">{title}</Heading>
         </div>
         <div className={cardBodyClass}>
           <Grid
             tests={props.suite.tests}
             esFlag={props.state.ecmaScriptVersion}
             selectTest={props.selectTest}
+            setHoverValue={(name)=>setHoverName(name)}
           />
         </div>
       </div>
@@ -39,7 +44,8 @@ export default function TestsGrid(props: TestsGridProps): JSX.Element {
 type GridProps = {
   tests: TestResult[];
   esFlag: string | null;
-  selectTest: (string) => void;
+  selectTest: (test: string) => void;
+  setHoverValue: (test: string | undefined) => void;
 };
 
 function Grid(props: GridProps): JSX.Element {
@@ -54,6 +60,7 @@ function Grid(props: GridProps): JSX.Element {
                   key={test.strict ? test.name + "-strict" : test.name}
                   test={test}
                   selectTest={props.selectTest}
+                  setHoverValue={props.setHoverValue}
                 />
               );
             })
@@ -63,6 +70,7 @@ function Grid(props: GridProps): JSX.Element {
                 key={test.strict ? test.name + "-strict" : test.name}
                 test={test}
                 selectTest={props.selectTest}
+                setHoverValue={props.setHoverValue}
               />
             );
           })}
@@ -72,7 +80,8 @@ function Grid(props: GridProps): JSX.Element {
 
 type GridItemProps = {
   test: TestResult;
-  selectTest: (string) => void;
+  selectTest: (test: string) => void;
+  setHoverValue: (test: string | undefined) => void;
 };
 
 function GridItem(props: GridItemProps): JSX.Element {
@@ -93,6 +102,9 @@ function GridItem(props: GridItemProps): JSX.Element {
       <div
         className={testResult}
         onClick={() => props.selectTest(props.test.name + ".js")}
+        onMouseEnter={(_e)=>props.setHoverValue(props.test.name + ".js")}
+        onMouseLeave={(_e)=>props.setHoverValue(undefined)}
+        aria-label={props.test.name}
         title={
           props.test.strict
             ? "(strict) " + props.test.name + ".js"

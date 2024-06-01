@@ -4,12 +4,21 @@
   padding: 0.75rem;
 }
 
+.testGridHeader {
+  height: 3.5rem;
+}
+
 @media screen and (max-width: 996px) {
   .testGridCard {
     margin: 0.25rem auto;
     padding: 0;
     height: 75vh;
     width: 90vw;
+  }
+
+  .testGridHeader {
+    height: 4.25rem;
+    overflow: hidden;
   }
 }
 
