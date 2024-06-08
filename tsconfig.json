@@ -2,6 +2,8 @@
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    // NOTE: @docusaurus/tsconfig defines DOM, we are adding ESNext and ESNext.Array (for array copying methods)
+    "lib": ["ESNext.Array", "DOM", "ESNext"]
   }
 }
