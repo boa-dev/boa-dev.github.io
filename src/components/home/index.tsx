@@ -24,13 +24,11 @@ function HomepageHeader() {
           >
             Visit Boa Playground
           </Link>
-        </div>
-        <div>
           <Link
-            className={"button button--secondary " + styles.buttonMargin}
+            className={"button button--secondary button--lg"}
             href="https://docs.rs/boa_engine/latest/boa_engine/"
           >
-            Documentation
+            View Documentation
           </Link>
         </div>
       </div>
