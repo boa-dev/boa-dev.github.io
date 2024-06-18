@@ -4475,6 +4475,10 @@ html[data-theme="dark"] {
   .heroBanner_yvPR {
     padding: 2rem;
   }
+
+  .buttons__cIi {
+    flex-direction: column;
+  }
 }
 
 .buttons__cIi {
@@ -4483,8 +4487,8 @@ html[data-theme="dark"] {
   justify-content: center;
 }
 
-.buttonMargin_EgQo {
-  margin: 1em 0.5em;
+.buttons__cIi>a {
+  margin: 0.5rem;
 }
 
 /**
