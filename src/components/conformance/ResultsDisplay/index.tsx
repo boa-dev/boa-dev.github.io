@@ -5,7 +5,6 @@ import {
   VersionItem,
   SuiteResult,
   ConformanceState,
-  SortOption,
 } from "@site/src/components/conformance/types";
 import ResultNavigation from "./nav";
 import {
@@ -28,7 +27,15 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // Refs
   const activeResults = React.useRef<undefined | ResultInfo>();
 
+  // History handling
   const history = useHistory<ConformanceState>();
+
+  const pushStateToHistory = (state: ConformanceState): void => {
+    history.push({
+      pathname: "/conformance",
+      state,
+    });
+  };
 
   React.useEffect(() => {
     // If the version is correctly synced
@@ -60,7 +67,6 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   const updateActiveResults = async (): Promise<ResultInfo> => {
     const data = await fetchResults(props.state.version);
     return mapToResultInfo(props.state.version.tagName, data);
-    // setCurrentSuite(resultInfo.results);
   };
 
   const findResultsFromPath = (activeResultsInfo: ResultInfo): SuiteResult => {
@@ -84,15 +90,14 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // Navigates to a suite by adding the SuiteName to the test path array.
   const navigateToSuite = (newSuiteName: string) => {
     const newPath = [...props.state.testPath, newSuiteName];
-    history.push({
-      pathname: "/conformance",
-      state: createState(
+    pushStateToHistory(
+      createState(
         props.state.version,
         newPath,
         props.state.ecmaScriptVersion,
         props.state.sortOption,
       ),
-    });
+    );
   };
 
   // Removes a value or values from the test path array.
@@ -100,56 +105,52 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // Used by breadcrumbs for navigation.
   const sliceNavToIndex = (nonInclusiveIndex: number) => {
     const slicedPath = [...props.state.testPath.slice(0, nonInclusiveIndex)];
-    history.push({
-      pathname: "/conformance",
-      state: createState(
+    pushStateToHistory(
+      createState(
         props.state.version,
         slicedPath,
         props.state.ecmaScriptVersion,
         props.state.sortOption,
       ),
-    });
+    );
   };
 
   // Sets the ECMAScript version flag value.
   const setEcmaScriptFlag = (flag: string) => {
     const nulledFlag = flag ? flag : undefined;
-    history.push({
-      pathname: "/conformance",
-      state: createState(
+    pushStateToHistory(
+      createState(
         props.state.version,
         props.state.testPath,
         nulledFlag,
         props.state.sortOption,
       ),
-    });
+    );
   };
 
   // Sets the sorting option
   const setSortOption = (option: string) => {
-    history.push({
-      pathname: "/conformance",
-      state: createState(
+    pushStateToHistory(
+      createState(
         props.state.version,
         props.state.testPath,
         props.state.ecmaScriptVersion,
         option,
       ),
-    });
+    );
   };
 
   // Sets a selected test.
   const setSelectedTest = (test: string | undefined) => {
-    history.push({
-      pathname: "/conformance",
-      state: createState(
+    pushStateToHistory(
+      createState(
         props.state.version,
         props.state.testPath,
         props.state.ecmaScriptVersion,
         props.state.sortOption,
         test,
       ),
-    });
+    );
   };
 
   // Create the t262 URL from testPath with the results commit

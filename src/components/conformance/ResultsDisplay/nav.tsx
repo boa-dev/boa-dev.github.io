@@ -1,8 +1,9 @@
 import React from "react";
-import { ConformanceState, SortOption, SpecEdition } from "../types";
+import { ConformanceState, SpecEdition } from "../types";
 
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
+import Heading from "@theme/Heading";
 import { availableSortingOptions } from "../utils";
 
 type ResultsNavProps = {
@@ -109,7 +110,9 @@ function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
 
   return (
     <div className={styles.dropdownContainer}>
-      <h4 style={{ padding: "0.125rem 0.5rem", height: "5" }}>ES Version:</h4>
+      <Heading as="h4" style={{ padding: "0.125rem 0.5rem", height: "5" }}>
+        ES Version:
+      </Heading>
       <select value={dropdownValue} onChange={handleVersionSelection}>
         <option value={""}>All</option>
         {Object.keys(SpecEdition)
@@ -150,7 +153,9 @@ function SortingDropdown(props: SortProps): JSX.Element {
 
   return (
     <div className={styles.dropdownContainer}>
-      <h4 style={{ padding: "0.125rem 0.5rem", height: "5" }}>Sort:</h4>
+      <Heading as="h4" style={{ padding: "0.125rem 0.5rem", height: "5" }}>
+        Sort:
+      </Heading>
       <select value={sortValue} onChange={handleSortSelection}>
         {availableSortingOptions.map((key) => {
           return (

@@ -22,10 +22,11 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
   return (
     <div className={styles.suiteSelector}>
       {props.suites
-        .sort(option[0].callback)
+        .toSorted(option[0].callback)
         .filter((suite) => {
           const stats: TestStats =
-            suite.versionedStats[props.state.ecmaScriptVersion] ?? suite.stats;
+            suite.versionedStats?.[props.state.ecmaScriptVersion] ??
+            suite.stats;
           return stats.total !== 0;
         })
         .map((suite) => {
@@ -59,8 +60,8 @@ function SuiteItem(props: SuiteItemProps): JSX.Element {
       </div>
       <SuiteStatistics
         testResults={
-          props.esFlag && props.suite.versionedStats[props.esFlag]
-            ? props.suite.versionedStats[props.esFlag]
+          props.esFlag
+            ? props.suite.versionedStats?.[props.esFlag] ?? props.suite.stats
             : props.suite.stats
         }
       />

@@ -9,6 +9,11 @@ import React from "react";
 
 import styles from "./styles.module.css";
 
+// Note there are other fields, but only adding the ones that are needed.
+type ReleasesObject = {
+  tag_name: string;
+};
+
 // TODO: Add header file to speed up statisic fetching for initial render?
 export default function Conformance() {
   const location = useLocation<ConformanceState>();
@@ -31,7 +36,10 @@ export default function Conformance() {
         "https://api.github.com/repos/boa-dev/boa/releases",
       );
       const releases = await response.json();
-      return releases
+      const releasesArray: ReleasesObject[] = Array.isArray(releases)
+        ? (releases as Array<ReleasesObject>)
+        : [];
+      return releasesArray
         .filter((potentialRelease) =>
           validateReleaseVersion(potentialRelease.tag_name),
         )

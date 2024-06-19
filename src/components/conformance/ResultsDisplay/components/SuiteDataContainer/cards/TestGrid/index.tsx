@@ -17,7 +17,7 @@ type TestsGridProps = {
 };
 
 export default function TestsGrid(props: TestsGridProps): JSX.Element {
-  const [hoverName, setHoverName] = React.useState<undefined | String>()
+  const [hoverName, setHoverName] = React.useState<undefined | string>();
   const cardBodyClass = "card__body " + styles.gridStyle;
 
   const title = hoverName ? "Test: " + hoverName : "Suite: " + props.suite.name;
@@ -33,7 +33,7 @@ export default function TestsGrid(props: TestsGridProps): JSX.Element {
             tests={props.suite.tests}
             esFlag={props.state.ecmaScriptVersion}
             selectTest={props.selectTest}
-            setHoverValue={(name)=>setHoverName(name)}
+            setHoverValue={(name) => setHoverName(name)}
           />
         </div>
       </div>
@@ -102,8 +102,8 @@ function GridItem(props: GridItemProps): JSX.Element {
       <div
         className={testResult}
         onClick={() => props.selectTest(props.test.name + ".js")}
-        onMouseEnter={(_e)=>props.setHoverValue(props.test.name + ".js")}
-        onMouseLeave={(_e)=>props.setHoverValue(undefined)}
+        onMouseEnter={() => props.setHoverValue(props.test.name + ".js")}
+        onMouseLeave={() => props.setHoverValue(undefined)}
         aria-label={props.test.name}
         title={
           props.test.strict

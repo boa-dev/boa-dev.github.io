@@ -21,6 +21,7 @@ export function createState(
 ): ConformanceState {
   testPath = testPath ? testPath : [version.tagName];
   sortOption = sortOption ? sortOption : availableSortingOptions[0].id;
+  ecmaScriptVersion = ecmaScriptVersion ? ecmaScriptVersion : "";
   return {
     version,
     testPath,
