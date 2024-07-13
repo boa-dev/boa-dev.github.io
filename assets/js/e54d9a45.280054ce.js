@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[3045],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[5106],{
 
-/***/ 2384:
+/***/ 3324:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17,19 +17,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8453);
 
 
-const frontMatter = {};
+const frontMatter = {
+	layout: 'post',
+	tags: [
+		'post'
+	],
+	title: 'Boa release v0.19: more progress on Temporal, new benchmarks, migration to Matrix, and more...',
+	author: 'Boa Developers'
+};
 const contentTitle = undefined;
 const metadata = {
   "permalink": "/blog/2024/07/09/boa-release-19",
   "source": "@site/blog/2024-07-09-boa-release-19.md",
-  "title": "boa-release-19",
-  "description": "<!-- ---",
+  "title": "Boa release v0.19: more progress on Temporal, new benchmarks, migration to Matrix, and more...",
+  "description": "Summary",
   "date": "2024-07-09T00:00:00.000Z",
-  "tags": [],
-  "readingTime": 8.735,
+  "tags": [
+    {
+      "inline": true,
+      "label": "post",
+      "permalink": "/blog/tags/post"
+    }
+  ],
+  "readingTime": 8.66,
   "hasTruncateMarker": false,
-  "authors": [],
-  "frontMatter": {},
+  "authors": [
+    {
+      "name": "Boa Developers"
+    }
+  ],
+  "frontMatter": {
+    "layout": "post",
+    "tags": [
+      "post"
+    ],
+    "title": "Boa release v0.19: more progress on Temporal, new benchmarks, migration to Matrix, and more...",
+    "author": "Boa Developers"
+  },
   "unlisted": false,
   "nextItem": {
     "title": "Boa release v0.18",
@@ -37,7 +61,7 @@ const metadata = {
   }
 };
 const assets = {
-"authorsImageUrls": [],
+"authorsImageUrls": [undefined],
 };
 
 
@@ -392,6 +416,7 @@ function _createMdxContent(props) {
       }), " crate was not published for this version, and that's\nbecause we would like to polish it first and integrate it within the other crates of the project.\nHowever, we can give you a sneak peek of what some of the new APIs will allow you to do. Hopefully\nthis will make you look forward for v0.20!"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+        className: "language-rust",
         children: "use boa_interop::{js_class, Ignore, JsClass};\n\n#[derive(Clone, Trace, Finalize, JsData)]\npub enum Animal {\n    Cat,\n    Dog,\n    Other,\n}\n\njs_class! {\n    // Implements the [`Class`] trait for the `Animal` enum.\n    class Animal {\n        // This sets a field on the JavaScript object. The arguments to\n        // `init` are the arguments passed to the constructor.\n        public age(_name: Ignore, age: i32) -> i32 {\n            age\n        }\n        // This is called when a new instance of the class is created in\n        // JavaScript, e.g. `new Animal(\"cat\")`.\n        constructor(name: String) {\n            match name.as_str() {\n                \"cat\" => Ok(Animal::Cat),\n                \"dog\" => Ok(Animal::Dog),\n                _ => Ok(Animal::Other),\n            }\n        }\n        // Declare a function on the class itself.\n        fn speak(this: JsClass<Animal>) -> JsString {\n            match *this.borrow() {\n                Animal::Cat => js_string!(\"meow\"),\n                Animal::Dog => js_string!(\"woof\"),\n                Animal::Other => js_string!(r\"¯\\_(ツ)_/¯\"),\n            }\n        }\n    }\n}\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
