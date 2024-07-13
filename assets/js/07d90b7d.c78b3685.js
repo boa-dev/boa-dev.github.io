@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4828],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[786],{
 
-/***/ 9525:
+/***/ 6583:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -56,7 +56,7 @@ const metadata = {
   },
   "unlisted": false,
   "prevItem": {
-    "title": "Boa release v0.19: more progress on Temporal, new benchmarks, migration to Matrix, and more...",
+    "title": "Boa release v0.19",
     "permalink": "/blog/2024/07/09/boa-release-19"
   },
   "nextItem": {

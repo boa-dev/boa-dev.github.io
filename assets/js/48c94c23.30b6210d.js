@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[5106],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[3045],{
 
-/***/ 3324:
+/***/ 2384:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -22,15 +22,16 @@ const frontMatter = {
 	tags: [
 		'post'
 	],
-	title: 'Boa release v0.19: more progress on Temporal, new benchmarks, migration to Matrix, and more...',
+	title: 'Boa release v0.19',
+	description: 'More progress on Temporal, new benchmarks, migration to Matrix, and more...',
 	author: 'Boa Developers'
 };
 const contentTitle = undefined;
 const metadata = {
   "permalink": "/blog/2024/07/09/boa-release-19",
   "source": "@site/blog/2024-07-09-boa-release-19.md",
-  "title": "Boa release v0.19: more progress on Temporal, new benchmarks, migration to Matrix, and more...",
-  "description": "Summary",
+  "title": "Boa release v0.19",
+  "description": "More progress on Temporal, new benchmarks, migration to Matrix, and more...",
   "date": "2024-07-09T00:00:00.000Z",
   "tags": [
     {
@@ -51,7 +52,8 @@ const metadata = {
     "tags": [
       "post"
     ],
-    "title": "Boa release v0.19: more progress on Temporal, new benchmarks, migration to Matrix, and more...",
+    "title": "Boa release v0.19",
+    "description": "More progress on Temporal, new benchmarks, migration to Matrix, and more...",
     "author": "Boa Developers"
   },
   "unlisted": false,
@@ -85,19 +87,19 @@ const toc = [{
 }, {
   "value": "Migration to Matrix",
   "id": "migration-to-matrix",
-  "level": 2
+  "level": 3
 }, {
   "value": "Optimizations",
   "id": "optimizations",
-  "level": 2
+  "level": 3
 }, {
   "value": "Release binary stripping",
   "id": "release-binary-stripping",
-  "level": 3
+  "level": 4
 }, {
   "value": "Dense array storage variants for i32 and f64",
   "id": "dense-array-storage-variants-for-i32-and-f64",
-  "level": 3
+  "level": 4
 }, {
   "value": "New Contributors",
   "id": "new-contributors",
@@ -121,11 +123,11 @@ const toc = [{
 }, {
   "value": "How can you support Boa?",
   "id": "how-can-you-support-boa",
-  "level": 3
+  "level": 2
 }, {
   "value": "Thank You",
   "id": "thank-you",
-  "level": 3
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -133,6 +135,7 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
+    h4: "h4",
     li: "li",
     p: "p",
     pre: "pre",
@@ -226,7 +229,7 @@ function _createMdxContent(props) {
       }), " of the repository being too large, so we've taken steps to reduce the size of the repository by moving this data to a separate repository and building a nightly version for reporting. Not only this makes it easier for anyone cloning Boa today but pushes to ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         children: "main"
       }), " are now much faster due to us not having to run test262 or Benchmarks each time."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
       id: "migration-to-matrix",
       children: "Migration to Matrix"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
@@ -247,10 +250,10 @@ function _createMdxContent(props) {
       }), ". We will be keeping the Discord server open for a while to allow people to migrate over, but we will eventually close it down sometime in 2025."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
       children: "Boa has long been a user of Discord, pretty much since the beginning of the project, but as the project has grown and matured, we have chosen to move more in line to other communities who use Matrix for communication, such as TC39 who work on ECMAScript standard. With Boa's increased conformance and ability to work closer with the standard committee when implementing Temporal and other new specifications meant that a migration to Matrix was the most natural choice to ease communication with the broader JavaScript implementer communities."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
       id: "optimizations",
       children: "Optimizations"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h4, {
       id: "release-binary-stripping",
       children: "Release binary stripping"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
@@ -285,7 +288,7 @@ function _createMdxContent(props) {
           })]
         })]
       })]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h4, {
       id: "dense-array-storage-variants-for-i32-and-f64",
       children: "Dense array storage variants for i32 and f64"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
@@ -440,7 +443,7 @@ function _createMdxContent(props) {
       children: "v1.0"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
       children: "We hope that the changes mentioned above will bring us closer to a v1.0 release. We are still some way off, but we are making progress and we are confident that we will be able to release a v1.0 version of Boa in the future."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "how-can-you-support-boa",
       children: "How can you support Boa?"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
@@ -470,7 +473,7 @@ function _createMdxContent(props) {
         href: "https://matrix.to/#/#boa:matrix.org",
         children: "Matrix"
       }), "."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "thank-you",
       children: "Thank You"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
