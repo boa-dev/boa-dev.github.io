@@ -2,9 +2,34 @@ import Link from "@docusaurus/Link";
 import { BenchmarkGraphs } from "@site/src/components/benchmarks";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
+import { useState } from "react";
 import styles from "./styles.module.css";
 
+const engines = [
+  "boa",
+  "v8-jitless",
+  "sm-jitless",
+  "libjs",
+  "duktape",
+  "quickjs",
+];
+
 export default function Benchmarks() {
+  const [selectedEngines, setSelectedEngines] = useState<string[]>([
+    "boa",
+    "libjs",
+    "duktape",
+    "quickjs",
+  ]);
+
+  const handleCheckboxChange = (engine: string) => {
+    if (selectedEngines.includes(engine)) {
+      setSelectedEngines(selectedEngines.filter((e) => e !== engine));
+    } else {
+      setSelectedEngines([...selectedEngines, engine]);
+    }
+  };
+
   return (
     <Layout title="Benchmarks" description="Boa Benchmarks Page">
       <div className={styles.container}>
@@ -19,7 +44,22 @@ export default function Benchmarks() {
           actions.
         </p>
         <p>The higher the score the better.</p>
-        <BenchmarkGraphs />
+        <div className={styles.benchmarkControls}>
+          {engines.map((engine) => (
+            <div key={engine} className={styles.benchmarkLabelWrap}>
+              <label>
+                <input
+                  type="checkbox"
+                  value={engine}
+                  checked={selectedEngines.includes(engine)}
+                  onChange={() => handleCheckboxChange(engine)}
+                />
+                {engine}
+              </label>
+            </div>
+          ))}
+        </div>
+        <BenchmarkGraphs selectedEngines={selectedEngines} />
       </div>
     </Layout>
   );

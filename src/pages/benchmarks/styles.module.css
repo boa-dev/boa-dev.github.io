@@ -2,3 +2,12 @@
   width: 90vw;
   align-self: center;
 }
+
+.benchmarkControls {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.benchmarkLabelWrap {
+  margin-right: 1rem;
+}
