@@ -4306,6 +4306,15 @@ body {
   align-self: center;
 }
 
+.benchmarkControls_C3Xr {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.benchmarkLabelWrap_YZoa {
+  margin-right: 1rem;
+}
+
 .latestPostsWrap_wV06 {
   display: grid;
   gap: 0 16px;
