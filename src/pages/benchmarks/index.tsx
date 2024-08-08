@@ -9,6 +9,7 @@ const engines = [
   "boa",
   "v8-jitless",
   "sm-jitless",
+  "kiesel",
   "libjs",
   "duktape",
   "quickjs",
@@ -17,6 +18,7 @@ const engines = [
 export default function Benchmarks() {
   const [selectedEngines, setSelectedEngines] = useState<string[]>([
     "boa",
+    "kiesel",
     "libjs",
     "duktape",
     "quickjs",
