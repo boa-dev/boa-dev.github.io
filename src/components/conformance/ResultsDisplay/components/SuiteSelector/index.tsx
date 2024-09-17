@@ -61,7 +61,7 @@ function SuiteItem(props: SuiteItemProps): JSX.Element {
       <SuiteStatistics
         testResults={
           props.esFlag
-            ? props.suite.versionedStats?.[props.esFlag] ?? props.suite.stats
+            ? (props.suite.versionedStats?.[props.esFlag] ?? props.suite.stats)
             : props.suite.stats
         }
       />

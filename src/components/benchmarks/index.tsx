@@ -25,7 +25,7 @@ ChartJS.register(
   Tooltip,
   Legend,
   Colors,
-  BarElement
+  BarElement,
 );
 
 interface BenchmarkGraphsProps {
@@ -69,7 +69,7 @@ export const BenchmarkGraphs: React.FC<BenchmarkGraphsProps> = ({
 const buildChartFromBenchmark = async (name: string, engines: string[]) => {
   const data = await fetchData(
     `https://raw.githubusercontent.com/boa-dev/data/main/bench/results/${name}.json`,
-    engines
+    engines,
   );
 
   const barData = getBarChartData(data);
@@ -97,7 +97,7 @@ const fetchData = async (url: string, engines: string[]) => {
   // Add the dataset if the engine is enabled
   return {
     labels: data.labels.map((epoch: number) =>
-      new Date(epoch).toLocaleDateString()
+      new Date(epoch).toLocaleDateString(),
     ),
     datasets: Object.keys(data.results)
       .filter((engine) => engines.includes(engine))
