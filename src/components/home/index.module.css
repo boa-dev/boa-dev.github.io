@@ -36,6 +36,6 @@ html[data-theme="dark"] {
   justify-content: center;
 }
 
-.buttons>a {
+.buttons > a {
   margin: 0.5rem;
 }
