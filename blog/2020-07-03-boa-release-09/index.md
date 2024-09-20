@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Boa v0.9: measureme & optimisations"
-author: Boa Developers
+authors: boa-dev
 tags: [post]
 permalink: 2020/07/03/boa-release-09.html
 ---
@@ -13,6 +13,8 @@ Boa also exists to serve as a Rust implementation of the EcmaScript specificatio
 
 Today we're pleased to announce our latest release, version 0.9.  
 v0.9 is by far the biggest release we've had since Boa began. You can find the full changes from the [changelog](https://github.com/boa-dev/boa/blob/main/CHANGELOG.md#-090-2020-06-25---move-to-organisation-78-faster-execution-time). The milestone behind this version was further optimisation and an increase in new features. We can show you how we can identify areas that can be optimised.
+
+<!--truncate-->
 
 ## Better tooling for profiling
 

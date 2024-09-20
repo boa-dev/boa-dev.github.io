@@ -2,7 +2,7 @@
 layout: post
 tags: [post]
 title: "Boa release v0.10"
-author: Boa Developers
+authors: boa-dev
 permalink: 2020/10/02/boa-release-10.html
 ---
 
@@ -12,6 +12,8 @@ Boa also exists to serve as a Rust implementation of the EcmaScript specificatio
 We have a long way to go, however v0.10 has been the biggest release to date, with 138 issues closed!
 
 We have some highlights, but if you prefer to read the full changelog, you can do that [here](https://github.com/boa-dev/boa/blob/main/CHANGELOG.md)
+
+<!--truncate-->
 
 ## Test262
 
