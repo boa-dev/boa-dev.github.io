@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 const frontMatter = {
 	layout: 'post',
 	title: 'Boa v0.9: measureme & optimisations',
-	author: 'Boa Developers',
+	authors: 'boa-dev',
 	tags: [
 		'post'
 	],
@@ -40,19 +40,20 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 5.345,
-  "hasTruncateMarker": false,
+  "readingTime": 5.35,
+  "hasTruncateMarker": true,
   "authors": [
     {
       "name": "Boa Developers",
-      "key": null,
+      "url": "https://github.com/boa-dev",
+      "key": "boa-dev",
       "page": null
     }
   ],
   "frontMatter": {
     "layout": "post",
     "title": "Boa v0.9: measureme & optimisations",
-    "author": "Boa Developers",
+    "authors": "boa-dev",
     "tags": [
       "post"
     ],

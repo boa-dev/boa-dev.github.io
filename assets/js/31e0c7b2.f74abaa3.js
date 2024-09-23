@@ -23,7 +23,7 @@ const frontMatter = {
 		'post'
 	],
 	title: 'Boa release v0.13',
-	author: 'Boa Developers',
+	authors: 'boa-dev',
 	permalink: '2021/09/30/boa-release-13.html'
 };
 const contentTitle = undefined;
@@ -40,12 +40,13 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 4.13,
-  "hasTruncateMarker": false,
+  "readingTime": 4.135,
+  "hasTruncateMarker": true,
   "authors": [
     {
       "name": "Boa Developers",
-      "key": null,
+      "url": "https://github.com/boa-dev",
+      "key": "boa-dev",
       "page": null
     }
   ],
@@ -55,7 +56,7 @@ const metadata = {
       "post"
     ],
     "title": "Boa release v0.13",
-    "author": "Boa Developers",
+    "authors": "boa-dev",
     "permalink": "2021/09/30/boa-release-13.html"
   },
   "unlisted": false,

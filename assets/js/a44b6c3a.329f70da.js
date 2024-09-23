@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[9657],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6803],{
 
-/***/ 125:
+/***/ 7515:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -23,7 +23,7 @@ const frontMatter = {
 		'post'
 	],
 	title: 'Boa release v0.10',
-	author: 'Boa Developers',
+	authors: 'boa-dev',
 	permalink: '2020/10/02/boa-release-10.html'
 };
 const contentTitle = undefined;
@@ -40,12 +40,13 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 3.04,
-  "hasTruncateMarker": false,
+  "readingTime": 3.045,
+  "hasTruncateMarker": true,
   "authors": [
     {
       "name": "Boa Developers",
-      "key": null,
+      "url": "https://github.com/boa-dev",
+      "key": "boa-dev",
       "page": null
     }
   ],
@@ -55,7 +56,7 @@ const metadata = {
       "post"
     ],
     "title": "Boa release v0.10",
-    "author": "Boa Developers",
+    "authors": "boa-dev",
     "permalink": "2020/10/02/boa-release-10.html"
   },
   "unlisted": false,

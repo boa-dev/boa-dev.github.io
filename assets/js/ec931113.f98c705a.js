@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6533],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[5845],{
 
-/***/ 7952:
+/***/ 6948:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -23,7 +23,7 @@ const frontMatter = {
 		'post'
 	],
 	title: 'Boa release v0.17',
-	author: 'Boa Developers'
+	authors: 'boa-dev'
 };
 const contentTitle = undefined;
 const metadata = {
@@ -39,12 +39,13 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 11.325,
-  "hasTruncateMarker": false,
+  "readingTime": 11.33,
+  "hasTruncateMarker": true,
   "authors": [
     {
       "name": "Boa Developers",
-      "key": null,
+      "url": "https://github.com/boa-dev",
+      "key": "boa-dev",
       "page": null
     }
   ],
@@ -54,7 +55,7 @@ const metadata = {
       "post"
     ],
     "title": "Boa release v0.17",
-    "author": "Boa Developers"
+    "authors": "boa-dev"
   },
   "unlisted": false,
   "prevItem": {

@@ -23,7 +23,7 @@ const frontMatter = {
 		'post'
 	],
 	title: 'Adding a JavaScript interpreter to your Rust project',
-	author: 'Boa Developers'
+	authors: 'boa-dev'
 };
 const contentTitle = undefined;
 const metadata = {
@@ -39,12 +39,13 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 11.48,
-  "hasTruncateMarker": false,
+  "readingTime": 11.485,
+  "hasTruncateMarker": true,
   "authors": [
     {
       "name": "Boa Developers",
-      "key": null,
+      "url": "https://github.com/boa-dev",
+      "key": "boa-dev",
       "page": null
     }
   ],
@@ -54,7 +55,7 @@ const metadata = {
       "post"
     ],
     "title": "Adding a JavaScript interpreter to your Rust project",
-    "author": "Boa Developers"
+    "authors": "boa-dev"
   },
   "unlisted": false,
   "prevItem": {

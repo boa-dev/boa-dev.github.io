@@ -24,7 +24,7 @@ const frontMatter = {
 	],
 	title: 'Boa release v0.19',
 	description: 'More progress on Temporal, new benchmarks, migration to Matrix, and more...',
-	author: 'Boa Developers'
+	authors: 'boa-dev'
 };
 const contentTitle = undefined;
 const metadata = {
@@ -40,12 +40,13 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 8.66,
-  "hasTruncateMarker": false,
+  "readingTime": 8.665,
+  "hasTruncateMarker": true,
   "authors": [
     {
       "name": "Boa Developers",
-      "key": null,
+      "url": "https://github.com/boa-dev",
+      "key": "boa-dev",
       "page": null
     }
   ],
@@ -56,7 +57,7 @@ const metadata = {
     ],
     "title": "Boa release v0.19",
     "description": "More progress on Temporal, new benchmarks, migration to Matrix, and more...",
-    "author": "Boa Developers"
+    "authors": "boa-dev"
   },
   "unlisted": false,
   "nextItem": {

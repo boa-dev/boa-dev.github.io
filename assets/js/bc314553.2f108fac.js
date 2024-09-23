@@ -23,7 +23,7 @@ const frontMatter = {
 		'post'
 	],
 	title: 'Boa release v0.12',
-	author: 'Boa Developers'
+	authors: 'boa-dev'
 };
 const contentTitle = undefined;
 const metadata = {
@@ -39,12 +39,13 @@ const metadata = {
       "permalink": "/blog/tags/post"
     }
   ],
-  "readingTime": 2.17,
-  "hasTruncateMarker": false,
+  "readingTime": 2.175,
+  "hasTruncateMarker": true,
   "authors": [
     {
       "name": "Boa Developers",
-      "key": null,
+      "url": "https://github.com/boa-dev",
+      "key": "boa-dev",
       "page": null
     }
   ],
@@ -54,7 +55,7 @@ const metadata = {
       "post"
     ],
     "title": "Boa release v0.12",
-    "author": "Boa Developers"
+    "authors": "boa-dev"
   },
   "unlisted": false,
   "prevItem": {
@@ -72,31 +73,11 @@ const assets = {
 
 
 
-const toc = [{
-  "value": "Panic-free",
-  "id": "panic-free",
-  "level": 2
-}, {
-  "value": "Conformance increase",
-  "id": "conformance-increase",
-  "level": 2
-}, {
-  "value": "New built-in objects, <code>string</code> improvements and <code>@@ToStringTag</code>",
-  "id": "new-built-in-objects-string-improvements-and-tostringtag",
-  "level": 2
-}, {
-  "value": "Thank you",
-  "id": "thank-you",
-  "level": 2
-}];
+const toc = [];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
-    code: "code",
-    h2: "h2",
     p: "p",
-    pre: "pre",
-    strong: "strong",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__/* .useMDXComponents */ .R)(),
     ...props.components
   };
@@ -113,77 +94,6 @@ function _createMdxContent(props) {
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
       children: "Let's dive into the most relevant changes of this release."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
-      id: "panic-free",
-      children: "Panic-free"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Boa now doesn't panic in any of the Test262 tests. This is a huge milestone, since it means that the engine itself can handle all of the edge cases. At least those proposed by the official ECMAScript test suite. We still recommend using ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://doc.rust-lang.org/stable/std/panic/fn.catch_unwind.html",
-        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-          children: "std::panic::catch_unwind()"
-        })
-      }), " to execute arbitrary code, though."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
-      id: "conformance-increase",
-      children: "Conformance increase"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["In version 0.11 we were passing 31.59% of the Test262 suite. In this version, we have increased that coverage to ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.strong, {
-        children: "33.97%"
-      }), ". The increase might not seem much, but we now pass 1,924 new tests."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Our conformance tester has also been improved, and thanks to the new APIs available in the engine, we were able to add complex functionality such as \"realm\" creation, cross-real symbols and overall, the inclusion of a partially complete ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "$262"
-      }), " object, ready for some testing."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "We have also added some useful lists of \"fixed\", \"broken\", \"ignored\" and \"fixed panics\" tests for each pull request. This will allow us to directly check individual tests on each PR and only re-run the new tests that are failing/panicking in order to properly fix them."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.h2, {
-      id: "new-built-in-objects-string-improvements-and-tostringtag",
-      children: ["New built-in objects, ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "string"
-      }), " improvements and ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "@@ToStringTag"
-      })]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Boa now has support for the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "Reflect"
-      }), " and ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "Set"
-      }), " built-in objects. This grows the posibilities of the engine to be used in more real-world projects. On the same lines, we have added support for the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "GetOwnProperty"
-      }), " for ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "string"
-      }), ". This means that we can use ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "[{index}]"
-      }), " to get the characters of a string. For example, ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "\"hello\"[0]"
-      }), " will return ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "\"h\""
-      }), "."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["We have also added the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        children: "@@ToStringTag"
-      }), " well known symbol to most of the built-in objects. You can now run the following code, for example, and get the expected result:"]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.pre, {
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
-        className: "language-javascript",
-        children: "let result = new Map()[Symbol.toStringTag];\n\nconsole.log(result); // Returns \"Map\"\n"
-      })
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
-      id: "thank-you",
-      children: "Thank you"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Everything in this release has been such a huge effort, we want to thank all the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/graphs/contributors?from=2021-01-12&to=2021-06-07&type=c",
-        children: "contributors"
-      }), " in this release, whether it was features, fixes or raising bugs."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["If you're interested in contributing to Boa, we have some ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22",
-        children: "\"good first issues\""
-      }), " and ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22",
-        children: "\"issues where help is wanted\""
-      }), "."]
     })]
   });
 }
