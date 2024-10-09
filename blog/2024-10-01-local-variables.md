@@ -7,7 +7,7 @@ authors: boa-dev
 
 In this post we dive into how ECMAScript engines store variables.
 We go over storage optimizations and learn about scope analysis.
-If you are a ECMAScript developer you will get some practical tips to improve the performance of your code.
+If you are an ECMAScript developer you will get some practical tips to improve the performance of your code.
 If you write your own ECMAScript engine or any interpreter or compiler you might get some implementation ideas.
 
 <!--truncate-->
@@ -18,7 +18,7 @@ Before we start, let's get some disclaimers out of the way:
   Other engines might do things different, so take everything with a grain of salt.
 - This post omits some implementation details to focus on the most relevant parts.
 - This post contains data structures written in pseudo Rust.
-  These are only for visualization and you do not need to understand Rust.
+  These are only for visualization, and you do not need to understand Rust.
 
 ## Scopes and Variables
 
@@ -60,7 +60,7 @@ const a = 1;
 ```
 
 In this example our two variables have different identifiers.
-Notice that when we access the variable `a` from the block scope, it's value is resolved as expected.
+Notice that when we access the variable `a` from the block scope, its value is resolved as expected.
 This is because scopes are nested.
 When we cannot find a variable in the current scope, we look for the same identifier in the outer scope.
 In this case we have to look for `a` in the block scope and then in the global scope.
@@ -91,7 +91,7 @@ console.log(a); // 1
 You can see that variables are tied to their scopes.
 All three variables `a` never change their values.
 They just exist in their respective scopes and as soon as the scope has ended they are no longer accessible.
-Instead the previous outer scope returns to being the current scope and it's variables are accessible.
+Instead, the previous outer scope returns to being the current scope and its variables are accessible.
 
 You can see that in addition to blocks, functions also have scopes.
 There are some more details to function scopes and how `let`, `const` and `var` differ.
@@ -118,10 +118,10 @@ struct Scope {
 ```
 
 This is a nice and easy data structure for our variables.
-And because most languages come with a hashmap builtin, we do not have implement much!
+And because most languages come with a hashmap built-in, we do not have implement much!
 
 Let's add the ability to nest our scopes.
-Since all scopes are the same, we can just build a self referential  data structure:
+Since all scopes are the same, we can just build a self-referential data structure:
 
 ```rust
 struct Scope {
@@ -138,7 +138,7 @@ This was the approach we used in Boa before we switched to a different implement
 
 You may already have spotted some performance issues with this data structure.
 Consider that accessing variables is one of the things happening all the time in most languages.
-Therefore the runtime performance of variable access operations should be highly optimized.
+Therefore, the runtime performance of variable access operations should be highly optimized.
 With this current data structure we have to perform at least one hashmap lookup per variable access.
 Most hashmap implementations will incur significant cost compared to accessing a fixed location in memory.
 This problem gets worse when the variable we want to access is not in our current scope.
@@ -148,11 +148,11 @@ How would you optimize this data structure for runtime performance?
 Can you find a way to locate each variable without accessing multiple hashmaps?
 
 When we read code, we can use our mental model of variables and scopes to see how each variable is unique.
-We just have apply that knowledge to our data structure.
-In practice we can assign each variable two indices that make it unique and give it a defined location in memory:
+We just have to apply that knowledge to our data structure.
+In practice, we can assign each variable two indices that make it unique and give it a defined location in memory:
 
 - `scope index`: The index of the scope that the variable is declared in.
-- `variable index`: The index of the variable in it's scope.
+- `variable index`: The index of the variable in its scope.
 
 Let's visualize this in an example:
 
@@ -196,12 +196,12 @@ struct Scope {
 }
 ```
 
-Instead of having a self referential data structure, we now have a two dimensional array.
+Instead of having a self-referential data structure, we now have a two-dimensional array.
 
 While this is our runtime data structure, we still have to calculate the variable indices before running the code.
 For that we can use our previous approach with some slight modifications.
-Instead of storing the value of the variable, we just store it's index.
-Additionally we store an index in every scope to easily access our scope indices:
+Instead of storing the value of the variable, we just store its index.
+Additionally, we store an index in every scope to easily access our scope indices:
 
 ```rust
 struct Scope {
@@ -215,7 +215,7 @@ struct Variable {
 }
 ```
 
-While this data structure still works based on self referential hashmaps, we only need it before running code.
+While this data structure still works based on self-referential hashmaps, we only need it before running code.
 Instead of doing a lookup on every variable access at runtime, we just have to do it once.
 
 ## Local Variables
@@ -233,18 +233,18 @@ function addOne(a) {
 addOne(2);
 ```
 
-Currently we store `a` and `one` in our scopes and access them when performing the addition.
+Currently, we store `a` and `one` in our scopes and access them when performing the addition.
 But why do we need the special data structure for variables and scopes at all?
 What if we could just store the variables directly where we need them?
 
 A typical ECMAScript engine uses a virtual machine (VM) to execute your code.
 VMs use dedicated memory for values they operate on; a stack or registers.
-For the purpose of this post, we use registers but the stack would work in the same way.
+For the purpose of this post, we use registers, but the stack would work in the same way.
 Let's try to use registers to store variables.
 While compiling the ECMAScript code into operations for our VM we assign each variable to a register.
 Then we modify our variable operations to use registers instead of scopes to access variables.
 
-When we test our example from above, it works fine with this changes.
+When we test our example from above, it works fine with these changes.
 Let's write down what exactly happens:
 
 1. The function `addOne` is called. Registers for `a` and `one` are allocated.
@@ -297,8 +297,8 @@ To determine which variables can be stored in registers, we analyze them prior t
 We can reuse our previously established scope structure based on hashmaps.
 It just needs some additional information to make our analysis work.
 Each scope needs to be flagged to indicate if it is a function scope.
-This is important, because we have to track if a variable is every accessed from a nested function.
-Additionally each variable needs a flag to indicate if it can be a local variable.
+This is important, because we have to track if a variable is ever accessed from a nested function.
+Additionally, each variable needs a flag to indicate if it can be a local variable.
 
 Our adjusted scope structure looks like this:
 
@@ -390,7 +390,7 @@ When we encounter a variable that cannot be local, we use or old VM operations f
 ### Other Exceptions
 
 There are some more situations that prevent us from using local variables.
-We have to account for every case where a variable might be accessed from outside it's function.
+We have to account for every case where a variable might be accessed from outside its function.
 Without going into detail on each of these cases, we can find all of them via scope analysis.
 
 Here is a quick overview:
@@ -451,7 +451,7 @@ Here is a quick overview:
 
     In the first loop execution `a1` is the variable.
     In the second loop execution `a1` is the object property.
-    As a result of this behavior, every variable accessed inside of a `with` statement cannot be local.
+    As a result of this behavior, every variable accessed inside a `with` statement cannot be local.
 
 ## Conclusion
 
