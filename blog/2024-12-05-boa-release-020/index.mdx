@@ -1,0 +1,198 @@
+---
+layout: post
+tags: [post]
+title: "Boa release v0.20"
+description: "Boa release v0.20"
+authors: boa-dev
+---
+
+## Summary
+
+Boa v0.20 is now available! After 5 months of development we are very happy to present you the latest
+release of the Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and
+you can even use it from WebAssembly. See the [about](/about) page for more info.
+
+In this release, our conformance has grown from 87.3% to 87.5% in the official ECMAScript Test Suite
+(Test262). This small jump is expected as we're shifting most of our focus to performance as the majority of the engine is now conformant. We will continue to implement more of the specification as we go along but we expect these changes to be much smaller than we've been used to.
+
+You can check the full list of changes [here][changelog], and the full information on conformance
+[here][conformance].
+
+<!--truncate-->
+
+## Feature Highlights
+
+### Temporal
+
+Boa is continuing to progress on [Temporal](https://github.com/tc39/proposal-temporal). The Temporal API is a new
+set of built-in objects and functions that is designed to be a more modern replacement for the `Date`
+object, providing a more feature-rich and flexible API for working with dates and times.
+
+It is currently a [stage 3 proposal](https://tc39.es/proposal-temporal/docs/) and we are working
+alongside the TC39 champions to put together a solid Rust implementation. Since Temporal is such an
+extensive specification, we have done most of the work outside of Boa so that it can be used in other
+projects. This work can be found in the [temporal_rs](https://github.com/boa-dev/temporal/) repository.
+
+We hope to release a full blog post on Temporal in the future, but for now you can see the previous release notes for some examples on how to use it.
+You can also look at the [Temporal Cook Book](https://tc39.es/proposal-temporal/docs/cookbook.html) for some examples too!
+
+If you're interested in learning more or want to contribute to the native Rust implementation of
+Temporal, feel free to check out `temporal_rs`'s [issues](https://github.com/boa-dev/temporal/issues)!
+
+Boa's conformance on the Temporal test suite has grown from 24.61% to 40.67% in this release.
+
+### Nightlies
+
+Boa now supports nightly releases, this was originally created to aid with the testing of conformance for test262.fyi. This is a great way to see the latest changes and help offer feedback on new features or just to see the latest changes in the engine. You can find the nightly releases [here](https://github.com/boa-dev/boa/releases/tag/nightly)
+
+### Atomics.pause
+
+Boa has added support for the [stage 3 proposal `Atomics.pause`](https://github.com/tc39/proposal-atomics-microwait). This function is used to pause the execution of a thread for a specified amount of time. This function is useful for implementing spinlocks and other synchronization primitives in JavaScript.
+
+### Getters and Setters in the js_class! macro
+
+You can now add getters and setters to the `js_class!` macro. This allows you to define getters and setters on your JavaScript classes in Rust. This is a feature that has been requested by many users of Boa, and thanks to @hansl we now have it!
+[Point to example]
+
+### Implement your own native Errors
+
+Embedders can now create native errors in Rust and pass them into the JavaScript environment.
+The below example creates a new `JsError` from a Rust standard error [`err`](https://doc.rust-lang.org/std/error/trait.Error.html). This will create a new `JsNativeError` with the message of the standard error.
+
+````rust
+    /// # Examples
+    ///
+    /// ```
+    /// # use boa_engine::JsError;
+    /// let error = std::io::Error::new(std::io::ErrorKind::Other, "oh no!");
+    /// let js_error: JsError = JsError::from_rust(error);
+    ///
+    /// assert_eq!(js_error.as_native().unwrap().message(), "oh no!");
+    /// assert!(js_error.as_native().unwrap().cause().is_none());
+    /// ```
+    #[must_use]
+    pub fn from_rust(err: impl error::Error) -> Self {
+        let mut native_err = JsNativeError::error().with_message(err.to_string());
+        if let Some(source) = err.source() {
+            native_err = native_err.with_cause(Self::from_rust(source));
+        }
+
+        Self::from_native(native_err)
+    }
+````
+
+## Boa Runtime
+
+Boa’s boa_runtime crate contains an example runtime and basic runtime features and functionality for the boa_engine crate for runtime implementors.
+Shout out to [@hansl](https://github.com/hansl) for their work on the additional features of the Boa runtime crate.
+
+### TextDecoder and TextEncoder
+
+Boa Runtime now supports [TextDecoder](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder) and [TextEncoder](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder). These are useful for encoding and decoding strings in JavaScript. This is a feature that has been requested by many users of Boa, and we are happy to announce that it is now available in Boa.
+
+### URL and URLSearchParams
+
+Boa Runtime now supports the [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) API. This is useful for parsing and manipulating URLs in JavaScript. The majority of this is implemented using the [url](https://crates.io/crates/url) crate which itself is based on the WHATWG URL Standard. This is a feature that has been requested by many users of Boa, and we are happy to announce that it is now available in Boa.
+
+### Console Improvements
+
+There is also [context added](https://github.com/boa-dev/boa/pull/4005) to the console's `Logger` trait. This change modifiers the `Logger` trait to accept `ConsoleState` and `Context` paramters. This allows the `Logger` to be aware of the context in which it is being called, and to log messages accordingly. This is useful for debugging and logging in Boa.
+
+See [here](https://docs.rs/boa_runtime/latest/boa_runtime/index.html) for more information on Boa runtime.
+
+## Performance
+
+### Escape Analysis and local variables
+
+Thanks to @raskad who has been [working on improving scope analysis](https://github.com/boa-dev/boa/pull/3988) in the engine's AST. There has been so much improvement we plan to release a blog post shortly after detailing the changes and how they have improved the engine's performance.
+
+Most of the changes in the AST are the addition of [Scopes](https://github.com/boa-dev/boa/blob/1c4f455554b4140910241e86f90474ae3ff9f095/core/ast/src/scope.rs#L19-L25) to relevant AST nodes like [functions](https://github.com/boa-dev/boa/blob/main/core/ast/src/function/arrow_function.rs#L33) or [blocks](https://github.com/boa-dev/boa/blob/1c4f455554b4140910241e86f90474ae3ff9f095/core/ast/src/statement/block.rs#L47-L53) replace CompileTimeEnvironment while moving into the AST. Instead of creating bindings during the bytecode compilation, they are now added after parsing.
+
+The scope analyzer contains new visitor code that creates bindings and looks for bindings that escape their function scope. This allows us to only visit the scope environment for variables that are used outside of their scope, whilst keeping local variables on the stack. This is a big performance improvement as we no longer need to visit the entire scope environment for every variable in the function.
+
+import ThemedImage from "@theme/ThemedImage";
+import perf_changes_light from "./img/perf-changes-light.png";
+import perf_changes_dark from "./img/perf-changes-dark.png";
+
+<ThemedImage
+  alt="Performance changes in the benchmarks"
+  sources={{
+    light: perf_changes_light,
+    dark: perf_changes_dark,
+  }}
+/>
+
+<center>_V8 Benchmark overall score, higher is better..._</center>
+
+### Error optimizations
+
+Thanks to the work from [@CrazyboyQCD](https://github.com/CrazyboyQCD) we have improved performance on the Error messages and native errors. Error messages now use Rust's [Cow](https://doc.rust-lang.org/std/borrow/enum.Cow.html) type to avoid unnecessary allocations. `JSNativeError` constructors are also now marked as `const` which means much fewer instructions generated when creating a new error. See the [PR](https://github.com/boa-dev/boa/pull/4020) plus the changes in godbolt [here](https://godbolt.org/z/YEq4hW49n).
+
+### String optimizations
+
+https://github.com/boa-dev/boa/pull/3935 and https://github.com/boa-dev/boa/pull/4030
+
+### Lazy loading of ICU data
+
+Boa now lazily loads [ICU](https://icu.unicode.org/design/cldr-support) data on demand instead of during startup, this is a big performance improvement as we no longer need to load all the ICU data which can be quite large. This code change includes the addition of a [`LazyBufferProvider`](https://github.com/boa-dev/boa/blob/1c4f455554b4140910241e86f90474ae3ff9f095/core/icu_provider/src/lib.rs#L32-L40) which lazily deserializes the ICU data when first called upon.
+
+On top of this we have also broken up the ICU data into smaller chunks called postcards (datetime, plurals, segmenters, decimals), this means we can load only the data we need when we need it.
+
+You can see more details on the changes in the [PR](https://github.com/boa-dev/boa/pull/3948).
+
+## New Contributors
+
+Thank you to the new contributors to Boa for this release, you can find their contributions below:
+
+- [@magic-akari](https://github.com/@magic-akari) made their first contribution in https://github.com/boa-dev/boa/pull/3916
+- [@shurizzle](https://github.com/@shurizzle) made their first contribution in https://github.com/boa-dev/boa/pull/3976
+- [@it-a-me](https://github.com/@it-a-me) made their first contribution in https://github.com/boa-dev/boa/pull/4007
+- [@Nikita-str](https://github.com/@Nikita-str) made their first contribution in https://github.com/boa-dev/boa/pull/4010
+- [@4yman-0](https://github.com/@4yman-0) made their first contribution in https://github.com/boa-dev/boa/pull/4046/
+
+## Looking Forward
+
+### Register VM
+
+Now that we [have register](https://github.com/boa-dev/boa/pull/3942) allocation merged @HalidOdat has been working on migrating from a Stack VM to a Register VM, the register VM should mean less accesses to the heap as we utilize register allocation more. Secondly, by resembling the lower level architecture (in terms of low-level operations), we can compile down to efficient machine languauge easier in future when looking into JIT compilation.
+
+### Lazy Built-ins
+
+All builtins are eagerly initialized when the engine starts up, this is not ideal as it can slow down the startup time of the engine. We are looking to change this so that builtins are lazily initialized when they are first accessed. This should improve the startup time of the engine and reduce the memory footprint. You can follow the progress of this work [here](https://github.com/boa-dev/boa/pull/3973)
+
+## How can you support Boa?
+
+Boa is an independent JavaScript engine implementing the ECMAScript specification, and we rely on the
+support of the community to keep it going. If you want to support us, you can do so by donating to
+our [open collective]. Proceeeds here go towards this very website, the domain name, and remunerating
+members of the team who have worked on the features released.
+
+If financial contribution is not your strength, you can contribute by asking to be assigned to one of
+our [open issues], and asking for mentoring if you don't know your way around the engine. Our
+[contribution guide] should help you here. If you are more used to working with JavaScript or frontend
+web development, we also welcome help to improve our web presence, either in [our website], or in our
+[testing representation] page or benchmarks page. You can also contribute to our Criterion benchmark
+comparison GitHub [action].
+
+We are also looking to improve the documentation of the engine, both for developers of the engine
+itself and for users of the engine. Feel free to contact us in [Matrix].
+
+[open collective]: https://opencollective.com/boa
+[open issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee
+[contribution guide]: https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md
+[our website]: https://github.com/boa-dev/boa-dev.github.io
+[testing representation]: https://github.com/boa-dev/boa/issues/820
+[action]: https://github.com/boa-dev/criterion-compare-action
+[Matrix]: https://matrix.to/#/#boa:matrix.org
+
+## Thank You
+
+Once again, big thanks to [all the contributors][contributors] of this release!!
+
+[contributors]: https://github.com/boa-dev/boa/graphs/contributors?from=2024-03-05&to=2024-07-11&type=c
+[changelog]: https://github.com/boa-dev/boa/blob/v0.19/CHANGELOG.md
+[conformance]: https://boajs.dev/boa/test262/
+[feed]: https://boajs.dev/blog/rss.xml
+[collective]: https://opencollective.com/boa
+[easy_issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3AE-Easy
+[first_issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
