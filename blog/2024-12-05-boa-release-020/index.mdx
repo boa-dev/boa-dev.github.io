@@ -86,13 +86,14 @@ The below example creates a new `JsError` from a Rust standard error [`err`](htt
 Boa’s boa_runtime crate contains an example runtime and basic runtime features and functionality for the boa_engine crate for runtime implementors.
 Shout out to [@hansl](https://github.com/hansl) for their work on the additional features of the Boa runtime crate.
 
-### TextDecoder and TextEncoder
+### Additional APIs
 
-Boa Runtime now supports [TextDecoder](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder) and [TextEncoder](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder). These are useful for encoding and decoding strings in JavaScript. This is a feature that has been requested by many users of Boa, and we are happy to announce that it is now available in Boa.
+Additional APIs added the the Runtime crate include:
 
-### URL and URLSearchParams
-
-Boa Runtime now supports the [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) API. This is useful for parsing and manipulating URLs in JavaScript. The majority of this is implemented using the [url](https://crates.io/crates/url) crate which itself is based on the WHATWG URL Standard. This is a feature that has been requested by many users of Boa, and we are happy to announce that it is now available in Boa.
+- [`TextDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder)
+- [`TextEncoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
+- [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL)
+- [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams).
 
 ### Console Improvements
 
