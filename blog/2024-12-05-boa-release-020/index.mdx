@@ -142,7 +142,11 @@ Thanks to the work from [@CrazyboyQCD](https://github.com/CrazyboyQCD) we have i
 
 ### String optimizations
 
-https://github.com/boa-dev/boa/pull/3935 and https://github.com/boa-dev/boa/pull/4030
+Our string representation was refactored by [@CrazyboyQCD](https://github.com/CrazyboyQCD).
+Thanks to the changes, string literals can now be created without heap allocations.
+Building on these changes, [@CrazyboyQCD](https://github.com/CrazyboyQCD) also adjusted all places in our crates where this new capability could be applied.
+
+You can find the details in the relevant PRs [3935](https://github.com/boa-dev/boa/pull/3935) and [4030](https://github.com/boa-dev/boa/pull/4030).
 
 ### Lazy loading of ICU data
 
