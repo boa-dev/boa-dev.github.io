@@ -94,7 +94,9 @@ See [here](https://docs.rs/boa_runtime/latest/boa_runtime/index.html) for more i
 
 Thanks to @raskad who has been [working on improving scope analysis](https://github.com/boa-dev/boa/pull/3988) in the engine's AST. There has been so much improvement we plan to release a blog post shortly after detailing the changes and how they have improved the engine's performance.
 
-Most of the changes in the AST are the addition of [Scopes](https://github.com/boa-dev/boa/blob/1c4f455554b4140910241e86f90474ae3ff9f095/core/ast/src/scope.rs#L19-L25) to relevant AST nodes like [functions](https://github.com/boa-dev/boa/blob/main/core/ast/src/function/arrow_function.rs#L33) or [blocks](https://github.com/boa-dev/boa/blob/1c4f455554b4140910241e86f90474ae3ff9f095/core/ast/src/statement/block.rs#L47-L53) replace CompileTimeEnvironment while moving into the AST. Instead of creating bindings during the bytecode compilation, they are now added after parsing.
+Most of the changes in the AST are the addition of [Scopes](https://github.com/boa-dev/boa/blob/1c4f455554b4140910241e86f90474ae3ff9f095/core/ast/src/scope.rs#L19-L25) to relevant AST nodes like [functions](https://github.com/boa-dev/boa/blob/main/core/ast/src/function/arrow_function.rs#L33) or [blocks](https://github.com/boa-dev/boa/blob/1c4f455554b4140910241e86f90474ae3ff9f095/core/ast/src/statement/block.rs#L47-L53).
+Scopes contain bindings, that we previously created during bytecode compilation.
+Now they are added to the AST after parsing.
 
 The scope analyzer contains new visitor code that creates bindings and looks for bindings that escape their function scope. This allows us to only visit the scope environment for variables that are used outside of their scope, whilst keeping local variables on the stack. This is a big performance improvement as we no longer need to visit the entire scope environment for every variable in the function.
 
