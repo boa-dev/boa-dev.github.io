@@ -52,7 +52,29 @@ Boa has added support for the [stage 3 proposal `Atomics.pause`](https://github.
 ### Getters and Setters in the js_class! macro
 
 You can now add getters and setters to the `js_class!` macro. This allows you to define getters and setters on your JavaScript classes in Rust. This is a feature that has been requested by many users of Boa, and thanks to @hansl we now have it!
-[Point to example]
+```rust
+#[derive(Clone, Default, Trace, Finalize, JsData)]
+pub struct Game {
+    score: u32,
+}
+
+js_class! {
+    class Game {
+        property score {
+            get(this: JsClass<Game>) -> u32 {
+                this.borrow().score
+            }
+
+            set(this: JsClass<Game>, new_value: u32) {
+                this.borrow_mut().score = new_value;
+            }
+        }
+
+        constructor() {
+            Ok(Game::default())
+        }
+    }
+}
 
 ### Implement your own native Errors
 
