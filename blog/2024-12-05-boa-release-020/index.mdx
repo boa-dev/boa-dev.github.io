@@ -12,7 +12,7 @@ Boa v0.20 is now available! After 5 months of development we are very happy to p
 release of the Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and
 you can even use it from WebAssembly. See the [about](/about) page for more info.
 
-In this release, our conformance has grown from 87.3% to 87.5% in the official ECMAScript Test Suite
+In this release, our conformance has grown from 87.3% to 89.92% in the official ECMAScript Test Suite
 (Test262). This small jump is expected as we're shifting most of our focus to performance as the majority of the engine is now conformant. We will continue to implement more of the specification as we go along but we expect these changes to be much smaller than we've been used to.
 
 You can check the full list of changes [here][changelog], and the full information on conformance
@@ -52,6 +52,7 @@ Boa has added support for the [stage 3 proposal `Atomics.pause`](https://github.
 ### Getters and Setters in the js_class! macro
 
 You can now add getters and setters to the `js_class!` macro. This allows you to define getters and setters on your JavaScript classes in Rust. This is a feature that has been requested by many users of Boa, and thanks to @hansl we now have it!
+
 ```rust
 #[derive(Clone, Default, Trace, Finalize, JsData)]
 pub struct Game {
@@ -75,13 +76,14 @@ js_class! {
         }
     }
 }
+```
 
 ### Implement your own native Errors
 
 Embedders can now create native errors in Rust and pass them into the JavaScript environment.
 The below example creates a new `JsError` from a Rust standard error [`err`](https://doc.rust-lang.org/std/error/trait.Error.html). This will create a new `JsNativeError` with the message of the standard error.
 
-````rust
+```rust
 use boa_engine::JsError;
 
 let error = std::io::Error::new(std::io::ErrorKind::Other, "oh no!");
@@ -89,6 +91,7 @@ let js_error: JsError = JsError::from_rust(error);
 
 assert_eq!(js_error.as_native().unwrap().message(), "oh no!");
 assert!(js_error.as_native().unwrap().cause().is_none());
+```
 
 ## Boa Runtime
 
