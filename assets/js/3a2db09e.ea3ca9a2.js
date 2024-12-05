@@ -4,7 +4,7 @@
 /***/ 8070:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"tags":[{"label":"post","permalink":"/blog/tags/post","count":12}]}');
+module.exports = /*#__PURE__*/JSON.parse('{"tags":[{"label":"post","permalink":"/blog/tags/post","count":13}]}');
 
 /***/ })
 

@@ -60,6 +60,10 @@ const metadata = {
     "authors": "boa-dev"
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "Boa release v0.20",
+    "permalink": "/blog/2024/12/05/boa-release-020"
+  },
   "nextItem": {
     "title": "Boa release v0.18",
     "permalink": "/blog/2024/03/07/boa-release-18"
