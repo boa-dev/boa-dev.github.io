@@ -241,7 +241,7 @@ A typical ECMAScript engine uses a virtual machine (VM) to execute your code.
 VMs use dedicated memory for values they operate on; a stack or registers.
 For the purpose of this post, we use registers, but the stack would work in the same way.
 Let's try to use registers to store variables.
-While compiling the ECMAScript code into operations for our VM we assign each variable to a register.
+While compiling the ECMAScript code into operations for our VM, we assign each variable to a register.
 Then we modify our variable operations to use registers instead of scopes to access variables.
 
 When we test our example from above, it works fine with these changes.
