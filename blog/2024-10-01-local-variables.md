@@ -320,7 +320,7 @@ We set the `function` flag on each scope when it is created.
 The `local` flag on the variables is `true` by default.
 After creating all the scopes and filling them with their variables, we traverse the ECMAScript code.
 Every time we find a variable access, we check which variable in which scope is being accessed.
-If a variable is not in the current scope we go to the `outer` scope.
+If a variable is not in the current scope, we go to the `outer` scope.
 If any of the scopes we see until we find the variable is a function scope, we set the `local` flag to `false`.
 
 Let's visualize the scope analysis by writing out the scopes for this example:
