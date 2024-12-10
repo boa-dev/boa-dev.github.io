@@ -360,7 +360,7 @@ Scope {
 
 Now we apply our scope analysis.
 During the access to variable `one` in the arrow function, we pass the function scope of the arrow function.
-This indicates, that this variable cannot be local:
+This indicates that this variable cannot be local:
 
 ```rust
 Scope {
