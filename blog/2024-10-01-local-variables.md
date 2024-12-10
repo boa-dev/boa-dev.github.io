@@ -383,7 +383,7 @@ Scope {
 }
 ```
 
-After the scope analysis is finished we compile our code for the VM.
+After the scope analysis is finished, we compile our code for the VM.
 When we encounter a variable that can be local, we assign it a register.
 When we encounter a variable that cannot be local, we use or old VM operations for our scopes storage.
 
