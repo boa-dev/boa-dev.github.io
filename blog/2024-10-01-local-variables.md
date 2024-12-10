@@ -461,7 +461,7 @@ In one specific benchmark the scope increased by over 70%.
 Notice that Boa is not the most performant engine yet. 
 There are probably other optimizations relating to variable storage that we have not implemented yet.
 
-You might have already picked up some practical tips to potentially improve to performance of your ECMAScript code.
+Hopefully, you might have already picked up some practical tips to potentially improve to performance of your ECMAScript code.
 Here are our observations that might help performance:
 
 - Avoid accessing variables across functions.
