@@ -44,7 +44,7 @@ Even though both have the same identifier, they are different variables.
 The variable with the value `1` is declared in the global scope.
 The variable with the value `2` is declared in a block scope.
 
-In this example we always find the variable that we want to access in the current scope.
+In this example, we always find the variable that we want to access in the current scope.
 But what when the variable we access in not declared in the current scope?
 
 Let's modify our example to see what happens in that case:
