@@ -455,7 +455,7 @@ Here is a quick overview:
 
 ## Conclusion
 
-After implementing local variables in Boa we saw significant performance improvements in our benchmarks.
+After implementing local variables in Boa, we saw significant performance improvements in our benchmarks.
 Our overall benchmark scope improved by more than 25%.
 In one specific benchmark the scope increased by over 70%.
 Notice that Boa is not the most performant engine yet. 
