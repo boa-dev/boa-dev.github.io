@@ -90,7 +90,7 @@ console.log(a); // 1
 
 You can see that variables are tied to their scopes.
 All three variables `a` never change their values.
-They just exist in their respective scopes and as soon as the scope has ended they are no longer accessible.
+The variables just exist in their respective scopes, and as soon as the scope has ended, they are no longer accessible.
 Instead, the previous outer scope returns to being the current scope and its variables are accessible.
 
 You can see that in addition to blocks, functions also have scopes.
