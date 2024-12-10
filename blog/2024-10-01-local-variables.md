@@ -63,7 +63,7 @@ In this example, our two variables have different identifiers.
 Notice that when we access the variable `a` from the block scope, its value is resolved as expected.
 This is because scopes are nested.
 When we cannot find a variable in the current scope, we look for the same identifier in the outer scope.
-In this case we have to look for `a` in the block scope and then in the global scope.
+In this case, we have to look for `a` in the block scope and then in the global scope.
 
 Let's look at a more complex example:
 
