@@ -59,7 +59,7 @@ const a = 1;
 }
 ```
 
-In this example our two variables have different identifiers.
+In this example, our two variables have different identifiers.
 Notice that when we access the variable `a` from the block scope, its value is resolved as expected.
 This is because scopes are nested.
 When we cannot find a variable in the current scope, we look for the same identifier in the outer scope.
