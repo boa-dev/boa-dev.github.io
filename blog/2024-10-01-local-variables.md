@@ -5,8 +5,8 @@ title: "How ECMAScript Engines Optimize Your Variables"
 authors: boa-dev
 ---
 
-In this post we dive into how ECMAScript engines store variables.
-We go over storage optimizations and learn about scope analysis.
+In this post, we will dive into how ECMAScript engines store variables, 
+go over storage optimizations, and learn about scope analysis.
 If you are an ECMAScript developer you will get some practical tips to improve the performance of your code.
 If you write your own ECMAScript engine or any interpreter or compiler you might get some implementation ideas.
 
