@@ -17,8 +17,8 @@ Before we start, let's get some disclaimers out of the way:
 - This post is written about optimizations in the Boa ECMAScript engine.
   Other engines might do things different, so take everything with a grain of salt.
 - This post omits some implementation details to focus on the most relevant parts.
-- This post contains data structures written in pseudo Rust.
-  These are only for visualization, and you do not need to understand Rust.
+- This post contains data structures written in pseudo Rust
+  that are only for visualization, so you should not need to understand Rust.
 
 ## Scopes and Variables
 
