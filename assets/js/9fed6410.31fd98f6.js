@@ -1,14 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4606],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[7436],{
 
-/***/ 3860:
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/12/05/boa-release-020","source":"@site/blog/2024-12-05-boa-release-020/index.mdx","title":"Boa release v0.20","description":"Boa release v0.20","date":"2024-12-05T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":7.745,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.20","description":"Boa release v0.20","authors":"boa-dev"},"unlisted":false,"nextItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"}}');
-
-/***/ }),
-
-/***/ 5887:
+/***/ 4549:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17,10 +10,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2024_12_05_boa_release_020_index_mdx_7c4_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2025_03_05_local_variables_md_ec7_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2024_12_05_boa_release_020_index_mdx_7c4_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3860);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2025_03_05_local_variables_md_ec7_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7331);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8453);
 
@@ -28,10 +21,10 @@ __webpack_require__.r(__webpack_exports__);
 const frontMatter = {
 	layout: 'post',
 	tags: [
-		'post'
+		'post',
+		'internals'
 	],
-	title: 'Boa release v0.20',
-	description: 'Boa release v0.20',
+	title: 'How ECMAScript Engines Optimize Your Variables',
 	authors: 'boa-dev'
 };
 const contentTitle = undefined;
@@ -42,33 +35,15 @@ const assets = {
 
 
 
-const toc = [{
-  "value": "Summary",
-  "id": "summary",
-  "level": 2
-}];
+const toc = [];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
-    h2: "h2",
     p: "p",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__/* .useMDXComponents */ .R)(),
     ...props.components
   };
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "summary",
-      children: "Summary"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["Boa v0.20 is now available! After 5 months of development we are very happy to present you the latest\nrelease of the Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and\nyou can even use it from WebAssembly. See the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "/about",
-        children: "about"
-      }), " page for more info."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "In this release, our conformance has grown from 87.3% to 89.92% in the official ECMAScript Test Suite\n(Test262). This small jump is expected as we're shifting most of our focus to performance as the majority of the engine is now conformant. We will continue to implement more of the specification as we go along but we expect these changes to be much smaller than we've been used to."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "You can check the full list of changes [here][changelog], and the full information on conformance\n[here][conformance]."
-    })]
+  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+    children: "In this post, we will dive into how ECMAScript engines store variables,\ngo over storage optimizations, and learn about scope analysis.\nIf you are an ECMAScript developer, you will get some practical tips to improve the performance of your code.\nIf you write your own ECMAScript engine or any interpreter/compiler, you might get some implementation ideas."
   });
 }
 function MDXContent(props = {}) {
@@ -85,6 +60,13 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 7331:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2025/03/05/local-variables","source":"@site/blog/2025-03-05-local-variables.md","title":"How ECMAScript Engines Optimize Your Variables","description":"In this post, we will dive into how ECMAScript engines store variables,","date":"2025-03-05T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"},{"inline":true,"label":"internals","permalink":"/blog/tags/internals"}],"readingTime":13.855,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post","internals"],"title":"How ECMAScript Engines Optimize Your Variables","authors":"boa-dev"},"unlisted":false,"nextItem":{"title":"Boa release v0.20","permalink":"/blog/2024/12/05/boa-release-020"}}');
 
 /***/ }),
 

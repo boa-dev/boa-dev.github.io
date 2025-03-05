@@ -4,7 +4,7 @@
 /***/ 3860:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/12/05/boa-release-020","source":"@site/blog/2024-12-05-boa-release-020/index.mdx","title":"Boa release v0.20","description":"Boa release v0.20","date":"2024-12-05T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":7.745,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.20","description":"Boa release v0.20","authors":"boa-dev"},"unlisted":false,"nextItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/12/05/boa-release-020","source":"@site/blog/2024-12-05-boa-release-020/index.mdx","title":"Boa release v0.20","description":"Boa release v0.20","date":"2024-12-05T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":7.745,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.20","description":"Boa release v0.20","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"How ECMAScript Engines Optimize Your Variables","permalink":"/blog/2025/03/05/local-variables"},"nextItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"}}');
 
 /***/ }),
 
