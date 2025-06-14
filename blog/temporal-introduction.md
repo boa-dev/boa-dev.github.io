@@ -6,8 +6,8 @@ authors: boa-dev
 
 This will be a series of posts primarily about implementing a new
 JavaScript feature in Rust, specifically the new date/time builtin:
-Temporal. We'll go over general lessons and to discuss the library we've
-been working on.
+Temporal. We'll be going over the general implementation of Temporal in
+Boa as well as the crates supporting that implementation.
 
 Why should you care? Well we are not only implementing it for
 JavaScript, but Rust as well ... more on that in a bit.
@@ -54,19 +54,19 @@ few things became evident.
 
 So after the prototype was merged, the prototype was pulled out of Boa's
 internal builtins and externalized into its own crate,
-[temporal_rs][temporal-rs-repo], which then first landed behind an
+[`temporal_rs`][temporal-rs-repo], which then first landed behind an
 experimental flag in Boa v0.18.
 
 After over a year and a half of development, Boa now sits at about 90%
 overall conformance for Temporal and growing with the entire
 implementation backed by `temporal_rs`.
 
-For its part, `temporal_rs` is shaping out to be a proper Rust date/time
+For its part, `temporal_rs` is shaping up to be a proper Rust date/time
 library that can be used to implement temporal in a JavaScript engine or
 for general usage purposes.
 
 So let's take a look at Temporal: it's JavaScript API, it's Rust API in
-temporal_rs, and how temporal_rs supports implementing the
+`temporal_rs`, and how `temporal_rs` supports implementing the
 specification.
 
 ## Important core differences
@@ -82,7 +82,7 @@ is not ideal for implementing deep language specifications where an
 object or string may need to be cloned. Furthermore, it's just not great
 for an API in a typed language like Rust.
 
-To work around this, we use liberally `FromStr` and a `FiniteF64` custom
+To work around this, we routinely use `FromStr` and a `FiniteF64` custom
 primitive to handle casting and constraining, respectively, to adapt
 values for use with a typed API.
 
@@ -105,7 +105,7 @@ let overflow: Option<ArithmeticOverflow> = get_option::<ArithmeticOverflow>(
 )?;
 ```
 
-This is the core glue between Boa and the temporal_rs API that we will
+This is the core glue between Boa and the `temporal_rs` API that we will
 be going over below.
 
 ## Implementing constructors
@@ -158,14 +158,14 @@ let plain_date = PlainDate::try_new(2025, 6, 9, Calendar::default())?;
 ```
 
 We actually learn some interesting things immediately about the
-JavaScript API from looking at the temporal_rs API:
+JavaScript API from looking at the `temporal_rs` API:
 
 1. Temporal.PlainDate constructor can throw.
 2. When the calendar is omitted, the default calendar is used (this will
    default to the `iso8601` calendar)
 
 Of course, if you somewhat prefer the brevity of the JavaScript API and
-don't want to list the default Calendar, temporal_rs provides the
+don't want to list the default Calendar, `temporal_rs` provides the
 additional constructors `new_iso` and `try_new_iso`.
 
 ## Let's discuss Now
@@ -213,7 +213,7 @@ invoking the abstract operations: `SystemTimeZoneIdentifier` and
 suspects `SystemTime` and `iana-time-zone`, merge it, and call it a day
 on the implementation, right?
 
-Except the core purpose of temporal_rs is that it can be used in any
+Except the core purpose of `temporal_rs` is that it can be used in any
 engine implementation, accessing a system clock and system time zone are
 not in scope and must be left up to the engine or runtime to provide
 that functionality.
@@ -277,7 +277,7 @@ for you!
 
 Simple, right?
 
-Well we're pleased to announce that temporal_rs won't be supporting
+Well we're pleased to announce that `temporal_rs` won't be supporting
 that! ... At least in one method.
 
 Again, the goal of `temporal_rs` is to implement the specification to
@@ -320,9 +320,11 @@ exists for each of the components that can then be provided to that
 components `from_partial` method.
 
 With this, we have fully implemented support for the `from` method in
-`temporal_rs`
+`temporal_rs`:
 
 ```rust
+use core::str::FromStr;
+use temporal_rs::{PlainDate, PlainDateTime, partial::PartialDate};
 let pdt = PlainDateTime::try_new_iso(2025, 1, 1)?;
 // We can use the `PlainDateTime` (`ZonedDateTime` / `PlainDate` are also options).
 let pd_from_pdt = PlainDate::from(pdt);
@@ -349,21 +351,31 @@ interesting and everyone totally 100% loves them. No, time zones aren't
 in this post, because they are still being polished and deserve an
 entire post of their own.
 
+So stay tuned for our next post on implementing Temporal! The one where
+we'll hopefully go over everyone's favorite subject, time zones; and
+answer the question that some of you may have if you happen to take a
+glance at `temporal_rs`'s docs or try out our `no_std` support: what in
+the world is a provider API?
+
 ## Conclusion
 
 In conclusion, we're implementing Temporal in Rust to support engine
 implementors as well as to have the API available in native Rust in
 general.
 
-Boa currently sit at a [90% conformance rate][boa-test262] for Temporal
-completely backed by temporal_rs v0.0.8, and we're aiming to be 100%
+Boa currently sits at a [90% conformance rate][boa-test262] for Temporal
+completely backed by `temporal_rs` v0.0.8, and we're aiming to be 100%
 conformant before the end of the year.
 
 If you're interested in trying Temporal using Boa, you can use it in
 Boa's CLI or enable it in `boa_engine` with the `experimental` flag.
 
+Outside of Boa's implementation, `temporal_rs` has implemented or
+supports the implementation for a large portion of the Temporal's API in
+native Rust.
+
 If you're interested in trying out `temporal_rs`, feel free to add to
-your project with cargo:
+your project with Cargo:
 
 ```bash
 cargo add temporal_rs
@@ -394,8 +406,8 @@ the API.
 3.  Partial objects may need some adjustments to handle differences
     between `from_partial` and `with`
 4.  Time zone provider's and the `TimeZoneProvider` trait are still
-    largely unstable (although the APIs that use them are expected to be
-    stable)
+    largely unstable. Although, the provider APIs that use them are
+    expected to be stable (spoilers!)
 5.  Era and month code are still be discussed in the intl-era-month-code
     proposal, so some calendars and calendar methods may have varying
     levels of support.
