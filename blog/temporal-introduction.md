@@ -401,7 +401,7 @@ reflected in `temporal_rs`.
 There are also a few outstanding issues with changes that may reflect in
 the API.
 
-1.  Duration's inner repr and related ctors
+1.  Duration's inner repr and related constructors.
 2.  TemporalError's inner repr
 3.  Partial objects may need some adjustments to handle differences
     between `from_partial` and `with`
