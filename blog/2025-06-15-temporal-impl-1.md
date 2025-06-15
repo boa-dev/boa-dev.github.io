@@ -329,7 +329,7 @@ mention `JsObject`, like `JsValue`, is implementation defined as well?
 
 This is where `temporal_rs`'s Partial API comes in.
 
-It turns out that while property bags in JavaScript can have various
+It turns out that, while property bags in JavaScript can have various
 fields set, there is still a general shape for the fields that can be
 provided and validated in Temporal.
 
