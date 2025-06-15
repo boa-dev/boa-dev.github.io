@@ -159,7 +159,7 @@ For instance, take the below constructor:
 const plainDate = new Temporal.PlainDate(2025, 6, 9);
 ```
 
-Can easily be conveyed in Rust as:
+This code can easily be translated to Rust as:
 
 ```rust
 use temporal_rs::PlainDate;
