@@ -388,7 +388,7 @@ temporal_rs = "0.0.9"
 ```
 
 A FFI version of temporal is also available for C and C++ via
-temporal_capi.
+`temporal_capi`.
 
 ## General note on API stability
 
