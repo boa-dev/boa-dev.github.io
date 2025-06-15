@@ -322,11 +322,13 @@ const pd_from_property_bag = Temporal.PlainDate.from({
 });
 ```
 
-It turns out that the above operations is all that needs to be
-implemented by `temporal_rs` in order to support a Temporal
-implementation, we just need to implement `From<PlainDateTime>`,
-`From<ZonedDateTime>`, `FromStr`, and `From<JsObject>` ... oh. Did I
-mention `JsObject`, like `JsValue`, is implementation defined as well?
+If we look closely to the common usage of the method, it seems like
+all that needs to be implemented by `temporal_rs` is:
+- `From<PlainDateTime>`: Easy.
+- `From<ZonedDateTime>`: Simple.
+- `FromStr`: Tricky but can be done.
+- `From<JsObject>`: ...
+... oh. Did I mention `JsObject`, like `JsValue`, is engine defined as well?
 
 Fortunately, this is where `temporal_rs`'s Partial API comes in.
 
