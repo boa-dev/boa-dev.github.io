@@ -12,13 +12,18 @@ description:
 authors: boa-dev
 ---
 
-This will be a series of posts primarily about implementing a new
-JavaScript feature in Rust, specifically the new date/time built-in:
-Temporal. We'll be going over general lessons and interesting design choices we've
-stumbled upon, as well as the crates supporting that implementation.
+Writing a JavaScript engine in Rust can seem like pretty daunting task
+to some. To provide some insight into how we implement JavaScript
+features, we will be going over implementing a JavaScript feature in
+Rust.
 
-Why should you care? Well we are not only implementing it for
-JavaScript, but Rust as well ... more on that in a bit.
+More specifically, this will be the first in a series of posts primarily
+about implementing the new date/time built-in: Temporal. We'll be going
+over general lessons and interesting design choices we've stumbled upon,
+as well as the crates supporting that implementation.
+
+Why should you care? Well we are not only implementing Temporal for
+JavaScript, but for Rust as well ... more on that in a bit.
 
 First, an aside!
 
@@ -50,8 +55,8 @@ documentation][mdn-temporal].
 Being Boa a JavaScript engine / interpreter, developing a correct
 implementation of the ECMAScript specification is our raison d'être.
 This, in consequence, makes implementing Temporal one of our most
-important goals, since it represents roughly 7-8% of the
-current conformance test suite (~4000 of the ~50,000 tests).
+important goals, since it represents roughly 7-8% of the current
+conformance test suite (~4000 of the ~50,000 tests).
 
 When the PR of the first prototype of Temporal for Boa was submitted, a
 few things became evident:
@@ -60,17 +65,18 @@ few things became evident:
 2. There's room for optimization and improvement
 3. This would be handy to have in Rust
 
-So after the prototype was merged, we pulled it out of Boa's
-internal builtins and externalized into its own crate,
-[`temporal_rs`][temporal-rs-repo], which then first landed behind an
-experimental flag in Boa v0.18.
+So after the prototype was merged, we pulled it out of Boa's internal
+builtins and externalized into its own crate,
+[`temporal_rs`][temporal-rs-repo], which landed behind an experimental
+flag in Boa v0.18.
 
-After over a year and a half of development, Boa now sits at a conformance
-of about 90% for Temporal (and growing), with the entire implementation
-being backed by `temporal_rs`.
+After over a year and a half of development, Boa now sits at a
+conformance of about 90% for Temporal (and growing), with the entire
+implementation being backed by `temporal_rs`.
 
 For its part, `temporal_rs` is shaping up to be a proper Rust date/time
-library that can be used to implement Temporal in a JavaScript engine, and even support general date/time use cases.
+library that can be used to implement Temporal in a JavaScript engine,
+and even support general date/time use cases.
 
 Let's take a look at Temporal: it's JavaScript API, it's Rust API in
 `temporal_rs`, and how `temporal_rs` supports implementing the
@@ -78,11 +84,12 @@ specification.
 
 ## Important core differences
 
-Let's briefly talk about JavaScript values (`JsValue`). This is
-functionally the core `any` value type of JavaScript. A `JsValue` could
-be a number represented as a 64 bit floating point, a string, a boolean,
-or an object. Not only is it an `any`, but `JsValue` is ultimately engine
-defined with various implementations existing across engines.
+First, we need to talk about JavaScript values (`JsValue`) for a bit.
+This is functionally the core `any` value type of JavaScript. A
+`JsValue` could be a number represented as a 64 bit floating point, a
+string, a boolean, or an object. Not only is it an `any`, but `JsValue`
+is ultimately engine defined with various implementations existing
+across engines.
 
 While this is handy for a dynamically typed language like JavaScript, it
 is not ideal for implementing deep language specifications where an
@@ -90,8 +97,8 @@ object or string may need to be cloned. Furthermore, it's just not great
 for an API in a typed language like Rust.
 
 To work around this, we routinely use `FromStr` and a `FiniteF64` custom
-primitive to handle casting and constraining, respectively, which
-glues dynamic types like `JsValue` with a typed API.
+primitive to handle casting and constraining, respectively, which glues
+dynamic types like `JsValue` with a typed API.
 
 For instance, in Boa, we heavily lean into using the below patterns:
 
@@ -181,10 +188,10 @@ use temporal_rs::PlainDate;
 let plain_date = PlainDate::try_new_iso(2025, 6, 9)?;
 ```
 
-Interestingly enough, the `_iso` constructors are actually extensions of
-Temporal specification to provide a similar API in Rust. This is because
-the `_iso` constructors are assumed to exist due to resolving an
-`undefined` calendar to the default ISO calendar.
+Interestingly enough, the `_iso` constructors are mostly expressing a
+part of the JavaScript API, just in native Rust. This is because in
+JavaScript the `_iso` constructors are assumed to exist due to resolving
+an `undefined` calendar to the default ISO calendar.
 
 ## Let's discuss `Now`
 
@@ -203,9 +210,9 @@ the `_iso` constructors are assumed to exist due to resolving an
 important. It is the object from which the current instant can be
 measured and mapped into any of the Temporal components.
 
-In JavaScript, this type has no `[[Construct]]` or `[[Call]]` internal
-method, which is a fancy way to say that Now has no constructor and
-cannot be called directly.
+In JavaScript, this type has no [`[[Construct]]`][construct-link] or
+[`[[Call]]`][call-link] internal method, which is a fancy way to say
+that Now has no constructor and cannot be called directly.
 
 Instead, Now is used primarily as a namespace for its methods.
 
@@ -233,8 +240,9 @@ on the implementation, right?
 
 Except the core purpose of `temporal_rs` is that it can be used in any
 engine implementation, and accessing a system clock and system time zone
-is sometimes difficult for engines that support targets like embedded systems.
-Thus, this functionality must be delegated to the engine or runtime ... somehow.
+is sometimes difficult for engines that support targets like embedded
+systems. Thus, this functionality must be delegated to the engine or
+runtime ... somehow.
 
 How did we end up implementing `Now` if we have no access to the system
 clock or time zone? Well ... a builder pattern of course!
@@ -273,6 +281,34 @@ pub struct Now {
 
 Once we've constructed `Now`, then we are off to the races!
 
+In Boa, implementing `Now` is as easy the below implementation for
+`Temporal.Now.plainDateISO()`:
+
+```rust
+impl Now {
+    // The `Temporal.Now.plainDateISO` used when building `Temporal.Now`.
+    fn plain_date_iso(_: &JsValue, args: &[JsValue], context: &mut Context) -> JsResult<JsValue> {
+        let time_zone = args
+            .get_or_undefined(0)
+            .map(|v| to_temporal_timezone_identifier(v, context))
+            .transpose()?;
+
+        let now = build_now(context)?;
+
+        let pd = now.plain_date_iso_with_provider(time_zone, context.tz_provider())?;
+        create_temporal_date(pd, None, context).map(Into::into)
+    }
+}
+
+// A helper for building Now
+fn build_now(context: &mut Context) -> JsResult<NowInner> {
+    Ok(NowBuilder::default()
+        .with_system_zone(system_time_zone()?)
+        .with_system_nanoseconds(system_nanoseconds(context)?)
+        .build())
+}
+```
+
 The nice part about this approach is that it also allows a `std`
 implementation that can be feature gated for general users that are not
 concerned with `no_std`.
@@ -286,12 +322,12 @@ concerned with `no_std`.
 ## Partial API
 
 There's an interesting method on each of the Temporal built-ins that I'd
-assume most people who have used Rust would be familiar with: `from`. But
-this isn't Rust's friendly `From` trait. No, this `from` is a behemoth
-method that takes a `JsValue` and automagically gives you back the
-built-in that you'd like or throws. That's right! Give it a string, give
-it a property bag, give it an instance of another Temporal built-in;
-`from` will figure it out for you!
+assume most people who have used Rust would be familiar with: `from`.
+But this isn't Rust's friendly `From` trait. No, this `from` is a
+behemoth method that takes a `JsValue` and automagically gives you back
+the built-in that you'd like or throws. That's right! Give it a string,
+give it a property bag, give it an instance of another Temporal
+built-in; `from` will figure it out for you!
 
 Simple, right?
 
@@ -300,12 +336,12 @@ that! ... or at least not in that shape.
 
 Again, the goal of `temporal_rs` is to implement the specification to
 the highest possible degree of conformance, so when we couldn't provide
-a direct translation of the specification's API, we made sure to
-provide APIs that (hopefully) made the glue code between engines and
+a direct translation of the specification's API, we made sure to provide
+APIs that (hopefully) made the glue code between engines and
 `temporal_rs` much shorter.
 
-To exemplify this, let's take a look at some valid uses of `from` in JavaScript to
-construct a `PlainDate`.
+To exemplify this, let's take a look at some valid uses of `from` in
+JavaScript to construct a `PlainDate`.
 
 ```js
 // Create a `PlainDateTime`
@@ -322,13 +358,14 @@ const pd_from_property_bag = Temporal.PlainDate.from({
 });
 ```
 
-If we look closely to the common usage of the method, it seems like
-all that needs to be implemented by `temporal_rs` is:
+If we look closely to the common usage of the method, it seems like all
+that needs to be implemented by `temporal_rs` is:
+
 - `From<PlainDateTime>`: Easy.
 - `From<ZonedDateTime>`: Simple.
 - `FromStr`: Tricky but can be done.
-- `From<JsObject>`: ...
-... oh. Did I mention `JsObject`, like `JsValue`, is engine defined as well?
+- `From<JsObject>`: ... ... oh. Did I mention `JsObject`, like
+  `JsValue`, is engine defined as well?
 
 Fortunately, this is where `temporal_rs`'s Partial API comes in.
 
@@ -336,9 +373,9 @@ It turns out that, while property bags in JavaScript can have various
 fields set, there is still a general shape for the fields that can be
 provided and validated in Temporal.
 
-To support this in `temporal_rs`, a "partial" component
-exists for each of the components that can then be provided to that
-component's `from_partial` method.
+To support this in `temporal_rs`, a "partial" component exists for each
+of the components that can then be provided to that component's
+`from_partial` method.
 
 With this, we have fully implemented support for the `from` method in
 `temporal_rs`:
@@ -352,12 +389,12 @@ let pd_from_pdt = PlainDate::from(pdt);
 // We can use a `str`.
 let pd_from_string = PlainDate::from_str("2025-01-01")?;
 // We can use a `PartialDate`.
-let pd_from_partial = PlainDate::from_partial(PartialDate {
-    year: Some(2025),
-    month: Some(1),
-    day: Some(1),
-    ..Default::default()
-});
+let pd_from_partial = PlainDate::from_partial(
+    PartialDate::new()
+        .with_year(Some(2025))
+        .with_month(Some(1))
+        .with_day(Some(1))
+);
 ```
 
 **NOTE:** there may be updates to `PartialDate` in the future (see
@@ -368,8 +405,8 @@ for more information).
 
 So far we have not discussed time zones, and -- surprise! -- we aren't
 going to ... yet. It's not because they aren't super cool and
-interesting and everyone _totally_ 100% loves them. No, time zones aren't
-in this post because they are still being polished and deserve an
+interesting and everyone _totally_ 100% loves them. No, time zones
+aren't in this post because they are still being polished and deserve an
 entire post of their own.
 
 So stay tuned for our next post on implementing Temporal! The one where
@@ -384,16 +421,14 @@ In conclusion, we're implementing Temporal in Rust to support engine
 implementors as well as to have the API available in native Rust in
 general.
 
-Boa currently sits at a [90% conformance rate][boa-test262] for Temporal
-completely backed by `temporal_rs` v0.0.8, and we're aiming to be 100%
-conformant before the end of the year.
-
 If you're interested in trying Temporal using Boa, you can use it in
 Boa's CLI or enable it in `boa_engine` with the `experimental` flag.
 
 Outside of Boa's implementation, `temporal_rs` has implemented or
 supports the implementation for a large portion of the Temporal's API in
-native Rust.
+native Rust. Furthermore, an overwhelming amount of the API can be
+considered stable[^stability] and is currently available in Boa with
+only a few outstanding issues that may be considered breaking changes.
 
 If you're interested in trying out `temporal_rs`, feel free to add it to
 your dependencies with the command:
@@ -402,40 +437,47 @@ your dependencies with the command:
 cargo add temporal_rs
 ```
 
-or by adding the below in the `[dependencies]` section of your `Cargo.toml`:
+or by adding the below in the `[dependencies]` section of your
+`Cargo.toml`:
 
 ```toml
 temporal_rs = "0.0.9"
 ```
 
 A FFI version of temporal is also available for C and C++ via
-`temporal_capi`.
+[`temporal_capi`][temporal-capi].
 
-## General note on API stability
+[^stability]: A general note on API stability
 
-While the majority of the APIs discussed above are expected to be mostly
-stable. Temporal is still a stage 3 proposal that is not fully accepted
-into the ECMAScript specification. Any normative change that may be made
-upstream in the ECMAScript or ECMA402 specification will also be
-reflected in `temporal_rs`.
+    While the majority of the APIs discussed above are expected to be
+    mostly stable. Temporal is still a stage 3 proposal that is not
+    fully accepted into the ECMAScript specification. Any normative
+    change that may be made upstream in the ECMAScript or ECMA402
+    specification will also be reflected in `temporal_rs`.
 
-There are also a few outstanding issues with changes that may reflect in
-the API.
+    There are also a few outstanding issues with changes that may
+    reflect in the API.
 
-1.  Duration's inner repr and related constructors.
-2.  TemporalError's inner repr
-3.  Partial objects may need some adjustments to handle differences
-    between `from_partial` and `with`
-4.  Time zone provider's and the `TimeZoneProvider` trait are still
-    largely unstable. Although, the provider APIs that use them are
-    expected to be stable (spoilers!)
-5.  Era and month code are still be discussed in the intl-era-month-code
-    proposal, so some calendars and calendar methods may have varying
-    levels of support.
+    1.  Duration's inner repr and related constructors.
+    2.  `ZonedDateTime.prototype.getTimeZoneTransition` implementation
+    3.  TemporalError's inner repr
+    4.  Partial objects may need some adjustments to handle differences
+        between `from_partial` and `with`
+    5.  Time zone provider's and the `TimeZoneProvider` trait are still
+        largely unstable. Although, the provider APIs that use them are
+        expected to be stable (spoilers!)
+    6.  Era and month code are still be discussed in the
+        intl-era-month-code proposal, so some calendars and calendar
+        methods may have varying levels of support.
 
-The above issues are considered blocking for a 0.1.0 release.
+    The above issues are considered blocking for a 0.1.0 release.
 
 [mdn-temporal]:
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
 [temporal-rs-repo]: https://github.com/boa-dev/temporal
+[construct-link]:
+  https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-ecmascript-function-objects-construct-argumentslist-newtarget
+[call-link]:
+  https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-ecmascript-function-objects-call-thisargument-argumentslist
 [boa-test262]: https://test262.fyi/#|boa
+[temporal-capi]: https://crates.io/crates/temporal_capi
