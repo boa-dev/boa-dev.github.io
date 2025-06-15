@@ -12,10 +12,10 @@ description:
 authors: boa-dev
 ---
 
-Writing a JavaScript engine in Rust can seem like pretty daunting task
-to some. To provide some insight into how we implement JavaScript
-features, we will be going over implementing a JavaScript feature in
-Rust.
+Developing a JavaScript engine in Rust can seem like pretty daunting
+task to some. In order to demystify working on a feature and to go over
+what we've been working on implementing in Boa recently, we thought we'd
+write a post about implementing a JavaScript feature in Rust.
 
 More specifically, this will be the first in a series of posts primarily
 about implementing the new date/time built-in: Temporal. We'll be going
