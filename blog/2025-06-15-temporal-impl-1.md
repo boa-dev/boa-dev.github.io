@@ -166,7 +166,7 @@ use temporal_rs::PlainDate;
 let plain_date = PlainDate::try_new(2025, 6, 9, Calendar::default())?;
 ```
 
-We actually learn some interesting things immediately about the
+Furthermore, we actually learn some interesting things about the
 JavaScript API from looking at the `temporal_rs` API:
 
 1. `Temporal.PlainDate` constructor can throw.
