@@ -393,8 +393,8 @@ Outside of Boa's implementation, `temporal_rs` has implemented or
 supports the implementation for a large portion of the Temporal's API in
 native Rust.
 
-If you're interested in trying out `temporal_rs`, feel free to add to
-your project with Cargo:
+If you're interested in trying out `temporal_rs`, feel free to add it to
+your dependencies with the command:
 
 ```bash
 cargo add temporal_rs
