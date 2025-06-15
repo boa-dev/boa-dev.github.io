@@ -153,7 +153,7 @@ impl PlainDate {
 These three constructors, `new_with_overflow`, `try_new`, and `new`, are
 fairly flexible and provide full coverage of the Temporal specification.
 
-For instance, take the below constructor:
+For instance, take the below snippet:
 
 ```js
 const plainDate = new Temporal.PlainDate(2025, 6, 9);
