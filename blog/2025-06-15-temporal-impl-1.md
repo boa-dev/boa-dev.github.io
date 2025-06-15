@@ -366,7 +366,7 @@ for more information).
 So far we have not discussed time zones, and -- surprise! -- we aren't
 going to ... yet. It's not because they aren't super cool and
 interesting and everyone totally 100% loves them. No, time zones aren't
-in this post, because they are still being polished and deserve an
+in this post because they are still being polished and deserve an
 entire post of their own.
 
 So stay tuned for our next post on implementing Temporal! The one where
