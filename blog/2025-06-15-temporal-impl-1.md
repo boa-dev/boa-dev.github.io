@@ -287,7 +287,7 @@ concerned with `no_std`.
 ## Partial API
 
 There's an interesting method on each of the Temporal built-ins that I'd
-assume most people who have used Rust would be familiar with `from`. But
+assume most people who have used Rust would be familiar with: `from`. But
 this isn't Rust's friendly `From` trait. No, this `from` is a behemoth
 method that takes a `JsValue` and automagically gives you back the
 built-in that you'd like or throws. That's right! Give it a string, give
