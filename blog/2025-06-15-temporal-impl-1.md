@@ -299,9 +299,10 @@ Folks, we're pleased to announce that `temporal_rs` won't be supporting
 that! ... or at least not in that shape.
 
 Again, the goal of `temporal_rs` is to implement the specification to
-the highest degree possible and where it can't implement the
-specification like in the case of a `from<JsValue>`, it provides methods
-to support the implementation of Temporal in engines.
+the highest possible degree of conformance, so when we couldn't provide
+a direct translation of the specification's API, we made sure to
+provide APIs that (hopefully) made the glue code between engines and
+`temporal_rs` much shorter.
 
 To exemplify this, let's take a look at some valid uses of `from` in JavaScript to
 construct a `PlainDate`.
