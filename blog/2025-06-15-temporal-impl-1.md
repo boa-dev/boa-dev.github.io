@@ -150,18 +150,19 @@ impl PlainDate {
 }
 ```
 
-These methods are flexible enough and allow full coverage of the
-Temporal specification.
+These three constructors, `new_with_overflow`, `try_new`, and `new`, are
+fairly flexible and provide full coverage of the Temporal specification.
 
 For instance, take the below constructor:
 
 ```js
-const plainDate = Temporal.PlainDate(2025, 6, 9);
+const plainDate = new Temporal.PlainDate(2025, 6, 9);
 ```
 
 Can easily be conveyed in Rust as:
 
 ```rust
+use temporal_rs::PlainDate;
 let plain_date = PlainDate::try_new(2025, 6, 9, Calendar::default())?;
 ```
 
@@ -175,6 +176,16 @@ JavaScript API from looking at the `temporal_rs` API:
 Of course, if you somewhat prefer the brevity of the JavaScript API and
 don't want to list the default `Calendar`, `temporal_rs` provides the
 additional constructors `new_iso` and `try_new_iso`.
+
+```rust
+use temporal_rs::PlainDate;
+let plain_date = PlainDate::try_new_iso(2025, 6, 9)?;
+```
+
+Interestingly enough, the `_iso` constructors are actually extensions of
+Temporal specification to provide a similar API in Rust. This is because
+the `_iso` constructors are assumed to exist due to resolving an
+`undefined` calendar to the default ISO calendar.
 
 ## Let's discuss `Now`
 
