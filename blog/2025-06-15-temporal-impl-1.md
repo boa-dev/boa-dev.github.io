@@ -281,8 +281,8 @@ pub struct Now {
 
 Once we've constructed `Now`, then we are off to the races!
 
-In Boa, implementing `Now` is as easy the below implementation for
-`Temporal.Now.plainDateISO()`:
+To show the `NowBuilder` in action, in Boa, the implementation for
+`Temporal.Now.plainDateISO()` with the builder API is the below:
 
 ```rust
 impl Now {
@@ -455,8 +455,8 @@ A FFI version of temporal is also available for C and C++ via
     change that may be made upstream in the ECMAScript or ECMA402
     specification will also be reflected in `temporal_rs`.
 
-    There are also a few outstanding issues with changes that may
-    be reflected in the API.
+    There are also a few outstanding issues with changes that may be
+    reflected in the API.
 
     1.  Duration's inner repr and related constructors.
     2.  `ZonedDateTime.prototype.getTimeZoneTransition` implementation
