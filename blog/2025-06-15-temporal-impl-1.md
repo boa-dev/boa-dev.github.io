@@ -450,7 +450,7 @@ A FFI version of temporal is also available for C and C++ via
 [^stability]: A general note on API stability
 
     While the majority of the APIs discussed above are expected to be
-    mostly stable. Temporal is still a stage 3 proposal that is not
+    mostly stable, Temporal is still a stage 3 proposal that is not
     fully accepted into the ECMAScript specification. Any normative
     change that may be made upstream in the ECMAScript or ECMA402
     specification will also be reflected in `temporal_rs`.
