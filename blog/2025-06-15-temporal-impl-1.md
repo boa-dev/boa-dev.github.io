@@ -65,9 +65,9 @@ internal builtins and externalized into its own crate,
 [`temporal_rs`][temporal-rs-repo], which then first landed behind an
 experimental flag in Boa v0.18.
 
-After over a year and a half of development, Boa now sits at about 90%
-overall conformance for Temporal and growing with the entire
-implementation backed by `temporal_rs`.
+After over a year and a half of development, Boa now sits at a conformance
+of about 90% for Temporal (and growing), with the entire implementation
+being backed by `temporal_rs`.
 
 For its part, `temporal_rs` is shaping up to be a proper Rust date/time
 library that can be used to implement temporal in a JavaScript engine or
