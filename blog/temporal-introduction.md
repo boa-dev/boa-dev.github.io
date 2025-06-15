@@ -19,8 +19,8 @@ First, an aside!
 Temporal is a modern API for handling date/time in a calendar and time
 zone aware manner that includes nine objects with over 200+ methods.
 
-In JavaScript, Temporal is a global builtin namespace object that
-includes each of these nine builtins:
+In JavaScript, Temporal is a global built-in namespace object that
+includes each of these nine built-ins:
 
 - `Temporal.Now`
 - `Temporal.PlainDate`
