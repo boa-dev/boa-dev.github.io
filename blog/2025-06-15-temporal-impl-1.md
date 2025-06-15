@@ -60,7 +60,7 @@ few things became evident:
 2. There's room for optimization and improvement
 3. This would be handy to have in Rust
 
-So after the prototype was merged, the prototype was pulled out of Boa's
+So after the prototype was merged, we pulled it out of Boa's
 internal builtins and externalized into its own crate,
 [`temporal_rs`][temporal-rs-repo], which then first landed behind an
 experimental flag in Boa v0.18.
