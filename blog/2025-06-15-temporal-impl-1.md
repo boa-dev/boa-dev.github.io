@@ -14,8 +14,8 @@ authors: boa-dev
 
 This will be a series of posts primarily about implementing a new
 JavaScript feature in Rust, specifically the new date/time built-in:
-Temporal. We'll be going over the general implementation of Temporal in
-Boa as well as the crates supporting that implementation.
+Temporal. We'll be going over general lessons and interesting design choices we've
+stumbled upon, as well as the crates supporting that implementation.
 
 Why should you care? Well we are not only implementing it for
 JavaScript, but Rust as well ... more on that in a bit.
