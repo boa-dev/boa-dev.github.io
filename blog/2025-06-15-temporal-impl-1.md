@@ -91,8 +91,8 @@ object or string may need to be cloned. Furthermore, it's just not great
 for an API in a typed language like Rust.
 
 To work around this, we routinely use `FromStr` and a `FiniteF64` custom
-primitive to handle casting and constraining, respectively, to adapt
-values for use with a typed API.
+primitive to handle casting and constraining, respectively, which
+glues dynamic types like `JsValue` with a typed API.
 
 For instance, in Boa, we heavily lean into using the below patterns:
 
