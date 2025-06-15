@@ -295,8 +295,8 @@ it a property bag, give it an instance of another Temporal built-in;
 
 Simple, right?
 
-Well we're pleased to announce that `temporal_rs` won't be supporting
-that! ... At least in one method.
+Folks, we're pleased to announce that `temporal_rs` won't be supporting
+that! ... or at least not in that shape.
 
 Again, the goal of `temporal_rs` is to implement the specification to
 the highest degree possible and where it can't implement the
