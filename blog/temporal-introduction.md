@@ -165,7 +165,7 @@ JavaScript API from looking at the `temporal_rs` API:
    default to the `iso8601` calendar)
 
 Of course, if you somewhat prefer the brevity of the JavaScript API and
-don't want to list the default Calendar, `temporal_rs` provides the
+don't want to list the default `Calendar`, `temporal_rs` provides the
 additional constructors `new_iso` and `try_new_iso`.
 
 ## Let's discuss Now
