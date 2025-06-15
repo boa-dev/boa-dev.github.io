@@ -70,8 +70,7 @@ of about 90% for Temporal (and growing), with the entire implementation
 being backed by `temporal_rs`.
 
 For its part, `temporal_rs` is shaping up to be a proper Rust date/time
-library that can be used to implement temporal in a JavaScript engine or
-for general usage purposes.
+library that can be used to implement Temporal in a JavaScript engine, and even support general date/time use cases.
 
 Let's take a look at Temporal: it's JavaScript API, it's Rust API in
 `temporal_rs`, and how `temporal_rs` supports implementing the
