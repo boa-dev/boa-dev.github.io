@@ -400,7 +400,7 @@ your project with Cargo:
 cargo add temporal_rs
 ```
 
-or by adding the below to your `Cargo.toml`
+or by adding the below in the `[dependencies]` section of your `Cargo.toml`:
 
 ```toml
 temporal_rs = "0.0.9"
