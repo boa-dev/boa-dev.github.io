@@ -189,7 +189,7 @@ In JavaScript, this type has no `[[Construct]]` or `[[Call]]` internal
 method, which is a fancy way to say that Now has no constructor and
 cannot be called directly.
 
-Instead, Now is used primarily as a namespace for it's methods.
+Instead, Now is used primarily as a namespace for its methods.
 
 And this was reflected in early adaptions of Now, which looked more or
 less like the below:
