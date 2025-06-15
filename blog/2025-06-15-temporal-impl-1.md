@@ -53,8 +53,8 @@ This, in consequence, makes implementing Temporal one of our most
 important goals, since it represents roughly 7-8% of the
 current conformance test suite (~4000 of the ~50,000 tests).
 
-When the PR of the first prototype of Temporal for Boa was submitted a
-few things became evident.
+When the PR of the first prototype of Temporal for Boa was submitted, a
+few things became evident:
 
 1. Date/Time is a complicated beast (duh)
 2. There's room for optimization and improvement
