@@ -5,7 +5,7 @@ authors: boa-dev
 # Implementing Temporal, the new date/time API for JavaScript (and Rust!)
 
 This will be a series of posts primarily about implementing a new
-JavaScript feature in Rust, specifically the new date/time builtin:
+JavaScript feature in Rust, specifically the new date/time built-in:
 Temporal. We'll be going over the general implementation of Temporal in
 Boa as well as the crates supporting that implementation.
 
