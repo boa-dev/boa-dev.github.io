@@ -232,7 +232,7 @@ impl Now {
 Interestingly enough, the above implementation is incorrect, or at the
 very least not ideal.
 
-Hidden in the specification steps for Now are some very tricky steps
+Hidden in the specification steps for `Now` are some very tricky steps
 invoking the abstract operations: `SystemTimeZoneIdentifier` and
 `SystemUtcEpochNanoseconds`. That's great, let's just use the usual
 suspects `SystemTime` and `iana-time-zone`, merge it, and call it a day
