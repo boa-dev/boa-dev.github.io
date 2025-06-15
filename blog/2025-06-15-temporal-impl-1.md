@@ -365,7 +365,7 @@ for more information).
 
 So far we have not discussed time zones, and -- surprise! -- we aren't
 going to ... yet. It's not because they aren't super cool and
-interesting and everyone totally 100% loves them. No, time zones aren't
+interesting and everyone _totally_ 100% loves them. No, time zones aren't
 in this post because they are still being polished and deserve an
 entire post of their own.
 
