@@ -169,7 +169,7 @@ let plain_date = PlainDate::try_new(2025, 6, 9, Calendar::default())?;
 Furthermore, we actually learn some interesting things about the
 JavaScript API from looking at the `temporal_rs` API:
 
-1. `Temporal.PlainDate` constructor can throw.
+1. The `Temporal.PlainDate` constructor can throw.
 2. When the calendar is omitted, the default calendar is used (this will
    default to the `iso8601` calendar)
 
