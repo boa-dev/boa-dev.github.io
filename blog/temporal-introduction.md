@@ -168,7 +168,7 @@ Of course, if you somewhat prefer the brevity of the JavaScript API and
 don't want to list the default `Calendar`, `temporal_rs` provides the
 additional constructors `new_iso` and `try_new_iso`.
 
-## Let's discuss Now
+## Let's discuss `Now`
 
 > Colonel Sandurz: Now. You're looking at now, sir. Everything that
 > happens now, is happening now.<br></br> Dark Helmet: What happened to
