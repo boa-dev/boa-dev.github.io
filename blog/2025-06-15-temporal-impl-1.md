@@ -120,7 +120,7 @@ be going over below.
 
 There are a variety of ways to construct a core component like
 `PlainDate`, and that stems from the core constructor for each of the
-core components `new_with_overflow`:
+core components: `new_with_overflow`.
 
 ```rust
 impl PlainDate {
