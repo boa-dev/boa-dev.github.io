@@ -214,7 +214,7 @@ In JavaScript, this type has no [`[[Construct]]`][construct-link] or
 [`[[Call]]`][call-link] internal method, which is a fancy way to say
 that Now has no constructor and cannot be called directly.
 
-Instead, Now is used primarily as a namespace for its methods.
+Instead, `Now` is used primarily as a namespace for its methods.
 
 And this was reflected in early adaptions of Now, which looked more or
 less like the below:
