@@ -333,7 +333,7 @@ It turns out that while property bags in JavaScript can have various
 fields set, there is still a general shape for the fields that can be
 provided and validated in Temporal.
 
-So in order to support this in `temporal_rs`, a "partial" component
+To support this in `temporal_rs`, a "partial" component
 exists for each of the components that can then be provided to that
 component's `from_partial` method.
 
