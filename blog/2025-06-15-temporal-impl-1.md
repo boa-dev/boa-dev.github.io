@@ -47,10 +47,10 @@ documentation][mdn-temporal].
 
 ## Back on track
 
-Being a JavaScript engine / interpreter, implementing the ECMAScript
-specification is our raison d'être. One of our primary goals is to
-implement the specification to high degree of conformance. This is even
-more so important because Temporal represents roughly 7-8% of the
+Being Boa a JavaScript engine / interpreter, developing a correct
+implementation of the ECMAScript specification is our raison d'être.
+This, in consequence, makes implementing Temporal one of our most
+important goals, since it represents roughly 7-8% of the
 current conformance test suite (~4000 of the ~50,000 tests).
 
 When the PR of the first prototype of Temporal for Boa was submitted a
