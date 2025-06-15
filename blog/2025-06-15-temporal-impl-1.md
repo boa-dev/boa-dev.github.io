@@ -66,7 +66,7 @@ few things became evident:
 3. This would be handy to have in Rust
 
 So after the prototype was merged, we pulled it out of Boa's internal
-builtins and externalized into its own crate,
+builtins and externalized it into its own crate,
 [`temporal_rs`][temporal-rs-repo], which landed behind an experimental
 flag in Boa v0.18.
 
