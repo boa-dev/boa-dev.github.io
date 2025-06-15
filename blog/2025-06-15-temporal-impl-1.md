@@ -216,7 +216,7 @@ that Now has no constructor and cannot be called directly.
 
 Instead, `Now` is used primarily as a namespace for its methods.
 
-And this was reflected in early adaptions of Now, which looked more or
+And this was reflected in early adaptions of `Now`, which looked more or
 less like the below:
 
 ```rust
