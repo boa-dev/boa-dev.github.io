@@ -1,8 +1,16 @@
 ---
+layout: post
+tags: [post]
+title:
+  Implementing Temporal, the new date/time API for JavaScript (and
+  Rust!)
+metadata: ["temporal", "temporal_rs", "boa", "date/time"]
+description:
+  A blog post about the temporal_rs Rust crate that implements
+  JavaScript's Temporal API and how temporal_rs supports implementing
+  Temporal in JavaScript engines.
 authors: boa-dev
 ---
-
-# Implementing Temporal, the new date/time API for JavaScript (and Rust!)
 
 This will be a series of posts primarily about implementing a new
 JavaScript feature in Rust, specifically the new date/time built-in:
