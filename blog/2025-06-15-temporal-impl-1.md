@@ -291,8 +291,8 @@ assume most people who have used Rust would be familiar with: `from`. But
 this isn't Rust's friendly `From` trait. No, this `from` is a behemoth
 method that takes a `JsValue` and automagically gives you back the
 built-in that you'd like or throws. That's right! Give it a string, give
-it a property bag, give it another built-in; `from` will figure it out
-for you!
+it a property bag, give it an instance of another Temporal built-in;
+`from` will figure it out for you!
 
 Simple, right?
 
