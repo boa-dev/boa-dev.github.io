@@ -22,15 +22,15 @@ zone aware manner that includes nine objects with over 200+ methods.
 In JavaScript, Temporal is a global builtin namespace object that
 includes each of these nine builtins:
 
-- Temporal.Now
-- Temporal.PlainDate
-- Temporal.PlainTime
-- Temporal.PlainDateTime
-- Temporal.ZonedDateTime
-- Temporal.Duration
-- Temporal.Instant
-- Temporal.PlainYearMonth
-- Temporal.PlainMonthDay
+- `Temporal.Now`
+- `Temporal.PlainDate`
+- `Temporal.PlainTime`
+- `Temporal.PlainDateTime`
+- `Temporal.ZonedDateTime`
+- `Temporal.Duration`
+- `Temporal.Instant`
+- `Temporal.PlainYearMonth`
+- `Temporal.PlainMonthDay`
 
 But to be honest, this post isn't meant to give an overview of Temporal
 and its general API. If Temporal is news to you and you are interested
