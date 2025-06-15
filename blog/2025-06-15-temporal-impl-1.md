@@ -22,7 +22,7 @@ about implementing the new date/time built-in: Temporal. We'll be going
 over general lessons and interesting design choices we've stumbled upon,
 as well as the crates supporting that implementation.
 
-Why should you care? Well we are not only implementing Temporal for
+Why should you care? Well, we are not only implementing Temporal for
 JavaScript, but for Rust as well ... more on that in a bit.
 
 First, an aside!
