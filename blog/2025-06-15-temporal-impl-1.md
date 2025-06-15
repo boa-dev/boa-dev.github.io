@@ -237,8 +237,8 @@ engine implementation, and accessing a system clock and system time zone
 is sometimes difficult for engines that support targets like embedded systems.
 Thus, this functionality must be delegated to the engine or runtime ... somehow.
 
-So how did we end up implementing Now if we have no access to the system
-clock or time zone? Well, a builder pattern of course!
+How did we end up implementing `Now` if we have no access to the system
+clock or time zone? Well ... a builder pattern of course!
 
 ```rust
 #[derive(Default)]
