@@ -327,7 +327,7 @@ implementation, we just need to implement `From<PlainDateTime>`,
 `From<ZonedDateTime>`, `FromStr`, and `From<JsObject>` ... oh. Did I
 mention `JsObject`, like `JsValue`, is implementation defined as well?
 
-This is where `temporal_rs`'s Partial API comes in.
+Fortunately, this is where `temporal_rs`'s Partial API comes in.
 
 It turns out that, while property bags in JavaScript can have various
 fields set, there is still a general shape for the fields that can be
