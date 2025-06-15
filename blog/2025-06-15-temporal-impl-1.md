@@ -88,7 +88,7 @@ First, we need to talk about JavaScript values (`JsValue`) for a bit.
 This is functionally the core `any` value type of JavaScript. A
 `JsValue` could be a number represented as a 64 bit floating point, a
 string, a boolean, or an object. Not only is it an `any`, but `JsValue`
-is ultimately engine defined with various implementations existing
+is ultimately engine defined, with various implementations existing
 across engines.
 
 While this is handy for a dynamically typed language like JavaScript, it
