@@ -456,7 +456,7 @@ A FFI version of temporal is also available for C and C++ via
     specification will also be reflected in `temporal_rs`.
 
     There are also a few outstanding issues with changes that may
-    reflect in the API.
+    be reflected in the API.
 
     1.  Duration's inner repr and related constructors.
     2.  `ZonedDateTime.prototype.getTimeZoneTransition` implementation
