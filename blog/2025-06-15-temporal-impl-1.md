@@ -335,7 +335,7 @@ provided and validated in Temporal.
 
 So in order to support this in `temporal_rs`, a "partial" component
 exists for each of the components that can then be provided to that
-components `from_partial` method.
+component's `from_partial` method.
 
 With this, we have fully implemented support for the `from` method in
 `temporal_rs`:
