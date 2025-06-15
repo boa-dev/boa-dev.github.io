@@ -282,7 +282,7 @@ pub struct Now {
 Once we've constructed `Now`, then we are off to the races!
 
 To show the `NowBuilder` in action, in Boa, the implementation for
-`Temporal.Now.plainDateISO()` with the builder API is the below:
+`Temporal.Now.plainDateISO()` with the builder API is shown below:
 
 ```rust
 impl Now {
