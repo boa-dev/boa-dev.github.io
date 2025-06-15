@@ -185,7 +185,7 @@ additional constructors `new_iso` and `try_new_iso`.
 important. It is the object from which the current instant can be
 measured and mapped into any of the Temporal components.
 
-In JavaScript, this type has no [[Construct]] or [[Call]] internal
+In JavaScript, this type has no `[[Construct]]` or `[[Call]]` internal
 method, which is a fancy way to say that Now has no constructor and
 cannot be called directly.
 
