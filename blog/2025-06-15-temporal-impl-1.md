@@ -303,7 +303,7 @@ the highest degree possible and where it can't implement the
 specification like in the case of a `from<JsValue>`, it provides methods
 to support the implementation of Temporal in engines.
 
-Let's take a look at some valid uses of `from` in JavaScript to
+To exemplify this, let's take a look at some valid uses of `from` in JavaScript to
 construct a `PlainDate`.
 
 ```js
