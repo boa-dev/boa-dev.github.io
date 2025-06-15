@@ -233,9 +233,9 @@ suspects `SystemTime` and `iana-time-zone`, merge it, and call it a day
 on the implementation, right?
 
 Except the core purpose of `temporal_rs` is that it can be used in any
-engine implementation, accessing a system clock and system time zone are
-not in scope and must be left up to the engine or runtime to provide
-that functionality.
+engine implementation, and accessing a system clock and system time zone
+is sometimes difficult for engines that support targets like embedded systems.
+Thus, this functionality must be delegated to the engine or runtime ... somehow.
 
 So how did we end up implementing Now if we have no access to the system
 clock or time zone? Well, a builder pattern of course!
