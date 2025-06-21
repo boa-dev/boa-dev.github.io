@@ -12,7 +12,7 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
-import React from "react";
+import { useEffect, useState } from "react";
 import { Bar, Line } from "react-chartjs-2";
 import styles from "./styles.module.css";
 
@@ -30,6 +30,7 @@ ChartJS.register(
 
 interface BenchmarkGraphsProps {
   selectedEngines: string[];
+  range: string;
 }
 
 const ChartOptions = {
@@ -42,74 +43,50 @@ const ChartOptions = {
 
 export const BenchmarkGraphs: React.FC<BenchmarkGraphsProps> = ({
   selectedEngines,
+  range
 }) => {
   // Control the state of which engines are displayed using a Set
 
-  const [data, setData] = React.useState([]);
+  const [charts, setCharts] = useState([]);
+  const [data, setData] = useState({});
   const colorMode = useColorMode();
   ChartJS.defaults.color = colorMode.colorMode === "light" ? "#666" : "white";
 
-  React.useEffect(() => {
-    Promise.all([
-      buildChartFromBenchmark("Crypto", selectedEngines),
-      buildChartFromBenchmark("DeltaBlue", selectedEngines),
-      buildChartFromBenchmark("EarleyBoyer", selectedEngines),
-      buildChartFromBenchmark("NavierStokes", selectedEngines),
-      buildChartFromBenchmark("RayTrace", selectedEngines),
-      buildChartFromBenchmark("RegExp", selectedEngines),
-      buildChartFromBenchmark("Richards", selectedEngines),
-      buildChartFromBenchmark("Splay", selectedEngines),
-      buildChartFromBenchmark("score", selectedEngines),
-    ]).then((charts) => setData(charts));
-  }, [selectedEngines]);
 
-  return data && data.map((chart) => chart);
+  useEffect(() => {
+    console.log("range changed", range);
+    fetch(`https://boa-api.jason-williams.co.uk/benchmarks?months=${range}&engines=${selectedEngines.join(',')}`).then(
+      (res) => res.json())
+    .then(respData => {
+      setData(respData)      
+    });
+  }, [selectedEngines, range]);
+
+  useEffect(() => {
+    setCharts(buildChartFromBenchmark(data));
+  }, [data]);
+
+
+  return charts && charts.map((chart) => chart);
 };
 
-const buildChartFromBenchmark = async (name: string, engines: string[]) => {
-  const data = await fetchData(
-    `https://raw.githubusercontent.com/boa-dev/data/main/bench/results/${name}.json`,
-    engines,
+const normalizeBenchmarkData = (benchmarkData: any[]) => {
+  const labels = benchmarkData.map((entry: any) =>
+    new Date(entry.date).toLocaleDateString(),
   );
 
-  const barData = getBarChartData(data);
+  const engines = Object.keys(benchmarkData[0]).filter(key => key != "date");
 
-  return (
-    <div key={name}>
-      <div className={`card__header ${styles["benchmark-card-header"]}`}>
-        <Heading as="h2">{name}</Heading>
-      </div>
-      <div className={styles["cards-wrap"]}>
-        <div className={`card ${styles["benchmark-card"]}`}>
-          <Line data={data} options={ChartOptions}></Line>
-        </div>
-        <div className={`card ${styles["benchmark-card"]}`}>
-          <Bar data={barData} options={ChartOptions}></Bar>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const fetchData = async (url: string, engines: string[]) => {
-  const response = await fetch(url);
-  const data = await response.json();
-  // Add the dataset if the engine is enabled
   return {
-    labels: data.labels.map((epoch: number) =>
-      new Date(epoch).toLocaleDateString(),
-    ),
-    datasets: Object.keys(data.results)
-      .filter((engine) => engines.includes(engine))
-      .map((engine) => {
-        return {
-          label: engine,
-          data: data.results[engine],
-          fill: false,
-        };
-      }),
+    labels,
+    datasets: engines.map(engine => ({
+      label: engine,
+      data: benchmarkData.map(entry => entry[engine]),
+      fill: false
+    })),
   };
 };
+
 
 const getBarChartData = (data) => {
   // We only want the last value from each dataset
@@ -123,3 +100,33 @@ const getBarChartData = (data) => {
     }),
   };
 };
+
+const buildChartFromBenchmark = (data: any): any[] => {
+
+  let charts = [];
+  for (const benchmark in data) {
+    const normalizedData = normalizeBenchmarkData(data[benchmark])
+    const barData = getBarChartData(normalizedData);
+    charts.push((
+      <div key={benchmark}>
+        <div className={`card__header ${styles["benchmark-card-header"]}`}>
+          <Heading as="h2">{benchmark}</Heading>
+        </div>
+        <div className={styles["cards-wrap"]}>
+          <div className={`card ${styles["benchmark-card"]}`}>
+            <Line data={normalizedData} options={ChartOptions}></Line>
+          </div>
+          <div className={`card ${styles["benchmark-card"]}`}>
+            <Bar data={barData} options={ChartOptions}></Bar>
+          </div>
+        </div>
+      </div>
+    ));
+  };
+
+  return charts;
+};
+
+
+
+

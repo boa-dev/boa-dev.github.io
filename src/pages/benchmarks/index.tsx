@@ -24,12 +24,19 @@ export default function Benchmarks() {
     "quickjs",
   ]);
 
-  const handleCheckboxChange = (engine: string) => {
+  const [range, setRange] = useState<string>("6");
+  console.log(range);
+
+  const handleEngineCheckboxChange = (engine: string) => {
     if (selectedEngines.includes(engine)) {
       setSelectedEngines(selectedEngines.filter((e) => e !== engine));
     } else {
       setSelectedEngines([...selectedEngines, engine]);
     }
+  };
+
+  const handleRangeCheckboxChange = (evt: any) => {
+    setRange(evt.target.value);
   };
 
   return (
@@ -54,15 +61,51 @@ export default function Benchmarks() {
                   type="checkbox"
                   value={engine}
                   checked={selectedEngines.includes(engine)}
-                  onChange={() => handleCheckboxChange(engine)}
+                  onChange={() => handleEngineCheckboxChange(engine)}
                 />
                 {engine}
               </label>
             </div>
           ))}
         </div>
-        <BenchmarkGraphs selectedEngines={selectedEngines} />
+
+
+        <form>
+          <fieldset className={styles.benchmarkControls}>
+            <legend>Select rolling range</legend>
+            <div className={styles.benchmarkLabelWrap}>
+              <input
+                type="radio"
+                value={1}
+                checked={range === "1"}
+                onChange={handleRangeCheckboxChange}
+              />
+              1 Month
+            </div>
+
+            <div className={styles.benchmarkLabelWrap}>
+              <input
+                type="radio"
+                value={6}
+                checked={range === "6"}
+                onChange={handleRangeCheckboxChange}
+              />
+              6 Month
+            </div>
+
+            <div className={styles.benchmarkLabelWrap}>
+              <input
+                type="radio"
+                value={12}
+                checked={range === "12"}
+                onChange={handleRangeCheckboxChange}
+              />
+              12 Month
+            </div>
+          </fieldset>
+        </form>
+        <BenchmarkGraphs selectedEngines={selectedEngines} range={range}/>
       </div>
-    </Layout>
+    </Layout >
   );
 }
