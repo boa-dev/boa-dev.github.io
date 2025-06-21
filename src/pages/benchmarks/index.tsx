@@ -25,7 +25,6 @@ export default function Benchmarks() {
   ]);
 
   const [range, setRange] = useState<string>("6");
-  console.log(range);
 
   const handleEngineCheckboxChange = (engine: string) => {
     if (selectedEngines.includes(engine)) {
