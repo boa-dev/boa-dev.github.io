@@ -54,7 +54,6 @@ export const BenchmarkGraphs: React.FC<BenchmarkGraphsProps> = ({
 
 
   useEffect(() => {
-    console.log("range changed", range);
     fetch(`https://boa-api.jason-williams.co.uk/benchmarks?months=${range}&engines=${selectedEngines.join(',')}`).then(
       (res) => res.json())
     .then(respData => {
