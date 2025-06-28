@@ -7,7 +7,7 @@ import {
 import {
   createState,
   mapToTestStats,
-  createSearchParams
+  createSearchParams,
 } from "@site/src/components/conformance/utils";
 import { useHistory } from "@docusaurus/router";
 import Heading from "@theme/Heading";

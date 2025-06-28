@@ -6,7 +6,7 @@ import {
 } from "@site/src/components/conformance/types";
 import {
   createUrlState,
-  updateInitialConformanceState
+  updateInitialConformanceState,
 } from "@site/src/components/conformance/utils";
 import { useLocation } from "@docusaurus/router";
 import Layout from "@theme/Layout";
@@ -68,8 +68,7 @@ export default function Conformance() {
     );
   }, []);
 
-
-  const resolvedState = updateInitialConformanceState(urlState, location.state)
+  const resolvedState = updateInitialConformanceState(urlState, location.state);
 
   return (
     <Layout title="Conformance" description="Boa Conformance Page">

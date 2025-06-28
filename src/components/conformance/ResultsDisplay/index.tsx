@@ -21,7 +21,7 @@ type ResultsProps = {
 };
 
 export default function ResultsDisplay(props: ResultsProps): JSX.Element {
-  const location = useLocation<ConformanceState>()
+  const location = useLocation<ConformanceState>();
   const [currentSuite, setCurrentSuite] = React.useState<SuiteResult | null>(
     null,
   );
@@ -32,7 +32,10 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // History handling
   const history = useHistory<ConformanceState>();
 
-  const pushStateToHistory = (search: string, state: ConformanceState): void => {
+  const pushStateToHistory = (
+    search: string,
+    state: ConformanceState,
+  ): void => {
     history.push({
       pathname: "/conformance",
       search,
@@ -124,7 +127,11 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   const setEcmaScriptFlag = (flag: string) => {
     const nulledFlag = flag ? flag : undefined;
     pushStateToHistory(
-      createSearchParams(props.state.version, props.state.testPath, props.state.selectedTest),
+      createSearchParams(
+        props.state.version,
+        props.state.testPath,
+        props.state.selectedTest,
+      ),
       createState(
         props.state.version,
         props.state.testPath,
@@ -137,7 +144,11 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // Sets the sorting option
   const setSortOption = (option: string) => {
     pushStateToHistory(
-      createSearchParams(props.state.version, props.state.testPath, props.state.selectedTest),
+      createSearchParams(
+        props.state.version,
+        props.state.testPath,
+        props.state.selectedTest,
+      ),
       createState(
         props.state.version,
         props.state.testPath,

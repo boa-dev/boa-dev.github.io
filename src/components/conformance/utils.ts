@@ -12,22 +12,29 @@ import {
   VersionItem,
 } from "@site/src/components/conformance/types";
 
-
 // Take a search param and create a state object
 export function createUrlState(search: string): UrlState {
   const params = new URLSearchParams(search);
-  console.log(`testPath: ${params.get("testPath")}`)
+  console.log(`testPath: ${params.get("testPath")}`);
   return {
     versionTag: params.get("version") ?? undefined,
     testPath: params.get("testPath")?.split("/") ?? undefined,
-    selectedTest: params.get("selectedTest") ?? undefined
-  }
+    selectedTest: params.get("selectedTest") ?? undefined,
+  };
 }
 
-export function updateInitialConformanceState(urlState: UrlState, conformanceState: ConformanceState) {
-
-  if (!conformanceState && (urlState.versionTag || urlState.testPath || urlState.selectedTest)) {
-    const fetchUrl = urlState.versionTag === "main" ? `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json` : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${urlState.versionTag}/latest.json`;
+export function updateInitialConformanceState(
+  urlState: UrlState,
+  conformanceState: ConformanceState,
+) {
+  if (
+    !conformanceState &&
+    (urlState.versionTag || urlState.testPath || urlState.selectedTest)
+  ) {
+    const fetchUrl =
+      urlState.versionTag === "main"
+        ? `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json`
+        : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${urlState.versionTag}/latest.json`;
 
     const testPath = urlState.testPath || [];
     return {
@@ -35,8 +42,8 @@ export function updateInitialConformanceState(urlState: UrlState, conformanceSta
       testPath: [urlState.versionTag, ...testPath],
       ecmaScriptVersion: undefined,
       sortOption: availableSortingOptions[0].id,
-      selectedTest: urlState.selectedTest
-    }
+      selectedTest: urlState.selectedTest,
+    };
   }
   return conformanceState;
 }
@@ -46,15 +53,15 @@ export function createSearchParams(
   testPath?: string[],
   selectedTest?: string,
 ) {
-  const search = new URLSearchParams()
+  const search = new URLSearchParams();
   search.append("version", version.tagName);
   if (testPath) {
     search.append("testPath", testPath.slice(1).join("/"));
   }
   if (selectedTest) {
-    search.append("selectedTest", selectedTest)
+    search.append("selectedTest", selectedTest);
   }
-  return search.toString()
+  return search.toString();
 }
 
 // Creates the state object from provided args
