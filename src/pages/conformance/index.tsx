@@ -27,6 +27,7 @@ export default function Conformance() {
   >(null);
 
   const urlState = createUrlState(location.search);
+  const resolvedState = updateInitialConformanceState(urlState, location.state);
 
   // Initial Render useEffect
   React.useEffect(() => {
@@ -67,8 +68,6 @@ export default function Conformance() {
       setReleaseRecords([mainVersion, ...releases]),
     );
   }, []);
-
-  const resolvedState = updateInitialConformanceState(urlState, location.state);
 
   return (
     <Layout title="Conformance" description="Boa Conformance Page">
