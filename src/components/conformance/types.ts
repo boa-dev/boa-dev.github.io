@@ -1,14 +1,21 @@
+
 // The main global state of the conformance page.
 //
 // This state is fed into the History object and dictates
 // what renders.
 export type ConformanceState = {
-  version: VersionItem;
-  testPath: string[];
+  version: VersionItem; // REMOVED (???) -> Connected to displaying specific results
+  testPath: string[]; // REMOVED (???) -> Navigation / breadcrumbs
   ecmaScriptVersion: string | undefined;
   sortOption: string;
-  selectedTest: string | undefined;
+  selectedTest: string | undefined; // REMOVED (???) -> "TestViewer"
 };
+
+export type UrlState = {
+  versionTag: string | undefined,
+  testPath: string[] | undefined,
+  selectedTest: string | undefined,
+}
 
 export type VersionItem = {
   tagName: string;

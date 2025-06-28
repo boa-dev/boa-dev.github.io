@@ -2,7 +2,12 @@ import ConformanceView from "@site/src/components/conformance";
 import {
   VersionItem,
   ConformanceState,
+  UrlState,
 } from "@site/src/components/conformance/types";
+import {
+  createUrlState,
+  updateInitialConformanceState
+} from "@site/src/components/conformance/utils";
 import { useLocation } from "@docusaurus/router";
 import Layout from "@theme/Layout";
 import React from "react";
@@ -20,6 +25,8 @@ export default function Conformance() {
   const [releaseRecords, setReleaseRecords] = React.useState<
     VersionItem[] | undefined
   >(null);
+
+  const urlState = createUrlState(location.search);
 
   // Initial Render useEffect
   React.useEffect(() => {
@@ -61,11 +68,14 @@ export default function Conformance() {
     );
   }, []);
 
+
+  const resolvedState = updateInitialConformanceState(urlState, location.state)
+
   return (
     <Layout title="Conformance" description="Boa Conformance Page">
       <main className={styles.mainLayout}>
         {releaseRecords ? (
-          <ConformanceView state={location.state} records={releaseRecords} />
+          <ConformanceView state={resolvedState} records={releaseRecords} />
         ) : null}
       </main>
     </Layout>
