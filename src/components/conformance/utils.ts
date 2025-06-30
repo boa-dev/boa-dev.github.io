@@ -55,7 +55,7 @@ export function createSearchParams(
 ) {
   const search = new URLSearchParams();
   search.append("version", version.tagName);
-  if (testPath) {
+  if (testPath && testPath.length > 1) {
     search.append("testPath", testPath.slice(1).join("/"));
   }
   if (selectedTest) {
