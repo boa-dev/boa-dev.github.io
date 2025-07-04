@@ -14,7 +14,9 @@ type ResultsNavProps = {
   setFilterOption: (string) => void;
 };
 
-export default function ResultNavigation(props: ResultsNavProps): JSX.Element {
+export default function ResultNavigation(
+  props: ResultsNavProps,
+): React.ReactNode {
   return (
     <div className={styles.resultsNav}>
       <div className={styles.navSection}>
@@ -77,7 +79,7 @@ type BreadCrumbItemProps = {
   sliceNavToIndex: (number) => void;
 };
 
-function BreadCrumbItem(props: BreadCrumbItemProps): JSX.Element {
+function BreadCrumbItem(props: BreadCrumbItemProps): React.ReactNode {
   return (
     <li className={props.breadcrumbValue}>
       <Link
@@ -97,7 +99,7 @@ type DropDownProps = {
   setEcmaScriptFlag: (string) => void;
 };
 
-function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
+function EcmaScriptVersionDropdown(props: DropDownProps): React.ReactNode {
   const [dropdownValue, setDropdownValue] = React.useState(
     props.esVersionValue ? props.esVersionValue : "",
   );
@@ -139,7 +141,7 @@ type SortProps = {
   setSortOption: (string) => void;
 };
 
-function SortingDropdown(props: SortProps): JSX.Element {
+function SortingDropdown(props: SortProps): React.ReactNode {
   const [sortValue, setSortValue] = React.useState<string>(
     props.sortValue ? props.sortValue : "alpha",
   );
@@ -179,7 +181,7 @@ type FilterProps = {
   setFilterOption: (string) => void;
 };
 
-function FilterDropdown(props: FilterProps): JSX.Element {
+function FilterDropdown(props: FilterProps): React.ReactNode {
   const [filterValue, setFilterValue] = React.useState<string>(
     props.filterOption ?? FilterOption.None,
   );

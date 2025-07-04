@@ -9,7 +9,7 @@ type ViewProps = {
   records: VersionItem[];
 };
 
-export default function ConformanceView(props: ViewProps): JSX.Element {
+export default function ConformanceView(props: ViewProps): React.ReactNode {
   return (
     <>
       <VersionSelector availableVersions={props.records} />

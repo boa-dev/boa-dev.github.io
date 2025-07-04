@@ -11,7 +11,7 @@ interface SelectorProps {
   availableVersions: VersionItem[];
 }
 
-export default function VersionSelector(props: SelectorProps): JSX.Element {
+export default function VersionSelector(props: SelectorProps): React.ReactNode {
   return (
     <div className={styles.versionSelector}>
       {props.availableVersions.map((version) => {
@@ -25,7 +25,7 @@ type VersionProps = {
   version: VersionItem;
 };
 
-function Version(props: VersionProps): JSX.Element {
+function Version(props: VersionProps): React.ReactNode {
   const history = useHistory<ConformanceState>();
 
   return (

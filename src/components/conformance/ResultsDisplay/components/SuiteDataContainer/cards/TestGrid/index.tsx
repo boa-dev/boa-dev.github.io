@@ -17,7 +17,7 @@ type TestsGridProps = {
   selectTest: (string) => void;
 };
 
-export default function TestsGrid(props: TestsGridProps): JSX.Element {
+export default function TestsGrid(props: TestsGridProps): React.ReactNode {
   const [hoverName, setHoverName] = React.useState<undefined | string>();
   const cardBodyClass = "card__body " + styles.gridStyle;
 
@@ -64,7 +64,7 @@ function applyFilter(filter: FilterOption, outcome: TestOutcome): boolean {
   }
 }
 
-function Grid(props: GridProps): JSX.Element {
+function Grid(props: GridProps): React.ReactNode {
   return (
     <>
       {props.esFlag
@@ -103,7 +103,7 @@ type GridItemProps = {
   setHoverValue: (test: string | undefined) => void;
 };
 
-function GridItem(props: GridItemProps): JSX.Element {
+function GridItem(props: GridItemProps): React.ReactNode {
   let testResult: string;
   switch (props.test.result) {
     case TestOutcome.Passed:

@@ -16,7 +16,7 @@ type SelectorProps = {
   navigateToSuite: (string) => void;
 };
 
-export default function SuiteSelector(props: SelectorProps): JSX.Element {
+export default function SuiteSelector(props: SelectorProps): React.ReactNode {
   const option: SortOption[] = availableSortingOptions.filter(
     (v) => v.id === props.state.sortOption,
   );
@@ -52,7 +52,7 @@ type SuiteItemProps = {
   navigateToSuite: (string) => void;
 };
 
-function SuiteItem(props: SuiteItemProps): JSX.Element {
+function SuiteItem(props: SuiteItemProps): React.ReactNode {
   return (
     <div
       className={styles.suiteCard}
@@ -81,7 +81,7 @@ type StatProps = {
 function SuiteStatistics({
   testResults,
   filterOption,
-}: StatProps): JSX.Element {
+}: StatProps): React.ReactNode {
   const [filter, setFilter] = React.useState(filterOption);
 
   React.useEffect(() => {

@@ -21,8 +21,7 @@ type ResultsProps = {
   state: ConformanceState;
 };
 
-export default function ResultsDisplay(props: ResultsProps): JSX.Element {
-  const location = useLocation<ConformanceState>();
+export default function ResultsDisplay(props: ResultsProps): React.ReactNode {
   const [currentSuite, setCurrentSuite] = React.useState<SuiteResult | null>(
     null,
   );
@@ -167,6 +166,11 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // This filters the tests shown in the selection cards and tests grid
   const setFilterOption = (option: string) => {
     pushStateToHistory(
+      createSearchParams(
+        props.state.version,
+        props.state.testPath,
+        props.state.selectedTest,
+      ),
       createState(
         props.state.version,
         props.state.testPath,
