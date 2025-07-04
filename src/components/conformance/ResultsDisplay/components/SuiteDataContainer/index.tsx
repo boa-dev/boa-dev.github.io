@@ -15,7 +15,9 @@ type SuiteDataProps = {
   setSelectedTest: (string) => void;
 };
 
-export default function SuiteDataContainer(props: SuiteDataProps): JSX.Element {
+export default function SuiteDataContainer(
+  props: SuiteDataProps,
+): JSX.Element {
   // Set the user's selected test to be displayed in the ViewPort.
   const selectTest = (testName: string) => {
     props.setSelectedTest(testName);

@@ -1,5 +1,6 @@
 import {
   ConformanceState,
+  FilterOption,
   ResultInfo,
   SortOption,
   SpecEdition,
@@ -69,6 +70,7 @@ export function createState(
   testPath?: string[],
   ecmaScriptVersion?: string,
   sortOption?: string,
+  filterOption?: FilterOption,
   selectedTest?: string,
 ): ConformanceState {
   testPath = testPath ? testPath : [version.tagName];
@@ -79,6 +81,7 @@ export function createState(
     testPath,
     ecmaScriptVersion,
     sortOption,
+    filterOption,
     selectedTest,
   };
 }

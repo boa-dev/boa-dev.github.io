@@ -16,7 +16,9 @@ type SuiteDisplayProps = {
   setSelectedTest: (string) => void;
 };
 
-export default function SuiteDisplay(props: SuiteDisplayProps): JSX.Element {
+export default function SuiteDisplay(
+  props: SuiteDisplayProps,
+): JSX.Element {
   return (
     <div className={styles.suiteDisplay}>
       {props.currentSuite.suites ? (
