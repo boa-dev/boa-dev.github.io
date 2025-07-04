@@ -14,9 +14,7 @@ type ResultsNavProps = {
   setFilterOption: (string) => void;
 };
 
-export default function ResultNavigation(
-  props: ResultsNavProps,
-): JSX.Element {
+export default function ResultNavigation(props: ResultsNavProps): JSX.Element {
   return (
     <div className={styles.resultsNav}>
       <div className={styles.navSection}>
