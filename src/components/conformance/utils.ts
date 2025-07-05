@@ -28,28 +28,23 @@ export function updateInitialConformanceState(
   urlState: UrlState,
   conformanceState: ConformanceState,
 ) {
-  if (
-    !conformanceState &&
-    (urlState.versionTag || urlState.testPath || urlState.selectedTest)
-  ) {
-    const selectedTest = urlState.testPath ? urlState.selectedTest : undefined;
-    const tagName = (!urlState.versionTag) && urlState.testPath ? "main" : urlState.versionTag;
-    const fetchUrl =
-      tagName === "main"
-        ? `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json`
-        : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${tagName}/latest.json`;
+  if (conformanceState) return conformanceState;
+  const selectedTest = urlState.testPath ? urlState.selectedTest : undefined;
+  const tagName = (!urlState.versionTag) && urlState.testPath ? "main" : urlState.versionTag;
+  const fetchUrl =
+    tagName === "main"
+      ? `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json`
+      : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${tagName}/latest.json`;
 
-    const testPath = urlState.testPath || [];
-    if (!tagName && testPath.length == 0 && !selectedTest) return conformanceState;
-    return {
-      version: { tagName, fetchUrl },
-      testPath: [tagName, ...testPath],
-      ecmaScriptVersion: undefined,
-      sortOption: availableSortingOptions[0].id,
-      selectedTest: selectedTest,
-    };
-  }
-  return conformanceState;
+  const testPath = urlState.testPath || [];
+  if (!tagName && testPath.length == 0 && !selectedTest) return conformanceState;
+  return {
+    version: { tagName, fetchUrl },
+    testPath: [tagName, ...testPath],
+    ecmaScriptVersion: undefined,
+    sortOption: availableSortingOptions[0].id,
+    selectedTest: selectedTest,
+  };
 }
 
 export function createSearchParams(
