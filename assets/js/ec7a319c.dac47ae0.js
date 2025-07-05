@@ -113,7 +113,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "const a = 1;\nconsole.log(a); // 1\n\n{ // <- start of a block scope\n    const a = 2;\n    console.log(a); // 2\n} // <- end of a block scope\n"
+        children: "const a = 1;\nconsole.log(a); // 1\n\n{\n  // <- start of a block scope\n  const a = 2;\n  console.log(a); // 2\n} // <- end of a block scope\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["We declare and initialize two variables with the identifier ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
@@ -130,7 +130,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "const a = 1;\n\n{\n    const b = 2;\n    console.log(a); // 1\n    console.log(b); // 2\n}\n"
+        children: "const a = 1;\n\n{\n  const b = 2;\n  console.log(a); // 1\n  console.log(b); // 2\n}\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["In this example, our two variables have different identifiers.\nNotice that when we access the variable ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
@@ -143,7 +143,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "const a = 1;\nconsole.log(a); // 1\n\nfunction f() { // <- start of a function scope\n    var a = 2;\n    console.log(a); // 2\n\n    { // <- start of a block scope\n        let a = 3;\n        console.log(a); // 3\n    } // <- end of a block scope\n\n    console.log(a); // 2\n} // <- end of a function scope\n\nf();\n\nconsole.log(a); // 1\n"
+        children: "const a = 1;\nconsole.log(a); // 1\n\nfunction f() {\n  // <- start of a function scope\n  var a = 2;\n  console.log(a); // 2\n\n  {\n    // <- start of a block scope\n    let a = 3;\n    console.log(a); // 3\n  } // <- end of a block scope\n\n  console.log(a); // 2\n} // <- end of a function scope\n\nf();\n\nconsole.log(a); // 1\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["You can see that variables are tied to their scopes.\nAll three variables ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
@@ -222,7 +222,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "const a = 1; // scope index: 0; variable index: 0\n{\n    const b = 2; // scope index: 1; variable index: 0\n    const c = 3; // scope index: 1; variable index: 1\n}\n"
+        children: "const a = 1; // scope index: 0; variable index: 0\n{\n  const b = 2; // scope index: 1; variable index: 0\n  const c = 3; // scope index: 1; variable index: 1\n}\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
       children: "You can see how each variable has a set of two unique indices.\nThe scope index increases with each nested scope.\nThe variable index increases with each variable in one specific scope."
@@ -231,7 +231,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "{\n    const a = 1; // scope index: 1; variable index: 0\n}\n{\n    const b = 2; // scope index: 1; variable index: 0\n}\n"
+        children: "{\n  const a = 1; // scope index: 1; variable index: 0\n}\n{\n  const b = 2; // scope index: 1; variable index: 0\n}\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["As you can see, both ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
@@ -271,7 +271,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "function addOne(a) {\n    const one = 1;\n    return one + a;\n}\naddOne(2);\n"
+        children: "function addOne(a) {\n  const one = 1;\n  return one + a;\n}\naddOne(2);\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["Currently, we store ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
@@ -321,7 +321,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "function addOneBuilder() {\n    const one = 1;\n    return (a) => {\n        return one + a;\n    };\n}\nconst addOne = addOneBuilder();\naddOne(2);\n"
+        children: "function addOneBuilder() {\n  const one = 1;\n  return (a) => {\n    return one + a;\n  };\n}\nconst addOne = addOneBuilder();\naddOne(2);\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
       children: "While running the code, depending on the implementation, we might get a panic, a wrong result or even an unsafe memory access.\nLet's try to understand what is going on here:"
@@ -409,7 +409,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-js",
-        children: "function addOneBuilder() {\n    const one = 1;\n    return (a) => {\n        return one + a;\n    };\n}\n"
+        children: "function addOneBuilder() {\n  const one = 1;\n  return (a) => {\n    return one + a;\n  };\n}\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
       children: "These are our scopes before the scope analysis.\nNotice that we start from the scope of the arrow function, since we work our way out from the most nested scope:"
@@ -451,7 +451,7 @@ function _createMdxContent(props) {
         }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
           children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
             className: "language-js",
-            children: "function f(a) {\n    console.log(a); // initial\n    (() => {\n        arguments[0] = \"modified\";\n    })()\n    console.log(a); // modified\n}\nf(\"initial\");\n"
+            children: "function f(a) {\n  console.log(a); // initial\n  (() => {\n    arguments[0] = \"modified\";\n  })();\n  console.log(a); // modified\n}\nf(\"initial\");\n"
           })
         }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
           children: ["The solution here is to mark every argument variable that might be accessed through a mapped ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
@@ -474,7 +474,7 @@ function _createMdxContent(props) {
         }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
           children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
             className: "language-js",
-            children: "function f() {\n    const a = 1;\n    eval(\"function nested() {console.log(a)}; nested();\");\n}\nf();\n"
+            children: "function f() {\n  const a = 1;\n  eval(\"function nested() {console.log(a)}; nested();\");\n}\nf();\n"
           })
         }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
           children: ["Our solution is this case is to mark every variable in the scopes where the direct ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
@@ -493,7 +493,7 @@ function _createMdxContent(props) {
         }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
           children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
             className: "language-js",
-            children: "function f() {\n    const a1 = 1;\n    for (let i = 0; i < 2; i++) {\n        with ({ [`a${i}`]: 2 }) {\n            console.log(a1);\n        }\n    }\n}\nf();\n"
+            children: "function f() {\n  const a1 = 1;\n  for (let i = 0; i < 2; i++) {\n    with ({ [`a${i}`]: 2 }) {\n      console.log(a1);\n    }\n  }\n}\nf();\n"
           })
         }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
           children: ["In the first loop execution ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
