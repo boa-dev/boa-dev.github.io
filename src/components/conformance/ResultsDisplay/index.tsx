@@ -157,6 +157,7 @@ export default function ResultsDisplay(props: ResultsProps): React.ReactNode {
         props.state.testPath,
         props.state.ecmaScriptVersion,
         option,
+        props.state.filterOption,
       ),
     );
   };
