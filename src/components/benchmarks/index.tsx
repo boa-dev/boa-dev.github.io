@@ -43,7 +43,7 @@ const ChartOptions = {
 
 export const BenchmarkGraphs: React.FC<BenchmarkGraphsProps> = ({
   selectedEngines,
-  range
+  range,
 }) => {
   // Control the state of which engines are displayed using a Set
 
@@ -52,19 +52,19 @@ export const BenchmarkGraphs: React.FC<BenchmarkGraphsProps> = ({
   const colorMode = useColorMode();
   ChartJS.defaults.color = colorMode.colorMode === "light" ? "#666" : "white";
 
-
   useEffect(() => {
-    fetch(`https://boa-api.jason-williams.co.uk/benchmarks?months=${range}&engines=${selectedEngines.join(',')}`).then(
-      (res) => res.json())
-    .then(respData => {
-      setData(respData)      
-    });
+    fetch(
+      `https://boa-api.jason-williams.co.uk/benchmarks?months=${range}&engines=${selectedEngines.join(",")}`,
+    )
+      .then((res) => res.json())
+      .then((respData) => {
+        setData(respData);
+      });
   }, [selectedEngines, range]);
 
   useEffect(() => {
     setCharts(buildChartFromBenchmark(data));
   }, [data]);
-
 
   return charts && charts.map((chart) => chart);
 };
@@ -74,18 +74,17 @@ const normalizeBenchmarkData = (benchmarkData: any[]) => {
     new Date(entry.date).toLocaleDateString(),
   );
 
-  const engines = Object.keys(benchmarkData[0]).filter(key => key != "date");
+  const engines = Object.keys(benchmarkData[0]).filter((key) => key != "date");
 
   return {
     labels,
-    datasets: engines.map(engine => ({
+    datasets: engines.map((engine) => ({
       label: engine,
-      data: benchmarkData.map(entry => entry[engine]),
-      fill: false
+      data: benchmarkData.map((entry) => entry[engine]),
+      fill: false,
     })),
   };
 };
-
 
 const getBarChartData = (data) => {
   // We only want the last value from each dataset
@@ -101,12 +100,11 @@ const getBarChartData = (data) => {
 };
 
 const buildChartFromBenchmark = (data: any): any[] => {
-
   let charts = [];
   for (const benchmark in data) {
-    const normalizedData = normalizeBenchmarkData(data[benchmark])
+    const normalizedData = normalizeBenchmarkData(data[benchmark]);
     const barData = getBarChartData(normalizedData);
-    charts.push((
+    charts.push(
       <div key={benchmark}>
         <div className={`card__header ${styles["benchmark-card-header"]}`}>
           <Heading as="h2">{benchmark}</Heading>
@@ -119,13 +117,9 @@ const buildChartFromBenchmark = (data: any): any[] => {
             <Bar data={barData} options={ChartOptions}></Bar>
           </div>
         </div>
-      </div>
-    ));
-  };
+      </div>,
+    );
+  }
 
   return charts;
 };
-
-
-
-

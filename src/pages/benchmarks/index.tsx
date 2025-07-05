@@ -68,7 +68,6 @@ export default function Benchmarks() {
           ))}
         </div>
 
-
         <form>
           <fieldset className={styles.benchmarkControls}>
             <legend>Select rolling range</legend>
@@ -103,8 +102,8 @@ export default function Benchmarks() {
             </div>
           </fieldset>
         </form>
-        <BenchmarkGraphs selectedEngines={selectedEngines} range={range}/>
+        <BenchmarkGraphs selectedEngines={selectedEngines} range={range} />
       </div>
-    </Layout >
+    </Layout>
   );
 }

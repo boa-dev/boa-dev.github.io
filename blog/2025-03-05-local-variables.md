@@ -5,7 +5,7 @@ title: "How ECMAScript Engines Optimize Your Variables"
 authors: boa-dev
 ---
 
-In this post, we will dive into how ECMAScript engines store variables, 
+In this post, we will dive into how ECMAScript engines store variables,
 go over storage optimizations, and learn about scope analysis.
 If you are an ECMAScript developer, you will get some practical tips to improve the performance of your code.
 If you write your own ECMAScript engine or any interpreter/compiler, you might get some implementation ideas.
@@ -33,9 +33,10 @@ Let's look at an example to visualize scopes:
 const a = 1;
 console.log(a); // 1
 
-{ // <- start of a block scope
-    const a = 2;
-    console.log(a); // 2
+{
+  // <- start of a block scope
+  const a = 2;
+  console.log(a); // 2
 } // <- end of a block scope
 ```
 
@@ -53,9 +54,9 @@ Let's modify our example to see what happens in that case:
 const a = 1;
 
 {
-    const b = 2;
-    console.log(a); // 1
-    console.log(b); // 2
+  const b = 2;
+  console.log(a); // 1
+  console.log(b); // 2
 }
 ```
 
@@ -71,16 +72,18 @@ Let's look at a more complex example:
 const a = 1;
 console.log(a); // 1
 
-function f() { // <- start of a function scope
-    var a = 2;
-    console.log(a); // 2
+function f() {
+  // <- start of a function scope
+  var a = 2;
+  console.log(a); // 2
 
-    { // <- start of a block scope
-        let a = 3;
-        console.log(a); // 3
-    } // <- end of a block scope
+  {
+    // <- start of a block scope
+    let a = 3;
+    console.log(a); // 3
+  } // <- end of a block scope
 
-    console.log(a); // 2
+  console.log(a); // 2
 } // <- end of a function scope
 
 f();
@@ -104,9 +107,9 @@ For our proposes we will only work with `let` and `const` and skip those details
 When developing an ECMAScript engine we have to think about how we store and access scopes and variables.
 Take a look at the requirements we have for that storage data structure:
 
-* A variable maps an identifier to a value.
-* A scope can have multiple variables with unique identifiers.
-* A scope may have an outer scope.
+- A variable maps an identifier to a value.
+- A scope can have multiple variables with unique identifiers.
+- A scope may have an outer scope.
 
 The variables in a scope fit a typical key-value store, like a hashmap.
 The hashmap stores our variable identifiers as keys and the variable values as corresponding values:
@@ -159,8 +162,8 @@ Let's visualize this in an example:
 ```js
 const a = 1; // scope index: 0; variable index: 0
 {
-    const b = 2; // scope index: 1; variable index: 0
-    const c = 3; // scope index: 1; variable index: 1
+  const b = 2; // scope index: 1; variable index: 0
+  const c = 3; // scope index: 1; variable index: 1
 }
 ```
 
@@ -172,10 +175,10 @@ Let's explore how unique these indices have to be:
 
 ```js
 {
-    const a = 1; // scope index: 1; variable index: 0
+  const a = 1; // scope index: 1; variable index: 0
 }
 {
-    const b = 2; // scope index: 1; variable index: 0
+  const b = 2; // scope index: 1; variable index: 0
 }
 ```
 
@@ -227,8 +230,8 @@ Let's take a look at this example:
 
 ```js
 function addOne(a) {
-    const one = 1;
-    return one + a;
+  const one = 1;
+  return one + a;
 }
 addOne(2);
 ```
@@ -260,10 +263,10 @@ Let's look at this example:
 
 ```js
 function addOneBuilder() {
-    const one = 1;
-    return (a) => {
-        return one + a;
-    };
+  const one = 1;
+  return (a) => {
+    return one + a;
+  };
 }
 const addOne = addOneBuilder();
 addOne(2);
@@ -327,10 +330,10 @@ Let's visualize the scope analysis by writing out the scopes for this example:
 
 ```js
 function addOneBuilder() {
-    const one = 1;
-    return (a) => {
-        return one + a;
-    };
+  const one = 1;
+  return (a) => {
+    return one + a;
+  };
 }
 ```
 
@@ -396,69 +399,69 @@ Without going into detail on each of these cases, we can find all of them via sc
 Here is a quick overview:
 
 - Non `strict` functions create a mapped `arguments` object.
-    The mapped `arguments` object can be used to read and write function arguments without using their identifiers.
-    The reads and writes are kept in sync with the values of the argument variables.
-    This means that we cannot determine if the argument variables are accessed from outside the function.
+  The mapped `arguments` object can be used to read and write function arguments without using their identifiers.
+  The reads and writes are kept in sync with the values of the argument variables.
+  This means that we cannot determine if the argument variables are accessed from outside the function.
 
-    An example of such a situation would be this code:
+  An example of such a situation would be this code:
 
-    ```js
-    function f(a) {
-        console.log(a); // initial
-        (() => {
-            arguments[0] = "modified";
-        })()
-        console.log(a); // modified
-    }
-    f("initial");
-    ```
+  ```js
+  function f(a) {
+    console.log(a); // initial
+    (() => {
+      arguments[0] = "modified";
+    })();
+    console.log(a); // modified
+  }
+  f("initial");
+  ```
 
-    The solution here is to mark every argument variable that might be accessed through a mapped `arguments` object as non-local.
+  The solution here is to mark every argument variable that might be accessed through a mapped `arguments` object as non-local.
 
 - Direct calls to `eval` allow potential variable access.
-    Direct calls to `eval` have access to the current variables.
-    Since any code could be executed in `eval` we cannot do proper scope analysis on any variables in such cases.
+  Direct calls to `eval` have access to the current variables.
+  Since any code could be executed in `eval` we cannot do proper scope analysis on any variables in such cases.
 
-    An example of direct `eval` usage would be this:
+  An example of direct `eval` usage would be this:
 
-    ```js
-    function f() {
-        const a = 1;
-        eval("function nested() {console.log(a)}; nested();");
-    }
-    f();
-    ```
+  ```js
+  function f() {
+    const a = 1;
+    eval("function nested() {console.log(a)}; nested();");
+  }
+  f();
+  ```
 
-    Our solution is this case is to mark every variable in the scopes where the direct `eval` call is as non-local.
+  Our solution is this case is to mark every variable in the scopes where the direct `eval` call is as non-local.
 
 - Usage of the `with` statement.
-    Variable identifiers inside a `with` statement are not static.
-    A variable identifier could be the access to a variable, but it also could be the access to an object property.
+  Variable identifiers inside a `with` statement are not static.
+  A variable identifier could be the access to a variable, but it also could be the access to an object property.
 
-    See this example:
+  See this example:
 
-    ```js
-    function f() {
-        const a1 = 1;
-        for (let i = 0; i < 2; i++) {
-            with ({ [`a${i}`]: 2 }) {
-                console.log(a1);
-            }
-        }
+  ```js
+  function f() {
+    const a1 = 1;
+    for (let i = 0; i < 2; i++) {
+      with ({ [`a${i}`]: 2 }) {
+        console.log(a1);
+      }
     }
-    f();
-    ```
+  }
+  f();
+  ```
 
-    In the first loop execution `a1` is the variable.
-    In the second loop execution `a1` is the object property.
-    As a result of this behavior, every variable accessed inside a `with` statement cannot be local.
+  In the first loop execution `a1` is the variable.
+  In the second loop execution `a1` is the object property.
+  As a result of this behavior, every variable accessed inside a `with` statement cannot be local.
 
 ## Conclusion
 
 After implementing local variables in Boa, we saw significant performance improvements in our benchmarks.
 Our overall benchmark scope improved by more than 25%.
 In one specific benchmark the scope increased by over 70%.
-Notice that Boa is not the most performant engine yet. 
+Notice that Boa is not the most performant engine yet.
 There are probably other optimizations relating to variable storage that we have not implemented yet.
 
 Hopefully, you might have already picked up some practical tips to potentially improve to performance of your ECMAScript code.

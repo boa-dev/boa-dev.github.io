@@ -9,9 +9,10 @@ import {
 import ResultNavigation from "./nav";
 import {
   createState,
+  createSearchParams,
   mapToResultInfo,
 } from "@site/src/components/conformance/utils";
-import { useHistory } from "@docusaurus/router";
+import { useHistory, useLocation } from "@docusaurus/router";
 
 import styles from "./styles.module.css";
 
@@ -20,6 +21,7 @@ type ResultsProps = {
 };
 
 export default function ResultsDisplay(props: ResultsProps): JSX.Element {
+  const location = useLocation<ConformanceState>();
   const [currentSuite, setCurrentSuite] = React.useState<SuiteResult | null>(
     null,
   );
@@ -30,9 +32,13 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // History handling
   const history = useHistory<ConformanceState>();
 
-  const pushStateToHistory = (state: ConformanceState): void => {
+  const pushStateToHistory = (
+    search: string,
+    state: ConformanceState,
+  ): void => {
     history.push({
       pathname: "/conformance",
+      search,
       state,
     });
   };
@@ -91,6 +97,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   const navigateToSuite = (newSuiteName: string) => {
     const newPath = [...props.state.testPath, newSuiteName];
     pushStateToHistory(
+      createSearchParams(props.state.version, newPath),
       createState(
         props.state.version,
         newPath,
@@ -106,6 +113,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   const sliceNavToIndex = (nonInclusiveIndex: number) => {
     const slicedPath = [...props.state.testPath.slice(0, nonInclusiveIndex)];
     pushStateToHistory(
+      createSearchParams(props.state.version, slicedPath),
       createState(
         props.state.version,
         slicedPath,
@@ -119,6 +127,11 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   const setEcmaScriptFlag = (flag: string) => {
     const nulledFlag = flag ? flag : undefined;
     pushStateToHistory(
+      createSearchParams(
+        props.state.version,
+        props.state.testPath,
+        props.state.selectedTest,
+      ),
       createState(
         props.state.version,
         props.state.testPath,
@@ -131,6 +144,11 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // Sets the sorting option
   const setSortOption = (option: string) => {
     pushStateToHistory(
+      createSearchParams(
+        props.state.version,
+        props.state.testPath,
+        props.state.selectedTest,
+      ),
       createState(
         props.state.version,
         props.state.testPath,
@@ -143,6 +161,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
   // Sets a selected test.
   const setSelectedTest = (test: string | undefined) => {
     pushStateToHistory(
+      createSearchParams(props.state.version, props.state.testPath, test),
       createState(
         props.state.version,
         props.state.testPath,

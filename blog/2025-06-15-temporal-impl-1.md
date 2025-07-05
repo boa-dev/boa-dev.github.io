@@ -1,12 +1,10 @@
 ---
 layout: post
 tags: [post]
-title:
-  Implementing Temporal, the new date/time API for JavaScript (and
+title: Implementing Temporal, the new date/time API for JavaScript (and
   Rust!)
 metadata: ["temporal", "temporal_rs", "boa", "date/time"]
-description:
-  A blog post about the temporal_rs Rust crate that implements
+description: A blog post about the temporal_rs Rust crate that implements
   JavaScript's Temporal API and how temporal_rs supports implementing
   Temporal in JavaScript engines.
 authors: boa-dev
@@ -472,12 +470,9 @@ A FFI version of temporal is also available for C and C++ via
 
     The above issues are considered blocking for a 0.1.0 release.
 
-[mdn-temporal]:
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
+[mdn-temporal]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
 [temporal-rs-repo]: https://github.com/boa-dev/temporal
-[construct-link]:
-  https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-ecmascript-function-objects-construct-argumentslist-newtarget
-[call-link]:
-  https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-ecmascript-function-objects-call-thisargument-argumentslist
+[construct-link]: https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-ecmascript-function-objects-construct-argumentslist-newtarget
+[call-link]: https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-ecmascript-function-objects-call-thisargument-argumentslist
 [boa-test262]: https://test262.fyi/#|boa
 [temporal-capi]: https://crates.io/crates/temporal_capi

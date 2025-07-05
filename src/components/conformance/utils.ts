@@ -7,9 +7,61 @@ import {
   TestOutcome,
   TestResult,
   TestStats,
+  UrlState,
   VersionedStats,
   VersionItem,
 } from "@site/src/components/conformance/types";
+import { url } from "node:inspector";
+
+// Take a search param and create a state object
+export function createUrlState(search: string): UrlState {
+  const params = new URLSearchParams(search);
+  console.log(`testPath: ${params.get("testPath")}`);
+  return {
+    versionTag: params.get("version") ?? undefined,
+    testPath: params.get("testPath")?.split("/") ?? undefined,
+    selectedTest: params.get("selectedTest") ?? undefined,
+  };
+}
+
+export function updateInitialConformanceState(
+  urlState: UrlState,
+  conformanceState: ConformanceState,
+) {
+  if (conformanceState) return conformanceState;
+  const selectedTest = urlState.testPath ? urlState.selectedTest : undefined;
+  const tagName = (!urlState.versionTag) && urlState.testPath ? "main" : urlState.versionTag;
+  const fetchUrl =
+    tagName === "main"
+      ? `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json`
+      : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${tagName}/latest.json`;
+
+  const testPath = urlState.testPath || [];
+  if (!tagName && testPath.length == 0 && !selectedTest) return conformanceState;
+  return {
+    version: { tagName, fetchUrl },
+    testPath: [tagName, ...testPath],
+    ecmaScriptVersion: undefined,
+    sortOption: availableSortingOptions[0].id,
+    selectedTest: selectedTest,
+  };
+}
+
+export function createSearchParams(
+  version: VersionItem,
+  testPath?: string[],
+  selectedTest?: string,
+) {
+  const search = new URLSearchParams();
+  search.append("version", version.tagName);
+  if (testPath && testPath.length > 1) {
+    search.append("testPath", testPath.slice(1).join("/"));
+  }
+  if (selectedTest) {
+    search.append("selectedTest", selectedTest);
+  }
+  return search.toString();
+}
 
 // Creates the state object from provided args
 export function createState(

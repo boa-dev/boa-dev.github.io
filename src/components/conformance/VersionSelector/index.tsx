@@ -5,7 +5,7 @@ import {
   VersionItem,
 } from "@site/src/components/conformance/types";
 import styles from "./styles.module.css";
-import { createState } from "../utils";
+import { createState, createSearchParams } from "../utils";
 
 interface SelectorProps {
   availableVersions: VersionItem[];
@@ -38,6 +38,7 @@ function Version(props: VersionProps): JSX.Element {
         onClick={() =>
           history.push({
             pathname: "/conformance",
+            search: createSearchParams(props.version),
             state: createState(props.version),
           })
         }

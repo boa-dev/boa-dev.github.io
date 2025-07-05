@@ -7,6 +7,7 @@ import {
 import {
   createState,
   mapToTestStats,
+  createSearchParams,
 } from "@site/src/components/conformance/utils";
 import { useHistory } from "@docusaurus/router";
 import Heading from "@theme/Heading";
@@ -86,6 +87,7 @@ function BannerCard(props) {
             className="button button--block button--primary"
             onClick={() =>
               history.push({
+                search: createSearchParams(props.item),
                 pathname: "/conformance",
                 state: createState(props.item),
               })

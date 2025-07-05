@@ -10,6 +10,12 @@ export type ConformanceState = {
   selectedTest: string | undefined;
 };
 
+export type UrlState = {
+  versionTag: string | undefined;
+  testPath: string[] | undefined;
+  selectedTest: string | undefined;
+};
+
 export type VersionItem = {
   tagName: string;
   fetchUrl: string;
