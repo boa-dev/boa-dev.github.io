@@ -11,6 +11,7 @@ import {
   VersionedStats,
   VersionItem,
 } from "@site/src/components/conformance/types";
+import { url } from "node:inspector";
 
 // Take a search param and create a state object
 export function createUrlState(search: string): UrlState {
@@ -31,18 +32,21 @@ export function updateInitialConformanceState(
     !conformanceState &&
     (urlState.versionTag || urlState.testPath || urlState.selectedTest)
   ) {
+    const selectedTest = urlState.testPath ? urlState.selectedTest : undefined;
+    const tagName = (!urlState.versionTag) && urlState.testPath ? "main" : urlState.versionTag;
     const fetchUrl =
-      urlState.versionTag === "main"
+      tagName === "main"
         ? `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json`
-        : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${urlState.versionTag}/latest.json`;
+        : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${tagName}/latest.json`;
 
     const testPath = urlState.testPath || [];
+    if (!tagName && testPath.length == 0 && !selectedTest) return conformanceState;
     return {
-      version: { tagName: urlState.versionTag, fetchUrl },
-      testPath: [urlState.versionTag, ...testPath],
+      version: { tagName, fetchUrl },
+      testPath: [tagName, ...testPath],
       ecmaScriptVersion: undefined,
       sortOption: availableSortingOptions[0].id,
-      selectedTest: urlState.selectedTest,
+      selectedTest: selectedTest,
     };
   }
   return conformanceState;
