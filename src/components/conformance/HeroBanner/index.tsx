@@ -18,7 +18,9 @@ interface BannerProps {
   focusItems: VersionItem[];
 }
 
-export default function ConformanceHeroBanner(props: BannerProps): JSX.Element {
+export default function ConformanceHeroBanner(
+  props: BannerProps,
+): React.ReactNode {
   return (
     <div className={styles.bannerSection}>
       {props.focusItems.map((item) => {

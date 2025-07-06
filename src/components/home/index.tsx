@@ -36,7 +36,7 @@ function HomepageHeader() {
   );
 }
 
-export default function Home({ recentPosts }): JSX.Element {
+export default function Home({ recentPosts }): React.ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout title={siteConfig.title}>

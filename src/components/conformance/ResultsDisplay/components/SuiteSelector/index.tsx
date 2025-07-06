@@ -1,6 +1,7 @@
 import React from "react";
 import {
   ConformanceState,
+  FilterOption,
   SortOption,
   SuiteResult,
   TestStats,
@@ -15,7 +16,7 @@ type SelectorProps = {
   navigateToSuite: (string) => void;
 };
 
-export default function SuiteSelector(props: SelectorProps): JSX.Element {
+export default function SuiteSelector(props: SelectorProps): React.ReactNode {
   const option: SortOption[] = availableSortingOptions.filter(
     (v) => v.id === props.state.sortOption,
   );
@@ -35,6 +36,7 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
               key={suite.name}
               suite={suite}
               esFlag={props.state.ecmaScriptVersion}
+              filterOption={props.state.filterOption ?? FilterOption.None}
               navigateToSuite={props.navigateToSuite}
             />
           );
@@ -46,10 +48,11 @@ export default function SuiteSelector(props: SelectorProps): JSX.Element {
 type SuiteItemProps = {
   suite: SuiteResult;
   esFlag: string | null;
+  filterOption: FilterOption;
   navigateToSuite: (string) => void;
 };
 
-function SuiteItem(props: SuiteItemProps): JSX.Element {
+function SuiteItem(props: SuiteItemProps): React.ReactNode {
   return (
     <div
       className={styles.suiteCard}
@@ -64,26 +67,48 @@ function SuiteItem(props: SuiteItemProps): JSX.Element {
             ? (props.suite.versionedStats?.[props.esFlag] ?? props.suite.stats)
             : props.suite.stats
         }
+        filterOption={props.filterOption}
       />
     </div>
   );
 }
 
-function SuiteStatistics(props): JSX.Element {
+type StatProps = {
+  testResults: TestStats;
+  filterOption: FilterOption;
+};
+
+function SuiteStatistics({
+  testResults,
+  filterOption,
+}: StatProps): React.ReactNode {
+  const [filter, setFilter] = React.useState(filterOption);
+
+  React.useEffect(() => {
+    setFilter(filterOption);
+  }, [filterOption]);
+
+  let passed =
+    filter == FilterOption.None || filter == FilterOption.Passed
+      ? testResults.passed
+      : 0;
+
+  let ignored =
+    filter == FilterOption.None || filter == FilterOption.Ignored
+      ? testResults.ignored
+      : 0;
+
+  let failed =
+    filter == FilterOption.None || filter == FilterOption.Failed
+      ? `${testResults.total - testResults.passed - testResults.ignored} (${testResults.panic}\u26A0)`
+      : 0;
+
   return (
     <div className={styles.suiteCardResults}>
       <p>
-        <span style={{ color: "var(--ifm-color-success)" }}>
-          {props.testResults.passed}{" "}
-        </span>
-        /{" "}
-        <span style={{ color: "var(--ifm-color-warning)" }}>
-          {props.testResults.ignored}{" "}
-        </span>
-        /{" "}
-        <span
-          style={{ color: "var(--ifm-color-danger)" }}
-        >{`${props.testResults.total - props.testResults.passed - props.testResults.ignored} (${props.testResults.panic}\u26A0)`}</span>
+        <span style={{ color: "var(--ifm-color-success)" }}>{passed} </span>/{" "}
+        <span style={{ color: "var(--ifm-color-warning)" }}>{ignored} </span>/{" "}
+        <span style={{ color: "var(--ifm-color-danger)" }}>{failed}</span>
       </p>
     </div>
   );

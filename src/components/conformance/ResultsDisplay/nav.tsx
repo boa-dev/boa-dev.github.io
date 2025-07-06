@@ -1,5 +1,5 @@
 import React from "react";
-import { ConformanceState, SpecEdition } from "../types";
+import { ConformanceState, FilterOption, SpecEdition } from "../types";
 
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
@@ -11,9 +11,12 @@ type ResultsNavProps = {
   sliceNavToIndex: (number) => void;
   setEcmaScriptFlag: (string) => void;
   setSortOption: (string) => void;
+  setFilterOption: (string) => void;
 };
 
-export default function ResultNavigation(props: ResultsNavProps): JSX.Element {
+export default function ResultNavigation(
+  props: ResultsNavProps,
+): React.ReactNode {
   return (
     <div className={styles.resultsNav}>
       <div className={styles.navSection}>
@@ -24,6 +27,10 @@ export default function ResultNavigation(props: ResultsNavProps): JSX.Element {
         <SortingDropdown
           sortValue={props.state.sortOption}
           setSortOption={props.setSortOption}
+        />
+        <FilterDropdown
+          filterOption={props.state.filterOption}
+          setFilterOption={props.setFilterOption}
         />
       </div>
       <div className={styles.navSection}>
@@ -72,7 +79,7 @@ type BreadCrumbItemProps = {
   sliceNavToIndex: (number) => void;
 };
 
-function BreadCrumbItem(props: BreadCrumbItemProps): JSX.Element {
+function BreadCrumbItem(props: BreadCrumbItemProps): React.ReactNode {
   return (
     <li className={props.breadcrumbValue}>
       <Link
@@ -92,7 +99,7 @@ type DropDownProps = {
   setEcmaScriptFlag: (string) => void;
 };
 
-function EcmaScriptVersionDropdown(props: DropDownProps): JSX.Element {
+function EcmaScriptVersionDropdown(props: DropDownProps): React.ReactNode {
   const [dropdownValue, setDropdownValue] = React.useState(
     props.esVersionValue ? props.esVersionValue : "",
   );
@@ -134,7 +141,7 @@ type SortProps = {
   setSortOption: (string) => void;
 };
 
-function SortingDropdown(props: SortProps): JSX.Element {
+function SortingDropdown(props: SortProps): React.ReactNode {
   const [sortValue, setSortValue] = React.useState<string>(
     props.sortValue ? props.sortValue : "alpha",
   );
@@ -161,6 +168,43 @@ function SortingDropdown(props: SortProps): JSX.Element {
           return (
             <option key={key.id} value={key.id}>
               {key.name}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+}
+
+type FilterProps = {
+  filterOption: FilterOption;
+  setFilterOption: (string) => void;
+};
+
+function FilterDropdown(props: FilterProps): React.ReactNode {
+  const [filterValue, setFilterValue] = React.useState<string>(
+    props.filterOption ?? FilterOption.None,
+  );
+
+  React.useEffect(() => {
+    setFilterValue(props.filterOption);
+  }, [props.filterOption]);
+
+  const handlefilterSelection = (e) => {
+    setFilterValue(e.target.value);
+    props.setFilterOption(e.target.value);
+  };
+
+  return (
+    <div className={styles.dropdownContainer}>
+      <Heading as="h4" style={{ padding: "0.125rem 0.5rem", height: "5" }}>
+        Filter:
+      </Heading>
+      <select value={filterValue} onChange={handlefilterSelection}>
+        {Object.values(FilterOption).map((key) => {
+          return (
+            <option key={key} value={key}>
+              {key}
             </option>
           );
         })}

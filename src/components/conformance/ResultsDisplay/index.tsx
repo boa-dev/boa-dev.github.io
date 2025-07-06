@@ -5,6 +5,7 @@ import {
   VersionItem,
   SuiteResult,
   ConformanceState,
+  FilterOption,
 } from "@site/src/components/conformance/types";
 import ResultNavigation from "./nav";
 import {
@@ -20,14 +21,13 @@ type ResultsProps = {
   state: ConformanceState;
 };
 
-export default function ResultsDisplay(props: ResultsProps): JSX.Element {
-  const location = useLocation<ConformanceState>();
+export default function ResultsDisplay(props: ResultsProps): React.ReactNode {
   const [currentSuite, setCurrentSuite] = React.useState<SuiteResult | null>(
     null,
   );
 
   // Refs
-  const activeResults = React.useRef<undefined | ResultInfo>();
+  const activeResults = React.useRef<undefined | ResultInfo>(undefined);
 
   // History handling
   const history = useHistory<ConformanceState>();
@@ -103,6 +103,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         newPath,
         props.state.ecmaScriptVersion,
         props.state.sortOption,
+        props.state.filterOption,
       ),
     );
   };
@@ -119,6 +120,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         slicedPath,
         props.state.ecmaScriptVersion,
         props.state.sortOption,
+        props.state.filterOption,
       ),
     );
   };
@@ -137,6 +139,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         props.state.testPath,
         nulledFlag,
         props.state.sortOption,
+        props.state.filterOption,
       ),
     );
   };
@@ -154,6 +157,27 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         props.state.testPath,
         props.state.ecmaScriptVersion,
         option,
+        props.state.filterOption,
+      ),
+    );
+  };
+
+  // Sets the filter option.
+  //
+  // This filters the tests shown in the selection cards and tests grid
+  const setFilterOption = (option: string) => {
+    pushStateToHistory(
+      createSearchParams(
+        props.state.version,
+        props.state.testPath,
+        props.state.selectedTest,
+      ),
+      createState(
+        props.state.version,
+        props.state.testPath,
+        props.state.ecmaScriptVersion,
+        props.state.sortOption,
+        option as FilterOption,
       ),
     );
   };
@@ -167,6 +191,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         props.state.testPath,
         props.state.ecmaScriptVersion,
         props.state.sortOption,
+        props.state.filterOption,
         test,
       ),
     );
@@ -189,6 +214,7 @@ export default function ResultsDisplay(props: ResultsProps): JSX.Element {
         sliceNavToIndex={sliceNavToIndex}
         setEcmaScriptFlag={setEcmaScriptFlag}
         setSortOption={setSortOption}
+        setFilterOption={setFilterOption}
       />
       {currentSuite ? (
         <SuiteDisplay

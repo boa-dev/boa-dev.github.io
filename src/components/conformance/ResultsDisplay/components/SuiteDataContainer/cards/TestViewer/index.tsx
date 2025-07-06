@@ -10,7 +10,7 @@ type TestViewerProps = {
   backToGrid: () => void;
 };
 
-export default function TestViewer(props: TestViewerProps): JSX.Element {
+export default function TestViewer(props: TestViewerProps): React.ReactNode {
   const [testContent, setTestContent] = React.useState<string | null>(null);
 
   // path constants
