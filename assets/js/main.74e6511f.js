@@ -22727,6 +22727,11 @@ __webpack_require__.r(__webpack_exports__);
           "position": "right"
         },
         {
+          "href": "https://github.com/boa-dev/boa/tree/main/examples",
+          "label": "Examples",
+          "position": "right"
+        },
+        {
           "href": "/conformance",
           "label": "Conformance",
           "position": "right"
