@@ -1,38 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[9349],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6851],{
 
-/***/ 2753:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   m: () => (/* binding */ ImperativeState)
-/* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-
-
-// src/utils/imperativeState.ts
-var ImperativeState = class {
-  /**
-   * @param init - Function that creates the default state.
-   */
-  constructor(init) {
-    this.init = init;
-    this.records = this.init();
-  }
-  static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(this, "ImperativeState");
-  }
-  reset() {
-    this.records = this.init();
-  }
-};
-
-
-
-
-/***/ }),
-
-/***/ 5237:
+/***/ 4387:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -44,13 +13,13 @@ var ImperativeState = class {
 /* harmony export */   m: () => (/* binding */ drawText),
 /* harmony export */   tk: () => (/* binding */ drawRect)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 /* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6750);
 
 
 // src/diagrams/common/svgDrawCommon.ts
 
-var drawRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, rectData) => {
+var drawRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, rectData) => {
   const rectElement = element.append("rect");
   rectElement.attr("x", rectData.x);
   rectElement.attr("y", rectData.y);
@@ -77,7 +46,7 @@ var drawRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   }
   return rectElement;
 }, "drawRect");
-var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, bounds) => {
+var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, bounds) => {
   const rectData = {
     x: bounds.startx,
     y: bounds.starty,
@@ -90,8 +59,8 @@ var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   const rectElement = drawRect(element, rectData);
   rectElement.lower();
 }, "drawBackgroundRect");
-var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, textData) => {
-  const nText = textData.text.replace(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .lineBreakRegex */ .H1, " ");
+var drawText = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, textData) => {
+  const nText = textData.text.replace(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .lineBreakRegex */ .H1, " ");
   const textElem = element.append("text");
   textElem.attr("x", textData.x);
   textElem.attr("y", textData.y);
@@ -105,21 +74,21 @@ var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   tspan.text(nText);
   return textElem;
 }, "drawText");
-var drawImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((elem, x, y, link) => {
+var drawImage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((elem, x, y, link) => {
   const imageElement = elem.append("image");
   imageElement.attr("x", x);
   imageElement.attr("y", y);
   const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
   imageElement.attr("xlink:href", sanitizedLink);
 }, "drawImage");
-var drawEmbeddedImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, x, y, link) => {
+var drawEmbeddedImage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, x, y, link) => {
   const imageElement = element.append("use");
   imageElement.attr("x", x);
   imageElement.attr("y", y);
   const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
   imageElement.attr("xlink:href", `#${sanitizedLink}`);
 }, "drawEmbeddedImage");
-var getNoteRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
+var getNoteRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
   const noteRectData = {
     x: 0,
     y: 0,
@@ -133,7 +102,7 @@ var getNoteRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   };
   return noteRectData;
 }, "getNoteRect");
-var getTextObj = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
+var getTextObj = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
   const testObject = {
     x: 0,
     y: 0,
@@ -154,16 +123,16 @@ var getTextObj = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ 9349:
+/***/ 6851:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5237);
-/* harmony import */ var _chunk_AACKK3MU_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2753);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4387);
+/* harmony import */ var _chunk_FHKO5MBM_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9116);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6936);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(451);
 /* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6750);
 
@@ -173,18 +142,18 @@ var getTextObj = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
 
 // src/diagrams/sequence/parser/sequenceDiagram.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [1, 2], $V1 = [1, 3], $V2 = [1, 4], $V3 = [2, 4], $V4 = [1, 9], $V5 = [1, 11], $V6 = [1, 13], $V7 = [1, 14], $V8 = [1, 16], $V9 = [1, 17], $Va = [1, 18], $Vb = [1, 24], $Vc = [1, 25], $Vd = [1, 26], $Ve = [1, 27], $Vf = [1, 28], $Vg = [1, 29], $Vh = [1, 30], $Vi = [1, 31], $Vj = [1, 32], $Vk = [1, 33], $Vl = [1, 34], $Vm = [1, 35], $Vn = [1, 36], $Vo = [1, 37], $Vp = [1, 38], $Vq = [1, 39], $Vr = [1, 41], $Vs = [1, 42], $Vt = [1, 43], $Vu = [1, 44], $Vv = [1, 45], $Vw = [1, 46], $Vx = [1, 4, 5, 13, 14, 16, 18, 21, 23, 29, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 46, 47, 48, 49, 50, 52, 53, 54, 59, 60, 61, 62, 70], $Vy = [4, 5, 16, 50, 52, 53], $Vz = [4, 5, 13, 14, 16, 18, 21, 23, 29, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 46, 50, 52, 53, 54, 59, 60, 61, 62, 70], $VA = [4, 5, 13, 14, 16, 18, 21, 23, 29, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 46, 49, 50, 52, 53, 54, 59, 60, 61, 62, 70], $VB = [4, 5, 13, 14, 16, 18, 21, 23, 29, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 46, 48, 50, 52, 53, 54, 59, 60, 61, 62, 70], $VC = [4, 5, 13, 14, 16, 18, 21, 23, 29, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 46, 47, 50, 52, 53, 54, 59, 60, 61, 62, 70], $VD = [68, 69, 70], $VE = [1, 122];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "SPACE": 4, "NEWLINE": 5, "SD": 6, "document": 7, "line": 8, "statement": 9, "box_section": 10, "box_line": 11, "participant_statement": 12, "create": 13, "box": 14, "restOfLine": 15, "end": 16, "signal": 17, "autonumber": 18, "NUM": 19, "off": 20, "activate": 21, "actor": 22, "deactivate": 23, "note_statement": 24, "links_statement": 25, "link_statement": 26, "properties_statement": 27, "details_statement": 28, "title": 29, "legacy_title": 30, "acc_title": 31, "acc_title_value": 32, "acc_descr": 33, "acc_descr_value": 34, "acc_descr_multiline_value": 35, "loop": 36, "rect": 37, "opt": 38, "alt": 39, "else_sections": 40, "par": 41, "par_sections": 42, "par_over": 43, "critical": 44, "option_sections": 45, "break": 46, "option": 47, "and": 48, "else": 49, "participant": 50, "AS": 51, "participant_actor": 52, "destroy": 53, "note": 54, "placement": 55, "text2": 56, "over": 57, "actor_pair": 58, "links": 59, "link": 60, "properties": 61, "details": 62, "spaceList": 63, ",": 64, "left_of": 65, "right_of": 66, "signaltype": 67, "+": 68, "-": 69, "ACTOR": 70, "SOLID_OPEN_ARROW": 71, "DOTTED_OPEN_ARROW": 72, "SOLID_ARROW": 73, "BIDIRECTIONAL_SOLID_ARROW": 74, "DOTTED_ARROW": 75, "BIDIRECTIONAL_DOTTED_ARROW": 76, "SOLID_CROSS": 77, "DOTTED_CROSS": 78, "SOLID_POINT": 79, "DOTTED_POINT": 80, "TXT": 81, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 4: "SPACE", 5: "NEWLINE", 6: "SD", 13: "create", 14: "box", 15: "restOfLine", 16: "end", 18: "autonumber", 19: "NUM", 20: "off", 21: "activate", 23: "deactivate", 29: "title", 30: "legacy_title", 31: "acc_title", 32: "acc_title_value", 33: "acc_descr", 34: "acc_descr_value", 35: "acc_descr_multiline_value", 36: "loop", 37: "rect", 38: "opt", 39: "alt", 41: "par", 43: "par_over", 44: "critical", 46: "break", 47: "option", 48: "and", 49: "else", 50: "participant", 51: "AS", 52: "participant_actor", 53: "destroy", 54: "note", 57: "over", 59: "links", 60: "link", 61: "properties", 62: "details", 64: ",", 65: "left_of", 66: "right_of", 68: "+", 69: "-", 70: "ACTOR", 71: "SOLID_OPEN_ARROW", 72: "DOTTED_OPEN_ARROW", 73: "SOLID_ARROW", 74: "BIDIRECTIONAL_SOLID_ARROW", 75: "DOTTED_ARROW", 76: "BIDIRECTIONAL_DOTTED_ARROW", 77: "SOLID_CROSS", 78: "DOTTED_CROSS", 79: "SOLID_POINT", 80: "DOTTED_POINT", 81: "TXT" },
     productions_: [0, [3, 2], [3, 2], [3, 2], [7, 0], [7, 2], [8, 2], [8, 1], [8, 1], [10, 0], [10, 2], [11, 2], [11, 1], [11, 1], [9, 1], [9, 2], [9, 4], [9, 2], [9, 4], [9, 3], [9, 3], [9, 2], [9, 3], [9, 3], [9, 2], [9, 2], [9, 2], [9, 2], [9, 2], [9, 1], [9, 1], [9, 2], [9, 2], [9, 1], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [9, 4], [45, 1], [45, 4], [42, 1], [42, 4], [40, 1], [40, 4], [12, 5], [12, 3], [12, 5], [12, 3], [12, 3], [24, 4], [24, 4], [25, 3], [26, 3], [27, 3], [28, 3], [63, 2], [63, 1], [58, 3], [58, 1], [55, 1], [55, 1], [17, 5], [17, 5], [17, 4], [22, 1], [67, 1], [67, 1], [67, 1], [67, 1], [67, 1], [67, 1], [67, 1], [67, 1], [67, 1], [67, 1], [56, 1]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 3:
@@ -422,7 +391,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: $V0, 5: $V1, 6: $V2 }, { 1: [3] }, { 3: 5, 4: $V0, 5: $V1, 6: $V2 }, { 3: 6, 4: $V0, 5: $V1, 6: $V2 }, o([1, 4, 5, 13, 14, 18, 21, 23, 29, 30, 31, 33, 35, 36, 37, 38, 39, 41, 43, 44, 46, 50, 52, 53, 54, 59, 60, 61, 62, 70], $V3, { 7: 7 }), { 1: [2, 1] }, { 1: [2, 2] }, { 1: [2, 3], 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, o($Vx, [2, 5]), { 9: 47, 12: 12, 13: $V6, 14: $V7, 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, o($Vx, [2, 7]), o($Vx, [2, 8]), o($Vx, [2, 14]), { 12: 48, 50: $Vo, 52: $Vp, 53: $Vq }, { 15: [1, 49] }, { 5: [1, 50] }, { 5: [1, 53], 19: [1, 51], 20: [1, 52] }, { 22: 54, 70: $Vw }, { 22: 55, 70: $Vw }, { 5: [1, 56] }, { 5: [1, 57] }, { 5: [1, 58] }, { 5: [1, 59] }, { 5: [1, 60] }, o($Vx, [2, 29]), o($Vx, [2, 30]), { 32: [1, 61] }, { 34: [1, 62] }, o($Vx, [2, 33]), { 15: [1, 63] }, { 15: [1, 64] }, { 15: [1, 65] }, { 15: [1, 66] }, { 15: [1, 67] }, { 15: [1, 68] }, { 15: [1, 69] }, { 15: [1, 70] }, { 22: 71, 70: $Vw }, { 22: 72, 70: $Vw }, { 22: 73, 70: $Vw }, { 67: 74, 71: [1, 75], 72: [1, 76], 73: [1, 77], 74: [1, 78], 75: [1, 79], 76: [1, 80], 77: [1, 81], 78: [1, 82], 79: [1, 83], 80: [1, 84] }, { 55: 85, 57: [1, 86], 65: [1, 87], 66: [1, 88] }, { 22: 89, 70: $Vw }, { 22: 90, 70: $Vw }, { 22: 91, 70: $Vw }, { 22: 92, 70: $Vw }, o([5, 51, 64, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81], [2, 68]), o($Vx, [2, 6]), o($Vx, [2, 15]), o($Vy, [2, 9], { 10: 93 }), o($Vx, [2, 17]), { 5: [1, 95], 19: [1, 94] }, { 5: [1, 96] }, o($Vx, [2, 21]), { 5: [1, 97] }, { 5: [1, 98] }, o($Vx, [2, 24]), o($Vx, [2, 25]), o($Vx, [2, 26]), o($Vx, [2, 27]), o($Vx, [2, 28]), o($Vx, [2, 31]), o($Vx, [2, 32]), o($Vz, $V3, { 7: 99 }), o($Vz, $V3, { 7: 100 }), o($Vz, $V3, { 7: 101 }), o($VA, $V3, { 40: 102, 7: 103 }), o($VB, $V3, { 42: 104, 7: 105 }), o($VB, $V3, { 7: 105, 42: 106 }), o($VC, $V3, { 45: 107, 7: 108 }), o($Vz, $V3, { 7: 109 }), { 5: [1, 111], 51: [1, 110] }, { 5: [1, 113], 51: [1, 112] }, { 5: [1, 114] }, { 22: 117, 68: [1, 115], 69: [1, 116], 70: $Vw }, o($VD, [2, 69]), o($VD, [2, 70]), o($VD, [2, 71]), o($VD, [2, 72]), o($VD, [2, 73]), o($VD, [2, 74]), o($VD, [2, 75]), o($VD, [2, 76]), o($VD, [2, 77]), o($VD, [2, 78]), { 22: 118, 70: $Vw }, { 22: 120, 58: 119, 70: $Vw }, { 70: [2, 63] }, { 70: [2, 64] }, { 56: 121, 81: $VE }, { 56: 123, 81: $VE }, { 56: 124, 81: $VE }, { 56: 125, 81: $VE }, { 4: [1, 128], 5: [1, 130], 11: 127, 12: 129, 16: [1, 126], 50: $Vo, 52: $Vp, 53: $Vq }, { 5: [1, 131] }, o($Vx, [2, 19]), o($Vx, [2, 20]), o($Vx, [2, 22]), o($Vx, [2, 23]), { 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 16: [1, 132], 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, { 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 16: [1, 133], 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, { 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 16: [1, 134], 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, { 16: [1, 135] }, { 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 16: [2, 46], 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 49: [1, 136], 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, { 16: [1, 137] }, { 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 16: [2, 44], 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 48: [1, 138], 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, { 16: [1, 139] }, { 16: [1, 140] }, { 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 16: [2, 42], 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 47: [1, 141], 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, { 4: $V4, 5: $V5, 8: 8, 9: 10, 12: 12, 13: $V6, 14: $V7, 16: [1, 142], 17: 15, 18: $V8, 21: $V9, 22: 40, 23: $Va, 24: 19, 25: 20, 26: 21, 27: 22, 28: 23, 29: $Vb, 30: $Vc, 31: $Vd, 33: $Ve, 35: $Vf, 36: $Vg, 37: $Vh, 38: $Vi, 39: $Vj, 41: $Vk, 43: $Vl, 44: $Vm, 46: $Vn, 50: $Vo, 52: $Vp, 53: $Vq, 54: $Vr, 59: $Vs, 60: $Vt, 61: $Vu, 62: $Vv, 70: $Vw }, { 15: [1, 143] }, o($Vx, [2, 49]), { 15: [1, 144] }, o($Vx, [2, 51]), o($Vx, [2, 52]), { 22: 145, 70: $Vw }, { 22: 146, 70: $Vw }, { 56: 147, 81: $VE }, { 56: 148, 81: $VE }, { 56: 149, 81: $VE }, { 64: [1, 150], 81: [2, 62] }, { 5: [2, 55] }, { 5: [2, 79] }, { 5: [2, 56] }, { 5: [2, 57] }, { 5: [2, 58] }, o($Vx, [2, 16]), o($Vy, [2, 10]), { 12: 151, 50: $Vo, 52: $Vp, 53: $Vq }, o($Vy, [2, 12]), o($Vy, [2, 13]), o($Vx, [2, 18]), o($Vx, [2, 34]), o($Vx, [2, 35]), o($Vx, [2, 36]), o($Vx, [2, 37]), { 15: [1, 152] }, o($Vx, [2, 38]), { 15: [1, 153] }, o($Vx, [2, 39]), o($Vx, [2, 40]), { 15: [1, 154] }, o($Vx, [2, 41]), { 5: [1, 155] }, { 5: [1, 156] }, { 56: 157, 81: $VE }, { 56: 158, 81: $VE }, { 5: [2, 67] }, { 5: [2, 53] }, { 5: [2, 54] }, { 22: 159, 70: $Vw }, o($Vy, [2, 11]), o($VA, $V3, { 7: 103, 40: 160 }), o($VB, $V3, { 7: 105, 42: 161 }), o($VC, $V3, { 7: 108, 45: 162 }), o($Vx, [2, 48]), o($Vx, [2, 50]), { 5: [2, 65] }, { 5: [2, 66] }, { 81: [2, 61] }, { 16: [2, 47] }, { 16: [2, 45] }, { 16: [2, 43] }],
     defaultActions: { 5: [2, 1], 6: [2, 2], 87: [2, 63], 88: [2, 64], 121: [2, 55], 122: [2, 79], 123: [2, 56], 124: [2, 57], 125: [2, 58], 147: [2, 67], 148: [2, 53], 149: [2, 54], 157: [2, 65], 158: [2, 66], 159: [2, 61], 160: [2, 47], 161: [2, 45], 162: [2, 43] },
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -431,7 +400,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -460,7 +429,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -473,7 +442,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -577,7 +546,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -585,7 +554,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -605,7 +574,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -626,7 +595,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -652,12 +621,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -670,16 +639,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -687,13 +656,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -756,7 +725,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -807,7 +776,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -816,11 +785,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -829,7 +798,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -837,7 +806,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -846,15 +815,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -1153,7 +1122,7 @@ var parser = function() {
 {}
         }
       }, "anonymous"),
-      rules: [/^(?:[\n]+)/i, /^(?:\s+)/i, /^(?:((?!\n)\s)+)/i, /^(?:#[^\n]*)/i, /^(?:%(?!\{)[^\n]*)/i, /^(?:[^\}]%%[^\n]*)/i, /^(?:[0-9]+(?=[ \n]+))/i, /^(?:box\b)/i, /^(?:participant\b)/i, /^(?:actor\b)/i, /^(?:create\b)/i, /^(?:destroy\b)/i, /^(?:[^\<->\->:\n,;]+?([\-]*[^\<->\->:\n,;]+?)*?(?=((?!\n)\s)+as(?!\n)\s|[#\n;]|$))/i, /^(?:as\b)/i, /^(?:(?:))/i, /^(?:loop\b)/i, /^(?:rect\b)/i, /^(?:opt\b)/i, /^(?:alt\b)/i, /^(?:else\b)/i, /^(?:par\b)/i, /^(?:par_over\b)/i, /^(?:and\b)/i, /^(?:critical\b)/i, /^(?:option\b)/i, /^(?:break\b)/i, /^(?:(?:[:]?(?:no)?wrap)?[^#\n;]*)/i, /^(?:end\b)/i, /^(?:left of\b)/i, /^(?:right of\b)/i, /^(?:links\b)/i, /^(?:link\b)/i, /^(?:properties\b)/i, /^(?:details\b)/i, /^(?:over\b)/i, /^(?:note\b)/i, /^(?:activate\b)/i, /^(?:deactivate\b)/i, /^(?:title\s[^#\n;]+)/i, /^(?:title:\s[^#\n;]+)/i, /^(?:accTitle\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*\{\s*)/i, /^(?:[\}])/i, /^(?:[^\}]*)/i, /^(?:sequenceDiagram\b)/i, /^(?:autonumber\b)/i, /^(?:off\b)/i, /^(?:,)/i, /^(?:;)/i, /^(?:[^\+\<->\->:\n,;]+((?!(-x|--x|-\)|--\)))[\-]*[^\+\<->\->:\n,;]+)*)/i, /^(?:->>)/i, /^(?:<<->>)/i, /^(?:-->>)/i, /^(?:<<-->>)/i, /^(?:->)/i, /^(?:-->)/i, /^(?:-[x])/i, /^(?:--[x])/i, /^(?:-[\)])/i, /^(?:--[\)])/i, /^(?::(?:(?:no)?wrap)?[^#\n;]*)/i, /^(?::)/i, /^(?:\+)/i, /^(?:-)/i, /^(?:$)/i, /^(?:.)/i],
+      rules: [/^(?:[\n]+)/i, /^(?:\s+)/i, /^(?:((?!\n)\s)+)/i, /^(?:#[^\n]*)/i, /^(?:%(?!\{)[^\n]*)/i, /^(?:[^\}]%%[^\n]*)/i, /^(?:[0-9]+(?=[ \n]+))/i, /^(?:box\b)/i, /^(?:participant\b)/i, /^(?:actor\b)/i, /^(?:create\b)/i, /^(?:destroy\b)/i, /^(?:[^<\->\->:\n,;]+?([\-]*[^<\->\->:\n,;]+?)*?(?=((?!\n)\s)+as(?!\n)\s|[#\n;]|$))/i, /^(?:as\b)/i, /^(?:(?:))/i, /^(?:loop\b)/i, /^(?:rect\b)/i, /^(?:opt\b)/i, /^(?:alt\b)/i, /^(?:else\b)/i, /^(?:par\b)/i, /^(?:par_over\b)/i, /^(?:and\b)/i, /^(?:critical\b)/i, /^(?:option\b)/i, /^(?:break\b)/i, /^(?:(?:[:]?(?:no)?wrap)?[^#\n;]*)/i, /^(?:end\b)/i, /^(?:left of\b)/i, /^(?:right of\b)/i, /^(?:links\b)/i, /^(?:link\b)/i, /^(?:properties\b)/i, /^(?:details\b)/i, /^(?:over\b)/i, /^(?:note\b)/i, /^(?:activate\b)/i, /^(?:deactivate\b)/i, /^(?:title\s[^#\n;]+)/i, /^(?:title:\s[^#\n;]+)/i, /^(?:accTitle\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*\{\s*)/i, /^(?:[\}])/i, /^(?:[^\}]*)/i, /^(?:sequenceDiagram\b)/i, /^(?:autonumber\b)/i, /^(?:off\b)/i, /^(?:,)/i, /^(?:;)/i, /^(?:[^+<\->\->:\n,;]+((?!(-x|--x|-\)|--\)))[\-]*[^\+<\->\->:\n,;]+)*)/i, /^(?:->>)/i, /^(?:<<->>)/i, /^(?:-->>)/i, /^(?:<<-->>)/i, /^(?:->)/i, /^(?:-->)/i, /^(?:-[x])/i, /^(?:--[x])/i, /^(?:-[\)])/i, /^(?:--[\)])/i, /^(?::(?:(?:no)?wrap)?[^#\n;]*)/i, /^(?::)/i, /^(?:\+)/i, /^(?:-)/i, /^(?:$)/i, /^(?:.)/i],
       conditions: { "acc_descr_multiline": { "rules": [45, 46], "inclusive": false }, "acc_descr": { "rules": [43], "inclusive": false }, "acc_title": { "rules": [41], "inclusive": false }, "ID": { "rules": [2, 3, 12], "inclusive": false }, "ALIAS": { "rules": [2, 3, 13, 14], "inclusive": false }, "LINE": { "rules": [2, 3, 26], "inclusive": false }, "INITIAL": { "rules": [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68], "inclusive": true } }
     };
     return lexer2;
@@ -1162,7 +1131,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -1216,7 +1185,7 @@ var PLACEMENT = {
 };
 var SequenceDB = class {
   constructor() {
-    this.state = new _chunk_AACKK3MU_mjs__WEBPACK_IMPORTED_MODULE_1__/* .ImperativeState */ .m(() => ({
+    this.state = new _chunk_FHKO5MBM_mjs__WEBPACK_IMPORTED_MODULE_1__/* .ImperativeState */ .m(() => ({
       prevActor: void 0,
       actors: /* @__PURE__ */ new Map(),
       createdActors: /* @__PURE__ */ new Map(),
@@ -1230,23 +1199,23 @@ var SequenceDB = class {
       lastCreated: void 0,
       lastDestroyed: void 0
     }));
-    this.setAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV;
-    this.setAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI;
-    this.setDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke;
-    this.getAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN;
-    this.getAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7;
-    this.getDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab;
+    this.setAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV;
+    this.setAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI;
+    this.setDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke;
+    this.getAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN;
+    this.getAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7;
+    this.getDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab;
     this.apply = this.apply.bind(this);
     this.parseBoxData = this.parseBoxData.bind(this);
     this.parseMessage = this.parseMessage.bind(this);
     this.clear();
-    this.setWrap((0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)().wrap);
+    this.setWrap((0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)().wrap);
     this.LINETYPE = LINETYPE;
     this.ARROWTYPE = ARROWTYPE;
     this.PLACEMENT = PLACEMENT;
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "SequenceDB");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "SequenceDB");
   }
   addBox(data) {
     this.state.records.boxes.push({
@@ -1405,11 +1374,11 @@ var SequenceDB = class {
     if (this.state.records.wrapEnabled !== void 0) {
       return this.state.records.wrapEnabled;
     }
-    return (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)().sequence?.wrap ?? false;
+    return (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)().sequence?.wrap ?? false;
   }
   clear() {
     this.state.reset();
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
   }
   parseMessage(str) {
     const trimmedStr = str.trim();
@@ -1418,7 +1387,7 @@ var SequenceDB = class {
       text: cleanedText,
       wrap
     };
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`parseMessage: ${JSON.stringify(message)}`);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`parseMessage: ${JSON.stringify(message)}`);
     return message;
   }
   // We expect the box statement to be color first then description
@@ -1443,7 +1412,7 @@ var SequenceDB = class {
     }
     const { wrap, cleanedText } = this.extractWrap(title);
     return {
-      text: cleanedText ? (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(cleanedText, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : void 0,
+      text: cleanedText ? (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(cleanedText, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : void 0,
       color,
       wrap
     };
@@ -1470,20 +1439,20 @@ var SequenceDB = class {
   addLinks(actorId, text) {
     const actor = this.getActor(actorId);
     try {
-      let sanitizedText = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.text, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
+      let sanitizedText = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.text, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
       sanitizedText = sanitizedText.replace(/&equals;/g, "=");
       sanitizedText = sanitizedText.replace(/&amp;/g, "&");
       const links = JSON.parse(sanitizedText);
       this.insertLinks(actor, links);
     } catch (e) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor link text", e);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor link text", e);
     }
   }
   addALink(actorId, text) {
     const actor = this.getActor(actorId);
     try {
       const links = {};
-      let sanitizedText = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.text, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
+      let sanitizedText = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.text, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
       const sep = sanitizedText.indexOf("@");
       sanitizedText = sanitizedText.replace(/&equals;/g, "=");
       sanitizedText = sanitizedText.replace(/&amp;/g, "&");
@@ -1492,7 +1461,7 @@ var SequenceDB = class {
       links[label] = link;
       this.insertLinks(actor, links);
     } catch (e) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor link text", e);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor link text", e);
     }
   }
   insertLinks(actor, links) {
@@ -1507,11 +1476,11 @@ var SequenceDB = class {
   addProperties(actorId, text) {
     const actor = this.getActor(actorId);
     try {
-      const sanitizedText = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.text, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
+      const sanitizedText = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.text, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
       const properties = JSON.parse(sanitizedText);
       this.insertProperties(actor, properties);
     } catch (e) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor properties text", e);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor properties text", e);
     }
   }
   insertProperties(actor, properties) {
@@ -1539,7 +1508,7 @@ var SequenceDB = class {
         this.insertLinks(actor, details.links);
       }
     } catch (e) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor details text", e);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing actor details text", e);
     }
   }
   getActorProperty(actor, key) {
@@ -1662,7 +1631,7 @@ var SequenceDB = class {
           this.addSignal(void 0, void 0, void 0, param.signalType);
           break;
         case "setAccTitle":
-          (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV)(param.text);
+          (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV)(param.text);
           break;
         case "parStart":
           this.addSignal(void 0, void 0, param.parText, param.signalType);
@@ -1692,12 +1661,12 @@ var SequenceDB = class {
     }
   }
   getConfig() {
-    return (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)().sequence;
+    return (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)().sequence;
   }
 };
 
 // src/diagrams/sequence/styles.js
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => `.actor {
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => `.actor {
     stroke: ${options.actorBorder};
     fill: ${options.actorBkg};
   }
@@ -1826,10 +1795,10 @@ var TOP_ACTOR_CLASS = "actor-top";
 var BOTTOM_ACTOR_CLASS = "actor-bottom";
 var ACTOR_BOX_CLASS = "actor-box";
 var ACTOR_MAN_FIGURE_CLASS = "actor-man";
-var drawRect2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, rectData) {
-  return (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawRect */ .tk)(elem, rectData);
+var drawRect2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, rectData) {
+  return (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawRect */ .tk)(elem, rectData);
 }, "drawRect");
-var drawPopup = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, actor, minMenuWidth, textAttrs, forceMenus) {
+var drawPopup = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, actor, minMenuWidth, textAttrs, forceMenus) {
   if (actor.links === void 0 || actor.links === null || Object.keys(actor.links).length === 0) {
     return { height: 0, width: 0 };
   }
@@ -1882,13 +1851,13 @@ var drawPopup = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   rectElem.attr("height", linkY);
   return { height: rectData.height + linkY, width: menuWidth };
 }, "drawPopup");
-var popupMenuToggle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(popId) {
+var popupMenuToggle = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(popId) {
   return "var pu = document.getElementById('" + popId + "'); if (pu != null) { pu.style.display = pu.style.display == 'block' ? 'none' : 'block'; }";
 }, "popupMenuToggle");
-var drawKatex = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, textData, msgModel = null) {
+var drawKatex = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, textData, msgModel = null) {
   let textElem = elem.append("foreignObject");
-  const lines = await (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .renderKatex */ .VJ)(textData.text, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)());
-  const divElem = textElem.append("xhtml:div").attr("style", "width: fit-content;").attr("xmlns", "http://www.w3.org/1999/xhtml").html(lines);
+  const linesSanitized = await (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .renderKatexSanitized */ .dj)(textData.text, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)());
+  const divElem = textElem.append("xhtml:div").attr("style", "width: fit-content;").attr("xmlns", "http://www.w3.org/1999/xhtml").html(linesSanitized);
   const dim = divElem.node().getBoundingClientRect();
   textElem.attr("height", Math.round(dim.height)).attr("width", Math.round(dim.width));
   if (textData.class === "noteText") {
@@ -1912,27 +1881,27 @@ var drawKatex = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   }
   return [textElem];
 }, "drawKatex");
-var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, textData) {
+var drawText = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, textData) {
   let prevTextHeight = 0;
   let textHeight = 0;
-  const lines = textData.text.split(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.lineBreakRegex);
-  const [_textFontSize, _textFontSizePx] = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .parseFontSize */ .I5)(textData.fontSize);
+  const lines = textData.text.split(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.lineBreakRegex);
+  const [_textFontSize, _textFontSizePx] = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .parseFontSize */ .I5)(textData.fontSize);
   let textElems = [];
   let dy = 0;
-  let yfunc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => textData.y, "yfunc");
+  let yfunc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => textData.y, "yfunc");
   if (textData.valign !== void 0 && textData.textMargin !== void 0 && textData.textMargin > 0) {
     switch (textData.valign) {
       case "top":
       case "start":
-        yfunc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => Math.round(textData.y + textData.textMargin), "yfunc");
+        yfunc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => Math.round(textData.y + textData.textMargin), "yfunc");
         break;
       case "middle":
       case "center":
-        yfunc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => Math.round(textData.y + (prevTextHeight + textHeight + textData.textMargin) / 2), "yfunc");
+        yfunc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => Math.round(textData.y + (prevTextHeight + textHeight + textData.textMargin) / 2), "yfunc");
         break;
       case "bottom":
       case "end":
-        yfunc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => Math.round(
+        yfunc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => Math.round(
           textData.y + (prevTextHeight + textHeight + 2 * textData.textMargin) - textData.textMargin
         ), "yfunc");
         break;
@@ -1993,7 +1962,7 @@ var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
     } else if (dy !== 0) {
       textElem.attr("dy", dy);
     }
-    const text = line || _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .ZERO_WIDTH_SPACE */ .pe;
+    const text = line || _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .ZERO_WIDTH_SPACE */ .pe;
     if (textData.tspan) {
       const span = textElem.append("tspan");
       span.attr("x", textData.x);
@@ -2012,11 +1981,11 @@ var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   }
   return textElems;
 }, "drawText");
-var drawLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, txtObject) {
+var drawLabel = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, txtObject) {
   function genPoints(x, y, width, height, cut) {
     return x + "," + y + " " + (x + width) + "," + y + " " + (x + width) + "," + (y + height - cut) + " " + (x + width - cut * 1.2) + "," + (y + height) + " " + x + "," + (y + height);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(genPoints, "genPoints");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(genPoints, "genPoints");
   const polygon = elem.append("polygon");
   polygon.attr("points", genPoints(txtObject.x, txtObject.y, txtObject.width, txtObject.height, 7));
   polygon.attr("class", "labelBox");
@@ -2025,7 +1994,7 @@ var drawLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   return polygon;
 }, "drawLabel");
 var actorCnt = -1;
-var fixLifeLineHeights = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((diagram2, actors, actorKeys, conf2) => {
+var fixLifeLineHeights = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((diagram2, actors, actorKeys, conf2) => {
   if (!diagram2.select) {
     return;
   }
@@ -2039,7 +2008,7 @@ var fixLifeLineHeights = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
     }
   });
 }, "fixLifeLineHeights");
-var drawActorTypeParticipant = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, actor, conf2, isFooter) {
+var drawActorTypeParticipant = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, actor, conf2, isFooter) {
   const actorY = isFooter ? actor.stopy : actor.starty;
   const center = actor.x + actor.width / 2;
   const centerY = actorY + actor.height;
@@ -2057,7 +2026,7 @@ var drawActorTypeParticipant = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_I
       g.attr("id", "root-" + actorCnt);
     }
   }
-  const rect = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
+  const rect = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
   var cssclass = "actor";
   if (actor.properties?.class) {
     cssclass = actor.properties.class;
@@ -2082,12 +2051,12 @@ var drawActorTypeParticipant = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_I
   if (actor.properties?.icon) {
     const iconSrc = actor.properties.icon.trim();
     if (iconSrc.charAt(0) === "@") {
-      (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawEmbeddedImage */ .CP)(g, rect.x + rect.width - 20, rect.y + 10, iconSrc.substr(1));
+      (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawEmbeddedImage */ .CP)(g, rect.x + rect.width - 20, rect.y + 10, iconSrc.substr(1));
     } else {
-      (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawImage */ .aC)(g, rect.x + rect.width - 20, rect.y + 10, iconSrc);
+      (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawImage */ .aC)(g, rect.x + rect.width - 20, rect.y + 10, iconSrc);
     }
   }
-  _drawTextCandidateFunc(conf2, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(actor.description))(
+  _drawTextCandidateFunc(conf2, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(actor.description))(
     actor.description,
     g,
     rect.x,
@@ -2105,7 +2074,7 @@ var drawActorTypeParticipant = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_I
   }
   return height;
 }, "drawActorTypeParticipant");
-var drawActorTypeActor = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, actor, conf2, isFooter) {
+var drawActorTypeActor = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, actor, conf2, isFooter) {
   const actorY = isFooter ? actor.stopy : actor.starty;
   const center = actor.x + actor.width / 2;
   const centerY = actorY + 80;
@@ -2124,7 +2093,7 @@ var drawActorTypeActor = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   }
   actElem.attr("class", cssClass);
   actElem.attr("name", actor.name);
-  const rect = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
+  const rect = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
   rect.x = actor.x;
   rect.y = actorY;
   rect.fill = "#eaeaea";
@@ -2145,7 +2114,7 @@ var drawActorTypeActor = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   circle.attr("height", actor.height);
   const bounds2 = actElem.node().getBBox();
   actor.height = bounds2.height;
-  _drawTextCandidateFunc(conf2, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(actor.description))(
+  _drawTextCandidateFunc(conf2, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(actor.description))(
     actor.description,
     actElem,
     rect.x,
@@ -2157,7 +2126,7 @@ var drawActorTypeActor = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   );
   return actor.height;
 }, "drawActorTypeActor");
-var drawActor = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, actor, conf2, isFooter) {
+var drawActor = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, actor, conf2, isFooter) {
   switch (actor.type) {
     case "actor":
       return await drawActorTypeActor(elem, actor, conf2, isFooter);
@@ -2165,7 +2134,7 @@ var drawActor = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
       return await drawActorTypeParticipant(elem, actor, conf2, isFooter);
   }
 }, "drawActor");
-var drawBox = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, box, conf2) {
+var drawBox = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, box, conf2) {
   const boxplusTextGroup = elem.append("g");
   const g = boxplusTextGroup;
   drawBackgroundRect2(g, box);
@@ -2183,11 +2152,11 @@ var drawBox = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3_
   }
   g.lower();
 }, "drawBox");
-var anchorElement = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var anchorElement = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   return elem.append("g");
 }, "anchorElement");
-var drawActivation = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, bounds2, verticalPos, conf2, actorActivations2) {
-  const rect = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
+var drawActivation = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, bounds2, verticalPos, conf2, actorActivations2) {
+  const rect = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
   const g = bounds2.anchored;
   rect.x = bounds2.startx;
   rect.y = bounds2.starty;
@@ -2196,7 +2165,7 @@ var drawActivation = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MO
   rect.height = verticalPos - bounds2.starty;
   drawRect2(g, rect);
 }, "drawActivation");
-var drawLoop = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, loopModel, labelText, conf2) {
+var drawLoop = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, loopModel, labelText, conf2) {
   const {
     boxMargin,
     boxTextMargin,
@@ -2207,7 +2176,7 @@ var drawLoop = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
     messageFontWeight: fontWeight
   } = conf2;
   const g = elem.append("g");
-  const drawLoopLine = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
+  const drawLoopLine = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
     return g.append("line").attr("x1", startx).attr("y1", starty).attr("x2", stopx).attr("y2", stopy).attr("class", "loopLine");
   }, "drawLoopLine");
   drawLoopLine(loopModel.startx, loopModel.starty, loopModel.stopx, loopModel.starty);
@@ -2222,7 +2191,7 @@ var drawLoop = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
       );
     });
   }
-  let txt = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getTextObj */ .HT)();
+  let txt = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getTextObj */ .HT)();
   txt.text = labelText;
   txt.x = loopModel.startx;
   txt.y = loopModel.starty;
@@ -2249,7 +2218,7 @@ var drawLoop = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   txt.fontSize = fontSize;
   txt.fontWeight = fontWeight;
   txt.wrap = true;
-  let textElem = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(txt.text) ? await drawKatex(g, txt, loopModel) : drawText(g, txt);
+  let textElem = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(txt.text) ? await drawKatex(g, txt, loopModel) : drawText(g, txt);
   if (loopModel.sectionTitles !== void 0) {
     for (const [idx, item] of Object.entries(loopModel.sectionTitles)) {
       if (item.message) {
@@ -2264,7 +2233,7 @@ var drawLoop = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
         txt.fontSize = fontSize;
         txt.fontWeight = fontWeight;
         txt.wrap = loopModel.wrap;
-        if ((0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(txt.text)) {
+        if ((0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(txt.text)) {
           loopModel.starty = loopModel.sections[idx].y;
           await drawKatex(g, txt, loopModel);
         } else {
@@ -2280,42 +2249,42 @@ var drawLoop = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   loopModel.height = Math.round(loopModel.stopy - loopModel.starty);
   return g;
 }, "drawLoop");
-var drawBackgroundRect2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, bounds2) {
-  (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawBackgroundRect */ .lC)(elem, bounds2);
+var drawBackgroundRect2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem, bounds2) {
+  (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawBackgroundRect */ .lC)(elem, bounds2);
 }, "drawBackgroundRect");
-var insertDatabaseIcon = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var insertDatabaseIcon = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("symbol").attr("id", "database").attr("fill-rule", "evenodd").attr("clip-rule", "evenodd").append("path").attr("transform", "scale(.5)").attr(
     "d",
     "M12.258.001l.256.004.255.005.253.008.251.01.249.012.247.015.246.016.242.019.241.02.239.023.236.024.233.027.231.028.229.031.225.032.223.034.22.036.217.038.214.04.211.041.208.043.205.045.201.046.198.048.194.05.191.051.187.053.183.054.18.056.175.057.172.059.168.06.163.061.16.063.155.064.15.066.074.033.073.033.071.034.07.034.069.035.068.035.067.035.066.035.064.036.064.036.062.036.06.036.06.037.058.037.058.037.055.038.055.038.053.038.052.038.051.039.05.039.048.039.047.039.045.04.044.04.043.04.041.04.04.041.039.041.037.041.036.041.034.041.033.042.032.042.03.042.029.042.027.042.026.043.024.043.023.043.021.043.02.043.018.044.017.043.015.044.013.044.012.044.011.045.009.044.007.045.006.045.004.045.002.045.001.045v17l-.001.045-.002.045-.004.045-.006.045-.007.045-.009.044-.011.045-.012.044-.013.044-.015.044-.017.043-.018.044-.02.043-.021.043-.023.043-.024.043-.026.043-.027.042-.029.042-.03.042-.032.042-.033.042-.034.041-.036.041-.037.041-.039.041-.04.041-.041.04-.043.04-.044.04-.045.04-.047.039-.048.039-.05.039-.051.039-.052.038-.053.038-.055.038-.055.038-.058.037-.058.037-.06.037-.06.036-.062.036-.064.036-.064.036-.066.035-.067.035-.068.035-.069.035-.07.034-.071.034-.073.033-.074.033-.15.066-.155.064-.16.063-.163.061-.168.06-.172.059-.175.057-.18.056-.183.054-.187.053-.191.051-.194.05-.198.048-.201.046-.205.045-.208.043-.211.041-.214.04-.217.038-.22.036-.223.034-.225.032-.229.031-.231.028-.233.027-.236.024-.239.023-.241.02-.242.019-.246.016-.247.015-.249.012-.251.01-.253.008-.255.005-.256.004-.258.001-.258-.001-.256-.004-.255-.005-.253-.008-.251-.01-.249-.012-.247-.015-.245-.016-.243-.019-.241-.02-.238-.023-.236-.024-.234-.027-.231-.028-.228-.031-.226-.032-.223-.034-.22-.036-.217-.038-.214-.04-.211-.041-.208-.043-.204-.045-.201-.046-.198-.048-.195-.05-.19-.051-.187-.053-.184-.054-.179-.056-.176-.057-.172-.059-.167-.06-.164-.061-.159-.063-.155-.064-.151-.066-.074-.033-.072-.033-.072-.034-.07-.034-.069-.035-.068-.035-.067-.035-.066-.035-.064-.036-.063-.036-.062-.036-.061-.036-.06-.037-.058-.037-.057-.037-.056-.038-.055-.038-.053-.038-.052-.038-.051-.039-.049-.039-.049-.039-.046-.039-.046-.04-.044-.04-.043-.04-.041-.04-.04-.041-.039-.041-.037-.041-.036-.041-.034-.041-.033-.042-.032-.042-.03-.042-.029-.042-.027-.042-.026-.043-.024-.043-.023-.043-.021-.043-.02-.043-.018-.044-.017-.043-.015-.044-.013-.044-.012-.044-.011-.045-.009-.044-.007-.045-.006-.045-.004-.045-.002-.045-.001-.045v-17l.001-.045.002-.045.004-.045.006-.045.007-.045.009-.044.011-.045.012-.044.013-.044.015-.044.017-.043.018-.044.02-.043.021-.043.023-.043.024-.043.026-.043.027-.042.029-.042.03-.042.032-.042.033-.042.034-.041.036-.041.037-.041.039-.041.04-.041.041-.04.043-.04.044-.04.046-.04.046-.039.049-.039.049-.039.051-.039.052-.038.053-.038.055-.038.056-.038.057-.037.058-.037.06-.037.061-.036.062-.036.063-.036.064-.036.066-.035.067-.035.068-.035.069-.035.07-.034.072-.034.072-.033.074-.033.151-.066.155-.064.159-.063.164-.061.167-.06.172-.059.176-.057.179-.056.184-.054.187-.053.19-.051.195-.05.198-.048.201-.046.204-.045.208-.043.211-.041.214-.04.217-.038.22-.036.223-.034.226-.032.228-.031.231-.028.234-.027.236-.024.238-.023.241-.02.243-.019.245-.016.247-.015.249-.012.251-.01.253-.008.255-.005.256-.004.258-.001.258.001zm-9.258 20.499v.01l.001.021.003.021.004.022.005.021.006.022.007.022.009.023.01.022.011.023.012.023.013.023.015.023.016.024.017.023.018.024.019.024.021.024.022.025.023.024.024.025.052.049.056.05.061.051.066.051.07.051.075.051.079.052.084.052.088.052.092.052.097.052.102.051.105.052.11.052.114.051.119.051.123.051.127.05.131.05.135.05.139.048.144.049.147.047.152.047.155.047.16.045.163.045.167.043.171.043.176.041.178.041.183.039.187.039.19.037.194.035.197.035.202.033.204.031.209.03.212.029.216.027.219.025.222.024.226.021.23.02.233.018.236.016.24.015.243.012.246.01.249.008.253.005.256.004.259.001.26-.001.257-.004.254-.005.25-.008.247-.011.244-.012.241-.014.237-.016.233-.018.231-.021.226-.021.224-.024.22-.026.216-.027.212-.028.21-.031.205-.031.202-.034.198-.034.194-.036.191-.037.187-.039.183-.04.179-.04.175-.042.172-.043.168-.044.163-.045.16-.046.155-.046.152-.047.148-.048.143-.049.139-.049.136-.05.131-.05.126-.05.123-.051.118-.052.114-.051.11-.052.106-.052.101-.052.096-.052.092-.052.088-.053.083-.051.079-.052.074-.052.07-.051.065-.051.06-.051.056-.05.051-.05.023-.024.023-.025.021-.024.02-.024.019-.024.018-.024.017-.024.015-.023.014-.024.013-.023.012-.023.01-.023.01-.022.008-.022.006-.022.006-.022.004-.022.004-.021.001-.021.001-.021v-4.127l-.077.055-.08.053-.083.054-.085.053-.087.052-.09.052-.093.051-.095.05-.097.05-.1.049-.102.049-.105.048-.106.047-.109.047-.111.046-.114.045-.115.045-.118.044-.12.043-.122.042-.124.042-.126.041-.128.04-.13.04-.132.038-.134.038-.135.037-.138.037-.139.035-.142.035-.143.034-.144.033-.147.032-.148.031-.15.03-.151.03-.153.029-.154.027-.156.027-.158.026-.159.025-.161.024-.162.023-.163.022-.165.021-.166.02-.167.019-.169.018-.169.017-.171.016-.173.015-.173.014-.175.013-.175.012-.177.011-.178.01-.179.008-.179.008-.181.006-.182.005-.182.004-.184.003-.184.002h-.37l-.184-.002-.184-.003-.182-.004-.182-.005-.181-.006-.179-.008-.179-.008-.178-.01-.176-.011-.176-.012-.175-.013-.173-.014-.172-.015-.171-.016-.17-.017-.169-.018-.167-.019-.166-.02-.165-.021-.163-.022-.162-.023-.161-.024-.159-.025-.157-.026-.156-.027-.155-.027-.153-.029-.151-.03-.15-.03-.148-.031-.146-.032-.145-.033-.143-.034-.141-.035-.14-.035-.137-.037-.136-.037-.134-.038-.132-.038-.13-.04-.128-.04-.126-.041-.124-.042-.122-.042-.12-.044-.117-.043-.116-.045-.113-.045-.112-.046-.109-.047-.106-.047-.105-.048-.102-.049-.1-.049-.097-.05-.095-.05-.093-.052-.09-.051-.087-.052-.085-.053-.083-.054-.08-.054-.077-.054v4.127zm0-5.654v.011l.001.021.003.021.004.021.005.022.006.022.007.022.009.022.01.022.011.023.012.023.013.023.015.024.016.023.017.024.018.024.019.024.021.024.022.024.023.025.024.024.052.05.056.05.061.05.066.051.07.051.075.052.079.051.084.052.088.052.092.052.097.052.102.052.105.052.11.051.114.051.119.052.123.05.127.051.131.05.135.049.139.049.144.048.147.048.152.047.155.046.16.045.163.045.167.044.171.042.176.042.178.04.183.04.187.038.19.037.194.036.197.034.202.033.204.032.209.03.212.028.216.027.219.025.222.024.226.022.23.02.233.018.236.016.24.014.243.012.246.01.249.008.253.006.256.003.259.001.26-.001.257-.003.254-.006.25-.008.247-.01.244-.012.241-.015.237-.016.233-.018.231-.02.226-.022.224-.024.22-.025.216-.027.212-.029.21-.03.205-.032.202-.033.198-.035.194-.036.191-.037.187-.039.183-.039.179-.041.175-.042.172-.043.168-.044.163-.045.16-.045.155-.047.152-.047.148-.048.143-.048.139-.05.136-.049.131-.05.126-.051.123-.051.118-.051.114-.052.11-.052.106-.052.101-.052.096-.052.092-.052.088-.052.083-.052.079-.052.074-.051.07-.052.065-.051.06-.05.056-.051.051-.049.023-.025.023-.024.021-.025.02-.024.019-.024.018-.024.017-.024.015-.023.014-.023.013-.024.012-.022.01-.023.01-.023.008-.022.006-.022.006-.022.004-.021.004-.022.001-.021.001-.021v-4.139l-.077.054-.08.054-.083.054-.085.052-.087.053-.09.051-.093.051-.095.051-.097.05-.1.049-.102.049-.105.048-.106.047-.109.047-.111.046-.114.045-.115.044-.118.044-.12.044-.122.042-.124.042-.126.041-.128.04-.13.039-.132.039-.134.038-.135.037-.138.036-.139.036-.142.035-.143.033-.144.033-.147.033-.148.031-.15.03-.151.03-.153.028-.154.028-.156.027-.158.026-.159.025-.161.024-.162.023-.163.022-.165.021-.166.02-.167.019-.169.018-.169.017-.171.016-.173.015-.173.014-.175.013-.175.012-.177.011-.178.009-.179.009-.179.007-.181.007-.182.005-.182.004-.184.003-.184.002h-.37l-.184-.002-.184-.003-.182-.004-.182-.005-.181-.007-.179-.007-.179-.009-.178-.009-.176-.011-.176-.012-.175-.013-.173-.014-.172-.015-.171-.016-.17-.017-.169-.018-.167-.019-.166-.02-.165-.021-.163-.022-.162-.023-.161-.024-.159-.025-.157-.026-.156-.027-.155-.028-.153-.028-.151-.03-.15-.03-.148-.031-.146-.033-.145-.033-.143-.033-.141-.035-.14-.036-.137-.036-.136-.037-.134-.038-.132-.039-.13-.039-.128-.04-.126-.041-.124-.042-.122-.043-.12-.043-.117-.044-.116-.044-.113-.046-.112-.046-.109-.046-.106-.047-.105-.048-.102-.049-.1-.049-.097-.05-.095-.051-.093-.051-.09-.051-.087-.053-.085-.052-.083-.054-.08-.054-.077-.054v4.139zm0-5.666v.011l.001.02.003.022.004.021.005.022.006.021.007.022.009.023.01.022.011.023.012.023.013.023.015.023.016.024.017.024.018.023.019.024.021.025.022.024.023.024.024.025.052.05.056.05.061.05.066.051.07.051.075.052.079.051.084.052.088.052.092.052.097.052.102.052.105.051.11.052.114.051.119.051.123.051.127.05.131.05.135.05.139.049.144.048.147.048.152.047.155.046.16.045.163.045.167.043.171.043.176.042.178.04.183.04.187.038.19.037.194.036.197.034.202.033.204.032.209.03.212.028.216.027.219.025.222.024.226.021.23.02.233.018.236.017.24.014.243.012.246.01.249.008.253.006.256.003.259.001.26-.001.257-.003.254-.006.25-.008.247-.01.244-.013.241-.014.237-.016.233-.018.231-.02.226-.022.224-.024.22-.025.216-.027.212-.029.21-.03.205-.032.202-.033.198-.035.194-.036.191-.037.187-.039.183-.039.179-.041.175-.042.172-.043.168-.044.163-.045.16-.045.155-.047.152-.047.148-.048.143-.049.139-.049.136-.049.131-.051.126-.05.123-.051.118-.052.114-.051.11-.052.106-.052.101-.052.096-.052.092-.052.088-.052.083-.052.079-.052.074-.052.07-.051.065-.051.06-.051.056-.05.051-.049.023-.025.023-.025.021-.024.02-.024.019-.024.018-.024.017-.024.015-.023.014-.024.013-.023.012-.023.01-.022.01-.023.008-.022.006-.022.006-.022.004-.022.004-.021.001-.021.001-.021v-4.153l-.077.054-.08.054-.083.053-.085.053-.087.053-.09.051-.093.051-.095.051-.097.05-.1.049-.102.048-.105.048-.106.048-.109.046-.111.046-.114.046-.115.044-.118.044-.12.043-.122.043-.124.042-.126.041-.128.04-.13.039-.132.039-.134.038-.135.037-.138.036-.139.036-.142.034-.143.034-.144.033-.147.032-.148.032-.15.03-.151.03-.153.028-.154.028-.156.027-.158.026-.159.024-.161.024-.162.023-.163.023-.165.021-.166.02-.167.019-.169.018-.169.017-.171.016-.173.015-.173.014-.175.013-.175.012-.177.01-.178.01-.179.009-.179.007-.181.006-.182.006-.182.004-.184.003-.184.001-.185.001-.185-.001-.184-.001-.184-.003-.182-.004-.182-.006-.181-.006-.179-.007-.179-.009-.178-.01-.176-.01-.176-.012-.175-.013-.173-.014-.172-.015-.171-.016-.17-.017-.169-.018-.167-.019-.166-.02-.165-.021-.163-.023-.162-.023-.161-.024-.159-.024-.157-.026-.156-.027-.155-.028-.153-.028-.151-.03-.15-.03-.148-.032-.146-.032-.145-.033-.143-.034-.141-.034-.14-.036-.137-.036-.136-.037-.134-.038-.132-.039-.13-.039-.128-.041-.126-.041-.124-.041-.122-.043-.12-.043-.117-.044-.116-.044-.113-.046-.112-.046-.109-.046-.106-.048-.105-.048-.102-.048-.1-.05-.097-.049-.095-.051-.093-.051-.09-.052-.087-.052-.085-.053-.083-.053-.08-.054-.077-.054v4.153zm8.74-8.179l-.257.004-.254.005-.25.008-.247.011-.244.012-.241.014-.237.016-.233.018-.231.021-.226.022-.224.023-.22.026-.216.027-.212.028-.21.031-.205.032-.202.033-.198.034-.194.036-.191.038-.187.038-.183.04-.179.041-.175.042-.172.043-.168.043-.163.045-.16.046-.155.046-.152.048-.148.048-.143.048-.139.049-.136.05-.131.05-.126.051-.123.051-.118.051-.114.052-.11.052-.106.052-.101.052-.096.052-.092.052-.088.052-.083.052-.079.052-.074.051-.07.052-.065.051-.06.05-.056.05-.051.05-.023.025-.023.024-.021.024-.02.025-.019.024-.018.024-.017.023-.015.024-.014.023-.013.023-.012.023-.01.023-.01.022-.008.022-.006.023-.006.021-.004.022-.004.021-.001.021-.001.021.001.021.001.021.004.021.004.022.006.021.006.023.008.022.01.022.01.023.012.023.013.023.014.023.015.024.017.023.018.024.019.024.02.025.021.024.023.024.023.025.051.05.056.05.06.05.065.051.07.052.074.051.079.052.083.052.088.052.092.052.096.052.101.052.106.052.11.052.114.052.118.051.123.051.126.051.131.05.136.05.139.049.143.048.148.048.152.048.155.046.16.046.163.045.168.043.172.043.175.042.179.041.183.04.187.038.191.038.194.036.198.034.202.033.205.032.21.031.212.028.216.027.22.026.224.023.226.022.231.021.233.018.237.016.241.014.244.012.247.011.25.008.254.005.257.004.26.001.26-.001.257-.004.254-.005.25-.008.247-.011.244-.012.241-.014.237-.016.233-.018.231-.021.226-.022.224-.023.22-.026.216-.027.212-.028.21-.031.205-.032.202-.033.198-.034.194-.036.191-.038.187-.038.183-.04.179-.041.175-.042.172-.043.168-.043.163-.045.16-.046.155-.046.152-.048.148-.048.143-.048.139-.049.136-.05.131-.05.126-.051.123-.051.118-.051.114-.052.11-.052.106-.052.101-.052.096-.052.092-.052.088-.052.083-.052.079-.052.074-.051.07-.052.065-.051.06-.05.056-.05.051-.05.023-.025.023-.024.021-.024.02-.025.019-.024.018-.024.017-.023.015-.024.014-.023.013-.023.012-.023.01-.023.01-.022.008-.022.006-.023.006-.021.004-.022.004-.021.001-.021.001-.021-.001-.021-.001-.021-.004-.021-.004-.022-.006-.021-.006-.023-.008-.022-.01-.022-.01-.023-.012-.023-.013-.023-.014-.023-.015-.024-.017-.023-.018-.024-.019-.024-.02-.025-.021-.024-.023-.024-.023-.025-.051-.05-.056-.05-.06-.05-.065-.051-.07-.052-.074-.051-.079-.052-.083-.052-.088-.052-.092-.052-.096-.052-.101-.052-.106-.052-.11-.052-.114-.052-.118-.051-.123-.051-.126-.051-.131-.05-.136-.05-.139-.049-.143-.048-.148-.048-.152-.048-.155-.046-.16-.046-.163-.045-.168-.043-.172-.043-.175-.042-.179-.041-.183-.04-.187-.038-.191-.038-.194-.036-.198-.034-.202-.033-.205-.032-.21-.031-.212-.028-.216-.027-.22-.026-.224-.023-.226-.022-.231-.021-.233-.018-.237-.016-.241-.014-.244-.012-.247-.011-.25-.008-.254-.005-.257-.004-.26-.001-.26.001z"
   );
 }, "insertDatabaseIcon");
-var insertComputerIcon = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var insertComputerIcon = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("symbol").attr("id", "computer").attr("width", "24").attr("height", "24").append("path").attr("transform", "scale(.5)").attr(
     "d",
     "M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"
   );
 }, "insertComputerIcon");
-var insertClockIcon = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var insertClockIcon = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("symbol").attr("id", "clock").attr("width", "24").attr("height", "24").append("path").attr("transform", "scale(.5)").attr(
     "d",
     "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.848 12.459c.202.038.202.333.001.372-1.907.361-6.045 1.111-6.547 1.111-.719 0-1.301-.582-1.301-1.301 0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.011z"
   );
 }, "insertClockIcon");
-var insertArrowHead = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var insertArrowHead = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("marker").attr("id", "arrowhead").attr("refX", 7.9).attr("refY", 5).attr("markerUnits", "userSpaceOnUse").attr("markerWidth", 12).attr("markerHeight", 12).attr("orient", "auto-start-reverse").append("path").attr("d", "M -1 0 L 10 5 L 0 10 z");
 }, "insertArrowHead");
-var insertArrowFilledHead = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var insertArrowFilledHead = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("marker").attr("id", "filled-head").attr("refX", 15.5).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").append("path").attr("d", "M 18,7 L9,13 L14,7 L9,1 Z");
 }, "insertArrowFilledHead");
-var insertSequenceNumber = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var insertSequenceNumber = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("marker").attr("id", "sequencenumber").attr("refX", 15).attr("refY", 15).attr("markerWidth", 60).attr("markerHeight", 40).attr("orient", "auto").append("circle").attr("cx", 15).attr("cy", 15).attr("r", 6);
 }, "insertSequenceNumber");
-var insertArrowCrossHead = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
+var insertArrowCrossHead = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(elem) {
   const defs = elem.append("defs");
   const marker = defs.append("marker").attr("id", "crosshead").attr("markerWidth", 15).attr("markerHeight", 8).attr("orient", "auto").attr("refX", 4).attr("refY", 4.5);
   marker.append("path").attr("fill", "none").attr("stroke", "#000000").style("stroke-dasharray", "0, 0").attr("stroke-width", "1pt").attr("d", "M 1,2 L 6,7 M 6,2 L 1,7");
 }, "insertArrowCrossHead");
-var getTextObj2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getTextObj2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return {
     x: 0,
     y: 0,
@@ -2331,7 +2300,7 @@ var getTextObj2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
     valign: void 0
   };
 }, "getTextObj");
-var getNoteRect2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getNoteRect2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return {
     x: 0,
     y: 0,
@@ -2349,11 +2318,11 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
     const text = g.append("text").attr("x", x + width / 2).attr("y", y + height / 2 + 5).style("text-anchor", "middle").text(content);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byText, "byText");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byText, "byText");
   function byTspan(content, g, x, y, width, height, textAttrs, conf2) {
     const { actorFontSize, actorFontFamily, actorFontWeight } = conf2;
-    const [_actorFontSize, _actorFontSizePx] = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .parseFontSize */ .I5)(actorFontSize);
-    const lines = content.split(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.lineBreakRegex);
+    const [_actorFontSize, _actorFontSizePx] = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .parseFontSize */ .I5)(actorFontSize);
+    const lines = content.split(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.lineBreakRegex);
     for (let i = 0; i < lines.length; i++) {
       const dy = i * _actorFontSize - _actorFontSize * (lines.length - 1) / 2;
       const text = g.append("text").attr("x", x + width / 2).attr("y", y).style("text-anchor", "middle").style("font-size", _actorFontSizePx).style("font-weight", actorFontWeight).style("font-family", actorFontFamily);
@@ -2362,7 +2331,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       _setTextAttrs(text, textAttrs);
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byTspan, "byTspan");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byTspan, "byTspan");
   function byFo(content, g, x, y, width, height, textAttrs, conf2) {
     const s = g.append("switch");
     const f = s.append("foreignObject").attr("x", x).attr("y", y).attr("width", width).attr("height", height);
@@ -2371,17 +2340,17 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
     byTspan(content, s, x, y, width, height, textAttrs, conf2);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byFo, "byFo");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byFo, "byFo");
   async function byKatex(content, g, x, y, width, height, textAttrs, conf2) {
-    const dim = await (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(content, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)());
+    const dim = await (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(content, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)());
     const s = g.append("switch");
     const f = s.append("foreignObject").attr("x", x + width / 2 - dim.width / 2).attr("y", y + height / 2 - dim.height / 2).attr("width", dim.width).attr("height", dim.height);
     const text = f.append("xhtml:div").style("height", "100%").style("width", "100%");
-    text.append("div").style("text-align", "center").style("vertical-align", "middle").html(await (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .renderKatex */ .VJ)(content, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)()));
+    text.append("div").style("text-align", "center").style("vertical-align", "middle").html(await (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .renderKatexSanitized */ .dj)(content, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)()));
     byTspan(content, s, x, y, width, height, textAttrs, conf2);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byKatex, "byKatex");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byKatex, "byKatex");
   function _setTextAttrs(toText, fromTextAttrsDict) {
     for (const key in fromTextAttrsDict) {
       if (fromTextAttrsDict.hasOwnProperty(key)) {
@@ -2389,7 +2358,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       }
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
   return function(conf2, hasKatex2 = false) {
     if (hasKatex2) {
       return byKatex;
@@ -2402,10 +2371,10 @@ var _drawMenuItemTextCandidateFunc = /* @__PURE__ */ function() {
     const text = g.append("text").attr("x", x).attr("y", y).style("text-anchor", "start").text(content);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byText, "byText");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byText, "byText");
   function byTspan(content, g, x, y, width, height, textAttrs, conf2) {
     const { actorFontSize, actorFontFamily, actorFontWeight } = conf2;
-    const lines = content.split(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.lineBreakRegex);
+    const lines = content.split(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.lineBreakRegex);
     for (let i = 0; i < lines.length; i++) {
       const dy = i * actorFontSize - actorFontSize * (lines.length - 1) / 2;
       const text = g.append("text").attr("x", x).attr("y", y).style("text-anchor", "start").style("font-size", actorFontSize).style("font-weight", actorFontWeight).style("font-family", actorFontFamily);
@@ -2414,7 +2383,7 @@ var _drawMenuItemTextCandidateFunc = /* @__PURE__ */ function() {
       _setTextAttrs(text, textAttrs);
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byTspan, "byTspan");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byTspan, "byTspan");
   function byFo(content, g, x, y, width, height, textAttrs, conf2) {
     const s = g.append("switch");
     const f = s.append("foreignObject").attr("x", x).attr("y", y).attr("width", width).attr("height", height);
@@ -2423,7 +2392,7 @@ var _drawMenuItemTextCandidateFunc = /* @__PURE__ */ function() {
     byTspan(content, s, x, y, width, height, textAttrs, conf2);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byFo, "byFo");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(byFo, "byFo");
   function _setTextAttrs(toText, fromTextAttrsDict) {
     for (const key in fromTextAttrsDict) {
       if (fromTextAttrsDict.hasOwnProperty(key)) {
@@ -2431,7 +2400,7 @@ var _drawMenuItemTextCandidateFunc = /* @__PURE__ */ function() {
       }
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
   return function(conf2) {
     return conf2.textPlacement === "fo" ? byFo : conf2.textPlacement === "old" ? byText : byTspan;
   };
@@ -2473,44 +2442,44 @@ var bounds = {
   sequenceItems: [],
   activations: [],
   models: {
-    getHeight: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+    getHeight: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
       return Math.max.apply(
         null,
         this.actors.length === 0 ? [0] : this.actors.map((actor) => actor.height || 0)
       ) + (this.loops.length === 0 ? 0 : this.loops.map((it) => it.height || 0).reduce((acc, h) => acc + h)) + (this.messages.length === 0 ? 0 : this.messages.map((it) => it.height || 0).reduce((acc, h) => acc + h)) + (this.notes.length === 0 ? 0 : this.notes.map((it) => it.height || 0).reduce((acc, h) => acc + h));
     }, "getHeight"),
-    clear: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+    clear: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
       this.actors = [];
       this.boxes = [];
       this.loops = [];
       this.messages = [];
       this.notes = [];
     }, "clear"),
-    addBox: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(boxModel) {
+    addBox: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(boxModel) {
       this.boxes.push(boxModel);
     }, "addBox"),
-    addActor: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actorModel) {
+    addActor: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actorModel) {
       this.actors.push(actorModel);
     }, "addActor"),
-    addLoop: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(loopModel) {
+    addLoop: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(loopModel) {
       this.loops.push(loopModel);
     }, "addLoop"),
-    addMessage: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(msgModel) {
+    addMessage: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(msgModel) {
       this.messages.push(msgModel);
     }, "addMessage"),
-    addNote: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(noteModel) {
+    addNote: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(noteModel) {
       this.notes.push(noteModel);
     }, "addNote"),
-    lastActor: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+    lastActor: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
       return this.actors[this.actors.length - 1];
     }, "lastActor"),
-    lastLoop: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+    lastLoop: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
       return this.loops[this.loops.length - 1];
     }, "lastLoop"),
-    lastMessage: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+    lastMessage: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
       return this.messages[this.messages.length - 1];
     }, "lastMessage"),
-    lastNote: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+    lastNote: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
       return this.notes[this.notes.length - 1];
     }, "lastNote"),
     actors: [],
@@ -2519,7 +2488,7 @@ var bounds = {
     messages: [],
     notes: []
   },
-  init: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  init: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
     this.sequenceItems = [];
     this.activations = [];
     this.models.clear();
@@ -2530,20 +2499,20 @@ var bounds = {
       stopy: void 0
     };
     this.verticalPos = 0;
-    setConf((0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
+    setConf((0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)());
   }, "init"),
-  updateVal: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(obj, key, val, fun) {
+  updateVal: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(obj, key, val, fun) {
     if (obj[key] === void 0) {
       obj[key] = val;
     } else {
       obj[key] = fun(val, obj[key]);
     }
   }, "updateVal"),
-  updateBounds: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
+  updateBounds: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
     const _self = this;
     let cnt = 0;
     function updateFn(type) {
-      return /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function updateItemBounds(item) {
+      return /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function updateItemBounds(item) {
         cnt++;
         const n = _self.sequenceItems.length - cnt + 1;
         _self.updateVal(item, "starty", starty - n * conf.boxMargin, Math.min);
@@ -2558,22 +2527,22 @@ var bounds = {
         }
       }, "updateItemBounds");
     }
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(updateFn, "updateFn");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(updateFn, "updateFn");
     this.sequenceItems.forEach(updateFn());
     this.activations.forEach(updateFn("activation"));
   }, "updateBounds"),
-  insert: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
-    const _startx = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(startx, stopx);
-    const _stopx = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(startx, stopx);
-    const _starty = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(starty, stopy);
-    const _stopy = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(starty, stopy);
+  insert: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
+    const _startx = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(startx, stopx);
+    const _stopx = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(startx, stopx);
+    const _starty = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(starty, stopy);
+    const _stopy = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(starty, stopy);
     this.updateVal(bounds.data, "startx", _startx, Math.min);
     this.updateVal(bounds.data, "starty", _starty, Math.min);
     this.updateVal(bounds.data, "stopx", _stopx, Math.max);
     this.updateVal(bounds.data, "stopy", _stopy, Math.max);
     this.updateBounds(_startx, _starty, _stopx, _stopy);
   }, "insert"),
-  newActivation: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(message, diagram2, actors) {
+  newActivation: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(message, diagram2, actors) {
     const actorRect = actors.get(message.from);
     const stackedSize = actorActivations(message.from).length || 0;
     const x = actorRect.x + actorRect.width / 2 + (stackedSize - 1) * conf.activationWidth / 2;
@@ -2586,13 +2555,13 @@ var bounds = {
       anchored: svgDraw_default.anchorElement(diagram2)
     });
   }, "newActivation"),
-  endActivation: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(message) {
+  endActivation: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(message) {
     const lastActorActivationIdx = this.activations.map(function(activation) {
       return activation.actor;
     }).lastIndexOf(message.from);
     return this.activations.splice(lastActorActivationIdx, 1)[0];
   }, "endActivation"),
-  createLoop: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(title = { message: void 0, wrap: false, width: void 0 }, fill) {
+  createLoop: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(title = { message: void 0, wrap: false, width: void 0 }, fill) {
     return {
       startx: void 0,
       starty: this.verticalPos,
@@ -2605,16 +2574,16 @@ var bounds = {
       fill
     };
   }, "createLoop"),
-  newLoop: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(title = { message: void 0, wrap: false, width: void 0 }, fill) {
+  newLoop: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(title = { message: void 0, wrap: false, width: void 0 }, fill) {
     this.sequenceItems.push(this.createLoop(title, fill));
   }, "newLoop"),
-  endLoop: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  endLoop: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
     return this.sequenceItems.pop();
   }, "endLoop"),
-  isLoopOverlap: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  isLoopOverlap: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
     return this.sequenceItems.length ? this.sequenceItems[this.sequenceItems.length - 1].overlap : false;
   }, "isLoopOverlap"),
-  addSectionToLoop: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(message) {
+  addSectionToLoop: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(message) {
     const loop = this.sequenceItems.pop();
     loop.sections = loop.sections || [];
     loop.sectionTitles = loop.sectionTitles || [];
@@ -2622,39 +2591,39 @@ var bounds = {
     loop.sectionTitles.push(message);
     this.sequenceItems.push(loop);
   }, "addSectionToLoop"),
-  saveVerticalPos: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  saveVerticalPos: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
     if (this.isLoopOverlap()) {
       this.savedVerticalPos = this.verticalPos;
     }
   }, "saveVerticalPos"),
-  resetVerticalPos: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  resetVerticalPos: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
     if (this.isLoopOverlap()) {
       this.verticalPos = this.savedVerticalPos;
     }
   }, "resetVerticalPos"),
-  bumpVerticalPos: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(bump) {
+  bumpVerticalPos: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(bump) {
     this.verticalPos = this.verticalPos + bump;
-    this.data.stopy = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(this.data.stopy, this.verticalPos);
+    this.data.stopy = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(this.data.stopy, this.verticalPos);
   }, "bumpVerticalPos"),
-  getVerticalPos: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  getVerticalPos: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
     return this.verticalPos;
   }, "getVerticalPos"),
-  getBounds: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  getBounds: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
     return { bounds: this.data, models: this.models };
   }, "getBounds")
 };
-var drawNote = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, noteModel) {
+var drawNote = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(elem, noteModel) {
   bounds.bumpVerticalPos(conf.boxMargin);
   noteModel.height = conf.boxMargin;
   noteModel.starty = bounds.getVerticalPos();
-  const rect = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
+  const rect = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
   rect.x = noteModel.startx;
   rect.y = noteModel.starty;
   rect.width = noteModel.width || conf.width;
   rect.class = "note";
   const g = elem.append("g");
   const rectElem = svgDraw_default.drawRect(g, rect);
-  const textObj = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getTextObj */ .HT)();
+  const textObj = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getTextObj */ .HT)();
   textObj.x = noteModel.startx;
   textObj.y = noteModel.starty;
   textObj.width = rect.width;
@@ -2667,7 +2636,7 @@ var drawNote = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   textObj.anchor = conf.noteAlign;
   textObj.textMargin = conf.noteMargin;
   textObj.valign = "center";
-  const textElem = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(textObj.text) ? await drawKatex(g, textObj) : drawText(g, textObj);
+  const textElem = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(textObj.text) ? await drawKatex(g, textObj) : drawText(g, textObj);
   const textHeight = Math.round(
     textElem.map((te) => (te._groups || te)[0][0].getBBox().height).reduce((acc, curr) => acc + curr)
   );
@@ -2679,21 +2648,21 @@ var drawNote = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   bounds.insert(noteModel.startx, noteModel.starty, noteModel.stopx, noteModel.stopy);
   bounds.models.addNote(noteModel);
 }, "drawNote");
-var messageFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
+var messageFont = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
   return {
     fontFamily: cnf.messageFontFamily,
     fontSize: cnf.messageFontSize,
     fontWeight: cnf.messageFontWeight
   };
 }, "messageFont");
-var noteFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
+var noteFont = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
   return {
     fontFamily: cnf.noteFontFamily,
     fontSize: cnf.noteFontSize,
     fontWeight: cnf.noteFontWeight
   };
 }, "noteFont");
-var actorFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
+var actorFont = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
   return {
     fontFamily: cnf.actorFontFamily,
     fontSize: cnf.actorFontSize,
@@ -2703,9 +2672,9 @@ var actorFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
 async function boundMessage(_diagram, msgModel) {
   bounds.bumpVerticalPos(10);
   const { startx, stopx, message } = msgModel;
-  const lines = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.splitBreaks(message).length;
-  const isKatexMsg = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(message);
-  const textDims = isKatexMsg ? await (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(message, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(message, messageFont(conf));
+  const lines = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.splitBreaks(message).length;
+  const isKatexMsg = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(message);
+  const textDims = isKatexMsg ? await (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(message, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(message, messageFont(conf));
   if (!isKatexMsg) {
     const lineHeight = textDims.height / lines;
     msgModel.height += lineHeight;
@@ -2721,7 +2690,7 @@ async function boundMessage(_diagram, msgModel) {
       lineStartY = bounds.getVerticalPos() + totalOffset;
     }
     totalOffset += 30;
-    const dx = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(textWidth / 2, conf.width / 2);
+    const dx = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(textWidth / 2, conf.width / 2);
     bounds.insert(
       startx - dx,
       bounds.getVerticalPos() - 10 + totalOffset,
@@ -2739,11 +2708,11 @@ async function boundMessage(_diagram, msgModel) {
   bounds.insert(msgModel.fromBounds, msgModel.starty, msgModel.toBounds, msgModel.stopy);
   return lineStartY;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(boundMessage, "boundMessage");
-var drawMessage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(diagram2, msgModel, lineStartY, diagObj) {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(boundMessage, "boundMessage");
+var drawMessage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(diagram2, msgModel, lineStartY, diagObj) {
   const { startx, stopx, starty, message, type, sequenceIndex, sequenceVisible } = msgModel;
-  const textDims = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(message, messageFont(conf));
-  const textObj = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getTextObj */ .HT)();
+  const textDims = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(message, messageFont(conf));
+  const textObj = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getTextObj */ .HT)();
   textObj.x = startx;
   textObj.y = starty + 10;
   textObj.width = stopx - startx;
@@ -2757,7 +2726,7 @@ var drawMessage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   textObj.valign = "center";
   textObj.textMargin = conf.wrapPadding;
   textObj.tspan = false;
-  if ((0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(textObj.text)) {
+  if ((0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(textObj.text)) {
     await drawKatex(diagram2, textObj, { startx, stopx, starty: lineStartY });
   } else {
     drawText(diagram2, textObj);
@@ -2768,7 +2737,7 @@ var drawMessage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
     if (conf.rightAngles) {
       line = diagram2.append("path").attr(
         "d",
-        `M  ${startx},${lineStartY} H ${startx + _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width / 2, textWidth / 2)} V ${lineStartY + 25} H ${startx}`
+        `M  ${startx},${lineStartY} H ${startx + _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width / 2, textWidth / 2)} V ${lineStartY + 25} H ${startx}`
       );
     } else {
       line = diagram2.append("path").attr(
@@ -2791,7 +2760,7 @@ var drawMessage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   }
   let url = "";
   if (conf.arrowMarkerAbsolute) {
-    url = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getUrl */ .ID)(true);
+    url = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getUrl */ .ID)(true);
   }
   line.attr("stroke-width", 2);
   line.attr("stroke", "none");
@@ -2810,11 +2779,20 @@ var drawMessage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
     line.attr("marker-end", "url(" + url + "#crosshead)");
   }
   if (sequenceVisible || conf.showSequenceNumbers) {
-    line.attr("marker-start", "url(" + url + "#sequencenumber)");
+    const isBidirectional = type === diagObj.db.LINETYPE.BIDIRECTIONAL_SOLID || type === diagObj.db.LINETYPE.BIDIRECTIONAL_DOTTED;
+    if (isBidirectional) {
+      const SEQUENCE_NUMBER_RADIUS = 6;
+      if (startx < stopx) {
+        line.attr("x1", startx + 2 * SEQUENCE_NUMBER_RADIUS);
+      } else {
+        line.attr("x1", startx + SEQUENCE_NUMBER_RADIUS);
+      }
+    }
+    diagram2.append("line").attr("x1", startx).attr("y1", lineStartY).attr("x2", startx).attr("y2", lineStartY).attr("stroke-width", 0).attr("marker-start", "url(" + url + "#sequencenumber)");
     diagram2.append("text").attr("x", startx).attr("y", lineStartY + 4).attr("font-family", "sans-serif").attr("font-size", "12px").attr("text-anchor", "middle").attr("class", "sequenceNumber").text(sequenceIndex);
   }
 }, "drawMessage");
-var addActorRenderingData = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(diagram2, actors, createdActors, actorKeys, verticalPos, messages, isFooter) {
+var addActorRenderingData = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(diagram2, actors, createdActors, actorKeys, verticalPos, messages, isFooter) {
   let prevWidth = 0;
   let prevMargin = 0;
   let prevBox = void 0;
@@ -2836,9 +2814,9 @@ var addActorRenderingData = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPO
       prevMargin += box.margin;
     }
     actor.width = actor.width || conf.width;
-    actor.height = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actor.height || conf.height, conf.height);
+    actor.height = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actor.height || conf.height, conf.height);
     actor.margin = actor.margin || conf.actorMargin;
-    maxHeight = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, actor.height);
+    maxHeight = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, actor.height);
     if (createdActors.get(actor.name)) {
       prevMargin += actor.width / 2;
     }
@@ -2858,7 +2836,7 @@ var addActorRenderingData = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPO
   }
   bounds.bumpVerticalPos(maxHeight);
 }, "addActorRenderingData");
-var drawActors = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(diagram2, actors, actorKeys, isFooter) {
+var drawActors = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(diagram2, actors, actorKeys, isFooter) {
   if (!isFooter) {
     for (const actorKey of actorKeys) {
       const actor = actors.get(actorKey);
@@ -2873,12 +2851,12 @@ var drawActors = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
         actor.stopy = bounds.getVerticalPos();
       }
       const height = await svgDraw_default.drawActor(diagram2, actor, conf, true);
-      maxHeight = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, height);
+      maxHeight = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, height);
     }
     bounds.bumpVerticalPos(maxHeight + conf.boxMargin);
   }
 }, "drawActors");
-var drawActorsPopup = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(diagram2, actors, actorKeys, doc) {
+var drawActorsPopup = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(diagram2, actors, actorKeys, doc) {
   let maxHeight = 0;
   let maxWidth = 0;
   for (const actorKey of actorKeys) {
@@ -2901,8 +2879,8 @@ var drawActorsPopup = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_M
   }
   return { maxHeight, maxWidth };
 }, "drawActorsPopup");
-var setConf = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(cnf) {
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .assignWithDepth_default */ .hH)(conf, cnf);
+var setConf = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(cnf) {
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .assignWithDepth_default */ .hH)(conf, cnf);
   if (cnf.fontFamily) {
     conf.actorFontFamily = conf.noteFontFamily = conf.messageFontFamily = cnf.fontFamily;
   }
@@ -2913,23 +2891,23 @@ var setConf = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3_
     conf.actorFontWeight = conf.noteFontWeight = conf.messageFontWeight = cnf.fontWeight;
   }
 }, "setConf");
-var actorActivations = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actor) {
+var actorActivations = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actor) {
   return bounds.activations.filter(function(activation) {
     return activation.actor === actor;
   });
 }, "actorActivations");
-var activationBounds = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actor, actors) {
+var activationBounds = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actor, actors) {
   const actorObj = actors.get(actor);
   const activations = actorActivations(actor);
   const left = activations.reduce(
     function(acc, activation) {
-      return _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(acc, activation.startx);
+      return _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(acc, activation.startx);
     },
     actorObj.x + actorObj.width / 2 - 1
   );
   const right = activations.reduce(
     function(acc, activation) {
-      return _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(acc, activation.stopx);
+      return _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(acc, activation.stopx);
     },
     actorObj.x + actorObj.width / 2 + 1
   );
@@ -2941,18 +2919,18 @@ function adjustLoopHeightForWrap(loopWidths, msg, preMargin, postMargin, addLoop
   if (msg.id && msg.message && loopWidths[msg.id]) {
     const loopWidth = loopWidths[msg.id].width;
     const textConf = messageFont(conf);
-    msg.message = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(`[${msg.message}]`, loopWidth - 2 * conf.wrapPadding, textConf);
+    msg.message = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(`[${msg.message}]`, loopWidth - 2 * conf.wrapPadding, textConf);
     msg.width = loopWidth;
     msg.wrap = true;
-    const textDims = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(msg.message, textConf);
-    const totalOffset = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(textDims.height, conf.labelBoxHeight);
+    const textDims = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(msg.message, textConf);
+    const totalOffset = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(textDims.height, conf.labelBoxHeight);
     heightAdjust = postMargin + totalOffset;
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`${totalOffset} - ${msg.message}`);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`${totalOffset} - ${msg.message}`);
   }
   addLoopFn(msg);
   bounds.bumpVerticalPos(heightAdjust);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(adjustLoopHeightForWrap, "adjustLoopHeightForWrap");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(adjustLoopHeightForWrap, "adjustLoopHeightForWrap");
 function adjustCreatedDestroyedData(msg, msgModel, lineStartY, index, actors, createdActors, destroyedActors) {
   function receiverAdjustment(actor, adjustment) {
     if (actor.x < actors.get(msg.from).x) {
@@ -2973,7 +2951,7 @@ function adjustCreatedDestroyedData(msg, msgModel, lineStartY, index, actors, cr
       msgModel.stopx = msgModel.stopx - adjustment;
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(receiverAdjustment, "receiverAdjustment");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(receiverAdjustment, "receiverAdjustment");
   function senderAdjustment(actor, adjustment) {
     if (actor.x < actors.get(msg.to).x) {
       bounds.insert(
@@ -2993,7 +2971,7 @@ function adjustCreatedDestroyedData(msg, msgModel, lineStartY, index, actors, cr
       msgModel.startx = msgModel.startx - adjustment;
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(senderAdjustment, "senderAdjustment");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(senderAdjustment, "senderAdjustment");
   if (createdActors.get(msg.to) == index) {
     const actor = actors.get(msg.to);
     const adjustment = actor.type == "actor" ? ACTOR_TYPE_WIDTH / 2 + 3 : actor.width / 2 + 3;
@@ -3018,9 +2996,9 @@ function adjustCreatedDestroyedData(msg, msgModel, lineStartY, index, actors, cr
     bounds.bumpVerticalPos(actor.height / 2);
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(adjustCreatedDestroyedData, "adjustCreatedDestroyedData");
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(_text, id, _version, diagObj) {
-  const { securityLevel, sequence } = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(adjustCreatedDestroyedData, "adjustCreatedDestroyedData");
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(_text, id, _version, diagObj) {
+  const { securityLevel, sequence } = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
   conf = sequence;
   let sandboxElement;
   if (securityLevel === "sandbox") {
@@ -3029,7 +3007,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
   const root = securityLevel === "sandbox" ? (0,d3__WEBPACK_IMPORTED_MODULE_4__/* .select */ .Ltv)(sandboxElement.nodes()[0].contentDocument.body) : (0,d3__WEBPACK_IMPORTED_MODULE_4__/* .select */ .Ltv)("body");
   const doc = securityLevel === "sandbox" ? sandboxElement.nodes()[0].contentDocument : document;
   bounds.init();
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(diagObj.db);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(diagObj.db);
   const diagram2 = securityLevel === "sandbox" ? root.select(`[id="${id}"]`) : (0,d3__WEBPACK_IMPORTED_MODULE_4__/* .select */ .Ltv)(`[id="${id}"]`);
   const actors = diagObj.db.getActors();
   const createdActors = diagObj.db.getCreatedActors();
@@ -3080,7 +3058,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
     );
     bounds.insert(activationData.startx, verticalPos - 10, activationData.stopx, verticalPos);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(activeEnd, "activeEnd");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(activeEnd, "activeEnd");
   let sequenceIndex = 1;
   let sequenceIndexStep = 1;
   const messagesToDraw = [];
@@ -3262,7 +3240,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
           messagesToDraw.push({ messageModel: msgModel, lineStartY });
           bounds.models.addMessage(msgModel);
         } catch (e) {
-          _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while drawing message", e);
+          _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while drawing message", e);
         }
     }
     if ([
@@ -3281,8 +3259,8 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
     }
     index++;
   }
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("createdActors", createdActors);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("destroyedActors", destroyedActors);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("createdActors", createdActors);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("destroyedActors", destroyedActors);
   await drawActors(diagram2, actors, actorKeys, false);
   for (const e of messagesToDraw) {
     await drawMessage(diagram2, e.messageModel, e.lineStartY, diagObj);
@@ -3335,13 +3313,13 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
   if (title) {
     diagram2.append("text").text(title).attr("x", (box.stopx - box.startx) / 2 - 2 * conf.diagramMarginX).attr("y", -25);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .configureSvgSize */ .a$)(diagram2, height, width, conf.useMaxWidth);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .configureSvgSize */ .a$)(diagram2, height, width, conf.useMaxWidth);
   const extraVertForTitle = title ? 40 : 0;
   diagram2.attr(
     "viewBox",
     box.startx - conf.diagramMarginX + " -" + (conf.diagramMarginY + extraVertForTitle) + " " + width + " " + (height + extraVertForTitle)
   );
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`models:`, bounds.models);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`models:`, bounds.models);
 }, "draw");
 async function getMaxMessageWidthPerActor(actors, messages, diagObj) {
   const maxMessageWidthPerActor = {};
@@ -3357,47 +3335,47 @@ async function getMaxMessageWidthPerActor(actors, messages, diagObj) {
       const isNote = msg.placement !== void 0;
       const isMessage = !isNote;
       const textFont = isNote ? noteFont(conf) : messageFont(conf);
-      const wrappedMessage = msg.wrap ? _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(msg.message, conf.width - 2 * conf.wrapPadding, textFont) : msg.message;
-      const messageDimensions = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(wrappedMessage) ? await (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(msg.message, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(wrappedMessage, textFont);
+      const wrappedMessage = msg.wrap ? _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(msg.message, conf.width - 2 * conf.wrapPadding, textFont) : msg.message;
+      const messageDimensions = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(wrappedMessage) ? await (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(msg.message, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(wrappedMessage, textFont);
       const messageWidth = messageDimensions.width + 2 * conf.wrapPadding;
       if (isMessage && msg.from === actor.nextActor) {
-        maxMessageWidthPerActor[msg.to] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+        maxMessageWidthPerActor[msg.to] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
           maxMessageWidthPerActor[msg.to] || 0,
           messageWidth
         );
       } else if (isMessage && msg.from === actor.prevActor) {
-        maxMessageWidthPerActor[msg.from] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+        maxMessageWidthPerActor[msg.from] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
           maxMessageWidthPerActor[msg.from] || 0,
           messageWidth
         );
       } else if (isMessage && msg.from === msg.to) {
-        maxMessageWidthPerActor[msg.from] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+        maxMessageWidthPerActor[msg.from] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
           maxMessageWidthPerActor[msg.from] || 0,
           messageWidth / 2
         );
-        maxMessageWidthPerActor[msg.to] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+        maxMessageWidthPerActor[msg.to] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
           maxMessageWidthPerActor[msg.to] || 0,
           messageWidth / 2
         );
       } else if (msg.placement === diagObj.db.PLACEMENT.RIGHTOF) {
-        maxMessageWidthPerActor[msg.from] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+        maxMessageWidthPerActor[msg.from] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
           maxMessageWidthPerActor[msg.from] || 0,
           messageWidth
         );
       } else if (msg.placement === diagObj.db.PLACEMENT.LEFTOF) {
-        maxMessageWidthPerActor[actor.prevActor] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+        maxMessageWidthPerActor[actor.prevActor] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
           maxMessageWidthPerActor[actor.prevActor] || 0,
           messageWidth
         );
       } else if (msg.placement === diagObj.db.PLACEMENT.OVER) {
         if (actor.prevActor) {
-          maxMessageWidthPerActor[actor.prevActor] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+          maxMessageWidthPerActor[actor.prevActor] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
             maxMessageWidthPerActor[actor.prevActor] || 0,
             messageWidth / 2
           );
         }
         if (actor.nextActor) {
-          maxMessageWidthPerActor[msg.from] = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+          maxMessageWidthPerActor[msg.from] = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
             maxMessageWidthPerActor[msg.from] || 0,
             messageWidth / 2
           );
@@ -3405,15 +3383,15 @@ async function getMaxMessageWidthPerActor(actors, messages, diagObj) {
       }
     }
   }
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("maxMessageWidthPerActor:", maxMessageWidthPerActor);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("maxMessageWidthPerActor:", maxMessageWidthPerActor);
   return maxMessageWidthPerActor;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getMaxMessageWidthPerActor, "getMaxMessageWidthPerActor");
-var getRequiredPopupWidth = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actor) {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getMaxMessageWidthPerActor, "getMaxMessageWidthPerActor");
+var getRequiredPopupWidth = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(actor) {
   let requiredPopupWidth = 0;
   const textFont = actorFont(conf);
   for (const key in actor.links) {
-    const labelDimensions = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(key, textFont);
+    const labelDimensions = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(key, textFont);
     const labelWidth = labelDimensions.width + 2 * conf.wrapPadding + 2 * conf.boxMargin;
     if (requiredPopupWidth < labelWidth) {
       requiredPopupWidth = labelWidth;
@@ -3426,16 +3404,16 @@ async function calculateActorMargins(actors, actorToMessageWidth, boxes) {
   for (const prop of actors.keys()) {
     const actor = actors.get(prop);
     if (actor.wrap) {
-      actor.description = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(
+      actor.description = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(
         actor.description,
         conf.width - 2 * conf.wrapPadding,
         actorFont(conf)
       );
     }
-    const actDims = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(actor.description) ? await (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(actor.description, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(actor.description, actorFont(conf));
-    actor.width = actor.wrap ? conf.width : _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, actDims.width + 2 * conf.wrapPadding);
-    actor.height = actor.wrap ? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actDims.height, conf.height) : conf.height;
-    maxHeight = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, actor.height);
+    const actDims = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(actor.description) ? await (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(actor.description, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(actor.description, actorFont(conf));
+    actor.width = actor.wrap ? conf.width : _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, actDims.width + 2 * conf.wrapPadding);
+    actor.height = actor.wrap ? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actDims.height, conf.height) : conf.height;
+    maxHeight = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, actor.height);
   }
   for (const actorKey in actorToMessageWidth) {
     const actor = actors.get(actorKey);
@@ -3446,12 +3424,12 @@ async function calculateActorMargins(actors, actorToMessageWidth, boxes) {
     if (!nextActor) {
       const messageWidth2 = actorToMessageWidth[actorKey];
       const actorWidth2 = messageWidth2 + conf.actorMargin - actor.width / 2;
-      actor.margin = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actorWidth2, conf.actorMargin);
+      actor.margin = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actorWidth2, conf.actorMargin);
       continue;
     }
     const messageWidth = actorToMessageWidth[actorKey];
     const actorWidth = messageWidth + conf.actorMargin - actor.width / 2 - nextActor.width / 2;
-    actor.margin = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actorWidth, conf.actorMargin);
+    actor.margin = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(actorWidth, conf.actorMargin);
   }
   let maxBoxHeight = 0;
   boxes.forEach((box) => {
@@ -3461,11 +3439,11 @@ async function calculateActorMargins(actors, actorToMessageWidth, boxes) {
     }, 0);
     totalWidth -= 2 * conf.boxTextMargin;
     if (box.wrap) {
-      box.name = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(box.name, totalWidth - 2 * conf.wrapPadding, textFont);
+      box.name = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(box.name, totalWidth - 2 * conf.wrapPadding, textFont);
     }
-    const boxMsgDimensions = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(box.name, textFont);
-    maxBoxHeight = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(boxMsgDimensions.height, maxBoxHeight);
-    const minWidth = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(totalWidth, boxMsgDimensions.width + 2 * conf.wrapPadding);
+    const boxMsgDimensions = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(box.name, textFont);
+    maxBoxHeight = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(boxMsgDimensions.height, maxBoxHeight);
+    const minWidth = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(totalWidth, boxMsgDimensions.width + 2 * conf.wrapPadding);
     box.margin = conf.boxTextMargin;
     if (totalWidth < minWidth) {
       const missing = (minWidth - totalWidth) / 2;
@@ -3473,21 +3451,21 @@ async function calculateActorMargins(actors, actorToMessageWidth, boxes) {
     }
   });
   boxes.forEach((box) => box.textMaxHeight = maxBoxHeight);
-  return _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, conf.height);
+  return _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(maxHeight, conf.height);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(calculateActorMargins, "calculateActorMargins");
-var buildNoteModel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(msg, actors, diagObj) {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(calculateActorMargins, "calculateActorMargins");
+var buildNoteModel = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(msg, actors, diagObj) {
   const fromActor = actors.get(msg.from);
   const toActor = actors.get(msg.to);
   const startx = fromActor.x;
   const stopx = toActor.x;
   const shouldWrap = msg.wrap && msg.message;
-  let textDimensions = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(msg.message) ? await (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(msg.message, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(
-    shouldWrap ? _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(msg.message, conf.width, noteFont(conf)) : msg.message,
+  let textDimensions = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .hasKatex */ .Wi)(msg.message) ? await (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .calculateMathMLDimensions */ .Dl)(msg.message, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)()) : _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(
+    shouldWrap ? _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(msg.message, conf.width, noteFont(conf)) : msg.message,
     noteFont(conf)
   );
   const noteModel = {
-    width: shouldWrap ? conf.width : _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, textDimensions.width + 2 * conf.noteMargin),
+    width: shouldWrap ? conf.width : _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, textDimensions.width + 2 * conf.noteMargin),
     height: 0,
     startx: fromActor.x,
     stopx: 0,
@@ -3496,41 +3474,41 @@ var buildNoteModel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MO
     message: msg.message
   };
   if (msg.placement === diagObj.db.PLACEMENT.RIGHTOF) {
-    noteModel.width = shouldWrap ? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, textDimensions.width) : _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+    noteModel.width = shouldWrap ? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, textDimensions.width) : _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
       fromActor.width / 2 + toActor.width / 2,
       textDimensions.width + 2 * conf.noteMargin
     );
     noteModel.startx = startx + (fromActor.width + conf.actorMargin) / 2;
   } else if (msg.placement === diagObj.db.PLACEMENT.LEFTOF) {
-    noteModel.width = shouldWrap ? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, textDimensions.width + 2 * conf.noteMargin) : _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+    noteModel.width = shouldWrap ? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, textDimensions.width + 2 * conf.noteMargin) : _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
       fromActor.width / 2 + toActor.width / 2,
       textDimensions.width + 2 * conf.noteMargin
     );
     noteModel.startx = startx - noteModel.width + (fromActor.width - conf.actorMargin) / 2;
   } else if (msg.to === msg.from) {
-    textDimensions = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(
-      shouldWrap ? _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(msg.message, _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, fromActor.width), noteFont(conf)) : msg.message,
+    textDimensions = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(
+      shouldWrap ? _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(msg.message, _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, fromActor.width), noteFont(conf)) : msg.message,
       noteFont(conf)
     );
-    noteModel.width = shouldWrap ? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, fromActor.width) : _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(fromActor.width, conf.width, textDimensions.width + 2 * conf.noteMargin);
+    noteModel.width = shouldWrap ? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(conf.width, fromActor.width) : _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(fromActor.width, conf.width, textDimensions.width + 2 * conf.noteMargin);
     noteModel.startx = startx + (fromActor.width - noteModel.width) / 2;
   } else {
     noteModel.width = Math.abs(startx + fromActor.width / 2 - (stopx + toActor.width / 2)) + conf.actorMargin;
     noteModel.startx = startx < stopx ? startx + fromActor.width / 2 - conf.actorMargin / 2 : stopx + toActor.width / 2 - conf.actorMargin / 2;
   }
   if (shouldWrap) {
-    noteModel.message = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(
+    noteModel.message = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(
       msg.message,
       noteModel.width - 2 * conf.wrapPadding,
       noteFont(conf)
     );
   }
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(
     `NM:[${noteModel.startx},${noteModel.stopx},${noteModel.starty},${noteModel.stopy}:${noteModel.width},${noteModel.height}=${msg.message}]`
   );
   return noteModel;
 }, "buildNoteModel");
-var buildMessageModel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(msg, actors, diagObj) {
+var buildMessageModel = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(msg, actors, diagObj) {
   if (![
     diagObj.db.LINETYPE.SOLID_OPEN,
     diagObj.db.LINETYPE.DOTTED_OPEN,
@@ -3551,7 +3529,7 @@ var buildMessageModel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   let startx = isArrowToRight ? fromRight : fromLeft;
   let stopx = isArrowToRight ? toLeft : toRight;
   const isArrowToActivation = Math.abs(toLeft - toRight) > 2;
-  const adjustValue = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((value) => {
+  const adjustValue = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((value) => {
     return isArrowToRight ? -value : value;
   }, "adjustValue");
   if (msg.from === msg.to) {
@@ -3572,15 +3550,15 @@ var buildMessageModel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   const allBounds = [fromLeft, fromRight, toLeft, toRight];
   const boundedWidth = Math.abs(startx - stopx);
   if (msg.wrap && msg.message) {
-    msg.message = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(
+    msg.message = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.wrapLabel(
       msg.message,
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(boundedWidth + 2 * conf.wrapPadding, conf.width),
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(boundedWidth + 2 * conf.wrapPadding, conf.width),
       messageFont(conf)
     );
   }
-  const msgDims = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(msg.message, messageFont(conf));
+  const msgDims = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.calculateTextDimensions(msg.message, messageFont(conf));
   return {
-    width: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+    width: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
       msg.wrap ? 0 : msgDims.width + 2 * conf.wrapPadding,
       boundedWidth + 2 * conf.wrapPadding,
       conf.width
@@ -3597,7 +3575,7 @@ var buildMessageModel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
     toBounds: Math.max.apply(null, allBounds)
   };
 }, "buildMessageModel");
-var calculateLoopBounds = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(messages, actors, _maxWidthPerActor, diagObj) {
+var calculateLoopBounds = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(messages, actors, _maxWidthPerActor, diagObj) {
   const loops = {};
   const stack = [];
   let current, noteModel, msgModel;
@@ -3664,9 +3642,9 @@ var calculateLoopBounds = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORT
       msg.noteModel = noteModel;
       stack.forEach((stk) => {
         current = stk;
-        current.from = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(current.from, noteModel.startx);
-        current.to = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.to, noteModel.startx + noteModel.width);
-        current.width = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.width, Math.abs(current.from - current.to)) - conf.labelBoxWidth;
+        current.from = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(current.from, noteModel.startx);
+        current.to = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.to, noteModel.startx + noteModel.width);
+        current.width = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.width, Math.abs(current.from - current.to)) - conf.labelBoxWidth;
       });
     } else {
       msgModel = buildMessageModel(msg, actors, diagObj);
@@ -3677,28 +3655,28 @@ var calculateLoopBounds = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORT
           if (msgModel.startx === msgModel.stopx) {
             const from = actors.get(msg.from);
             const to = actors.get(msg.to);
-            current.from = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(
+            current.from = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(
               from.x - msgModel.width / 2,
               from.x - from.width / 2,
               current.from
             );
-            current.to = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
+            current.to = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(
               to.x + msgModel.width / 2,
               to.x + from.width / 2,
               current.to
             );
-            current.width = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.width, Math.abs(current.to - current.from)) - conf.labelBoxWidth;
+            current.width = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.width, Math.abs(current.to - current.from)) - conf.labelBoxWidth;
           } else {
-            current.from = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(msgModel.startx, current.from);
-            current.to = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(msgModel.stopx, current.to);
-            current.width = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.width, msgModel.width) - conf.labelBoxWidth;
+            current.from = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMin(msgModel.startx, current.from);
+            current.to = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(msgModel.stopx, current.to);
+            current.width = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.getMax(current.width, msgModel.width) - conf.labelBoxWidth;
           }
         });
       }
     }
   }
   bounds.activations = [];
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Loop type widths:", loops);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Loop type widths:", loops);
   return loops;
 }, "calculateLoopBounds");
 var sequenceRenderer_default = {
@@ -3717,16 +3695,47 @@ var diagram = {
   },
   renderer: sequenceRenderer_default,
   styles: styles_default,
-  init: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
+  init: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cnf) => {
     if (!cnf.sequence) {
       cnf.sequence = {};
     }
     if (cnf.wrap) {
       cnf.sequence.wrap = cnf.wrap;
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setConfig2 */ .XV)({ sequence: { wrap: cnf.wrap } });
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setConfig2 */ .XV)({ sequence: { wrap: cnf.wrap } });
     }
   }, "init")
 };
+
+
+
+/***/ }),
+
+/***/ 9116:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   m: () => (/* binding */ ImperativeState)
+/* harmony export */ });
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+
+
+// src/utils/imperativeState.ts
+var ImperativeState = class {
+  /**
+   * @param init - Function that creates the default state.
+   */
+  constructor(init) {
+    this.init = init;
+    this.records = this.init();
+  }
+  static {
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(this, "ImperativeState");
+  }
+  reset() {
+    this.records = this.init();
+  }
+};
+
 
 
 

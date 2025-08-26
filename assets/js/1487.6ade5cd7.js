@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[8665],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[1487],{
 
 /***/ 53:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
@@ -48,7 +48,7 @@ function clone(value) {
 
 /***/ }),
 
-/***/ 8665:
+/***/ 1487:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -59,22 +59,22 @@ __webpack_require__.d(__webpack_exports__, {
   render: () => (/* binding */ render)
 });
 
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-M6DAPIYF.mjs
-var chunk_M6DAPIYF = __webpack_require__(1789);
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-MXNHSMXR.mjs
-var chunk_MXNHSMXR = __webpack_require__(70);
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-JW4RIYDF.mjs
-var chunk_JW4RIYDF = __webpack_require__(6906);
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-AC5SNWB5.mjs
-var chunk_AC5SNWB5 = __webpack_require__(8823);
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-UWXLY5YG.mjs
-var chunk_UWXLY5YG = __webpack_require__(5683);
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-QESNASVV.mjs + 13 modules
-var chunk_QESNASVV = __webpack_require__(8506);
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-55PJQP7W.mjs
-var chunk_55PJQP7W = __webpack_require__(6792);
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-3XYRH5AP.mjs + 3 modules
-var chunk_3XYRH5AP = __webpack_require__(1750);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-NCRKNZAS.mjs
+var chunk_NCRKNZAS = __webpack_require__(2269);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-WH6PBGIT.mjs
+var chunk_WH6PBGIT = __webpack_require__(4120);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-CV3G5MRU.mjs
+var chunk_CV3G5MRU = __webpack_require__(5425);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-JSVUIEYQ.mjs
+var chunk_JSVUIEYQ = __webpack_require__(9423);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-7RNWAQOT.mjs
+var chunk_7RNWAQOT = __webpack_require__(5828);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-62K37W7T.mjs + 13 modules
+var chunk_62K37W7T = __webpack_require__(708);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-U37J5Y7L.mjs
+var chunk_U37J5Y7L = __webpack_require__(8045);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-VIW5F6AA.mjs + 3 modules
+var chunk_VIW5F6AA = __webpack_require__(6936);
 // EXTERNAL MODULE: ./node_modules/dagre-d3-es/src/dagre/index.js + 62 modules
 var dagre = __webpack_require__(2334);
 // EXTERNAL MODULE: ./node_modules/lodash-es/isUndefined.js
@@ -152,7 +152,7 @@ function read(json) {
 
 // EXTERNAL MODULE: ./node_modules/dagre-d3-es/src/graphlib/index.js
 var graphlib = __webpack_require__(697);
-;// ./node_modules/mermaid/dist/chunks/mermaid.core/dagre-JOIXM2OF.mjs
+;// ./node_modules/mermaid/dist/chunks/mermaid.core/dagre-2BBEFEWP.mjs
 
 
 
@@ -173,31 +173,31 @@ var graphlib = __webpack_require__(697);
 var clusterDb = /* @__PURE__ */ new Map();
 var descendants = /* @__PURE__ */ new Map();
 var parents = /* @__PURE__ */ new Map();
-var clear4 = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(() => {
+var clear4 = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(() => {
   descendants.clear();
   parents.clear();
   clusterDb.clear();
 }, "clear");
-var isDescendant = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((id, ancestorId) => {
+var isDescendant = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((id, ancestorId) => {
   const ancestorDescendants = descendants.get(ancestorId) || [];
-  chunk_3XYRH5AP/* log */.Rm.trace("In isDescendant", ancestorId, " ", id, " = ", ancestorDescendants.includes(id));
+  chunk_VIW5F6AA/* log */.Rm.trace("In isDescendant", ancestorId, " ", id, " = ", ancestorDescendants.includes(id));
   return ancestorDescendants.includes(id);
 }, "isDescendant");
-var edgeInCluster = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((edge, clusterId) => {
+var edgeInCluster = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((edge, clusterId) => {
   const clusterDescendants = descendants.get(clusterId) || [];
-  chunk_3XYRH5AP/* log */.Rm.info("Descendants of ", clusterId, " is ", clusterDescendants);
-  chunk_3XYRH5AP/* log */.Rm.info("Edge is ", edge);
+  chunk_VIW5F6AA/* log */.Rm.info("Descendants of ", clusterId, " is ", clusterDescendants);
+  chunk_VIW5F6AA/* log */.Rm.info("Edge is ", edge);
   if (edge.v === clusterId || edge.w === clusterId) {
     return false;
   }
   if (!clusterDescendants) {
-    chunk_3XYRH5AP/* log */.Rm.debug("Tilt, ", clusterId, ",not in descendants");
+    chunk_VIW5F6AA/* log */.Rm.debug("Tilt, ", clusterId, ",not in descendants");
     return false;
   }
   return clusterDescendants.includes(edge.v) || isDescendant(edge.v, clusterId) || isDescendant(edge.w, clusterId) || clusterDescendants.includes(edge.w);
 }, "edgeInCluster");
-var copy = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((clusterId, graph, newGraph, rootId) => {
-  chunk_3XYRH5AP/* log */.Rm.warn(
+var copy = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((clusterId, graph, newGraph, rootId) => {
+  chunk_VIW5F6AA/* log */.Rm.warn(
     "Copying children of ",
     clusterId,
     "root",
@@ -210,24 +210,24 @@ var copy = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((clusterId, graph, 
   if (clusterId !== rootId) {
     nodes.push(clusterId);
   }
-  chunk_3XYRH5AP/* log */.Rm.warn("Copying (nodes) clusterId", clusterId, "nodes", nodes);
+  chunk_VIW5F6AA/* log */.Rm.warn("Copying (nodes) clusterId", clusterId, "nodes", nodes);
   nodes.forEach((node) => {
     if (graph.children(node).length > 0) {
       copy(node, graph, newGraph, rootId);
     } else {
       const data = graph.node(node);
-      chunk_3XYRH5AP/* log */.Rm.info("cp ", node, " to ", rootId, " with parent ", clusterId);
+      chunk_VIW5F6AA/* log */.Rm.info("cp ", node, " to ", rootId, " with parent ", clusterId);
       newGraph.setNode(node, data);
       if (rootId !== graph.parent(node)) {
-        chunk_3XYRH5AP/* log */.Rm.warn("Setting parent", node, graph.parent(node));
+        chunk_VIW5F6AA/* log */.Rm.warn("Setting parent", node, graph.parent(node));
         newGraph.setParent(node, graph.parent(node));
       }
       if (clusterId !== rootId && node !== clusterId) {
-        chunk_3XYRH5AP/* log */.Rm.debug("Setting parent", node, clusterId);
+        chunk_VIW5F6AA/* log */.Rm.debug("Setting parent", node, clusterId);
         newGraph.setParent(node, clusterId);
       } else {
-        chunk_3XYRH5AP/* log */.Rm.info("In copy ", clusterId, "root", rootId, "data", graph.node(clusterId), rootId);
-        chunk_3XYRH5AP/* log */.Rm.debug(
+        chunk_VIW5F6AA/* log */.Rm.info("In copy ", clusterId, "root", rootId, "data", graph.node(clusterId), rootId);
+        chunk_VIW5F6AA/* log */.Rm.debug(
           "Not Setting parent for node=",
           node,
           "cluster!==rootId",
@@ -237,18 +237,18 @@ var copy = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((clusterId, graph, 
         );
       }
       const edges = graph.edges(node);
-      chunk_3XYRH5AP/* log */.Rm.debug("Copying Edges", edges);
+      chunk_VIW5F6AA/* log */.Rm.debug("Copying Edges", edges);
       edges.forEach((edge) => {
-        chunk_3XYRH5AP/* log */.Rm.info("Edge", edge);
+        chunk_VIW5F6AA/* log */.Rm.info("Edge", edge);
         const data2 = graph.edge(edge.v, edge.w, edge.name);
-        chunk_3XYRH5AP/* log */.Rm.info("Edge data", data2, rootId);
+        chunk_VIW5F6AA/* log */.Rm.info("Edge data", data2, rootId);
         try {
           if (edgeInCluster(edge, rootId)) {
-            chunk_3XYRH5AP/* log */.Rm.info("Copying as ", edge.v, edge.w, data2, edge.name);
+            chunk_VIW5F6AA/* log */.Rm.info("Copying as ", edge.v, edge.w, data2, edge.name);
             newGraph.setEdge(edge.v, edge.w, data2, edge.name);
-            chunk_3XYRH5AP/* log */.Rm.info("newGraph edges ", newGraph.edges(), newGraph.edge(newGraph.edges()[0]));
+            chunk_VIW5F6AA/* log */.Rm.info("newGraph edges ", newGraph.edges(), newGraph.edge(newGraph.edges()[0]));
           } else {
-            chunk_3XYRH5AP/* log */.Rm.info(
+            chunk_VIW5F6AA/* log */.Rm.info(
               "Skipping copy of edge ",
               edge.v,
               "-->",
@@ -260,15 +260,15 @@ var copy = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((clusterId, graph, 
             );
           }
         } catch (e) {
-          chunk_3XYRH5AP/* log */.Rm.error(e);
+          chunk_VIW5F6AA/* log */.Rm.error(e);
         }
       });
     }
-    chunk_3XYRH5AP/* log */.Rm.debug("Removing node", node);
+    chunk_VIW5F6AA/* log */.Rm.debug("Removing node", node);
     graph.removeNode(node);
   });
 }, "copy");
-var extractDescendants = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((id, graph) => {
+var extractDescendants = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((id, graph) => {
   const children = graph.children(id);
   let res = [...children];
   for (const child of children) {
@@ -277,7 +277,7 @@ var extractDescendants = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((id, 
   }
   return res;
 }, "extractDescendants");
-var findCommonEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, id1, id2) => {
+var findCommonEdges = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((graph, id1, id2) => {
   const edges1 = graph.edges().filter((edge) => edge.v === id1 || edge.w === id1);
   const edges2 = graph.edges().filter((edge) => edge.v === id2 || edge.w === id2);
   const edges1Prim = edges1.map((edge) => {
@@ -291,9 +291,9 @@ var findCommonEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, 
   });
   return result;
 }, "findCommonEdges");
-var findNonClusterChild = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((id, graph, clusterId) => {
+var findNonClusterChild = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((id, graph, clusterId) => {
   const children = graph.children(id);
-  chunk_3XYRH5AP/* log */.Rm.trace("Searching children of id ", id, children);
+  chunk_VIW5F6AA/* log */.Rm.trace("Searching children of id ", id, children);
   if (children.length < 1) {
     return id;
   }
@@ -311,7 +311,7 @@ var findNonClusterChild = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((id,
   }
   return reserve;
 }, "findNonClusterChild");
-var getAnchorId = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((id) => {
+var getAnchorId = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((id) => {
   if (!clusterDb.has(id)) {
     return id;
   }
@@ -323,17 +323,17 @@ var getAnchorId = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((id) => {
   }
   return id;
 }, "getAnchorId");
-var adjustClustersAndEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth) => {
+var adjustClustersAndEdges = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((graph, depth) => {
   if (!graph || depth > 10) {
-    chunk_3XYRH5AP/* log */.Rm.debug("Opting out, no graph ");
+    chunk_VIW5F6AA/* log */.Rm.debug("Opting out, no graph ");
     return;
   } else {
-    chunk_3XYRH5AP/* log */.Rm.debug("Opting in, graph ");
+    chunk_VIW5F6AA/* log */.Rm.debug("Opting in, graph ");
   }
   graph.nodes().forEach(function(id) {
     const children = graph.children(id);
     if (children.length > 0) {
-      chunk_3XYRH5AP/* log */.Rm.warn(
+      chunk_VIW5F6AA/* log */.Rm.warn(
         "Cluster identified",
         id,
         " Replacement id in edges: ",
@@ -347,18 +347,18 @@ var adjustClustersAndEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((
     const children = graph.children(id);
     const edges = graph.edges();
     if (children.length > 0) {
-      chunk_3XYRH5AP/* log */.Rm.debug("Cluster identified", id, descendants);
+      chunk_VIW5F6AA/* log */.Rm.debug("Cluster identified", id, descendants);
       edges.forEach((edge) => {
         const d1 = isDescendant(edge.v, id);
         const d2 = isDescendant(edge.w, id);
         if (d1 ^ d2) {
-          chunk_3XYRH5AP/* log */.Rm.warn("Edge: ", edge, " leaves cluster ", id);
-          chunk_3XYRH5AP/* log */.Rm.warn("Descendants of XXX ", id, ": ", descendants.get(id));
+          chunk_VIW5F6AA/* log */.Rm.warn("Edge: ", edge, " leaves cluster ", id);
+          chunk_VIW5F6AA/* log */.Rm.warn("Descendants of XXX ", id, ": ", descendants.get(id));
           clusterDb.get(id).externalConnections = true;
         }
       });
     } else {
-      chunk_3XYRH5AP/* log */.Rm.debug("Not a cluster ", id, descendants);
+      chunk_VIW5F6AA/* log */.Rm.debug("Not a cluster ", id, descendants);
     }
   });
   for (let id of clusterDb.keys()) {
@@ -370,11 +370,11 @@ var adjustClustersAndEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((
   }
   graph.edges().forEach(function(e) {
     const edge = graph.edge(e);
-    chunk_3XYRH5AP/* log */.Rm.warn("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(e));
-    chunk_3XYRH5AP/* log */.Rm.warn("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(graph.edge(e)));
+    chunk_VIW5F6AA/* log */.Rm.warn("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(e));
+    chunk_VIW5F6AA/* log */.Rm.warn("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(graph.edge(e)));
     let v = e.v;
     let w = e.w;
-    chunk_3XYRH5AP/* log */.Rm.warn(
+    chunk_VIW5F6AA/* log */.Rm.warn(
       "Fix XXX",
       clusterDb,
       "ids:",
@@ -386,7 +386,7 @@ var adjustClustersAndEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((
       clusterDb.get(e.w)
     );
     if (clusterDb.get(e.v) || clusterDb.get(e.w)) {
-      chunk_3XYRH5AP/* log */.Rm.warn("Fixing and trying - removing XXX", e.v, e.w, e.name);
+      chunk_VIW5F6AA/* log */.Rm.warn("Fixing and trying - removing XXX", e.v, e.w, e.name);
       v = getAnchorId(e.v);
       w = getAnchorId(e.w);
       graph.removeEdge(e.v, e.w, e.name);
@@ -400,18 +400,18 @@ var adjustClustersAndEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((
         clusterDb.get(parent).externalConnections = true;
         edge.toCluster = e.w;
       }
-      chunk_3XYRH5AP/* log */.Rm.warn("Fix Replacing with XXX", v, w, e.name);
+      chunk_VIW5F6AA/* log */.Rm.warn("Fix Replacing with XXX", v, w, e.name);
       graph.setEdge(v, w, edge, e.name);
     }
   });
-  chunk_3XYRH5AP/* log */.Rm.warn("Adjusted Graph", write(graph));
+  chunk_VIW5F6AA/* log */.Rm.warn("Adjusted Graph", write(graph));
   extractor(graph, 0);
-  chunk_3XYRH5AP/* log */.Rm.trace(clusterDb);
+  chunk_VIW5F6AA/* log */.Rm.trace(clusterDb);
 }, "adjustClustersAndEdges");
-var extractor = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth) => {
-  chunk_3XYRH5AP/* log */.Rm.warn("extractor - ", depth, write(graph), graph.children("D"));
+var extractor = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((graph, depth) => {
+  chunk_VIW5F6AA/* log */.Rm.warn("extractor - ", depth, write(graph), graph.children("D"));
   if (depth > 10) {
-    chunk_3XYRH5AP/* log */.Rm.error("Bailing out");
+    chunk_VIW5F6AA/* log */.Rm.error("Bailing out");
     return;
   }
   let nodes = graph.nodes();
@@ -421,12 +421,12 @@ var extractor = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth)
     hasChildren = hasChildren || children.length > 0;
   }
   if (!hasChildren) {
-    chunk_3XYRH5AP/* log */.Rm.debug("Done, no node has children", graph.nodes());
+    chunk_VIW5F6AA/* log */.Rm.debug("Done, no node has children", graph.nodes());
     return;
   }
-  chunk_3XYRH5AP/* log */.Rm.debug("Nodes = ", nodes, depth);
+  chunk_VIW5F6AA/* log */.Rm.debug("Nodes = ", nodes, depth);
   for (const node of nodes) {
-    chunk_3XYRH5AP/* log */.Rm.debug(
+    chunk_VIW5F6AA/* log */.Rm.debug(
       "Extracting node",
       node,
       clusterDb,
@@ -438,9 +438,9 @@ var extractor = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth)
       depth
     );
     if (!clusterDb.has(node)) {
-      chunk_3XYRH5AP/* log */.Rm.debug("Not a cluster", node, depth);
+      chunk_VIW5F6AA/* log */.Rm.debug("Not a cluster", node, depth);
     } else if (!clusterDb.get(node).externalConnections && graph.children(node) && graph.children(node).length > 0) {
-      chunk_3XYRH5AP/* log */.Rm.warn(
+      chunk_VIW5F6AA/* log */.Rm.warn(
         "Cluster without external connections, without a parent and with children",
         node,
         depth
@@ -449,7 +449,7 @@ var extractor = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth)
       let dir = graphSettings.rankdir === "TB" ? "LR" : "TB";
       if (clusterDb.get(node)?.clusterData?.dir) {
         dir = clusterDb.get(node).clusterData.dir;
-        chunk_3XYRH5AP/* log */.Rm.warn("Fixing dir", clusterDb.get(node).clusterData.dir, dir);
+        chunk_VIW5F6AA/* log */.Rm.warn("Fixing dir", clusterDb.get(node).clusterData.dir, dir);
       }
       const clusterGraph = new graphlib/* Graph */.T({
         multigraph: true,
@@ -463,7 +463,7 @@ var extractor = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth)
       }).setDefaultEdgeLabel(function() {
         return {};
       });
-      chunk_3XYRH5AP/* log */.Rm.warn("Old graph before copy", write(graph));
+      chunk_VIW5F6AA/* log */.Rm.warn("Old graph before copy", write(graph));
       copy(node, graph, clusterGraph, node);
       graph.setNode(node, {
         clusterNode: true,
@@ -472,10 +472,10 @@ var extractor = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth)
         label: clusterDb.get(node).label,
         graph: clusterGraph
       });
-      chunk_3XYRH5AP/* log */.Rm.warn("New graph after copy node: (", node, ")", write(clusterGraph));
-      chunk_3XYRH5AP/* log */.Rm.debug("Old graph after copy", write(graph));
+      chunk_VIW5F6AA/* log */.Rm.warn("New graph after copy node: (", node, ")", write(clusterGraph));
+      chunk_VIW5F6AA/* log */.Rm.debug("Old graph after copy", write(graph));
     } else {
-      chunk_3XYRH5AP/* log */.Rm.warn(
+      chunk_VIW5F6AA/* log */.Rm.warn(
         "Cluster ** ",
         node,
         " **not meeting the criteria !externalConnections:",
@@ -487,20 +487,20 @@ var extractor = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, depth)
         graph.children("D"),
         depth
       );
-      chunk_3XYRH5AP/* log */.Rm.debug(clusterDb);
+      chunk_VIW5F6AA/* log */.Rm.debug(clusterDb);
     }
   }
   nodes = graph.nodes();
-  chunk_3XYRH5AP/* log */.Rm.warn("New list of nodes", nodes);
+  chunk_VIW5F6AA/* log */.Rm.warn("New list of nodes", nodes);
   for (const node of nodes) {
     const data = graph.node(node);
-    chunk_3XYRH5AP/* log */.Rm.warn(" Now next level", node, data);
+    chunk_VIW5F6AA/* log */.Rm.warn(" Now next level", node, data);
     if (data?.clusterNode) {
       extractor(data.graph, depth + 1);
     }
   }
 }, "extractor");
-var sorter = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, nodes) => {
+var sorter = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((graph, nodes) => {
   if (nodes.length === 0) {
     return [];
   }
@@ -512,21 +512,21 @@ var sorter = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph, nodes) =>
   });
   return result;
 }, "sorter");
-var sortNodesByHierarchy = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((graph) => sorter(graph, graph.children()), "sortNodesByHierarchy");
+var sortNodesByHierarchy = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((graph) => sorter(graph, graph.children()), "sortNodesByHierarchy");
 
 // src/rendering-util/layout-algorithms/dagre/index.js
-var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_elem, graph, diagramType, id, parentCluster, siteConfig) => {
-  chunk_3XYRH5AP/* log */.Rm.warn("Graph in recursive render:XAX", write(graph), parentCluster);
+var recursiveRender = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(async (_elem, graph, diagramType, id, parentCluster, siteConfig) => {
+  chunk_VIW5F6AA/* log */.Rm.warn("Graph in recursive render:XAX", write(graph), parentCluster);
   const dir = graph.graph().rankdir;
-  chunk_3XYRH5AP/* log */.Rm.trace("Dir in recursive render - dir:", dir);
+  chunk_VIW5F6AA/* log */.Rm.trace("Dir in recursive render - dir:", dir);
   const elem = _elem.insert("g").attr("class", "root");
   if (!graph.nodes()) {
-    chunk_3XYRH5AP/* log */.Rm.info("No nodes found for", graph);
+    chunk_VIW5F6AA/* log */.Rm.info("No nodes found for", graph);
   } else {
-    chunk_3XYRH5AP/* log */.Rm.info("Recursive render XXX", graph.nodes());
+    chunk_VIW5F6AA/* log */.Rm.info("Recursive render XXX", graph.nodes());
   }
   if (graph.edges().length > 0) {
-    chunk_3XYRH5AP/* log */.Rm.info("Recursive edges", graph.edge(graph.edges()[0]));
+    chunk_VIW5F6AA/* log */.Rm.info("Recursive edges", graph.edge(graph.edges()[0]));
   }
   const clusters = elem.insert("g").attr("class", "clusters");
   const edgePaths = elem.insert("g").attr("class", "edgePaths");
@@ -537,7 +537,7 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
       const node = graph.node(v);
       if (parentCluster !== void 0) {
         const data = JSON.parse(JSON.stringify(parentCluster.clusterData));
-        chunk_3XYRH5AP/* log */.Rm.trace(
+        chunk_VIW5F6AA/* log */.Rm.trace(
           "Setting data for parent cluster XXX\n Node.id = ",
           v,
           "\n data=",
@@ -547,13 +547,13 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
         );
         graph.setNode(parentCluster.id, data);
         if (!graph.parent(v)) {
-          chunk_3XYRH5AP/* log */.Rm.trace("Setting parent", v, parentCluster.id);
+          chunk_VIW5F6AA/* log */.Rm.trace("Setting parent", v, parentCluster.id);
           graph.setParent(v, parentCluster.id, data);
         }
       }
-      chunk_3XYRH5AP/* log */.Rm.info("(Insert) Node XXX" + v + ": " + JSON.stringify(graph.node(v)));
+      chunk_VIW5F6AA/* log */.Rm.info("(Insert) Node XXX" + v + ": " + JSON.stringify(graph.node(v)));
       if (node?.clusterNode) {
-        chunk_3XYRH5AP/* log */.Rm.info("Cluster identified XBX", v, node.width, graph.node(v));
+        chunk_VIW5F6AA/* log */.Rm.info("Cluster identified XBX", v, node.width, graph.node(v));
         const { ranksep, nodesep } = graph.graph();
         node.graph.setGraph({
           ...node.graph.graph(),
@@ -569,9 +569,9 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
           siteConfig
         );
         const newEl = o.elem;
-        (0,chunk_JW4RIYDF/* updateNodeBounds */.lC)(node, newEl);
+        (0,chunk_CV3G5MRU/* updateNodeBounds */.lC)(node, newEl);
         node.diff = o.diff || 0;
-        chunk_3XYRH5AP/* log */.Rm.info(
+        chunk_VIW5F6AA/* log */.Rm.info(
           "New compound node after recursive render XAX",
           v,
           "width",
@@ -582,10 +582,10 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
           // node.x,
           // node.y
         );
-        (0,chunk_JW4RIYDF/* setNodeElem */.U7)(newEl, node);
+        (0,chunk_CV3G5MRU/* setNodeElem */.U7)(newEl, node);
       } else {
         if (graph.children(v).length > 0) {
-          chunk_3XYRH5AP/* log */.Rm.trace(
+          chunk_VIW5F6AA/* log */.Rm.trace(
             "Cluster - the non recursive path XBX",
             v,
             node.id,
@@ -594,21 +594,21 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
             "Graph:",
             graph
           );
-          chunk_3XYRH5AP/* log */.Rm.trace(findNonClusterChild(node.id, graph));
+          chunk_VIW5F6AA/* log */.Rm.trace(findNonClusterChild(node.id, graph));
           clusterDb.set(node.id, { id: findNonClusterChild(node.id, graph), node });
         } else {
-          chunk_3XYRH5AP/* log */.Rm.trace("Node - the non recursive path XAX", v, nodes, graph.node(v), dir);
-          await (0,chunk_JW4RIYDF/* insertNode */.on)(nodes, graph.node(v), { config: siteConfig, dir });
+          chunk_VIW5F6AA/* log */.Rm.trace("Node - the non recursive path XAX", v, nodes, graph.node(v), dir);
+          await (0,chunk_CV3G5MRU/* insertNode */.on)(nodes, graph.node(v), { config: siteConfig, dir });
         }
       }
     })
   );
-  const processEdges = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async () => {
+  const processEdges = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(async () => {
     const edgePromises = graph.edges().map(async function(e) {
       const edge = graph.edge(e.v, e.w, e.name);
-      chunk_3XYRH5AP/* log */.Rm.info("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(e));
-      chunk_3XYRH5AP/* log */.Rm.info("Edge " + e.v + " -> " + e.w + ": ", e, " ", JSON.stringify(graph.edge(e)));
-      chunk_3XYRH5AP/* log */.Rm.info(
+      chunk_VIW5F6AA/* log */.Rm.info("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(e));
+      chunk_VIW5F6AA/* log */.Rm.info("Edge " + e.v + " -> " + e.w + ": ", e, " ", JSON.stringify(graph.edge(e)));
+      chunk_VIW5F6AA/* log */.Rm.info(
         "Fix",
         clusterDb,
         "ids:",
@@ -618,23 +618,23 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
         clusterDb.get(e.v),
         clusterDb.get(e.w)
       );
-      await (0,chunk_M6DAPIYF/* insertEdgeLabel */.jP)(edgeLabels, edge);
+      await (0,chunk_NCRKNZAS/* insertEdgeLabel */.jP)(edgeLabels, edge);
     });
     await Promise.all(edgePromises);
   }, "processEdges");
   await processEdges();
-  chunk_3XYRH5AP/* log */.Rm.info("Graph before layout:", JSON.stringify(write(graph)));
-  chunk_3XYRH5AP/* log */.Rm.info("############################################# XXX");
-  chunk_3XYRH5AP/* log */.Rm.info("###                Layout                 ### XXX");
-  chunk_3XYRH5AP/* log */.Rm.info("############################################# XXX");
+  chunk_VIW5F6AA/* log */.Rm.info("Graph before layout:", JSON.stringify(write(graph)));
+  chunk_VIW5F6AA/* log */.Rm.info("############################################# XXX");
+  chunk_VIW5F6AA/* log */.Rm.info("###                Layout                 ### XXX");
+  chunk_VIW5F6AA/* log */.Rm.info("############################################# XXX");
   (0,dagre/* layout */.Zp)(graph);
-  chunk_3XYRH5AP/* log */.Rm.info("Graph after layout:", JSON.stringify(write(graph)));
+  chunk_VIW5F6AA/* log */.Rm.info("Graph after layout:", JSON.stringify(write(graph)));
   let diff = 0;
-  let { subGraphTitleTotalMargin } = (0,chunk_AC5SNWB5/* getSubGraphTitleMargins */.O)(siteConfig);
+  let { subGraphTitleTotalMargin } = (0,chunk_JSVUIEYQ/* getSubGraphTitleMargins */.O)(siteConfig);
   await Promise.all(
     sortNodesByHierarchy(graph).map(async function(v) {
       const node = graph.node(v);
-      chunk_3XYRH5AP/* log */.Rm.info(
+      chunk_VIW5F6AA/* log */.Rm.info(
         "Position XBX => " + v + ": (" + node.x,
         "," + node.y,
         ") width: ",
@@ -644,7 +644,7 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
       );
       if (node?.clusterNode) {
         node.y += subGraphTitleTotalMargin;
-        chunk_3XYRH5AP/* log */.Rm.info(
+        chunk_VIW5F6AA/* log */.Rm.info(
           "A tainted cluster node XBX1",
           v,
           node.id,
@@ -655,10 +655,10 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
           graph.parent(v)
         );
         clusterDb.get(node.id).node = node;
-        (0,chunk_JW4RIYDF/* positionNode */.U_)(node);
+        (0,chunk_CV3G5MRU/* positionNode */.U_)(node);
       } else {
         if (graph.children(v).length > 0) {
-          chunk_3XYRH5AP/* log */.Rm.info(
+          chunk_VIW5F6AA/* log */.Rm.info(
             "A pure cluster node XBX1",
             v,
             node.id,
@@ -673,13 +673,13 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
           const halfPadding = node?.padding / 2 || 0;
           const labelHeight = node?.labelBBox?.height || 0;
           const offsetY = labelHeight - halfPadding || 0;
-          chunk_3XYRH5AP/* log */.Rm.debug("OffsetY", offsetY, "labelHeight", labelHeight, "halfPadding", halfPadding);
-          await (0,chunk_JW4RIYDF/* insertCluster */.U)(clusters, node);
+          chunk_VIW5F6AA/* log */.Rm.debug("OffsetY", offsetY, "labelHeight", labelHeight, "halfPadding", halfPadding);
+          await (0,chunk_CV3G5MRU/* insertCluster */.U)(clusters, node);
           clusterDb.get(node.id).node = node;
         } else {
           const parent = graph.node(node.parentId);
           node.y += subGraphTitleTotalMargin / 2;
-          chunk_3XYRH5AP/* log */.Rm.info(
+          chunk_VIW5F6AA/* log */.Rm.info(
             "A regular node XBX1 - using the padding",
             node.id,
             "parent",
@@ -695,31 +695,31 @@ var recursiveRender = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (_
             parent?.offsetY,
             node
           );
-          (0,chunk_JW4RIYDF/* positionNode */.U_)(node);
+          (0,chunk_CV3G5MRU/* positionNode */.U_)(node);
         }
       }
     })
   );
   graph.edges().forEach(function(e) {
     const edge = graph.edge(e);
-    chunk_3XYRH5AP/* log */.Rm.info("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(edge), edge);
+    chunk_VIW5F6AA/* log */.Rm.info("Edge " + e.v + " -> " + e.w + ": " + JSON.stringify(edge), edge);
     edge.points.forEach((point) => point.y += subGraphTitleTotalMargin / 2);
     const startNode = graph.node(e.v);
     var endNode = graph.node(e.w);
-    const paths = (0,chunk_M6DAPIYF/* insertEdge */.Jo)(edgePaths, edge, clusterDb, diagramType, startNode, endNode, id);
-    (0,chunk_M6DAPIYF/* positionEdgeLabel */.T_)(edge, paths);
+    const paths = (0,chunk_NCRKNZAS/* insertEdge */.Jo)(edgePaths, edge, clusterDb, diagramType, startNode, endNode, id);
+    (0,chunk_NCRKNZAS/* positionEdgeLabel */.T_)(edge, paths);
   });
   graph.nodes().forEach(function(v) {
     const n = graph.node(v);
-    chunk_3XYRH5AP/* log */.Rm.info(v, n.type, n.diff);
+    chunk_VIW5F6AA/* log */.Rm.info(v, n.type, n.diff);
     if (n.isGroup) {
       diff = n.diff;
     }
   });
-  chunk_3XYRH5AP/* log */.Rm.warn("Returning from recursive render XAX", elem, diff);
+  chunk_VIW5F6AA/* log */.Rm.warn("Returning from recursive render XAX", elem, diff);
   return { elem, diff };
 }, "recursiveRender");
-var render = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (data4Layout, svg) => {
+var render = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(async (data4Layout, svg) => {
   const graph = new graphlib/* Graph */.T({
     multigraph: true,
     compound: true
@@ -733,10 +733,10 @@ var render = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (data4Layou
     return {};
   });
   const element = svg.select("g");
-  (0,chunk_M6DAPIYF/* markers_default */.g0)(element, data4Layout.markers, data4Layout.type, data4Layout.diagramId);
-  (0,chunk_JW4RIYDF/* clear2 */.gh)();
-  (0,chunk_M6DAPIYF/* clear */.IU)();
-  (0,chunk_JW4RIYDF/* clear */.IU)();
+  (0,chunk_NCRKNZAS/* markers_default */.g0)(element, data4Layout.markers, data4Layout.type, data4Layout.diagramId);
+  (0,chunk_CV3G5MRU/* clear2 */.gh)();
+  (0,chunk_NCRKNZAS/* clear */.IU)();
+  (0,chunk_CV3G5MRU/* clear */.IU)();
   clear4();
   data4Layout.nodes.forEach((node) => {
     graph.setNode(node.id, { ...node });
@@ -744,7 +744,7 @@ var render = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (data4Layou
       graph.setParent(node.id, node.parentId);
     }
   });
-  chunk_3XYRH5AP/* log */.Rm.debug("Edges:", data4Layout.edges);
+  chunk_VIW5F6AA/* log */.Rm.debug("Edges:", data4Layout.edges);
   data4Layout.edges.forEach((edge) => {
     if (edge.start === edge.end) {
       const nodeId = edge.start;
@@ -802,10 +802,10 @@ var render = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(async (data4Layou
       graph.setEdge(edge.start, edge.end, { ...edge }, edge.id);
     }
   });
-  chunk_3XYRH5AP/* log */.Rm.warn("Graph at first:", JSON.stringify(write(graph)));
+  chunk_VIW5F6AA/* log */.Rm.warn("Graph at first:", JSON.stringify(write(graph)));
   adjustClustersAndEdges(graph);
-  chunk_3XYRH5AP/* log */.Rm.warn("Graph after XAX:", JSON.stringify(write(graph)));
-  const siteConfig = (0,chunk_3XYRH5AP/* getConfig2 */.D7)();
+  chunk_VIW5F6AA/* log */.Rm.warn("Graph after XAX:", JSON.stringify(write(graph)));
+  const siteConfig = (0,chunk_VIW5F6AA/* getConfig2 */.D7)();
   await recursiveRender(
     element,
     graph,

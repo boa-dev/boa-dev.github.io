@@ -1,15 +1,137 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4458],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4802],{
 
-/***/ 4458:
+/***/ 4387:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CP: () => (/* binding */ drawEmbeddedImage),
+/* harmony export */   HT: () => (/* binding */ getTextObj),
+/* harmony export */   PB: () => (/* binding */ getNoteRect),
+/* harmony export */   aC: () => (/* binding */ drawImage),
+/* harmony export */   lC: () => (/* binding */ drawBackgroundRect),
+/* harmony export */   m: () => (/* binding */ drawText),
+/* harmony export */   tk: () => (/* binding */ drawRect)
+/* harmony export */ });
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+/* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6750);
+
+
+// src/diagrams/common/svgDrawCommon.ts
+
+var drawRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, rectData) => {
+  const rectElement = element.append("rect");
+  rectElement.attr("x", rectData.x);
+  rectElement.attr("y", rectData.y);
+  rectElement.attr("fill", rectData.fill);
+  rectElement.attr("stroke", rectData.stroke);
+  rectElement.attr("width", rectData.width);
+  rectElement.attr("height", rectData.height);
+  if (rectData.name) {
+    rectElement.attr("name", rectData.name);
+  }
+  if (rectData.rx) {
+    rectElement.attr("rx", rectData.rx);
+  }
+  if (rectData.ry) {
+    rectElement.attr("ry", rectData.ry);
+  }
+  if (rectData.attrs !== void 0) {
+    for (const attrKey in rectData.attrs) {
+      rectElement.attr(attrKey, rectData.attrs[attrKey]);
+    }
+  }
+  if (rectData.class) {
+    rectElement.attr("class", rectData.class);
+  }
+  return rectElement;
+}, "drawRect");
+var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, bounds) => {
+  const rectData = {
+    x: bounds.startx,
+    y: bounds.starty,
+    width: bounds.stopx - bounds.startx,
+    height: bounds.stopy - bounds.starty,
+    fill: bounds.fill,
+    stroke: bounds.stroke,
+    class: "rect"
+  };
+  const rectElement = drawRect(element, rectData);
+  rectElement.lower();
+}, "drawBackgroundRect");
+var drawText = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, textData) => {
+  const nText = textData.text.replace(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .lineBreakRegex */ .H1, " ");
+  const textElem = element.append("text");
+  textElem.attr("x", textData.x);
+  textElem.attr("y", textData.y);
+  textElem.attr("class", "legend");
+  textElem.style("text-anchor", textData.anchor);
+  if (textData.class) {
+    textElem.attr("class", textData.class);
+  }
+  const tspan = textElem.append("tspan");
+  tspan.attr("x", textData.x + textData.textMargin * 2);
+  tspan.text(nText);
+  return textElem;
+}, "drawText");
+var drawImage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((elem, x, y, link) => {
+  const imageElement = elem.append("image");
+  imageElement.attr("x", x);
+  imageElement.attr("y", y);
+  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
+  imageElement.attr("xlink:href", sanitizedLink);
+}, "drawImage");
+var drawEmbeddedImage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, x, y, link) => {
+  const imageElement = element.append("use");
+  imageElement.attr("x", x);
+  imageElement.attr("y", y);
+  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
+  imageElement.attr("xlink:href", `#${sanitizedLink}`);
+}, "drawEmbeddedImage");
+var getNoteRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
+  const noteRectData = {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+    fill: "#EDF2AE",
+    stroke: "#666",
+    anchor: "start",
+    rx: 0,
+    ry: 0
+  };
+  return noteRectData;
+}, "getNoteRect");
+var getTextObj = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
+  const testObject = {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+    "text-anchor": "start",
+    style: "#666",
+    textMargin: 0,
+    rx: 0,
+    ry: 0,
+    tspan: true
+  };
+  return testObject;
+}, "getTextObj");
+
+
+
+
+/***/ }),
+
+/***/ 4802:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5237);
-/* harmony import */ var _chunk_E2GYISFI_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4651);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4387);
+/* harmony import */ var _chunk_GLLZNHP4_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7052);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6936);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(451);
 
 
@@ -17,18 +139,18 @@
 
 // src/diagrams/user-journey/parser/journey.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [6, 8, 10, 11, 12, 14, 16, 17, 18], $V1 = [1, 9], $V2 = [1, 10], $V3 = [1, 11], $V4 = [1, 12], $V5 = [1, 13], $V6 = [1, 14];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "journey": 4, "document": 5, "EOF": 6, "line": 7, "SPACE": 8, "statement": 9, "NEWLINE": 10, "title": 11, "acc_title": 12, "acc_title_value": 13, "acc_descr": 14, "acc_descr_value": 15, "acc_descr_multiline_value": 16, "section": 17, "taskName": 18, "taskData": 19, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 4: "journey", 6: "EOF", 8: "SPACE", 10: "NEWLINE", 11: "title", 12: "acc_title", 13: "acc_title_value", 14: "acc_descr", 15: "acc_descr_value", 16: "acc_descr_multiline_value", 17: "section", 18: "taskName", 19: "taskData" },
     productions_: [0, [3, 3], [5, 0], [5, 2], [7, 2], [7, 1], [7, 1], [7, 1], [9, 1], [9, 2], [9, 2], [9, 1], [9, 1], [9, 2]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 1:
@@ -75,7 +197,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: [1, 2] }, { 1: [3] }, o($V0, [2, 2], { 5: 3 }), { 6: [1, 4], 7: 5, 8: [1, 6], 9: 7, 10: [1, 8], 11: $V1, 12: $V2, 14: $V3, 16: $V4, 17: $V5, 18: $V6 }, o($V0, [2, 7], { 1: [2, 1] }), o($V0, [2, 3]), { 9: 15, 11: $V1, 12: $V2, 14: $V3, 16: $V4, 17: $V5, 18: $V6 }, o($V0, [2, 5]), o($V0, [2, 6]), o($V0, [2, 8]), { 13: [1, 16] }, { 15: [1, 17] }, o($V0, [2, 11]), o($V0, [2, 12]), { 19: [1, 18] }, o($V0, [2, 4]), o($V0, [2, 9]), o($V0, [2, 10]), o($V0, [2, 13])],
     defaultActions: {},
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -84,7 +206,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -113,7 +235,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -126,7 +248,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -230,7 +352,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -238,7 +360,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -258,7 +380,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -279,7 +401,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -305,12 +427,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -323,16 +445,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -340,13 +462,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -409,7 +531,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -460,7 +582,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -469,11 +591,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -482,7 +604,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -490,7 +612,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -499,15 +621,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -595,7 +717,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -608,21 +730,21 @@ var currentSection = "";
 var sections = [];
 var tasks = [];
 var rawTasks = [];
-var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var clear2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   sections.length = 0;
   tasks.length = 0;
   currentSection = "";
   rawTasks.length = 0;
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .clear */ .IU)();
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .clear */ .IU)();
 }, "clear");
-var addSection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(txt) {
+var addSection = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(txt) {
   currentSection = txt;
   sections.push(txt);
 }, "addSection");
-var getSections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getSections = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return sections;
 }, "getSections");
-var getTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   let allItemsProcessed = compileTasks();
   const maxDepth = 100;
   let iterationCount = 0;
@@ -633,7 +755,7 @@ var getTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2
   tasks.push(...rawTasks);
   return tasks;
 }, "getTasks");
-var updateActors = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var updateActors = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   const tempActors = [];
   tasks.forEach((task) => {
     if (task.people) {
@@ -643,7 +765,7 @@ var updateActors = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
   const unique = new Set(tempActors);
   return [...unique].sort();
 }, "updateActors");
-var addTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(descr, taskData) {
+var addTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(descr, taskData) {
   const pieces = taskData.substr(1).split(":");
   let score = 0;
   let peeps = [];
@@ -664,7 +786,7 @@ var addTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2_
   };
   rawTasks.push(rawTask);
 }, "addTask");
-var addTaskOrg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(descr) {
+var addTaskOrg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(descr) {
   const newTask = {
     section: currentSection,
     type: currentSection,
@@ -674,8 +796,8 @@ var addTaskOrg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   };
   tasks.push(newTask);
 }, "addTaskOrg");
-var compileTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
-  const compileTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(pos) {
+var compileTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+  const compileTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(pos) {
     return rawTasks[pos].processed;
   }, "compileTask");
   let allProcessed = true;
@@ -685,18 +807,18 @@ var compileTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
   }
   return allProcessed;
 }, "compileTasks");
-var getActors = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getActors = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return updateActors();
 }, "getActors");
 var journeyDb_default = {
-  getConfig: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(() => (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey, "getConfig"),
+  getConfig: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(() => (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey, "getConfig"),
   clear: clear2,
-  setDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setDiagramTitle */ .ke,
-  getDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getDiagramTitle */ .ab,
-  setAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccTitle */ .SV,
-  getAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccTitle */ .iN,
-  setAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccDescription */ .EI,
-  getAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccDescription */ .m7,
+  setDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setDiagramTitle */ .ke,
+  getDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getDiagramTitle */ .ab,
+  setAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccTitle */ .SV,
+  getAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccTitle */ .iN,
+  setAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccDescription */ .EI,
+  getAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccDescription */ .m7,
   addSection,
   getSections,
   getTasks,
@@ -706,7 +828,7 @@ var journeyDb_default = {
 };
 
 // src/diagrams/user-journey/styles.js
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((options) => `.label {
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((options) => `.label {
     font-family: ${options.fontFamily};
     color: ${options.textColor};
   }
@@ -838,7 +960,7 @@ var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   .actor-5 {
     ${options.actor5 ? `fill: ${options.actor5}` : ""};
   }
-  ${(0,_chunk_E2GYISFI_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getIconStyles */ .o)()}
+  ${(0,_chunk_GLLZNHP4_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getIconStyles */ .o)()}
 `, "getStyles");
 var styles_default = getStyles;
 
@@ -847,10 +969,10 @@ var styles_default = getStyles;
 
 // src/diagrams/user-journey/svgDraw.js
 
-var drawRect2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, rectData) {
-  return (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawRect */ .tk)(elem, rectData);
+var drawRect2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, rectData) {
+  return (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawRect */ .tk)(elem, rectData);
 }, "drawRect");
-var drawFace = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(element, faceData) {
+var drawFace = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(element, faceData) {
   const radius = 15;
   const circleElement = element.append("circle").attr("cx", faceData.cx).attr("cy", faceData.cy).attr("class", "face").attr("r", radius).attr("stroke-width", 2).attr("overflow", "visible");
   const face = element.append("g");
@@ -860,16 +982,16 @@ var drawFace = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2
     const arc = (0,d3__WEBPACK_IMPORTED_MODULE_3__/* .arc */ .JLW)().startAngle(Math.PI / 2).endAngle(3 * (Math.PI / 2)).innerRadius(radius / 2).outerRadius(radius / 2.2);
     face2.append("path").attr("class", "mouth").attr("d", arc).attr("transform", "translate(" + faceData.cx + "," + (faceData.cy + 2) + ")");
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(smile, "smile");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(smile, "smile");
   function sad(face2) {
     const arc = (0,d3__WEBPACK_IMPORTED_MODULE_3__/* .arc */ .JLW)().startAngle(3 * Math.PI / 2).endAngle(5 * (Math.PI / 2)).innerRadius(radius / 2).outerRadius(radius / 2.2);
     face2.append("path").attr("class", "mouth").attr("d", arc).attr("transform", "translate(" + faceData.cx + "," + (faceData.cy + 7) + ")");
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(sad, "sad");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(sad, "sad");
   function ambivalent(face2) {
     face2.append("line").attr("class", "mouth").attr("stroke", 2).attr("x1", faceData.cx - 5).attr("y1", faceData.cy + 7).attr("x2", faceData.cx + 5).attr("y2", faceData.cy + 7).attr("class", "mouth").attr("stroke-width", "1px").attr("stroke", "#666");
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(ambivalent, "ambivalent");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(ambivalent, "ambivalent");
   if (faceData.score > 3) {
     smile(face);
   } else if (faceData.score < 3) {
@@ -879,7 +1001,7 @@ var drawFace = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2
   }
   return circleElement;
 }, "drawFace");
-var drawCircle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(element, circleData) {
+var drawCircle = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(element, circleData) {
   const circleElement = element.append("circle");
   circleElement.attr("cx", circleData.cx);
   circleElement.attr("cy", circleData.cy);
@@ -895,14 +1017,14 @@ var drawCircle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   }
   return circleElement;
 }, "drawCircle");
-var drawText2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, textData) {
-  return (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawText */ .m)(elem, textData);
+var drawText2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, textData) {
+  return (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawText */ .m)(elem, textData);
 }, "drawText");
-var drawLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, txtObject) {
+var drawLabel = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, txtObject) {
   function genPoints(x, y, width, height, cut) {
     return x + "," + y + " " + (x + width) + "," + y + " " + (x + width) + "," + (y + height - cut) + " " + (x + width - cut * 1.2) + "," + (y + height) + " " + x + "," + (y + height);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(genPoints, "genPoints");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(genPoints, "genPoints");
   const polygon = elem.append("polygon");
   polygon.attr("points", genPoints(txtObject.x, txtObject.y, 50, 20, 7));
   polygon.attr("class", "labelBox");
@@ -910,9 +1032,9 @@ var drawLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   txtObject.x = txtObject.x + 0.5 * txtObject.labelMargin;
   drawText2(elem, txtObject);
 }, "drawLabel");
-var drawSection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, section, conf2) {
+var drawSection = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, section, conf2) {
   const g = elem.append("g");
-  const rect = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
+  const rect = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
   rect.x = section.x;
   rect.y = section.y;
   rect.fill = section.fill;
@@ -936,7 +1058,7 @@ var drawSection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   );
 }, "drawSection");
 var taskCount = -1;
-var drawTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, task, conf2) {
+var drawTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, task, conf2) {
   const center = task.x + conf2.width / 2;
   const g = elem.append("g");
   taskCount++;
@@ -947,7 +1069,7 @@ var drawTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2
     cy: 300 + (5 - task.score) * 30,
     score: task.score
   });
-  const rect = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
+  const rect = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
   rect.x = task.x;
   rect.y = task.y;
   rect.fill = task.fill;
@@ -984,15 +1106,15 @@ var drawTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2
     task.colour
   );
 }, "drawTask");
-var drawBackgroundRect2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, bounds2) {
-  (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawBackgroundRect */ .lC)(elem, bounds2);
+var drawBackgroundRect2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, bounds2) {
+  (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawBackgroundRect */ .lC)(elem, bounds2);
 }, "drawBackgroundRect");
 var _drawTextCandidateFunc = /* @__PURE__ */ function() {
   function byText(content, g, x, y, width, height, textAttrs, colour) {
     const text = g.append("text").attr("x", x + width / 2).attr("y", y + height / 2 + 5).style("font-color", colour).style("text-anchor", "middle").text(content);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byText, "byText");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byText, "byText");
   function byTspan(content, g, x, y, width, height, textAttrs, conf2, colour) {
     const { taskFontSize, taskFontFamily } = conf2;
     const lines = content.split(/<br\s*\/?>/gi);
@@ -1004,7 +1126,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       _setTextAttrs(text, textAttrs);
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byTspan, "byTspan");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byTspan, "byTspan");
   function byFo(content, g, x, y, width, height, textAttrs, conf2) {
     const body = g.append("switch");
     const f = body.append("foreignObject").attr("x", x).attr("y", y).attr("width", width).attr("height", height).attr("position", "fixed");
@@ -1013,7 +1135,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
     byTspan(content, body, x, y, width, height, textAttrs, conf2);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byFo, "byFo");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byFo, "byFo");
   function _setTextAttrs(toText, fromTextAttrsDict) {
     for (const key in fromTextAttrsDict) {
       if (key in fromTextAttrsDict) {
@@ -1021,12 +1143,12 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       }
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
   return function(conf2) {
     return conf2.textPlacement === "fo" ? byFo : conf2.textPlacement === "old" ? byText : byTspan;
   };
 }();
-var initGraphics = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(graphics) {
+var initGraphics = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(graphics) {
   graphics.append("defs").append("marker").attr("id", "arrowhead").attr("refX", 5).attr("refY", 2).attr("markerWidth", 6).attr("markerHeight", 4).attr("orient", "auto").append("path").attr("d", "M 0,0 V 4 L6,2 Z");
 }, "initGraphics");
 var svgDraw_default = {
@@ -1041,7 +1163,7 @@ var svgDraw_default = {
 };
 
 // src/diagrams/user-journey/journeyRenderer.ts
-var setConf = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(cnf) {
+var setConf = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(cnf) {
   const keys = Object.keys(cnf);
   keys.forEach(function(key) {
     conf[key] = cnf[key];
@@ -1050,7 +1172,7 @@ var setConf = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2_
 var actors = {};
 var maxWidth = 0;
 function drawActorLegend(diagram2) {
-  const conf2 = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
+  const conf2 = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
   const maxLabelWidth = conf2.maxLabelWidth;
   maxWidth = 0;
   let yPos = 60;
@@ -1123,11 +1245,11 @@ function drawActorLegend(diagram2) {
     yPos += Math.max(20, lines.length * 20);
   });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(drawActorLegend, "drawActorLegend");
-var conf = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(drawActorLegend, "drawActorLegend");
+var conf = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
 var leftMargin = 0;
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(text, id, version, diagObj) {
-  const configObject = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)();
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(text, id, version, diagObj) {
+  const configObject = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)();
   const titleColor = configObject.journey.titleColor;
   const titleFontSize = configObject.journey.titleFontSize;
   const titleFontFamily = configObject.journey.titleFontFamily;
@@ -1164,7 +1286,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/*
   }
   const height = box.stopy - box.starty + 2 * conf.diagramMarginY;
   const width = leftMargin + box.stopx + 2 * conf.diagramMarginX;
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .configureSvgSize */ .a$)(diagram2, height, width, conf.useMaxWidth);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .configureSvgSize */ .a$)(diagram2, height, width, conf.useMaxWidth);
   diagram2.append("line").attr("x1", leftMargin).attr("y1", conf.height * 4).attr("x2", width - leftMargin - 4).attr("y2", conf.height * 4).attr("stroke-width", 4).attr("stroke", "black").attr("marker-end", "url(#arrowhead)");
   const extraVertForTitle = title ? 70 : 0;
   diagram2.attr("viewBox", `${box.startx} -25 ${width} ${height + extraVertForTitle}`);
@@ -1180,7 +1302,7 @@ var bounds = {
   },
   verticalPos: 0,
   sequenceItems: [],
-  init: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+  init: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
     this.sequenceItems = [];
     this.data = {
       startx: void 0,
@@ -1190,19 +1312,19 @@ var bounds = {
     };
     this.verticalPos = 0;
   }, "init"),
-  updateVal: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(obj, key, val, fun) {
+  updateVal: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(obj, key, val, fun) {
     if (obj[key] === void 0) {
       obj[key] = val;
     } else {
       obj[key] = fun(val, obj[key]);
     }
   }, "updateVal"),
-  updateBounds: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
-    const conf2 = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
+  updateBounds: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
+    const conf2 = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
     const _self = this;
     let cnt = 0;
     function updateFn(type) {
-      return /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function updateItemBounds(item) {
+      return /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function updateItemBounds(item) {
         cnt++;
         const n = _self.sequenceItems.length - cnt + 1;
         _self.updateVal(item, "starty", starty - n * conf2.boxMargin, Math.min);
@@ -1217,10 +1339,10 @@ var bounds = {
         }
       }, "updateItemBounds");
     }
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(updateFn, "updateFn");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(updateFn, "updateFn");
     this.sequenceItems.forEach(updateFn());
   }, "updateBounds"),
-  insert: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
+  insert: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(startx, starty, stopx, stopy) {
     const _startx = Math.min(startx, stopx);
     const _stopx = Math.max(startx, stopx);
     const _starty = Math.min(starty, stopy);
@@ -1231,21 +1353,21 @@ var bounds = {
     this.updateVal(bounds.data, "stopy", _stopy, Math.max);
     this.updateBounds(_startx, _starty, _stopx, _stopy);
   }, "insert"),
-  bumpVerticalPos: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(bump) {
+  bumpVerticalPos: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(bump) {
     this.verticalPos = this.verticalPos + bump;
     this.data.stopy = this.verticalPos;
   }, "bumpVerticalPos"),
-  getVerticalPos: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+  getVerticalPos: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
     return this.verticalPos;
   }, "getVerticalPos"),
-  getBounds: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+  getBounds: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
     return this.data;
   }, "getBounds")
 };
 var fills = conf.sectionFills;
 var textColours = conf.sectionColours;
-var drawTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(diagram2, tasks2, verticalPos) {
-  const conf2 = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
+var drawTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(diagram2, tasks2, verticalPos) {
+  const conf2 = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().journey;
   let lastSection = "";
   const sectionVHeight = conf2.height * 2 + conf2.diagramMarginY;
   const taskPos = verticalPos + sectionVHeight;
@@ -1309,7 +1431,7 @@ var diagram = {
   db: journeyDb_default,
   renderer: journeyRenderer_default,
   styles: styles_default,
-  init: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf) => {
+  init: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf) => {
     journeyRenderer_default.setConf(cnf.journey);
     journeyDb_default.clear();
   }, "init")
@@ -1319,17 +1441,17 @@ var diagram = {
 
 /***/ }),
 
-/***/ 4651:
+/***/ 7052:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   o: () => (/* binding */ getIconStyles)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 
 
 // src/diagrams/globalStyles.ts
-var getIconStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => `
+var getIconStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => `
   /* Font Awesome icon styling - consolidated */
   .label-icon {
     display: inline-block;
@@ -1344,128 +1466,6 @@ var getIconStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
     stroke-width: revert;
   }
 `, "getIconStyles");
-
-
-
-
-/***/ }),
-
-/***/ 5237:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CP: () => (/* binding */ drawEmbeddedImage),
-/* harmony export */   HT: () => (/* binding */ getTextObj),
-/* harmony export */   PB: () => (/* binding */ getNoteRect),
-/* harmony export */   aC: () => (/* binding */ drawImage),
-/* harmony export */   lC: () => (/* binding */ drawBackgroundRect),
-/* harmony export */   m: () => (/* binding */ drawText),
-/* harmony export */   tk: () => (/* binding */ drawRect)
-/* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-/* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6750);
-
-
-// src/diagrams/common/svgDrawCommon.ts
-
-var drawRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, rectData) => {
-  const rectElement = element.append("rect");
-  rectElement.attr("x", rectData.x);
-  rectElement.attr("y", rectData.y);
-  rectElement.attr("fill", rectData.fill);
-  rectElement.attr("stroke", rectData.stroke);
-  rectElement.attr("width", rectData.width);
-  rectElement.attr("height", rectData.height);
-  if (rectData.name) {
-    rectElement.attr("name", rectData.name);
-  }
-  if (rectData.rx) {
-    rectElement.attr("rx", rectData.rx);
-  }
-  if (rectData.ry) {
-    rectElement.attr("ry", rectData.ry);
-  }
-  if (rectData.attrs !== void 0) {
-    for (const attrKey in rectData.attrs) {
-      rectElement.attr(attrKey, rectData.attrs[attrKey]);
-    }
-  }
-  if (rectData.class) {
-    rectElement.attr("class", rectData.class);
-  }
-  return rectElement;
-}, "drawRect");
-var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, bounds) => {
-  const rectData = {
-    x: bounds.startx,
-    y: bounds.starty,
-    width: bounds.stopx - bounds.startx,
-    height: bounds.stopy - bounds.starty,
-    fill: bounds.fill,
-    stroke: bounds.stroke,
-    class: "rect"
-  };
-  const rectElement = drawRect(element, rectData);
-  rectElement.lower();
-}, "drawBackgroundRect");
-var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, textData) => {
-  const nText = textData.text.replace(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .lineBreakRegex */ .H1, " ");
-  const textElem = element.append("text");
-  textElem.attr("x", textData.x);
-  textElem.attr("y", textData.y);
-  textElem.attr("class", "legend");
-  textElem.style("text-anchor", textData.anchor);
-  if (textData.class) {
-    textElem.attr("class", textData.class);
-  }
-  const tspan = textElem.append("tspan");
-  tspan.attr("x", textData.x + textData.textMargin * 2);
-  tspan.text(nText);
-  return textElem;
-}, "drawText");
-var drawImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((elem, x, y, link) => {
-  const imageElement = elem.append("image");
-  imageElement.attr("x", x);
-  imageElement.attr("y", y);
-  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
-  imageElement.attr("xlink:href", sanitizedLink);
-}, "drawImage");
-var drawEmbeddedImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, x, y, link) => {
-  const imageElement = element.append("use");
-  imageElement.attr("x", x);
-  imageElement.attr("y", y);
-  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
-  imageElement.attr("xlink:href", `#${sanitizedLink}`);
-}, "drawEmbeddedImage");
-var getNoteRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
-  const noteRectData = {
-    x: 0,
-    y: 0,
-    width: 100,
-    height: 100,
-    fill: "#EDF2AE",
-    stroke: "#666",
-    anchor: "start",
-    rx: 0,
-    ry: 0
-  };
-  return noteRectData;
-}, "getNoteRect");
-var getTextObj = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
-  const testObject = {
-    x: 0,
-    y: 0,
-    width: 100,
-    height: 100,
-    "text-anchor": "start",
-    style: "#666",
-    textMargin: 0,
-    rx: 0,
-    ry: 0,
-    tspan: true
-  };
-  return testObject;
-}, "getTextObj");
 
 
 

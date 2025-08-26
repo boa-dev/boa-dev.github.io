@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[9157],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[7573],{
 
-/***/ 9157:
+/***/ 7573:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 
@@ -10,8 +10,8 @@ __webpack_require__.d(__webpack_exports__, {
   diagram: () => (/* binding */ diagram)
 });
 
-// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-3XYRH5AP.mjs + 3 modules
-var chunk_3XYRH5AP = __webpack_require__(1750);
+// EXTERNAL MODULE: ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-VIW5F6AA.mjs + 3 modules
+var chunk_VIW5F6AA = __webpack_require__(6936);
 // EXTERNAL MODULE: ./node_modules/d3/src/index.js + 216 modules
 var src = __webpack_require__(451);
 ;// ./node_modules/d3-sankey/node_modules/d3-array/src/min.js
@@ -735,23 +735,23 @@ function horizontalTarget(d) {
       .target(horizontalTarget);
 }
 
-;// ./node_modules/mermaid/dist/chunks/mermaid.core/sankeyDiagram-4UZDY2LN.mjs
+;// ./node_modules/mermaid/dist/chunks/mermaid.core/sankeyDiagram-HRAUVNP4.mjs
 
 
 // src/diagrams/sankey/parser/sankey.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [1, 9], $V1 = [1, 10], $V2 = [1, 5, 10, 12];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function trace() {
+    trace: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "SANKEY": 4, "NEWLINE": 5, "csv": 6, "opt_eof": 7, "record": 8, "csv_tail": 9, "EOF": 10, "field[source]": 11, "COMMA": 12, "field[target]": 13, "field[value]": 14, "field": 15, "escaped": 16, "non_escaped": 17, "DQUOTE": 18, "ESCAPED_TEXT": 19, "NON_ESCAPED_TEXT": 20, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 4: "SANKEY", 5: "NEWLINE", 10: "EOF", 11: "field[source]", 12: "COMMA", 13: "field[target]", 14: "field[value]", 18: "DQUOTE", 19: "ESCAPED_TEXT", 20: "NON_ESCAPED_TEXT" },
     productions_: [0, [3, 4], [6, 2], [9, 2], [9, 0], [7, 1], [7, 0], [8, 5], [15, 1], [15, 1], [16, 3], [17, 1]],
-    performAction: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 7:
@@ -772,7 +772,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: [1, 2] }, { 1: [3] }, { 5: [1, 3] }, { 6: 4, 8: 5, 15: 6, 16: 7, 17: 8, 18: $V0, 20: $V1 }, { 1: [2, 6], 7: 11, 10: [1, 12] }, o($V1, [2, 4], { 9: 13, 5: [1, 14] }), { 12: [1, 15] }, o($V2, [2, 8]), o($V2, [2, 9]), { 19: [1, 16] }, o($V2, [2, 11]), { 1: [2, 1] }, { 1: [2, 5] }, o($V1, [2, 2]), { 6: 17, 8: 5, 15: 6, 16: 7, 17: 8, 18: $V0, 20: $V1 }, { 15: 18, 16: 7, 17: 8, 18: $V0, 20: $V1 }, { 18: [1, 19] }, o($V1, [2, 3]), { 12: [1, 20] }, o($V2, [2, 10]), { 15: 21, 16: 7, 17: 8, 18: $V0, 20: $V1 }, o([1, 5, 10], [2, 7])],
     defaultActions: { 11: [2, 1], 12: [2, 5] },
-    parseError: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -781,7 +781,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -810,7 +810,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,chunk_3XYRH5AP/* __name */.K2)(popStack, "popStack");
+      (0,chunk_VIW5F6AA/* __name */.K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -823,7 +823,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,chunk_3XYRH5AP/* __name */.K2)(lex, "lex");
+      (0,chunk_VIW5F6AA/* __name */.K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -927,7 +927,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -935,7 +935,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -955,7 +955,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function() {
+      input: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -976,7 +976,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -1002,12 +1002,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function() {
+      more: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function() {
+      reject: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -1020,16 +1020,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function(n) {
+      less: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function() {
+      pastInput: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -1037,13 +1037,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function() {
+      showPosition: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -1106,7 +1106,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function() {
+      next: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -1157,7 +1157,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function lex() {
+      lex: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -1166,11 +1166,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function popState() {
+      popState: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -1179,7 +1179,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -1187,7 +1187,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -1196,15 +1196,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -1213,39 +1213,44 @@ var parser = function() {
             // removed by dead control flow
 {}
           case 1:
-            return 10;
+            this.pushState("csv");
+            return 4;
             // removed by dead control flow
 {}
           case 2:
-            return 5;
+            return 10;
             // removed by dead control flow
 {}
           case 3:
-            return 12;
+            return 5;
             // removed by dead control flow
 {}
           case 4:
+            return 12;
+            // removed by dead control flow
+{}
+          case 5:
             this.pushState("escaped_text");
             return 18;
             // removed by dead control flow
 {}
-          case 5:
+          case 6:
             return 20;
             // removed by dead control flow
 {}
-          case 6:
+          case 7:
             this.popState("escaped_text");
             return 18;
             // removed by dead control flow
 {}
-          case 7:
+          case 8:
             return 19;
             // removed by dead control flow
 {}
         }
       }, "anonymous"),
-      rules: [/^(?:sankey-beta\b)/i, /^(?:$)/i, /^(?:((\u000D\u000A)|(\u000A)))/i, /^(?:(\u002C))/i, /^(?:(\u0022))/i, /^(?:([\u0020-\u0021\u0023-\u002B\u002D-\u007E])*)/i, /^(?:(\u0022)(?!(\u0022)))/i, /^(?:(([\u0020-\u0021\u0023-\u002B\u002D-\u007E])|(\u002C)|(\u000D)|(\u000A)|(\u0022)(\u0022))*)/i],
-      conditions: { "csv": { "rules": [1, 2, 3, 4, 5, 6, 7], "inclusive": false }, "escaped_text": { "rules": [6, 7], "inclusive": false }, "INITIAL": { "rules": [0, 1, 2, 3, 4, 5, 6, 7], "inclusive": true } }
+      rules: [/^(?:sankey-beta\b)/i, /^(?:sankey\b)/i, /^(?:$)/i, /^(?:((\u000D\u000A)|(\u000A)))/i, /^(?:(\u002C))/i, /^(?:(\u0022))/i, /^(?:([\u0020-\u0021\u0023-\u002B\u002D-\u007E])*)/i, /^(?:(\u0022)(?!(\u0022)))/i, /^(?:(([\u0020-\u0021\u0023-\u002B\u002D-\u007E])|(\u002C)|(\u000D)|(\u000A)|(\u0022)(\u0022))*)/i],
+      conditions: { "csv": { "rules": [2, 3, 4, 5, 6, 7, 8], "inclusive": false }, "escaped_text": { "rules": [7, 8], "inclusive": false }, "INITIAL": { "rules": [0, 1, 2, 3, 4, 5, 6, 7, 8], "inclusive": true } }
     };
     return lexer2;
   }();
@@ -1253,7 +1258,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,chunk_3XYRH5AP/* __name */.K2)(Parser, "Parser");
+  (0,chunk_VIW5F6AA/* __name */.K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -1265,11 +1270,11 @@ var sankey_default = parser;
 var links = [];
 var nodes = [];
 var nodesMap = /* @__PURE__ */ new Map();
-var clear2 = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(() => {
+var clear2 = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(() => {
   links = [];
   nodes = [];
   nodesMap = /* @__PURE__ */ new Map();
-  (0,chunk_3XYRH5AP/* clear */.IU)();
+  (0,chunk_VIW5F6AA/* clear */.IU)();
 }, "clear");
 var SankeyLink = class {
   constructor(source, target, value = 0) {
@@ -1278,10 +1283,10 @@ var SankeyLink = class {
     this.value = value;
   }
   static {
-    (0,chunk_3XYRH5AP/* __name */.K2)(this, "SankeyLink");
+    (0,chunk_VIW5F6AA/* __name */.K2)(this, "SankeyLink");
   }
 };
-var addLink = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((source, target, value) => {
+var addLink = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((source, target, value) => {
   links.push(new SankeyLink(source, target, value));
 }, "addLink");
 var SankeyNode = class {
@@ -1289,11 +1294,11 @@ var SankeyNode = class {
     this.ID = ID;
   }
   static {
-    (0,chunk_3XYRH5AP/* __name */.K2)(this, "SankeyNode");
+    (0,chunk_VIW5F6AA/* __name */.K2)(this, "SankeyNode");
   }
 };
-var findOrCreateNode = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((ID) => {
-  ID = chunk_3XYRH5AP/* common_default */.Y2.sanitizeText(ID, (0,chunk_3XYRH5AP/* getConfig2 */.D7)());
+var findOrCreateNode = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((ID) => {
+  ID = chunk_VIW5F6AA/* common_default */.Y2.sanitizeText(ID, (0,chunk_VIW5F6AA/* getConfig2 */.D7)());
   let node = nodesMap.get(ID);
   if (node === void 0) {
     node = new SankeyNode(ID);
@@ -1302,9 +1307,9 @@ var findOrCreateNode = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((ID) =>
   }
   return node;
 }, "findOrCreateNode");
-var getNodes = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(() => nodes, "getNodes");
-var getLinks = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(() => links, "getLinks");
-var getGraph = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(() => ({
+var getNodes = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(() => nodes, "getNodes");
+var getLinks = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(() => links, "getLinks");
+var getGraph = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(() => ({
   nodes: nodes.map((node) => ({ id: node.ID })),
   links: links.map((link) => ({
     source: link.source.ID,
@@ -1314,18 +1319,18 @@ var getGraph = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(() => ({
 }), "getGraph");
 var sankeyDB_default = {
   nodesMap,
-  getConfig: /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(() => (0,chunk_3XYRH5AP/* getConfig2 */.D7)().sankey, "getConfig"),
+  getConfig: /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(() => (0,chunk_VIW5F6AA/* getConfig2 */.D7)().sankey, "getConfig"),
   getNodes,
   getLinks,
   getGraph,
   addLink,
   findOrCreateNode,
-  getAccTitle: chunk_3XYRH5AP/* getAccTitle */.iN,
-  setAccTitle: chunk_3XYRH5AP/* setAccTitle */.SV,
-  getAccDescription: chunk_3XYRH5AP/* getAccDescription */.m7,
-  setAccDescription: chunk_3XYRH5AP/* setAccDescription */.EI,
-  getDiagramTitle: chunk_3XYRH5AP/* getDiagramTitle */.ab,
-  setDiagramTitle: chunk_3XYRH5AP/* setDiagramTitle */.ke,
+  getAccTitle: chunk_VIW5F6AA/* getAccTitle */.iN,
+  setAccTitle: chunk_VIW5F6AA/* setAccTitle */.SV,
+  getAccDescription: chunk_VIW5F6AA/* getAccDescription */.m7,
+  setAccDescription: chunk_VIW5F6AA/* setAccDescription */.EI,
+  getDiagramTitle: chunk_VIW5F6AA/* getDiagramTitle */.ab,
+  setDiagramTitle: chunk_VIW5F6AA/* setDiagramTitle */.ke,
   clear: clear2
 };
 
@@ -1336,7 +1341,7 @@ var sankeyDB_default = {
 // src/rendering-util/uid.ts
 var Uid = class _Uid {
   static {
-    (0,chunk_3XYRH5AP/* __name */.K2)(this, "Uid");
+    (0,chunk_VIW5F6AA/* __name */.K2)(this, "Uid");
   }
   static {
     this.count = 0;
@@ -1360,9 +1365,9 @@ var alignmentsMap = {
   center: center,
   justify: justify
 };
-var draw = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function(text, id, _version, diagObj) {
-  const { securityLevel, sankey: conf } = (0,chunk_3XYRH5AP/* getConfig2 */.D7)();
-  const defaultSankeyConfig = chunk_3XYRH5AP/* defaultConfig2 */.ME.sankey;
+var draw = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(function(text, id, _version, diagObj) {
+  const { securityLevel, sankey: conf } = (0,chunk_VIW5F6AA/* getConfig2 */.D7)();
+  const defaultSankeyConfig = chunk_VIW5F6AA/* defaultConfig2 */.ME.sankey;
   let sandboxElement;
   if (securityLevel === "sandbox") {
     sandboxElement = (0,src/* select */.Ltv)("#i" + id);
@@ -1390,7 +1395,7 @@ var draw = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(function(text, id, 
   }).attr("x", (d) => d.x0).attr("y", (d) => d.y0).append("rect").attr("height", (d) => {
     return d.y1 - d.y0;
   }).attr("width", (d) => d.x1 - d.x0).attr("fill", (d) => colorScheme(d.id));
-  const getText = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)(({ id: id2, value }) => {
+  const getText = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)(({ id: id2, value }) => {
     if (!showValues) {
       return id2;
     }
@@ -1408,32 +1413,32 @@ ${prefix}${Math.round(value * 100) / 100}${suffix}`;
   let coloring;
   switch (linkColor) {
     case "gradient":
-      coloring = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((d) => d.uid, "coloring");
+      coloring = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((d) => d.uid, "coloring");
       break;
     case "source":
-      coloring = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((d) => colorScheme(d.source.id), "coloring");
+      coloring = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((d) => colorScheme(d.source.id), "coloring");
       break;
     case "target":
-      coloring = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((d) => colorScheme(d.target.id), "coloring");
+      coloring = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((d) => colorScheme(d.target.id), "coloring");
       break;
     default:
       coloring = linkColor;
   }
   link.append("path").attr("d", sankeyLinkHorizontal()).attr("stroke", coloring).attr("stroke-width", (d) => Math.max(1, d.width));
-  (0,chunk_3XYRH5AP/* setupGraphViewbox */.ot)(void 0, svg, 0, useMaxWidth);
+  (0,chunk_VIW5F6AA/* setupGraphViewbox */.ot)(void 0, svg, 0, useMaxWidth);
 }, "draw");
 var sankeyRenderer_default = {
   draw
 };
 
 // src/diagrams/sankey/sankeyUtils.ts
-var prepareTextForParsing = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((text) => {
+var prepareTextForParsing = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((text) => {
   const textToParse = text.replaceAll(/^[^\S\n\r]+|[^\S\n\r]+$/g, "").replaceAll(/([\n\r])+/g, "\n").trim();
   return textToParse;
 }, "prepareTextForParsing");
 
 // src/diagrams/sankey/styles.js
-var getStyles = /* @__PURE__ */ (0,chunk_3XYRH5AP/* __name */.K2)((options) => `.label {
+var getStyles = /* @__PURE__ */ (0,chunk_VIW5F6AA/* __name */.K2)((options) => `.label {
       font-family: ${options.fontFamily};
     }`, "getStyles");
 var styles_default = getStyles;

@@ -1,13 +1,13 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[3736],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4051],{
 
-/***/ 1355:
+/***/ 4051:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(451);
 /* harmony import */ var khroma__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3219);
 /* harmony import */ var khroma__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8041);
@@ -16,18 +16,18 @@
 
 // src/diagrams/timeline/parser/timeline.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [6, 8, 10, 11, 12, 14, 16, 17, 20, 21], $V1 = [1, 9], $V2 = [1, 10], $V3 = [1, 11], $V4 = [1, 12], $V5 = [1, 13], $V6 = [1, 16], $V7 = [1, 17];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "timeline": 4, "document": 5, "EOF": 6, "line": 7, "SPACE": 8, "statement": 9, "NEWLINE": 10, "title": 11, "acc_title": 12, "acc_title_value": 13, "acc_descr": 14, "acc_descr_value": 15, "acc_descr_multiline_value": 16, "section": 17, "period_statement": 18, "event_statement": 19, "period": 20, "event": 21, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 4: "timeline", 6: "EOF", 8: "SPACE", 10: "NEWLINE", 11: "title", 12: "acc_title", 13: "acc_title_value", 14: "acc_descr", 15: "acc_descr_value", 16: "acc_descr_multiline_value", 17: "section", 20: "period", 21: "event" },
     productions_: [0, [3, 3], [5, 0], [5, 2], [7, 2], [7, 1], [7, 1], [7, 1], [9, 1], [9, 2], [9, 2], [9, 1], [9, 1], [9, 1], [9, 1], [18, 1], [19, 1]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 1:
@@ -78,7 +78,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: [1, 2] }, { 1: [3] }, o($V0, [2, 2], { 5: 3 }), { 6: [1, 4], 7: 5, 8: [1, 6], 9: 7, 10: [1, 8], 11: $V1, 12: $V2, 14: $V3, 16: $V4, 17: $V5, 18: 14, 19: 15, 20: $V6, 21: $V7 }, o($V0, [2, 7], { 1: [2, 1] }), o($V0, [2, 3]), { 9: 18, 11: $V1, 12: $V2, 14: $V3, 16: $V4, 17: $V5, 18: 14, 19: 15, 20: $V6, 21: $V7 }, o($V0, [2, 5]), o($V0, [2, 6]), o($V0, [2, 8]), { 13: [1, 19] }, { 15: [1, 20] }, o($V0, [2, 11]), o($V0, [2, 12]), o($V0, [2, 13]), o($V0, [2, 14]), o($V0, [2, 15]), o($V0, [2, 16]), o($V0, [2, 4]), o($V0, [2, 9]), o($V0, [2, 10])],
     defaultActions: {},
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -87,7 +87,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -116,7 +116,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -129,7 +129,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -233,7 +233,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -241,7 +241,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -261,7 +261,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -282,7 +282,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -308,12 +308,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -326,16 +326,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -343,13 +343,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -412,7 +412,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -463,7 +463,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -472,11 +472,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -485,7 +485,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -493,7 +493,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -502,15 +502,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -594,7 +594,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -604,7 +604,7 @@ var timeline_default = parser;
 
 // src/diagrams/timeline/timelineDb.js
 var timelineDb_exports = {};
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__export */ .VA)(timelineDb_exports, {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__export */ .VA)(timelineDb_exports, {
   addEvent: () => addEvent,
   addSection: () => addSection,
   addTask: () => addTask,
@@ -620,22 +620,22 @@ var currentTaskId = 0;
 var sections = [];
 var tasks = [];
 var rawTasks = [];
-var getCommonDb = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .commonDb_exports */ .Wt, "getCommonDb");
-var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+var getCommonDb = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .commonDb_exports */ .Wt, "getCommonDb");
+var clear2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
   sections.length = 0;
   tasks.length = 0;
   currentSection = "";
   rawTasks.length = 0;
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .clear */ .IU)();
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .clear */ .IU)();
 }, "clear");
-var addSection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(txt) {
+var addSection = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(txt) {
   currentSection = txt;
   sections.push(txt);
 }, "addSection");
-var getSections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+var getSections = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
   return sections;
 }, "getSections");
-var getTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+var getTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
   let allItemsProcessed = compileTasks();
   const maxDepth = 100;
   let iterationCount = 0;
@@ -646,7 +646,7 @@ var getTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   tasks.push(...rawTasks);
   return tasks;
 }, "getTasks");
-var addTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(period, length, event) {
+var addTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(period, length, event) {
   const rawTask = {
     id: currentTaskId++,
     section: currentSection,
@@ -658,11 +658,11 @@ var addTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0_
   };
   rawTasks.push(rawTask);
 }, "addTask");
-var addEvent = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(event) {
+var addEvent = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(event) {
   const currentTask = rawTasks.find((task) => task.id === currentTaskId - 1);
   currentTask.events.push(event);
 }, "addEvent");
-var addTaskOrg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(descr) {
+var addTaskOrg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(descr) {
   const newTask = {
     section: currentSection,
     type: currentSection,
@@ -672,8 +672,8 @@ var addTaskOrg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   };
   tasks.push(newTask);
 }, "addTaskOrg");
-var compileTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
-  const compileTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(pos) {
+var compileTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+  const compileTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(pos) {
     return rawTasks[pos].processed;
   }, "compileTask");
   let allProcessed = true;
@@ -700,7 +700,7 @@ var timelineDb_default = {
 // src/diagrams/timeline/svgDraw.js
 
 var MAX_SECTIONS = 12;
-var drawRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, rectData) {
+var drawRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, rectData) {
   const rectElem = elem.append("rect");
   rectElem.attr("x", rectData.x);
   rectElem.attr("y", rectData.y);
@@ -715,7 +715,7 @@ var drawRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   }
   return rectElem;
 }, "drawRect");
-var drawFace = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(element, faceData) {
+var drawFace = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(element, faceData) {
   const radius = 15;
   const circleElement = element.append("circle").attr("cx", faceData.cx).attr("cy", faceData.cy).attr("class", "face").attr("r", radius).attr("stroke-width", 2).attr("overflow", "visible");
   const face = element.append("g");
@@ -725,16 +725,16 @@ var drawFace = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
     const arc = (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .arc */ .JLW)().startAngle(Math.PI / 2).endAngle(3 * (Math.PI / 2)).innerRadius(radius / 2).outerRadius(radius / 2.2);
     face2.append("path").attr("class", "mouth").attr("d", arc).attr("transform", "translate(" + faceData.cx + "," + (faceData.cy + 2) + ")");
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(smile, "smile");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(smile, "smile");
   function sad(face2) {
     const arc = (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .arc */ .JLW)().startAngle(3 * Math.PI / 2).endAngle(5 * (Math.PI / 2)).innerRadius(radius / 2).outerRadius(radius / 2.2);
     face2.append("path").attr("class", "mouth").attr("d", arc).attr("transform", "translate(" + faceData.cx + "," + (faceData.cy + 7) + ")");
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(sad, "sad");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(sad, "sad");
   function ambivalent(face2) {
     face2.append("line").attr("class", "mouth").attr("stroke", 2).attr("x1", faceData.cx - 5).attr("y1", faceData.cy + 7).attr("x2", faceData.cx + 5).attr("y2", faceData.cy + 7).attr("class", "mouth").attr("stroke-width", "1px").attr("stroke", "#666");
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(ambivalent, "ambivalent");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(ambivalent, "ambivalent");
   if (faceData.score > 3) {
     smile(face);
   } else if (faceData.score < 3) {
@@ -744,7 +744,7 @@ var drawFace = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   }
   return circleElement;
 }, "drawFace");
-var drawCircle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(element, circleData) {
+var drawCircle = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(element, circleData) {
   const circleElement = element.append("circle");
   circleElement.attr("cx", circleData.cx);
   circleElement.attr("cy", circleData.cy);
@@ -760,7 +760,7 @@ var drawCircle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   }
   return circleElement;
 }, "drawCircle");
-var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, textData) {
+var drawText = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, textData) {
   const nText = textData.text.replace(/<br\s*\/?>/gi, " ");
   const textElem = elem.append("text");
   textElem.attr("x", textData.x);
@@ -775,11 +775,11 @@ var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   span.text(nText);
   return textElem;
 }, "drawText");
-var drawLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, txtObject) {
+var drawLabel = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, txtObject) {
   function genPoints(x, y, width, height, cut) {
     return x + "," + y + " " + (x + width) + "," + y + " " + (x + width) + "," + (y + height - cut) + " " + (x + width - cut * 1.2) + "," + (y + height) + " " + x + "," + (y + height);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(genPoints, "genPoints");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(genPoints, "genPoints");
   const polygon = elem.append("polygon");
   polygon.attr("points", genPoints(txtObject.x, txtObject.y, 50, 20, 7));
   polygon.attr("class", "labelBox");
@@ -787,7 +787,7 @@ var drawLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   txtObject.x = txtObject.x + 0.5 * txtObject.labelMargin;
   drawText(elem, txtObject);
 }, "drawLabel");
-var drawSection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, section, conf) {
+var drawSection = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, section, conf) {
   const g = elem.append("g");
   const rect = getNoteRect();
   rect.x = section.x;
@@ -812,7 +812,7 @@ var drawSection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   );
 }, "drawSection");
 var taskCount = -1;
-var drawTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, task, conf) {
+var drawTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, task, conf) {
   const center = task.x + conf.width / 2;
   const g = elem.append("g");
   taskCount++;
@@ -845,7 +845,7 @@ var drawTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
     task.colour
   );
 }, "drawTask");
-var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, bounds) {
+var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, bounds) {
   const rectElem = drawRect(elem, {
     x: bounds.startx,
     y: bounds.starty,
@@ -856,7 +856,7 @@ var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   });
   rectElem.lower();
 }, "drawBackgroundRect");
-var getTextObj = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+var getTextObj = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
   return {
     x: 0,
     y: 0,
@@ -869,7 +869,7 @@ var getTextObj = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
     ry: 0
   };
 }, "getTextObj");
-var getNoteRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
+var getNoteRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function() {
   return {
     x: 0,
     y: 0,
@@ -885,7 +885,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
     const text = g.append("text").attr("x", x + width / 2).attr("y", y + height / 2 + 5).style("font-color", colour).style("text-anchor", "middle").text(content);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(byText, "byText");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(byText, "byText");
   function byTspan(content, g, x, y, width, height, textAttrs, conf, colour) {
     const { taskFontSize, taskFontFamily } = conf;
     const lines = content.split(/<br\s*\/?>/gi);
@@ -897,7 +897,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       _setTextAttrs(text, textAttrs);
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(byTspan, "byTspan");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(byTspan, "byTspan");
   function byFo(content, g, x, y, width, height, textAttrs, conf) {
     const body = g.append("switch");
     const f = body.append("foreignObject").attr("x", x).attr("y", y).attr("width", width).attr("height", height).attr("position", "fixed");
@@ -906,7 +906,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
     byTspan(content, body, x, y, width, height, textAttrs, conf);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(byFo, "byFo");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(byFo, "byFo");
   function _setTextAttrs(toText, fromTextAttrsDict) {
     for (const key in fromTextAttrsDict) {
       if (key in fromTextAttrsDict) {
@@ -914,12 +914,12 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       }
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
   return function(conf) {
     return conf.textPlacement === "fo" ? byFo : conf.textPlacement === "old" ? byText : byTspan;
   };
 }();
-var initGraphics = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(graphics) {
+var initGraphics = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(graphics) {
   graphics.append("defs").append("marker").attr("id", "arrowhead").attr("refX", 5).attr("refY", 2).attr("markerWidth", 6).attr("markerHeight", 4).attr("orient", "auto").append("path").attr("d", "M 0,0 V 4 L6,2 Z");
 }, "initGraphics");
 function wrap(text, width) {
@@ -942,8 +942,8 @@ function wrap(text, width) {
     }
   });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(wrap, "wrap");
-var drawNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, node, fullSection, conf) {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(wrap, "wrap");
+var drawNode = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, node, fullSection, conf) {
   const section = fullSection % MAX_SECTIONS - 1;
   const nodeElem = elem.append("g");
   node.section = section;
@@ -963,7 +963,7 @@ var drawNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   defaultBkg(bkgElem, node, section, conf);
   return node;
 }, "drawNode");
-var getVirtualNodeHeight = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, node, conf) {
+var getVirtualNodeHeight = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, node, conf) {
   const textElem = elem.append("g");
   const txt = textElem.append("text").text(node.descr).attr("dy", "1em").attr("alignment-baseline", "middle").attr("dominant-baseline", "middle").attr("text-anchor", "middle").call(wrap, node.width);
   const bbox = txt.node().getBBox();
@@ -971,7 +971,7 @@ var getVirtualNodeHeight = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPOR
   textElem.remove();
   return bbox.height + fontSize * 1.1 * 0.5 + node.padding;
 }, "getVirtualNodeHeight");
-var defaultBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, node, section) {
+var defaultBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(elem, node, section) {
   const rd = 5;
   elem.append("path").attr("id", "node-" + node.id).attr("class", "node-bkg node-" + node.type).attr(
     "d",
@@ -995,10 +995,10 @@ var svgDraw_default = {
 };
 
 // src/diagrams/timeline/timelineRenderer.ts
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(text, id, version, diagObj) {
-  const conf = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getConfig2 */ .D7)();
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(text, id, version, diagObj) {
+  const conf = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getConfig2 */ .D7)();
   const LEFT_MARGIN = conf.timeline?.leftMargin ?? 50;
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("timeline", diagObj.db);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("timeline", diagObj.db);
   const securityLevel = conf.securityLevel;
   let sandboxElement;
   if (securityLevel === "sandbox") {
@@ -1009,10 +1009,10 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/*
   svg.append("g");
   const tasks2 = diagObj.db.getTasks();
   const title = diagObj.db.getCommonDb().getDiagramTitle();
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("task", tasks2);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("task", tasks2);
   svgDraw_default.initGraphics(svg);
   const sections2 = diagObj.db.getSections();
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sections", sections2);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sections", sections2);
   let maxSectionHeight = 0;
   let maxTaskHeight = 0;
   let depthY = 0;
@@ -1032,12 +1032,12 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/*
       maxHeight: maxSectionHeight
     };
     const sectionHeight = svgDraw_default.getVirtualNodeHeight(svg, sectionNode, conf);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sectionHeight before draw", sectionHeight);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sectionHeight before draw", sectionHeight);
     maxSectionHeight = Math.max(maxSectionHeight, sectionHeight + 20);
   });
   let maxEventCount = 0;
   let maxEventLineLength = 0;
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("tasks.length", tasks2.length);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("tasks.length", tasks2.length);
   for (const [i, task] of tasks2.entries()) {
     const taskNode = {
       number: i,
@@ -1048,7 +1048,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/*
       maxHeight: maxTaskHeight
     };
     const taskHeight = svgDraw_default.getVirtualNodeHeight(svg, taskNode, conf);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("taskHeight before draw", taskHeight);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("taskHeight before draw", taskHeight);
     maxTaskHeight = Math.max(maxTaskHeight, taskHeight + 20);
     maxEventCount = Math.max(maxEventCount, task.events.length);
     let maxEventLineLengthTemp = 0;
@@ -1068,8 +1068,8 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/*
     }
     maxEventLineLength = Math.max(maxEventLineLength, maxEventLineLengthTemp);
   }
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("maxSectionHeight before draw", maxSectionHeight);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("maxTaskHeight before draw", maxTaskHeight);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("maxSectionHeight before draw", maxSectionHeight);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("maxTaskHeight before draw", maxTaskHeight);
   if (sections2 && sections2.length > 0) {
     sections2.forEach((section) => {
       const tasksForSection = tasks2.filter((task) => task.section === section);
@@ -1081,10 +1081,10 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/*
         padding: 20,
         maxHeight: maxSectionHeight
       };
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sectionNode", sectionNode);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sectionNode", sectionNode);
       const sectionNodeWrapper = svg.append("g");
       const node = svgDraw_default.drawNode(sectionNodeWrapper, sectionNode, sectionNumber, conf);
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sectionNode output", node);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("sectionNode output", node);
       sectionNodeWrapper.attr("transform", `translate(${masterX}, ${sectionBeginY})`);
       masterY += maxSectionHeight + 50;
       if (tasksForSection.length > 0) {
@@ -1123,21 +1123,21 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/*
     );
   }
   const box = svg.node().getBBox();
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("bounds", box);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("bounds", box);
   if (title) {
     svg.append("text").text(title).attr("x", box.width / 2 - LEFT_MARGIN).attr("font-size", "4ex").attr("font-weight", "bold").attr("y", 20);
   }
   depthY = hasSections ? maxSectionHeight + maxTaskHeight + 150 : maxTaskHeight + 100;
   const lineWrapper = svg.append("g").attr("class", "lineWrapper");
   lineWrapper.append("line").attr("x1", LEFT_MARGIN).attr("y1", depthY).attr("x2", box.width + 3 * LEFT_MARGIN).attr("y2", depthY).attr("stroke-width", 4).attr("stroke", "black").attr("marker-end", "url(#arrowhead)");
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .setupGraphViewbox */ .ot)(
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .setupGraphViewbox */ .ot)(
     void 0,
     svg,
     conf.timeline?.padding ?? 50,
     conf.timeline?.useMaxWidth ?? false
   );
 }, "draw");
-var drawTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(diagram2, tasks2, sectionColor, masterX, masterY, maxTaskHeight, conf, maxEventCount, maxEventLineLength, maxSectionHeight, isWithoutSections) {
+var drawTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(diagram2, tasks2, sectionColor, masterX, masterY, maxTaskHeight, conf, maxEventCount, maxEventLineLength, maxSectionHeight, isWithoutSections) {
   for (const task of tasks2) {
     const taskNode = {
       descr: task.task,
@@ -1147,11 +1147,11 @@ var drawTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
       padding: 20,
       maxHeight: maxTaskHeight
     };
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("taskNode", taskNode);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("taskNode", taskNode);
     const taskWrapper = diagram2.append("g").attr("class", "taskWrapper");
     const node = svgDraw_default.drawNode(taskWrapper, taskNode, sectionColor, conf);
     const taskHeight = node.height;
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("taskHeight after draw", taskHeight);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("taskHeight after draw", taskHeight);
     taskWrapper.attr("transform", `translate(${masterX}, ${masterY})`);
     maxTaskHeight = Math.max(maxTaskHeight, taskHeight);
     if (task.events) {
@@ -1169,7 +1169,7 @@ var drawTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   }
   masterY = masterY - 10;
 }, "drawTasks");
-var drawEvents = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(diagram2, events, sectionColor, masterX, masterY, conf) {
+var drawEvents = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(function(diagram2, events, sectionColor, masterX, masterY, conf) {
   let maxEventHeight = 0;
   const eventBeginY = masterY;
   masterY = masterY + 100;
@@ -1182,7 +1182,7 @@ var drawEvents = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
       padding: 20,
       maxHeight: 50
     };
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("eventNode", eventNode);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug("eventNode", eventNode);
     const eventWrapper = diagram2.append("g").attr("class", "eventWrapper");
     const node = svgDraw_default.drawNode(eventWrapper, eventNode, sectionColor, conf);
     const eventHeight = node.height;
@@ -1194,14 +1194,14 @@ var drawEvents = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   return maxEventHeight;
 }, "drawEvents");
 var timelineRenderer_default = {
-  setConf: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
+  setConf: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
   }, "setConf"),
   draw
 };
 
 // src/diagrams/timeline/styles.js
 
-var genSections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((options) => {
+var genSections = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((options) => {
   let sections2 = "";
   for (let i = 0; i < options.THEME_COLOR_LIMIT; i++) {
     options["lineColor" + i] = options["lineColor" + i] || options["cScaleInv" + i];
@@ -1249,7 +1249,7 @@ var genSections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   }
   return sections2;
 }, "genSections");
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((options) => `
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((options) => `
   .edge {
     stroke-width: 3;
   }

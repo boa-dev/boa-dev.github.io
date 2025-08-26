@@ -1,13 +1,13 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[5388],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[7411],{
 
-/***/ 487:
+/***/ 3861:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   S: () => (/* binding */ populateCommonDb)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 
 
 // src/diagrams/common/populateCommonDb.ts
@@ -22,54 +22,23 @@ function populateCommonDb(ast, db) {
     db.setDiagramTitle?.(ast.title);
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
 
 
 
 
 /***/ }),
 
-/***/ 2753:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   m: () => (/* binding */ ImperativeState)
-/* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-
-
-// src/utils/imperativeState.ts
-var ImperativeState = class {
-  /**
-   * @param init - Function that creates the default state.
-   */
-  constructor(init) {
-    this.init = init;
-    this.records = this.init();
-  }
-  static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(this, "ImperativeState");
-  }
-  reset() {
-    this.records = this.init();
-  }
-};
-
-
-
-
-/***/ }),
-
-/***/ 5388:
+/***/ 7411:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(487);
-/* harmony import */ var _chunk_AACKK3MU_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2753);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3861);
+/* harmony import */ var _chunk_FHKO5MBM_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9116);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6936);
 /* harmony import */ var _mermaid_js_parser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8731);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(451);
 
@@ -90,15 +59,15 @@ var commitType = {
 };
 
 // src/diagrams/git/gitGraphAst.ts
-var DEFAULT_GITGRAPH_CONFIG = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.gitGraph;
-var getConfig3 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
-  const config = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .cleanAndMerge */ .$t)({
+var DEFAULT_GITGRAPH_CONFIG = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.gitGraph;
+var getConfig3 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
+  const config = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .cleanAndMerge */ .$t)({
     ...DEFAULT_GITGRAPH_CONFIG,
-    ...(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)().gitGraph
+    ...(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)().gitGraph
   });
   return config;
 }, "getConfig");
-var state = new _chunk_AACKK3MU_mjs__WEBPACK_IMPORTED_MODULE_1__/* .ImperativeState */ .m(() => {
+var state = new _chunk_FHKO5MBM_mjs__WEBPACK_IMPORTED_MODULE_1__/* .ImperativeState */ .m(() => {
   const config = getConfig3();
   const mainBranchName = config.mainBranchName;
   const mainBranchOrder = config.mainBranchOrder;
@@ -115,9 +84,9 @@ var state = new _chunk_AACKK3MU_mjs__WEBPACK_IMPORTED_MODULE_1__/* .ImperativeSt
   };
 });
 function getID() {
-  return (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .random */ .yT)({ length: 7 });
+  return (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .random */ .yT)({ length: 7 });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getID, "getID");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getID, "getID");
 function uniqBy(list, fn) {
   const recordMap = /* @__PURE__ */ Object.create(null);
   return list.reduce((out, item) => {
@@ -129,34 +98,34 @@ function uniqBy(list, fn) {
     return out;
   }, []);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(uniqBy, "uniqBy");
-var setDirection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(dir2) {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(uniqBy, "uniqBy");
+var setDirection = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(dir2) {
   state.records.direction = dir2;
 }, "setDirection");
-var setOptions = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(rawOptString) {
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("options str", rawOptString);
+var setOptions = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(rawOptString) {
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("options str", rawOptString);
   rawOptString = rawOptString?.trim();
   rawOptString = rawOptString || "{}";
   try {
     state.records.options = JSON.parse(rawOptString);
   } catch (e) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing gitGraph options", e.message);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error("error while parsing gitGraph options", e.message);
   }
 }, "setOptions");
-var getOptions = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getOptions = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return state.records.options;
 }, "getOptions");
-var commit = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(commitDB) {
+var commit = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(commitDB) {
   let msg = commitDB.msg;
   let id = commitDB.id;
   const type = commitDB.type;
   let tags = commitDB.tags;
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("commit", msg, id, type, tags);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Entering commit:", msg, id, type, tags);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("commit", msg, id, type, tags);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Entering commit:", msg, id, type, tags);
   const config = getConfig3();
-  id = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(id, config);
-  msg = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(msg, config);
-  tags = tags?.map((tag) => _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(tag, config));
+  id = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(id, config);
+  msg = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(msg, config);
+  tags = tags?.map((tag) => _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(tag, config));
   const newCommit = {
     id: id ? id : state.records.seq + "-" + getID(),
     message: msg,
@@ -167,18 +136,18 @@ var commit = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__
     branch: state.records.currBranch
   };
   state.records.head = newCommit;
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("main branch", config.mainBranchName);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("main branch", config.mainBranchName);
   if (state.records.commits.has(newCommit.id)) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.warn(`Commit ID ${newCommit.id} already exists`);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.warn(`Commit ID ${newCommit.id} already exists`);
   }
   state.records.commits.set(newCommit.id, newCommit);
   state.records.branches.set(state.records.currBranch, newCommit.id);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in pushCommit " + newCommit.id);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in pushCommit " + newCommit.id);
 }, "commit");
-var branch = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(branchDB) {
+var branch = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(branchDB) {
   let name = branchDB.name;
   const order = branchDB.order;
-  name = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(name, getConfig3());
+  name = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(name, getConfig3());
   if (state.records.branches.has(name)) {
     throw new Error(
       `Trying to create an existing branch. (Help: Either use a new name if you want create a new branch or try using "checkout ${name}")`
@@ -187,17 +156,17 @@ var branch = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__
   state.records.branches.set(name, state.records.head != null ? state.records.head.id : null);
   state.records.branchConfig.set(name, { name, order });
   checkout(name);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in createBranch");
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in createBranch");
 }, "branch");
-var merge = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((mergeDB) => {
+var merge = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((mergeDB) => {
   let otherBranch = mergeDB.branch;
   let customId = mergeDB.id;
   const overrideType = mergeDB.type;
   const customTags = mergeDB.tags;
   const config = getConfig3();
-  otherBranch = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(otherBranch, config);
+  otherBranch = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(otherBranch, config);
   if (customId) {
-    customId = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(customId, config);
+    customId = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(customId, config);
   }
   const currentBranchCheck = state.records.branches.get(state.records.currBranch);
   const otherBranchCheck = state.records.branches.get(otherBranch);
@@ -285,20 +254,20 @@ var merge = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/
   state.records.head = commit2;
   state.records.commits.set(commit2.id, commit2);
   state.records.branches.set(state.records.currBranch, commit2.id);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(state.records.branches);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in mergeBranch");
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(state.records.branches);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in mergeBranch");
 }, "merge");
-var cherryPick = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(cherryPickDB) {
+var cherryPick = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(cherryPickDB) {
   let sourceId = cherryPickDB.id;
   let targetId = cherryPickDB.targetId;
   let tags = cherryPickDB.tags;
   let parentCommitId = cherryPickDB.parent;
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Entering cherryPick:", sourceId, targetId, tags);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Entering cherryPick:", sourceId, targetId, tags);
   const config = getConfig3();
-  sourceId = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(sourceId, config);
-  targetId = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(targetId, config);
-  tags = tags?.map((tag) => _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(tag, config));
-  parentCommitId = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(parentCommitId, config);
+  sourceId = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(sourceId, config);
+  targetId = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(targetId, config);
+  tags = tags?.map((tag) => _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(tag, config));
+  parentCommitId = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(parentCommitId, config);
   if (!sourceId || !state.records.commits.has(sourceId)) {
     const error = new Error(
       'Incorrect usage of "cherryPick". Source commit id should exist and provided'
@@ -377,12 +346,12 @@ var cherryPick = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
     state.records.head = commit2;
     state.records.commits.set(commit2.id, commit2);
     state.records.branches.set(state.records.currBranch, commit2.id);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(state.records.branches);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in cherryPick");
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(state.records.branches);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in cherryPick");
   }
 }, "cherryPick");
-var checkout = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(branch2) {
-  branch2 = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(branch2, getConfig3());
+var checkout = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(branch2) {
+  branch2 = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .common_default */ .Y2.sanitizeText(branch2, getConfig3());
   if (!state.records.branches.has(branch2)) {
     const error = new Error(
       `Trying to checkout branch which is not yet created. (Help try using "branch ${branch2}")`
@@ -411,7 +380,7 @@ function upsert(arr, key, newVal) {
     arr.splice(index, 1, newVal);
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(upsert, "upsert");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(upsert, "upsert");
 function prettyPrintCommitHistory(commitArr) {
   const commit2 = commitArr.reduce((out, commit3) => {
     if (out.seq > commit3.seq) {
@@ -433,7 +402,7 @@ function prettyPrintCommitHistory(commitArr) {
       label.push(branch2);
     }
   }
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(label.join(" "));
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(label.join(" "));
   if (commit2.parents && commit2.parents.length == 2 && commit2.parents[0] && commit2.parents[1]) {
     const newCommit = state.records.commits.get(commit2.parents[0]);
     upsert(commitArr, commit2, newCommit);
@@ -451,17 +420,17 @@ function prettyPrintCommitHistory(commitArr) {
   commitArr = uniqBy(commitArr, (c) => c.id);
   prettyPrintCommitHistory(commitArr);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(prettyPrintCommitHistory, "prettyPrintCommitHistory");
-var prettyPrint = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(state.records.commits);
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(prettyPrintCommitHistory, "prettyPrintCommitHistory");
+var prettyPrint = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(state.records.commits);
   const node = getCommitsArray()[0];
   prettyPrintCommitHistory([node]);
 }, "prettyPrint");
-var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var clear2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   state.reset();
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
 }, "clear");
-var getBranchesAsObjArray = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getBranchesAsObjArray = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   const branchesArray = [...state.records.branchConfig.values()].map((branchConfig, i) => {
     if (branchConfig.order !== null && branchConfig.order !== void 0) {
       return branchConfig;
@@ -473,27 +442,27 @@ var getBranchesAsObjArray = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPO
   }).sort((a, b) => (a.order ?? 0) - (b.order ?? 0)).map(({ name }) => ({ name }));
   return branchesArray;
 }, "getBranchesAsObjArray");
-var getBranches = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getBranches = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return state.records.branches;
 }, "getBranches");
-var getCommits = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getCommits = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return state.records.commits;
 }, "getCommits");
-var getCommitsArray = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getCommitsArray = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   const commitArr = [...state.records.commits.values()];
   commitArr.forEach(function(o) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(o.id);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(o.id);
   });
   commitArr.sort((a, b) => a.seq - b.seq);
   return commitArr;
 }, "getCommitsArray");
-var getCurrentBranch = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getCurrentBranch = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return state.records.currBranch;
 }, "getCurrentBranch");
-var getDirection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getDirection = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return state.records.direction;
 }, "getDirection");
-var getHead = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+var getHead = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
   return state.records.head;
 }, "getHead");
 var db = {
@@ -517,17 +486,17 @@ var db = {
   getCurrentBranch,
   getDirection,
   getHead,
-  setAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV,
-  getAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN,
-  getAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7,
-  setAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI,
-  setDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke,
-  getDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab
+  setAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV,
+  getAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN,
+  getAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7,
+  setAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI,
+  setDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke,
+  getDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab
 };
 
 // src/diagrams/git/gitGraphParser.ts
-var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((ast, db2) => {
-  (0,_chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_0__/* .populateCommonDb */ .S)(ast, db2);
+var populate = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((ast, db2) => {
+  (0,_chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_0__/* .populateCommonDb */ .S)(ast, db2);
   if (ast.dir) {
     db2.setDirection(ast.dir);
   }
@@ -535,22 +504,22 @@ var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
     parseStatement(statement, db2);
   }
 }, "populate");
-var parseStatement = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((statement, db2) => {
+var parseStatement = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((statement, db2) => {
   const parsers = {
-    Commit: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.commit(parseCommit(stmt)), "Commit"),
-    Branch: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.branch(parseBranch(stmt)), "Branch"),
-    Merge: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.merge(parseMerge(stmt)), "Merge"),
-    Checkout: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.checkout(parseCheckout(stmt)), "Checkout"),
-    CherryPicking: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.cherryPick(parseCherryPicking(stmt)), "CherryPicking")
+    Commit: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.commit(parseCommit(stmt)), "Commit"),
+    Branch: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.branch(parseBranch(stmt)), "Branch"),
+    Merge: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.merge(parseMerge(stmt)), "Merge"),
+    Checkout: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.checkout(parseCheckout(stmt)), "Checkout"),
+    CherryPicking: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((stmt) => db2.cherryPick(parseCherryPicking(stmt)), "CherryPicking")
   };
   const parser2 = parsers[statement.$type];
   if (parser2) {
     parser2(statement);
   } else {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error(`Unknown statement type: ${statement.$type}`);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.error(`Unknown statement type: ${statement.$type}`);
   }
 }, "parseStatement");
-var parseCommit = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
+var parseCommit = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
   const commitDB = {
     id: commit2.id,
     msg: commit2.message ?? "",
@@ -559,14 +528,14 @@ var parseCommit = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   };
   return commitDB;
 }, "parseCommit");
-var parseBranch = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((branch2) => {
+var parseBranch = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((branch2) => {
   const branchDB = {
     name: branch2.name,
     order: branch2.order ?? 0
   };
   return branchDB;
 }, "parseBranch");
-var parseMerge = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((merge2) => {
+var parseMerge = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((merge2) => {
   const mergeDB = {
     branch: merge2.branch,
     id: merge2.id ?? "",
@@ -575,11 +544,11 @@ var parseMerge = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   };
   return mergeDB;
 }, "parseMerge");
-var parseCheckout = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((checkout2) => {
+var parseCheckout = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((checkout2) => {
   const branch2 = checkout2.branch;
   return branch2;
 }, "parseCheckout");
-var parseCherryPicking = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cherryPicking) => {
+var parseCherryPicking = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((cherryPicking) => {
   const cherryPickDB = {
     id: cherryPicking.id,
     targetId: "",
@@ -589,9 +558,9 @@ var parseCherryPicking = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   return cherryPickDB;
 }, "parseCherryPicking");
 var parser = {
-  parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (input) => {
+  parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (input) => {
     const ast = await (0,_mermaid_js_parser__WEBPACK_IMPORTED_MODULE_4__/* .parse */ .qg)("gitGraph", input);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(ast);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(ast);
     populate(ast, db);
   }, "parse")
 };
@@ -736,7 +705,7 @@ if (void 0) {
 
 // src/diagrams/git/gitGraphRenderer.ts
 
-var DEFAULT_CONFIG = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
+var DEFAULT_CONFIG = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
 var DEFAULT_GITGRAPH_CONFIG2 = DEFAULT_CONFIG?.gitGraph;
 var LAYOUT_OFFSET = 10;
 var COMMIT_STEP = 40;
@@ -750,7 +719,7 @@ var allCommitsDict = /* @__PURE__ */ new Map();
 var lanes = [];
 var maxPos = 0;
 var dir = "LR";
-var clear3 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
+var clear3 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
   branchPos.clear();
   commitPos.clear();
   allCommitsDict.clear();
@@ -758,7 +727,7 @@ var clear3 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__
   lanes = [];
   dir = "LR";
 }, "clear");
-var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((txt) => {
+var drawText = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((txt) => {
   const svgLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
   const rows = typeof txt === "string" ? txt.split(/\\n|\n|<br\s*\/?>/gi) : txt;
   rows.forEach((row) => {
@@ -772,15 +741,15 @@ var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   });
   return svgLabel;
 }, "drawText");
-var findClosestParent = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((parents) => {
+var findClosestParent = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((parents) => {
   let closestParent;
   let comparisonFunc;
   let targetPosition;
   if (dir === "BT") {
-    comparisonFunc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((a, b) => a <= b, "comparisonFunc");
+    comparisonFunc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((a, b) => a <= b, "comparisonFunc");
     targetPosition = Infinity;
   } else {
-    comparisonFunc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((a, b) => a >= b, "comparisonFunc");
+    comparisonFunc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((a, b) => a >= b, "comparisonFunc");
     targetPosition = 0;
   }
   parents.forEach((parent) => {
@@ -792,7 +761,7 @@ var findClosestParent = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   });
   return closestParent;
 }, "findClosestParent");
-var findClosestParentBT = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((parents) => {
+var findClosestParentBT = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((parents) => {
   let closestParent = "";
   let maxPosition = Infinity;
   parents.forEach((parent) => {
@@ -804,7 +773,7 @@ var findClosestParentBT = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORT
   });
   return closestParent || void 0;
 }, "findClosestParentBT");
-var setParallelBTPos = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((sortedKeys, commits, defaultPos2) => {
+var setParallelBTPos = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((sortedKeys, commits, defaultPos2) => {
   let curPos = defaultPos2;
   let maxPosition = defaultPos2;
   const roots = [];
@@ -839,7 +808,7 @@ var setParallelBTPos = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_
     }
   });
 }, "setParallelBTPos");
-var findClosestParentPos = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
+var findClosestParentPos = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
   const closestParent = findClosestParent(commit2.parents.filter((p) => p !== null));
   if (!closestParent) {
     throw new Error(`Closest parent not found for commit ${commit2.id}`);
@@ -850,11 +819,11 @@ var findClosestParentPos = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPOR
   }
   return closestParentPos;
 }, "findClosestParentPos");
-var calculateCommitPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
+var calculateCommitPosition = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
   const closestParentPos = findClosestParentPos(commit2);
   return closestParentPos + COMMIT_STEP;
 }, "calculateCommitPosition");
-var setCommitPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, curPos) => {
+var setCommitPosition = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, curPos) => {
   const branch2 = branchPos.get(commit2.branch);
   if (!branch2) {
     throw new Error(`Branch not found for commit ${commit2.id}`);
@@ -864,7 +833,7 @@ var setCommitPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   commitPos.set(commit2.id, { x, y });
   return { x, y };
 }, "setCommitPosition");
-var setRootPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, curPos, defaultPos2) => {
+var setRootPosition = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, curPos, defaultPos2) => {
   const branch2 = branchPos.get(commit2.branch);
   if (!branch2) {
     throw new Error(`Branch not found for commit ${commit2.id}`);
@@ -873,7 +842,7 @@ var setRootPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_M
   const x = branch2.pos;
   commitPos.set(commit2.id, { x, y });
 }, "setRootPosition");
-var drawCommitBullet = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((gBullets, commit2, commitPosition, typeClass, branchIndex, commitSymbolType) => {
+var drawCommitBullet = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((gBullets, commit2, commitPosition, typeClass, branchIndex, commitSymbolType) => {
   if (commitSymbolType === commitType.HIGHLIGHT) {
     gBullets.append("rect").attr("x", commitPosition.x - 10).attr("y", commitPosition.y - 10).attr("width", 20).attr("height", 20).attr(
       "class",
@@ -914,7 +883,7 @@ var drawCommitBullet = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_
     }
   }
 }, "drawCommitBullet");
-var drawCommitLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((gLabels, commit2, commitPosition, pos) => {
+var drawCommitLabel = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((gLabels, commit2, commitPosition, pos) => {
   if (commit2.type !== commitType.CHERRY_PICK && (commit2.customId && commit2.type === commitType.MERGE || commit2.type !== commitType.MERGE) && DEFAULT_GITGRAPH_CONFIG2?.showCommitLabel) {
     const wrapper = gLabels.append("g");
     const labelBkg = wrapper.insert("rect").attr("class", "commit-label-bkg");
@@ -950,7 +919,7 @@ var drawCommitLabel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_M
     }
   }
 }, "drawCommitLabel");
-var drawCommitTags = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((gLabels, commit2, commitPosition, pos) => {
+var drawCommitTags = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((gLabels, commit2, commitPosition, pos) => {
   if (commit2.tags.length > 0) {
     let yOffset = 0;
     let maxTagBboxWidth = 0;
@@ -1007,7 +976,7 @@ var drawCommitTags = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MO
     }
   }
 }, "drawCommitTags");
-var getCommitClassType = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
+var getCommitClassType = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2) => {
   const commitSymbolType = commit2.customType ?? commit2.type;
   switch (commitSymbolType) {
     case commitType.NORMAL:
@@ -1024,7 +993,7 @@ var getCommitClassType = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
       return "commit-normal";
   }
 }, "getCommitClassType");
-var calculatePosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, dir2, pos, commitPos2) => {
+var calculatePosition = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, dir2, pos, commitPos2) => {
   const defaultCommitPosition = { x: 0, y: 0 };
   if (commit2.parents.length > 0) {
     const closestParent = findClosestParent(commit2.parents);
@@ -1051,7 +1020,7 @@ var calculatePosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   }
   return 0;
 }, "calculatePosition");
-var getCommitPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, pos, isParallelCommits) => {
+var getCommitPosition = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commit2, pos, isParallelCommits) => {
   const posWithOffset = dir === "BT" && isParallelCommits ? pos : pos + LAYOUT_OFFSET;
   const y = dir === "TB" || dir === "BT" ? posWithOffset : branchPos.get(commit2.branch)?.pos;
   const x = dir === "TB" || dir === "BT" ? branchPos.get(commit2.branch)?.pos : posWithOffset;
@@ -1060,7 +1029,7 @@ var getCommitPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   }
   return { x, y, posWithOffset };
 }, "getCommitPosition");
-var drawCommits = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, commits, modifyGraph) => {
+var drawCommits = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, commits, modifyGraph) => {
   if (!DEFAULT_GITGRAPH_CONFIG2) {
     throw new Error("GitGraph config not found");
   }
@@ -1069,7 +1038,7 @@ var drawCommits = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   let pos = dir === "TB" || dir === "BT" ? defaultPos : 0;
   const keys = [...commits.keys()];
   const isParallelCommits = DEFAULT_GITGRAPH_CONFIG2?.parallelCommits ?? false;
-  const sortKeys = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((a, b) => {
+  const sortKeys = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((a, b) => {
     const seqA = commits.get(a)?.seq;
     const seqB = commits.get(b)?.seq;
     return seqA !== void 0 && seqB !== void 0 ? seqA - seqB : 0;
@@ -1109,16 +1078,16 @@ var drawCommits = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
     }
   });
 }, "drawCommits");
-var shouldRerouteArrow = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commitA, commitB, p1, p2, allCommits) => {
+var shouldRerouteArrow = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((commitA, commitB, p1, p2, allCommits) => {
   const commitBIsFurthest = dir === "TB" || dir === "BT" ? p1.x < p2.x : p1.y < p2.y;
   const branchToGetCurve = commitBIsFurthest ? commitB.branch : commitA.branch;
-  const isOnBranchToGetCurve = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((x) => x.branch === branchToGetCurve, "isOnBranchToGetCurve");
-  const isBetweenCommits = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((x) => x.seq > commitA.seq && x.seq < commitB.seq, "isBetweenCommits");
+  const isOnBranchToGetCurve = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((x) => x.branch === branchToGetCurve, "isOnBranchToGetCurve");
+  const isBetweenCommits = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((x) => x.seq > commitA.seq && x.seq < commitB.seq, "isBetweenCommits");
   return [...allCommits.values()].some((commitX) => {
     return isBetweenCommits(commitX) && isOnBranchToGetCurve(commitX);
   });
 }, "shouldRerouteArrow");
-var findLane = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((y1, y2, depth = 0) => {
+var findLane = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((y1, y2, depth = 0) => {
   const candidate = y1 + Math.abs(y1 - y2) / 2;
   if (depth > 5) {
     return candidate;
@@ -1131,7 +1100,7 @@ var findLane = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   const diff = Math.abs(y1 - y2);
   return findLane(y1, y2 - diff / 5, depth + 1);
 }, "findLane");
-var drawArrow = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, commitA, commitB, allCommits) => {
+var drawArrow = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, commitA, commitB, allCommits) => {
   const p1 = commitPos.get(commitA.id);
   const p2 = commitPos.get(commitB.id);
   if (p1 === void 0 || p2 === void 0) {
@@ -1250,7 +1219,7 @@ var drawArrow = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   }
   svg.append("path").attr("d", lineDef).attr("class", "arrow arrow" + colorClassNum % THEME_COLOR_LIMIT);
 }, "drawArrow");
-var drawArrows = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, commits) => {
+var drawArrows = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, commits) => {
   const gArrows = svg.append("g").attr("class", "commit-arrows");
   [...commits.keys()].forEach((key) => {
     const commit2 = commits.get(key);
@@ -1261,7 +1230,7 @@ var drawArrows = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
     }
   });
 }, "drawArrows");
-var drawBranches = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, branches) => {
+var drawBranches = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, branches) => {
   const g = svg.append("g");
   branches.forEach((branch2, index) => {
     const adjustIndexForTheme = index % THEME_COLOR_LIMIT;
@@ -1310,14 +1279,14 @@ var drawBranches = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
     }
   });
 }, "drawBranches");
-var setBranchPosition = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(name, pos, index, bbox, rotateCommitLabel) {
+var setBranchPosition = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(name, pos, index, bbox, rotateCommitLabel) {
   branchPos.set(name, { pos, index });
   pos += 50 + (rotateCommitLabel ? 40 : 0) + (dir === "TB" || dir === "BT" ? bbox.width / 2 : 0);
   return pos;
 }, "setBranchPosition");
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(txt, id, ver, diagObj) {
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(txt, id, ver, diagObj) {
   clear3();
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in gitgraph renderer", txt + "\n", "id:", id, ver);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("in gitgraph renderer", txt + "\n", "id:", id, ver);
   if (!DEFAULT_GITGRAPH_CONFIG2) {
     throw new Error("GitGraph config not found");
   }
@@ -1346,13 +1315,13 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
   }
   drawArrows(diagram2, allCommitsDict);
   drawCommits(diagram2, allCommitsDict, true);
-  _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.insertTitle(
+  _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_2__/* .utils_default */ ._K.insertTitle(
     diagram2,
     "gitTitleText",
     DEFAULT_GITGRAPH_CONFIG2.titleTopMargin ?? 0,
     db2.getDiagramTitle()
   );
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setupGraphViewbox2 */ .mj)(
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setupGraphViewbox2 */ .mj)(
     void 0,
     diagram2,
     DEFAULT_GITGRAPH_CONFIG2.diagramPadding,
@@ -1381,7 +1350,7 @@ if (void 0) {
       right: 0,
       bottom: 0,
       left: 0,
-      toJSON: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => "", "toJSON")
+      toJSON: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => "", "toJSON")
     };
     it("should setBranchPositions LR with two branches", () => {
       dir = "LR";
@@ -1748,7 +1717,7 @@ if (void 0) {
 }
 
 // src/diagrams/git/styles.js
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => `
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => `
   .commit-id,
   .commit-msg,
   .branch-label {
@@ -1810,6 +1779,37 @@ var diagram = {
   renderer: gitGraphRenderer_default,
   styles: styles_default
 };
+
+
+
+/***/ }),
+
+/***/ 9116:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   m: () => (/* binding */ ImperativeState)
+/* harmony export */ });
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+
+
+// src/utils/imperativeState.ts
+var ImperativeState = class {
+  /**
+   * @param init - Function that creates the default state.
+   */
+  constructor(init) {
+    this.init = init;
+    this.records = this.init();
+  }
+  static {
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(this, "ImperativeState");
+  }
+  reset() {
+    this.records = this.init();
+  }
+};
+
 
 
 

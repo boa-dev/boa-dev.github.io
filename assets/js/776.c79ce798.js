@@ -1,65 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[8379],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[776],{
 
-/***/ 4540:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ getDiagramElement)
-/* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(451);
-
-
-// src/rendering-util/insertElementsForSize.js
-
-var getDiagramElement = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((id, securityLevel) => {
-  let sandboxElement;
-  if (securityLevel === "sandbox") {
-    sandboxElement = (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("#i" + id);
-  }
-  const root = securityLevel === "sandbox" ? (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)(sandboxElement.nodes()[0].contentDocument.body) : (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("body");
-  const svg = root.select(`[id="${id}"]`);
-  return svg;
-}, "getDiagramElement");
-
-
-
-
-/***/ }),
-
-/***/ 4651:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   o: () => (/* binding */ getIconStyles)
-/* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-
-
-// src/diagrams/globalStyles.ts
-var getIconStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => `
-  /* Font Awesome icon styling - consolidated */
-  .label-icon {
-    display: inline-block;
-    height: 1em;
-    overflow: visible;
-    vertical-align: -0.125em;
-  }
-  
-  .node .label-icon path {
-    fill: currentColor;
-    stroke: revert;
-    stroke-width: revert;
-  }
-`, "getIconStyles");
-
-
-
-
-/***/ }),
-
-/***/ 8379:
+/***/ 776:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -68,12 +10,12 @@ var getIconStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
 /* harmony export */   _$: () => (/* binding */ classDiagram_default),
 /* harmony export */   tM: () => (/* binding */ styles_default)
 /* harmony export */ });
-/* harmony import */ var _chunk_E2GYISFI_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4651);
-/* harmony import */ var _chunk_BFAMUDN2_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4540);
-/* harmony import */ var _chunk_SKB7J2MH_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8833);
-/* harmony import */ var _chunk_IWUHOULB_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5020);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_GLLZNHP4_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7052);
+/* harmony import */ var _chunk_WVR4S24B_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3525);
+/* harmony import */ var _chunk_NRVI72HA_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3004);
+/* harmony import */ var _chunk_NXG7ZM6U_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(373);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6936);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(451);
 
 
@@ -84,263 +26,264 @@ var getIconStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
 
 // src/diagrams/class/parser/classDiagram.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
-  }, "o"), $V0 = [1, 18], $V1 = [1, 19], $V2 = [1, 20], $V3 = [1, 41], $V4 = [1, 42], $V5 = [1, 26], $V6 = [1, 24], $V7 = [1, 25], $V8 = [1, 32], $V9 = [1, 33], $Va = [1, 34], $Vb = [1, 45], $Vc = [1, 35], $Vd = [1, 36], $Ve = [1, 37], $Vf = [1, 38], $Vg = [1, 27], $Vh = [1, 28], $Vi = [1, 29], $Vj = [1, 30], $Vk = [1, 31], $Vl = [1, 44], $Vm = [1, 46], $Vn = [1, 43], $Vo = [1, 47], $Vp = [1, 9], $Vq = [1, 8, 9], $Vr = [1, 58], $Vs = [1, 59], $Vt = [1, 60], $Vu = [1, 61], $Vv = [1, 62], $Vw = [1, 63], $Vx = [1, 64], $Vy = [1, 8, 9, 41], $Vz = [1, 76], $VA = [1, 8, 9, 12, 13, 22, 39, 41, 44, 66, 67, 68, 69, 70, 71, 72, 77, 79], $VB = [1, 8, 9, 12, 13, 17, 20, 22, 39, 41, 44, 48, 58, 66, 67, 68, 69, 70, 71, 72, 77, 79, 84, 99, 101, 102], $VC = [13, 58, 84, 99, 101, 102], $VD = [13, 58, 71, 72, 84, 99, 101, 102], $VE = [13, 58, 66, 67, 68, 69, 70, 84, 99, 101, 102], $VF = [1, 98], $VG = [1, 115], $VH = [1, 107], $VI = [1, 113], $VJ = [1, 108], $VK = [1, 109], $VL = [1, 110], $VM = [1, 111], $VN = [1, 112], $VO = [1, 114], $VP = [22, 58, 59, 80, 84, 85, 86, 87, 88, 89], $VQ = [1, 8, 9, 39, 41, 44], $VR = [1, 8, 9, 22], $VS = [1, 143], $VT = [1, 8, 9, 59], $VU = [1, 8, 9, 22, 58, 59, 80, 84, 85, 86, 87, 88, 89];
+  }, "o"), $V0 = [1, 18], $V1 = [1, 19], $V2 = [1, 20], $V3 = [1, 41], $V4 = [1, 42], $V5 = [1, 26], $V6 = [1, 24], $V7 = [1, 25], $V8 = [1, 32], $V9 = [1, 33], $Va = [1, 34], $Vb = [1, 45], $Vc = [1, 35], $Vd = [1, 36], $Ve = [1, 37], $Vf = [1, 38], $Vg = [1, 27], $Vh = [1, 28], $Vi = [1, 29], $Vj = [1, 30], $Vk = [1, 31], $Vl = [1, 44], $Vm = [1, 46], $Vn = [1, 43], $Vo = [1, 47], $Vp = [1, 9], $Vq = [1, 8, 9], $Vr = [1, 58], $Vs = [1, 59], $Vt = [1, 60], $Vu = [1, 61], $Vv = [1, 62], $Vw = [1, 63], $Vx = [1, 64], $Vy = [1, 8, 9, 41], $Vz = [1, 76], $VA = [1, 8, 9, 12, 13, 22, 39, 41, 44, 66, 67, 68, 69, 70, 71, 72, 77, 79], $VB = [1, 8, 9, 12, 13, 18, 20, 22, 39, 41, 44, 48, 58, 66, 67, 68, 69, 70, 71, 72, 77, 79, 84, 99, 101, 102], $VC = [13, 58, 84, 99, 101, 102], $VD = [13, 58, 71, 72, 84, 99, 101, 102], $VE = [13, 58, 66, 67, 68, 69, 70, 84, 99, 101, 102], $VF = [1, 99], $VG = [1, 116], $VH = [1, 108], $VI = [1, 114], $VJ = [1, 109], $VK = [1, 110], $VL = [1, 111], $VM = [1, 112], $VN = [1, 113], $VO = [1, 115], $VP = [22, 58, 59, 80, 84, 85, 86, 87, 88, 89], $VQ = [1, 8, 9, 39, 41, 44], $VR = [1, 8, 9, 22], $VS = [1, 144], $VT = [1, 8, 9, 59], $VU = [1, 8, 9, 22, 58, 59, 80, 84, 85, 86, 87, 88, 89];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
-    symbols_: { "error": 2, "start": 3, "mermaidDoc": 4, "statements": 5, "graphConfig": 6, "CLASS_DIAGRAM": 7, "NEWLINE": 8, "EOF": 9, "statement": 10, "classLabel": 11, "SQS": 12, "STR": 13, "SQE": 14, "namespaceName": 15, "alphaNumToken": 16, "DOT": 17, "className": 18, "classLiteralName": 19, "GENERICTYPE": 20, "relationStatement": 21, "LABEL": 22, "namespaceStatement": 23, "classStatement": 24, "memberStatement": 25, "annotationStatement": 26, "clickStatement": 27, "styleStatement": 28, "cssClassStatement": 29, "noteStatement": 30, "classDefStatement": 31, "direction": 32, "acc_title": 33, "acc_title_value": 34, "acc_descr": 35, "acc_descr_value": 36, "acc_descr_multiline_value": 37, "namespaceIdentifier": 38, "STRUCT_START": 39, "classStatements": 40, "STRUCT_STOP": 41, "NAMESPACE": 42, "classIdentifier": 43, "STYLE_SEPARATOR": 44, "members": 45, "CLASS": 46, "ANNOTATION_START": 47, "ANNOTATION_END": 48, "MEMBER": 49, "SEPARATOR": 50, "relation": 51, "NOTE_FOR": 52, "noteText": 53, "NOTE": 54, "CLASSDEF": 55, "classList": 56, "stylesOpt": 57, "ALPHA": 58, "COMMA": 59, "direction_tb": 60, "direction_bt": 61, "direction_rl": 62, "direction_lr": 63, "relationType": 64, "lineType": 65, "AGGREGATION": 66, "EXTENSION": 67, "COMPOSITION": 68, "DEPENDENCY": 69, "LOLLIPOP": 70, "LINE": 71, "DOTTED_LINE": 72, "CALLBACK": 73, "LINK": 74, "LINK_TARGET": 75, "CLICK": 76, "CALLBACK_NAME": 77, "CALLBACK_ARGS": 78, "HREF": 79, "STYLE": 80, "CSSCLASS": 81, "style": 82, "styleComponent": 83, "NUM": 84, "COLON": 85, "UNIT": 86, "SPACE": 87, "BRKT": 88, "PCT": 89, "commentToken": 90, "textToken": 91, "graphCodeTokens": 92, "textNoTagsToken": 93, "TAGSTART": 94, "TAGEND": 95, "==": 96, "--": 97, "DEFAULT": 98, "MINUS": 99, "keywords": 100, "UNICODE_TEXT": 101, "BQUOTE_STR": 102, "$accept": 0, "$end": 1 },
-    terminals_: { 2: "error", 7: "CLASS_DIAGRAM", 8: "NEWLINE", 9: "EOF", 12: "SQS", 13: "STR", 14: "SQE", 17: "DOT", 20: "GENERICTYPE", 22: "LABEL", 33: "acc_title", 34: "acc_title_value", 35: "acc_descr", 36: "acc_descr_value", 37: "acc_descr_multiline_value", 39: "STRUCT_START", 41: "STRUCT_STOP", 42: "NAMESPACE", 44: "STYLE_SEPARATOR", 46: "CLASS", 47: "ANNOTATION_START", 48: "ANNOTATION_END", 49: "MEMBER", 50: "SEPARATOR", 52: "NOTE_FOR", 54: "NOTE", 55: "CLASSDEF", 58: "ALPHA", 59: "COMMA", 60: "direction_tb", 61: "direction_bt", 62: "direction_rl", 63: "direction_lr", 66: "AGGREGATION", 67: "EXTENSION", 68: "COMPOSITION", 69: "DEPENDENCY", 70: "LOLLIPOP", 71: "LINE", 72: "DOTTED_LINE", 73: "CALLBACK", 74: "LINK", 75: "LINK_TARGET", 76: "CLICK", 77: "CALLBACK_NAME", 78: "CALLBACK_ARGS", 79: "HREF", 80: "STYLE", 81: "CSSCLASS", 84: "NUM", 85: "COLON", 86: "UNIT", 87: "SPACE", 88: "BRKT", 89: "PCT", 92: "graphCodeTokens", 94: "TAGSTART", 95: "TAGEND", 96: "==", 97: "--", 98: "DEFAULT", 99: "MINUS", 100: "keywords", 101: "UNICODE_TEXT", 102: "BQUOTE_STR" },
-    productions_: [0, [3, 1], [3, 1], [4, 1], [6, 4], [5, 1], [5, 2], [5, 3], [11, 3], [15, 1], [15, 3], [15, 2], [18, 1], [18, 3], [18, 1], [18, 2], [18, 2], [18, 2], [10, 1], [10, 2], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 2], [10, 2], [10, 1], [23, 4], [23, 5], [38, 2], [40, 1], [40, 2], [40, 3], [24, 1], [24, 3], [24, 4], [24, 6], [43, 2], [43, 3], [26, 4], [45, 1], [45, 2], [25, 1], [25, 2], [25, 1], [25, 1], [21, 3], [21, 4], [21, 4], [21, 5], [30, 3], [30, 2], [31, 3], [56, 1], [56, 3], [32, 1], [32, 1], [32, 1], [32, 1], [51, 3], [51, 2], [51, 2], [51, 1], [64, 1], [64, 1], [64, 1], [64, 1], [64, 1], [65, 1], [65, 1], [27, 3], [27, 4], [27, 3], [27, 4], [27, 4], [27, 5], [27, 3], [27, 4], [27, 4], [27, 5], [27, 4], [27, 5], [27, 5], [27, 6], [28, 3], [29, 3], [57, 1], [57, 3], [82, 1], [82, 2], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [90, 1], [90, 1], [91, 1], [91, 1], [91, 1], [91, 1], [91, 1], [91, 1], [91, 1], [93, 1], [93, 1], [93, 1], [93, 1], [16, 1], [16, 1], [16, 1], [16, 1], [19, 1], [53, 1]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    symbols_: { "error": 2, "start": 3, "mermaidDoc": 4, "statements": 5, "graphConfig": 6, "CLASS_DIAGRAM": 7, "NEWLINE": 8, "EOF": 9, "statement": 10, "classLabel": 11, "SQS": 12, "STR": 13, "SQE": 14, "namespaceName": 15, "alphaNumToken": 16, "classLiteralName": 17, "DOT": 18, "className": 19, "GENERICTYPE": 20, "relationStatement": 21, "LABEL": 22, "namespaceStatement": 23, "classStatement": 24, "memberStatement": 25, "annotationStatement": 26, "clickStatement": 27, "styleStatement": 28, "cssClassStatement": 29, "noteStatement": 30, "classDefStatement": 31, "direction": 32, "acc_title": 33, "acc_title_value": 34, "acc_descr": 35, "acc_descr_value": 36, "acc_descr_multiline_value": 37, "namespaceIdentifier": 38, "STRUCT_START": 39, "classStatements": 40, "STRUCT_STOP": 41, "NAMESPACE": 42, "classIdentifier": 43, "STYLE_SEPARATOR": 44, "members": 45, "CLASS": 46, "ANNOTATION_START": 47, "ANNOTATION_END": 48, "MEMBER": 49, "SEPARATOR": 50, "relation": 51, "NOTE_FOR": 52, "noteText": 53, "NOTE": 54, "CLASSDEF": 55, "classList": 56, "stylesOpt": 57, "ALPHA": 58, "COMMA": 59, "direction_tb": 60, "direction_bt": 61, "direction_rl": 62, "direction_lr": 63, "relationType": 64, "lineType": 65, "AGGREGATION": 66, "EXTENSION": 67, "COMPOSITION": 68, "DEPENDENCY": 69, "LOLLIPOP": 70, "LINE": 71, "DOTTED_LINE": 72, "CALLBACK": 73, "LINK": 74, "LINK_TARGET": 75, "CLICK": 76, "CALLBACK_NAME": 77, "CALLBACK_ARGS": 78, "HREF": 79, "STYLE": 80, "CSSCLASS": 81, "style": 82, "styleComponent": 83, "NUM": 84, "COLON": 85, "UNIT": 86, "SPACE": 87, "BRKT": 88, "PCT": 89, "commentToken": 90, "textToken": 91, "graphCodeTokens": 92, "textNoTagsToken": 93, "TAGSTART": 94, "TAGEND": 95, "==": 96, "--": 97, "DEFAULT": 98, "MINUS": 99, "keywords": 100, "UNICODE_TEXT": 101, "BQUOTE_STR": 102, "$accept": 0, "$end": 1 },
+    terminals_: { 2: "error", 7: "CLASS_DIAGRAM", 8: "NEWLINE", 9: "EOF", 12: "SQS", 13: "STR", 14: "SQE", 18: "DOT", 20: "GENERICTYPE", 22: "LABEL", 33: "acc_title", 34: "acc_title_value", 35: "acc_descr", 36: "acc_descr_value", 37: "acc_descr_multiline_value", 39: "STRUCT_START", 41: "STRUCT_STOP", 42: "NAMESPACE", 44: "STYLE_SEPARATOR", 46: "CLASS", 47: "ANNOTATION_START", 48: "ANNOTATION_END", 49: "MEMBER", 50: "SEPARATOR", 52: "NOTE_FOR", 54: "NOTE", 55: "CLASSDEF", 58: "ALPHA", 59: "COMMA", 60: "direction_tb", 61: "direction_bt", 62: "direction_rl", 63: "direction_lr", 66: "AGGREGATION", 67: "EXTENSION", 68: "COMPOSITION", 69: "DEPENDENCY", 70: "LOLLIPOP", 71: "LINE", 72: "DOTTED_LINE", 73: "CALLBACK", 74: "LINK", 75: "LINK_TARGET", 76: "CLICK", 77: "CALLBACK_NAME", 78: "CALLBACK_ARGS", 79: "HREF", 80: "STYLE", 81: "CSSCLASS", 84: "NUM", 85: "COLON", 86: "UNIT", 87: "SPACE", 88: "BRKT", 89: "PCT", 92: "graphCodeTokens", 94: "TAGSTART", 95: "TAGEND", 96: "==", 97: "--", 98: "DEFAULT", 99: "MINUS", 100: "keywords", 101: "UNICODE_TEXT", 102: "BQUOTE_STR" },
+    productions_: [0, [3, 1], [3, 1], [4, 1], [6, 4], [5, 1], [5, 2], [5, 3], [11, 3], [15, 1], [15, 1], [15, 3], [15, 2], [19, 1], [19, 3], [19, 1], [19, 2], [19, 2], [19, 2], [10, 1], [10, 2], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 1], [10, 2], [10, 2], [10, 1], [23, 4], [23, 5], [38, 2], [40, 1], [40, 2], [40, 3], [24, 1], [24, 3], [24, 4], [24, 6], [43, 2], [43, 3], [26, 4], [45, 1], [45, 2], [25, 1], [25, 2], [25, 1], [25, 1], [21, 3], [21, 4], [21, 4], [21, 5], [30, 3], [30, 2], [31, 3], [56, 1], [56, 3], [32, 1], [32, 1], [32, 1], [32, 1], [51, 3], [51, 2], [51, 2], [51, 1], [64, 1], [64, 1], [64, 1], [64, 1], [64, 1], [65, 1], [65, 1], [27, 3], [27, 4], [27, 3], [27, 4], [27, 4], [27, 5], [27, 3], [27, 4], [27, 4], [27, 5], [27, 4], [27, 5], [27, 5], [27, 6], [28, 3], [29, 3], [57, 1], [57, 3], [82, 1], [82, 2], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [83, 1], [90, 1], [90, 1], [91, 1], [91, 1], [91, 1], [91, 1], [91, 1], [91, 1], [91, 1], [93, 1], [93, 1], [93, 1], [93, 1], [16, 1], [16, 1], [16, 1], [16, 1], [17, 1], [53, 1]],
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 8:
           this.$ = $$[$0 - 1];
           break;
         case 9:
-        case 12:
-        case 14:
-          this.$ = $$[$0];
-          break;
         case 10:
         case 13:
-          this.$ = $$[$0 - 2] + "." + $$[$0];
+        case 15:
+          this.$ = $$[$0];
           break;
         case 11:
-        case 15:
+        case 14:
+          this.$ = $$[$0 - 2] + "." + $$[$0];
+          break;
+        case 12:
+        case 16:
           this.$ = $$[$0 - 1] + $$[$0];
           break;
-        case 16:
         case 17:
+        case 18:
           this.$ = $$[$0 - 1] + "~" + $$[$0] + "~";
           break;
-        case 18:
+        case 19:
           yy.addRelation($$[$0]);
           break;
-        case 19:
+        case 20:
           $$[$0 - 1].title = yy.cleanupLabel($$[$0]);
           yy.addRelation($$[$0 - 1]);
           break;
-        case 30:
+        case 31:
           this.$ = $$[$0].trim();
           yy.setAccTitle(this.$);
           break;
-        case 31:
         case 32:
+        case 33:
           this.$ = $$[$0].trim();
           yy.setAccDescription(this.$);
           break;
-        case 33:
+        case 34:
           yy.addClassesToNamespace($$[$0 - 3], $$[$0 - 1]);
           break;
-        case 34:
+        case 35:
           yy.addClassesToNamespace($$[$0 - 4], $$[$0 - 1]);
           break;
-        case 35:
+        case 36:
           this.$ = $$[$0];
           yy.addNamespace($$[$0]);
           break;
-        case 36:
+        case 37:
           this.$ = [$$[$0]];
           break;
-        case 37:
+        case 38:
           this.$ = [$$[$0 - 1]];
           break;
-        case 38:
+        case 39:
           $$[$0].unshift($$[$0 - 2]);
           this.$ = $$[$0];
           break;
-        case 40:
+        case 41:
           yy.setCssClass($$[$0 - 2], $$[$0]);
           break;
-        case 41:
+        case 42:
           yy.addMembers($$[$0 - 3], $$[$0 - 1]);
           break;
-        case 42:
+        case 43:
           yy.setCssClass($$[$0 - 5], $$[$0 - 3]);
           yy.addMembers($$[$0 - 5], $$[$0 - 1]);
           break;
-        case 43:
+        case 44:
           this.$ = $$[$0];
           yy.addClass($$[$0]);
           break;
-        case 44:
+        case 45:
           this.$ = $$[$0 - 1];
           yy.addClass($$[$0 - 1]);
           yy.setClassLabel($$[$0 - 1], $$[$0]);
           break;
-        case 45:
+        case 46:
           yy.addAnnotation($$[$0], $$[$0 - 2]);
           break;
-        case 46:
-        case 59:
+        case 47:
+        case 60:
           this.$ = [$$[$0]];
           break;
-        case 47:
+        case 48:
           $$[$0].push($$[$0 - 1]);
           this.$ = $$[$0];
           break;
-        case 48:
-          break;
         case 49:
-          yy.addMember($$[$0 - 1], yy.cleanupLabel($$[$0]));
           break;
         case 50:
+          yy.addMember($$[$0 - 1], yy.cleanupLabel($$[$0]));
           break;
         case 51:
           break;
         case 52:
-          this.$ = { "id1": $$[$0 - 2], "id2": $$[$0], relation: $$[$0 - 1], relationTitle1: "none", relationTitle2: "none" };
           break;
         case 53:
-          this.$ = { id1: $$[$0 - 3], id2: $$[$0], relation: $$[$0 - 1], relationTitle1: $$[$0 - 2], relationTitle2: "none" };
+          this.$ = { "id1": $$[$0 - 2], "id2": $$[$0], relation: $$[$0 - 1], relationTitle1: "none", relationTitle2: "none" };
           break;
         case 54:
-          this.$ = { id1: $$[$0 - 3], id2: $$[$0], relation: $$[$0 - 2], relationTitle1: "none", relationTitle2: $$[$0 - 1] };
+          this.$ = { id1: $$[$0 - 3], id2: $$[$0], relation: $$[$0 - 1], relationTitle1: $$[$0 - 2], relationTitle2: "none" };
           break;
         case 55:
-          this.$ = { id1: $$[$0 - 4], id2: $$[$0], relation: $$[$0 - 2], relationTitle1: $$[$0 - 3], relationTitle2: $$[$0 - 1] };
+          this.$ = { id1: $$[$0 - 3], id2: $$[$0], relation: $$[$0 - 2], relationTitle1: "none", relationTitle2: $$[$0 - 1] };
           break;
         case 56:
-          yy.addNote($$[$0], $$[$0 - 1]);
+          this.$ = { id1: $$[$0 - 4], id2: $$[$0], relation: $$[$0 - 2], relationTitle1: $$[$0 - 3], relationTitle2: $$[$0 - 1] };
           break;
         case 57:
-          yy.addNote($$[$0]);
+          yy.addNote($$[$0], $$[$0 - 1]);
           break;
         case 58:
+          yy.addNote($$[$0]);
+          break;
+        case 59:
           this.$ = $$[$0 - 2];
           yy.defineClass($$[$0 - 1], $$[$0]);
           break;
-        case 60:
+        case 61:
           this.$ = $$[$0 - 2].concat([$$[$0]]);
           break;
-        case 61:
+        case 62:
           yy.setDirection("TB");
           break;
-        case 62:
+        case 63:
           yy.setDirection("BT");
           break;
-        case 63:
+        case 64:
           yy.setDirection("RL");
           break;
-        case 64:
+        case 65:
           yy.setDirection("LR");
           break;
-        case 65:
+        case 66:
           this.$ = { type1: $$[$0 - 2], type2: $$[$0], lineType: $$[$0 - 1] };
           break;
-        case 66:
+        case 67:
           this.$ = { type1: "none", type2: $$[$0], lineType: $$[$0 - 1] };
           break;
-        case 67:
+        case 68:
           this.$ = { type1: $$[$0 - 1], type2: "none", lineType: $$[$0] };
           break;
-        case 68:
+        case 69:
           this.$ = { type1: "none", type2: "none", lineType: $$[$0] };
           break;
-        case 69:
+        case 70:
           this.$ = yy.relationType.AGGREGATION;
           break;
-        case 70:
+        case 71:
           this.$ = yy.relationType.EXTENSION;
           break;
-        case 71:
+        case 72:
           this.$ = yy.relationType.COMPOSITION;
           break;
-        case 72:
+        case 73:
           this.$ = yy.relationType.DEPENDENCY;
           break;
-        case 73:
+        case 74:
           this.$ = yy.relationType.LOLLIPOP;
           break;
-        case 74:
+        case 75:
           this.$ = yy.lineType.LINE;
           break;
-        case 75:
-          this.$ = yy.lineType.DOTTED_LINE;
-          break;
         case 76:
-        case 82:
-          this.$ = $$[$0 - 2];
-          yy.setClickEvent($$[$0 - 1], $$[$0]);
+          this.$ = yy.lineType.DOTTED_LINE;
           break;
         case 77:
         case 83:
+          this.$ = $$[$0 - 2];
+          yy.setClickEvent($$[$0 - 1], $$[$0]);
+          break;
+        case 78:
+        case 84:
           this.$ = $$[$0 - 3];
           yy.setClickEvent($$[$0 - 2], $$[$0 - 1]);
           yy.setTooltip($$[$0 - 2], $$[$0]);
           break;
-        case 78:
+        case 79:
           this.$ = $$[$0 - 2];
           yy.setLink($$[$0 - 1], $$[$0]);
           break;
-        case 79:
+        case 80:
           this.$ = $$[$0 - 3];
           yy.setLink($$[$0 - 2], $$[$0 - 1], $$[$0]);
           break;
-        case 80:
+        case 81:
           this.$ = $$[$0 - 3];
           yy.setLink($$[$0 - 2], $$[$0 - 1]);
           yy.setTooltip($$[$0 - 2], $$[$0]);
           break;
-        case 81:
+        case 82:
           this.$ = $$[$0 - 4];
           yy.setLink($$[$0 - 3], $$[$0 - 2], $$[$0]);
           yy.setTooltip($$[$0 - 3], $$[$0 - 1]);
           break;
-        case 84:
+        case 85:
           this.$ = $$[$0 - 3];
           yy.setClickEvent($$[$0 - 2], $$[$0 - 1], $$[$0]);
           break;
-        case 85:
+        case 86:
           this.$ = $$[$0 - 4];
           yy.setClickEvent($$[$0 - 3], $$[$0 - 2], $$[$0 - 1]);
           yy.setTooltip($$[$0 - 3], $$[$0]);
           break;
-        case 86:
+        case 87:
           this.$ = $$[$0 - 3];
           yy.setLink($$[$0 - 2], $$[$0]);
           break;
-        case 87:
+        case 88:
           this.$ = $$[$0 - 4];
           yy.setLink($$[$0 - 3], $$[$0 - 1], $$[$0]);
           break;
-        case 88:
+        case 89:
           this.$ = $$[$0 - 4];
           yy.setLink($$[$0 - 3], $$[$0 - 1]);
           yy.setTooltip($$[$0 - 3], $$[$0]);
           break;
-        case 89:
+        case 90:
           this.$ = $$[$0 - 5];
           yy.setLink($$[$0 - 4], $$[$0 - 2], $$[$0]);
           yy.setTooltip($$[$0 - 4], $$[$0 - 1]);
           break;
-        case 90:
+        case 91:
           this.$ = $$[$0 - 2];
           yy.setCssStyle($$[$0 - 1], $$[$0]);
           break;
-        case 91:
+        case 92:
           yy.setCssClass($$[$0 - 1], $$[$0]);
           break;
-        case 92:
+        case 93:
           this.$ = [$$[$0]];
           break;
-        case 93:
+        case 94:
           $$[$0 - 2].push($$[$0]);
           this.$ = $$[$0 - 2];
           break;
-        case 95:
+        case 96:
           this.$ = $$[$0 - 1] + $$[$0];
           break;
       }
     }, "anonymous"),
-    table: [{ 3: 1, 4: 2, 5: 3, 6: 4, 7: [1, 6], 10: 5, 16: 39, 18: 21, 19: 40, 21: 7, 23: 8, 24: 9, 25: 10, 26: 11, 27: 12, 28: 13, 29: 14, 30: 15, 31: 16, 32: 17, 33: $V0, 35: $V1, 37: $V2, 38: 22, 42: $V3, 43: 23, 46: $V4, 47: $V5, 49: $V6, 50: $V7, 52: $V8, 54: $V9, 55: $Va, 58: $Vb, 60: $Vc, 61: $Vd, 62: $Ve, 63: $Vf, 73: $Vg, 74: $Vh, 76: $Vi, 80: $Vj, 81: $Vk, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 1: [3] }, { 1: [2, 1] }, { 1: [2, 2] }, { 1: [2, 3] }, o($Vp, [2, 5], { 8: [1, 48] }), { 8: [1, 49] }, o($Vq, [2, 18], { 22: [1, 50] }), o($Vq, [2, 20]), o($Vq, [2, 21]), o($Vq, [2, 22]), o($Vq, [2, 23]), o($Vq, [2, 24]), o($Vq, [2, 25]), o($Vq, [2, 26]), o($Vq, [2, 27]), o($Vq, [2, 28]), o($Vq, [2, 29]), { 34: [1, 51] }, { 36: [1, 52] }, o($Vq, [2, 32]), o($Vq, [2, 48], { 51: 53, 64: 56, 65: 57, 13: [1, 54], 22: [1, 55], 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv, 71: $Vw, 72: $Vx }), { 39: [1, 65] }, o($Vy, [2, 39], { 39: [1, 67], 44: [1, 66] }), o($Vq, [2, 50]), o($Vq, [2, 51]), { 16: 68, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn }, { 16: 39, 18: 69, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 16: 39, 18: 70, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 16: 39, 18: 71, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 58: [1, 72] }, { 13: [1, 73] }, { 16: 39, 18: 74, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 13: $Vz, 53: 75 }, { 56: 77, 58: [1, 78] }, o($Vq, [2, 61]), o($Vq, [2, 62]), o($Vq, [2, 63]), o($Vq, [2, 64]), o($VA, [2, 12], { 16: 39, 19: 40, 18: 80, 17: [1, 79], 20: [1, 81], 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }), o($VA, [2, 14], { 20: [1, 82] }), { 15: 83, 16: 84, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn }, { 16: 39, 18: 85, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VB, [2, 118]), o($VB, [2, 119]), o($VB, [2, 120]), o($VB, [2, 121]), o([1, 8, 9, 12, 13, 20, 22, 39, 41, 44, 66, 67, 68, 69, 70, 71, 72, 77, 79], [2, 122]), o($Vp, [2, 6], { 10: 5, 21: 7, 23: 8, 24: 9, 25: 10, 26: 11, 27: 12, 28: 13, 29: 14, 30: 15, 31: 16, 32: 17, 18: 21, 38: 22, 43: 23, 16: 39, 19: 40, 5: 86, 33: $V0, 35: $V1, 37: $V2, 42: $V3, 46: $V4, 47: $V5, 49: $V6, 50: $V7, 52: $V8, 54: $V9, 55: $Va, 58: $Vb, 60: $Vc, 61: $Vd, 62: $Ve, 63: $Vf, 73: $Vg, 74: $Vh, 76: $Vi, 80: $Vj, 81: $Vk, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }), { 5: 87, 10: 5, 16: 39, 18: 21, 19: 40, 21: 7, 23: 8, 24: 9, 25: 10, 26: 11, 27: 12, 28: 13, 29: 14, 30: 15, 31: 16, 32: 17, 33: $V0, 35: $V1, 37: $V2, 38: 22, 42: $V3, 43: 23, 46: $V4, 47: $V5, 49: $V6, 50: $V7, 52: $V8, 54: $V9, 55: $Va, 58: $Vb, 60: $Vc, 61: $Vd, 62: $Ve, 63: $Vf, 73: $Vg, 74: $Vh, 76: $Vi, 80: $Vj, 81: $Vk, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($Vq, [2, 19]), o($Vq, [2, 30]), o($Vq, [2, 31]), { 13: [1, 89], 16: 39, 18: 88, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 51: 90, 64: 56, 65: 57, 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv, 71: $Vw, 72: $Vx }, o($Vq, [2, 49]), { 65: 91, 71: $Vw, 72: $Vx }, o($VC, [2, 68], { 64: 92, 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv }), o($VD, [2, 69]), o($VD, [2, 70]), o($VD, [2, 71]), o($VD, [2, 72]), o($VD, [2, 73]), o($VE, [2, 74]), o($VE, [2, 75]), { 8: [1, 94], 24: 95, 40: 93, 43: 23, 46: $V4 }, { 16: 96, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn }, { 45: 97, 49: $VF }, { 48: [1, 99] }, { 13: [1, 100] }, { 13: [1, 101] }, { 77: [1, 102], 79: [1, 103] }, { 22: $VG, 57: 104, 58: $VH, 80: $VI, 82: 105, 83: 106, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }, { 58: [1, 116] }, { 13: $Vz, 53: 117 }, o($Vq, [2, 57]), o($Vq, [2, 123]), { 22: $VG, 57: 118, 58: $VH, 59: [1, 119], 80: $VI, 82: 105, 83: 106, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }, o($VP, [2, 59]), { 16: 39, 18: 120, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VA, [2, 15]), o($VA, [2, 16]), o($VA, [2, 17]), { 39: [2, 35] }, { 15: 122, 16: 84, 17: [1, 121], 39: [2, 9], 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn }, o($VQ, [2, 43], { 11: 123, 12: [1, 124] }), o($Vp, [2, 7]), { 9: [1, 125] }, o($VR, [2, 52]), { 16: 39, 18: 126, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 13: [1, 128], 16: 39, 18: 127, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VC, [2, 67], { 64: 129, 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv }), o($VC, [2, 66]), { 41: [1, 130] }, { 24: 95, 40: 131, 43: 23, 46: $V4 }, { 8: [1, 132], 41: [2, 36] }, o($Vy, [2, 40], { 39: [1, 133] }), { 41: [1, 134] }, { 41: [2, 46], 45: 135, 49: $VF }, { 16: 39, 18: 136, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($Vq, [2, 76], { 13: [1, 137] }), o($Vq, [2, 78], { 13: [1, 139], 75: [1, 138] }), o($Vq, [2, 82], { 13: [1, 140], 78: [1, 141] }), { 13: [1, 142] }, o($Vq, [2, 90], { 59: $VS }), o($VT, [2, 92], { 83: 144, 22: $VG, 58: $VH, 80: $VI, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }), o($VU, [2, 94]), o($VU, [2, 96]), o($VU, [2, 97]), o($VU, [2, 98]), o($VU, [2, 99]), o($VU, [2, 100]), o($VU, [2, 101]), o($VU, [2, 102]), o($VU, [2, 103]), o($VU, [2, 104]), o($Vq, [2, 91]), o($Vq, [2, 56]), o($Vq, [2, 58], { 59: $VS }), { 58: [1, 145] }, o($VA, [2, 13]), { 15: 146, 16: 84, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn }, { 39: [2, 11] }, o($VQ, [2, 44]), { 13: [1, 147] }, { 1: [2, 4] }, o($VR, [2, 54]), o($VR, [2, 53]), { 16: 39, 18: 148, 19: 40, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VC, [2, 65]), o($Vq, [2, 33]), { 41: [1, 149] }, { 24: 95, 40: 150, 41: [2, 37], 43: 23, 46: $V4 }, { 45: 151, 49: $VF }, o($Vy, [2, 41]), { 41: [2, 47] }, o($Vq, [2, 45]), o($Vq, [2, 77]), o($Vq, [2, 79]), o($Vq, [2, 80], { 75: [1, 152] }), o($Vq, [2, 83]), o($Vq, [2, 84], { 13: [1, 153] }), o($Vq, [2, 86], { 13: [1, 155], 75: [1, 154] }), { 22: $VG, 58: $VH, 80: $VI, 82: 156, 83: 106, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }, o($VU, [2, 95]), o($VP, [2, 60]), { 39: [2, 10] }, { 14: [1, 157] }, o($VR, [2, 55]), o($Vq, [2, 34]), { 41: [2, 38] }, { 41: [1, 158] }, o($Vq, [2, 81]), o($Vq, [2, 85]), o($Vq, [2, 87]), o($Vq, [2, 88], { 75: [1, 159] }), o($VT, [2, 93], { 83: 144, 22: $VG, 58: $VH, 80: $VI, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }), o($VQ, [2, 8]), o($Vy, [2, 42]), o($Vq, [2, 89])],
-    defaultActions: { 2: [2, 1], 3: [2, 2], 4: [2, 3], 83: [2, 35], 122: [2, 11], 125: [2, 4], 135: [2, 47], 146: [2, 10], 150: [2, 38] },
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function parseError(str, hash) {
+    table: [{ 3: 1, 4: 2, 5: 3, 6: 4, 7: [1, 6], 10: 5, 16: 39, 17: 40, 19: 21, 21: 7, 23: 8, 24: 9, 25: 10, 26: 11, 27: 12, 28: 13, 29: 14, 30: 15, 31: 16, 32: 17, 33: $V0, 35: $V1, 37: $V2, 38: 22, 42: $V3, 43: 23, 46: $V4, 47: $V5, 49: $V6, 50: $V7, 52: $V8, 54: $V9, 55: $Va, 58: $Vb, 60: $Vc, 61: $Vd, 62: $Ve, 63: $Vf, 73: $Vg, 74: $Vh, 76: $Vi, 80: $Vj, 81: $Vk, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 1: [3] }, { 1: [2, 1] }, { 1: [2, 2] }, { 1: [2, 3] }, o($Vp, [2, 5], { 8: [1, 48] }), { 8: [1, 49] }, o($Vq, [2, 19], { 22: [1, 50] }), o($Vq, [2, 21]), o($Vq, [2, 22]), o($Vq, [2, 23]), o($Vq, [2, 24]), o($Vq, [2, 25]), o($Vq, [2, 26]), o($Vq, [2, 27]), o($Vq, [2, 28]), o($Vq, [2, 29]), o($Vq, [2, 30]), { 34: [1, 51] }, { 36: [1, 52] }, o($Vq, [2, 33]), o($Vq, [2, 49], { 51: 53, 64: 56, 65: 57, 13: [1, 54], 22: [1, 55], 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv, 71: $Vw, 72: $Vx }), { 39: [1, 65] }, o($Vy, [2, 40], { 39: [1, 67], 44: [1, 66] }), o($Vq, [2, 51]), o($Vq, [2, 52]), { 16: 68, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn }, { 16: 39, 17: 40, 19: 69, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 16: 39, 17: 40, 19: 70, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 16: 39, 17: 40, 19: 71, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 58: [1, 72] }, { 13: [1, 73] }, { 16: 39, 17: 40, 19: 74, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 13: $Vz, 53: 75 }, { 56: 77, 58: [1, 78] }, o($Vq, [2, 62]), o($Vq, [2, 63]), o($Vq, [2, 64]), o($Vq, [2, 65]), o($VA, [2, 13], { 16: 39, 17: 40, 19: 80, 18: [1, 79], 20: [1, 81], 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }), o($VA, [2, 15], { 20: [1, 82] }), { 15: 83, 16: 84, 17: 85, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 16: 39, 17: 40, 19: 86, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VB, [2, 119]), o($VB, [2, 120]), o($VB, [2, 121]), o($VB, [2, 122]), o([1, 8, 9, 12, 13, 20, 22, 39, 41, 44, 66, 67, 68, 69, 70, 71, 72, 77, 79], [2, 123]), o($Vp, [2, 6], { 10: 5, 21: 7, 23: 8, 24: 9, 25: 10, 26: 11, 27: 12, 28: 13, 29: 14, 30: 15, 31: 16, 32: 17, 19: 21, 38: 22, 43: 23, 16: 39, 17: 40, 5: 87, 33: $V0, 35: $V1, 37: $V2, 42: $V3, 46: $V4, 47: $V5, 49: $V6, 50: $V7, 52: $V8, 54: $V9, 55: $Va, 58: $Vb, 60: $Vc, 61: $Vd, 62: $Ve, 63: $Vf, 73: $Vg, 74: $Vh, 76: $Vi, 80: $Vj, 81: $Vk, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }), { 5: 88, 10: 5, 16: 39, 17: 40, 19: 21, 21: 7, 23: 8, 24: 9, 25: 10, 26: 11, 27: 12, 28: 13, 29: 14, 30: 15, 31: 16, 32: 17, 33: $V0, 35: $V1, 37: $V2, 38: 22, 42: $V3, 43: 23, 46: $V4, 47: $V5, 49: $V6, 50: $V7, 52: $V8, 54: $V9, 55: $Va, 58: $Vb, 60: $Vc, 61: $Vd, 62: $Ve, 63: $Vf, 73: $Vg, 74: $Vh, 76: $Vi, 80: $Vj, 81: $Vk, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($Vq, [2, 20]), o($Vq, [2, 31]), o($Vq, [2, 32]), { 13: [1, 90], 16: 39, 17: 40, 19: 89, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 51: 91, 64: 56, 65: 57, 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv, 71: $Vw, 72: $Vx }, o($Vq, [2, 50]), { 65: 92, 71: $Vw, 72: $Vx }, o($VC, [2, 69], { 64: 93, 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv }), o($VD, [2, 70]), o($VD, [2, 71]), o($VD, [2, 72]), o($VD, [2, 73]), o($VD, [2, 74]), o($VE, [2, 75]), o($VE, [2, 76]), { 8: [1, 95], 24: 96, 40: 94, 43: 23, 46: $V4 }, { 16: 97, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn }, { 45: 98, 49: $VF }, { 48: [1, 100] }, { 13: [1, 101] }, { 13: [1, 102] }, { 77: [1, 103], 79: [1, 104] }, { 22: $VG, 57: 105, 58: $VH, 80: $VI, 82: 106, 83: 107, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }, { 58: [1, 117] }, { 13: $Vz, 53: 118 }, o($Vq, [2, 58]), o($Vq, [2, 124]), { 22: $VG, 57: 119, 58: $VH, 59: [1, 120], 80: $VI, 82: 106, 83: 107, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }, o($VP, [2, 60]), { 16: 39, 17: 40, 19: 121, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VA, [2, 16]), o($VA, [2, 17]), o($VA, [2, 18]), { 39: [2, 36] }, { 15: 123, 16: 84, 17: 85, 18: [1, 122], 39: [2, 9], 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 39: [2, 10] }, o($VQ, [2, 44], { 11: 124, 12: [1, 125] }), o($Vp, [2, 7]), { 9: [1, 126] }, o($VR, [2, 53]), { 16: 39, 17: 40, 19: 127, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 13: [1, 129], 16: 39, 17: 40, 19: 128, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VC, [2, 68], { 64: 130, 66: $Vr, 67: $Vs, 68: $Vt, 69: $Vu, 70: $Vv }), o($VC, [2, 67]), { 41: [1, 131] }, { 24: 96, 40: 132, 43: 23, 46: $V4 }, { 8: [1, 133], 41: [2, 37] }, o($Vy, [2, 41], { 39: [1, 134] }), { 41: [1, 135] }, { 41: [2, 47], 45: 136, 49: $VF }, { 16: 39, 17: 40, 19: 137, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($Vq, [2, 77], { 13: [1, 138] }), o($Vq, [2, 79], { 13: [1, 140], 75: [1, 139] }), o($Vq, [2, 83], { 13: [1, 141], 78: [1, 142] }), { 13: [1, 143] }, o($Vq, [2, 91], { 59: $VS }), o($VT, [2, 93], { 83: 145, 22: $VG, 58: $VH, 80: $VI, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }), o($VU, [2, 95]), o($VU, [2, 97]), o($VU, [2, 98]), o($VU, [2, 99]), o($VU, [2, 100]), o($VU, [2, 101]), o($VU, [2, 102]), o($VU, [2, 103]), o($VU, [2, 104]), o($VU, [2, 105]), o($Vq, [2, 92]), o($Vq, [2, 57]), o($Vq, [2, 59], { 59: $VS }), { 58: [1, 146] }, o($VA, [2, 14]), { 15: 147, 16: 84, 17: 85, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, { 39: [2, 12] }, o($VQ, [2, 45]), { 13: [1, 148] }, { 1: [2, 4] }, o($VR, [2, 55]), o($VR, [2, 54]), { 16: 39, 17: 40, 19: 149, 58: $Vb, 84: $Vl, 99: $Vm, 101: $Vn, 102: $Vo }, o($VC, [2, 66]), o($Vq, [2, 34]), { 41: [1, 150] }, { 24: 96, 40: 151, 41: [2, 38], 43: 23, 46: $V4 }, { 45: 152, 49: $VF }, o($Vy, [2, 42]), { 41: [2, 48] }, o($Vq, [2, 46]), o($Vq, [2, 78]), o($Vq, [2, 80]), o($Vq, [2, 81], { 75: [1, 153] }), o($Vq, [2, 84]), o($Vq, [2, 85], { 13: [1, 154] }), o($Vq, [2, 87], { 13: [1, 156], 75: [1, 155] }), { 22: $VG, 58: $VH, 80: $VI, 82: 157, 83: 107, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }, o($VU, [2, 96]), o($VP, [2, 61]), { 39: [2, 11] }, { 14: [1, 158] }, o($VR, [2, 56]), o($Vq, [2, 35]), { 41: [2, 39] }, { 41: [1, 159] }, o($Vq, [2, 82]), o($Vq, [2, 86]), o($Vq, [2, 88]), o($Vq, [2, 89], { 75: [1, 160] }), o($VT, [2, 94], { 83: 145, 22: $VG, 58: $VH, 80: $VI, 84: $VJ, 85: $VK, 86: $VL, 87: $VM, 88: $VN, 89: $VO }), o($VQ, [2, 8]), o($Vy, [2, 43]), o($Vq, [2, 90])],
+    defaultActions: { 2: [2, 1], 3: [2, 2], 4: [2, 3], 83: [2, 36], 85: [2, 10], 123: [2, 12], 126: [2, 4], 136: [2, 48], 147: [2, 11], 151: [2, 39] },
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -349,7 +292,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -378,7 +321,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -391,7 +334,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -495,7 +438,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -503,7 +446,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -523,7 +466,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -544,7 +487,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -570,12 +513,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -588,16 +531,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -605,13 +548,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -674,7 +617,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -725,7 +668,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -734,11 +677,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -747,7 +690,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -755,7 +698,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -764,15 +707,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: {},
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -1085,7 +1028,7 @@ var parser = function() {
             // removed by dead control flow
 {}
           case 80:
-            return 17;
+            return 18;
             // removed by dead control flow
 {}
           case 81:
@@ -1167,7 +1110,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -1182,22 +1125,22 @@ var classDiagram_default = parser;
 var visibilityValues = ["#", "+", "~", "-", ""];
 var ClassMember = class {
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(this, "ClassMember");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(this, "ClassMember");
   }
   constructor(input, memberType) {
     this.memberType = memberType;
     this.visibility = "";
     this.classifier = "";
     this.text = "";
-    const sanitizedInput = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .sanitizeText */ .jZ)(input, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
+    const sanitizedInput = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .sanitizeText */ .jZ)(input, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
     this.parseMember(sanitizedInput);
   }
   getDisplayDetails() {
-    let displayText = this.visibility + (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.id);
+    let displayText = this.visibility + (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.id);
     if (this.memberType === "method") {
-      displayText += `(${(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.parameters.trim())})`;
+      displayText += `(${(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.parameters.trim())})`;
       if (this.returnType) {
-        displayText += " : " + (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.returnType);
+        displayText += " : " + (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.returnType);
       }
     }
     displayText = displayText.trim();
@@ -1246,7 +1189,7 @@ var ClassMember = class {
     }
     this.classifier = potentialClassifier;
     this.id = this.id.startsWith(" ") ? " " + this.id.trim() : this.id.trim();
-    const combinedText = `${this.visibility ? "\\" + this.visibility : ""}${(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.id)}${this.memberType === "method" ? `(${(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.parameters)})${this.returnType ? " : " + (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.returnType) : ""}` : ""}`;
+    const combinedText = `${this.visibility ? "\\" + this.visibility : ""}${(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.id)}${this.memberType === "method" ? `(${(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.parameters)})${this.returnType ? " : " + (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .parseGenericTypes */ .QO)(this.returnType) : ""}` : ""}`;
     this.text = combinedText.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
     if (this.text.startsWith("\\&lt;")) {
       this.text = this.text.replace("\\&lt;", "~");
@@ -1267,7 +1210,7 @@ var ClassMember = class {
 // src/diagrams/class/classDb.ts
 var MERMAID_DOM_ID_PREFIX = "classId-";
 var classCounter = 0;
-var sanitizeText2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((txt) => _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(txt, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)()), "sanitizeText");
+var sanitizeText2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((txt) => _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(txt, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)()), "sanitizeText");
 var ClassDB = class {
   constructor() {
     this.relations = [];
@@ -1290,7 +1233,7 @@ var ClassDB = class {
       DEPENDENCY: 3,
       LOLLIPOP: 4
     };
-    this.setupToolTips = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((element) => {
+    this.setupToolTips = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((element) => {
       let tooltipElem = (0,d3__WEBPACK_IMPORTED_MODULE_6__/* .select */ .Ltv)(".mermaidTooltip");
       if ((tooltipElem._groups || tooltipElem)[0][0] === null) {
         tooltipElem = (0,d3__WEBPACK_IMPORTED_MODULE_6__/* .select */ .Ltv)("body").append("div").attr("class", "mermaidTooltip").style("opacity", 0);
@@ -1315,13 +1258,13 @@ var ClassDB = class {
       });
     }, "setupToolTips");
     this.direction = "TB";
-    this.setAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccTitle */ .SV;
-    this.getAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccTitle */ .iN;
-    this.setAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccDescription */ .EI;
-    this.getAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccDescription */ .m7;
-    this.setDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setDiagramTitle */ .ke;
-    this.getDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getDiagramTitle */ .ab;
-    this.getConfig = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(() => (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)().class, "getConfig");
+    this.setAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccTitle */ .SV;
+    this.getAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccTitle */ .iN;
+    this.setAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccDescription */ .EI;
+    this.getAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccDescription */ .m7;
+    this.setDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setDiagramTitle */ .ke;
+    this.getDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getDiagramTitle */ .ab;
+    this.getConfig = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(() => (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)().class, "getConfig");
     this.functions.push(this.setupToolTips.bind(this));
     this.clear();
     this.addRelation = this.addRelation.bind(this);
@@ -1345,10 +1288,10 @@ var ClassDB = class {
     this.setCssStyle = this.setCssStyle.bind(this);
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(this, "ClassDB");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(this, "ClassDB");
   }
   splitClassNameAndType(_id) {
-    const id = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
+    const id = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
     let genericType = "";
     let className = id;
     if (id.indexOf("~") > 0) {
@@ -1359,7 +1302,7 @@ var ClassDB = class {
     return { className, type: genericType };
   }
   setClassLabel(_id, label) {
-    const id = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
+    const id = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
     if (label) {
       label = sanitizeText2(label);
     }
@@ -1374,12 +1317,12 @@ var ClassDB = class {
    * @public
    */
   addClass(_id) {
-    const id = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
+    const id = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
     const { className, type } = this.splitClassNameAndType(id);
     if (this.classes.has(className)) {
       return;
     }
-    const name = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(className, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
+    const name = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(className, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
     this.classes.set(name, {
       id: name,
       type,
@@ -1410,7 +1353,7 @@ var ClassDB = class {
    * @public
    */
   lookUpDomId(_id) {
-    const id = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
+    const id = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_id, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
     if (this.classes.has(id)) {
       return this.classes.get(id).domId;
     }
@@ -1426,7 +1369,7 @@ var ClassDB = class {
     this.namespaces = /* @__PURE__ */ new Map();
     this.namespaceCounter = 0;
     this.direction = "TB";
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .clear */ .IU)();
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .clear */ .IU)();
   }
   getClass(id) {
     return this.classes.get(id);
@@ -1441,7 +1384,7 @@ var ClassDB = class {
     return this.notes;
   }
   addRelation(classRelation) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.debug("Adding relation: " + JSON.stringify(classRelation));
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.debug("Adding relation: " + JSON.stringify(classRelation));
     const invalidTypes = [
       this.relationType.LOLLIPOP,
       this.relationType.AGGREGATION,
@@ -1463,13 +1406,13 @@ var ClassDB = class {
     }
     classRelation.id1 = this.splitClassNameAndType(classRelation.id1).className;
     classRelation.id2 = this.splitClassNameAndType(classRelation.id2).className;
-    classRelation.relationTitle1 = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(
+    classRelation.relationTitle1 = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(
       classRelation.relationTitle1.trim(),
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)()
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)()
     );
-    classRelation.relationTitle2 = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(
+    classRelation.relationTitle2 = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(
       classRelation.relationTitle2.trim(),
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)()
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)()
     );
     this.relations.push(classRelation);
   }
@@ -1597,7 +1540,7 @@ var ClassDB = class {
    * @param target - Target of the link, _blank by default as originally defined in the svgDraw.js file
    */
   setLink(ids, linkStr, target) {
-    const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
+    const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
     ids.split(",").forEach((_id) => {
       let id = _id;
       if (/\d/.exec(_id[0])) {
@@ -1605,7 +1548,7 @@ var ClassDB = class {
       }
       const theClass = this.classes.get(id);
       if (theClass) {
-        theClass.link = _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_4__/* .utils_default */ ._K.formatUrl(linkStr, config);
+        theClass.link = _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_4__/* .utils_default */ ._K.formatUrl(linkStr, config);
         if (config.securityLevel === "sandbox") {
           theClass.linkTarget = "_top";
         } else if (typeof target === "string") {
@@ -1632,8 +1575,8 @@ var ClassDB = class {
     this.setCssClass(ids, "clickable");
   }
   setClickFunc(_domId, functionName, functionArgs) {
-    const domId = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_domId, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
-    const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
+    const domId = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .common_default */ .Y2.sanitizeText(_domId, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)());
+    const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
     if (config.securityLevel !== "loose") {
       return;
     }
@@ -1663,7 +1606,7 @@ var ClassDB = class {
           elem.addEventListener(
             "click",
             () => {
-              _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_4__/* .utils_default */ ._K.runFunc(functionName, ...argList);
+              _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_4__/* .utils_default */ ._K.runFunc(functionName, ...argList);
             },
             false
           );
@@ -1768,7 +1711,7 @@ var ClassDB = class {
   getData() {
     const nodes = [];
     const edges = [];
-    const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
+    const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
     for (const namespaceKey of this.namespaces.keys()) {
       const namespace = this.namespaces.get(namespaceKey);
       if (namespace) {
@@ -1847,7 +1790,7 @@ var ClassDB = class {
     for (const classRelation of this.relations) {
       cnt++;
       const edge = {
-        id: (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getEdgeId */ .rY)(classRelation.id1, classRelation.id2, {
+        id: (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getEdgeId */ .rY)(classRelation.id1, classRelation.id2, {
           prefix: "id",
           counter: cnt
         }),
@@ -1875,7 +1818,7 @@ var ClassDB = class {
 };
 
 // src/diagrams/class/styles.js
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((options) => `g.classGroup text {
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((options) => `g.classGroup text {
   fill: ${options.nodeBorder || options.classText};
   stroke: none;
   font-family: ${options.fontFamily};
@@ -2033,12 +1976,12 @@ g.classGroup line {
   font-size: 18px;
   fill: ${options.textColor};
 }
-  ${(0,_chunk_E2GYISFI_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getIconStyles */ .o)()}
+  ${(0,_chunk_GLLZNHP4_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getIconStyles */ .o)()}
 `, "getStyles");
 var styles_default = getStyles;
 
 // src/diagrams/class/classRenderer-v3-unified.ts
-var getDir = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((parsedItem, defaultDir = "TB") => {
+var getDir = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((parsedItem, defaultDir = "TB") => {
   if (!parsedItem.doc) {
     return defaultDir;
   }
@@ -2050,30 +1993,30 @@ var getDir = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__
   }
   return dir;
 }, "getDir");
-var getClasses = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(text, diagramObj) {
+var getClasses = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(text, diagramObj) {
   return diagramObj.db.getClasses();
 }, "getClasses");
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(async function(text, id, _version, diag) {
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.info("REF0:");
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.info("Drawing class diagram (v3)", id);
-  const { securityLevel, state: conf, layout } = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(async function(text, id, _version, diag) {
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.info("REF0:");
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.info("Drawing class diagram (v3)", id);
+  const { securityLevel, state: conf, layout } = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig2 */ .D7)();
   const data4Layout = diag.db.getData();
-  const svg = (0,_chunk_BFAMUDN2_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getDiagramElement */ .A)(id, securityLevel);
+  const svg = (0,_chunk_WVR4S24B_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getDiagramElement */ .A)(id, securityLevel);
   data4Layout.type = diag.type;
-  data4Layout.layoutAlgorithm = (0,_chunk_IWUHOULB_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getRegisteredLayoutAlgorithm */ .q7)(layout);
+  data4Layout.layoutAlgorithm = (0,_chunk_NXG7ZM6U_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getRegisteredLayoutAlgorithm */ .q7)(layout);
   data4Layout.nodeSpacing = conf?.nodeSpacing || 50;
   data4Layout.rankSpacing = conf?.rankSpacing || 50;
   data4Layout.markers = ["aggregation", "extension", "composition", "dependency", "lollipop"];
   data4Layout.diagramId = id;
-  await (0,_chunk_IWUHOULB_mjs__WEBPACK_IMPORTED_MODULE_3__/* .render */ .XX)(data4Layout, svg);
+  await (0,_chunk_NXG7ZM6U_mjs__WEBPACK_IMPORTED_MODULE_3__/* .render */ .XX)(data4Layout, svg);
   const padding = 8;
-  _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_4__/* .utils_default */ ._K.insertTitle(
+  _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_4__/* .utils_default */ ._K.insertTitle(
     svg,
     "classDiagramTitleText",
     conf?.titleTopMargin ?? 25,
     diag.db.getDiagramTitle()
   );
-  (0,_chunk_SKB7J2MH_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setupViewPortForSVG */ .P)(svg, padding, "classDiagram", conf?.useMaxWidth ?? true);
+  (0,_chunk_NRVI72HA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setupViewPortForSVG */ .P)(svg, padding, "classDiagram", conf?.useMaxWidth ?? true);
 }, "draw");
 var classRenderer_v3_unified_default = {
   getClasses,
@@ -2086,25 +2029,25 @@ var classRenderer_v3_unified_default = {
 
 /***/ }),
 
-/***/ 8833:
+/***/ 3004:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   P: () => (/* binding */ setupViewPortForSVG)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 
 
 // src/rendering-util/setupViewPortForSVG.ts
-var setupViewPortForSVG = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding, cssDiagram, useMaxWidth) => {
+var setupViewPortForSVG = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding, cssDiagram, useMaxWidth) => {
   svg.attr("class", cssDiagram);
   const { width, height, x, y } = calculateDimensionsWithPadding(svg, padding);
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .configureSvgSize */ .a$)(svg, height, width, useMaxWidth);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .configureSvgSize */ .a$)(svg, height, width, useMaxWidth);
   const viewBox = createViewBox(x, y, width, height, padding);
   svg.attr("viewBox", viewBox);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
 }, "setupViewPortForSVG");
-var calculateDimensionsWithPadding = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding) => {
+var calculateDimensionsWithPadding = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding) => {
   const bounds = svg.node()?.getBBox() || { width: 0, height: 0, x: 0, y: 0 };
   return {
     width: bounds.width + padding * 2,
@@ -2113,9 +2056,67 @@ var calculateDimensionsWithPadding = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEB
     y: bounds.y
   };
 }, "calculateDimensionsWithPadding");
-var createViewBox = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((x, y, width, height, padding) => {
+var createViewBox = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((x, y, width, height, padding) => {
   return `${x - padding} ${y - padding} ${width} ${height}`;
 }, "createViewBox");
+
+
+
+
+/***/ }),
+
+/***/ 3525:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ getDiagramElement)
+/* harmony export */ });
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(451);
+
+
+// src/rendering-util/insertElementsForSize.js
+
+var getDiagramElement = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((id, securityLevel) => {
+  let sandboxElement;
+  if (securityLevel === "sandbox") {
+    sandboxElement = (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("#i" + id);
+  }
+  const root = securityLevel === "sandbox" ? (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)(sandboxElement.nodes()[0].contentDocument.body) : (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("body");
+  const svg = root.select(`[id="${id}"]`);
+  return svg;
+}, "getDiagramElement");
+
+
+
+
+/***/ }),
+
+/***/ 7052:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   o: () => (/* binding */ getIconStyles)
+/* harmony export */ });
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+
+
+// src/diagrams/globalStyles.ts
+var getIconStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => `
+  /* Font Awesome icon styling - consolidated */
+  .label-icon {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+  
+  .node .label-icon path {
+    fill: currentColor;
+    stroke: revert;
+    stroke-width: revert;
+  }
+`, "getIconStyles");
 
 
 

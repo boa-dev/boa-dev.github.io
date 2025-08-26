@@ -1,16 +1,16 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[375],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[9073],{
 
-/***/ 375:
+/***/ 1454:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(487);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4505);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3861);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(163);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6936);
 /* harmony import */ var _mermaid_js_parser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8731);
 
 
@@ -18,49 +18,49 @@
 
 
 // src/diagrams/packet/db.ts
-var defaultPacketData = {
-  packet: []
-};
-var data = structuredClone(defaultPacketData);
-var DEFAULT_PACKET_CONFIG = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.packet;
-var getConfig2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
-  const config = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)({
-    ...DEFAULT_PACKET_CONFIG,
-    ...(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)().packet
-  });
-  if (config.showBits) {
-    config.paddingY += 10;
+var DEFAULT_PACKET_CONFIG = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.packet;
+var PacketDB = class {
+  constructor() {
+    this.packet = [];
+    this.setAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV;
+    this.getAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN;
+    this.setDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke;
+    this.getDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab;
+    this.getAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7;
+    this.setAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI;
   }
-  return config;
-}, "getConfig");
-var getPacket = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => data.packet, "getPacket");
-var pushWord = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((word) => {
-  if (word.length > 0) {
-    data.packet.push(word);
+  static {
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "PacketDB");
   }
-}, "pushWord");
-var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
-  data = structuredClone(defaultPacketData);
-}, "clear");
-var db = {
-  pushWord,
-  getPacket,
-  getConfig: getConfig2,
-  clear: clear2,
-  setAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV,
-  getAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN,
-  setDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke,
-  getDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab,
-  getAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7,
-  setAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI
+  getConfig() {
+    const config = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)({
+      ...DEFAULT_PACKET_CONFIG,
+      ...(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)().packet
+    });
+    if (config.showBits) {
+      config.paddingY += 10;
+    }
+    return config;
+  }
+  getPacket() {
+    return this.packet;
+  }
+  pushWord(word) {
+    if (word.length > 0) {
+      this.packet.push(word);
+    }
+  }
+  clear() {
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
+    this.packet = [];
+  }
 };
 
 // src/diagrams/packet/parser.ts
 
 var maxPacketSize = 1e4;
-var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((ast) => {
-  (0,_chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_0__/* .populateCommonDb */ .S)(ast, db);
+var populate = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((ast, db) => {
+  (0,_chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_0__/* .populateCommonDb */ .S)(ast, db);
   let lastBit = -1;
   let word = [];
   let row = 1;
@@ -81,7 +81,7 @@ var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
     end ??= start + (bits ?? 1) - 1;
     bits ??= end - start + 1;
     lastBit = end;
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`Packet block ${start} - ${lastBit} with label ${label}`);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(`Packet block ${start} - ${lastBit} with label ${label}`);
     while (word.length <= bitsPerRow + 1 && db.getPacket().length < maxPacketSize) {
       const [block, nextBlock] = getNextFittingBlock({ start, end, bits, label }, row, bitsPerRow);
       word.push(block);
@@ -98,7 +98,7 @@ var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   }
   db.pushWord(word);
 }, "populate");
-var getNextFittingBlock = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((block, row, bitsPerRow) => {
+var getNextFittingBlock = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((block, row, bitsPerRow) => {
   if (block.start === void 0) {
     throw new Error("start should have been set during first phase");
   }
@@ -129,32 +129,40 @@ var getNextFittingBlock = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORT
   ];
 }, "getNextFittingBlock");
 var parser = {
-  parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (input) => {
+  // @ts-expect-error - PacketDB is not assignable to DiagramDB
+  parser: { yy: void 0 },
+  parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (input) => {
     const ast = await (0,_mermaid_js_parser__WEBPACK_IMPORTED_MODULE_4__/* .parse */ .qg)("packet", input);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(ast);
-    populate(ast);
+    const db = parser.parser?.yy;
+    if (!(db instanceof PacketDB)) {
+      throw new Error(
+        "parser.parser?.yy was not a PacketDB. This is due to a bug within Mermaid, please report this issue at https://github.com/mermaid-js/mermaid/issues."
+      );
+    }
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(ast);
+    populate(ast, db);
   }, "parse")
 };
 
 // src/diagrams/packet/renderer.ts
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((_text, id, _version, diagram2) => {
-  const db2 = diagram2.db;
-  const config = db2.getConfig();
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((_text, id, _version, diagram2) => {
+  const db = diagram2.db;
+  const config = db.getConfig();
   const { rowHeight, paddingY, bitWidth, bitsPerRow } = config;
-  const words = db2.getPacket();
-  const title = db2.getDiagramTitle();
+  const words = db.getPacket();
+  const title = db.getDiagramTitle();
   const totalRowHeight = rowHeight + paddingY;
   const svgHeight = totalRowHeight * (words.length + 1) - (title ? 0 : rowHeight);
   const svgWidth = bitWidth * bitsPerRow + 2;
-  const svg = (0,_chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
+  const svg = (0,_chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
   svg.attr("viewbox", `0 0 ${svgWidth} ${svgHeight}`);
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .configureSvgSize */ .a$)(svg, svgHeight, svgWidth, config.useMaxWidth);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .configureSvgSize */ .a$)(svg, svgHeight, svgWidth, config.useMaxWidth);
   for (const [word, packet] of words.entries()) {
     drawWord(svg, packet, word, config);
   }
   svg.append("text").text(title).attr("x", svgWidth / 2).attr("y", svgHeight - totalRowHeight / 2).attr("dominant-baseline", "middle").attr("text-anchor", "middle").attr("class", "packetTitle");
 }, "draw");
-var drawWord = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, word, rowNumber, { rowHeight, paddingX, paddingY, bitWidth, bitsPerRow, showBits }) => {
+var drawWord = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, word, rowNumber, { rowHeight, paddingX, paddingY, bitWidth, bitsPerRow, showBits }) => {
   const group = svg.append("g");
   const wordY = rowNumber * (rowHeight + paddingY) + paddingY;
   for (const block of word) {
@@ -188,8 +196,8 @@ var defaultPacketStyleOptions = {
   blockStrokeWidth: "1",
   blockFillColor: "#efefef"
 };
-var styles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(({ packet } = {}) => {
-  const options = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(defaultPacketStyleOptions, packet);
+var styles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(({ packet } = {}) => {
+  const options = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(defaultPacketStyleOptions, packet);
   return `
 	.packetByte {
 		font-size: ${options.byteFontSize};
@@ -219,7 +227,9 @@ var styles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__
 // src/diagrams/packet/diagram.ts
 var diagram = {
   parser,
-  db,
+  get db() {
+    return new PacketDB();
+  },
   renderer,
   styles
 };
@@ -228,13 +238,13 @@ var diagram = {
 
 /***/ }),
 
-/***/ 487:
+/***/ 3861:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   S: () => (/* binding */ populateCommonDb)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 
 
 // src/diagrams/common/populateCommonDb.ts
@@ -249,7 +259,7 @@ function populateCommonDb(ast, db) {
     db.setDiagramTitle?.(ast.title);
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
 
 
 

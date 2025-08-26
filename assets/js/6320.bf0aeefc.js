@@ -1,4 +1,4 @@
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6433],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6320],{
 
 /***/ 3143:
 /***/ (function(module) {
@@ -4796,17 +4796,17 @@ module.exports = register;
 
 /***/ }),
 
-/***/ 6433:
+/***/ 6320:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_QESNASVV_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8506);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4505);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_62K37W7T_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(708);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(163);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6936);
 /* harmony import */ var cytoscape__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(165);
 /* harmony import */ var cytoscape_cose_bilkent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3457);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(451);
@@ -4820,18 +4820,18 @@ module.exports = register;
 
 // src/diagrams/mindmap/parser/mindmap.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [1, 4], $V1 = [1, 13], $V2 = [1, 12], $V3 = [1, 15], $V4 = [1, 16], $V5 = [1, 20], $V6 = [1, 19], $V7 = [6, 7, 8], $V8 = [1, 26], $V9 = [1, 24], $Va = [1, 25], $Vb = [6, 7, 11], $Vc = [1, 6, 13, 15, 16, 19, 22], $Vd = [1, 33], $Ve = [1, 34], $Vf = [1, 6, 7, 11, 13, 15, 16, 19, 22];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "mindMap": 4, "spaceLines": 5, "SPACELINE": 6, "NL": 7, "MINDMAP": 8, "document": 9, "stop": 10, "EOF": 11, "statement": 12, "SPACELIST": 13, "node": 14, "ICON": 15, "CLASS": 16, "nodeWithId": 17, "nodeWithoutId": 18, "NODE_DSTART": 19, "NODE_DESCR": 20, "NODE_DEND": 21, "NODE_ID": 22, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 6: "SPACELINE", 7: "NL", 8: "MINDMAP", 11: "EOF", 13: "SPACELIST", 15: "ICON", 16: "CLASS", 19: "NODE_DSTART", 20: "NODE_DESCR", 21: "NODE_DEND", 22: "NODE_ID" },
     productions_: [0, [3, 1], [3, 2], [5, 1], [5, 2], [5, 2], [4, 2], [4, 3], [10, 1], [10, 1], [10, 1], [10, 2], [10, 2], [9, 3], [9, 2], [12, 2], [12, 2], [12, 2], [12, 1], [12, 1], [12, 1], [12, 1], [12, 1], [14, 1], [14, 1], [18, 3], [17, 1], [17, 4]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 6:
@@ -4888,7 +4888,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: 2, 5: 3, 6: [1, 5], 8: $V0 }, { 1: [3] }, { 1: [2, 1] }, { 4: 6, 6: [1, 7], 7: [1, 8], 8: $V0 }, { 6: $V1, 7: [1, 10], 9: 9, 12: 11, 13: $V2, 14: 14, 15: $V3, 16: $V4, 17: 17, 18: 18, 19: $V5, 22: $V6 }, o($V7, [2, 3]), { 1: [2, 2] }, o($V7, [2, 4]), o($V7, [2, 5]), { 1: [2, 6], 6: $V1, 12: 21, 13: $V2, 14: 14, 15: $V3, 16: $V4, 17: 17, 18: 18, 19: $V5, 22: $V6 }, { 6: $V1, 9: 22, 12: 11, 13: $V2, 14: 14, 15: $V3, 16: $V4, 17: 17, 18: 18, 19: $V5, 22: $V6 }, { 6: $V8, 7: $V9, 10: 23, 11: $Va }, o($Vb, [2, 22], { 17: 17, 18: 18, 14: 27, 15: [1, 28], 16: [1, 29], 19: $V5, 22: $V6 }), o($Vb, [2, 18]), o($Vb, [2, 19]), o($Vb, [2, 20]), o($Vb, [2, 21]), o($Vb, [2, 23]), o($Vb, [2, 24]), o($Vb, [2, 26], { 19: [1, 30] }), { 20: [1, 31] }, { 6: $V8, 7: $V9, 10: 32, 11: $Va }, { 1: [2, 7], 6: $V1, 12: 21, 13: $V2, 14: 14, 15: $V3, 16: $V4, 17: 17, 18: 18, 19: $V5, 22: $V6 }, o($Vc, [2, 14], { 7: $Vd, 11: $Ve }), o($Vf, [2, 8]), o($Vf, [2, 9]), o($Vf, [2, 10]), o($Vb, [2, 15]), o($Vb, [2, 16]), o($Vb, [2, 17]), { 20: [1, 35] }, { 21: [1, 36] }, o($Vc, [2, 13], { 7: $Vd, 11: $Ve }), o($Vf, [2, 11]), o($Vf, [2, 12]), { 21: [1, 37] }, o($Vb, [2, 25]), o($Vb, [2, 27])],
     defaultActions: { 2: [2, 1], 6: [2, 2] },
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -4897,7 +4897,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -4926,7 +4926,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -4939,7 +4939,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -5043,7 +5043,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -5051,7 +5051,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -5071,7 +5071,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -5092,7 +5092,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -5118,12 +5118,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -5136,16 +5136,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -5153,13 +5153,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -5222,7 +5222,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -5273,7 +5273,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -5282,11 +5282,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -5295,7 +5295,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -5303,7 +5303,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -5312,15 +5312,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -5511,7 +5511,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -5547,7 +5547,7 @@ var MindmapDB = class {
     this.decorateNode = this.decorateNode.bind(this);
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "MindmapDB");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "MindmapDB");
   }
   clear() {
     this.nodes = [];
@@ -5566,9 +5566,9 @@ var MindmapDB = class {
     return this.nodes.length > 0 ? this.nodes[0] : null;
   }
   addNode(level, id, descr, type) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("addNode", level, id, descr, type);
-    const conf = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
-    let padding = conf.mindmap?.padding ?? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.padding;
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("addNode", level, id, descr, type);
+    const conf = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
+    let padding = conf.mindmap?.padding ?? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.padding;
     switch (type) {
       case this.nodeType.ROUNDED_RECT:
       case this.nodeType.RECT:
@@ -5578,12 +5578,12 @@ var MindmapDB = class {
     }
     const node = {
       id: this.count++,
-      nodeId: (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(id, conf),
+      nodeId: (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(id, conf),
       level,
-      descr: (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(descr, conf),
+      descr: (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(descr, conf),
       type,
       children: [],
-      width: conf.mindmap?.maxNodeWidth ?? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.maxNodeWidth,
+      width: conf.mindmap?.maxNodeWidth ?? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.maxNodeWidth,
       padding
     };
     const parent = this.getParent(level);
@@ -5601,7 +5601,7 @@ var MindmapDB = class {
     }
   }
   getType(startStr, endStr) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("In get type", startStr, endStr);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("In get type", startStr, endStr);
     switch (startStr) {
       case "[":
         return this.nodeType.RECT;
@@ -5629,13 +5629,13 @@ var MindmapDB = class {
     if (!decoration) {
       return;
     }
-    const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
+    const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
     const node = this.nodes[this.nodes.length - 1];
     if (decoration.icon) {
-      node.icon = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(decoration.icon, config);
+      node.icon = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(decoration.icon, config);
     }
     if (decoration.class) {
-      node.class = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(decoration.class, config);
+      node.class = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(decoration.class, config);
     }
   }
   type2Str(type) {
@@ -5660,7 +5660,7 @@ var MindmapDB = class {
     }
   }
   getLogger() {
-    return _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm;
+    return _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm;
   }
 };
 
@@ -5671,7 +5671,7 @@ var MindmapDB = class {
 
 // src/diagrams/mindmap/svgDraw.ts
 var MAX_SECTIONS = 12;
-var defaultBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node, section) {
+var defaultBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node, section) {
   const rd = 5;
   elem.append("path").attr("id", "node-" + node.id).attr("class", "node-bkg node-" + db.type2Str(node.type)).attr(
     "d",
@@ -5679,10 +5679,10 @@ var defaultBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   );
   elem.append("line").attr("class", "node-line-" + section).attr("x1", 0).attr("y1", node.height).attr("x2", node.width).attr("y2", node.height);
 }, "defaultBkg");
-var rectBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
+var rectBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
   elem.append("rect").attr("id", "node-" + node.id).attr("class", "node-bkg node-" + db.type2Str(node.type)).attr("height", node.height).attr("width", node.width);
 }, "rectBkg");
-var cloudBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
+var cloudBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
   const w = node.width;
   const h = node.height;
   const r1 = 0.15 * w;
@@ -5708,7 +5708,7 @@ var cloudBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
     H0 V0 Z`
   );
 }, "cloudBkg");
-var bangBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
+var bangBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
   const w = node.width;
   const h = node.height;
   const r = 0.15 * w;
@@ -5735,7 +5735,7 @@ var bangBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3_
     H0 V0 Z`
   );
 }, "bangBkg");
-var circleBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
+var circleBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
   elem.append("circle").attr("id", "node-" + node.id).attr("class", "node-bkg node-" + db.type2Str(node.type)).attr("r", node.width / 2);
 }, "circleBkg");
 function insertPolygonShape(parent, w, h, points, node) {
@@ -5746,8 +5746,8 @@ function insertPolygonShape(parent, w, h, points, node) {
     }).join(" ")
   ).attr("transform", "translate(" + (node.width - w) / 2 + ", " + h + ")");
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(insertPolygonShape, "insertPolygonShape");
-var hexagonBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(_db, elem, node) {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(insertPolygonShape, "insertPolygonShape");
+var hexagonBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(_db, elem, node) {
   const h = node.height;
   const f = 4;
   const m = h / f;
@@ -5762,10 +5762,10 @@ var hexagonBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   ];
   insertPolygonShape(elem, w, h, points, node);
 }, "hexagonBkg");
-var roundedRectBkg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
+var roundedRectBkg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, elem, node) {
   elem.append("rect").attr("id", "node-" + node.id).attr("class", "node-bkg node-" + db.type2Str(node.type)).attr("height", node.height).attr("rx", node.padding).attr("ry", node.padding).attr("width", node.width);
 }, "roundedRectBkg");
-var drawNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(db, elem, node, fullSection, conf) {
+var drawNode = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async function(db, elem, node, fullSection, conf) {
   const htmlLabels = conf.htmlLabels;
   const section = fullSection % (MAX_SECTIONS - 1);
   const nodeElem = elem.append("g");
@@ -5778,7 +5778,7 @@ var drawNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   const bkgElem = nodeElem.append("g");
   const textElem = nodeElem.append("g");
   const description = node.descr.replace(/(<br\/*>)/g, "\n");
-  await (0,_chunk_QESNASVV_mjs__WEBPACK_IMPORTED_MODULE_0__/* .createText */ .GZ)(
+  await (0,_chunk_62K37W7T_mjs__WEBPACK_IMPORTED_MODULE_0__/* .createText */ .GZ)(
     textElem,
     description,
     {
@@ -5792,7 +5792,7 @@ var drawNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
     textElem.attr("dy", "1em").attr("alignment-baseline", "middle").attr("dominant-baseline", "middle").attr("text-anchor", "middle");
   }
   const bbox = textElem.node().getBBox();
-  const [fontSize] = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .parseFontSize */ .I5)(conf.fontSize);
+  const [fontSize] = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .parseFontSize */ .I5)(conf.fontSize);
   node.height = bbox.height + fontSize * 1.1 * 0.5 + node.padding;
   node.width = bbox.width + 2 * node.padding;
   if (node.icon) {
@@ -5855,7 +5855,7 @@ var drawNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3
   db.setElementForId(node.id, nodeElem);
   return node.height;
 }, "drawNode");
-var positionNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, node) {
+var positionNode = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(db, node) {
   const nodeElem = db.getElementById(node.id);
   const x = node.x || 0;
   const y = node.y || 0;
@@ -5874,13 +5874,13 @@ async function drawNodes(db, svg, mindmap, section, conf) {
     );
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawNodes, "drawNodes");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawNodes, "drawNodes");
 function drawEdges(edgesEl, cy) {
   cy.edges().map((edge, id) => {
     const data = edge.data();
     if (edge[0]._private.bodyBounds) {
       const bounds = edge[0]._private.rscratch;
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.trace("Edge: ", id, data);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.trace("Edge: ", id, data);
       edgesEl.insert("path").attr(
         "d",
         `M ${bounds.startX},${bounds.startY} L ${bounds.midX},${bounds.midY} L${bounds.endX},${bounds.endY} `
@@ -5888,7 +5888,7 @@ function drawEdges(edgesEl, cy) {
     }
   });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawEdges, "drawEdges");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawEdges, "drawEdges");
 function addNodes(mindmap, cy, conf, level) {
   cy.add({
     group: "nodes",
@@ -5923,7 +5923,7 @@ function addNodes(mindmap, cy, conf, level) {
     });
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(addNodes, "addNodes");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(addNodes, "addNodes");
 function layoutMindmap(node, conf) {
   return new Promise((resolve) => {
     const renderEl = (0,d3__WEBPACK_IMPORTED_MODULE_6__/* .select */ .Ltv)("body").append("div").attr("id", "cy").attr("style", "display:none");
@@ -5955,12 +5955,12 @@ function layoutMindmap(node, conf) {
       animate: false
     }).run();
     cy.ready((e) => {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("Ready", e);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("Ready", e);
       resolve(cy);
     });
   });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(layoutMindmap, "layoutMindmap");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(layoutMindmap, "layoutMindmap");
 function positionNodes(db, cy) {
   cy.nodes().map((node, id) => {
     const data = node.data();
@@ -5968,7 +5968,7 @@ function positionNodes(db, cy) {
     data.y = node.position().y;
     positionNode(db, data);
     const el = db.getElementById(data.nodeId);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("id:", id, "Position: (", node.position().x, ", ", node.position().y, ")", data);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.info("id:", id, "Position: (", node.position().x, ", ", node.position().y, ")", data);
     el.attr(
       "transform",
       `translate(${node.position().x - data.width / 2}, ${node.position().y - data.height / 2})`
@@ -5976,17 +5976,17 @@ function positionNodes(db, cy) {
     el.attr("attr", `apa-${id})`);
   });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(positionNodes, "positionNodes");
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (text, id, _version, diagObj) => {
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Rendering mindmap diagram\n" + text);
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(positionNodes, "positionNodes");
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (text, id, _version, diagObj) => {
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Rendering mindmap diagram\n" + text);
   const db = diagObj.db;
   const mm = db.getMindmap();
   if (!mm) {
     return;
   }
-  const conf = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
+  const conf = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig2 */ .D7)();
   conf.htmlLabels = false;
-  const svg = (0,_chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
+  const svg = (0,_chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
   const edgesElem = svg.append("g");
   edgesElem.attr("class", "mindmap-edges");
   const nodesElem = svg.append("g");
@@ -5995,11 +5995,11 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
   const cy = await layoutMindmap(mm, conf);
   drawEdges(edgesElem, cy);
   positionNodes(db, cy);
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setupGraphViewbox */ .ot)(
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setupGraphViewbox */ .ot)(
     void 0,
     svg,
-    conf.mindmap?.padding ?? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.padding,
-    conf.mindmap?.useMaxWidth ?? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.useMaxWidth
+    conf.mindmap?.padding ?? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.padding,
+    conf.mindmap?.useMaxWidth ?? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.mindmap.useMaxWidth
   );
 }, "draw");
 var mindmapRenderer_default = {
@@ -6008,7 +6008,7 @@ var mindmapRenderer_default = {
 
 // src/diagrams/mindmap/styles.ts
 
-var genSections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => {
+var genSections = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => {
   let sections = "";
   for (let i = 0; i < options.THEME_COLOR_LIMIT; i++) {
     options["lineColor" + i] = options["lineColor" + i] || options["cScaleInv" + i];
@@ -6052,7 +6052,7 @@ var genSections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   }
   return sections;
 }, "genSections");
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => `
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => `
   .edge {
     stroke-width: 3;
   }

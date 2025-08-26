@@ -1,34 +1,43 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[8583],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[3086],{
 
-/***/ 4540:
+/***/ 3004:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ getDiagramElement)
+/* harmony export */   P: () => (/* binding */ setupViewPortForSVG)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(451);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 
 
-// src/rendering-util/insertElementsForSize.js
-
-var getDiagramElement = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((id, securityLevel) => {
-  let sandboxElement;
-  if (securityLevel === "sandbox") {
-    sandboxElement = (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("#i" + id);
-  }
-  const root = securityLevel === "sandbox" ? (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)(sandboxElement.nodes()[0].contentDocument.body) : (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("body");
-  const svg = root.select(`[id="${id}"]`);
-  return svg;
-}, "getDiagramElement");
+// src/rendering-util/setupViewPortForSVG.ts
+var setupViewPortForSVG = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding, cssDiagram, useMaxWidth) => {
+  svg.attr("class", cssDiagram);
+  const { width, height, x, y } = calculateDimensionsWithPadding(svg, padding);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .configureSvgSize */ .a$)(svg, height, width, useMaxWidth);
+  const viewBox = createViewBox(x, y, width, height, padding);
+  svg.attr("viewBox", viewBox);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
+}, "setupViewPortForSVG");
+var calculateDimensionsWithPadding = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding) => {
+  const bounds = svg.node()?.getBBox() || { width: 0, height: 0, x: 0, y: 0 };
+  return {
+    width: bounds.width + padding * 2,
+    height: bounds.height + padding * 2,
+    x: bounds.x,
+    y: bounds.y
+  };
+}, "calculateDimensionsWithPadding");
+var createViewBox = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((x, y, width, height, padding) => {
+  return `${x - padding} ${y - padding} ${width} ${height}`;
+}, "createViewBox");
 
 
 
 
 /***/ }),
 
-/***/ 8583:
+/***/ 3086:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -37,11 +46,11 @@ var getDiagramElement = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
 /* harmony export */   tM: () => (/* binding */ styles_default),
 /* harmony export */   u4: () => (/* binding */ StateDB)
 /* harmony export */ });
-/* harmony import */ var _chunk_BFAMUDN2_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4540);
-/* harmony import */ var _chunk_SKB7J2MH_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8833);
-/* harmony import */ var _chunk_IWUHOULB_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5020);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_WVR4S24B_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3525);
+/* harmony import */ var _chunk_NRVI72HA_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3004);
+/* harmony import */ var _chunk_NXG7ZM6U_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(373);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6936);
 
 
 
@@ -50,18 +59,18 @@ var getDiagramElement = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
 
 // src/diagrams/state/parser/stateDiagram.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [1, 2], $V1 = [1, 3], $V2 = [1, 4], $V3 = [2, 4], $V4 = [1, 9], $V5 = [1, 11], $V6 = [1, 16], $V7 = [1, 17], $V8 = [1, 18], $V9 = [1, 19], $Va = [1, 33], $Vb = [1, 20], $Vc = [1, 21], $Vd = [1, 22], $Ve = [1, 23], $Vf = [1, 24], $Vg = [1, 26], $Vh = [1, 27], $Vi = [1, 28], $Vj = [1, 29], $Vk = [1, 30], $Vl = [1, 31], $Vm = [1, 32], $Vn = [1, 35], $Vo = [1, 36], $Vp = [1, 37], $Vq = [1, 38], $Vr = [1, 34], $Vs = [1, 4, 5, 16, 17, 19, 21, 22, 24, 25, 26, 27, 28, 29, 33, 35, 37, 38, 41, 45, 48, 51, 52, 53, 54, 57], $Vt = [1, 4, 5, 14, 15, 16, 17, 19, 21, 22, 24, 25, 26, 27, 28, 29, 33, 35, 37, 38, 39, 40, 41, 45, 48, 51, 52, 53, 54, 57], $Vu = [4, 5, 16, 17, 19, 21, 22, 24, 25, 26, 27, 28, 29, 33, 35, 37, 38, 41, 45, 48, 51, 52, 53, 54, 57];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "SPACE": 4, "NL": 5, "SD": 6, "document": 7, "line": 8, "statement": 9, "classDefStatement": 10, "styleStatement": 11, "cssClassStatement": 12, "idStatement": 13, "DESCR": 14, "-->": 15, "HIDE_EMPTY": 16, "scale": 17, "WIDTH": 18, "COMPOSIT_STATE": 19, "STRUCT_START": 20, "STRUCT_STOP": 21, "STATE_DESCR": 22, "AS": 23, "ID": 24, "FORK": 25, "JOIN": 26, "CHOICE": 27, "CONCURRENT": 28, "note": 29, "notePosition": 30, "NOTE_TEXT": 31, "direction": 32, "acc_title": 33, "acc_title_value": 34, "acc_descr": 35, "acc_descr_value": 36, "acc_descr_multiline_value": 37, "CLICK": 38, "STRING": 39, "HREF": 40, "classDef": 41, "CLASSDEF_ID": 42, "CLASSDEF_STYLEOPTS": 43, "DEFAULT": 44, "style": 45, "STYLE_IDS": 46, "STYLEDEF_STYLEOPTS": 47, "class": 48, "CLASSENTITY_IDS": 49, "STYLECLASS": 50, "direction_tb": 51, "direction_bt": 52, "direction_rl": 53, "direction_lr": 54, "eol": 55, ";": 56, "EDGE_STATE": 57, "STYLE_SEPARATOR": 58, "left_of": 59, "right_of": 60, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 4: "SPACE", 5: "NL", 6: "SD", 14: "DESCR", 15: "-->", 16: "HIDE_EMPTY", 17: "scale", 18: "WIDTH", 19: "COMPOSIT_STATE", 20: "STRUCT_START", 21: "STRUCT_STOP", 22: "STATE_DESCR", 23: "AS", 24: "ID", 25: "FORK", 26: "JOIN", 27: "CHOICE", 28: "CONCURRENT", 29: "note", 31: "NOTE_TEXT", 33: "acc_title", 34: "acc_title_value", 35: "acc_descr", 36: "acc_descr_value", 37: "acc_descr_multiline_value", 38: "CLICK", 39: "STRING", 40: "HREF", 41: "classDef", 42: "CLASSDEF_ID", 43: "CLASSDEF_STYLEOPTS", 44: "DEFAULT", 45: "style", 46: "STYLE_IDS", 47: "STYLEDEF_STYLEOPTS", 48: "class", 49: "CLASSENTITY_IDS", 50: "STYLECLASS", 51: "direction_tb", 52: "direction_bt", 53: "direction_rl", 54: "direction_lr", 56: ";", 57: "EDGE_STATE", 58: "STYLE_SEPARATOR", 59: "left_of", 60: "right_of" },
     productions_: [0, [3, 2], [3, 2], [3, 2], [7, 0], [7, 2], [8, 2], [8, 1], [8, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 2], [9, 3], [9, 4], [9, 1], [9, 2], [9, 1], [9, 4], [9, 3], [9, 6], [9, 1], [9, 1], [9, 1], [9, 1], [9, 4], [9, 4], [9, 1], [9, 2], [9, 2], [9, 1], [9, 5], [9, 5], [10, 3], [10, 3], [11, 3], [12, 3], [32, 1], [32, 1], [32, 1], [32, 1], [55, 1], [55, 1], [13, 1], [13, 1], [13, 3], [13, 3], [30, 1], [30, 1]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 3:
@@ -196,7 +205,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: $V0, 5: $V1, 6: $V2 }, { 1: [3] }, { 3: 5, 4: $V0, 5: $V1, 6: $V2 }, { 3: 6, 4: $V0, 5: $V1, 6: $V2 }, o([1, 4, 5, 16, 17, 19, 22, 24, 25, 26, 27, 28, 29, 33, 35, 37, 38, 41, 45, 48, 51, 52, 53, 54, 57], $V3, { 7: 7 }), { 1: [2, 1] }, { 1: [2, 2] }, { 1: [2, 3], 4: $V4, 5: $V5, 8: 8, 9: 10, 10: 12, 11: 13, 12: 14, 13: 15, 16: $V6, 17: $V7, 19: $V8, 22: $V9, 24: $Va, 25: $Vb, 26: $Vc, 27: $Vd, 28: $Ve, 29: $Vf, 32: 25, 33: $Vg, 35: $Vh, 37: $Vi, 38: $Vj, 41: $Vk, 45: $Vl, 48: $Vm, 51: $Vn, 52: $Vo, 53: $Vp, 54: $Vq, 57: $Vr }, o($Vs, [2, 5]), { 9: 39, 10: 12, 11: 13, 12: 14, 13: 15, 16: $V6, 17: $V7, 19: $V8, 22: $V9, 24: $Va, 25: $Vb, 26: $Vc, 27: $Vd, 28: $Ve, 29: $Vf, 32: 25, 33: $Vg, 35: $Vh, 37: $Vi, 38: $Vj, 41: $Vk, 45: $Vl, 48: $Vm, 51: $Vn, 52: $Vo, 53: $Vp, 54: $Vq, 57: $Vr }, o($Vs, [2, 7]), o($Vs, [2, 8]), o($Vs, [2, 9]), o($Vs, [2, 10]), o($Vs, [2, 11]), o($Vs, [2, 12], { 14: [1, 40], 15: [1, 41] }), o($Vs, [2, 16]), { 18: [1, 42] }, o($Vs, [2, 18], { 20: [1, 43] }), { 23: [1, 44] }, o($Vs, [2, 22]), o($Vs, [2, 23]), o($Vs, [2, 24]), o($Vs, [2, 25]), { 30: 45, 31: [1, 46], 59: [1, 47], 60: [1, 48] }, o($Vs, [2, 28]), { 34: [1, 49] }, { 36: [1, 50] }, o($Vs, [2, 31]), { 13: 51, 24: $Va, 57: $Vr }, { 42: [1, 52], 44: [1, 53] }, { 46: [1, 54] }, { 49: [1, 55] }, o($Vt, [2, 44], { 58: [1, 56] }), o($Vt, [2, 45], { 58: [1, 57] }), o($Vs, [2, 38]), o($Vs, [2, 39]), o($Vs, [2, 40]), o($Vs, [2, 41]), o($Vs, [2, 6]), o($Vs, [2, 13]), { 13: 58, 24: $Va, 57: $Vr }, o($Vs, [2, 17]), o($Vu, $V3, { 7: 59 }), { 24: [1, 60] }, { 24: [1, 61] }, { 23: [1, 62] }, { 24: [2, 48] }, { 24: [2, 49] }, o($Vs, [2, 29]), o($Vs, [2, 30]), { 39: [1, 63], 40: [1, 64] }, { 43: [1, 65] }, { 43: [1, 66] }, { 47: [1, 67] }, { 50: [1, 68] }, { 24: [1, 69] }, { 24: [1, 70] }, o($Vs, [2, 14], { 14: [1, 71] }), { 4: $V4, 5: $V5, 8: 8, 9: 10, 10: 12, 11: 13, 12: 14, 13: 15, 16: $V6, 17: $V7, 19: $V8, 21: [1, 72], 22: $V9, 24: $Va, 25: $Vb, 26: $Vc, 27: $Vd, 28: $Ve, 29: $Vf, 32: 25, 33: $Vg, 35: $Vh, 37: $Vi, 38: $Vj, 41: $Vk, 45: $Vl, 48: $Vm, 51: $Vn, 52: $Vo, 53: $Vp, 54: $Vq, 57: $Vr }, o($Vs, [2, 20], { 20: [1, 73] }), { 31: [1, 74] }, { 24: [1, 75] }, { 39: [1, 76] }, { 39: [1, 77] }, o($Vs, [2, 34]), o($Vs, [2, 35]), o($Vs, [2, 36]), o($Vs, [2, 37]), o($Vt, [2, 46]), o($Vt, [2, 47]), o($Vs, [2, 15]), o($Vs, [2, 19]), o($Vu, $V3, { 7: 78 }), o($Vs, [2, 26]), o($Vs, [2, 27]), { 5: [1, 79] }, { 5: [1, 80] }, { 4: $V4, 5: $V5, 8: 8, 9: 10, 10: 12, 11: 13, 12: 14, 13: 15, 16: $V6, 17: $V7, 19: $V8, 21: [1, 81], 22: $V9, 24: $Va, 25: $Vb, 26: $Vc, 27: $Vd, 28: $Ve, 29: $Vf, 32: 25, 33: $Vg, 35: $Vh, 37: $Vi, 38: $Vj, 41: $Vk, 45: $Vl, 48: $Vm, 51: $Vn, 52: $Vo, 53: $Vp, 54: $Vq, 57: $Vr }, o($Vs, [2, 32]), o($Vs, [2, 33]), o($Vs, [2, 21])],
     defaultActions: { 5: [2, 1], 6: [2, 2], 47: [2, 48], 48: [2, 49] },
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -205,7 +214,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -234,7 +243,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -247,7 +256,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -351,7 +360,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -359,7 +368,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -379,7 +388,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -400,7 +409,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -426,12 +435,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -444,16 +453,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -461,13 +470,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -530,7 +539,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -581,7 +590,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -590,11 +599,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -603,7 +612,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -611,7 +620,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -620,15 +629,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -998,7 +1007,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -1051,7 +1060,7 @@ var NOTE_ID = `${DOMID_TYPE_SPACER}${NOTE}`;
 var PARENT_ID = `${DOMID_TYPE_SPACER}${PARENT}`;
 
 // src/diagrams/state/stateRenderer-v3-unified.ts
-var getDir = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parsedItem, defaultDir = DEFAULT_NESTED_DOC_DIR) => {
+var getDir = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parsedItem, defaultDir = DEFAULT_NESTED_DOC_DIR) => {
   if (!parsedItem.doc) {
     return defaultDir;
   }
@@ -1063,30 +1072,30 @@ var getDir = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__
   }
   return dir;
 }, "getDir");
-var getClasses = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(text, diagramObj) {
+var getClasses = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(function(text, diagramObj) {
   return diagramObj.db.getClasses();
 }, "getClasses");
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(async function(text, id, _version, diag) {
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("REF0:");
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Drawing state diagram (v2)", id);
-  const { securityLevel, state: conf, layout } = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(async function(text, id, _version, diag) {
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("REF0:");
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Drawing state diagram (v2)", id);
+  const { securityLevel, state: conf, layout } = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
   diag.db.extract(diag.db.getRootDocV2());
   const data4Layout = diag.db.getData();
-  const svg = (0,_chunk_BFAMUDN2_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getDiagramElement */ .A)(id, securityLevel);
+  const svg = (0,_chunk_WVR4S24B_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getDiagramElement */ .A)(id, securityLevel);
   data4Layout.type = diag.type;
   data4Layout.layoutAlgorithm = layout;
   data4Layout.nodeSpacing = conf?.nodeSpacing || 50;
   data4Layout.rankSpacing = conf?.rankSpacing || 50;
   data4Layout.markers = ["barb"];
   data4Layout.diagramId = id;
-  await (0,_chunk_IWUHOULB_mjs__WEBPACK_IMPORTED_MODULE_2__/* .render */ .XX)(data4Layout, svg);
+  await (0,_chunk_NXG7ZM6U_mjs__WEBPACK_IMPORTED_MODULE_2__/* .render */ .XX)(data4Layout, svg);
   const padding = 8;
   try {
     const links = typeof diag.db.getLinks === "function" ? diag.db.getLinks() : /* @__PURE__ */ new Map();
     links.forEach((linkInfo, key) => {
       const stateId = typeof key === "string" ? key : typeof key?.id === "string" ? key.id : "";
       if (!stateId) {
-        _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("\u26A0\uFE0F Invalid or missing stateId from key:", JSON.stringify(key));
+        _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("\u26A0\uFE0F Invalid or missing stateId from key:", JSON.stringify(key));
         return;
       }
       const allNodes = svg.node()?.querySelectorAll("g");
@@ -1098,12 +1107,12 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/*
         }
       });
       if (!matchedElem) {
-        _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("\u26A0\uFE0F Could not find node matching text:", stateId);
+        _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("\u26A0\uFE0F Could not find node matching text:", stateId);
         return;
       }
       const parent = matchedElem.parentNode;
       if (!parent) {
-        _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("\u26A0\uFE0F Node has no parent, cannot wrap:", stateId);
+        _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("\u26A0\uFE0F Node has no parent, cannot wrap:", stateId);
         return;
       }
       const a = document.createElementNS("http://www.w3.org/2000/svg", "a");
@@ -1116,18 +1125,18 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/*
       }
       parent.replaceChild(a, matchedElem);
       a.appendChild(matchedElem);
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("\u{1F517} Wrapped node in <a> tag for:", stateId, linkInfo.url);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("\u{1F517} Wrapped node in <a> tag for:", stateId, linkInfo.url);
     });
   } catch (err) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.error("\u274C Error injecting clickable links:", err);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.error("\u274C Error injecting clickable links:", err);
   }
-  _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_3__/* .utils_default */ ._K.insertTitle(
+  _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_3__/* .utils_default */ ._K.insertTitle(
     svg,
     "statediagramTitleText",
     conf?.titleTopMargin ?? 25,
     diag.db.getDiagramTitle()
   );
-  (0,_chunk_SKB7J2MH_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setupViewPortForSVG */ .P)(svg, padding, CSS_DIAGRAM, conf?.useMaxWidth ?? true);
+  (0,_chunk_NRVI72HA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setupViewPortForSVG */ .P)(svg, padding, CSS_DIAGRAM, conf?.useMaxWidth ?? true);
 }, "draw");
 var stateRenderer_v3_unified_default = {
   getClasses,
@@ -1142,9 +1151,9 @@ function stateDomId(itemId = "", counter = 0, type = "", typeSpacer = DOMID_TYPE
   const typeStr = type !== null && type.length > 0 ? `${typeSpacer}${type}` : "";
   return `${DOMID_STATE}-${itemId}${typeStr}-${counter}`;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(stateDomId, "stateDomId");
-var setupDoc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parentParsedItem, doc, diagramStates, nodes, edges, altFlag, look, classes) => {
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.trace("items", doc);
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(stateDomId, "stateDomId");
+var setupDoc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parentParsedItem, doc, diagramStates, nodes, edges, altFlag, look, classes) => {
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.trace("items", doc);
   doc.forEach((item) => {
     switch (item.stmt) {
       case STMT_STATE:
@@ -1183,7 +1192,7 @@ var setupDoc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4
             arrowTypeEnd: "arrow_barb",
             style: G_EDGE_STYLE,
             labelStyle: "",
-            label: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(item.description ?? "", (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)()),
+            label: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(item.description ?? "", (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)()),
             arrowheadStyle: G_EDGE_ARROWHEADSTYLE,
             labelpos: G_EDGE_LABELPOS,
             labelType: G_EDGE_LABELTYPE,
@@ -1198,7 +1207,7 @@ var setupDoc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4
     }
   });
 }, "setupDoc");
-var getDir2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parsedItem, defaultDir = DEFAULT_NESTED_DOC_DIR) => {
+var getDir2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parsedItem, defaultDir = DEFAULT_NESTED_DOC_DIR) => {
   let dir = defaultDir;
   if (parsedItem.doc) {
     for (const parsedItemDoc of parsedItem.doc) {
@@ -1231,22 +1240,22 @@ function insertOrUpdateNode(nodes, nodeData, classes) {
     nodes.push(nodeData);
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(insertOrUpdateNode, "insertOrUpdateNode");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(insertOrUpdateNode, "insertOrUpdateNode");
 function getClassesFromDbInfo(dbInfoItem) {
   return dbInfoItem?.classes?.join(" ") ?? "";
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(getClassesFromDbInfo, "getClassesFromDbInfo");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(getClassesFromDbInfo, "getClassesFromDbInfo");
 function getStylesFromDbInfo(dbInfoItem) {
   return dbInfoItem?.styles ?? [];
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(getStylesFromDbInfo, "getStylesFromDbInfo");
-var dataFetcher = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parent, parsedItem, diagramStates, nodes, edges, altFlag, look, classes) => {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(getStylesFromDbInfo, "getStylesFromDbInfo");
+var dataFetcher = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((parent, parsedItem, diagramStates, nodes, edges, altFlag, look, classes) => {
   const itemId = parsedItem.id;
   const dbState = diagramStates.get(itemId);
   const classStr = getClassesFromDbInfo(dbState);
   const style = getStylesFromDbInfo(dbState);
-  const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("dataFetcher parsedItem", parsedItem, dbState, style);
+  const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("dataFetcher parsedItem", parsedItem, dbState, style);
   if (itemId !== "root") {
     let shape = SHAPE_STATE;
     if (parsedItem.start === true) {
@@ -1261,7 +1270,7 @@ var dataFetcher = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
       nodeDb.set(itemId, {
         id: itemId,
         shape,
-        description: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(itemId, config),
+        description: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(itemId, config),
         cssClasses: `${classStr} ${CSS_DIAGRAM_STATE}`,
         cssStyles: style
       });
@@ -1284,7 +1293,7 @@ var dataFetcher = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
           newNode.description = parsedItem.description;
         }
       }
-      newNode.description = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeTextOrArray(newNode.description, config);
+      newNode.description = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeTextOrArray(newNode.description, config);
     }
     if (newNode.description?.length === 1 && newNode.shape === SHAPE_STATE_WITH_DESC) {
       if (newNode.type === "group") {
@@ -1294,7 +1303,7 @@ var dataFetcher = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
       }
     }
     if (!newNode.type && parsedItem.doc) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting cluster for XCX", itemId, getDir2(parsedItem));
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting cluster for XCX", itemId, getDir2(parsedItem));
       newNode.type = "group";
       newNode.isGroup = true;
       newNode.dir = getDir2(parsedItem);
@@ -1322,7 +1331,7 @@ var dataFetcher = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
       nodeData.label = "";
     }
     if (parent && parent.id !== "root") {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.trace("Setting node ", itemId, " to be child of its parent ", parent.id);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.trace("Setting node ", itemId, " to be child of its parent ", parent.id);
       nodeData.parentId = parent.id;
     }
     nodeData.centerLabel = true;
@@ -1391,11 +1400,11 @@ var dataFetcher = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
     }
   }
   if (parsedItem.doc) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.trace("Adding nodes children ");
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.trace("Adding nodes children ");
     setupDoc(parsedItem, parsedItem.doc, diagramStates, nodes, edges, !altFlag, look, classes);
   }
 }, "dataFetcher");
-var reset = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(() => {
+var reset = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(() => {
   nodeDb.clear();
   graphItemCount = 0;
 }, "reset");
@@ -1411,13 +1420,13 @@ var CONSTANTS = {
   BG_FILL: "bgFill",
   STYLECLASS_SEP: ","
 };
-var newClassesList = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(() => /* @__PURE__ */ new Map(), "newClassesList");
-var newDoc = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(() => ({
+var newClassesList = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(() => /* @__PURE__ */ new Map(), "newClassesList");
+var newDoc = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(() => ({
   relations: [],
   states: /* @__PURE__ */ new Map(),
   documents: {}
 }), "newDoc");
-var clone = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((o) => JSON.parse(JSON.stringify(o)), "clone");
+var clone = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((o) => JSON.parse(JSON.stringify(o)), "clone");
 var StateDB = class {
   constructor(version) {
     this.version = version;
@@ -1430,12 +1439,12 @@ var StateDB = class {
     this.startEndCount = 0;
     this.dividerCnt = 0;
     this.links = /* @__PURE__ */ new Map();
-    this.getAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getAccTitle */ .iN;
-    this.setAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .setAccTitle */ .SV;
-    this.getAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getAccDescription */ .m7;
-    this.setAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .setAccDescription */ .EI;
-    this.setDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .setDiagramTitle */ .ke;
-    this.getDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getDiagramTitle */ .ab;
+    this.getAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getAccTitle */ .iN;
+    this.setAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .setAccTitle */ .SV;
+    this.getAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getAccDescription */ .m7;
+    this.setAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .setAccDescription */ .EI;
+    this.setDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .setDiagramTitle */ .ke;
+    this.getDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getDiagramTitle */ .ab;
     this.clear();
     this.setRootDoc = this.setRootDoc.bind(this);
     this.getDividerId = this.getDividerId.bind(this);
@@ -1443,7 +1452,7 @@ var StateDB = class {
     this.trimColon = this.trimColon.bind(this);
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(this, "StateDB");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)(this, "StateDB");
   }
   static {
     this.relationType = {
@@ -1487,7 +1496,7 @@ var StateDB = class {
       }
     }
     const diagramStates = this.getStates();
-    const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
+    const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
     reset();
     dataFetcher(
       void 0,
@@ -1528,7 +1537,7 @@ var StateDB = class {
     }
   }
   setRootDoc(o) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting root doc", o);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting root doc", o);
     this.rootDoc = o;
     if (this.version === 1) {
       this.extract(o);
@@ -1568,7 +1577,7 @@ var StateDB = class {
     if (doc.length > 0 && currentDoc.length > 0) {
       const newNode = {
         stmt: STMT_STATE,
-        id: (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_3__/* .generateId */ .$C)(),
+        id: (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_3__/* .generateId */ .$C)(),
         type: "divider",
         doc: clone(currentDoc)
       };
@@ -1596,7 +1605,7 @@ var StateDB = class {
   addState(id, type = DEFAULT_STATE_TYPE, doc = void 0, descr = void 0, note = void 0, classes = void 0, styles = void 0, textStyles = void 0) {
     const trimmedId = id?.trim();
     if (!this.currentDocument.states.has(trimmedId)) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Adding state ", trimmedId, descr);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Adding state ", trimmedId, descr);
       this.currentDocument.states.set(trimmedId, {
         stmt: STMT_STATE,
         id: trimmedId,
@@ -1621,7 +1630,7 @@ var StateDB = class {
       }
     }
     if (descr) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state description", trimmedId, descr);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state description", trimmedId, descr);
       const descriptions = Array.isArray(descr) ? descr : [descr];
       descriptions.forEach((des) => this.addDescription(trimmedId, des.trim()));
     }
@@ -1631,20 +1640,20 @@ var StateDB = class {
         throw new Error(`State not found: ${trimmedId}`);
       }
       doc2.note = note;
-      doc2.note.text = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(doc2.note.text, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)());
+      doc2.note.text = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(doc2.note.text, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)());
     }
     if (classes) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state classes", trimmedId, classes);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state classes", trimmedId, classes);
       const classesList = Array.isArray(classes) ? classes : [classes];
       classesList.forEach((cssClass) => this.setCssClass(trimmedId, cssClass.trim()));
     }
     if (styles) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state styles", trimmedId, styles);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state styles", trimmedId, styles);
       const stylesList = Array.isArray(styles) ? styles : [styles];
       stylesList.forEach((style) => this.setStyle(trimmedId, style.trim()));
     }
     if (textStyles) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state styles", trimmedId, styles);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Setting state styles", trimmedId, styles);
       const textStylesList = Array.isArray(textStyles) ? textStyles : [textStyles];
       textStylesList.forEach((textStyle) => this.setTextStyle(trimmedId, textStyle.trim()));
     }
@@ -1658,7 +1667,7 @@ var StateDB = class {
     this.classes = newClassesList();
     if (!saveCommon) {
       this.links = /* @__PURE__ */ new Map();
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .clear */ .IU)();
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .clear */ .IU)();
     }
   }
   getState(id) {
@@ -1668,7 +1677,7 @@ var StateDB = class {
     return this.currentDocument.states;
   }
   logDocuments() {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Documents = ", this.documents);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.info("Documents = ", this.documents);
   }
   getRelations() {
     return this.currentDocument.relations;
@@ -1678,7 +1687,7 @@ var StateDB = class {
    */
   addLink(stateId, url, tooltip) {
     this.links.set(stateId, { url, tooltip });
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("Adding link", stateId, url, tooltip);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .log */ .Rm.warn("Adding link", stateId, url, tooltip);
   }
   /**
    * Get all registered links.
@@ -1753,7 +1762,7 @@ var StateDB = class {
     this.currentDocument.relations.push({
       id1,
       id2,
-      relationTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(relationTitle, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)())
+      relationTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(relationTitle, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)())
     });
   }
   /**
@@ -1772,14 +1781,14 @@ var StateDB = class {
       this.currentDocument.relations.push({
         id1,
         id2,
-        relationTitle: title ? _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(title, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)()) : void 0
+        relationTitle: title ? _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(title, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)()) : void 0
       });
     }
   }
   addDescription(id, descr) {
     const theState = this.currentDocument.states.get(id);
     const _descr = descr.startsWith(":") ? descr.replace(":", "").trim() : descr;
-    theState?.descriptions?.push(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(_descr, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)()));
+    theState?.descriptions?.push(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .common_default */ .Y2.sanitizeText(_descr, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)()));
   }
   cleanupLabel(label) {
     return label.startsWith(":") ? label.slice(2).trim() : label.trim();
@@ -1878,7 +1887,7 @@ var StateDB = class {
     return str.startsWith(":") ? str.slice(1).trim() : str.trim();
   }
   getData() {
-    const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
+    const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)();
     return {
       nodes: this.nodes,
       edges: this.edges,
@@ -1888,12 +1897,12 @@ var StateDB = class {
     };
   }
   getConfig() {
-    return (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)().state;
+    return (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .getConfig2 */ .D7)().state;
   }
 };
 
 // src/diagrams/state/styles.js
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((options) => `
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_4__/* .__name */ .K2)((options) => `
 defs #statediagram-barbEnd {
     fill: ${options.transitionColor};
     stroke: ${options.transitionColor};
@@ -2115,36 +2124,27 @@ var styles_default = getStyles;
 
 /***/ }),
 
-/***/ 8833:
+/***/ 3525:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   P: () => (/* binding */ setupViewPortForSVG)
+/* harmony export */   A: () => (/* binding */ getDiagramElement)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(451);
 
 
-// src/rendering-util/setupViewPortForSVG.ts
-var setupViewPortForSVG = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding, cssDiagram, useMaxWidth) => {
-  svg.attr("class", cssDiagram);
-  const { width, height, x, y } = calculateDimensionsWithPadding(svg, padding);
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .configureSvgSize */ .a$)(svg, height, width, useMaxWidth);
-  const viewBox = createViewBox(x, y, width, height, padding);
-  svg.attr("viewBox", viewBox);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
-}, "setupViewPortForSVG");
-var calculateDimensionsWithPadding = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding) => {
-  const bounds = svg.node()?.getBBox() || { width: 0, height: 0, x: 0, y: 0 };
-  return {
-    width: bounds.width + padding * 2,
-    height: bounds.height + padding * 2,
-    x: bounds.x,
-    y: bounds.y
-  };
-}, "calculateDimensionsWithPadding");
-var createViewBox = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((x, y, width, height, padding) => {
-  return `${x - padding} ${y - padding} ${width} ${height}`;
-}, "createViewBox");
+// src/rendering-util/insertElementsForSize.js
+
+var getDiagramElement = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((id, securityLevel) => {
+  let sandboxElement;
+  if (securityLevel === "sandbox") {
+    sandboxElement = (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("#i" + id);
+  }
+  const root = securityLevel === "sandbox" ? (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)(sandboxElement.nodes()[0].contentDocument.body) : (0,d3__WEBPACK_IMPORTED_MODULE_1__/* .select */ .Ltv)("body");
+  const svg = root.select(`[id="${id}"]`);
+  return svg;
+}, "getDiagramElement");
 
 
 

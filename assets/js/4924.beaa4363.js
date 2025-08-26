@@ -1,4 +1,4 @@
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[7900],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4924],{
 
 /***/ 445:
 /***/ (function(module) {
@@ -14,22 +14,15 @@
 
 /***/ }),
 
-/***/ 7375:
-/***/ (function(module) {
-
-!function(e,t){ true?module.exports=t():0}(this,(function(){"use strict";return function(e,t){var r=t.prototype,n=r.format;r.format=function(e){var t=this,r=this.$locale();if(!this.isValid())return n.bind(this)(e);var s=this.$utils(),a=(e||"YYYY-MM-DDTHH:mm:ssZ").replace(/\[([^\]]+)]|Q|wo|ww|w|WW|W|zzz|z|gggg|GGGG|Do|X|x|k{1,2}|S/g,(function(e){switch(e){case"Q":return Math.ceil((t.$M+1)/3);case"Do":return r.ordinal(t.$D);case"gggg":return t.weekYear();case"GGGG":return t.isoWeekYear();case"wo":return r.ordinal(t.week(),"W");case"w":case"ww":return s.s(t.week(),"w"===e?1:2,"0");case"W":case"WW":return s.s(t.isoWeek(),"W"===e?1:2,"0");case"k":case"kk":return s.s(String(0===t.$H?24:t.$H),"k"===e?1:2,"0");case"X":return Math.floor(t.$d.getTime()/1e3);case"x":return t.$d.getTime();case"z":return"["+t.offsetName()+"]";case"zzz":return"["+t.offsetName("long")+"]";default:return e}}));return n.bind(this)(a)}}}));
-
-/***/ }),
-
-/***/ 7900:
+/***/ 4924:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6936);
 /* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6750);
 /* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4353);
 /* harmony import */ var dayjs_plugin_isoWeek_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(694);
@@ -41,18 +34,18 @@
 
 // src/diagrams/gantt/parser/gantt.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [6, 8, 10, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 33, 35, 36, 38, 40], $V1 = [1, 26], $V2 = [1, 27], $V3 = [1, 28], $V4 = [1, 29], $V5 = [1, 30], $V6 = [1, 31], $V7 = [1, 32], $V8 = [1, 33], $V9 = [1, 34], $Va = [1, 9], $Vb = [1, 10], $Vc = [1, 11], $Vd = [1, 12], $Ve = [1, 13], $Vf = [1, 14], $Vg = [1, 15], $Vh = [1, 16], $Vi = [1, 19], $Vj = [1, 20], $Vk = [1, 21], $Vl = [1, 22], $Vm = [1, 23], $Vn = [1, 25], $Vo = [1, 35];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "gantt": 4, "document": 5, "EOF": 6, "line": 7, "SPACE": 8, "statement": 9, "NL": 10, "weekday": 11, "weekday_monday": 12, "weekday_tuesday": 13, "weekday_wednesday": 14, "weekday_thursday": 15, "weekday_friday": 16, "weekday_saturday": 17, "weekday_sunday": 18, "weekend": 19, "weekend_friday": 20, "weekend_saturday": 21, "dateFormat": 22, "inclusiveEndDates": 23, "topAxis": 24, "axisFormat": 25, "tickInterval": 26, "excludes": 27, "includes": 28, "todayMarker": 29, "title": 30, "acc_title": 31, "acc_title_value": 32, "acc_descr": 33, "acc_descr_value": 34, "acc_descr_multiline_value": 35, "section": 36, "clickStatement": 37, "taskTxt": 38, "taskData": 39, "click": 40, "callbackname": 41, "callbackargs": 42, "href": 43, "clickStatementDebug": 44, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 4: "gantt", 6: "EOF", 8: "SPACE", 10: "NL", 12: "weekday_monday", 13: "weekday_tuesday", 14: "weekday_wednesday", 15: "weekday_thursday", 16: "weekday_friday", 17: "weekday_saturday", 18: "weekday_sunday", 20: "weekend_friday", 21: "weekend_saturday", 22: "dateFormat", 23: "inclusiveEndDates", 24: "topAxis", 25: "axisFormat", 26: "tickInterval", 27: "excludes", 28: "includes", 29: "todayMarker", 30: "title", 31: "acc_title", 32: "acc_title_value", 33: "acc_descr", 34: "acc_descr_value", 35: "acc_descr_multiline_value", 36: "section", 38: "taskTxt", 39: "taskData", 40: "click", 41: "callbackname", 42: "callbackargs", 43: "href" },
     productions_: [0, [3, 3], [5, 0], [5, 2], [7, 2], [7, 1], [7, 1], [7, 1], [11, 1], [11, 1], [11, 1], [11, 1], [11, 1], [11, 1], [11, 1], [19, 1], [19, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 1], [9, 2], [9, 2], [9, 1], [9, 1], [9, 1], [9, 2], [37, 2], [37, 3], [37, 3], [37, 4], [37, 3], [37, 4], [37, 2], [44, 2], [44, 3], [44, 3], [44, 4], [44, 3], [44, 4], [44, 2]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 1:
@@ -203,7 +196,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: [1, 2] }, { 1: [3] }, o($V0, [2, 2], { 5: 3 }), { 6: [1, 4], 7: 5, 8: [1, 6], 9: 7, 10: [1, 8], 11: 17, 12: $V1, 13: $V2, 14: $V3, 15: $V4, 16: $V5, 17: $V6, 18: $V7, 19: 18, 20: $V8, 21: $V9, 22: $Va, 23: $Vb, 24: $Vc, 25: $Vd, 26: $Ve, 27: $Vf, 28: $Vg, 29: $Vh, 30: $Vi, 31: $Vj, 33: $Vk, 35: $Vl, 36: $Vm, 37: 24, 38: $Vn, 40: $Vo }, o($V0, [2, 7], { 1: [2, 1] }), o($V0, [2, 3]), { 9: 36, 11: 17, 12: $V1, 13: $V2, 14: $V3, 15: $V4, 16: $V5, 17: $V6, 18: $V7, 19: 18, 20: $V8, 21: $V9, 22: $Va, 23: $Vb, 24: $Vc, 25: $Vd, 26: $Ve, 27: $Vf, 28: $Vg, 29: $Vh, 30: $Vi, 31: $Vj, 33: $Vk, 35: $Vl, 36: $Vm, 37: 24, 38: $Vn, 40: $Vo }, o($V0, [2, 5]), o($V0, [2, 6]), o($V0, [2, 17]), o($V0, [2, 18]), o($V0, [2, 19]), o($V0, [2, 20]), o($V0, [2, 21]), o($V0, [2, 22]), o($V0, [2, 23]), o($V0, [2, 24]), o($V0, [2, 25]), o($V0, [2, 26]), o($V0, [2, 27]), { 32: [1, 37] }, { 34: [1, 38] }, o($V0, [2, 30]), o($V0, [2, 31]), o($V0, [2, 32]), { 39: [1, 39] }, o($V0, [2, 8]), o($V0, [2, 9]), o($V0, [2, 10]), o($V0, [2, 11]), o($V0, [2, 12]), o($V0, [2, 13]), o($V0, [2, 14]), o($V0, [2, 15]), o($V0, [2, 16]), { 41: [1, 40], 43: [1, 41] }, o($V0, [2, 4]), o($V0, [2, 28]), o($V0, [2, 29]), o($V0, [2, 33]), o($V0, [2, 34], { 42: [1, 42], 43: [1, 43] }), o($V0, [2, 40], { 41: [1, 44] }), o($V0, [2, 35], { 43: [1, 45] }), o($V0, [2, 36]), o($V0, [2, 38], { 42: [1, 46] }), o($V0, [2, 37]), o($V0, [2, 39])],
     defaultActions: {},
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -212,7 +205,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -241,7 +234,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -254,7 +247,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -358,7 +351,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -366,7 +359,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -386,7 +379,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -407,7 +400,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -433,12 +426,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -451,16 +444,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -468,13 +461,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -537,7 +530,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -588,7 +581,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -597,11 +590,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -610,7 +603,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -618,7 +611,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -627,15 +620,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -847,7 +840,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -883,7 +876,7 @@ var topAxis = false;
 var weekday = "sunday";
 var weekend = "saturday";
 var lastOrder = 0;
-var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var clear2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   sections = [];
   tasks = [];
   currentSection = "";
@@ -903,75 +896,75 @@ var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__
   topAxis = false;
   lastOrder = 0;
   links = /* @__PURE__ */ new Map();
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .clear */ .IU)();
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .clear */ .IU)();
   weekday = "sunday";
   weekend = "saturday";
 }, "clear");
-var setAxisFormat = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setAxisFormat = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   axisFormat = txt;
 }, "setAxisFormat");
-var getAxisFormat = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getAxisFormat = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return axisFormat;
 }, "getAxisFormat");
-var setTickInterval = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setTickInterval = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   tickInterval = txt;
 }, "setTickInterval");
-var getTickInterval = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getTickInterval = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return tickInterval;
 }, "getTickInterval");
-var setTodayMarker = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setTodayMarker = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   todayMarker = txt;
 }, "setTodayMarker");
-var getTodayMarker = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getTodayMarker = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return todayMarker;
 }, "getTodayMarker");
-var setDateFormat = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setDateFormat = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   dateFormat = txt;
 }, "setDateFormat");
-var enableInclusiveEndDates = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var enableInclusiveEndDates = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   inclusiveEndDates = true;
 }, "enableInclusiveEndDates");
-var endDatesAreInclusive = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var endDatesAreInclusive = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return inclusiveEndDates;
 }, "endDatesAreInclusive");
-var enableTopAxis = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var enableTopAxis = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   topAxis = true;
 }, "enableTopAxis");
-var topAxisEnabled = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var topAxisEnabled = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return topAxis;
 }, "topAxisEnabled");
-var setDisplayMode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setDisplayMode = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   displayMode = txt;
 }, "setDisplayMode");
-var getDisplayMode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getDisplayMode = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return displayMode;
 }, "getDisplayMode");
-var getDateFormat = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getDateFormat = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return dateFormat;
 }, "getDateFormat");
-var setIncludes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setIncludes = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   includes = txt.toLowerCase().split(/[\s,]+/);
 }, "setIncludes");
-var getIncludes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getIncludes = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return includes;
 }, "getIncludes");
-var setExcludes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setExcludes = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   excludes = txt.toLowerCase().split(/[\s,]+/);
 }, "setExcludes");
-var getExcludes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getExcludes = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return excludes;
 }, "getExcludes");
-var getLinks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getLinks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return links;
 }, "getLinks");
-var addSection = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var addSection = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   currentSection = txt;
   sections.push(txt);
 }, "addSection");
-var getSections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getSections = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return sections;
 }, "getSections");
-var getTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   let allItemsProcessed = compileTasks();
   const maxDepth = 10;
   let iterationCount = 0;
@@ -982,8 +975,10 @@ var getTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1
   tasks = rawTasks;
   return tasks;
 }, "getTasks");
-var isInvalidDate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(date, dateFormat2, excludes2, includes2) {
-  if (includes2.includes(date.format(dateFormat2.trim()))) {
+var isInvalidDate = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(date, dateFormat2, excludes2, includes2) {
+  const formattedDate = date.format(dateFormat2.trim());
+  const dateOnly = date.format("YYYY-MM-DD");
+  if (includes2.includes(formattedDate) || includes2.includes(dateOnly)) {
     return false;
   }
   if (excludes2.includes("weekends") && (date.isoWeekday() === WEEKEND_START_DAY[weekend] || date.isoWeekday() === WEEKEND_START_DAY[weekend] + 1)) {
@@ -992,18 +987,18 @@ var isInvalidDate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
   if (excludes2.includes(date.format("dddd").toLowerCase())) {
     return true;
   }
-  return excludes2.includes(date.format(dateFormat2.trim()));
+  return excludes2.includes(formattedDate) || excludes2.includes(dateOnly);
 }, "isInvalidDate");
-var setWeekday = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
+var setWeekday = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(txt) {
   weekday = txt;
 }, "setWeekday");
-var getWeekday = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+var getWeekday = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
   return weekday;
 }, "getWeekday");
-var setWeekend = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(startDay) {
+var setWeekend = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(startDay) {
   weekend = startDay;
 }, "setWeekend");
-var checkTaskDates = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(task, dateFormat2, excludes2, includes2) {
+var checkTaskDates = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(task, dateFormat2, excludes2, includes2) {
   if (!excludes2.length || task.manualEndTime) {
     return;
   }
@@ -1030,7 +1025,7 @@ var checkTaskDates = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MO
   task.endTime = fixedEndTime.toDate();
   task.renderEndTime = renderEndTime;
 }, "checkTaskDates");
-var fixTaskDates = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(startTime, endTime, dateFormat2, excludes2, includes2) {
+var fixTaskDates = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(startTime, endTime, dateFormat2, excludes2, includes2) {
   let invalid = false;
   let renderEndTime = null;
   while (startTime <= endTime) {
@@ -1045,7 +1040,7 @@ var fixTaskDates = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
   }
   return [endTime, renderEndTime];
 }, "fixTaskDates");
-var getStartDate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTime, dateFormat2, str) {
+var getStartDate = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTime, dateFormat2, str) {
   str = str.trim();
   const afterRePattern = /^after\s+(?<ids>[\d\w- ]+)/;
   const afterStatement = afterRePattern.exec(str);
@@ -1068,8 +1063,8 @@ var getStartDate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
   if (mDate.isValid()) {
     return mDate.toDate();
   } else {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.debug("Invalid date:" + str);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.debug("With date format:" + dateFormat2.trim());
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.debug("Invalid date:" + str);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.debug("With date format:" + dateFormat2.trim());
     const d = new Date(str);
     if (d === void 0 || isNaN(d.getTime()) || // WebKit browsers can mis-parse invalid dates to be ridiculously
     // huge numbers, e.g. new Date('202304') gets parsed as January 1, 202304.
@@ -1082,14 +1077,14 @@ var getStartDate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
     return d;
   }
 }, "getStartDate");
-var parseDuration = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(str) {
+var parseDuration = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(str) {
   const statement = /^(\d+(?:\.\d+)?)([Mdhmswy]|ms)$/.exec(str.trim());
   if (statement !== null) {
     return [Number.parseFloat(statement[1]), statement[2]];
   }
   return [NaN, "ms"];
 }, "parseDuration");
-var getEndDate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTime, dateFormat2, str, inclusive = false) {
+var getEndDate = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTime, dateFormat2, str, inclusive = false) {
   str = str.trim();
   const untilRePattern = /^until\s+(?<ids>[\d\w- ]+)/;
   const untilStatement = untilRePattern.exec(str);
@@ -1126,14 +1121,14 @@ var getEndDate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   return endTime.toDate();
 }, "getEndDate");
 var taskCnt = 0;
-var parseId = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(idStr) {
+var parseId = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(idStr) {
   if (idStr === void 0) {
     taskCnt = taskCnt + 1;
     return "task" + taskCnt;
   }
   return idStr;
 }, "parseId");
-var compileData = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTask, dataStr) {
+var compileData = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTask, dataStr) {
   let ds;
   if (dataStr.substr(0, 1) === ":") {
     ds = dataStr.substr(1, dataStr.length);
@@ -1172,7 +1167,7 @@ var compileData = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   }
   return task;
 }, "compileData");
-var parseData = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTaskId, dataStr) {
+var parseData = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(prevTaskId, dataStr) {
   let ds;
   if (dataStr.substr(0, 1) === ":") {
     ds = dataStr.substr(1, dataStr.length);
@@ -1224,7 +1219,7 @@ var lastTask;
 var lastTaskID;
 var rawTasks = [];
 var taskDb = {};
-var addTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(descr, data) {
+var addTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(descr, data) {
   const rawTask = {
     section: currentSection,
     type: currentSection,
@@ -1251,11 +1246,11 @@ var addTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1_
   lastTaskID = rawTask.id;
   taskDb[rawTask.id] = pos - 1;
 }, "addTask");
-var findTaskById = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(id) {
+var findTaskById = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(id) {
   const pos = taskDb[id];
   return rawTasks[pos];
 }, "findTaskById");
-var addTaskOrg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(descr, data) {
+var addTaskOrg = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(descr, data) {
   const newTask = {
     section: currentSection,
     type: currentSection,
@@ -1275,8 +1270,8 @@ var addTaskOrg = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
   lastTask = newTask;
   tasks.push(newTask);
 }, "addTaskOrg");
-var compileTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
-  const compileTask = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(pos) {
+var compileTasks = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+  const compileTask = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(pos) {
     const task = rawTasks[pos];
     let startTime = "";
     switch (rawTasks[pos].raw.startTime.type) {
@@ -1318,9 +1313,9 @@ var compileTasks = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
   }
   return allProcessed;
 }, "compileTasks");
-var setLink = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ids, _linkStr) {
+var setLink = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ids, _linkStr) {
   let linkStr = _linkStr;
-  if ((0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel !== "loose") {
+  if ((0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel !== "loose") {
     linkStr = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_2__/* .sanitizeUrl */ .J)(_linkStr);
   }
   ids.split(",").forEach(function(id) {
@@ -1334,7 +1329,7 @@ var setLink = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1_
   });
   setClass(ids, "clickable");
 }, "setLink");
-var setClass = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ids, className) {
+var setClass = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ids, className) {
   ids.split(",").forEach(function(id) {
     let rawTask = findTaskById(id);
     if (rawTask !== void 0) {
@@ -1342,8 +1337,8 @@ var setClass = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1
     }
   });
 }, "setClass");
-var setClickFun = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(id, functionName, functionArgs) {
-  if ((0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel !== "loose") {
+var setClickFun = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(id, functionName, functionArgs) {
+  if ((0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel !== "loose") {
     return;
   }
   if (functionName === void 0) {
@@ -1366,11 +1361,11 @@ var setClickFun = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   let rawTask = findTaskById(id);
   if (rawTask !== void 0) {
     pushFun(id, () => {
-      _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_0__/* .utils_default */ ._K.runFunc(functionName, ...argList);
+      _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_0__/* .utils_default */ ._K.runFunc(functionName, ...argList);
     });
   }
 }, "setClickFun");
-var pushFun = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(id, callbackFunction) {
+var pushFun = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(id, callbackFunction) {
   funs.push(
     function() {
       const elem = document.querySelector(`[id="${id}"]`);
@@ -1390,19 +1385,19 @@ var pushFun = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1_
     }
   );
 }, "pushFun");
-var setClickEvent = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ids, functionName, functionArgs) {
+var setClickEvent = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(ids, functionName, functionArgs) {
   ids.split(",").forEach(function(id) {
     setClickFun(id, functionName, functionArgs);
   });
   setClass(ids, "clickable");
 }, "setClickEvent");
-var bindFunctions = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(element) {
+var bindFunctions = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(element) {
   funs.forEach(function(fun) {
     fun(element);
   });
 }, "bindFunctions");
 var ganttDb_default = {
-  getConfig: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(() => (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().gantt, "getConfig"),
+  getConfig: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(() => (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().gantt, "getConfig"),
   clear: clear2,
   setDateFormat,
   getDateFormat,
@@ -1416,14 +1411,14 @@ var ganttDb_default = {
   getTickInterval,
   setTodayMarker,
   getTodayMarker,
-  setAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setAccTitle */ .SV,
-  getAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getAccTitle */ .iN,
-  setDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setDiagramTitle */ .ke,
-  getDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getDiagramTitle */ .ab,
+  setAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setAccTitle */ .SV,
+  getAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getAccTitle */ .iN,
+  setDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setDiagramTitle */ .ke,
+  getDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getDiagramTitle */ .ab,
   setDisplayMode,
   getDisplayMode,
-  setAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setAccDescription */ .EI,
-  getAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getAccDescription */ .m7,
+  setAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .setAccDescription */ .EI,
+  getAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getAccDescription */ .m7,
   addSection,
   getSections,
   getTasks,
@@ -1459,13 +1454,13 @@ function getTaskTags(data, task, tags2) {
     });
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(getTaskTags, "getTaskTags");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(getTaskTags, "getTaskTags");
 
 // src/diagrams/gantt/ganttRenderer.js
 
 
-var setConf = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.debug("Something is calling, setConf, remove the call");
+var setConf = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function() {
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.debug("Something is calling, setConf, remove the call");
 }, "setConf");
 var mapWeekdayToTimeFunction = {
   monday: d3__WEBPACK_IMPORTED_MODULE_7__/* .timeMonday */ .ABi,
@@ -1476,7 +1471,7 @@ var mapWeekdayToTimeFunction = {
   saturday: d3__WEBPACK_IMPORTED_MODULE_7__/* .timeSaturday */ .rGn,
   sunday: d3__WEBPACK_IMPORTED_MODULE_7__/* .timeSunday */ .YPH
 };
-var getMaxIntersections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)((tasks2, orderOffset) => {
+var getMaxIntersections = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)((tasks2, orderOffset) => {
   let timeline = [...tasks2].map(() => -Infinity);
   let sorted = [...tasks2].sort((a, b) => a.startTime - b.startTime || a.order - b.order);
   let maxIntersections = 0;
@@ -1495,9 +1490,9 @@ var getMaxIntersections = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORT
   return maxIntersections;
 }, "getMaxIntersections");
 var w;
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(text, id, version, diagObj) {
-  const conf = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().gantt;
-  const securityLevel = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel;
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(function(text, id, version, diagObj) {
+  const conf = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().gantt;
+  const securityLevel = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel;
   let sandboxElement;
   if (securityLevel === "sandbox") {
     sandboxElement = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .select */ .Ltv)("#i" + id);
@@ -1563,10 +1558,10 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
     }
     return result;
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(taskCompare, "taskCompare");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(taskCompare, "taskCompare");
   taskArray.sort(taskCompare);
   makeGantt(taskArray, w, h);
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .configureSvgSize */ .a$)(svg, h, w, conf.useMaxWidth);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .configureSvgSize */ .a$)(svg, h, w, conf.useMaxWidth);
   svg.append("text").text(diagObj.db.getDiagramTitle()).attr("x", w / 2).attr("y", conf.titleTopMargin).attr("class", "titleText");
   function makeGantt(tasks2, pageWidth, pageHeight) {
     const barHeight = conf.barHeight;
@@ -1589,7 +1584,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
     vertLabels(gap, topPadding, leftPadding, barHeight, colorScale);
     drawToday(leftPadding, topPadding, pageWidth, pageHeight);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(makeGantt, "makeGantt");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(makeGantt, "makeGantt");
   function drawRects(theArray, theGap, theTopPad, theSidePad, theBarHeight, theColorScale, w2) {
     theArray.sort((a, b) => a.vert === b.vert ? 0 : a.vert ? 1 : -1);
     const uniqueTaskOrderIds = [...new Set(theArray.map((item) => item.order))];
@@ -1763,7 +1758,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
         return classStr + " taskText taskText" + secNum + " " + taskType + " width-" + textWidth;
       }
     });
-    const securityLevel2 = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel;
+    const securityLevel2 = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .getConfig2 */ .D7)().securityLevel;
     if (securityLevel2 === "sandbox") {
       let sandboxElement2;
       sandboxElement2 = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .select */ .Ltv)("#i" + id);
@@ -1783,7 +1778,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
       });
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(drawRects, "drawRects");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(drawRects, "drawRects");
   function drawExcludeDays(theGap, theTopPad, theSidePad, w2, h2, tasks2, excludes2, includes2) {
     if (excludes2.length === 0 && includes2.length === 0) {
       return;
@@ -1802,7 +1797,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
       return;
     }
     if (dayjs__WEBPACK_IMPORTED_MODULE_3__(maxTime).diff(dayjs__WEBPACK_IMPORTED_MODULE_3__(minTime), "year") > 5) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.warn(
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .log */ .Rm.warn(
         "The difference between the min and max time is more than 5 years. This will cause performance issues. Skipping drawing exclude days."
       );
       return;
@@ -1830,20 +1825,23 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
       d = d.add(1, "d");
     }
     const rectangles = svg.append("g").selectAll("rect").data(excludeRanges).enter();
-    rectangles.append("rect").attr("id", function(d2) {
-      return "exclude-" + d2.start.format("YYYY-MM-DD");
-    }).attr("x", function(d2) {
-      return timeScale(d2.start) + theSidePad;
-    }).attr("y", conf.gridLineStartPadding).attr("width", function(d2) {
-      const renderEnd = d2.end.add(1, "day");
-      return timeScale(renderEnd) - timeScale(d2.start);
-    }).attr("height", h2 - theTopPad - conf.gridLineStartPadding).attr("transform-origin", function(d2, i) {
+    rectangles.append("rect").attr("id", (d2) => "exclude-" + d2.start.format("YYYY-MM-DD")).attr("x", (d2) => timeScale(d2.start.startOf("day")) + theSidePad).attr("y", conf.gridLineStartPadding).attr("width", (d2) => timeScale(d2.end.endOf("day")) - timeScale(d2.start.startOf("day"))).attr("height", h2 - theTopPad - conf.gridLineStartPadding).attr("transform-origin", function(d2, i) {
       return (timeScale(d2.start) + theSidePad + 0.5 * (timeScale(d2.end) - timeScale(d2.start))).toString() + "px " + (i * theGap + 0.5 * h2).toString() + "px";
     }).attr("class", "exclude-range");
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(drawExcludeDays, "drawExcludeDays");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(drawExcludeDays, "drawExcludeDays");
   function makeGrid(theSidePad, theTopPad, w2, h2) {
-    let bottomXAxis = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .axisBottom */ .l78)(timeScale).tickSize(-h2 + theTopPad + conf.gridLineStartPadding).tickFormat((0,d3__WEBPACK_IMPORTED_MODULE_7__/* .timeFormat */ .DCK)(diagObj.db.getAxisFormat() || conf.axisFormat || "%Y-%m-%d"));
+    const dateFormat2 = diagObj.db.getDateFormat();
+    const userAxisFormat = diagObj.db.getAxisFormat();
+    let axisFormat2;
+    if (userAxisFormat) {
+      axisFormat2 = userAxisFormat;
+    } else if (dateFormat2 === "D") {
+      axisFormat2 = "%d";
+    } else {
+      axisFormat2 = conf.axisFormat ?? "%Y-%m-%d";
+    }
+    let bottomXAxis = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .axisBottom */ .l78)(timeScale).tickSize(-h2 + theTopPad + conf.gridLineStartPadding).tickFormat((0,d3__WEBPACK_IMPORTED_MODULE_7__/* .timeFormat */ .DCK)(axisFormat2));
     const reTickInterval = /^([1-9]\d*)(millisecond|second|minute|hour|day|week|month)$/;
     const resultTickInterval = reTickInterval.exec(
       diagObj.db.getTickInterval() || conf.tickInterval
@@ -1878,7 +1876,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
     }
     svg.append("g").attr("class", "grid").attr("transform", "translate(" + theSidePad + ", " + (h2 - 50) + ")").call(bottomXAxis).selectAll("text").style("text-anchor", "middle").attr("fill", "#000").attr("stroke", "none").attr("font-size", 10).attr("dy", "1em");
     if (diagObj.db.topAxisEnabled() || conf.topAxis) {
-      let topXAxis = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .axisTop */ .tlR)(timeScale).tickSize(-h2 + theTopPad + conf.gridLineStartPadding).tickFormat((0,d3__WEBPACK_IMPORTED_MODULE_7__/* .timeFormat */ .DCK)(diagObj.db.getAxisFormat() || conf.axisFormat || "%Y-%m-%d"));
+      let topXAxis = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .axisTop */ .tlR)(timeScale).tickSize(-h2 + theTopPad + conf.gridLineStartPadding).tickFormat((0,d3__WEBPACK_IMPORTED_MODULE_7__/* .timeFormat */ .DCK)(axisFormat2));
       if (resultTickInterval !== null) {
         const every = resultTickInterval[1];
         const interval = resultTickInterval[2];
@@ -1910,12 +1908,12 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
       svg.append("g").attr("class", "grid").attr("transform", "translate(" + theSidePad + ", " + theTopPad + ")").call(topXAxis).selectAll("text").style("text-anchor", "middle").attr("fill", "#000").attr("stroke", "none").attr("font-size", 10);
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(makeGrid, "makeGrid");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(makeGrid, "makeGrid");
   function vertLabels(theGap, theTopPad) {
     let prevGap = 0;
     const numOccurrences = Object.keys(categoryHeights).map((d) => [d, categoryHeights[d]]);
     svg.append("g").selectAll("text").data(numOccurrences).enter().append(function(d) {
-      const rows = d[0].split(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .common_default */ .Y2.lineBreakRegex);
+      const rows = d[0].split(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .common_default */ .Y2.lineBreakRegex);
       const dy = -(rows.length - 1) / 2;
       const svgLabel = doc.createElementNS("http://www.w3.org/2000/svg", "text");
       svgLabel.setAttribute("dy", dy + "em");
@@ -1948,7 +1946,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
       return "sectionTitle";
     });
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(vertLabels, "vertLabels");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(vertLabels, "vertLabels");
   function drawToday(theSidePad, theTopPad, w2, h2) {
     const todayMarker2 = diagObj.db.getTodayMarker();
     if (todayMarker2 === "off") {
@@ -1962,7 +1960,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
       todayLine.attr("style", todayMarker2.replace(/,/g, ";"));
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(drawToday, "drawToday");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(drawToday, "drawToday");
   function checkUnique(arr) {
     const hash = {};
     const result = [];
@@ -1974,7 +1972,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/*
     }
     return result;
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(checkUnique, "checkUnique");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)(checkUnique, "checkUnique");
 }, "draw");
 var ganttRenderer_default = {
   setConf,
@@ -1982,7 +1980,7 @@ var ganttRenderer_default = {
 };
 
 // src/diagrams/gantt/styles.js
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)((options) => `
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_1__/* .__name */ .K2)((options) => `
   .mermaid-main-font {
         font-family: ${options.fontFamily};
   }
@@ -2255,6 +2253,13 @@ var diagram = {
 };
 
 
+
+/***/ }),
+
+/***/ 7375:
+/***/ (function(module) {
+
+!function(e,t){ true?module.exports=t():0}(this,(function(){"use strict";return function(e,t){var r=t.prototype,n=r.format;r.format=function(e){var t=this,r=this.$locale();if(!this.isValid())return n.bind(this)(e);var s=this.$utils(),a=(e||"YYYY-MM-DDTHH:mm:ssZ").replace(/\[([^\]]+)]|Q|wo|ww|w|WW|W|zzz|z|gggg|GGGG|Do|X|x|k{1,2}|S/g,(function(e){switch(e){case"Q":return Math.ceil((t.$M+1)/3);case"Do":return r.ordinal(t.$D);case"gggg":return t.weekYear();case"GGGG":return t.isoWeekYear();case"wo":return r.ordinal(t.week(),"W");case"w":case"ww":return s.s(t.week(),"w"===e?1:2,"0");case"W":case"WW":return s.s(t.isoWeek(),"W"===e?1:2,"0");case"k":case"kk":return s.s(String(0===t.$H?24:t.$H),"k"===e?1:2,"0");case"X":return Math.floor(t.$d.getTime()/1e3);case"x":return t.$d.getTime();case"z":return"["+t.offsetName()+"]";case"zzz":return"["+t.offsetName("long")+"]";default:return e}}));return n.bind(this)(a)}}}));
 
 /***/ })
 

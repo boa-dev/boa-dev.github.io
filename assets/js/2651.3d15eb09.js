@@ -1,15 +1,15 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[1039],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[2651],{
 
-/***/ 1039:
+/***/ 2651:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5237);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4387);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6936);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(451);
 /* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6750);
 
@@ -18,18 +18,18 @@
 
 // src/diagrams/c4/parser/c4Diagram.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [1, 24], $V1 = [1, 25], $V2 = [1, 26], $V3 = [1, 27], $V4 = [1, 28], $V5 = [1, 63], $V6 = [1, 64], $V7 = [1, 65], $V8 = [1, 66], $V9 = [1, 67], $Va = [1, 68], $Vb = [1, 69], $Vc = [1, 29], $Vd = [1, 30], $Ve = [1, 31], $Vf = [1, 32], $Vg = [1, 33], $Vh = [1, 34], $Vi = [1, 35], $Vj = [1, 36], $Vk = [1, 37], $Vl = [1, 38], $Vm = [1, 39], $Vn = [1, 40], $Vo = [1, 41], $Vp = [1, 42], $Vq = [1, 43], $Vr = [1, 44], $Vs = [1, 45], $Vt = [1, 46], $Vu = [1, 47], $Vv = [1, 48], $Vw = [1, 50], $Vx = [1, 51], $Vy = [1, 52], $Vz = [1, 53], $VA = [1, 54], $VB = [1, 55], $VC = [1, 56], $VD = [1, 57], $VE = [1, 58], $VF = [1, 59], $VG = [1, 60], $VH = [14, 42], $VI = [14, 34, 36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74], $VJ = [12, 14, 34, 36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74], $VK = [1, 82], $VL = [1, 83], $VM = [1, 84], $VN = [1, 85], $VO = [12, 14, 42], $VP = [12, 14, 33, 42], $VQ = [12, 14, 33, 42, 76, 77, 79, 80], $VR = [12, 33], $VS = [34, 36, 37, 38, 39, 40, 41, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "mermaidDoc": 4, "direction": 5, "direction_tb": 6, "direction_bt": 7, "direction_rl": 8, "direction_lr": 9, "graphConfig": 10, "C4_CONTEXT": 11, "NEWLINE": 12, "statements": 13, "EOF": 14, "C4_CONTAINER": 15, "C4_COMPONENT": 16, "C4_DYNAMIC": 17, "C4_DEPLOYMENT": 18, "otherStatements": 19, "diagramStatements": 20, "otherStatement": 21, "title": 22, "accDescription": 23, "acc_title": 24, "acc_title_value": 25, "acc_descr": 26, "acc_descr_value": 27, "acc_descr_multiline_value": 28, "boundaryStatement": 29, "boundaryStartStatement": 30, "boundaryStopStatement": 31, "boundaryStart": 32, "LBRACE": 33, "ENTERPRISE_BOUNDARY": 34, "attributes": 35, "SYSTEM_BOUNDARY": 36, "BOUNDARY": 37, "CONTAINER_BOUNDARY": 38, "NODE": 39, "NODE_L": 40, "NODE_R": 41, "RBRACE": 42, "diagramStatement": 43, "PERSON": 44, "PERSON_EXT": 45, "SYSTEM": 46, "SYSTEM_DB": 47, "SYSTEM_QUEUE": 48, "SYSTEM_EXT": 49, "SYSTEM_EXT_DB": 50, "SYSTEM_EXT_QUEUE": 51, "CONTAINER": 52, "CONTAINER_DB": 53, "CONTAINER_QUEUE": 54, "CONTAINER_EXT": 55, "CONTAINER_EXT_DB": 56, "CONTAINER_EXT_QUEUE": 57, "COMPONENT": 58, "COMPONENT_DB": 59, "COMPONENT_QUEUE": 60, "COMPONENT_EXT": 61, "COMPONENT_EXT_DB": 62, "COMPONENT_EXT_QUEUE": 63, "REL": 64, "BIREL": 65, "REL_U": 66, "REL_D": 67, "REL_L": 68, "REL_R": 69, "REL_B": 70, "REL_INDEX": 71, "UPDATE_EL_STYLE": 72, "UPDATE_REL_STYLE": 73, "UPDATE_LAYOUT_CONFIG": 74, "attribute": 75, "STR": 76, "STR_KEY": 77, "STR_VALUE": 78, "ATTRIBUTE": 79, "ATTRIBUTE_EMPTY": 80, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 6: "direction_tb", 7: "direction_bt", 8: "direction_rl", 9: "direction_lr", 11: "C4_CONTEXT", 12: "NEWLINE", 14: "EOF", 15: "C4_CONTAINER", 16: "C4_COMPONENT", 17: "C4_DYNAMIC", 18: "C4_DEPLOYMENT", 22: "title", 23: "accDescription", 24: "acc_title", 25: "acc_title_value", 26: "acc_descr", 27: "acc_descr_value", 28: "acc_descr_multiline_value", 33: "LBRACE", 34: "ENTERPRISE_BOUNDARY", 36: "SYSTEM_BOUNDARY", 37: "BOUNDARY", 38: "CONTAINER_BOUNDARY", 39: "NODE", 40: "NODE_L", 41: "NODE_R", 42: "RBRACE", 44: "PERSON", 45: "PERSON_EXT", 46: "SYSTEM", 47: "SYSTEM_DB", 48: "SYSTEM_QUEUE", 49: "SYSTEM_EXT", 50: "SYSTEM_EXT_DB", 51: "SYSTEM_EXT_QUEUE", 52: "CONTAINER", 53: "CONTAINER_DB", 54: "CONTAINER_QUEUE", 55: "CONTAINER_EXT", 56: "CONTAINER_EXT_DB", 57: "CONTAINER_EXT_QUEUE", 58: "COMPONENT", 59: "COMPONENT_DB", 60: "COMPONENT_QUEUE", 61: "COMPONENT_EXT", 62: "COMPONENT_EXT_DB", 63: "COMPONENT_EXT_QUEUE", 64: "REL", 65: "BIREL", 66: "REL_U", 67: "REL_D", 68: "REL_L", 69: "REL_R", 70: "REL_B", 71: "REL_INDEX", 72: "UPDATE_EL_STYLE", 73: "UPDATE_REL_STYLE", 74: "UPDATE_LAYOUT_CONFIG", 76: "STR", 77: "STR_KEY", 78: "STR_VALUE", 79: "ATTRIBUTE", 80: "ATTRIBUTE_EMPTY" },
     productions_: [0, [3, 1], [3, 1], [5, 1], [5, 1], [5, 1], [5, 1], [4, 1], [10, 4], [10, 4], [10, 4], [10, 4], [10, 4], [13, 1], [13, 1], [13, 2], [19, 1], [19, 2], [19, 3], [21, 1], [21, 1], [21, 2], [21, 2], [21, 1], [29, 3], [30, 3], [30, 3], [30, 4], [32, 2], [32, 2], [32, 2], [32, 2], [32, 2], [32, 2], [32, 2], [31, 1], [20, 1], [20, 2], [20, 3], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 1], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [43, 2], [35, 1], [35, 2], [75, 1], [75, 2], [75, 1], [75, 1]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 3:
@@ -250,7 +250,7 @@ var parser = function() {
     }, "anonymous"),
     table: [{ 3: 1, 4: 2, 5: 3, 6: [1, 5], 7: [1, 6], 8: [1, 7], 9: [1, 8], 10: 4, 11: [1, 9], 15: [1, 10], 16: [1, 11], 17: [1, 12], 18: [1, 13] }, { 1: [3] }, { 1: [2, 1] }, { 1: [2, 2] }, { 1: [2, 7] }, { 1: [2, 3] }, { 1: [2, 4] }, { 1: [2, 5] }, { 1: [2, 6] }, { 12: [1, 14] }, { 12: [1, 15] }, { 12: [1, 16] }, { 12: [1, 17] }, { 12: [1, 18] }, { 13: 19, 19: 20, 20: 21, 21: 22, 22: $V0, 23: $V1, 24: $V2, 26: $V3, 28: $V4, 29: 49, 30: 61, 32: 62, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 43: 23, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }, { 13: 70, 19: 20, 20: 21, 21: 22, 22: $V0, 23: $V1, 24: $V2, 26: $V3, 28: $V4, 29: 49, 30: 61, 32: 62, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 43: 23, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }, { 13: 71, 19: 20, 20: 21, 21: 22, 22: $V0, 23: $V1, 24: $V2, 26: $V3, 28: $V4, 29: 49, 30: 61, 32: 62, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 43: 23, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }, { 13: 72, 19: 20, 20: 21, 21: 22, 22: $V0, 23: $V1, 24: $V2, 26: $V3, 28: $V4, 29: 49, 30: 61, 32: 62, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 43: 23, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }, { 13: 73, 19: 20, 20: 21, 21: 22, 22: $V0, 23: $V1, 24: $V2, 26: $V3, 28: $V4, 29: 49, 30: 61, 32: 62, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 43: 23, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }, { 14: [1, 74] }, o($VH, [2, 13], { 43: 23, 29: 49, 30: 61, 32: 62, 20: 75, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }), o($VH, [2, 14]), o($VI, [2, 16], { 12: [1, 76] }), o($VH, [2, 36], { 12: [1, 77] }), o($VJ, [2, 19]), o($VJ, [2, 20]), { 25: [1, 78] }, { 27: [1, 79] }, o($VJ, [2, 23]), { 35: 80, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 86, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 87, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 88, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 89, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 90, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 91, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 92, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 93, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 94, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 95, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 96, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 97, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 98, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 99, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 100, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 101, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 102, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 103, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 104, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, o($VO, [2, 59]), { 35: 105, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 106, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 107, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 108, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 109, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 110, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 111, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 112, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 113, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 114, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 115, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 20: 116, 29: 49, 30: 61, 32: 62, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 43: 23, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }, { 12: [1, 118], 33: [1, 117] }, { 35: 119, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 120, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 121, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 122, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 123, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 124, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 35: 125, 75: 81, 76: $VK, 77: $VL, 79: $VM, 80: $VN }, { 14: [1, 126] }, { 14: [1, 127] }, { 14: [1, 128] }, { 14: [1, 129] }, { 1: [2, 8] }, o($VH, [2, 15]), o($VI, [2, 17], { 21: 22, 19: 130, 22: $V0, 23: $V1, 24: $V2, 26: $V3, 28: $V4 }), o($VH, [2, 37], { 19: 20, 20: 21, 21: 22, 43: 23, 29: 49, 30: 61, 32: 62, 13: 131, 22: $V0, 23: $V1, 24: $V2, 26: $V3, 28: $V4, 34: $V5, 36: $V6, 37: $V7, 38: $V8, 39: $V9, 40: $Va, 41: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi, 51: $Vj, 52: $Vk, 53: $Vl, 54: $Vm, 55: $Vn, 56: $Vo, 57: $Vp, 58: $Vq, 59: $Vr, 60: $Vs, 61: $Vt, 62: $Vu, 63: $Vv, 64: $Vw, 65: $Vx, 66: $Vy, 67: $Vz, 68: $VA, 69: $VB, 70: $VC, 71: $VD, 72: $VE, 73: $VF, 74: $VG }), o($VJ, [2, 21]), o($VJ, [2, 22]), o($VO, [2, 39]), o($VP, [2, 71], { 75: 81, 35: 132, 76: $VK, 77: $VL, 79: $VM, 80: $VN }), o($VQ, [2, 73]), { 78: [1, 133] }, o($VQ, [2, 75]), o($VQ, [2, 76]), o($VO, [2, 40]), o($VO, [2, 41]), o($VO, [2, 42]), o($VO, [2, 43]), o($VO, [2, 44]), o($VO, [2, 45]), o($VO, [2, 46]), o($VO, [2, 47]), o($VO, [2, 48]), o($VO, [2, 49]), o($VO, [2, 50]), o($VO, [2, 51]), o($VO, [2, 52]), o($VO, [2, 53]), o($VO, [2, 54]), o($VO, [2, 55]), o($VO, [2, 56]), o($VO, [2, 57]), o($VO, [2, 58]), o($VO, [2, 60]), o($VO, [2, 61]), o($VO, [2, 62]), o($VO, [2, 63]), o($VO, [2, 64]), o($VO, [2, 65]), o($VO, [2, 66]), o($VO, [2, 67]), o($VO, [2, 68]), o($VO, [2, 69]), o($VO, [2, 70]), { 31: 134, 42: [1, 135] }, { 12: [1, 136] }, { 33: [1, 137] }, o($VR, [2, 28]), o($VR, [2, 29]), o($VR, [2, 30]), o($VR, [2, 31]), o($VR, [2, 32]), o($VR, [2, 33]), o($VR, [2, 34]), { 1: [2, 9] }, { 1: [2, 10] }, { 1: [2, 11] }, { 1: [2, 12] }, o($VI, [2, 18]), o($VH, [2, 38]), o($VP, [2, 72]), o($VQ, [2, 74]), o($VO, [2, 24]), o($VO, [2, 35]), o($VS, [2, 25]), o($VS, [2, 26], { 12: [1, 138] }), o($VS, [2, 27])],
     defaultActions: { 2: [2, 1], 3: [2, 2], 4: [2, 7], 5: [2, 3], 6: [2, 4], 7: [2, 5], 8: [2, 6], 74: [2, 8], 126: [2, 9], 127: [2, 10], 128: [2, 11], 129: [2, 12] },
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -259,7 +259,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -288,7 +288,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -301,7 +301,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -405,7 +405,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -413,7 +413,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -433,7 +433,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -454,7 +454,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -480,12 +480,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -498,16 +498,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -515,13 +515,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c2 = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c2 + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -584,7 +584,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -635,7 +635,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -644,11 +644,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -657,7 +657,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -665,7 +665,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -674,15 +674,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: {},
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -1076,7 +1076,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -1105,14 +1105,14 @@ var wrapEnabled = false;
 var c4ShapeInRow = 4;
 var c4BoundaryInRow = 2;
 var c4Type;
-var getC4Type = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getC4Type = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return c4Type;
 }, "getC4Type");
-var setC4Type = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(c4TypeParam) {
-  let sanitizedText = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .sanitizeText */ .jZ)(c4TypeParam, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)());
+var setC4Type = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(c4TypeParam) {
+  let sanitizedText = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .sanitizeText */ .jZ)(c4TypeParam, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)());
   c4Type = sanitizedText;
 }, "setC4Type");
-var addRel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(type, from, to, label, techn, descr, sprite, tags, link) {
+var addRel = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(type, from, to, label, techn, descr, sprite, tags, link) {
   if (type === void 0 || type === null || from === void 0 || from === null || to === void 0 || to === null || label === void 0 || label === null) {
     return;
   }
@@ -1167,7 +1167,7 @@ var addRel = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__
   }
   rel.wrap = autoWrap();
 }, "addRel");
-var addPersonOrSystem = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, alias, label, descr, sprite, tags, link) {
+var addPersonOrSystem = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, alias, label, descr, sprite, tags, link) {
   if (alias === null || label === null) {
     return;
   }
@@ -1216,7 +1216,7 @@ var addPersonOrSystem = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   personOrSystem.parentBoundary = currentBoundaryParse;
   personOrSystem.wrap = autoWrap();
 }, "addPersonOrSystem");
-var addContainer = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, alias, label, techn, descr, sprite, tags, link) {
+var addContainer = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, alias, label, techn, descr, sprite, tags, link) {
   if (alias === null || label === null) {
     return;
   }
@@ -1275,7 +1275,7 @@ var addContainer = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
   container.typeC4Shape = { text: typeC4Shape };
   container.parentBoundary = currentBoundaryParse;
 }, "addContainer");
-var addComponent = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, alias, label, techn, descr, sprite, tags, link) {
+var addComponent = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, alias, label, techn, descr, sprite, tags, link) {
   if (alias === null || label === null) {
     return;
   }
@@ -1334,7 +1334,7 @@ var addComponent = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
   component.typeC4Shape = { text: typeC4Shape };
   component.parentBoundary = currentBoundaryParse;
 }, "addComponent");
-var addPersonOrSystemBoundary = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(alias, label, type, tags, link) {
+var addPersonOrSystemBoundary = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(alias, label, type, tags, link) {
   if (alias === null || label === null) {
     return;
   }
@@ -1379,7 +1379,7 @@ var addPersonOrSystemBoundary = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_
   currentBoundaryParse = alias;
   boundaryParseStack.push(parentBoundaryParse);
 }, "addPersonOrSystemBoundary");
-var addContainerBoundary = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(alias, label, type, tags, link) {
+var addContainerBoundary = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(alias, label, type, tags, link) {
   if (alias === null || label === null) {
     return;
   }
@@ -1424,7 +1424,7 @@ var addContainerBoundary = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPOR
   currentBoundaryParse = alias;
   boundaryParseStack.push(parentBoundaryParse);
 }, "addContainerBoundary");
-var addDeploymentNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(nodeType, alias, label, type, descr, sprite, tags, link) {
+var addDeploymentNode = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(nodeType, alias, label, type, descr, sprite, tags, link) {
   if (alias === null || label === null) {
     return;
   }
@@ -1480,13 +1480,13 @@ var addDeploymentNode = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   currentBoundaryParse = alias;
   boundaryParseStack.push(parentBoundaryParse);
 }, "addDeploymentNode");
-var popBoundaryParseStack = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var popBoundaryParseStack = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   currentBoundaryParse = parentBoundaryParse;
   boundaryParseStack.pop();
   parentBoundaryParse = boundaryParseStack.pop();
   boundaryParseStack.push(parentBoundaryParse);
 }, "popBoundaryParseStack");
-var updateElStyle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, elementName, bgColor, fontColor, borderColor, shadowing, shape, sprite, techn, legendText, legendSprite) {
+var updateElStyle = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, elementName, bgColor, fontColor, borderColor, shadowing, shape, sprite, techn, legendText, legendSprite) {
   let old = c4ShapeArray.find((element) => element.alias === elementName);
   if (old === void 0) {
     old = boundaries.find((element) => element.alias === elementName);
@@ -1567,7 +1567,7 @@ var updateElStyle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
     }
   }
 }, "updateElStyle");
-var updateRelStyle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, from, to, textColor, lineColor, offsetX, offsetY) {
+var updateRelStyle = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, from, to, textColor, lineColor, offsetX, offsetY) {
   const old = rels.find((rel) => rel.from === from && rel.to === to);
   if (old === void 0) {
     return;
@@ -1605,7 +1605,7 @@ var updateRelStyle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MO
     }
   }
 }, "updateRelStyle");
-var updateLayoutConfig = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, c4ShapeInRowParam, c4BoundaryInRowParam) {
+var updateLayoutConfig = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(typeC4Shape, c4ShapeInRowParam, c4BoundaryInRowParam) {
   let c4ShapeInRowValue = c4ShapeInRow;
   let c4BoundaryInRowValue = c4BoundaryInRow;
   if (typeof c4ShapeInRowParam === "object") {
@@ -1627,19 +1627,19 @@ var updateLayoutConfig = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
     c4BoundaryInRow = c4BoundaryInRowValue;
   }
 }, "updateLayoutConfig");
-var getC4ShapeInRow = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getC4ShapeInRow = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return c4ShapeInRow;
 }, "getC4ShapeInRow");
-var getC4BoundaryInRow = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getC4BoundaryInRow = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return c4BoundaryInRow;
 }, "getC4BoundaryInRow");
-var getCurrentBoundaryParse = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getCurrentBoundaryParse = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return currentBoundaryParse;
 }, "getCurrentBoundaryParse");
-var getParentBoundaryParse = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getParentBoundaryParse = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return parentBoundaryParse;
 }, "getParentBoundaryParse");
-var getC4ShapeArray = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(parentBoundary) {
+var getC4ShapeArray = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(parentBoundary) {
   if (parentBoundary === void 0 || parentBoundary === null) {
     return c4ShapeArray;
   } else {
@@ -1648,13 +1648,13 @@ var getC4ShapeArray = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_M
     });
   }
 }, "getC4ShapeArray");
-var getC4Shape = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(alias) {
+var getC4Shape = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(alias) {
   return c4ShapeArray.find((personOrSystem) => personOrSystem.alias === alias);
 }, "getC4Shape");
-var getC4ShapeKeys = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(parentBoundary) {
+var getC4ShapeKeys = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(parentBoundary) {
   return Object.keys(getC4ShapeArray(parentBoundary));
 }, "getC4ShapeKeys");
-var getBoundaries = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(parentBoundary) {
+var getBoundaries = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(parentBoundary) {
   if (parentBoundary === void 0 || parentBoundary === null) {
     return boundaries;
   } else {
@@ -1662,19 +1662,19 @@ var getBoundaries = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
   }
 }, "getBoundaries");
 var getBoundarys = getBoundaries;
-var getRels = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getRels = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return rels;
 }, "getRels");
-var getTitle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var getTitle = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return title;
 }, "getTitle");
-var setWrap = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(wrapSetting) {
+var setWrap = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(wrapSetting) {
   wrapEnabled = wrapSetting;
 }, "setWrap");
-var autoWrap = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var autoWrap = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   return wrapEnabled;
 }, "autoWrap");
-var clear = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
+var clear = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function() {
   c4ShapeArray = [];
   boundaries = [
     {
@@ -1730,8 +1730,8 @@ var PLACEMENT = {
   RIGHTOF: 1,
   OVER: 2
 };
-var setTitle = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(txt) {
-  let sanitizedText = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .sanitizeText */ .jZ)(txt, (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)());
+var setTitle = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(txt) {
+  let sanitizedText = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .sanitizeText */ .jZ)(txt, (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)());
   title = sanitizedText;
 }, "setTitle");
 var c4Db_default = {
@@ -1760,11 +1760,11 @@ var c4Db_default = {
   getC4Type,
   getC4ShapeInRow,
   getC4BoundaryInRow,
-  setAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccTitle */ .SV,
-  getAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccTitle */ .iN,
-  getAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccDescription */ .m7,
-  setAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccDescription */ .EI,
-  getConfig: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(() => (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().c4, "getConfig"),
+  setAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccTitle */ .SV,
+  getAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccTitle */ .iN,
+  getAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getAccDescription */ .m7,
+  setAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .setAccDescription */ .EI,
+  getConfig: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(() => (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().c4, "getConfig"),
   clear,
   LINETYPE,
   ARROWTYPE,
@@ -1779,10 +1779,10 @@ var c4Db_default = {
 
 // src/diagrams/c4/svgDraw.js
 
-var drawRect2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, rectData) {
-  return (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawRect */ .tk)(elem, rectData);
+var drawRect2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, rectData) {
+  return (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .drawRect */ .tk)(elem, rectData);
 }, "drawRect");
-var drawImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, width, height, x, y, link) {
+var drawImage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, width, height, x, y, link) {
   const imageElem = elem.append("image");
   imageElem.attr("width", width);
   imageElem.attr("height", height);
@@ -1791,7 +1791,7 @@ var drawImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   let sanitizedLink = link.startsWith("data:image/png;base64") ? link : (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_4__/* .sanitizeUrl */ .J)(link);
   imageElem.attr("xlink:href", sanitizedLink);
 }, "drawImage");
-var drawRels = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((elem, rels2, conf2) => {
+var drawRels = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((elem, rels2, conf2) => {
   const relsElem = elem.append("g");
   let i = 0;
   for (let rel of rels2) {
@@ -1858,7 +1858,7 @@ var drawRels = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2
     }
   }
 }, "drawRels");
-var drawBoundary = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, boundary, conf2) {
+var drawBoundary = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, boundary, conf2) {
   const boundaryElem = elem.append("g");
   let fillColor = boundary.bgColor ? boundary.bgColor : "none";
   let strokeColor = boundary.borderColor ? boundary.borderColor : "#444444";
@@ -1923,7 +1923,7 @@ var drawBoundary = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODU
     );
   }
 }, "drawBoundary");
-var drawC4Shape = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, c4Shape, conf2) {
+var drawC4Shape = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem, c4Shape, conf2) {
   let fillColor = c4Shape.bgColor ? c4Shape.bgColor : conf2[c4Shape.typeC4Shape.text + "_bg_color"];
   let strokeColor = c4Shape.borderColor ? c4Shape.borderColor : conf2[c4Shape.typeC4Shape.text + "_border_color"];
   let fontColor = c4Shape.fontColor ? c4Shape.fontColor : "#FFFFFF";
@@ -1938,7 +1938,7 @@ var drawC4Shape = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   }
   const c4ShapeElem = elem.append("g");
   c4ShapeElem.attr("class", "person-man");
-  const rect = (0,_chunk_67H74DCK_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
+  const rect = (0,_chunk_OMD6QJNC_mjs__WEBPACK_IMPORTED_MODULE_0__/* .getNoteRect */ .PB)();
   switch (c4Shape.typeC4Shape.text) {
     case "person":
     case "external_person":
@@ -2060,43 +2060,43 @@ var drawC4Shape = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   }
   return c4Shape.height;
 }, "drawC4Shape");
-var insertDatabaseIcon = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertDatabaseIcon = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("symbol").attr("id", "database").attr("fill-rule", "evenodd").attr("clip-rule", "evenodd").append("path").attr("transform", "scale(.5)").attr(
     "d",
     "M12.258.001l.256.004.255.005.253.008.251.01.249.012.247.015.246.016.242.019.241.02.239.023.236.024.233.027.231.028.229.031.225.032.223.034.22.036.217.038.214.04.211.041.208.043.205.045.201.046.198.048.194.05.191.051.187.053.183.054.18.056.175.057.172.059.168.06.163.061.16.063.155.064.15.066.074.033.073.033.071.034.07.034.069.035.068.035.067.035.066.035.064.036.064.036.062.036.06.036.06.037.058.037.058.037.055.038.055.038.053.038.052.038.051.039.05.039.048.039.047.039.045.04.044.04.043.04.041.04.04.041.039.041.037.041.036.041.034.041.033.042.032.042.03.042.029.042.027.042.026.043.024.043.023.043.021.043.02.043.018.044.017.043.015.044.013.044.012.044.011.045.009.044.007.045.006.045.004.045.002.045.001.045v17l-.001.045-.002.045-.004.045-.006.045-.007.045-.009.044-.011.045-.012.044-.013.044-.015.044-.017.043-.018.044-.02.043-.021.043-.023.043-.024.043-.026.043-.027.042-.029.042-.03.042-.032.042-.033.042-.034.041-.036.041-.037.041-.039.041-.04.041-.041.04-.043.04-.044.04-.045.04-.047.039-.048.039-.05.039-.051.039-.052.038-.053.038-.055.038-.055.038-.058.037-.058.037-.06.037-.06.036-.062.036-.064.036-.064.036-.066.035-.067.035-.068.035-.069.035-.07.034-.071.034-.073.033-.074.033-.15.066-.155.064-.16.063-.163.061-.168.06-.172.059-.175.057-.18.056-.183.054-.187.053-.191.051-.194.05-.198.048-.201.046-.205.045-.208.043-.211.041-.214.04-.217.038-.22.036-.223.034-.225.032-.229.031-.231.028-.233.027-.236.024-.239.023-.241.02-.242.019-.246.016-.247.015-.249.012-.251.01-.253.008-.255.005-.256.004-.258.001-.258-.001-.256-.004-.255-.005-.253-.008-.251-.01-.249-.012-.247-.015-.245-.016-.243-.019-.241-.02-.238-.023-.236-.024-.234-.027-.231-.028-.228-.031-.226-.032-.223-.034-.22-.036-.217-.038-.214-.04-.211-.041-.208-.043-.204-.045-.201-.046-.198-.048-.195-.05-.19-.051-.187-.053-.184-.054-.179-.056-.176-.057-.172-.059-.167-.06-.164-.061-.159-.063-.155-.064-.151-.066-.074-.033-.072-.033-.072-.034-.07-.034-.069-.035-.068-.035-.067-.035-.066-.035-.064-.036-.063-.036-.062-.036-.061-.036-.06-.037-.058-.037-.057-.037-.056-.038-.055-.038-.053-.038-.052-.038-.051-.039-.049-.039-.049-.039-.046-.039-.046-.04-.044-.04-.043-.04-.041-.04-.04-.041-.039-.041-.037-.041-.036-.041-.034-.041-.033-.042-.032-.042-.03-.042-.029-.042-.027-.042-.026-.043-.024-.043-.023-.043-.021-.043-.02-.043-.018-.044-.017-.043-.015-.044-.013-.044-.012-.044-.011-.045-.009-.044-.007-.045-.006-.045-.004-.045-.002-.045-.001-.045v-17l.001-.045.002-.045.004-.045.006-.045.007-.045.009-.044.011-.045.012-.044.013-.044.015-.044.017-.043.018-.044.02-.043.021-.043.023-.043.024-.043.026-.043.027-.042.029-.042.03-.042.032-.042.033-.042.034-.041.036-.041.037-.041.039-.041.04-.041.041-.04.043-.04.044-.04.046-.04.046-.039.049-.039.049-.039.051-.039.052-.038.053-.038.055-.038.056-.038.057-.037.058-.037.06-.037.061-.036.062-.036.063-.036.064-.036.066-.035.067-.035.068-.035.069-.035.07-.034.072-.034.072-.033.074-.033.151-.066.155-.064.159-.063.164-.061.167-.06.172-.059.176-.057.179-.056.184-.054.187-.053.19-.051.195-.05.198-.048.201-.046.204-.045.208-.043.211-.041.214-.04.217-.038.22-.036.223-.034.226-.032.228-.031.231-.028.234-.027.236-.024.238-.023.241-.02.243-.019.245-.016.247-.015.249-.012.251-.01.253-.008.255-.005.256-.004.258-.001.258.001zm-9.258 20.499v.01l.001.021.003.021.004.022.005.021.006.022.007.022.009.023.01.022.011.023.012.023.013.023.015.023.016.024.017.023.018.024.019.024.021.024.022.025.023.024.024.025.052.049.056.05.061.051.066.051.07.051.075.051.079.052.084.052.088.052.092.052.097.052.102.051.105.052.11.052.114.051.119.051.123.051.127.05.131.05.135.05.139.048.144.049.147.047.152.047.155.047.16.045.163.045.167.043.171.043.176.041.178.041.183.039.187.039.19.037.194.035.197.035.202.033.204.031.209.03.212.029.216.027.219.025.222.024.226.021.23.02.233.018.236.016.24.015.243.012.246.01.249.008.253.005.256.004.259.001.26-.001.257-.004.254-.005.25-.008.247-.011.244-.012.241-.014.237-.016.233-.018.231-.021.226-.021.224-.024.22-.026.216-.027.212-.028.21-.031.205-.031.202-.034.198-.034.194-.036.191-.037.187-.039.183-.04.179-.04.175-.042.172-.043.168-.044.163-.045.16-.046.155-.046.152-.047.148-.048.143-.049.139-.049.136-.05.131-.05.126-.05.123-.051.118-.052.114-.051.11-.052.106-.052.101-.052.096-.052.092-.052.088-.053.083-.051.079-.052.074-.052.07-.051.065-.051.06-.051.056-.05.051-.05.023-.024.023-.025.021-.024.02-.024.019-.024.018-.024.017-.024.015-.023.014-.024.013-.023.012-.023.01-.023.01-.022.008-.022.006-.022.006-.022.004-.022.004-.021.001-.021.001-.021v-4.127l-.077.055-.08.053-.083.054-.085.053-.087.052-.09.052-.093.051-.095.05-.097.05-.1.049-.102.049-.105.048-.106.047-.109.047-.111.046-.114.045-.115.045-.118.044-.12.043-.122.042-.124.042-.126.041-.128.04-.13.04-.132.038-.134.038-.135.037-.138.037-.139.035-.142.035-.143.034-.144.033-.147.032-.148.031-.15.03-.151.03-.153.029-.154.027-.156.027-.158.026-.159.025-.161.024-.162.023-.163.022-.165.021-.166.02-.167.019-.169.018-.169.017-.171.016-.173.015-.173.014-.175.013-.175.012-.177.011-.178.01-.179.008-.179.008-.181.006-.182.005-.182.004-.184.003-.184.002h-.37l-.184-.002-.184-.003-.182-.004-.182-.005-.181-.006-.179-.008-.179-.008-.178-.01-.176-.011-.176-.012-.175-.013-.173-.014-.172-.015-.171-.016-.17-.017-.169-.018-.167-.019-.166-.02-.165-.021-.163-.022-.162-.023-.161-.024-.159-.025-.157-.026-.156-.027-.155-.027-.153-.029-.151-.03-.15-.03-.148-.031-.146-.032-.145-.033-.143-.034-.141-.035-.14-.035-.137-.037-.136-.037-.134-.038-.132-.038-.13-.04-.128-.04-.126-.041-.124-.042-.122-.042-.12-.044-.117-.043-.116-.045-.113-.045-.112-.046-.109-.047-.106-.047-.105-.048-.102-.049-.1-.049-.097-.05-.095-.05-.093-.052-.09-.051-.087-.052-.085-.053-.083-.054-.08-.054-.077-.054v4.127zm0-5.654v.011l.001.021.003.021.004.021.005.022.006.022.007.022.009.022.01.022.011.023.012.023.013.023.015.024.016.023.017.024.018.024.019.024.021.024.022.024.023.025.024.024.052.05.056.05.061.05.066.051.07.051.075.052.079.051.084.052.088.052.092.052.097.052.102.052.105.052.11.051.114.051.119.052.123.05.127.051.131.05.135.049.139.049.144.048.147.048.152.047.155.046.16.045.163.045.167.044.171.042.176.042.178.04.183.04.187.038.19.037.194.036.197.034.202.033.204.032.209.03.212.028.216.027.219.025.222.024.226.022.23.02.233.018.236.016.24.014.243.012.246.01.249.008.253.006.256.003.259.001.26-.001.257-.003.254-.006.25-.008.247-.01.244-.012.241-.015.237-.016.233-.018.231-.02.226-.022.224-.024.22-.025.216-.027.212-.029.21-.03.205-.032.202-.033.198-.035.194-.036.191-.037.187-.039.183-.039.179-.041.175-.042.172-.043.168-.044.163-.045.16-.045.155-.047.152-.047.148-.048.143-.048.139-.05.136-.049.131-.05.126-.051.123-.051.118-.051.114-.052.11-.052.106-.052.101-.052.096-.052.092-.052.088-.052.083-.052.079-.052.074-.051.07-.052.065-.051.06-.05.056-.051.051-.049.023-.025.023-.024.021-.025.02-.024.019-.024.018-.024.017-.024.015-.023.014-.023.013-.024.012-.022.01-.023.01-.023.008-.022.006-.022.006-.022.004-.021.004-.022.001-.021.001-.021v-4.139l-.077.054-.08.054-.083.054-.085.052-.087.053-.09.051-.093.051-.095.051-.097.05-.1.049-.102.049-.105.048-.106.047-.109.047-.111.046-.114.045-.115.044-.118.044-.12.044-.122.042-.124.042-.126.041-.128.04-.13.039-.132.039-.134.038-.135.037-.138.036-.139.036-.142.035-.143.033-.144.033-.147.033-.148.031-.15.03-.151.03-.153.028-.154.028-.156.027-.158.026-.159.025-.161.024-.162.023-.163.022-.165.021-.166.02-.167.019-.169.018-.169.017-.171.016-.173.015-.173.014-.175.013-.175.012-.177.011-.178.009-.179.009-.179.007-.181.007-.182.005-.182.004-.184.003-.184.002h-.37l-.184-.002-.184-.003-.182-.004-.182-.005-.181-.007-.179-.007-.179-.009-.178-.009-.176-.011-.176-.012-.175-.013-.173-.014-.172-.015-.171-.016-.17-.017-.169-.018-.167-.019-.166-.02-.165-.021-.163-.022-.162-.023-.161-.024-.159-.025-.157-.026-.156-.027-.155-.028-.153-.028-.151-.03-.15-.03-.148-.031-.146-.033-.145-.033-.143-.033-.141-.035-.14-.036-.137-.036-.136-.037-.134-.038-.132-.039-.13-.039-.128-.04-.126-.041-.124-.042-.122-.043-.12-.043-.117-.044-.116-.044-.113-.046-.112-.046-.109-.046-.106-.047-.105-.048-.102-.049-.1-.049-.097-.05-.095-.051-.093-.051-.09-.051-.087-.053-.085-.052-.083-.054-.08-.054-.077-.054v4.139zm0-5.666v.011l.001.02.003.022.004.021.005.022.006.021.007.022.009.023.01.022.011.023.012.023.013.023.015.023.016.024.017.024.018.023.019.024.021.025.022.024.023.024.024.025.052.05.056.05.061.05.066.051.07.051.075.052.079.051.084.052.088.052.092.052.097.052.102.052.105.051.11.052.114.051.119.051.123.051.127.05.131.05.135.05.139.049.144.048.147.048.152.047.155.046.16.045.163.045.167.043.171.043.176.042.178.04.183.04.187.038.19.037.194.036.197.034.202.033.204.032.209.03.212.028.216.027.219.025.222.024.226.021.23.02.233.018.236.017.24.014.243.012.246.01.249.008.253.006.256.003.259.001.26-.001.257-.003.254-.006.25-.008.247-.01.244-.013.241-.014.237-.016.233-.018.231-.02.226-.022.224-.024.22-.025.216-.027.212-.029.21-.03.205-.032.202-.033.198-.035.194-.036.191-.037.187-.039.183-.039.179-.041.175-.042.172-.043.168-.044.163-.045.16-.045.155-.047.152-.047.148-.048.143-.049.139-.049.136-.049.131-.051.126-.05.123-.051.118-.052.114-.051.11-.052.106-.052.101-.052.096-.052.092-.052.088-.052.083-.052.079-.052.074-.052.07-.051.065-.051.06-.051.056-.05.051-.049.023-.025.023-.025.021-.024.02-.024.019-.024.018-.024.017-.024.015-.023.014-.024.013-.023.012-.023.01-.022.01-.023.008-.022.006-.022.006-.022.004-.022.004-.021.001-.021.001-.021v-4.153l-.077.054-.08.054-.083.053-.085.053-.087.053-.09.051-.093.051-.095.051-.097.05-.1.049-.102.048-.105.048-.106.048-.109.046-.111.046-.114.046-.115.044-.118.044-.12.043-.122.043-.124.042-.126.041-.128.04-.13.039-.132.039-.134.038-.135.037-.138.036-.139.036-.142.034-.143.034-.144.033-.147.032-.148.032-.15.03-.151.03-.153.028-.154.028-.156.027-.158.026-.159.024-.161.024-.162.023-.163.023-.165.021-.166.02-.167.019-.169.018-.169.017-.171.016-.173.015-.173.014-.175.013-.175.012-.177.01-.178.01-.179.009-.179.007-.181.006-.182.006-.182.004-.184.003-.184.001-.185.001-.185-.001-.184-.001-.184-.003-.182-.004-.182-.006-.181-.006-.179-.007-.179-.009-.178-.01-.176-.01-.176-.012-.175-.013-.173-.014-.172-.015-.171-.016-.17-.017-.169-.018-.167-.019-.166-.02-.165-.021-.163-.023-.162-.023-.161-.024-.159-.024-.157-.026-.156-.027-.155-.028-.153-.028-.151-.03-.15-.03-.148-.032-.146-.032-.145-.033-.143-.034-.141-.034-.14-.036-.137-.036-.136-.037-.134-.038-.132-.039-.13-.039-.128-.041-.126-.041-.124-.041-.122-.043-.12-.043-.117-.044-.116-.044-.113-.046-.112-.046-.109-.046-.106-.048-.105-.048-.102-.048-.1-.05-.097-.049-.095-.051-.093-.051-.09-.052-.087-.052-.085-.053-.083-.053-.08-.054-.077-.054v4.153zm8.74-8.179l-.257.004-.254.005-.25.008-.247.011-.244.012-.241.014-.237.016-.233.018-.231.021-.226.022-.224.023-.22.026-.216.027-.212.028-.21.031-.205.032-.202.033-.198.034-.194.036-.191.038-.187.038-.183.04-.179.041-.175.042-.172.043-.168.043-.163.045-.16.046-.155.046-.152.048-.148.048-.143.048-.139.049-.136.05-.131.05-.126.051-.123.051-.118.051-.114.052-.11.052-.106.052-.101.052-.096.052-.092.052-.088.052-.083.052-.079.052-.074.051-.07.052-.065.051-.06.05-.056.05-.051.05-.023.025-.023.024-.021.024-.02.025-.019.024-.018.024-.017.023-.015.024-.014.023-.013.023-.012.023-.01.023-.01.022-.008.022-.006.023-.006.021-.004.022-.004.021-.001.021-.001.021.001.021.001.021.004.021.004.022.006.021.006.023.008.022.01.022.01.023.012.023.013.023.014.023.015.024.017.023.018.024.019.024.02.025.021.024.023.024.023.025.051.05.056.05.06.05.065.051.07.052.074.051.079.052.083.052.088.052.092.052.096.052.101.052.106.052.11.052.114.052.118.051.123.051.126.051.131.05.136.05.139.049.143.048.148.048.152.048.155.046.16.046.163.045.168.043.172.043.175.042.179.041.183.04.187.038.191.038.194.036.198.034.202.033.205.032.21.031.212.028.216.027.22.026.224.023.226.022.231.021.233.018.237.016.241.014.244.012.247.011.25.008.254.005.257.004.26.001.26-.001.257-.004.254-.005.25-.008.247-.011.244-.012.241-.014.237-.016.233-.018.231-.021.226-.022.224-.023.22-.026.216-.027.212-.028.21-.031.205-.032.202-.033.198-.034.194-.036.191-.038.187-.038.183-.04.179-.041.175-.042.172-.043.168-.043.163-.045.16-.046.155-.046.152-.048.148-.048.143-.048.139-.049.136-.05.131-.05.126-.051.123-.051.118-.051.114-.052.11-.052.106-.052.101-.052.096-.052.092-.052.088-.052.083-.052.079-.052.074-.051.07-.052.065-.051.06-.05.056-.05.051-.05.023-.025.023-.024.021-.024.02-.025.019-.024.018-.024.017-.023.015-.024.014-.023.013-.023.012-.023.01-.023.01-.022.008-.022.006-.023.006-.021.004-.022.004-.021.001-.021.001-.021-.001-.021-.001-.021-.004-.021-.004-.022-.006-.021-.006-.023-.008-.022-.01-.022-.01-.023-.012-.023-.013-.023-.014-.023-.015-.024-.017-.023-.018-.024-.019-.024-.02-.025-.021-.024-.023-.024-.023-.025-.051-.05-.056-.05-.06-.05-.065-.051-.07-.052-.074-.051-.079-.052-.083-.052-.088-.052-.092-.052-.096-.052-.101-.052-.106-.052-.11-.052-.114-.052-.118-.051-.123-.051-.126-.051-.131-.05-.136-.05-.139-.049-.143-.048-.148-.048-.152-.048-.155-.046-.16-.046-.163-.045-.168-.043-.172-.043-.175-.042-.179-.041-.183-.04-.187-.038-.191-.038-.194-.036-.198-.034-.202-.033-.205-.032-.21-.031-.212-.028-.216-.027-.22-.026-.224-.023-.226-.022-.231-.021-.233-.018-.237-.016-.241-.014-.244-.012-.247-.011-.25-.008-.254-.005-.257-.004-.26-.001-.26.001z"
   );
 }, "insertDatabaseIcon");
-var insertComputerIcon = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertComputerIcon = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("symbol").attr("id", "computer").attr("width", "24").attr("height", "24").append("path").attr("transform", "scale(.5)").attr(
     "d",
     "M2 2v13h20v-13h-20zm18 11h-16v-9h16v9zm-10.228 6l.466-1h3.524l.467 1h-4.457zm14.228 3h-24l2-6h2.104l-1.33 4h18.45l-1.297-4h2.073l2 6zm-5-10h-14v-7h14v7z"
   );
 }, "insertComputerIcon");
-var insertClockIcon = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertClockIcon = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("symbol").attr("id", "clock").attr("width", "24").attr("height", "24").append("path").attr("transform", "scale(.5)").attr(
     "d",
     "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.848 12.459c.202.038.202.333.001.372-1.907.361-6.045 1.111-6.547 1.111-.719 0-1.301-.582-1.301-1.301 0-.512.77-5.447 1.125-7.445.034-.192.312-.181.343.014l.985 6.238 5.394 1.011z"
   );
 }, "insertClockIcon");
-var insertArrowHead = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertArrowHead = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("marker").attr("id", "arrowhead").attr("refX", 9).attr("refY", 5).attr("markerUnits", "userSpaceOnUse").attr("markerWidth", 12).attr("markerHeight", 12).attr("orient", "auto").append("path").attr("d", "M 0 0 L 10 5 L 0 10 z");
 }, "insertArrowHead");
-var insertArrowEnd = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertArrowEnd = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("marker").attr("id", "arrowend").attr("refX", 1).attr("refY", 5).attr("markerUnits", "userSpaceOnUse").attr("markerWidth", 12).attr("markerHeight", 12).attr("orient", "auto").append("path").attr("d", "M 10 0 L 0 5 L 10 10 z");
 }, "insertArrowEnd");
-var insertArrowFilledHead = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertArrowFilledHead = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("marker").attr("id", "filled-head").attr("refX", 18).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").append("path").attr("d", "M 18,7 L9,13 L14,7 L9,1 Z");
 }, "insertArrowFilledHead");
-var insertDynamicNumber = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertDynamicNumber = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   elem.append("defs").append("marker").attr("id", "sequencenumber").attr("refX", 15).attr("refY", 15).attr("markerWidth", 60).attr("markerHeight", 40).attr("orient", "auto").append("circle").attr("cx", 15).attr("cy", 15).attr("r", 6);
 }, "insertDynamicNumber");
-var insertArrowCrossHead = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
+var insertArrowCrossHead = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(elem) {
   const defs = elem.append("defs");
   const marker = defs.append("marker").attr("id", "crosshead").attr("markerWidth", 15).attr("markerHeight", 8).attr("orient", "auto").attr("refX", 16).attr("refY", 4);
   marker.append("path").attr("fill", "black").attr("stroke", "#000000").style("stroke-dasharray", "0, 0").attr("stroke-width", "1px").attr("d", "M 9,2 V 6 L16,4 Z");
   marker.append("path").attr("fill", "none").attr("stroke", "#000000").style("stroke-dasharray", "0, 0").attr("stroke-width", "1px").attr("d", "M 0,1 L 6,7 M 6,1 L 0,7");
 }, "insertArrowCrossHead");
-var getC4ShapeFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf, typeC4Shape) => {
+var getC4ShapeFont = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf, typeC4Shape) => {
   return {
     fontFamily: cnf[typeC4Shape + "FontFamily"],
     fontSize: cnf[typeC4Shape + "FontSize"],
@@ -2108,10 +2108,10 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
     const text = g.append("text").attr("x", x + width / 2).attr("y", y + height / 2 + 5).style("text-anchor", "middle").text(content);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byText, "byText");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byText, "byText");
   function byTspan(content, g, x, y, width, height, textAttrs, conf2) {
     const { fontSize, fontFamily, fontWeight } = conf2;
-    const lines = content.split(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .common_default */ .Y2.lineBreakRegex);
+    const lines = content.split(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .common_default */ .Y2.lineBreakRegex);
     for (let i = 0; i < lines.length; i++) {
       const dy = i * fontSize - fontSize * (lines.length - 1) / 2;
       const text = g.append("text").attr("x", x + width / 2).attr("y", y).style("text-anchor", "middle").attr("dominant-baseline", "middle").style("font-size", fontSize).style("font-weight", fontWeight).style("font-family", fontFamily);
@@ -2119,7 +2119,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       _setTextAttrs(text, textAttrs);
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byTspan, "byTspan");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byTspan, "byTspan");
   function byFo(content, g, x, y, width, height, textAttrs, conf2) {
     const s = g.append("switch");
     const f = s.append("foreignObject").attr("x", x).attr("y", y).attr("width", width).attr("height", height);
@@ -2128,7 +2128,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
     byTspan(content, s, x, y, width, height, textAttrs, conf2);
     _setTextAttrs(text, textAttrs);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byFo, "byFo");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(byFo, "byFo");
   function _setTextAttrs(toText, fromTextAttrsDict) {
     for (const key in fromTextAttrsDict) {
       if (fromTextAttrsDict.hasOwnProperty(key)) {
@@ -2136,7 +2136,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */ function() {
       }
     }
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(_setTextAttrs, "_setTextAttrs");
   return function(conf2) {
     return conf2.textPlacement === "fo" ? byFo : conf2.textPlacement === "old" ? byText : byTspan;
   };
@@ -2166,7 +2166,7 @@ parser.yy = c4Db_default;
 var conf = {};
 var Bounds = class {
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(this, "Bounds");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(this, "Bounds");
   }
   constructor(diagObj) {
     this.name = "";
@@ -2245,8 +2245,8 @@ var Bounds = class {
     this.data.stopy += margin;
   }
 };
-var setConf = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(cnf) {
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .assignWithDepth_default */ .hH)(conf, cnf);
+var setConf = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(cnf) {
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .assignWithDepth_default */ .hH)(conf, cnf);
   if (cnf.fontFamily) {
     conf.personFontFamily = conf.systemFontFamily = conf.messageFontFamily = cnf.fontFamily;
   }
@@ -2257,21 +2257,21 @@ var setConf = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2_
     conf.personFontWeight = conf.systemFontWeight = conf.messageFontWeight = cnf.fontWeight;
   }
 }, "setConf");
-var c4ShapeFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf, typeC4Shape) => {
+var c4ShapeFont = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf, typeC4Shape) => {
   return {
     fontFamily: cnf[typeC4Shape + "FontFamily"],
     fontSize: cnf[typeC4Shape + "FontSize"],
     fontWeight: cnf[typeC4Shape + "FontWeight"]
   };
 }, "c4ShapeFont");
-var boundaryFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf) => {
+var boundaryFont = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf) => {
   return {
     fontFamily: cnf.boundaryFontFamily,
     fontSize: cnf.boundaryFontSize,
     fontWeight: cnf.boundaryFontWeight
   };
 }, "boundaryFont");
-var messageFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf) => {
+var messageFont = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((cnf) => {
   return {
     fontFamily: cnf.messageFontFamily,
     fontSize: cnf.messageFontSize,
@@ -2281,29 +2281,29 @@ var messageFont = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
 function calcC4ShapeTextWH(textType, c4Shape, c4ShapeTextWrap, textConf, textLimitWidth) {
   if (!c4Shape[textType].width) {
     if (c4ShapeTextWrap) {
-      c4Shape[textType].text = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .wrapLabel */ .bH)(c4Shape[textType].text, textLimitWidth, textConf);
-      c4Shape[textType].textLines = c4Shape[textType].text.split(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .common_default */ .Y2.lineBreakRegex).length;
+      c4Shape[textType].text = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .wrapLabel */ .bH)(c4Shape[textType].text, textLimitWidth, textConf);
+      c4Shape[textType].textLines = c4Shape[textType].text.split(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .common_default */ .Y2.lineBreakRegex).length;
       c4Shape[textType].width = textLimitWidth;
-      c4Shape[textType].height = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextHeight */ .ru)(c4Shape[textType].text, textConf);
+      c4Shape[textType].height = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextHeight */ .ru)(c4Shape[textType].text, textConf);
     } else {
-      let lines = c4Shape[textType].text.split(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .common_default */ .Y2.lineBreakRegex);
+      let lines = c4Shape[textType].text.split(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .common_default */ .Y2.lineBreakRegex);
       c4Shape[textType].textLines = lines.length;
       let lineHeight = 0;
       c4Shape[textType].height = 0;
       c4Shape[textType].width = 0;
       for (const line of lines) {
         c4Shape[textType].width = Math.max(
-          (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(line, textConf),
+          (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(line, textConf),
           c4Shape[textType].width
         );
-        lineHeight = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextHeight */ .ru)(line, textConf);
+        lineHeight = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextHeight */ .ru)(line, textConf);
         c4Shape[textType].height = c4Shape[textType].height + lineHeight;
       }
     }
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(calcC4ShapeTextWH, "calcC4ShapeTextWH");
-var drawBoundary2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(diagram2, boundary, bounds) {
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(calcC4ShapeTextWH, "calcC4ShapeTextWH");
+var drawBoundary2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(diagram2, boundary, bounds) {
   boundary.x = bounds.data.startx;
   boundary.y = bounds.data.starty;
   boundary.width = bounds.data.stopx - bounds.data.startx;
@@ -2313,18 +2313,18 @@ var drawBoundary2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
   let boundaryLabelConf = boundaryFont(conf);
   boundaryLabelConf.fontSize = boundaryLabelConf.fontSize + 2;
   boundaryLabelConf.fontWeight = "bold";
-  let textLimitWidth = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(boundary.label.text, boundaryLabelConf);
+  let textLimitWidth = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(boundary.label.text, boundaryLabelConf);
   calcC4ShapeTextWH("label", boundary, boundaryTextWrap, boundaryLabelConf, textLimitWidth);
   svgDraw_default.drawBoundary(diagram2, boundary, conf);
 }, "drawBoundary");
-var drawC4ShapeArray = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(currentBounds, diagram2, c4ShapeArray2, c4ShapeKeys) {
+var drawC4ShapeArray = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(currentBounds, diagram2, c4ShapeArray2, c4ShapeKeys) {
   let Y = 0;
   for (const c4ShapeKey of c4ShapeKeys) {
     Y = 0;
     const c4Shape = c4ShapeArray2[c4ShapeKey];
     let c4ShapeTypeConf = c4ShapeFont(conf, c4Shape.typeC4Shape.text);
     c4ShapeTypeConf.fontSize = c4ShapeTypeConf.fontSize - 2;
-    c4Shape.typeC4Shape.width = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(
+    c4Shape.typeC4Shape.width = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(
       "\xAB" + c4Shape.typeC4Shape.text + "\xBB",
       c4ShapeTypeConf
     );
@@ -2389,14 +2389,14 @@ var drawC4ShapeArray = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_
 }, "drawC4ShapeArray");
 var Point = class {
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(this, "Point");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(this, "Point");
   }
   constructor(x, y) {
     this.x = x;
     this.y = y;
   }
 };
-var getIntersectPoint = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(fromNode, endPoint) {
+var getIntersectPoint = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(fromNode, endPoint) {
   let x1 = fromNode.x;
   let y1 = fromNode.y;
   let x2 = endPoint.x;
@@ -2450,7 +2450,7 @@ var getIntersectPoint = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED
   }
   return returnPoint;
 }, "getIntersectPoint");
-var getIntersectPoints = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(fromNode, endNode) {
+var getIntersectPoints = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(fromNode, endNode) {
   let endIntersectPoint = { x: 0, y: 0 };
   endIntersectPoint.x = endNode.x + endNode.width / 2;
   endIntersectPoint.y = endNode.y + endNode.height / 2;
@@ -2460,7 +2460,7 @@ var getIntersectPoints = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   let endPoint = getIntersectPoint(endNode, endIntersectPoint);
   return { startPoint, endPoint };
 }, "getIntersectPoints");
-var drawRels2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(diagram2, rels2, getC4ShapeObj, diagObj) {
+var drawRels2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(diagram2, rels2, getC4ShapeObj, diagObj) {
   let i = 0;
   for (let rel of rels2) {
     i = i + 1;
@@ -2470,14 +2470,14 @@ var drawRels2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
     if (diagramType === "C4Dynamic") {
       rel.label.text = i + ": " + rel.label.text;
     }
-    let textLimitWidth = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(rel.label.text, relConf);
+    let textLimitWidth = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(rel.label.text, relConf);
     calcC4ShapeTextWH("label", rel, relTextWrap, relConf, textLimitWidth);
     if (rel.techn && rel.techn.text !== "") {
-      textLimitWidth = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(rel.techn.text, relConf);
+      textLimitWidth = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(rel.techn.text, relConf);
       calcC4ShapeTextWH("techn", rel, relTextWrap, relConf, textLimitWidth);
     }
     if (rel.descr && rel.descr.text !== "") {
-      textLimitWidth = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(rel.descr.text, relConf);
+      textLimitWidth = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .calculateTextWidth */ .Un)(rel.descr.text, relConf);
       calcC4ShapeTextWH("descr", rel, relTextWrap, relConf, textLimitWidth);
     }
     let fromNode = getC4ShapeObj(rel.from);
@@ -2585,10 +2585,10 @@ function drawInsideBoundary(diagram2, parentBoundaryAlias, parentBounds, current
     globalBoundaryMaxY = Math.max(globalBoundaryMaxY, parentBounds.data.stopy);
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(drawInsideBoundary, "drawInsideBoundary");
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(_text, id, _version, diagObj) {
-  conf = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().c4;
-  const securityLevel = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().securityLevel;
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(drawInsideBoundary, "drawInsideBoundary");
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(function(_text, id, _version, diagObj) {
+  conf = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().c4;
+  const securityLevel = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .getConfig2 */ .D7)().securityLevel;
   let sandboxElement;
   if (securityLevel === "sandbox") {
     sandboxElement = (0,d3__WEBPACK_IMPORTED_MODULE_3__/* .select */ .Ltv)("#i" + id);
@@ -2598,7 +2598,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/*
   diagObj.db.setWrap(conf.wrap);
   c4ShapeInRow2 = db.getC4ShapeInRow();
   c4BoundaryInRow2 = db.getC4BoundaryInRow();
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .log */ .Rm.debug(`C:${JSON.stringify(conf, null, 2)}`);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .log */ .Rm.debug(`C:${JSON.stringify(conf, null, 2)}`);
   const diagram2 = securityLevel === "sandbox" ? root.select(`[id="${id}"]`) : (0,d3__WEBPACK_IMPORTED_MODULE_3__/* .select */ .Ltv)(`[id="${id}"]`);
   svgDraw_default.insertComputerIcon(diagram2);
   svgDraw_default.insertDatabaseIcon(diagram2);
@@ -2631,13 +2631,13 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/*
   if (title2) {
     diagram2.append("text").text(title2).attr("x", (box.stopx - box.startx) / 2 - 4 * conf.diagramMarginX).attr("y", box.starty + conf.diagramMarginY);
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .configureSvgSize */ .a$)(diagram2, height, width, conf.useMaxWidth);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .configureSvgSize */ .a$)(diagram2, height, width, conf.useMaxWidth);
   const extraVertForTitle = title2 ? 60 : 0;
   diagram2.attr(
     "viewBox",
     box.startx - conf.diagramMarginX + " -" + (conf.diagramMarginY + extraVertForTitle) + " " + width + " " + (height + extraVertForTitle)
   );
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .log */ .Rm.debug(`models:`, box);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .log */ .Rm.debug(`models:`, box);
 }, "draw");
 var c4Renderer_default = {
   drawPersonOrSystemArray: drawC4ShapeArray,
@@ -2647,7 +2647,7 @@ var c4Renderer_default = {
 };
 
 // src/diagrams/c4/styles.js
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((options) => `.person {
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)((options) => `.person {
     stroke: ${options.personBorder};
     fill: ${options.personBkg};
   }
@@ -2660,7 +2660,7 @@ var diagram = {
   db: c4Db_default,
   renderer: c4Renderer_default,
   styles: styles_default,
-  init: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(({ c4, wrap }) => {
+  init: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_2__/* .__name */ .K2)(({ c4, wrap }) => {
     c4Renderer_default.setConf(c4);
     c4Db_default.setWrap(wrap);
   }, "init")
@@ -2670,7 +2670,7 @@ var diagram = {
 
 /***/ }),
 
-/***/ 5237:
+/***/ 4387:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2682,13 +2682,13 @@ var diagram = {
 /* harmony export */   m: () => (/* binding */ drawText),
 /* harmony export */   tk: () => (/* binding */ drawRect)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 /* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6750);
 
 
 // src/diagrams/common/svgDrawCommon.ts
 
-var drawRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, rectData) => {
+var drawRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, rectData) => {
   const rectElement = element.append("rect");
   rectElement.attr("x", rectData.x);
   rectElement.attr("y", rectData.y);
@@ -2715,7 +2715,7 @@ var drawRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   }
   return rectElement;
 }, "drawRect");
-var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, bounds) => {
+var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, bounds) => {
   const rectData = {
     x: bounds.startx,
     y: bounds.starty,
@@ -2728,8 +2728,8 @@ var drawBackgroundRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTE
   const rectElement = drawRect(element, rectData);
   rectElement.lower();
 }, "drawBackgroundRect");
-var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, textData) => {
-  const nText = textData.text.replace(_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .lineBreakRegex */ .H1, " ");
+var drawText = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, textData) => {
+  const nText = textData.text.replace(_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .lineBreakRegex */ .H1, " ");
   const textElem = element.append("text");
   textElem.attr("x", textData.x);
   textElem.attr("y", textData.y);
@@ -2743,21 +2743,21 @@ var drawText = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0
   tspan.text(nText);
   return textElem;
 }, "drawText");
-var drawImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((elem, x, y, link) => {
+var drawImage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((elem, x, y, link) => {
   const imageElement = elem.append("image");
   imageElement.attr("x", x);
   imageElement.attr("y", y);
   const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
   imageElement.attr("xlink:href", sanitizedLink);
 }, "drawImage");
-var drawEmbeddedImage = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, x, y, link) => {
+var drawEmbeddedImage = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((element, x, y, link) => {
   const imageElement = element.append("use");
   imageElement.attr("x", x);
   imageElement.attr("y", y);
   const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__/* .sanitizeUrl */ .J)(link);
   imageElement.attr("xlink:href", `#${sanitizedLink}`);
 }, "drawEmbeddedImage");
-var getNoteRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
+var getNoteRect = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
   const noteRectData = {
     x: 0,
     y: 0,
@@ -2771,7 +2771,7 @@ var getNoteRect = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODUL
   };
   return noteRectData;
 }, "getNoteRect");
-var getTextObj = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
+var getTextObj = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(() => {
   const testObject = {
     x: 0,
     y: 0,

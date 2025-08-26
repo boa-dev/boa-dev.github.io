@@ -1,16 +1,16 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6143],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[250],{
 
-/***/ 6143:
+/***/ 250:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_QESNASVV_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8506);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4505);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_62K37W7T_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(708);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(163);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6936);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(451);
 
 
@@ -19,18 +19,18 @@
 
 // src/diagrams/xychart/parser/xychart.jison
 var parser = function() {
-  var o = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(k, v, o2, l) {
+  var o = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(k, v, o2, l) {
     for (o2 = o2 || {}, l = k.length; l--; o2[k[l]] = v) ;
     return o2;
   }, "o"), $V0 = [1, 10, 12, 14, 16, 18, 19, 21, 23], $V1 = [2, 6], $V2 = [1, 3], $V3 = [1, 5], $V4 = [1, 6], $V5 = [1, 7], $V6 = [1, 5, 10, 12, 14, 16, 18, 19, 21, 23, 34, 35, 36], $V7 = [1, 25], $V8 = [1, 26], $V9 = [1, 28], $Va = [1, 29], $Vb = [1, 30], $Vc = [1, 31], $Vd = [1, 32], $Ve = [1, 33], $Vf = [1, 34], $Vg = [1, 35], $Vh = [1, 36], $Vi = [1, 37], $Vj = [1, 43], $Vk = [1, 42], $Vl = [1, 47], $Vm = [1, 50], $Vn = [1, 10, 12, 14, 16, 18, 19, 21, 23, 34, 35, 36], $Vo = [1, 10, 12, 14, 16, 18, 19, 21, 23, 24, 26, 27, 28, 34, 35, 36], $Vp = [1, 10, 12, 14, 16, 18, 19, 21, 23, 24, 26, 27, 28, 34, 35, 36, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50], $Vq = [1, 64];
   var parser2 = {
-    trace: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function trace() {
+    trace: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function trace() {
     }, "trace"),
     yy: {},
     symbols_: { "error": 2, "start": 3, "eol": 4, "XYCHART": 5, "chartConfig": 6, "document": 7, "CHART_ORIENTATION": 8, "statement": 9, "title": 10, "text": 11, "X_AXIS": 12, "parseXAxis": 13, "Y_AXIS": 14, "parseYAxis": 15, "LINE": 16, "plotData": 17, "BAR": 18, "acc_title": 19, "acc_title_value": 20, "acc_descr": 21, "acc_descr_value": 22, "acc_descr_multiline_value": 23, "SQUARE_BRACES_START": 24, "commaSeparatedNumbers": 25, "SQUARE_BRACES_END": 26, "NUMBER_WITH_DECIMAL": 27, "COMMA": 28, "xAxisData": 29, "bandData": 30, "ARROW_DELIMITER": 31, "commaSeparatedTexts": 32, "yAxisData": 33, "NEWLINE": 34, "SEMI": 35, "EOF": 36, "alphaNum": 37, "STR": 38, "MD_STR": 39, "alphaNumToken": 40, "AMP": 41, "NUM": 42, "ALPHA": 43, "PLUS": 44, "EQUALS": 45, "MULT": 46, "DOT": 47, "BRKT": 48, "MINUS": 49, "UNDERSCORE": 50, "$accept": 0, "$end": 1 },
     terminals_: { 2: "error", 5: "XYCHART", 8: "CHART_ORIENTATION", 10: "title", 12: "X_AXIS", 14: "Y_AXIS", 16: "LINE", 18: "BAR", 19: "acc_title", 20: "acc_title_value", 21: "acc_descr", 22: "acc_descr_value", 23: "acc_descr_multiline_value", 24: "SQUARE_BRACES_START", 26: "SQUARE_BRACES_END", 27: "NUMBER_WITH_DECIMAL", 28: "COMMA", 31: "ARROW_DELIMITER", 34: "NEWLINE", 35: "SEMI", 36: "EOF", 38: "STR", 39: "MD_STR", 41: "AMP", 42: "NUM", 43: "ALPHA", 44: "PLUS", 45: "EQUALS", 46: "MULT", 47: "DOT", 48: "BRKT", 49: "MINUS", 50: "UNDERSCORE" },
     productions_: [0, [3, 2], [3, 3], [3, 2], [3, 1], [6, 1], [7, 0], [7, 2], [9, 2], [9, 2], [9, 2], [9, 2], [9, 2], [9, 3], [9, 2], [9, 3], [9, 2], [9, 2], [9, 1], [17, 3], [25, 3], [25, 1], [13, 1], [13, 2], [13, 1], [29, 1], [29, 3], [30, 3], [32, 3], [32, 1], [15, 1], [15, 2], [15, 1], [33, 3], [4, 1], [4, 1], [4, 1], [11, 1], [11, 1], [11, 1], [37, 1], [37, 2], [40, 1], [40, 1], [40, 1], [40, 1], [40, 1], [40, 1], [40, 1], [40, 1], [40, 1], [40, 1]],
-    performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
+    performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$) {
       var $0 = $$.length - 1;
       switch (yystate) {
         case 5:
@@ -124,7 +124,7 @@ var parser = function() {
     }, "anonymous"),
     table: [o($V0, $V1, { 3: 1, 4: 2, 7: 4, 5: $V2, 34: $V3, 35: $V4, 36: $V5 }), { 1: [3] }, o($V0, $V1, { 4: 2, 7: 4, 3: 8, 5: $V2, 34: $V3, 35: $V4, 36: $V5 }), o($V0, $V1, { 4: 2, 7: 4, 6: 9, 3: 10, 5: $V2, 8: [1, 11], 34: $V3, 35: $V4, 36: $V5 }), { 1: [2, 4], 9: 12, 10: [1, 13], 12: [1, 14], 14: [1, 15], 16: [1, 16], 18: [1, 17], 19: [1, 18], 21: [1, 19], 23: [1, 20] }, o($V6, [2, 34]), o($V6, [2, 35]), o($V6, [2, 36]), { 1: [2, 1] }, o($V0, $V1, { 4: 2, 7: 4, 3: 21, 5: $V2, 34: $V3, 35: $V4, 36: $V5 }), { 1: [2, 3] }, o($V6, [2, 5]), o($V0, [2, 7], { 4: 22, 34: $V3, 35: $V4, 36: $V5 }), { 11: 23, 37: 24, 38: $V7, 39: $V8, 40: 27, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }, { 11: 39, 13: 38, 24: $Vj, 27: $Vk, 29: 40, 30: 41, 37: 24, 38: $V7, 39: $V8, 40: 27, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }, { 11: 45, 15: 44, 27: $Vl, 33: 46, 37: 24, 38: $V7, 39: $V8, 40: 27, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }, { 11: 49, 17: 48, 24: $Vm, 37: 24, 38: $V7, 39: $V8, 40: 27, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }, { 11: 52, 17: 51, 24: $Vm, 37: 24, 38: $V7, 39: $V8, 40: 27, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }, { 20: [1, 53] }, { 22: [1, 54] }, o($Vn, [2, 18]), { 1: [2, 2] }, o($Vn, [2, 8]), o($Vn, [2, 9]), o($Vo, [2, 37], { 40: 55, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }), o($Vo, [2, 38]), o($Vo, [2, 39]), o($Vp, [2, 40]), o($Vp, [2, 42]), o($Vp, [2, 43]), o($Vp, [2, 44]), o($Vp, [2, 45]), o($Vp, [2, 46]), o($Vp, [2, 47]), o($Vp, [2, 48]), o($Vp, [2, 49]), o($Vp, [2, 50]), o($Vp, [2, 51]), o($Vn, [2, 10]), o($Vn, [2, 22], { 30: 41, 29: 56, 24: $Vj, 27: $Vk }), o($Vn, [2, 24]), o($Vn, [2, 25]), { 31: [1, 57] }, { 11: 59, 32: 58, 37: 24, 38: $V7, 39: $V8, 40: 27, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }, o($Vn, [2, 11]), o($Vn, [2, 30], { 33: 60, 27: $Vl }), o($Vn, [2, 32]), { 31: [1, 61] }, o($Vn, [2, 12]), { 17: 62, 24: $Vm }, { 25: 63, 27: $Vq }, o($Vn, [2, 14]), { 17: 65, 24: $Vm }, o($Vn, [2, 16]), o($Vn, [2, 17]), o($Vp, [2, 41]), o($Vn, [2, 23]), { 27: [1, 66] }, { 26: [1, 67] }, { 26: [2, 29], 28: [1, 68] }, o($Vn, [2, 31]), { 27: [1, 69] }, o($Vn, [2, 13]), { 26: [1, 70] }, { 26: [2, 21], 28: [1, 71] }, o($Vn, [2, 15]), o($Vn, [2, 26]), o($Vn, [2, 27]), { 11: 59, 32: 72, 37: 24, 38: $V7, 39: $V8, 40: 27, 41: $V9, 42: $Va, 43: $Vb, 44: $Vc, 45: $Vd, 46: $Ve, 47: $Vf, 48: $Vg, 49: $Vh, 50: $Vi }, o($Vn, [2, 33]), o($Vn, [2, 19]), { 25: 73, 27: $Vq }, { 26: [2, 28] }, { 26: [2, 20] }],
     defaultActions: { 8: [2, 1], 10: [2, 3], 21: [2, 2], 72: [2, 28], 73: [2, 20] },
-    parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
+    parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
       if (hash.recoverable) {
         this.trace(str);
       } else {
@@ -133,7 +133,7 @@ var parser = function() {
         throw error;
       }
     }, "parseError"),
-    parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parse(input) {
+    parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parse(input) {
       var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = "", yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
       var args = lstack.slice.call(arguments, 1);
       var lexer2 = Object.create(this.lexer);
@@ -162,7 +162,7 @@ var parser = function() {
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(popStack, "popStack");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(popStack, "popStack");
       function lex() {
         var token;
         token = tstack.pop() || lexer2.lex() || EOF;
@@ -175,7 +175,7 @@ var parser = function() {
         }
         return token;
       }
-      (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(lex, "lex");
+      (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(lex, "lex");
       var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
       while (true) {
         state = stack[stack.length - 1];
@@ -279,7 +279,7 @@ var parser = function() {
   var lexer = /* @__PURE__ */ function() {
     var lexer2 = {
       EOF: 1,
-      parseError: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
+      parseError: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function parseError(str, hash) {
         if (this.yy.parser) {
           this.yy.parser.parseError(str, hash);
         } else {
@@ -287,7 +287,7 @@ var parser = function() {
         }
       }, "parseError"),
       // resets the lexer, sets new input
-      setInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(input, yy) {
+      setInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(input, yy) {
         this.yy = yy || this.yy || {};
         this._input = input;
         this._more = this._backtrack = this.done = false;
@@ -307,7 +307,7 @@ var parser = function() {
         return this;
       }, "setInput"),
       // consumes and returns one char from the input
-      input: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      input: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var ch = this._input[0];
         this.yytext += ch;
         this.yyleng++;
@@ -328,7 +328,7 @@ var parser = function() {
         return ch;
       }, "input"),
       // unshifts one char (or a string) into the input
-      unput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(ch) {
+      unput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(ch) {
         var len = ch.length;
         var lines = ch.split(/(?:\r\n?|\n)/g);
         this._input = ch + this._input;
@@ -354,12 +354,12 @@ var parser = function() {
         return this;
       }, "unput"),
       // When called from action, caches matched text and appends it on next action
-      more: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      more: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         this._more = true;
         return this;
       }, "more"),
       // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-      reject: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      reject: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         if (this.options.backtrack_lexer) {
           this._backtrack = true;
         } else {
@@ -372,16 +372,16 @@ var parser = function() {
         return this;
       }, "reject"),
       // retain first n characters of the match
-      less: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(n) {
+      less: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(n) {
         this.unput(this.match.slice(n));
       }, "less"),
       // displays already matched input, i.e. for error messages
-      pastInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      pastInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var past = this.matched.substr(0, this.matched.length - this.match.length);
         return (past.length > 20 ? "..." : "") + past.substr(-20).replace(/\n/g, "");
       }, "pastInput"),
       // displays upcoming input, i.e. for error messages
-      upcomingInput: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      upcomingInput: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var next = this.match;
         if (next.length < 20) {
           next += this._input.substr(0, 20 - next.length);
@@ -389,13 +389,13 @@ var parser = function() {
         return (next.substr(0, 20) + (next.length > 20 ? "..." : "")).replace(/\n/g, "");
       }, "upcomingInput"),
       // displays the character position where the lexing error occurred, i.e. for error messages
-      showPosition: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      showPosition: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         var pre = this.pastInput();
         var c = new Array(pre.length + 1).join("-");
         return pre + this.upcomingInput() + "\n" + c + "^";
       }, "showPosition"),
       // test the lexed token: return FALSE when not a match, otherwise return token
-      test_match: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(match, indexed_rule) {
+      test_match: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function(match, indexed_rule) {
         var token, lines, backup;
         if (this.options.backtrack_lexer) {
           backup = {
@@ -458,7 +458,7 @@ var parser = function() {
         return false;
       }, "test_match"),
       // return next match in input
-      next: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+      next: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
         if (this.done) {
           return this.EOF;
         }
@@ -509,7 +509,7 @@ var parser = function() {
         }
       }, "next"),
       // return next match that has a token
-      lex: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function lex() {
+      lex: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function lex() {
         var r = this.next();
         if (r) {
           return r;
@@ -518,11 +518,11 @@ var parser = function() {
         }
       }, "lex"),
       // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-      begin: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function begin(condition) {
+      begin: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function begin(condition) {
         this.conditionStack.push(condition);
       }, "begin"),
       // pop the previously active lexer condition state off the condition stack
-      popState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function popState() {
+      popState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function popState() {
         var n = this.conditionStack.length - 1;
         if (n > 0) {
           return this.conditionStack.pop();
@@ -531,7 +531,7 @@ var parser = function() {
         }
       }, "popState"),
       // produce the lexer rule set which is active for the currently active lexer condition state
-      _currentRules: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function _currentRules() {
+      _currentRules: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function _currentRules() {
         if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
           return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
         } else {
@@ -539,7 +539,7 @@ var parser = function() {
         }
       }, "_currentRules"),
       // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-      topState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function topState(n) {
+      topState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function topState(n) {
         n = this.conditionStack.length - 1 - Math.abs(n || 0);
         if (n >= 0) {
           return this.conditionStack[n];
@@ -548,15 +548,15 @@ var parser = function() {
         }
       }, "topState"),
       // alias for begin(condition)
-      pushState: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function pushState(condition) {
+      pushState: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function pushState(condition) {
         this.begin(condition);
       }, "pushState"),
       // return the number of states currently on the stack
-      stateStackSize: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function stateStackSize() {
+      stateStackSize: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function stateStackSize() {
         return this.conditionStack.length;
       }, "stateStackSize"),
       options: { "case-insensitive": true },
-      performAction: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+      performAction: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
         var YYSTATE = YY_START;
         switch ($avoiding_name_collisions) {
           case 0:
@@ -618,135 +618,139 @@ var parser = function() {
             // removed by dead control flow
 {}
           case 15:
-            return 8;
+            return 5;
             // removed by dead control flow
 {}
           case 16:
-            this.pushState("axis_data");
-            return "X_AXIS";
+            return 8;
             // removed by dead control flow
 {}
           case 17:
             this.pushState("axis_data");
-            return "Y_AXIS";
+            return "X_AXIS";
             // removed by dead control flow
 {}
           case 18:
+            this.pushState("axis_data");
+            return "Y_AXIS";
+            // removed by dead control flow
+{}
+          case 19:
             this.pushState("axis_band_data");
             return 24;
             // removed by dead control flow
 {}
-          case 19:
-            return 31;
-            // removed by dead control flow
-{}
           case 20:
-            this.pushState("data");
-            return 16;
+            return 31;
             // removed by dead control flow
 {}
           case 21:
             this.pushState("data");
-            return 18;
+            return 16;
             // removed by dead control flow
 {}
           case 22:
+            this.pushState("data");
+            return 18;
+            // removed by dead control flow
+{}
+          case 23:
             this.pushState("data_inner");
             return 24;
             // removed by dead control flow
 {}
-          case 23:
-            return 27;
-            // removed by dead control flow
-{}
           case 24:
-            this.popState();
-            return 26;
+            return 27;
             // removed by dead control flow
 {}
           case 25:
             this.popState();
-            break;
-          case 26:
-            this.pushState("string");
-            break;
-          case 27:
-            this.popState();
-            break;
-          case 28:
-            return "STR";
-            // removed by dead control flow
-{}
-          case 29:
-            return 24;
-            // removed by dead control flow
-{}
-          case 30:
             return 26;
             // removed by dead control flow
 {}
+          case 26:
+            this.popState();
+            break;
+          case 27:
+            this.pushState("string");
+            break;
+          case 28:
+            this.popState();
+            break;
+          case 29:
+            return "STR";
+            // removed by dead control flow
+{}
+          case 30:
+            return 24;
+            // removed by dead control flow
+{}
           case 31:
-            return 43;
+            return 26;
             // removed by dead control flow
 {}
           case 32:
-            return "COLON";
+            return 43;
             // removed by dead control flow
 {}
           case 33:
-            return 44;
+            return "COLON";
             // removed by dead control flow
 {}
           case 34:
-            return 28;
+            return 44;
             // removed by dead control flow
 {}
           case 35:
-            return 45;
+            return 28;
             // removed by dead control flow
 {}
           case 36:
-            return 46;
+            return 45;
             // removed by dead control flow
 {}
           case 37:
-            return 48;
+            return 46;
             // removed by dead control flow
 {}
           case 38:
-            return 50;
+            return 48;
             // removed by dead control flow
 {}
           case 39:
-            return 47;
+            return 50;
             // removed by dead control flow
 {}
           case 40:
-            return 41;
+            return 47;
             // removed by dead control flow
 {}
           case 41:
-            return 49;
+            return 41;
             // removed by dead control flow
 {}
           case 42:
-            return 42;
+            return 49;
             // removed by dead control flow
 {}
           case 43:
-            break;
+            return 42;
+            // removed by dead control flow
+{}
           case 44:
+            break;
+          case 45:
             return 35;
             // removed by dead control flow
 {}
-          case 45:
+          case 46:
             return 36;
             // removed by dead control flow
 {}
         }
       }, "anonymous"),
-      rules: [/^(?:%%(?!\{)[^\n]*)/i, /^(?:[^\}]%%[^\n]*)/i, /^(?:(\r?\n))/i, /^(?:(\r?\n))/i, /^(?:[\n\r]+)/i, /^(?:%%[^\n]*)/i, /^(?:title\b)/i, /^(?:accTitle\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*\{\s*)/i, /^(?:\{)/i, /^(?:[^\}]*)/i, /^(?:xychart-beta\b)/i, /^(?:(?:vertical|horizontal))/i, /^(?:x-axis\b)/i, /^(?:y-axis\b)/i, /^(?:\[)/i, /^(?:-->)/i, /^(?:line\b)/i, /^(?:bar\b)/i, /^(?:\[)/i, /^(?:[+-]?(?:\d+(?:\.\d+)?|\.\d+))/i, /^(?:\])/i, /^(?:(?:`\)                                    \{ this\.pushState\(md_string\); \}\n<md_string>\(\?:\(\?!`"\)\.\)\+                  \{ return MD_STR; \}\n<md_string>\(\?:`))/i, /^(?:["])/i, /^(?:["])/i, /^(?:[^"]*)/i, /^(?:\[)/i, /^(?:\])/i, /^(?:[A-Za-z]+)/i, /^(?::)/i, /^(?:\+)/i, /^(?:,)/i, /^(?:=)/i, /^(?:\*)/i, /^(?:#)/i, /^(?:[\_])/i, /^(?:\.)/i, /^(?:&)/i, /^(?:-)/i, /^(?:[0-9]+)/i, /^(?:\s+)/i, /^(?:;)/i, /^(?:$)/i],
-      conditions: { "data_inner": { "rules": [0, 1, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 20, 21, 23, 24, 25, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], "inclusive": true }, "data": { "rules": [0, 1, 3, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 20, 21, 22, 25, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], "inclusive": true }, "axis_band_data": { "rules": [0, 1, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 20, 21, 24, 25, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], "inclusive": true }, "axis_data": { "rules": [0, 1, 2, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 18, 19, 20, 21, 23, 25, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], "inclusive": true }, "acc_descr_multiline": { "rules": [12, 13], "inclusive": false }, "acc_descr": { "rules": [10], "inclusive": false }, "acc_title": { "rules": [8], "inclusive": false }, "title": { "rules": [], "inclusive": false }, "md_string": { "rules": [], "inclusive": false }, "string": { "rules": [27, 28], "inclusive": false }, "INITIAL": { "rules": [0, 1, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 20, 21, 25, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45], "inclusive": true } }
+      rules: [/^(?:%%(?!\{)[^\n]*)/i, /^(?:[^\}]%%[^\n]*)/i, /^(?:(\r?\n))/i, /^(?:(\r?\n))/i, /^(?:[\n\r]+)/i, /^(?:%%[^\n]*)/i, /^(?:title\b)/i, /^(?:accTitle\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*:\s*)/i, /^(?:(?!\n||)*[^\n]*)/i, /^(?:accDescr\s*\{\s*)/i, /^(?:\{)/i, /^(?:[^\}]*)/i, /^(?:xychart-beta\b)/i, /^(?:xychart\b)/i, /^(?:(?:vertical|horizontal))/i, /^(?:x-axis\b)/i, /^(?:y-axis\b)/i, /^(?:\[)/i, /^(?:-->)/i, /^(?:line\b)/i, /^(?:bar\b)/i, /^(?:\[)/i, /^(?:[+-]?(?:\d+(?:\.\d+)?|\.\d+))/i, /^(?:\])/i, /^(?:(?:`\)                                    \{ this\.pushState\(md_string\); \}\n<md_string>\(\?:\(\?!`"\)\.\)\+                  \{ return MD_STR; \}\n<md_string>\(\?:`))/i, /^(?:["])/i, /^(?:["])/i, /^(?:[^"]*)/i, /^(?:\[)/i, /^(?:\])/i, /^(?:[A-Za-z]+)/i, /^(?::)/i, /^(?:\+)/i, /^(?:,)/i, /^(?:=)/i, /^(?:\*)/i, /^(?:#)/i, /^(?:[\_])/i, /^(?:\.)/i, /^(?:&)/i, /^(?:-)/i, /^(?:[0-9]+)/i, /^(?:\s+)/i, /^(?:;)/i, /^(?:$)/i],
+      conditions: { "data_inner": { "rules": [0, 1, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 18, 21, 22, 24, 25, 26, 27, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46], "inclusive": true }, "data": { "rules": [0, 1, 3, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 18, 21, 22, 23, 26, 27, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46], "inclusive": true }, "axis_band_data": { "rules": [0, 1, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 18, 21, 22, 25, 26, 27, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46], "inclusive": true }, "axis_data": { "rules": [0, 1, 2, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46], "inclusive": true }, "acc_descr_multiline": { "rules": [12, 13], "inclusive": false }, "acc_descr": { "rules": [10], "inclusive": false }, "acc_title": { "rules": [8], "inclusive": false }, "title": { "rules": [], "inclusive": false }, "md_string": { "rules": [], "inclusive": false }, "string": { "rules": [28, 29], "inclusive": false }, "INITIAL": { "rules": [0, 1, 4, 5, 6, 7, 9, 11, 14, 15, 16, 17, 18, 21, 22, 26, 27, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46], "inclusive": true } }
     };
     return lexer2;
   }();
@@ -754,7 +758,7 @@ var parser = function() {
   function Parser() {
     this.yy = {};
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(Parser, "Parser");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(Parser, "Parser");
   Parser.prototype = parser2;
   parser2.Parser = Parser;
   return new Parser();
@@ -766,15 +770,15 @@ var xychart_default = parser;
 function isBarPlot(data) {
   return data.type === "bar";
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(isBarPlot, "isBarPlot");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(isBarPlot, "isBarPlot");
 function isBandAxisData(data) {
   return data.type === "band";
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(isBandAxisData, "isBandAxisData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(isBandAxisData, "isBandAxisData");
 function isLinearAxisData(data) {
   return data.type === "linear";
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(isLinearAxisData, "isLinearAxisData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(isLinearAxisData, "isLinearAxisData");
 
 // src/diagrams/xychart/chartBuilder/textDimensionCalculator.ts
 var TextDimensionCalculatorWithFont = class {
@@ -782,7 +786,7 @@ var TextDimensionCalculatorWithFont = class {
     this.parentGroup = parentGroup;
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "TextDimensionCalculatorWithFont");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "TextDimensionCalculatorWithFont");
   }
   getMaxDimension(texts, fontSize) {
     if (!this.parentGroup) {
@@ -797,7 +801,7 @@ var TextDimensionCalculatorWithFont = class {
     };
     const elem = this.parentGroup.append("g").attr("visibility", "hidden").attr("font-size", fontSize);
     for (const t of texts) {
-      const bbox = (0,_chunk_QESNASVV_mjs__WEBPACK_IMPORTED_MODULE_0__/* .computeDimensionOfText */ .W6)(elem, 1, t);
+      const bbox = (0,_chunk_62K37W7T_mjs__WEBPACK_IMPORTED_MODULE_0__/* .computeDimensionOfText */ .W6)(elem, 1, t);
       const width = bbox ? bbox.width : t.length * fontSize;
       const height = bbox ? bbox.height : fontSize;
       dimension.width = Math.max(dimension.width, width);
@@ -834,7 +838,7 @@ var BaseAxis = class {
     this.axisPosition = "left";
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BaseAxis");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BaseAxis");
   }
   setRange(range) {
     this.range = range;
@@ -1170,7 +1174,7 @@ var BaseAxis = class {
 // src/diagrams/xychart/chartBuilder/components/axis/bandAxis.ts
 var BandAxis = class extends BaseAxis {
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BandAxis");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BandAxis");
   }
   constructor(axisConfig, axisThemeConfig, categories, title, textDimensionCalculator) {
     super(axisConfig, title, textDimensionCalculator, axisThemeConfig);
@@ -1182,7 +1186,7 @@ var BandAxis = class extends BaseAxis {
   }
   recalculateScale() {
     this.scale = (0,d3__WEBPACK_IMPORTED_MODULE_4__/* .scaleBand */ .WH)().domain(this.categories).range(this.getRange()).paddingInner(1).paddingOuter(0).align(0.5);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.trace("BandAxis axis final categories, range: ", this.categories, this.getRange());
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.trace("BandAxis axis final categories, range: ", this.categories, this.getRange());
   }
   getTickValues() {
     return this.categories;
@@ -1196,7 +1200,7 @@ var BandAxis = class extends BaseAxis {
 
 var LinearAxis = class extends BaseAxis {
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "LinearAxis");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "LinearAxis");
   }
   constructor(axisConfig, axisThemeConfig, domain, title, textDimensionCalculator) {
     super(axisConfig, title, textDimensionCalculator, axisThemeConfig);
@@ -1238,7 +1242,7 @@ function getAxis(data, axisConfig, axisThemeConfig, tmpSVGGroup2) {
     textDimensionCalculator
   );
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getAxis, "getAxis");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getAxis, "getAxis");
 
 // src/diagrams/xychart/chartBuilder/components/chartTitle.ts
 var ChartTitle = class {
@@ -1256,7 +1260,7 @@ var ChartTitle = class {
     this.showChartTitle = false;
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "ChartTitle");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "ChartTitle");
   }
   setBoundingBoxXY(point) {
     this.boundingRect.x = point.x;
@@ -1306,7 +1310,7 @@ function getChartTitleComponent(chartConfig, chartData, chartThemeConfig, tmpSVG
   const textDimensionCalculator = new TextDimensionCalculatorWithFont(tmpSVGGroup2);
   return new ChartTitle(textDimensionCalculator, chartConfig, chartData, chartThemeConfig);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartTitleComponent, "getChartTitleComponent");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartTitleComponent, "getChartTitleComponent");
 
 // src/diagrams/xychart/chartBuilder/components/plot/linePlot.ts
 
@@ -1319,7 +1323,7 @@ var LinePlot = class {
     this.plotIndex = plotIndex2;
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "LinePlot");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "LinePlot");
   }
   getDrawableElement() {
     const finalData = this.plotData.data.map((d) => [
@@ -1362,7 +1366,7 @@ var BarPlot = class {
     this.plotIndex = plotIndex2;
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BarPlot");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BarPlot");
   }
   getDrawableElement() {
     const finalData = this.barData.data.map((d) => [
@@ -1421,7 +1425,7 @@ var BasePlot = class {
     };
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BasePlot");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "BasePlot");
   }
   setAxes(xAxis, yAxis) {
     this.xAxis = xAxis;
@@ -1479,7 +1483,7 @@ var BasePlot = class {
 function getPlotComponent(chartConfig, chartData, chartThemeConfig) {
   return new BasePlot(chartConfig, chartData, chartThemeConfig);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getPlotComponent, "getPlotComponent");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getPlotComponent, "getPlotComponent");
 
 // src/diagrams/xychart/chartBuilder/orchestrator.ts
 var Orchestrator = class {
@@ -1514,7 +1518,7 @@ var Orchestrator = class {
     };
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "Orchestrator");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "Orchestrator");
   }
   calculateVerticalSpace() {
     let availableWidth = this.chartConfig.width;
@@ -1649,7 +1653,7 @@ var Orchestrator = class {
 // src/diagrams/xychart/chartBuilder/index.ts
 var XYChartBuilder = class {
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "XYChartBuilder");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(this, "XYChartBuilder");
   }
   static build(config, chartData, chartThemeConfig, tmpSVGGroup2) {
     const orchestrator = new Orchestrator(config, chartData, chartThemeConfig, tmpSVGGroup2);
@@ -1667,19 +1671,19 @@ var plotColorPalette = xyChartThemeConfig.plotColorPalette.split(",").map((color
 var hasSetXAxis = false;
 var hasSetYAxis = false;
 function getChartDefaultThemeConfig() {
-  const defaultThemeVariables = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getThemeVariables */ .P$)();
-  const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
-  return (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(defaultThemeVariables.xyChart, config.themeVariables.xyChart);
+  const defaultThemeVariables = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getThemeVariables */ .P$)();
+  const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
+  return (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(defaultThemeVariables.xyChart, config.themeVariables.xyChart);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartDefaultThemeConfig, "getChartDefaultThemeConfig");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartDefaultThemeConfig, "getChartDefaultThemeConfig");
 function getChartDefaultConfig() {
-  const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
-  return (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.xyChart,
+  const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
+  return (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.xyChart,
     config.xyChart
   );
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartDefaultConfig, "getChartDefaultConfig");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartDefaultConfig, "getChartDefaultConfig");
 function getChartDefaultData() {
   return {
     yAxis: {
@@ -1697,16 +1701,16 @@ function getChartDefaultData() {
     plots: []
   };
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartDefaultData, "getChartDefaultData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartDefaultData, "getChartDefaultData");
 function textSanitizer(text) {
-  const config = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
-  return (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.trim(), config);
+  const config = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
+  return (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .sanitizeText */ .jZ)(text.trim(), config);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(textSanitizer, "textSanitizer");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(textSanitizer, "textSanitizer");
 function setTmpSVGG(SVGG) {
   tmpSVGGroup = SVGG;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setTmpSVGG, "setTmpSVGG");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setTmpSVGG, "setTmpSVGG");
 function setOrientation(orientation) {
   if (orientation === "horizontal") {
     xyChartConfig.chartOrientation = "horizontal";
@@ -1714,16 +1718,16 @@ function setOrientation(orientation) {
     xyChartConfig.chartOrientation = "vertical";
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setOrientation, "setOrientation");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setOrientation, "setOrientation");
 function setXAxisTitle(title) {
   xyChartData.xAxis.title = textSanitizer(title.text);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setXAxisTitle, "setXAxisTitle");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setXAxisTitle, "setXAxisTitle");
 function setXAxisRangeData(min, max) {
   xyChartData.xAxis = { type: "linear", title: xyChartData.xAxis.title, min, max };
   hasSetXAxis = true;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setXAxisRangeData, "setXAxisRangeData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setXAxisRangeData, "setXAxisRangeData");
 function setXAxisBand(categories) {
   xyChartData.xAxis = {
     type: "band",
@@ -1732,16 +1736,16 @@ function setXAxisBand(categories) {
   };
   hasSetXAxis = true;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setXAxisBand, "setXAxisBand");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setXAxisBand, "setXAxisBand");
 function setYAxisTitle(title) {
   xyChartData.yAxis.title = textSanitizer(title.text);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setYAxisTitle, "setYAxisTitle");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setYAxisTitle, "setYAxisTitle");
 function setYAxisRangeData(min, max) {
   xyChartData.yAxis = { type: "linear", title: xyChartData.yAxis.title, min, max };
   hasSetYAxis = true;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setYAxisRangeData, "setYAxisRangeData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setYAxisRangeData, "setYAxisRangeData");
 function setYAxisRangeFromPlotData(data) {
   const minValue = Math.min(...data);
   const maxValue = Math.max(...data);
@@ -1754,7 +1758,7 @@ function setYAxisRangeFromPlotData(data) {
     max: Math.max(prevMaxValue, maxValue)
   };
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setYAxisRangeFromPlotData, "setYAxisRangeFromPlotData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setYAxisRangeFromPlotData, "setYAxisRangeFromPlotData");
 function transformDataWithoutCategory(data) {
   let retData = [];
   if (data.length === 0) {
@@ -1783,11 +1787,11 @@ function transformDataWithoutCategory(data) {
   }
   return retData;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(transformDataWithoutCategory, "transformDataWithoutCategory");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(transformDataWithoutCategory, "transformDataWithoutCategory");
 function getPlotColorFromPalette(plotIndex2) {
   return plotColorPalette[plotIndex2 === 0 ? 0 : plotIndex2 % plotColorPalette.length];
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getPlotColorFromPalette, "getPlotColorFromPalette");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getPlotColorFromPalette, "getPlotColorFromPalette");
 function setLineData(title, data) {
   const plotData = transformDataWithoutCategory(data);
   xyChartData.plots.push({
@@ -1798,7 +1802,7 @@ function setLineData(title, data) {
   });
   plotIndex++;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setLineData, "setLineData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setLineData, "setLineData");
 function setBarData(title, data) {
   const plotData = transformDataWithoutCategory(data);
   xyChartData.plots.push({
@@ -1808,29 +1812,29 @@ function setBarData(title, data) {
   });
   plotIndex++;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setBarData, "setBarData");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(setBarData, "setBarData");
 function getDrawableElem() {
   if (xyChartData.plots.length === 0) {
     throw Error("No Plot to render, please provide a plot with some data");
   }
-  xyChartData.title = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab)();
+  xyChartData.title = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab)();
   return XYChartBuilder.build(xyChartConfig, xyChartData, xyChartThemeConfig, tmpSVGGroup);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getDrawableElem, "getDrawableElem");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getDrawableElem, "getDrawableElem");
 function getChartThemeConfig() {
   return xyChartThemeConfig;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartThemeConfig, "getChartThemeConfig");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartThemeConfig, "getChartThemeConfig");
 function getChartConfig() {
   return xyChartConfig;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartConfig, "getChartConfig");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getChartConfig, "getChartConfig");
 function getXYChartData() {
   return xyChartData;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getXYChartData, "getXYChartData");
-var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getXYChartData, "getXYChartData");
+var clear2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(function() {
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
   plotIndex = 0;
   xyChartConfig = getChartDefaultConfig();
   xyChartData = getChartDefaultData();
@@ -1842,12 +1846,12 @@ var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__
 var xychartDb_default = {
   getDrawableElem,
   clear: clear2,
-  setAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV,
-  getAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN,
-  setDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke,
-  getDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab,
-  getAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7,
-  setAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI,
+  setAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV,
+  getAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN,
+  setDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke,
+  getDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab,
+  getAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7,
+  setAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI,
   setOrientation,
   setXAxisTitle,
   setXAxisRangeData,
@@ -1863,7 +1867,7 @@ var xychartDb_default = {
 };
 
 // src/diagrams/xychart/xychartRenderer.ts
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((txt, id, _version, diagObj) => {
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((txt, id, _version, diagObj) => {
   const db = diagObj.db;
   const themeConfig = db.getChartThemeConfig();
   const chartConfig = db.getChartConfig();
@@ -1871,20 +1875,20 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
   function getDominantBaseLine(horizontalPos) {
     return horizontalPos === "top" ? "text-before-edge" : "middle";
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getDominantBaseLine, "getDominantBaseLine");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getDominantBaseLine, "getDominantBaseLine");
   function getTextAnchor(verticalPos) {
     return verticalPos === "left" ? "start" : verticalPos === "right" ? "end" : "middle";
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getTextAnchor, "getTextAnchor");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getTextAnchor, "getTextAnchor");
   function getTextTransformation(data) {
     return `translate(${data.x}, ${data.y}) rotate(${data.rotation || 0})`;
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getTextTransformation, "getTextTransformation");
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Rendering xychart chart\n" + txt);
-  const svg = (0,_chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getTextTransformation, "getTextTransformation");
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug("Rendering xychart chart\n" + txt);
+  const svg = (0,_chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
   const group = svg.append("g").attr("class", "main");
   const background = group.append("rect").attr("width", chartConfig.width).attr("height", chartConfig.height).attr("class", "background");
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .configureSvgSize */ .a$)(svg, chartConfig.height, chartConfig.width, true);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .configureSvgSize */ .a$)(svg, chartConfig.height, chartConfig.width, true);
   svg.attr("viewBox", `0 0 ${chartConfig.width} ${chartConfig.height}`);
   background.attr("fill", themeConfig.backgroundColor);
   db.setTmpSVGG(svg.append("g").attr("class", "mermaid-tmp-group"));
@@ -1906,7 +1910,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
     }
     return elem;
   }
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getGroup, "getGroup");
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(getGroup, "getGroup");
   for (const shape of shapes) {
     if (shape.data.length === 0) {
       continue;
@@ -1923,7 +1927,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
               return textWidth <= data.width - 10;
             };
             var fitsHorizontally = fitsHorizontally2;
-            (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(fitsHorizontally2, "fitsHorizontally");
+            (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(fitsHorizontally2, "fitsHorizontally");
             const charWidthFactor = 0.7;
             const validItems = shape.data.map((d, i) => ({ data: d, label: labelData[i].toString() })).filter((item) => item.data.width > 0 && item.data.height > 0);
             const candidateFontSizes = validItems.map((item) => {
@@ -1949,7 +1953,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
               return horizontalFits && verticalFits;
             };
             var fitsInBar = fitsInBar2;
-            (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(fitsInBar2, "fitsInBar");
+            (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(fitsInBar2, "fitsInBar");
             const yOffset = 10;
             const validItems = shape.data.map((d, i) => ({ data: d, label: labelData[i].toString() })).filter((item) => item.data.width > 0 && item.data.height > 0);
             const candidateFontSizes = validItems.map((item) => {

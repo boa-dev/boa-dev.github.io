@@ -1,44 +1,16 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6796],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[2716],{
 
-/***/ 487:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   S: () => (/* binding */ populateCommonDb)
-/* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-
-
-// src/diagrams/common/populateCommonDb.ts
-function populateCommonDb(ast, db) {
-  if (ast.accDescr) {
-    db.setAccDescription?.(ast.accDescr);
-  }
-  if (ast.accTitle) {
-    db.setAccTitle?.(ast.accTitle);
-  }
-  if (ast.title) {
-    db.setDiagramTitle?.(ast.title);
-  }
-}
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
-
-
-
-
-/***/ }),
-
-/***/ 6796:
+/***/ 2716:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(487);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4505);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3861);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(163);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6936);
 /* harmony import */ var _mermaid_js_parser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8731);
 
 
@@ -59,18 +31,18 @@ var defaultRadarData = {
   options: defaultOptions
 };
 var data = structuredClone(defaultRadarData);
-var DEFAULT_RADAR_CONFIG = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.radar;
-var getConfig2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
-  const config = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)({
+var DEFAULT_RADAR_CONFIG = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .defaultConfig_default */ .UI.radar;
+var getConfig2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
+  const config = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)({
     ...DEFAULT_RADAR_CONFIG,
-    ...(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)().radar
+    ...(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)().radar
   });
   return config;
 }, "getConfig");
-var getAxes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => data.axes, "getAxes");
-var getCurves = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => data.curves, "getCurves");
-var getOptions = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => data.options, "getOptions");
-var setAxes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((axes) => {
+var getAxes = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => data.axes, "getAxes");
+var getCurves = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => data.curves, "getCurves");
+var getOptions = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => data.options, "getOptions");
+var setAxes = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((axes) => {
   data.axes = axes.map((axis) => {
     return {
       name: axis.name,
@@ -78,7 +50,7 @@ var setAxes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3_
     };
   });
 }, "setAxes");
-var setCurves = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((curves) => {
+var setCurves = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((curves) => {
   data.curves = curves.map((curve) => {
     return {
       name: curve.name,
@@ -87,7 +59,7 @@ var setCurves = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
     };
   });
 }, "setCurves");
-var computeCurveEntries = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((entries) => {
+var computeCurveEntries = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((entries) => {
   if (entries[0].axis == void 0) {
     return entries.map((entry) => entry.value);
   }
@@ -103,7 +75,7 @@ var computeCurveEntries = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORT
     return entry.value;
   });
 }, "computeCurveEntries");
-var setOptions = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => {
+var setOptions = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((options) => {
   const optionMap = options.reduce(
     (acc, option) => {
       acc[option.name] = option;
@@ -119,8 +91,8 @@ var setOptions = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE
     graticule: optionMap.graticule?.value ?? defaultOptions.graticule
   };
 }, "setOptions");
-var clear2 = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
+var clear2 = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(() => {
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .clear */ .IU)();
   data = structuredClone(defaultRadarData);
 }, "clear");
 var db = {
@@ -132,40 +104,40 @@ var db = {
   setOptions,
   getConfig: getConfig2,
   clear: clear2,
-  setAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV,
-  getAccTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN,
-  setDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke,
-  getDiagramTitle: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab,
-  getAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7,
-  setAccDescription: _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI
+  setAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccTitle */ .SV,
+  getAccTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccTitle */ .iN,
+  setDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setDiagramTitle */ .ke,
+  getDiagramTitle: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getDiagramTitle */ .ab,
+  getAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getAccDescription */ .m7,
+  setAccDescription: _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .setAccDescription */ .EI
 };
 
 // src/diagrams/radar/parser.ts
 
-var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((ast) => {
-  (0,_chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_0__/* .populateCommonDb */ .S)(ast, db);
+var populate = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((ast) => {
+  (0,_chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_0__/* .populateCommonDb */ .S)(ast, db);
   const { axes, curves, options } = ast;
   db.setAxes(axes);
   db.setCurves(curves);
   db.setOptions(options);
 }, "populate");
 var parser = {
-  parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (input) => {
+  parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(async (input) => {
     const ast = await (0,_mermaid_js_parser__WEBPACK_IMPORTED_MODULE_4__/* .parse */ .qg)("radar", input);
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(ast);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .log */ .Rm.debug(ast);
     populate(ast);
   }, "parse")
 };
 
 // src/diagrams/radar/renderer.ts
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((_text, id, _version, diagram2) => {
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((_text, id, _version, diagram2) => {
   const db2 = diagram2.db;
   const axes = db2.getAxes();
   const curves = db2.getCurves();
   const options = db2.getOptions();
   const config = db2.getConfig();
   const title = db2.getDiagramTitle();
-  const svg = (0,_chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
+  const svg = (0,_chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_2__/* .selectSvgElement */ .D)(id);
   const g = drawFrame(svg, config);
   const maxValue = options.max ?? Math.max(...curves.map((curve) => Math.max(...curve.entries)));
   const minValue = options.min;
@@ -176,7 +148,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/*
   drawLegend(g, curves, options.showLegend, config);
   g.append("text").attr("class", "radarTitle").text(title).attr("x", 0).attr("y", -config.height / 2 - config.marginTop);
 }, "draw");
-var drawFrame = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, config) => {
+var drawFrame = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((svg, config) => {
   const totalWidth = config.width + config.marginLeft + config.marginRight;
   const totalHeight = config.height + config.marginTop + config.marginBottom;
   const center = {
@@ -186,7 +158,7 @@ var drawFrame = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_
   svg.attr("viewbox", `0 0 ${totalWidth} ${totalHeight}`).attr("width", totalWidth).attr("height", totalHeight);
   return svg.append("g").attr("transform", `translate(${center.x}, ${center.y})`);
 }, "drawFrame");
-var drawGraticule = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((g, axes, radius, ticks, graticule) => {
+var drawGraticule = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((g, axes, radius, ticks, graticule) => {
   if (graticule === "circle") {
     for (let i = 0; i < ticks; i++) {
       const r = radius * (i + 1) / ticks;
@@ -206,7 +178,7 @@ var drawGraticule = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MOD
     }
   }
 }, "drawGraticule");
-var drawAxes = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((g, axes, radius, config) => {
+var drawAxes = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((g, axes, radius, config) => {
   const numAxes = axes.length;
   for (let i = 0; i < numAxes; i++) {
     const label = axes[i].label;
@@ -236,12 +208,12 @@ function drawCurves(g, axes, curves, minValue, maxValue, graticule, config) {
     }
   });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawCurves, "drawCurves");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawCurves, "drawCurves");
 function relativeRadius(value, minValue, maxValue, radius) {
   const clippedValue = Math.min(Math.max(value, minValue), maxValue);
   return radius * (clippedValue - minValue) / (maxValue - minValue);
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(relativeRadius, "relativeRadius");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(relativeRadius, "relativeRadius");
 function closedRoundCurve(points, tension) {
   const numPoints = points.length;
   let d = `M${points[0].x},${points[0].y}`;
@@ -262,7 +234,7 @@ function closedRoundCurve(points, tension) {
   }
   return `${d} Z`;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(closedRoundCurve, "closedRoundCurve");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(closedRoundCurve, "closedRoundCurve");
 function drawLegend(g, curves, showLegend, config) {
   if (!showLegend) {
     return;
@@ -276,11 +248,11 @@ function drawLegend(g, curves, showLegend, config) {
     itemGroup.append("text").attr("x", 16).attr("y", 0).attr("class", "radarLegendText").text(curve.label);
   });
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawLegend, "drawLegend");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(drawLegend, "drawLegend");
 var renderer = { draw };
 
 // src/diagrams/radar/styles.ts
-var genIndexStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((themeVariables, radarOptions) => {
+var genIndexStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((themeVariables, radarOptions) => {
   let sections = "";
   for (let i = 0; i < themeVariables.THEME_COLOR_LIMIT; i++) {
     const indexColor = themeVariables[`cScale${i}`];
@@ -301,14 +273,14 @@ var genIndexStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MO
   }
   return sections;
 }, "genIndexStyles");
-var buildRadarStyleOptions = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((radar) => {
-  const defaultThemeVariables = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getThemeVariables */ .P$)();
-  const currentConfig = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
-  const themeVariables = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(defaultThemeVariables, currentConfig.themeVariables);
-  const radarOptions = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(themeVariables.radar, radar);
+var buildRadarStyleOptions = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)((radar) => {
+  const defaultThemeVariables = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getThemeVariables */ .P$)();
+  const currentConfig = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .getConfig */ .zj)();
+  const themeVariables = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(defaultThemeVariables, currentConfig.themeVariables);
+  const radarOptions = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_1__/* .cleanAndMerge */ .$t)(themeVariables.radar, radar);
   return { themeVariables, radarOptions };
 }, "buildRadarStyleOptions");
-var styles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(({ radar } = {}) => {
+var styles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_3__/* .__name */ .K2)(({ radar } = {}) => {
   const { themeVariables, radarOptions } = buildRadarStyleOptions(radar);
   return `
 	.radarTitle {
@@ -349,6 +321,34 @@ var diagram = {
   renderer,
   styles
 };
+
+
+
+/***/ }),
+
+/***/ 3861:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   S: () => (/* binding */ populateCommonDb)
+/* harmony export */ });
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+
+
+// src/diagrams/common/populateCommonDb.ts
+function populateCommonDb(ast, db) {
+  if (ast.accDescr) {
+    db.setAccDescription?.(ast.accDescr);
+  }
+  if (ast.accTitle) {
+    db.setAccTitle?.(ast.accTitle);
+  }
+  if (ast.title) {
+    db.setDiagramTitle?.(ast.title);
+  }
+}
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
+
 
 
 

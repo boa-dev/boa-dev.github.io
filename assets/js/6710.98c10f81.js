@@ -1,13 +1,49 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[5775],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6710],{
 
-/***/ 487:
+/***/ 3004:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   P: () => (/* binding */ setupViewPortForSVG)
+/* harmony export */ });
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
+
+
+// src/rendering-util/setupViewPortForSVG.ts
+var setupViewPortForSVG = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding, cssDiagram, useMaxWidth) => {
+  svg.attr("class", cssDiagram);
+  const { width, height, x, y } = calculateDimensionsWithPadding(svg, padding);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .configureSvgSize */ .a$)(svg, height, width, useMaxWidth);
+  const viewBox = createViewBox(x, y, width, height, padding);
+  svg.attr("viewBox", viewBox);
+  _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
+}, "setupViewPortForSVG");
+var calculateDimensionsWithPadding = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding) => {
+  const bounds = svg.node()?.getBBox() || { width: 0, height: 0, x: 0, y: 0 };
+  return {
+    width: bounds.width + padding * 2,
+    height: bounds.height + padding * 2,
+    x: bounds.x,
+    y: bounds.y
+  };
+}, "calculateDimensionsWithPadding");
+var createViewBox = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((x, y, width, height, padding) => {
+  return `${x - padding} ${y - padding} ${width} ${height}`;
+}, "createViewBox");
+
+
+
+
+/***/ }),
+
+/***/ 3861:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   S: () => (/* binding */ populateCommonDb)
 /* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6936);
 
 
 // src/diagrams/common/populateCommonDb.ts
@@ -22,25 +58,25 @@ function populateCommonDb(ast, db) {
     db.setDiagramTitle?.(ast.title);
   }
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)(populateCommonDb, "populateCommonDb");
 
 
 
 
 /***/ }),
 
-/***/ 5775:
+/***/ 6710:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   diagram: () => (/* binding */ diagram)
 /* harmony export */ });
-/* harmony import */ var _chunk_SKB7J2MH_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8833);
-/* harmony import */ var _chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5683);
-/* harmony import */ var _chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(487);
-/* harmony import */ var _chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6792);
-/* harmony import */ var _chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4505);
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1750);
+/* harmony import */ var _chunk_NRVI72HA_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3004);
+/* harmony import */ var _chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5828);
+/* harmony import */ var _chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3861);
+/* harmony import */ var _chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8045);
+/* harmony import */ var _chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(163);
+/* harmony import */ var _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6936);
 /* harmony import */ var _mermaid_js_parser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8731);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(451);
 
@@ -57,23 +93,23 @@ var TreeMapDB = class {
     this.levels = /* @__PURE__ */ new Map();
     this.outerNodes = [];
     this.classes = /* @__PURE__ */ new Map();
-    this.setAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccTitle */ .SV;
-    this.getAccTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccTitle */ .iN;
-    this.setDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setDiagramTitle */ .ke;
-    this.getDiagramTitle = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getDiagramTitle */ .ab;
-    this.getAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccDescription */ .m7;
-    this.setAccDescription = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccDescription */ .EI;
+    this.setAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccTitle */ .SV;
+    this.getAccTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccTitle */ .iN;
+    this.setDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setDiagramTitle */ .ke;
+    this.getDiagramTitle = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getDiagramTitle */ .ab;
+    this.getAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getAccDescription */ .m7;
+    this.setAccDescription = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .setAccDescription */ .EI;
   }
   static {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(this, "TreeMapDB");
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(this, "TreeMapDB");
   }
   getNodes() {
     return this.nodes;
   }
   getConfig() {
-    const defaultConfig = _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .defaultConfig_default */ .UI;
-    const userConfig = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig */ .zj)();
-    return (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_3__/* .cleanAndMerge */ .$t)({
+    const defaultConfig = _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .defaultConfig_default */ .UI;
+    const userConfig = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig */ .zj)();
+    return (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_3__/* .cleanAndMerge */ .$t)({
       ...defaultConfig.treemap,
       ...userConfig.treemap ?? {}
     });
@@ -94,7 +130,7 @@ var TreeMapDB = class {
     const styles = _style.replace(/\\,/g, "\xA7\xA7\xA7").replace(/,/g, ";").replace(/§§§/g, ",").split(";");
     if (styles) {
       styles.forEach((s) => {
-        if ((0,_chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__/* .isLabelStyle */ .KX)(s)) {
+        if ((0,_chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__/* .isLabelStyle */ .KX)(s)) {
           if (styleClass?.textStyles) {
             styleClass.textStyles.push(s);
           } else {
@@ -117,7 +153,7 @@ var TreeMapDB = class {
     return this.classes.get(classSelector)?.styles ?? [];
   }
   clear() {
-    (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .clear */ .IU)();
+    (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .clear */ .IU)();
     this.nodes = [];
     this.levels = /* @__PURE__ */ new Map();
     this.outerNodes = [];
@@ -167,11 +203,11 @@ function buildHierarchy(items) {
   });
   return root;
 }
-(0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(buildHierarchy, "buildHierarchy");
+(0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(buildHierarchy, "buildHierarchy");
 
 // src/diagrams/treemap/parser.ts
-var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((ast, db) => {
-  (0,_chunk_353BL4L5_mjs__WEBPACK_IMPORTED_MODULE_2__/* .populateCommonDb */ .S)(ast, db);
+var populate = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((ast, db) => {
+  (0,_chunk_ANTBXLJU_mjs__WEBPACK_IMPORTED_MODULE_2__/* .populateCommonDb */ .S)(ast, db);
   const items = [];
   for (const row of ast.TreemapRows ?? []) {
     if (row.$type === "ClassDefStatement") {
@@ -198,7 +234,7 @@ var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5
     items.push(itemData);
   }
   const hierarchyNodes = buildHierarchy(items);
-  const addNodesRecursively = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((nodes, level) => {
+  const addNodesRecursively = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((nodes, level) => {
     for (const node of nodes) {
       db.addNode(node, level);
       if (node.children && node.children.length > 0) {
@@ -208,17 +244,17 @@ var populate = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5
   }, "addNodesRecursively");
   addNodesRecursively(hierarchyNodes, 0);
 }, "populate");
-var getItemName = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((item) => {
+var getItemName = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((item) => {
   return item.name ? String(item.name) : "";
 }, "getItemName");
 var parser = {
   // @ts-expect-error - TreeMapDB is not assignable to DiagramDB
   parser: { yy: void 0 },
-  parse: /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(async (text) => {
+  parse: /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(async (text) => {
     try {
       const parseFunc = _mermaid_js_parser__WEBPACK_IMPORTED_MODULE_6__/* .parse */ .qg;
       const ast = await parseFunc("treemap", text);
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.debug("Treemap AST:", ast);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.debug("Treemap AST:", ast);
       const db = parser.parser?.yy;
       if (!(db instanceof TreeMapDB)) {
         throw new Error(
@@ -227,7 +263,7 @@ var parser = {
       }
       populate(ast, db);
     } catch (error) {
-      _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.error("Error parsing treemap:", error);
+      _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.error("Error parsing treemap:", error);
       throw error;
     }
   }, "parse")
@@ -238,41 +274,41 @@ var parser = {
 var DEFAULT_INNER_PADDING = 10;
 var SECTION_INNER_PADDING = 10;
 var SECTION_HEADER_HEIGHT = 25;
-var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((_text, id, _version, diagram2) => {
+var draw = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((_text, id, _version, diagram2) => {
   const treemapDb = diagram2.db;
   const config = treemapDb.getConfig();
   const treemapInnerPadding = config.padding ?? DEFAULT_INNER_PADDING;
   const title = treemapDb.getDiagramTitle();
   const root = treemapDb.getRoot();
-  const { themeVariables } = (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig */ .zj)();
+  const { themeVariables } = (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .getConfig */ .zj)();
   if (!root) {
     return;
   }
   const titleHeight = title ? 30 : 0;
-  const svg = (0,_chunk_P3VETL53_mjs__WEBPACK_IMPORTED_MODULE_4__/* .selectSvgElement */ .D)(id);
+  const svg = (0,_chunk_T57MJCP2_mjs__WEBPACK_IMPORTED_MODULE_4__/* .selectSvgElement */ .D)(id);
   const width = config.nodeWidth ? config.nodeWidth * SECTION_INNER_PADDING : 960;
   const height = config.nodeHeight ? config.nodeHeight * SECTION_INNER_PADDING : 500;
   const svgWidth = width;
   const svgHeight = height + titleHeight;
   svg.attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .configureSvgSize */ .a$)(svg, svgHeight, svgWidth, config.useMaxWidth);
+  (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .configureSvgSize */ .a$)(svg, svgHeight, svgWidth, config.useMaxWidth);
   let valueFormat;
   try {
     const formatStr = config.valueFormat || ",";
     if (formatStr === "$0,0") {
-      valueFormat = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((value) => "$" + (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)(",")(value), "valueFormat");
+      valueFormat = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((value) => "$" + (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)(",")(value), "valueFormat");
     } else if (formatStr.startsWith("$") && formatStr.includes(",")) {
       const precision = /\.\d+/.exec(formatStr);
       const precisionStr = precision ? precision[0] : "";
-      valueFormat = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((value) => "$" + (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)("," + precisionStr)(value), "valueFormat");
+      valueFormat = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((value) => "$" + (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)("," + precisionStr)(value), "valueFormat");
     } else if (formatStr.startsWith("$")) {
       const restOfFormat = formatStr.substring(1);
-      valueFormat = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((value) => "$" + (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)(restOfFormat || "")(value), "valueFormat");
+      valueFormat = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)((value) => "$" + (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)(restOfFormat || "")(value), "valueFormat");
     } else {
       valueFormat = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)(formatStr);
     }
   } catch (error) {
-    _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.error("Error creating format function:", error);
+    _chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .log */ .Rm.error("Error creating format function:", error);
     valueFormat = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .format */ .GPZ)(",");
   }
   const colorScale = (0,d3__WEBPACK_IMPORTED_MODULE_7__/* .scaleOrdinal */ .UMr)().range([
@@ -343,7 +379,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/*
     if (d.depth === 0) {
       return "display: none;";
     }
-    const styles = (0,_chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
+    const styles = (0,_chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
     return styles.nodeStyles + ";" + styles.borderStyles.join(";");
   });
   sections.append("text").attr("class", "treemapSectionLabel").attr("x", 6).attr("y", SECTION_HEADER_HEIGHT / 2).attr("dominant-baseline", "middle").text((d) => d.depth === 0 ? "" : d.data.name).attr("font-weight", "bold").attr("style", (d) => {
@@ -351,7 +387,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/*
       return "display: none;";
     }
     const labelStyles = "dominant-baseline: middle; font-size: 12px; fill:" + colorScaleLabel(d.data.name) + "; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;";
-    const styles = (0,_chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
+    const styles = (0,_chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
     return labelStyles + styles.labelStyles.replace("color:", "fill:");
   }).each(function(d) {
     if (d.depth === 0) {
@@ -402,7 +438,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/*
         return "display: none;";
       }
       const labelStyles = "text-anchor: end; dominant-baseline: middle; font-size: 10px; fill:" + colorScaleLabel(d.data.name) + "; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;";
-      const styles = (0,_chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
+      const styles = (0,_chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
       return labelStyles + styles.labelStyles.replace("color:", "fill:");
     });
   }
@@ -413,7 +449,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/*
   cell.append("rect").attr("width", (d) => d.x1 - d.x0).attr("height", (d) => d.y1 - d.y0).attr("class", "treemapLeaf").attr("fill", (d) => {
     return d.parent ? colorScale(d.parent.data.name) : colorScale(d.data.name);
   }).attr("style", (d) => {
-    const styles = (0,_chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
+    const styles = (0,_chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
     return styles.nodeStyles;
   }).attr("fill-opacity", 0.3).attr("stroke", (d) => {
     return d.parent ? colorScale(d.parent.data.name) : colorScale(d.data.name);
@@ -421,7 +457,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/*
   cell.append("clipPath").attr("id", (_d, i) => `clip-${id}-${i}`).append("rect").attr("width", (d) => Math.max(0, d.x1 - d.x0 - 4)).attr("height", (d) => Math.max(0, d.y1 - d.y0 - 4));
   const leafLabels = cell.append("text").attr("class", "treemapLabel").attr("x", (d) => (d.x1 - d.x0) / 2).attr("y", (d) => (d.y1 - d.y0) / 2).attr("style", (d) => {
     const labelStyles = "text-anchor: middle; dominant-baseline: middle; font-size: 38px;fill:" + colorScaleLabel(d.data.name) + ";";
-    const styles = (0,_chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
+    const styles = (0,_chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
     return labelStyles + styles.labelStyles.replace("color:", "fill:");
   }).attr("clip-path", (_d, i) => `url(#clip-${id}-${i})`).text((d) => d.data.name);
   leafLabels.each(function(d) {
@@ -475,7 +511,7 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/*
       return (d.y1 - d.y0) / 2;
     }).attr("style", (d) => {
       const labelStyles = "text-anchor: middle; dominant-baseline: hanging; font-size: 28px;fill:" + colorScaleLabel(d.data.name) + ";";
-      const styles = (0,_chunk_UWXLY5YG_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
+      const styles = (0,_chunk_7RNWAQOT_mjs__WEBPACK_IMPORTED_MODULE_1__/* .styles2String */ .GX)({ cssCompiledStyles: d.data.cssCompiledStyles });
       return labelStyles + styles.labelStyles.replace("color:", "fill:");
     }).attr("clip-path", (_d, i) => `url(#clip-${id}-${i})`).text((d) => d.value ? valueFormat(d.value) : "");
     leafValues.each(function(d) {
@@ -516,9 +552,9 @@ var draw = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/*
     });
   }
   const diagramPadding = config.diagramPadding ?? 8;
-  (0,_chunk_SKB7J2MH_mjs__WEBPACK_IMPORTED_MODULE_0__/* .setupViewPortForSVG */ .P)(svg, diagramPadding, "flowchart", config?.useMaxWidth || false);
+  (0,_chunk_NRVI72HA_mjs__WEBPACK_IMPORTED_MODULE_0__/* .setupViewPortForSVG */ .P)(svg, diagramPadding, "flowchart", config?.useMaxWidth || false);
 }, "draw");
-var getClasses = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(_text, diagramObj) {
+var getClasses = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(function(_text, diagramObj) {
   return diagramObj.db.getClasses();
 }, "getClasses");
 var renderer = { draw, getClasses };
@@ -538,10 +574,10 @@ var defaultTreemapStyleOptions = {
   titleColor: "black",
   titleFontSize: "14px"
 };
-var getStyles = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(({
+var getStyles = /* @__PURE__ */ (0,_chunk_VIW5F6AA_mjs__WEBPACK_IMPORTED_MODULE_5__/* .__name */ .K2)(({
   treemap: treemap2
 } = {}) => {
-  const options = (0,_chunk_55PJQP7W_mjs__WEBPACK_IMPORTED_MODULE_3__/* .cleanAndMerge */ .$t)(defaultTreemapStyleOptions, treemap2);
+  const options = (0,_chunk_U37J5Y7L_mjs__WEBPACK_IMPORTED_MODULE_3__/* .cleanAndMerge */ .$t)(defaultTreemapStyleOptions, treemap2);
   return `
   .treemapNode.section {
     stroke: ${options.sectionStrokeColor};
@@ -578,42 +614,6 @@ var diagram = {
   renderer,
   styles: styles_default
 };
-
-
-
-/***/ }),
-
-/***/ 8833:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   P: () => (/* binding */ setupViewPortForSVG)
-/* harmony export */ });
-/* harmony import */ var _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
-
-
-// src/rendering-util/setupViewPortForSVG.ts
-var setupViewPortForSVG = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding, cssDiagram, useMaxWidth) => {
-  svg.attr("class", cssDiagram);
-  const { width, height, x, y } = calculateDimensionsWithPadding(svg, padding);
-  (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .configureSvgSize */ .a$)(svg, height, width, useMaxWidth);
-  const viewBox = createViewBox(x, y, width, height, padding);
-  svg.attr("viewBox", viewBox);
-  _chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .log */ .Rm.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
-}, "setupViewPortForSVG");
-var calculateDimensionsWithPadding = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((svg, padding) => {
-  const bounds = svg.node()?.getBBox() || { width: 0, height: 0, x: 0, y: 0 };
-  return {
-    width: bounds.width + padding * 2,
-    height: bounds.height + padding * 2,
-    x: bounds.x,
-    y: bounds.y
-  };
-}, "calculateDimensionsWithPadding");
-var createViewBox = /* @__PURE__ */ (0,_chunk_3XYRH5AP_mjs__WEBPACK_IMPORTED_MODULE_0__/* .__name */ .K2)((x, y, width, height, padding) => {
-  return `${x - padding} ${y - padding} ${width} ${height}`;
-}, "createViewBox");
-
 
 
 
