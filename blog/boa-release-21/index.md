@@ -55,16 +55,24 @@ cargo add temporal_rs
 
 #### Special thanks
 
-Special thanks to all the student's from University of Bergen as well as
-Shane Carr ([@sffc](https://github.com/@sffc)) and Manish Goregaokar
-([@manishearth](https://github.com/@manishearth)) from ICU4X for their
-contributions and help with `temporal_rs`.
+Special thanks to all the student's from University of Bergen who helped contribute to
+`temporal_rs` and Boa, as well as Shane Carr ([@sffc](https://github.com/@sffc)) and
+Manish Goregaokar ([@manishearth](https://github.com/@manishearth)) for their contributions
+and help with `temporal_rs`.
+
+### Span nodes and error backtraces
+
+We also closed an outstanding issue of supporting span nodes in our parser and AST. This
+allowed us to implement backtraces to provide better debugging information when using
+Boa.
+
+![backtrace-example](./img/backtrace.gif)
 
 ### New Set methods
 
-Boa now supports the new set methods added in ES2025.
+This release adds support for the new set methods added in ES2025.
 
-These new methods are:
+The new methods are:
 
 - `Set.prototype.intersection(other)`
 - `Set.prototype.union(other)`
@@ -79,7 +87,7 @@ their work on this feature.
 
 ### Float16 support for TypedArrays, Dataview and Math built-ins
 
-Boa now supports `f16` types for the TypedArray, Dataview, and Math
+This release adds support for `f16` types for the TypedArray, Dataview, and Math
 built-ins.
 
 ```javascript
@@ -89,7 +97,7 @@ console.log(x[1]); // 42
 
 ### Error.isError
 
-Boa now supports `Error.isError`, which is accepted for ES2026.
+This release adds support for `Error.isError`, which is accepted for ES2026.
 
 ```javascript
 let check = Error.isError(new Error()); // returns true
@@ -97,7 +105,10 @@ let check = Error.isError(new Error()); // returns true
 
 ### Math.sumPrecise
 
-Boa now supports `Math.sumPrecise`, which is accepted for ES2026.
+This release adds support for `Math.sumPrecise`, which is accepted for ES2026.
+
+We've opted for using the new [`xsum`](https://crates.io/crates/xsum) summation algorithm
+for the underlying implementation.
 
 ```javascript
 let sum = Math.sumPrecise([1.0, 2.5]);
@@ -129,6 +140,8 @@ against the Web Platform Tests (WPT).
 
 With this release, Boa's virtual machine (VM) moved from a stack based
 VM to a register based VM.
+
+TODO: Potentially add more here
 
 ## New Contributors
 
