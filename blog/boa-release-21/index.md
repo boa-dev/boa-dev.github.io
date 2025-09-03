@@ -91,8 +91,8 @@ This release adds support for `f16` types for the TypedArray, Dataview, and Math
 built-ins.
 
 ```javascript
-const x = new Float16Array([37, 42]);
-console.log(x[1]); // 42
+const x = new Float16Array([37, 42.123456]);
+console.log(x[1]); // 42.125
 ```
 
 ### Error.isError
