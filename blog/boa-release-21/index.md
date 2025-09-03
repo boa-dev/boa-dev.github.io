@@ -111,8 +111,8 @@ We've opted for using the new [`xsum`](https://crates.io/crates/xsum) summation 
 for the underlying implementation.
 
 ```javascript
-let sum = Math.sumPrecise([1.0, 2.5]);
-console.log(sum); // 3.5
+let sum = Math.sumPrecise([1e20, 0.1, -1e20]);
+console.log(sum); // 0.1
 ```
 
 ## Boa Runtime
