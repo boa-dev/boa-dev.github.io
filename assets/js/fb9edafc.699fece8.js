@@ -4,7 +4,7 @@
 /***/ 3304:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/10/24/boa-usage","source":"@site/blog/2022-10-24-boa-usage.md","title":"Adding a JavaScript interpreter to your Rust project","description":"Introduction","date":"2022-10-24T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":13.13,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Adding a JavaScript interpreter to your Rust project","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.17","permalink":"/blog/2023/07/08/boa-release-17"},"nextItem":{"title":"Boa release v0.16","permalink":"/blog/2022/09/25/boa-release-16"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/10/24/boa-usage","source":"@site/blog/2022-10-24-boa-usage.md","title":"Adding a JavaScript interpreter to your Rust project","description":"Introduction","date":"2022-10-24T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":13.11,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Adding a JavaScript interpreter to your Rust project","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.17","permalink":"/blog/2023/07/08/boa-release-17"},"nextItem":{"title":"Boa release v0.16","permalink":"/blog/2022/09/25/boa-release-16"}}');
 
 /***/ }),
 
@@ -84,7 +84,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/boa/issues?q=64+162+718+773+2068+1930+1922+1917+1900+1848+1805+1570+1402+1307+1180+is%3Aopen",
         children: "known blocker bugs"
       }), " solved before using this for critical\nworkloads. You can check how conformant we are with the official ECMAScript specification\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boa-dev.github.io/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {

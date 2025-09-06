@@ -4,7 +4,7 @@
 /***/ 4786:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2023/07/08/boa-release-17","source":"@site/blog/2023-07-08-boa-release-17.md","title":"Boa release v0.17","description":"Summary","date":"2023-07-08T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":12.88,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.17","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.18","permalink":"/blog/2024/03/07/boa-release-18"},"nextItem":{"title":"Adding a JavaScript interpreter to your Rust project","permalink":"/blog/2022/10/24/boa-usage"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2023/07/08/boa-release-17","source":"@site/blog/2023-07-08-boa-release-17.md","title":"Boa release v0.17","description":"Summary","date":"2023-07-08T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":12.86,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.17","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.18","permalink":"/blog/2024/03/07/boa-release-18"},"nextItem":{"title":"Adding a JavaScript interpreter to your Rust project","permalink":"/blog/2022/10/24/boa-usage"}}');
 
 /***/ }),
 
@@ -168,7 +168,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/boa/blob/v0.17/CHANGELOG.md",
         children: "here"
       }), ", and the full information on conformance ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
@@ -233,7 +233,7 @@ function _createMdxContent(props) {
       }), "?\nWe're pleased to say we've updated our conformance board to show you how we're doing across ES versions."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["Just navigate to our ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/test262/",
+        href: "/conformance",
         children: "Test262 Dashboard"
       }), ", select \"Test Results\" on our main branch, and\nthen you can use the dropdown underneath to see how we're doing on each version. ES5 and ES6 are very close, you can see\nwe're only a few tests away from them being fully implemented."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {

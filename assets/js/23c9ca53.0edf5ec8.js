@@ -99,7 +99,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md",
         children: "here"
       }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boa-dev.github.io/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
@@ -390,7 +390,7 @@ function MDXContent(props = {}) {
 /***/ 7819:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/03/15/boa-release-14","source":"@site/blog/2022-03-15-boa-release-14.md","title":"Boa release v0.14","description":"Summary","date":"2022-03-15T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":6.46,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.14","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.15","permalink":"/blog/2022/06/10/boa-release-15"},"nextItem":{"title":"Boa release v0.13","permalink":"/blog/2021/09/30/boa-release-13"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/03/15/boa-release-14","source":"@site/blog/2022-03-15-boa-release-14.md","title":"Boa release v0.14","description":"Summary","date":"2022-03-15T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":6.44,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.14","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.15","permalink":"/blog/2022/06/10/boa-release-15"},"nextItem":{"title":"Boa release v0.13","permalink":"/blog/2021/09/30/boa-release-13"}}');
 
 /***/ }),
 

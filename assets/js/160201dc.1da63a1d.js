@@ -1,14 +1,14 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6299],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[4606],{
 
-/***/ 911:
+/***/ 3860:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/09/25/boa-release-16","source":"@site/blog/2022-09-25-boa-release-16.md","title":"Boa release v0.16","description":"Summary","date":"2022-09-25T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":4.13,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.16","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Adding a JavaScript interpreter to your Rust project","permalink":"/blog/2022/10/24/boa-usage"},"nextItem":{"title":"Boa release v0.15","permalink":"/blog/2022/06/10/boa-release-15"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/12/05/boa-release-020","source":"@site/blog/2024-12-05-boa-release-020/index.mdx","title":"Boa release v0.20","description":"Boa release v0.20","date":"2024-12-05T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":9.57,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.20","description":"Boa release v0.20","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"How ECMAScript Engines Optimize Your Variables","permalink":"/blog/2025/03/05/local-variables"},"nextItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"}}');
 
 /***/ }),
 
-/***/ 4653:
+/***/ 5887:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17,10 +17,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_09_25_boa_release_16_md_00a_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2024_12_05_boa_release_020_index_mdx_7c4_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_09_25_boa_release_16_md_00a_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(911);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2024_12_05_boa_release_020_index_mdx_7c4_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3860);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8453);
 
@@ -30,7 +30,8 @@ const frontMatter = {
 	tags: [
 		'post'
 	],
-	title: 'Boa release v0.16',
+	title: 'Boa release v0.20',
+	description: 'Boa release v0.20',
 	authors: 'boa-dev'
 };
 const contentTitle = undefined;
@@ -59,18 +60,14 @@ function _createMdxContent(props) {
       id: "summary",
       children: "Summary"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["Boa v0.16 is now available! After around 3 months of development, we are very happy to present you the newest release of\nthe Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from\nWebAssembly. See the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+      children: ["Boa v0.20 is now available! After 5 months of development we are very happy to present you the latest\nrelease of the Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and\nyou can even use it from WebAssembly. See the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "/about",
         children: "about"
       }), " page for more info."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 62.29% to 74.53%\nin the official ECMAScript Test Suite (Test262). The engine now passes 68,612 tests, coming from 56,372 in Boa 0.15\n(21.7% increase), and we have closed 9 issues and merged 59 pull requests. You can check the full list of changes\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/blob/v0.16/CHANGELOG.md",
-        children: "here"
-      }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boa-dev.github.io/boa/test262/",
-        children: "here"
-      }), "."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "In this release, our conformance has grown from 87.3% to 89.92% in the official ECMAScript Test Suite\n(Test262). This small jump is expected as we're shifting most of our focus to performance as the majority of the engine is now conformant. We will continue to implement more of the specification as we go along but we expect these changes to be much smaller than we've been used to."
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "You can check the full list of changes [here][changelog], and the full information on conformance\n[here][conformance]."
     })]
   });
 }

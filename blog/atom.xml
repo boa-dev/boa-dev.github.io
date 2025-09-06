@@ -519,7 +519,7 @@ you can even use it from WebAssembly. See the <a href="https://boajs.dev/about">
 <p>In this release, our conformance has grown from 87.3% to 89.92% in the official ECMAScript Test Suite
 (Test262). This small jump is expected as we're shifting most of our focus to performance as the majority of the engine is now conformant. We will continue to implement more of the specification as we go along but we expect these changes to be much smaller than we've been used to.</p>
 <p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.19/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
-<a href="https://boajs.dev/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<a href="https://boajs.dev/conformance">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="feature-highlights">Feature Highlights<a href="https://boajs.dev/blog/2024/12/05/boa-release-020#feature-highlights" class="hash-link" aria-label="Direct link to Feature Highlights" title="Direct link to Feature Highlights">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="temporal">Temporal<a href="https://boajs.dev/blog/2024/12/05/boa-release-020#temporal" class="hash-link" aria-label="Direct link to Temporal" title="Direct link to Temporal">​</a></h3>
 <p>Boa is continuing to progress on <a href="https://github.com/tc39/proposal-temporal" target="_blank" rel="noopener noreferrer">Temporal</a>. The Temporal API is a new
@@ -631,7 +631,7 @@ were <a href="https://github.com/tc39/test262/commit/ea2268aa4382013f5533b91f9ef
 as part of the <a href="https://github.com/tc39/proposal-temporal/issues/2826" target="_blank" rel="noopener noreferrer">removal of custom calendars and timezones</a>.
 Overall, Boa's conformance in real terms has improved by ~6%.</p>
 <p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.19/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
-<a href="https://boajs.dev/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<a href="https://boajs.dev/conformance">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="highlights">Highlights<a href="https://boajs.dev/blog/2024/07/09/boa-release-19#highlights" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="temporal">Temporal<a href="https://boajs.dev/blog/2024/07/09/boa-release-19#temporal" class="hash-link" aria-label="Direct link to Temporal" title="Direct link to Temporal">​</a></h3>
 <p>Boa is continuing to progress on <a href="https://github.com/tc39/proposal-temporal" target="_blank" rel="noopener noreferrer">Temporal</a>. The Temporal API is a new
@@ -735,7 +735,7 @@ you can even use it from WebAssembly. See the <a href="https://boajs.dev/about">
 amount of ignored tests decreased from <strong>9,496</strong> to <strong>1,391</strong> thanks to all the new builtins we have
 implemented for this release.</p>
 <p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.18/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
-<a href="https://boajs.dev/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<a href="https://boajs.dev/conformance">here</a>.</p>
 <p>You probably noticed that something seems different... This release marks a major update to the design
 of our website, and the introduction of our new logo!
 We'd like to thank <a href="https://github.com/ZackMitkin" target="_blank" rel="noopener noreferrer">@ZackMitkin</a> for being the one that started the
@@ -980,7 +980,7 @@ embed a JS engine in your projects, and you can even use it from WebAssembly. Se
 this might look as a small increase, we now pass <strong>6,079</strong> more tests than in the previous version. In any case, the big
 changes in this release are not related to conformance, but to huge internal enhancements and new APIs that you will be
 able to use.</p>
-<p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.17/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance <a href="https://boajs.dev/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.17/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance <a href="https://boajs.dev/conformance">here</a>.</p>
 <p>Moreover, this big release was partly possible thanks to a grant by <a href="https://litprotocol.com/" target="_blank" rel="noopener noreferrer">Lit Protocol</a>. Thanks to
 this grant, we were able to remunerate 2 team members for their 20h/week work each during three and a half months. If
 you wish to sponsor Boa, you can do so by donating to our <a href="https://opencollective.com/boa" target="_blank" rel="noopener noreferrer">open collective</a>. You can also check
@@ -998,7 +998,7 @@ the <a href="https://docs.rs/boa_engine/0.17.0/boa_engine/module/trait.ModuleLoa
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="spec-version-conformance">Spec Version Conformance<a href="https://boajs.dev/blog/2023/07/08/boa-release-17#spec-version-conformance" class="hash-link" aria-label="Direct link to Spec Version Conformance" title="Direct link to Spec Version Conformance">​</a></h3>
 <p>Something we get asked a lot is <em>"Do you support ES5 or ES6"</em>? or <em>"How far away are you from supporting ESX"</em>?
 We're pleased to say we've updated our conformance board to show you how we're doing across ES versions.</p>
-<p>Just navigate to our <a href="https://boajs.dev/boa/test262/" target="_blank" rel="noopener noreferrer">Test262 Dashboard</a>, select "Test Results" on our main branch, and
+<p>Just navigate to our <a href="https://boajs.dev/conformance">Test262 Dashboard</a>, select "Test Results" on our main branch, and
 then you can use the dropdown underneath to see how we're doing on each version. ES5 and ES6 are very close, you can see
 we're only a few tests away from them being fully implemented.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="optimizations">Optimizations<a href="https://boajs.dev/blog/2023/07/08/boa-release-17#optimizations" class="hash-link" aria-label="Direct link to Optimizations" title="Direct link to Optimizations">​</a></h3>
@@ -1148,7 +1148,7 @@ JavaScript.</p>
 can be used in places where you need most of the JavaScript language to work, even though, we would
 advise to wait to get all our <a href="https://github.com/boa-dev/boa/issues?q=64+162+718+773+2068+1930+1922+1917+1900+1848+1805+1570+1402+1307+1180+is%3Aopen" target="_blank" rel="noopener noreferrer">known blocker bugs</a> solved before using this for critical
 workloads. You can check how conformant we are with the official ECMAScript specification
-<a href="https://boa-dev.github.io/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<a href="https://boajs.dev/conformance">here</a>.</p>
 <p>And, before going further, we would like to mention that you can contribute to Boa by solving one
 of the <a href="https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22%2CHacktoberfest%2CE-Easy%2C%22good+first+issue%22+no%3Aassignee" target="_blank" rel="noopener noreferrer">issues</a> where we need special help, and we now also accept financial contributions
 in <a href="https://opencollective.com/boa" target="_blank" rel="noopener noreferrer">our OpenCollective</a> page.</p>
@@ -1294,7 +1294,7 @@ WebAssembly. See the <a href="https://boajs.dev/about">about</a> page for more i
 in the official ECMAScript Test Suite (Test262). The engine now passes 68,612 tests, coming from 56,372 in Boa 0.15
 (21.7% increase), and we have closed 9 issues and merged 59 pull requests. You can check the full list of changes
 <a href="https://github.com/boa-dev/boa/blob/v0.16/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
-<a href="https://boa-dev.github.io/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<a href="https://boajs.dev/conformance">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-ecmascript-features">New ECMAScript features<a href="https://boajs.dev/blog/2022/09/25/boa-release-16#new-ecmascript-features" class="hash-link" aria-label="Direct link to New ECMAScript features" title="Direct link to New ECMAScript features">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="support-for-promises">Support for Promises<a href="https://boajs.dev/blog/2022/09/25/boa-release-16#support-for-promises" class="hash-link" aria-label="Direct link to Support for Promises" title="Direct link to Support for Promises">​</a></h3>
 <p>With this new release Boa ships support for ECMAScript Promises. All tests in the 262 test suite <code>built-ins/Promise</code> pass.
@@ -1362,7 +1362,7 @@ the <a href="https://boajs.dev/about">about</a> page for more info.</p>
 in the official ECMAScript Test Suite (Test262). The engine now passes 56,372 tests, coming from 43,986 in Boa 0.14
 (28.1% increase), and we have closed 18 issues and merged 58 pull requests. You can check the full list of changes
 <a href="https://github.com/boa-dev/boa/blob/v0.15/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
-<a href="https://boa-dev.github.io/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<a href="https://boajs.dev/conformance">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-ecmascript-features">New ECMAScript features<a href="https://boajs.dev/blog/2022/06/10/boa-release-15#new-ecmascript-features" class="hash-link" aria-label="Direct link to New ECMAScript features" title="Direct link to New ECMAScript features">​</a></h2>
 <p>While there are only a few big new features in this release, there are a lot of fixes for existing features that should enable
 many more JavaScript programs to execute correctly. For a detailed list checkout the
@@ -1443,7 +1443,7 @@ the <a href="https://boajs.dev/about">about</a> page for more info. Together wit
 in the official ECMAScript Test Suite (Test262). The engine now passes 43,986 tests, coming from 33,192 in Boa 0.13
 (32.5% increase), and we have closed 40 issues and merged 137 pull requests. You can check the full list of changes
 <a href="https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
-<a href="https://boa-dev.github.io/boa/test262/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<a href="https://boajs.dev/conformance">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="boa-has-moved">Boa has moved<a href="https://boajs.dev/blog/2022/03/15/boa-release-14#boa-has-moved" class="hash-link" aria-label="Direct link to Boa has moved" title="Direct link to Boa has moved">​</a></h2>
 <p>First off, some breaking changes!
 Boa is now <a href="https://crates.io/crates/boa_engine" target="_blank" rel="noopener noreferrer"><code>boa_engine</code></a> on crates.io. This should bring it in line with our other packages, and allows us to resolve the <a href="https://github.com/boa-dev/boa/issues/230" target="_blank" rel="noopener noreferrer">casing issue</a> we had with Boa previously. It should just be a case of changing your dependencies in cargo.toml to the new destination. The old <a href="https://crates.io/crates/boa" target="_blank" rel="noopener noreferrer"><code>Boa</code></a> crate will no longer receive any updates.</p>

@@ -4,7 +4,7 @@
 /***/ 6992:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/03/07/boa-release-18","source":"@site/blog/2024-03-07-boa-release-18.md","title":"Boa release v0.18","description":"Summary","date":"2024-03-07T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":20.34,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.18","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"},"nextItem":{"title":"Boa release v0.17","permalink":"/blog/2023/07/08/boa-release-17"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/03/07/boa-release-18","source":"@site/blog/2024-03-07-boa-release-18.md","title":"Boa release v0.18","description":"Summary","date":"2024-03-07T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":20.32,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.18","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"},"nextItem":{"title":"Boa release v0.17","permalink":"/blog/2023/07/08/boa-release-17"}}');
 
 /***/ }),
 
@@ -292,7 +292,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/boa/blob/v0.18/CHANGELOG.md",
         children: "here"
       }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {

@@ -4,7 +4,7 @@
 /***/ 2408:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2021/01/14/boa-release-11","source":"@site/blog/2021-01-14-boa-release-11/index.mdx","title":"Boa release v0.11","description":"Boa has reached a new release. v0.11, our biggest one yet!","date":"2021-01-14T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":5.88,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.11","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.12","permalink":"/blog/2021/06/07/boa-release-12"},"nextItem":{"title":"Boa release v0.10","permalink":"/blog/2020/10/02/boa-release-10"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2021/01/14/boa-release-11","source":"@site/blog/2021-01-14-boa-release-11/index.mdx","title":"Boa release v0.11","description":"Boa has reached a new release. v0.11, our biggest one yet!","date":"2021-01-14T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":5.86,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.11","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.12","permalink":"/blog/2021/06/07/boa-release-12"},"nextItem":{"title":"Boa release v0.10","permalink":"/blog/2020/10/02/boa-release-10"}}');
 
 /***/ }),
 
@@ -136,7 +136,7 @@ function _createMdxContent(props) {
       children: "Previously many tests failed to run as the test-runner was still being worked on. Those issues have been fixed and our tests jumped from 38k to 78K which is why the graph flips up above. Boa should never panic, however we've had many tests reveal areas where panics happen, this has helped us identify and apply correct fixes, to the point where our panics have gone from hundreds to under 50 (the graph above shows the dark red diminishing)."
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["For live tracking of conformance tests you can check ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://boa-dev.github.io/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), ". Below is a snapshot of the previous version and today."]
     }), "\n", (0,jsx_runtime.jsxs)("div", {

@@ -1,14 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[2396],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[1529],{
 
-/***/ 2408:
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2021/01/14/boa-release-11","source":"@site/blog/2021-01-14-boa-release-11/index.mdx","title":"Boa release v0.11","description":"Boa has reached a new release. v0.11, our biggest one yet!","date":"2021-01-14T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":5.88,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.11","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.12","permalink":"/blog/2021/06/07/boa-release-12"},"nextItem":{"title":"Boa release v0.10","permalink":"/blog/2020/10/02/boa-release-10"}}');
-
-/***/ }),
-
-/***/ 4170:
+/***/ 6262:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17,10 +10,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2021_01_14_boa_release_11_index_mdx_9a1_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_03_15_boa_release_14_md_23c_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2021_01_14_boa_release_11_index_mdx_9a1_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2408);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_03_15_boa_release_14_md_23c_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7819);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8453);
 
@@ -30,7 +23,7 @@ const frontMatter = {
 	tags: [
 		'post'
 	],
-	title: 'Boa release v0.11',
+	title: 'Boa release v0.14',
 	authors: 'boa-dev'
 };
 const contentTitle = undefined;
@@ -41,27 +34,36 @@ const assets = {
 
 
 
-const toc = [];
+const toc = [{
+  "value": "Summary",
+  "id": "summary",
+  "level": 2
+}];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
+    h2: "h2",
     p: "p",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__/* .useMDXComponents */ .R)(),
     ...props.components
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Boa has reached a new release. v0.11, our biggest one yet!"
+    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "summary",
+      children: "Summary"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["Since v0.10 we've closed 77 issues and merged 129 pull requests. The engine has been faster and more compliant to the spec. Below are some of the highlights but please see the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/blob/main/CHANGELOG.md#0110-2021-01-14",
-        children: "changelog"
-      }), " for more information."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["What is Boa? See the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+      children: ["Boa v0.14 is here! After almost 6 months of development, we are very happy to present you the newest release of the Boa\nJavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from webassembly. See\nthe ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "/about",
-        children: "About"
-      }), " page for more info."]
+        children: "about"
+      }), " page for more info. Together with this release, we present you: A new way to contribute to Boa, a virtual machine, usable examples and much more."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 41.01% to 49.74%\nin the official ECMAScript Test Suite (Test262). The engine now passes 43,986 tests, coming from 33,192 in Boa 0.13\n(32.5% increase), and we have closed 40 issues and merged 137 pull requests. You can check the full list of changes\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/boa/blob/v0.14/CHANGELOG.md",
+        children: "here"
+      }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/conformance",
+        children: "here"
+      }), "."]
     })]
   });
 }
@@ -79,6 +81,13 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 7819:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/03/15/boa-release-14","source":"@site/blog/2022-03-15-boa-release-14.md","title":"Boa release v0.14","description":"Summary","date":"2022-03-15T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":6.44,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.14","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.15","permalink":"/blog/2022/06/10/boa-release-15"},"nextItem":{"title":"Boa release v0.13","permalink":"/blog/2021/09/30/boa-release-13"}}');
 
 /***/ }),
 

@@ -1,14 +1,14 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[7000],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6299],{
 
-/***/ 3304:
+/***/ 911:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/10/24/boa-usage","source":"@site/blog/2022-10-24-boa-usage.md","title":"Adding a JavaScript interpreter to your Rust project","description":"Introduction","date":"2022-10-24T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":13.13,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Adding a JavaScript interpreter to your Rust project","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.17","permalink":"/blog/2023/07/08/boa-release-17"},"nextItem":{"title":"Boa release v0.16","permalink":"/blog/2022/09/25/boa-release-16"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/09/25/boa-release-16","source":"@site/blog/2022-09-25-boa-release-16.md","title":"Boa release v0.16","description":"Summary","date":"2022-09-25T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":4.11,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.16","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Adding a JavaScript interpreter to your Rust project","permalink":"/blog/2022/10/24/boa-usage"},"nextItem":{"title":"Boa release v0.15","permalink":"/blog/2022/06/10/boa-release-15"}}');
 
 /***/ }),
 
-/***/ 5068:
+/***/ 4653:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -17,10 +17,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_10_24_boa_usage_md_fb9_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_09_25_boa_release_16_md_00a_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_10_24_boa_usage_md_fb9_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3304);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2022_09_25_boa_release_16_md_00a_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(911);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8453);
 
@@ -30,7 +30,7 @@ const frontMatter = {
 	tags: [
 		'post'
 	],
-	title: 'Adding a JavaScript interpreter to your Rust project',
+	title: 'Boa release v0.16',
 	authors: 'boa-dev'
 };
 const contentTitle = undefined;
@@ -42,14 +42,13 @@ const assets = {
 
 
 const toc = [{
-  "value": "Introduction",
-  "id": "introduction",
+  "value": "Summary",
+  "id": "summary",
   "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
-    em: "em",
     h2: "h2",
     p: "p",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__/* .useMDXComponents */ .R)(),
@@ -57,33 +56,21 @@ function _createMdxContent(props) {
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "introduction",
-      children: "Introduction"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "When we develop tools for our users, we sometimes want to give them some form of control over how\nthey work. This is common in games, where we can add scripting for our users to be able to create\nextensions, or even for business tools, where we allow our customer to change or extend the\nbehaviour of our platform. For those cases, using Rust, a compiled, type safe language can be a\nchallenge, since once a program has been compiled, it's tricky to change or extend it at runtime.\nFurthermore, many of our users will prefer to use a more common scripting language, such as\nJavaScript."
+      id: "summary",
+      children: "Summary"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["This is where Boa enters the scene. Boa is a Javascript engine fully written in Rust. Currently, it\ncan be used in places where you need most of the JavaScript language to work, even though, we would\nadvise to wait to get all our ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/issues?q=64+162+718+773+2068+1930+1922+1917+1900+1848+1805+1570+1402+1307+1180+is%3Aopen",
-        children: "known blocker bugs"
-      }), " solved before using this for critical\nworkloads. You can check how conformant we are with the official ECMAScript specification\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boa-dev.github.io/boa/test262/",
+      children: ["Boa v0.16 is now available! After around 3 months of development, we are very happy to present you the newest release of\nthe Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and you can even use it from\nWebAssembly. See the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/about",
+        children: "about"
+      }), " page for more info."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Boa currently supports part of the JavaScript language. In this release, our conformance has grown from 62.29% to 74.53%\nin the official ECMAScript Test Suite (Test262). The engine now passes 68,612 tests, coming from 56,372 in Boa 0.15\n(21.7% increase), and we have closed 9 issues and merged 59 pull requests. You can check the full list of changes\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/boa/blob/v0.16/CHANGELOG.md",
+        children: "here"
+      }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/conformance",
         children: "here"
       }), "."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["And, before going further, we would like to mention that you can contribute to Boa by solving one\nof the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22%2CHacktoberfest%2CE-Easy%2C%22good+first+issue%22+no%3Aassignee",
-        children: "issues"
-      }), " where we need special help, and we now also accept financial contributions\nin ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://opencollective.com/boa",
-        children: "our OpenCollective"
-      }), " page."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.em, {
-        children: ["Note: You can see more examples of integrating Boa in ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-          href: "https://github.com/boa-dev/boa/tree/main/boa_examples",
-          children: "our repository"
-        }), "."]
-      })
     })]
   });
 }

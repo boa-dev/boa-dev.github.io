@@ -4,7 +4,7 @@
 /***/ 3860:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/12/05/boa-release-020","source":"@site/blog/2024-12-05-boa-release-020/index.mdx","title":"Boa release v0.20","description":"Boa release v0.20","date":"2024-12-05T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":9.61,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.20","description":"Boa release v0.20","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"How ECMAScript Engines Optimize Your Variables","permalink":"/blog/2025/03/05/local-variables"},"nextItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/12/05/boa-release-020","source":"@site/blog/2024-12-05-boa-release-020/index.mdx","title":"Boa release v0.20","description":"Boa release v0.20","date":"2024-12-05T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":9.57,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.20","description":"Boa release v0.20","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"How ECMAScript Engines Optimize Your Variables","permalink":"/blog/2025/03/05/local-variables"},"nextItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"}}');
 
 /***/ }),
 
@@ -269,7 +269,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/boa/blob/v0.19/CHANGELOG.md",
         children: "here"
       }), ", and the full information on conformance\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {

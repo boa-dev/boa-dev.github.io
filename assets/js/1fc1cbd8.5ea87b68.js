@@ -1,7 +1,14 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[786],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6533],{
 
-/***/ 6583:
+/***/ 4786:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2023/07/08/boa-release-17","source":"@site/blog/2023-07-08-boa-release-17.md","title":"Boa release v0.17","description":"Summary","date":"2023-07-08T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":12.86,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.17","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.18","permalink":"/blog/2024/03/07/boa-release-18"},"nextItem":{"title":"Adding a JavaScript interpreter to your Rust project","permalink":"/blog/2022/10/24/boa-usage"}}');
+
+/***/ }),
+
+/***/ 7952:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10,10 +17,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2024_03_07_boa_release_18_md_b26_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2023_07_08_boa_release_17_md_ec9_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2024_03_07_boa_release_18_md_b26_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6992);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_2023_07_08_boa_release_17_md_ec9_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4786);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8453);
 
@@ -23,7 +30,7 @@ const frontMatter = {
 	tags: [
 		'post'
 	],
-	title: 'Boa release v0.18',
+	title: 'Boa release v0.17',
 	authors: 'boa-dev'
 };
 const contentTitle = undefined;
@@ -53,51 +60,41 @@ function _createMdxContent(props) {
       id: "summary",
       children: "Summary"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["Boa v0.18 is now available! After 7 months of development we are very happy to present you the latest\nrelease of the Boa JavaScript engine. Boa makes it easy to embed a JS engine in your projects, and\nyou can even use it from WebAssembly. See the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+      children: ["Boa v0.17 is now available! This is one of the biggest Boa releases since the project started, and after around 7 months\nof development, we are very happy to present you the latest release of the Boa JavaScript engine. Boa makes it easy to\nembed a JS engine in your projects, and you can even use it from WebAssembly. See the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "/about",
         children: "about"
       }), " page for more info."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["In this release, our conformance has grown from 79.36% to 85.03% in the official ECMAScript Test Suite\n(Test262). This means we now pass ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.strong, {
-        children: "3,550"
-      }), " more tests than in the previous version. Moreover, our\namount of ignored tests decreased from ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.strong, {
-        children: "9,496"
-      }), " to ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.strong, {
-        children: "1,391"
-      }), " thanks to all the new builtins we have\nimplemented for this release."]
+      children: ["In this release, our conformance has grown from 74.53% to 78.74% in the official ECMAScript Test Suite (Test262). While\nthis might look as a small increase, we now pass ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.strong, {
+        children: "6,079"
+      }), " more tests than in the previous version. In any case, the big\nchanges in this release are not related to conformance, but to huge internal enhancements and new APIs that you will be\nable to use."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["You can check the full list of changes ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/blob/v0.18/CHANGELOG.md",
+        href: "https://github.com/boa-dev/boa/blob/v0.17/CHANGELOG.md",
         children: "here"
-      }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/test262/",
+      }), ", and the full information on conformance ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["You probably noticed that something seems different... This release marks a major update to the design\nof our website, and the introduction of our new logo!\nWe'd like to thank ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://github.com/ZackMitkin",
-        children: "@ZackMitkin"
-      }), " for being the one that started the\nwork on this nifty redesign, and ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://github.com/kelbazz",
-        children: "@kelbazz"
-      }), " for designing the logo.\nWe're planning to add some additional pages to learn more about the APIs that Boa exposes.\nAdditionally, expect some more blog posts from us in the future! We would like to write about how to\nuse certain APIs, design challenges that we encountered while developing the engine, and internal\nimplementation details.\nSubscribe to our ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boajs.dev/blog/rss.xml",
-        children: "RSS feed"
-      }), " if you're interested in staying up to date!"]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["This big release was partly possible thanks to those who have ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://opencollective.com/boa",
-        children: "supported us"
-      }), ".\nThanks to funds we've received we have been able to renew our domain name, remunerate members of the\nteam who have worked on the features released, and discuss the possibility of using dedicated servers\nfor benchmarking. If you wish to sponsor Boa, you can do so by donating to our ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+      children: ["Moreover, this big release was partly possible thanks to a grant by ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://litprotocol.com/",
+        children: "Lit Protocol"
+      }), ". Thanks to\nthis grant, we were able to remunerate 2 team members for their 20h/week work each during three and a half months. If\nyou wish to sponsor Boa, you can do so by donating to our ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "https://opencollective.com/boa",
         children: "open collective"
-      }), ".\nYou can also check ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+      }), ". You can also check\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3AE-Easy",
         children: "easy"
       }), " or ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22",
         children: "good first issues"
-      }), " if you want to contribute\nsome code instead."]
+      }), "."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Furthermore, we now have a new domain for Boa, ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://boajs.dev",
+        children: "boajs.dev"
+      }), "."]
     })]
   });
 }
@@ -115,13 +112,6 @@ function MDXContent(props = {}) {
 }
 
 
-
-/***/ }),
-
-/***/ 6992:
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/03/07/boa-release-18","source":"@site/blog/2024-03-07-boa-release-18.md","title":"Boa release v0.18","description":"Summary","date":"2024-03-07T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":20.34,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.18","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.19","permalink":"/blog/2024/07/09/boa-release-19"},"nextItem":{"title":"Boa release v0.17","permalink":"/blog/2023/07/08/boa-release-17"}}');
 
 /***/ }),
 

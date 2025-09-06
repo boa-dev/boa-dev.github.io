@@ -99,7 +99,7 @@ function MDXProvider(properties) {
 /***/ 8617:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2021/09/30/boa-release-13","source":"@site/blog/2021-09-30-boa-release-13.md","title":"Boa release v0.13","description":"Boa v0.13 is here! Boa is a JavaScript engine written in the Rust programming language. It makes it easy to embed a JS engine in your projects, and you can even use it from webassembly. See the about page for more info.","date":"2021-09-30T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":4.91,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.13","authors":"boa-dev","permalink":"2021/09/30/boa-release-13.html"},"unlisted":false,"prevItem":{"title":"Boa release v0.14","permalink":"/blog/2022/03/15/boa-release-14"},"nextItem":{"title":"Boa release v0.12","permalink":"/blog/2021/06/07/boa-release-12"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2021/09/30/boa-release-13","source":"@site/blog/2021-09-30-boa-release-13.md","title":"Boa release v0.13","description":"Boa v0.13 is here! Boa is a JavaScript engine written in the Rust programming language. It makes it easy to embed a JS engine in your projects, and you can even use it from webassembly. See the about page for more info.","date":"2021-09-30T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":4.89,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.13","authors":"boa-dev","permalink":"2021/09/30/boa-release-13.html"},"unlisted":false,"prevItem":{"title":"Boa release v0.14","permalink":"/blog/2022/03/15/boa-release-14"},"nextItem":{"title":"Boa release v0.12","permalink":"/blog/2021/06/07/boa-release-12"}}');
 
 /***/ }),
 
@@ -283,7 +283,7 @@ function _createMdxContent(props) {
       children: "Since v0.12 we have managed to pass 6391 more tests and are 7% more conformant. This has been great progress by all involved and we hope this continues to improve. Most of these new passes have come from refactors across the codebase which have had little impact on performance, in fact, v0.13 is much faster than v0.12."
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["You can track Boa's conformance to the specification ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boa-dev.github.io/boa/test262/#",
+        href: "/conformance",
         children: "here"
       })]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {

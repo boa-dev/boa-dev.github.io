@@ -4,7 +4,7 @@
 /***/ 911:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/09/25/boa-release-16","source":"@site/blog/2022-09-25-boa-release-16.md","title":"Boa release v0.16","description":"Summary","date":"2022-09-25T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":4.13,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.16","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Adding a JavaScript interpreter to your Rust project","permalink":"/blog/2022/10/24/boa-usage"},"nextItem":{"title":"Boa release v0.15","permalink":"/blog/2022/06/10/boa-release-15"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2022/09/25/boa-release-16","source":"@site/blog/2022-09-25-boa-release-16.md","title":"Boa release v0.16","description":"Summary","date":"2022-09-25T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":4.11,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.16","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Adding a JavaScript interpreter to your Rust project","permalink":"/blog/2022/10/24/boa-usage"},"nextItem":{"title":"Boa release v0.15","permalink":"/blog/2022/06/10/boa-release-15"}}');
 
 /***/ }),
 
@@ -102,7 +102,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/boa/blob/v0.16/CHANGELOG.md",
         children: "here"
       }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boa-dev.github.io/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {

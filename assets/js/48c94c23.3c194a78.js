@@ -4,7 +4,7 @@
 /***/ 1828:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/07/09/boa-release-19","source":"@site/blog/2024-07-09-boa-release-19.md","title":"Boa release v0.19","description":"More progress on Temporal, new benchmarks, migration to Matrix, and more...","date":"2024-07-09T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":10.06,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.19","description":"More progress on Temporal, new benchmarks, migration to Matrix, and more...","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.20","permalink":"/blog/2024/12/05/boa-release-020"},"nextItem":{"title":"Boa release v0.18","permalink":"/blog/2024/03/07/boa-release-18"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2024/07/09/boa-release-19","source":"@site/blog/2024-07-09-boa-release-19.md","title":"Boa release v0.19","description":"More progress on Temporal, new benchmarks, migration to Matrix, and more...","date":"2024-07-09T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":10.02,"hasTruncateMarker":true,"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Boa release v0.19","description":"More progress on Temporal, new benchmarks, migration to Matrix, and more...","authors":"boa-dev"},"unlisted":false,"prevItem":{"title":"Boa release v0.20","permalink":"/blog/2024/12/05/boa-release-020"},"nextItem":{"title":"Boa release v0.18","permalink":"/blog/2024/03/07/boa-release-18"}}');
 
 /***/ }),
 
@@ -145,7 +145,7 @@ function _createMdxContent(props) {
         href: "https://github.com/boa-dev/boa/blob/v0.19/CHANGELOG.md",
         children: "here"
       }), ", and the full information on conformance\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "https://boajs.dev/boa/test262/",
+        href: "/conformance",
         children: "here"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
