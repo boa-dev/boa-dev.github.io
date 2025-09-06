@@ -169,10 +169,11 @@ This has been long overdue. Boa's garbage collector is a forked and
 modified verison of `rust-gc`, and we have long been pushing our forked
 gc to its limits.
 
-We have seen plenty of evidence that simply swapping allocators can
-increase Boa's performance, and work on this will hopefully resume soon.
-If you're interested in garbage collectors and/or would be interested in
-helping out, feel free to join our GC room on [Matrix].
+We have seen some evidence from previous pull requests that simply swapping
+allocators from Rust's global allocator can increase Boa's performance, and
+work on this will hopefully resume soon. If you're interested in garbage
+collectors and/or would be interested in helping out, feel free to join our
+GC room on [Matrix].
 
 ### Runtime functionality
 
@@ -186,10 +187,16 @@ too large, we will split `boa_runtime` into it's own repository. If you
 are interested in implementing any runtime features or contributing to
 a runtime, feel free to reach out.
 
-### Continuing improvement of performance
+### Continuing performance improvements
 
 As mentioned on previous release posts, we will continue to further work
 on improving Boa's overall performance.
+
+### `Intl` and ECMA402 conformance
+
+We currently have some general support for the ECMA402 and ECMAScript's `Intl` object. We
+will continue to some general work on ECMA402 conformance to allow Boa to be fully usable
+for internationalization use cases.
 
 ## How can you support Boa?
 
