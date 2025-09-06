@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
     title: "Aims for ECMAScript Conformance",
     Svg: new_logo_yellow,
     description: (
-      <>Boa passes more than 80% of ECMAScripts test262 test suite.</>
+      <>Boa passes more than 90% of ECMAScripts test262 test suite.</>
     ),
   },
   {
