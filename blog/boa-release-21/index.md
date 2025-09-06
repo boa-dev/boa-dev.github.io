@@ -17,9 +17,9 @@ info.
 In this release, our conformance has grown from 89.92% to 93.94% in the
 official ECMAScript Test Suite (Test262). Our growth in conformance is
 driven by increased conformance for Temporal (discussed further below)
-with the rest of the development effort being focused on performance and
-runtime features. We will continue to implement more of the
-specification; however, as of the current moment, Boa's conformance
+with the rest of the development effort being focused on performance,
+internal improvements, and runtime features. We will continue to implement
+more of the specification; however, as of the current moment, Boa's conformance
 aligns with the major browser engine's conformance, so future increases
 in conformance will be minor or bound to the feature size going forward.
 
@@ -34,15 +34,13 @@ information on conformance [here][conformance].
 
 There has been a lot of progress made on Temporal, the new Stage 3
 date/time proposal. With this release, Boa's conformance on Temporal
-grew from 40.67% to 97.06%. As of this moment, Boa is the second most
-conformant Temporal implementation behind SpiderMonkey with others soon
-to follow.
+grew from 40.67% to ~97%.
 
 The implementation is backed by the `temporal_rs` date/time Rust
 library, which we went over briefly in our June
 [blog post](./2025-06-15-temporal-impl-1.md) with hopefully another post
-in the not too distant future. So far, `temporal_rs` has been used in
-both V8 and Keisel to implement Temporal as well.
+in the not too distant future. So far, `temporal_rs` has also been used in
+both V8 and Keisel to implement Temporal.
 
 Temporal can be used from `boa_cli` or enabled in `boa_engine` with the
 `experimental` or `temporal` feature.
@@ -62,13 +60,19 @@ and help with `temporal_rs`.
 
 ### Span nodes and error backtraces
 
-We also closed an outstanding issue of supporting span nodes in our parser and AST. This
-allowed us to implement backtraces to provide better debugging information when using
-Boa.
+We also add support for span nodes in our parser and AST. Span nodes mark the start and
+end index in the source code for a specific token.
+
+As a result, this release of Boa supports error backtraces when an exception is thrown
+as seen below.
 
 ![backtrace-example](./img/backtrace.gif)
 
-### New Set methods
+This feature will greatly help with debugging errors when using Boa.
+
+### Specification updates
+
+#### Set methods
 
 This release adds support for the new set methods added in ES2025.
 
@@ -85,7 +89,7 @@ The new methods are:
 Thanks to [@Hemenguelbindi](https://github.com/@Hemenguelbindi) for
 their work on this feature.
 
-### Float16 support for TypedArrays, Dataview and Math built-ins
+#### Float16 support for TypedArrays, Dataview and Math built-ins
 
 This release adds support for `f16` types for the TypedArray, Dataview, and Math
 built-ins.
@@ -95,7 +99,7 @@ const x = new Float16Array([37, 42.123456]);
 console.log(x[1]); // 42.125
 ```
 
-### Error.isError
+#### Error.isError
 
 This release adds support for `Error.isError`, which is accepted for ES2026.
 
@@ -103,7 +107,7 @@ This release adds support for `Error.isError`, which is accepted for ES2026.
 let check = Error.isError(new Error()); // returns true
 ```
 
-### Math.sumPrecise
+#### Math.sumPrecise
 
 This release adds support for `Math.sumPrecise`, which is accepted for ES2026.
 
@@ -136,12 +140,22 @@ against the Web Platform Tests (WPT).
 
 ## Performance
 
+### NaN Boxing
+
+With this release, Boa's `JsValue` will use nan-boxing by default. The NaN boxing of `JsValue`
+increased memory and runtime performance over the older enum. 
+
+As a note, the current implementation is not compatible with all platforms. While we hope
+to address this in the future. The legacy enum JsValue will be available via the `jsvalue-enum`
+feature flag.
+
+Unfamiliar with NaN Boxing? We won't go over it in depth here, but we recommend
+[this article](https://piotrduperas.com/posts/nan-boxing) to learn more.
+
 ### Register VM
 
-With this release, Boa's virtual machine (VM) moved from a stack based
-VM to a register based VM.
-
-TODO: Potentially add more here
+Boa's virtual machine (VM) moved from a stack based VM to a register based VM in
+[PR #3798](https://github.com/boa-dev/boa/pull/3798).
 
 ## New Contributors
 
@@ -163,14 +177,19 @@ helping out, feel free to join our GC room on [Matrix].
 ### Runtime functionality
 
 The `boa_runtime` crate was initially meant to contain functionality
-that was not meant to exist in the core engine, primarily our console
-implementation. Noticeably, we have since added more runtime features to
-the crate with more expected in the next release.
+that was not meant to exist in the core ECMAScript implementation, for instance
+the console implementation. Noticeably, we have since added more runtime
+features to the crate with even more features expected in the next release.
 
 Our current plan is if there is enough interest and the crate becomes
 too large, we will split `boa_runtime` into it's own repository. If you
-are interested in implementing any runtime features, feel free to reach
-out.
+are interested in implementing any runtime features or contributing to
+a runtime, feel free to reach out.
+
+### Continuing improvement of performance
+
+As mentioned on previous release posts, we will continue to further work
+on improving Boa's overall performance.
 
 ## How can you support Boa?
 
