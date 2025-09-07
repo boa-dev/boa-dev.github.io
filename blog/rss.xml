@@ -511,7 +511,7 @@ release of the Boa JavaScript engine. Boa makes it easy to embed a JS engine in 
 you can even use it from WebAssembly. See the <a href="https://boajs.dev/about">about</a> page for more info.</p>
 <p>In this release, our conformance has grown from 87.3% to 89.92% in the official ECMAScript Test Suite
 (Test262). This small jump is expected as we're shifting most of our focus to performance as the majority of the engine is now conformant. We will continue to implement more of the specification as we go along but we expect these changes to be much smaller than we've been used to.</p>
-<p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.19/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
+<p>You can check the full list of changes <a href="https://github.com/boa-dev/boa/blob/v0.20/CHANGELOG.md" target="_blank" rel="noopener noreferrer">here</a>, and the full information on conformance
 <a href="https://boajs.dev/conformance">here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="feature-highlights">Feature Highlights<a href="https://boajs.dev/blog/2024/12/05/boa-release-020#feature-highlights" class="hash-link" aria-label="Direct link to Feature Highlights" title="Direct link to Feature Highlights">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="temporal">Temporal<a href="https://boajs.dev/blog/2024/12/05/boa-release-020#temporal" class="hash-link" aria-label="Direct link to Temporal" title="Direct link to Temporal">​</a></h3>
