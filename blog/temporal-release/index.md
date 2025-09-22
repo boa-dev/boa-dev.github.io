@@ -237,55 +237,72 @@ features.
 
 ```rust
 use temporal_rs::Temporal;
-let today = Temporal::now().to_plain_date_iso(None).unwrap()
 
+// Get today's date
+let today = Temporal::now().to_plain_date_iso(None).unwrap()
 ```
 
 #### Date operation's available
 
+Temporal provides a nice API for working with date and date/time via
+`PlainDate` and `PlainDateTime`.
+
 ```rust
-use temporal_rs::{Temporal, Calendar, partial::PartialDuration, options::DifferenceSettings};
-let today = Temporal::now().to_plain_date_iso(None).unwrap();
+use std::convert::TryFrom;
+use temporal_rs::{Calendar, Temporal, options::DifferenceSettings, partial::PartialDuration};
+
+// Get today's date
+let today = Temporal::now().plain_date_iso(None).unwrap();
 
 // We can add a Duration.
 let partial = PartialDuration::empty().with_days(1);
-let tomorrow = today.add(Duration::from_partial_duration(partial).unwrap()).unwrap();
+let tomorrow = today.add(&partial.try_into().unwrap(), None).unwrap();
 
 // We can get the difference two dates
-let diff = today.since(&tomorrow, DifferenceSettings::default()).unwrap();
+let diff = today
+    .since(&tomorrow, DifferenceSettings::default())
+    .unwrap();
 
 // We can change the calendar
 let tomorrow_japanese = tomorrow.with_calendar(Calendar::JAPANESE);
 
 // We can retrieve the calendar's RFC9557 string
-let tomorrow_string = tomorrow_japanese.to_string();
+println!("{tomorrow_japanese}");
 ```
 
-#### Working with `ZonedDateTime`
+#### Working with dates and time zones
+
+You can also easily work with dates and time zones with the
+`ZonedDateTime` type.
 
 ```rust
-use temporal_rs::{ZonedDateTime, TimeZone, Temporal};
-use temporal_rs::options::{Disambiguation, OffsetDisambiguation, DifferenceSettings};
+use temporal_rs::options::{DifferenceSettings, Disambiguation, OffsetDisambiguation, Unit};
+use temporal_rs::{Calendar, Temporal, TimeZone, ZonedDateTime};
 
 // Parse a ZonedDateTime from utf8 bytes.
 let zdt = ZonedDateTime::from_utf8(
     b"2025-03-01T11:16:10Z[America/Chicago][u-ca=iso8601]",
     Disambiguation::Compatible,
     OffsetDisambiguation::Reject,
-).unwrap();
+)
+.unwrap();
 
 // Change the time zone.
 let zurich_zone = TimeZone::try_from_str("Europe/Zurich").unwrap();
-let zdt_zurich = zdt.with_timezone(zurich_zone).unwrap();
+let _zdt_zurich = zdt.with_timezone(zurich_zone).unwrap();
 
 // Or get the current ZonedDateTime
 let today = Temporal::now().zoned_date_time_iso(None).unwrap();
 
 // Difference the two `ZonedDateTime`s
-let diff = today.since(&zdt, DifferenceSettings::default()).unwrap();
+let mut options = DifferenceSettings::default();
+options.largest_unit = Some(Unit::Year);
+let diff = today.since(&zdt, options).unwrap();
+println!("{diff}");
 
 // Change the calendar
 let today_coptic = today.with_calendar(Calendar::COPTIC);
+println!("{today_coptic}");
 ```
 
 While we can extend these examples further, a more fun exercise for the
