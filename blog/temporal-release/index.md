@@ -144,7 +144,7 @@ represented in `temporal_rs` by the `Calendar` and `TimeZone` types.
 | PlainYearMonth | Calendar date                     | yes              | no                |
 | PlainMonthDay  | Calendar date                     | yes              | no                |
 
-There is also the `Now`, which provides access to the current host
+There is also `Now`, which provides access to the current host
 system time. This can then be used to map the current `Instant` to any
 of the above Temporal types.
 
