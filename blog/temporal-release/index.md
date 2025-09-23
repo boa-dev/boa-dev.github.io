@@ -388,8 +388,8 @@ Once Temporal is "stabilized", we will move forward with a 1.0 release.
 
 `temporal_rs` started as an interesting experiment in creating an engine
 agnostic library of the Temporal API that could also be usable as a
-date/time library in native Rust code. We've seen pretty successful
-results from other engines adopting the library for use. And with any
+date/time library in native Rust code, but seeing the wide adoption we've
+been getting from other engines, we can say that this project has been a great success! And with any
 luck, we hope this library will find its place in the Rust ecosystem as well.
 
 ## Special thanks
