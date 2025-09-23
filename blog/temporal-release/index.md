@@ -98,8 +98,8 @@ ago? Well, plenty!
   `Duration`.
 - `Duration` moved from using `f64` internally to `FiniteF64`, and then
   to non-floating-point integers.
-- We moved from a large `TemporalFields` type to the "Partial" objects
-  to adapt for JavaScript property bags.
+- We moved from a large `TemporalFields` type to "Partial" objects,
+  which better represent JavaScript property bags.
 - A good portion of missing method implementations were added as well.
 - Internal utility methods were moved to the Neri-Schneider algorithms.
 
