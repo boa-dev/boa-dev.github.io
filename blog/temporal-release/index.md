@@ -103,8 +103,8 @@ ago? Well, plenty!
 - A good portion of missing method implementations were added as well.
 - Internal utility methods were moved to the Neri-Schneider algorithms.
 
-In general, the implementation was moving along at a pretty decent pace
-and would continue to well into roughly April of 2025 (mostly helped
+In general, the implementation was moving along at a pretty decent pace,
+and would continue to do so well into roughly April of 2025 (mostly helped
 along by a group of students from the University of Bergen who began
 helping with the implementation in January 2025), but there was one
 final hurdle: time zone data and `ZonedDateTime`.
