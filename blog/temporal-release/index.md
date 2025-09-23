@@ -80,7 +80,7 @@ let date = Date::new_with_overflow(
 ```
 
 Luckily, custom calendar and time zone were removed from the
-specification. In the first half of 2024, so `temporal_rs` was able to
+specification in the first half of 2024, so `temporal_rs` was able to
 remove that support, which greatly benefitted the entire API. For
 instance, here's the same code in the 0.1 version of `temporal_rs`:
 
