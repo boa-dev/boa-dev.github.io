@@ -229,7 +229,7 @@ and importing the preferred provider from `timezone_provider` for the
 API's that require time zone data.
 
 For instance, to use the `FsTzdbProvider`, your `Cargo.toml` would look
-like the below.
+like the following.
 
 ```toml
 timezone_provider = { version = "0.0.17", features = ["tzif"] }
