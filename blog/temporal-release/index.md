@@ -233,7 +233,7 @@ like the following.
 
 ```toml
 timezone_provider = { version = "0.0.17", features = ["tzif"] }
-temporal_rs = { version = "0.1.0", no-default-features = true, features = ["sys"]}
+temporal_rs = { version = "0.1.0", default-features = false, features = ["sys"]}
 ```
 
 We include `sys` as a `temporal_rs` feature to have access to the system
