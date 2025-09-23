@@ -111,8 +111,7 @@ final hurdles: time zone data and `ZonedDateTime`.
 
 Time zones and time zone data are a topic for a completely different
 blog post in the future. But suffice to say, it took a little bit of time, and
-the `ZonedDateTime` implementation developed alongside the development
-of time zone data.
+`ZonedDateTime` was developed alongside the time zone data.
 
 The work began to stub out the general support of time zone data
 sourcing and `ZonedDateTime` in November 2024. Finally after almost 10
