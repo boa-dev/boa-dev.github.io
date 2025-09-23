@@ -391,8 +391,7 @@ Once Temporal is "stabilized", we will move forward with a 1.0 release.
 agnostic library of the Temporal API that could also be usable as a
 date/time library in native Rust code. We've seen pretty successful
 results from other engines adopting the library for use. And with any
-luck, we hope this library will also be useful for the Rust ecosystem as
-a whole as well.
+luck, we hope this library will find its place in the Rust ecosystem as well.
 
 ## Special thanks
 
