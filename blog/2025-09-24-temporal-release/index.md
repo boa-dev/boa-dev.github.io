@@ -1,11 +1,8 @@
 ---
 layout: post
 tags: [post]
-title:
-  "Temporal_rs is here! The calendar and time zone aware date/time
-  library powering Temporal in Boa, Kiesel, and V8"
-description:
-  A release post for temporal_rs, a calendar and time zone aware Rust
+title: "Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8"
+description: A release post for temporal_rs, a calendar and time zone aware Rust
   date/time library that powers Temporal implementations in Boa, Kiesel,
   and V8, along with any native Rust project.
 authors: temporal-dev
@@ -14,7 +11,7 @@ authors: temporal-dev
 ![clock banner](./img/clock-banner.jpg)
 
 After almost 2+ years of development, we're pleased to announce the 0.1
-release of `temporal_rs`. A calendar and time zone aware Rust date/time
+release of [`temporal_rs`](https://github.com/boa-dev/temporal). A calendar and time zone aware Rust date/time
 library based on ECMAScript's [Temporal API][mdn].
 
 `temporal_rs` is a highly conformant implementation of the Temporal API
@@ -409,8 +406,7 @@ Also, a huge thanks to all the Temporal champions for all their work on
 the specification, as well as the ICU4X project for their incredible
 ongoing work on calendars and all things i18n related.
 
-[mdn]:
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
 [v8-site]: https://v8.dev/
 [kiesel-site]: https://kiesel.dev/
 [yavashark-repo]: https://github.com/Sharktheone/yavashark
