@@ -257,7 +257,7 @@ use temporal_rs::Temporal;
 let today = Temporal::now().plain_date_iso(None).unwrap()
 ```
 
-#### Date operation's available
+#### Date operations available
 
 Temporal provides a nice API for working with date and date/time via
 `PlainDate` and `PlainDateTime`.
