@@ -124,8 +124,7 @@ were finally able to stabilize `temporal_rs`'s API for a 0.1 release.
 That's it for our brief background on `temporal_rs`.
 
 Date and time is hard, and there is a lot that goes into it, especially
-when it comes to calendars and time zones. But that also doesn't mean
-its not interesting.
+when it comes to calendars and time zones. But that's what makes it interesting!
 
 ## Temporal API overview
 
