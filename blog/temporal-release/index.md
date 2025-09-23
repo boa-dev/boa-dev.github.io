@@ -349,7 +349,7 @@ that provides some level of flexibility.
 
 Secondly, with how large the API is, `temporal_rs` streamlines the
 ability to adopt the Temporal API for any current and future
-implementations, alongside any future update that needs to be made can
+implementations, since any future updates can
 be done primarily in one place and then released downstream. While it's
 easy to say: "just use our library" to promote adoption. Seriously, just
 use the library. The Temporal API is massive from an implementation
