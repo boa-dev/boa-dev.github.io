@@ -36,7 +36,7 @@ In this section, we'll reflect on the overall implementation, some
 general difficulties we had along with lessons learned.
 
 The temporal implementation in Boa began over two years ago and
-culminated in a absolutely massive PR,
+culminated in an absolutely massive PR,
 [#3277](https://github.com/boa-dev/boa/pull/3277) (ASIDE from nekevss:
 mea culpa).
 
