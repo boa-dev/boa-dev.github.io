@@ -382,10 +382,10 @@ added features. Feel free to try it out, and provide feedback / file any
 issues you come across. Although, we will make changes and semantic
 versioning bumps based on feedback or the Temporal specification.
 
-Our current plan is that we hope have any remaining issues addressed and
-the API fully stable for when Temporal is accepted by tc39 and moved to
-stage 4. Once Temporal is stage 4, we will move forward with a 1.0
-release.
+Our current plan is to have any remaining issues addressed and the API
+fully stable, in preparation for the "stabilization" of Temporal and its
+subsequent introduction to the ECMAScript specification.
+Once Temporal is "stabilized", we will move forward with a 1.0 release.
 
 `temporal_rs` started as an interesting experiment in creating an engine
 agnostic library of the Temporal API that could also be usable as a
