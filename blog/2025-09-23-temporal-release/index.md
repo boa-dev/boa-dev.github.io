@@ -307,7 +307,7 @@ let zdt = ZonedDateTime::from_utf8(
 // We can get the current ZonedDateTime
 let today = Temporal::now().zoned_date_time_iso(None).unwrap();
 
-// And we can easily get the difference the two `ZonedDateTime`s
+// And we can easily get the difference between two `ZonedDateTime`s
 let mut options = DifferenceSettings::default();
 options.largest_unit = Some(Unit::Year);
 let diff = today.since(&zdt, options).unwrap();
