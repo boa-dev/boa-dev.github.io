@@ -1,10 +1,13 @@
 ---
 layout: post
 tags: [post]
-title: "Temporal_rs v0.1 release"
+title:
+  "Temporal_rs is here! The calendar and time zone aware date/time
+  library powering Temporal in Boa, Kiesel, and V8"
 description:
-  Powering the new date/time API in Boa, Kiesel, V8, and any Rust
-  projects near you!
+  A release post for temporal_rs, a calendar and time zone aware Rust
+  date/time library that powers Temporal implementations in Boa, Kiesel,
+  and V8, along with any native Rust project.
 authors: temporal-dev
 ---
 
