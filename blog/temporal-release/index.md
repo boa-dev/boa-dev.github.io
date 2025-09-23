@@ -44,7 +44,7 @@ The PR itself stubbed out a lot of the methods, implemented some
 Duration and Instant functionality, and started the support for custom
 calendars. There were, however, 2 major take aways from this PR: first,
 Temporal is a massive specification update; and second, there is a lot
-of room to potentially optimize Temporal if we did not deal with
+of room to potentially optimize Temporal if we do not deal with
 `JsValue` directly.
 
 After a couple weeks, the question came up amongst the maintainers:
