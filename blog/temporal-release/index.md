@@ -357,7 +357,7 @@ perspective and the glue code plus `temporal_rs` is relatively trivial
 in comparison to a fresh, from scratch implementation.
 
 Third, with adoption from multiple engines, `temporal_rs` benefits via
-further test coverage beyond the native Rust unit tests. For instance,
+external test coverage beyond the native Rust unit tests. For instance,
 of the engines that offer conformance numbers (Boa, Kiesel, and V8), all
 of them are currently north of 95% conformance with V8 reaching the
 highest at around 99% conformance. There is still a small disparity in
