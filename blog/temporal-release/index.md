@@ -272,7 +272,7 @@ let today = Temporal::now().plain_date_iso(None).unwrap();
 let partial = PartialDuration::empty().with_days(1);
 let tomorrow = today.add(&partial.try_into().unwrap(), None).unwrap();
 
-// We can get the difference two dates
+// We can get the difference between two dates
 let diff = today
     .since(&tomorrow, DifferenceSettings::default())
     .unwrap();
