@@ -363,8 +363,8 @@ of them are currently north of 95% conformance with V8 reaching the
 highest at around 99% conformance. The conformance difference between
 the engines being due to the current implementation state of other
 features, i.e. Boa still hasn't completed its `Intl.DateTimeFormat`
-implementation yet so it fails all ECMA402 `toLocaleString` tests. As a
-result though, we can be fairly confident in the general correctness of
+implementation yet so it fails all ECMA402 `toLocaleString` tests.
+Nonetheless, we can still be fairly confident in the general correctness of
 `temporal_rs`, and any potential bugs will ideally be found and
 addressed fairly quickly.
 
