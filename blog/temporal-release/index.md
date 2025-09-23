@@ -106,8 +106,8 @@ ago? Well, plenty!
 In general, the implementation was moving along at a pretty decent pace,
 and would continue to do so well into roughly April of 2025 (mostly helped
 along by a group of students from the University of Bergen who began
-helping with the implementation in January 2025), but there was one
-final hurdle: time zone data and `ZonedDateTime`.
+helping with the implementation in January 2025), but there were two
+final hurdles: time zone data and `ZonedDateTime`.
 
 Time zones and time zone data are a topic for a completely different
 blog post in the future. But suffice to say, it took a little time, and
