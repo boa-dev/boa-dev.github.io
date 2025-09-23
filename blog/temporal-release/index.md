@@ -190,7 +190,7 @@ data sourcing functionality is provided by `timezone_provider`, a sister
 crate of `temporal_rs` that provides a project agnostic crate alongside
 default trait implementations for sourcing time zone data.
 
-There default trait implementations currently consist of:
+We currently expose three types of provider implementations:
 
 - `CompiledTzdbProvider` (current default), a provider that parses time
   zone data at runtime using data compiled into the binary.
