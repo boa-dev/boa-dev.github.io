@@ -321,7 +321,7 @@ println!("{today_coptic}");
 ```
 
 While we can extend these examples further, a more fun exercise for the
-reader would be taking a look at the [Temporal cookbook][cookbook] as it
+reader would be to take a look at the [Temporal cookbook][cookbook], as it
 displays the utility of the Temporal API using JavaScript and all of
 these examples are now usable from Rust as well.
 
