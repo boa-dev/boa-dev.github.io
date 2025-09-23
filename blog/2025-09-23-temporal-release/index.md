@@ -8,6 +8,8 @@ description:
 authors: temporal-dev
 ---
 
+![clock banner](./img/clock-banner.jpg)
+
 After almost 2+ years of development, we're pleased to announce the 0.1
 release of `temporal_rs`. A calendar and time zone aware Rust date/time
 library based on ECMAScript's [Temporal API][mdn].
