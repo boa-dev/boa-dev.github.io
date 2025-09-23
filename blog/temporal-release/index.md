@@ -113,12 +113,12 @@ Time zones and time zone data are a topic for a completely different
 blog post in the future. But suffice to say, it took a little bit of time, and
 `ZonedDateTime` was developed alongside the time zone data.
 
-The work began to stub out the general support of time zone data
-sourcing and `ZonedDateTime` in November 2024. Finally after almost 10
-months of general work. The last major updates to time zone data
-sourcing was merged at the beginning of September in PR
+This work began in November 2024, by stubbing out the general support of time zone data
+sourcing and `ZonedDateTime`. Then, after almost 10 months of general work, the
+last major updates to time zone data
+sourcing were merged at the beginning of September in PR
 [#537](https://github.com/boa-dev/temporal/pull/537) and
-[#538](https://github.com/boa-dev/temporal/pull/538) and as a result, we
+[#538](https://github.com/boa-dev/temporal/pull/538). As a result, we
 were finally able to stabilize `temporal_rs`'s API for a 0.1 release.
 
 That's it for our brief background on `temporal_rs`.
