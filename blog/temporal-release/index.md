@@ -184,8 +184,9 @@ native Rust and ECMAScript implementers.
 ### Time zone data
 
 While we plan to go into time zones in a completely separate post, one
-of `temporal_rs`'s primary design decisions was to leave time zone data
-sourcing as customizable with available default sources. The time zone
+of `temporal_rs`'s primary design decisions was to offer a way to
+customize the source of time zone data, while also having an optional default
+source for convenience. The time zone
 data sourcing functionality is provided by `timezone_provider`, a sister
 crate of `temporal_rs` that provides a project agnostic crate alongside
 default trait implementations for sourcing time zone data.
