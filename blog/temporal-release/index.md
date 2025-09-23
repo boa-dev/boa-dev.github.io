@@ -370,9 +370,8 @@ result though, we can be fairly confident in the general correctness of
 `temporal_rs`, and any potential bugs will ideally be found and
 addressed fairly quickly.
 
-In general, `temporal_rs` is a pretty good test case with reference code
-for setting up a Rust library over FFI with usage in both a C++ and Zig
-codebase.
+In general, `temporal_rs` is a pretty good reference case for setting up a
+Rust library over FFI, being used in both a C++ and Zig codebase.
 
 ## Conclusion
 
