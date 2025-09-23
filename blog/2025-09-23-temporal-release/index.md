@@ -104,18 +104,18 @@ ago? Well, plenty!
 - Internal utility methods were moved to the Neri-Schneider algorithms.
 
 In general, the implementation was moving along at a pretty decent pace,
-and would continue to do so well into roughly April of 2025 (mostly helped
-along by a group of students from the University of Bergen who began
-helping with the implementation in January 2025), but there were two
-final hurdles: time zone data and `ZonedDateTime`.
+and would continue to do so well into roughly April of 2025 (mostly
+helped along by a group of students from the University of Bergen who
+began helping with the implementation in January 2025), but there were
+two final hurdles: time zone data and `ZonedDateTime`.
 
 Time zones and time zone data are a topic for a completely different
-blog post in the future. But suffice to say, it took a little bit of time, and
-`ZonedDateTime` was developed alongside the time zone data.
+blog post in the future. But suffice to say, it took a little bit of
+time, and `ZonedDateTime` was developed alongside the time zone data.
 
-This work began in November 2024, by stubbing out the general support of time zone data
-sourcing and `ZonedDateTime`. Then, after almost 10 months of general work, the
-last major updates to time zone data
+This work began in November 2024, by stubbing out the general support of
+time zone data sourcing and `ZonedDateTime`. Then, after almost 10
+months of general work, the last major updates to time zone data
 sourcing were merged at the beginning of September in PR
 [#537](https://github.com/boa-dev/temporal/pull/537) and
 [#538](https://github.com/boa-dev/temporal/pull/538). As a result, we
@@ -124,7 +124,8 @@ were finally able to stabilize `temporal_rs`'s API for a 0.1 release.
 That's it for our brief background on `temporal_rs`.
 
 Date and time is hard, and there is a lot that goes into it, especially
-when it comes to calendars and time zones. But that's what makes it interesting!
+when it comes to calendars and time zones. But that's what makes it
+interesting!
 
 ## Temporal API overview
 
@@ -140,13 +141,13 @@ represented in `temporal_rs` by the `Calendar` and `TimeZone` types.
 | PlainDateTime  | Calendar date and wall-clock time | yes              | no                |
 | ZonedDateTime  | Calendar date and exact time      | yes              | yes               |
 | Instant        | Exact time                        | no               | no                |
-| Duration       | None                              | no               | no                |
+| Duration       | Time span                         | no               | no                |
 | PlainYearMonth | Calendar date                     | yes              | no                |
 | PlainMonthDay  | Calendar date                     | yes              | no                |
 
-There is also `Now`, which provides access to the current host
-system time. This can then be used to map the current `Instant` to any
-of the above Temporal types.
+There is also `Now`, which provides access to the current host system
+time. This can then be used to map the current `Instant` to any of the
+above Temporal types.
 
 The types in the same categories will share similar APIs that are
 related to that category. For instance, all types that support a
@@ -185,11 +186,11 @@ native Rust and ECMAScript implementers.
 
 While we plan to go into time zones in a completely separate post, one
 of `temporal_rs`'s primary design decisions was to offer a way to
-customize the source of time zone data, while also having an optional default
-source for convenience. The time zone
-data sourcing functionality is provided by `timezone_provider`, a sister
-crate of `temporal_rs` that provides a project agnostic crate alongside
-default trait implementations for sourcing time zone data.
+customize the source of time zone data, while also having an optional
+default source for convenience. The time zone data sourcing
+functionality is provided by `timezone_provider`, a sister crate of
+`temporal_rs` that provides a project agnostic crate alongside default
+trait implementations for sourcing time zone data.
 
 We currently expose three types of provider implementations:
 
@@ -222,11 +223,12 @@ temporal_rs = "0.1.0"
 ```
 
 By default, `temporal_rs` will use a compiled time zone data provider
-that compiles the time zone data into the binary. If you prefer to
-use the file system time zone database or a zoneinfo64 resource bundle,
-you can disable the compiled time zone data by setting `default-features = false`;
-you can import your preferred provider from the `timezone_provider` crate,
-then provide it to any API that requires a time zone provider.
+that compiles the time zone data into the binary. If you prefer to use
+the file system time zone database or a zoneinfo64 resource bundle, you
+can disable the compiled time zone data by setting
+`default-features = false`; you can import your preferred provider from
+the `timezone_provider` crate, then provide it to any API that requires
+a time zone provider.
 
 For instance, to use the `FsTzdbProvider`, your `Cargo.toml` would look
 like the following.
@@ -236,8 +238,9 @@ timezone_provider = { version = "0.0.17", features = ["tzif"] }
 temporal_rs = { version = "0.1.0", default-features = false, features = ["sys"]}
 ```
 
-The `sys` feature for `temporal_rs` enables the default implementation for `Now`,
-and the `tzif` feature for `timezone_provider` enables the `FsTzdbProvider`.
+The `sys` feature for `temporal_rs` enables the default implementation
+for `Now`, and the `tzif` feature for `timezone_provider` enables the
+`FsTzdbProvider`.
 
 Please note: `timezone_provider` is still considered unstable for the
 near future.
@@ -252,7 +255,7 @@ features.
 ```rust
 use temporal_rs::Temporal;
 
-// Get today's date
+// We can easily retrieve today's date using `Temporal::now()`
 let today = Temporal::now().plain_date_iso(None).unwrap()
 ```
 
@@ -265,10 +268,10 @@ Temporal provides a nice API for working with date and date/time via
 use std::convert::TryFrom;
 use temporal_rs::{Calendar, Temporal, options::DifferenceSettings, partial::PartialDuration};
 
-// Get today's date
+// We can get today's date
 let today = Temporal::now().plain_date_iso(None).unwrap();
 
-// We can add a Duration.
+// We can also add a Duration.
 let partial = PartialDuration::empty().with_days(1);
 let tomorrow = today.add(&partial.try_into().unwrap(), None).unwrap();
 
@@ -281,7 +284,7 @@ let diff = today
 let tomorrow_japanese = tomorrow.with_calendar(Calendar::JAPANESE);
 
 // We can retrieve the calendar's RFC9557 string
-println!("{tomorrow_japanese}");
+println!("{tomorrow_japanese}"); // 2025-09-23[u-ca=japanese]
 ```
 
 #### Working with dates and time zones
@@ -293,7 +296,7 @@ You can also easily work with dates and time zones with the
 use temporal_rs::options::{DifferenceSettings, Disambiguation, OffsetDisambiguation, Unit};
 use temporal_rs::{Calendar, Temporal, TimeZone, ZonedDateTime};
 
-// Parse a ZonedDateTime from utf8 bytes.
+// We can parse a ZonedDateTime from utf8 bytes.
 let zdt = ZonedDateTime::from_utf8(
     b"2025-03-01T11:16:10Z[America/Chicago][u-ca=iso8601]",
     Disambiguation::Compatible,
@@ -301,27 +304,27 @@ let zdt = ZonedDateTime::from_utf8(
 )
 .unwrap();
 
-// Change the time zone.
-let zurich_zone = TimeZone::try_from_str("Europe/Zurich").unwrap();
-let _zdt_zurich = zdt.with_timezone(zurich_zone).unwrap();
-
-// Or get the current ZonedDateTime
+// We can get the current ZonedDateTime
 let today = Temporal::now().zoned_date_time_iso(None).unwrap();
 
-// Difference the two `ZonedDateTime`s
+// And we can easily get the difference the two `ZonedDateTime`s
 let mut options = DifferenceSettings::default();
 options.largest_unit = Some(Unit::Year);
 let diff = today.since(&zdt, options).unwrap();
-println!("{diff}");
+println!("{diff}"); // P6M22D
 
-// Change the calendar
+// We can change the calendar for the `ZonedDateTime`
 let today_coptic = today.with_calendar(Calendar::COPTIC);
-println!("{today_coptic}");
+println!("{today_coptic}"); // 2025-09-23T12:36:56.914365368-05:00[America/Chicago][u-ca=coptic]
+
+// We can also easily convert it into just the date.
+let today_plain_date_coptic = today_coptic.to_plain_date();
+println!("{today_coptic}"); // 2025-09-23[u-ca=coptic]
 ```
 
 While we can extend these examples further, a more fun exercise for the
-reader would be to take a look at the [Temporal cookbook][cookbook], as it
-displays the utility of the Temporal API using JavaScript and all of
+reader would be to take a look at the [Temporal cookbook][cookbook], as
+it displays the utility of the Temporal API using JavaScript and all of
 these examples are now usable from Rust as well.
 
 ## FFI and engine adoption
@@ -348,26 +351,26 @@ that provides some level of flexibility.
 
 Secondly, with how large the API is, `temporal_rs` streamlines the
 ability to adopt the Temporal API for any current and future
-implementations, since any future updates can
-be done primarily in one place and then released downstream. While it's
-easy to say: "just use our library" to promote adoption. Seriously, just
-use the library. The Temporal API is massive from an implementation
-perspective and the glue code plus `temporal_rs` is relatively trivial
-in comparison to a fresh, from scratch implementation.
+implementations, since any future updates can be done primarily in one
+place and then released downstream. `temporal_rs` plus the engine
+specific integration code, while not a small amount of code, is a
+relatively trivial amount of work in comparison to a from scratch
+implementation.
 
 Third, with adoption from multiple engines, `temporal_rs` benefits via
 external test coverage beyond the native Rust unit tests. For instance,
-of the engines that offer conformance numbers (Boa, Kiesel, and V8), all
-of them are currently north of 95% conformance with V8 reaching the
-highest at around 99% conformance. There is still a small disparity in
-conformance, but this can be explained by the absence of some related features, i.e. Boa still hasn't completed its `Intl.DateTimeFormat`
-implementation yet so it fails all ECMA402 `toLocaleString` tests.
-Nonetheless, we can still be fairly confident in the general correctness of
-`temporal_rs`, and any potential bugs will ideally be found and
-addressed fairly quickly.
+looking at the engines that offer conformance numbers (Boa, Kiesel, and
+V8), every Temporal implementation is currently north of 95% conformance
+with V8 reaching the highest at around 99% conformance. There is still a
+small disparity in conformance, but this can be explained by the absence
+of some related features, i.e. Boa still hasn't completed its
+`Intl.DateTimeFormat` implementation yet so it fails all ECMA402
+`toLocaleString` tests. Nonetheless, we can still be fairly confident in
+the general correctness of `temporal_rs`, and any potential bugs will
+ideally be found and addressed fairly quickly.
 
-In general, `temporal_rs` is a pretty good reference case for setting up a
-Rust library over FFI, being used in both a C++ and Zig codebase.
+In general, `temporal_rs` is a pretty good reference case for setting up
+a Rust library over FFI, being used in both a C++ and Zig codebase.
 
 ## Conclusion
 
@@ -379,14 +382,15 @@ versioning bumps based on feedback or the Temporal specification.
 
 Our current plan is to have any remaining issues addressed and the API
 fully stable, in preparation for the "stabilization" of Temporal and its
-subsequent introduction to the ECMAScript specification.
-Once Temporal is "stabilized", we will move forward with a 1.0 release.
+subsequent introduction to the ECMAScript specification. Once Temporal
+is "stabilized", we will move forward with a 1.0 release.
 
 `temporal_rs` started as an interesting experiment in creating an engine
 agnostic library of the Temporal API that could also be usable as a
-date/time library in native Rust code, but seeing the wide adoption we've
-been getting from other engines, we can say that this project has been a great success! And with any
-luck, we hope this library will find its place in the Rust ecosystem as well.
+date/time library in native Rust code, but seeing the wide adoption
+we've been getting from other engines, we can say that this project has
+been a great success! And with any luck, we hope this library will find
+its place in the Rust ecosystem as well.
 
 ## Special thanks
 
