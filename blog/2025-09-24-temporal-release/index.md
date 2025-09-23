@@ -289,7 +289,7 @@ let diff = today
 let tomorrow_japanese = tomorrow.with_calendar(Calendar::JAPANESE);
 
 // We can retrieve the calendar's RFC9557 string
-println!("{tomorrow_japanese}"); // 2025-09-23[u-ca=japanese]
+println!("{tomorrow_japanese}"); // 2025-09-24[u-ca=japanese]
 ```
 
 #### Working with dates and time zones
@@ -316,15 +316,15 @@ let today = Temporal::now().zoned_date_time_iso(None).unwrap();
 let mut options = DifferenceSettings::default();
 options.largest_unit = Some(Unit::Year);
 let diff = today.since(&zdt, options).unwrap();
-println!("{diff}"); // P6M22D
+println!("{diff}"); // P6M23D
 
 // We can change the calendar for the `ZonedDateTime`
 let today_coptic = today.with_calendar(Calendar::COPTIC);
-println!("{today_coptic}"); // 2025-09-23T12:36:56.914365368-05:00[America/Chicago][u-ca=coptic]
+println!("{today_coptic}"); // 2025-09-24T10:36:56.914365368-05:00[America/Chicago][u-ca=coptic]
 
 // We can also easily convert it into just the date.
 let today_plain_date_coptic = today_coptic.to_plain_date();
-println!("{today_coptic}"); // 2025-09-23[u-ca=coptic]
+println!("{today_coptic}"); // 2025-09-24[u-ca=coptic]
 ```
 
 While we can extend these examples further, a more fun exercise for the
