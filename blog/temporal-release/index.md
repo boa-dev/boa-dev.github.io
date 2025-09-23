@@ -221,12 +221,11 @@ temporal_rs = "0.1.0"
 ```
 
 By default, `temporal_rs` will use a compiled time zone data provider
-that compiles the time zone data into the binary.
-
-Currently, we do not have a way to select certain provider's via feature
-flag, but a provider can be selected by setting `no-default-features`
-and importing the preferred provider from `timezone_provider` for the
-API's that require time zone data.
+that compiles the time zone data into the binary. If you prefer to
+use the file system time zone database or a zoneinfo64 resource bundle,
+you can disable the compiled time zone data by setting `default-features = false`;
+you can import your preferred provider from the `timezone_provider` crate,
+then provide it to any API that requires a time zone provider.
 
 For instance, to use the `FsTzdbProvider`, your `Cargo.toml` would look
 like the following.
