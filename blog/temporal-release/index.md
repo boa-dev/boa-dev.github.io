@@ -402,8 +402,8 @@ Thanks to the University of Bergen students who helped drive some of the
 major conformance push earlier this year.
 
 Also, a huge thanks to all the Temporal champions for all their work on
-the specification as well as the ICU4X project for their incredible
-ongoing work on calendars and all things i18n datetime related.
+the specification, as well as the ICU4X project for their incredible
+ongoing work on calendars and all things i18n related.
 
 [mdn]:
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
