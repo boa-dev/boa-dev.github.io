@@ -360,10 +360,10 @@ implementation.
 Third, with adoption from multiple engines, `temporal_rs` benefits via
 external test coverage beyond the native Rust unit tests. For instance,
 looking at the engines that offer conformance numbers (Boa, Kiesel, and
-V8), every Temporal implementation is currently north of 95% conformance
-with V8 reaching the highest at around 99% conformance. There is still a
-small disparity in conformance, but this can be explained by the absence
-of some related features, i.e. Boa still hasn't completed its
+V8), each implementation is currently north of 95% conformance with V8
+reaching the highest at around 99% conformance. There is still a small
+disparity in conformance, but this can be explained by the absence of
+some related features, i.e. Boa still hasn't completed its
 `Intl.DateTimeFormat` implementation yet so it fails all ECMA402
 `toLocaleString` tests. Nonetheless, we can still be fairly confident in
 the general correctness of `temporal_rs`, and any potential bugs will
