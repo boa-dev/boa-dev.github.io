@@ -236,9 +236,8 @@ timezone_provider = { version = "0.0.17", features = ["tzif"] }
 temporal_rs = { version = "0.1.0", default-features = false, features = ["sys"]}
 ```
 
-We include `sys` as a `temporal_rs` feature to have access to the system
-for the default `Now` implementation. We provide the `tzif` feature to
-`timezone_provider` for the feature gate on `FsTzdbProvider`.
+The `sys` feature for `temporal_rs` enables the default implementation for `Now`,
+and the `tzif` feature for `timezone_provider` enables the `FsTzdbProvider`.
 
 Please note: `timezone_provider` is still considered unstable for the
 near future.
