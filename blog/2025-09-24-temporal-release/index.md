@@ -113,7 +113,7 @@ ago? Well, plenty!
 - We moved from a large `TemporalFields` type to "Partial" objects,
   which better represent JavaScript property bags.
 - A good portion of missing method implementations were added as well.
-- Internal utility methods were moved to the Neri-Schneider algorithms.
+- Internal utility methods were moved to the [Neri-Schneider algorithms](https://arxiv.org/abs/2102.06959).
 
 In general, the implementation was moving along at a pretty decent pace,
 and would continue to do so well into roughly April of 2025 (mostly
@@ -186,7 +186,7 @@ which can be broken down into 4 main groups.
 ![Temporal dependency graph](./img/temporal-dependencies.png)
 
 Notably, the dependencies that are highlighted in purple come from
-ICU4X. ICU4X is a phenomenal Rust project that takes a new approach to
+[ICU4X](https://github.com/unicode-org/icu4x). ICU4X is a phenomenal Rust project that takes a new approach to
 Unicode's ICU in order to make a new, more modular version of ICU.
 
 While ICU4X provides the majority of the internationalization (i18n),
