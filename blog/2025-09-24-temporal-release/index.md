@@ -28,9 +28,11 @@ implementations (more on that later) and will soon being
 
 ### Why v0.1? Why not v1.0?
 
-Right now the [Temporal proposal](https://github.com/tc39/proposal-temporal) is at Stage 3 in the standards process (4 being the final stage). Although unlikely, 
+Right now the [Temporal proposal](https://github.com/tc39/proposal-temporal) is at Stage 3 (4 being the final stage) in the standards process. Although unlikely, 
 we want to remain on a minor version to catch any changes which come in (mosty bug fixes) before the proposal reaches stage 4 
-and thus complete. We expect this to happen in Q1 2026.
+and thus complete. We expect that to happen in Q1 2026. 
+
+Fear not! temporal_rs passes over 4000 specification tests, is stable and ready to use. 
 
 To celebrate the release of `temporal_rs`, we'll cover a short
 background of the Temporal implementation in Boa and why `temporal_rs`
