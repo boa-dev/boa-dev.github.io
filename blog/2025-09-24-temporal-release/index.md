@@ -50,15 +50,17 @@ culminated in an absolutely massive PR,
 [#3277](https://github.com/boa-dev/boa/pull/3277) (ASIDE from nekevss:
 mea culpa).
 
+> _Temporal is the single biggest addition to ECMAScript since ES6_
+
 The PR itself stubbed out a lot of the methods, implemented some
 Duration and Instant functionality, and started the support for custom
-calendars. There were, however, 2 major take aways from this PR: first,
-Temporal is a massive specification update; and second, there is a lot
-of room to potentially optimize Temporal if we do not deal with
+calendars. There were, however, 2 major take aways from this PR, first:
+- Temporal is a massive specification update, it's the single biggest addition to ECMAScript since ES6; and second..
+- there is a lot of room to potentially optimize Temporal if we do not deal with
 `JsValue` directly.
 
-After a couple weeks, the question came up amongst the maintainers:
-could we separate the Boa's implementation off into a completely
+After a couple weeks, the question came up amongst maintainers of not just Boa, but other engines:
+could we separate the datetime logic and implementation off into a completely
 separate library? Sure, why not.
 
 The first commit of then `boa_temporal` occurred in PR
