@@ -25,7 +25,7 @@ implementations (more on that later) and is [estimated](https://chromestatus.com
 ### Why v0.1? Why not v1.0?
 
 Right now the [Temporal proposal](https://github.com/tc39/proposal-temporal) is at Stage 3 (4 being the final stage) in the standards process. Although unlikely, 
-we want to remain on a minor version to catch any changes which come in (mosty bug fixes) before the proposal reaches stage 4 
+we want to remain on a minor version to catch any changes which come in (mostly bug fixes) before the proposal reaches stage 4 
 and thus complete. We expect that to happen in Q1 2026. 
 
 Fear not! temporal_rs passes over 4000 specification tests, is stable and ready to use. 
@@ -51,7 +51,7 @@ culminated in an absolutely massive PR,
 
 The PR itself stubbed out a lot of the methods, implemented some
 Duration and Instant functionality, and started the support for custom
-calendars. There were, however, 2 major take aways from this PR:
+calendars. There were, however, 2 major takeaways from this PR:
 - Temporal is a massive specification update, it's the single biggest addition to ECMAScript since ES6.
 - There is a lot of room to potentially optimize Temporal if we do not deal with
 `JsValue` directly.
@@ -90,7 +90,7 @@ let date = Date::new_with_overflow(
 
 Luckily, custom calendars and time zones were removed from the
 specification in the first half of 2024, so `temporal_rs` was able to
-remove that support, which greatly benefitted the entire API. For
+remove that support, which greatly benefited the entire API. For
 instance, here's the same code in the 0.1 version of `temporal_rs`:
 
 ```rust
