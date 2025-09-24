@@ -44,6 +44,7 @@ const frontMatter = {
 		'post'
 	],
 	title: 'Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8',
+	description: 'Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8',
 	authors: 'temporal-dev'
 };
 const contentTitle = undefined;
@@ -841,7 +842,7 @@ function MDXProvider(properties) {
 /***/ 9999:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2025/09/24/temporal-release","source":"@site/blog/2025-09-24-temporal-release/index.md","title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","description":"clock banner","date":"2025-09-24T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":13.38,"hasTruncateMarker":false,"authors":[{"name":"Temporal_rs Developers","url":"https://github.com/boa-dev/temporal","key":"temporal-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","authors":"temporal-dev"},"unlisted":false,"nextItem":{"title":"Implementing Temporal, the new date/time API for JavaScript (and Rust!)","permalink":"/blog/2025/06/15/temporal-impl-1"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2025/09/24/temporal-release","source":"@site/blog/2025-09-24-temporal-release/index.md","title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","description":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","date":"2025-09-24T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":13.38,"hasTruncateMarker":false,"authors":[{"name":"Temporal_rs Developers","url":"https://github.com/boa-dev/temporal","key":"temporal-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","description":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","authors":"temporal-dev"},"unlisted":false,"nextItem":{"title":"Implementing Temporal, the new date/time API for JavaScript (and Rust!)","permalink":"/blog/2025/06/15/temporal-impl-1"}}');
 
 /***/ })
 

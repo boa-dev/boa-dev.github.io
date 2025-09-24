@@ -12,7 +12,7 @@
         <id>https://boajs.dev/blog/2025/09/24/temporal-release</id>
         <link href="https://boajs.dev/blog/2025/09/24/temporal-release"/>
         <updated>2025-09-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[clock banner]]></summary>
+        <summary type="html"><![CDATA[Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8]]></summary>
         <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="clock banner" src="https://boajs.dev/assets/images/clock-banner-081b36b0a312f4e359b5342ef753a0d6.jpg" width="3010" height="1024" class="img_ev3q"></p>
 <p>After 2 years of development, we're pleased to announce the
 release of <a href="https://crates.io/crates/temporal_rs" target="_blank" rel="noopener noreferrer"><code>temporal_rs</code></a>. A calendar and time zone aware Rust date/time
