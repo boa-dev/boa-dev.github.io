@@ -10,7 +10,7 @@ authors: temporal-dev
 
 ![clock banner](./img/clock-banner.jpg)
 
-After almost 2+ years of development, we're pleased to announce the
+After 2 years of development, we're pleased to announce the
 release of [`temporal_rs`](https://crates.io/crates/temporal_rs). A calendar and time zone aware Rust date/time
 library based on ECMAScript's [Temporal API][mdn].
 
