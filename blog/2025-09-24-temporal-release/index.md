@@ -21,7 +21,7 @@ interested in learning more about small implementation details.
 
 Currently, `temporal_rs` v0.1 is being used by Boa, [Kiesel][kiesel-site],
 [V8][v8-site], and [Yavashark][yavashark-repo] for their Temporal
-implementations (more on that later) and is [estimated](https://chromestatus.com/feature/5668291307634688) to land unflagged in Chromium v143.
+implementations (more on that later) and is [estimated](https://chromestatus.com/feature/5668291307634688) to land unflagged in **Chromium v143**.
 
 ### Why v0.1? Why not v1.0?
 
@@ -419,6 +419,36 @@ major conformance push earlier this year.
 Also, a huge thanks to all the Temporal champions for all their work on
 the specification, as well as the ICU4X project for their incredible
 ongoing work on calendars and all things i18n related.
+
+## Discussion
+- Hackernews: https://news.ycombinator.com/item?id=45361826
+- Reddit: https://www.reddit.com/r/rust/comments/1npffdx/temporal_rs_is_here_the_datetime_library_powering/
+
+## How can you support Boa?
+
+Boa is an independent JavaScript engine implementing the ECMAScript specification, and we rely on the
+support of the community to keep it going. If you want to support us, you can do so by donating to
+our [open collective]. Proceeeds here go towards this very website, the domain name, and remunerating
+members of the team who have worked on the features released.
+
+If financial contribution is not your strength, you can contribute by asking to be assigned to one of
+our [open issues], and asking for mentoring if you don't know your way around the engine. Our
+[contribution guide] should help you here. If you are more used to working with JavaScript or frontend
+web development, we also welcome help to improve our web presence, either in [our website], or in our
+[testing representation] page or benchmarks page. You can also contribute to our Criterion benchmark
+comparison GitHub [action].
+
+We are also looking to improve the documentation of the engine, both for developers of the engine
+itself and for users of the engine. Feel free to contact us in [Matrix].
+
+[open collective]: https://opencollective.com/boa
+[open issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee
+[contribution guide]: https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md
+[our website]: https://github.com/boa-dev/boa-dev.github.io
+[testing representation]: https://github.com/boa-dev/boa/issues/820
+[action]: https://github.com/boa-dev/criterion-compare-action
+[Matrix]: https://matrix.to/#/#boa:matrix.org
+
 
 [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
 [v8-site]: https://v8.dev/
