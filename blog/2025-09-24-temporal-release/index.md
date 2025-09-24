@@ -57,7 +57,7 @@ The first commit of then `boa_temporal` occurred in PR
 [#3461](https://github.com/boa-dev/boa/pull/3461), which moved the
 majority of the existing functionality into a separate crate with the
 primary concern at the time of being able to support custom calendars,
-which was then ported into it's
+which was then ported into its
 [own repository later](https://github.com/boa-dev/temporal/pull/1) a
 couple months later.
 
