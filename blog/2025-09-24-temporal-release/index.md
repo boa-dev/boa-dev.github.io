@@ -10,23 +10,29 @@ authors: temporal-dev
 
 ![clock banner](./img/clock-banner.jpg)
 
-After almost 2+ years of development, we're pleased to announce the 0.1
-release of [`temporal_rs`](https://github.com/boa-dev/temporal). A calendar and time zone aware Rust date/time
+After almost 2+ years of development, we're pleased to announce the
+release of [`temporal_rs`](https://crates.io/crates/temporal_rs). A calendar and time zone aware Rust date/time
 library based on ECMAScript's [Temporal API][mdn].
 
 `temporal_rs` is a highly conformant implementation of the Temporal API
 in Rust that can be used in native Rust code or embedded into ECMAScript
 engines / interpreters to support their implementations, which we first
-announced in our first
+announced in our
 [Temporal blog post](../2025-06-15-temporal-impl-1.md), if you're
 interested in learning more about small implementation details.
 
-Currently, `temporal_rs` is being used by Boa, [Kiesel][kiesel-site],
+Currently, `temporal_rs` v0.1 is being used by Boa, [Kiesel][kiesel-site],
 [V8][v8-site], and [Yavashark][yavashark-repo] for their Temporal
 implementations (more on that later) and will soon being
 [shipping in Chrome](https://chromestatus.com/feature/5668291307634688).
 
-To celebrate the 0.1 release of `temporal_rs`, we'll cover a short
+### Why v0.1? Why not v1.0?
+
+Right now the [Temporal proposal](https://github.com/tc39/proposal-temporal) is at Stage 3 in the standards process (4 being the final stage). Although unlikely, 
+we want to remain on a minor version to catch any changes which come in (mosty bug fixes) before the proposal reaches stage 4 
+and thus complete. We expect this to happen in Q1 2026.
+
+To celebrate the release of `temporal_rs`, we'll cover a short
 background of the Temporal implementation in Boa and why `temporal_rs`
 was split into its own crate, we'll go over the library's general
 design, and then we'll walk through a couple brief examples of using
