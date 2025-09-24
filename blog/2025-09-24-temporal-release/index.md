@@ -28,7 +28,7 @@ implementations (more on that later) and will soon being
 
 To celebrate the 0.1 release of `temporal_rs`, we'll cover a short
 background of the Temporal implementation in Boa and why `temporal_rs`
-was split into it's own crate, we'll go over the library's general
+was split into its own crate, we'll go over the library's general
 design, and then we'll walk through a couple brief examples of using
 `temporal_rs` before finally talking about the FFI and engine adoption.
 
