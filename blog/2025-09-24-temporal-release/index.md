@@ -154,7 +154,7 @@ above Temporal types.
 The types in the same categories will share similar APIs that are
 related to that category. For instance, all types that support a
 calendar date will have a `with_calendar` method as well as calendar
-date accessors. The exception being PlainYearMonth and PlainMonthDay
+date accessors. The exception being `PlainYearMonth` and `PlainMonthDay`
 which are missing their day and year, respectively ... for all intents
 and purposes.
 
