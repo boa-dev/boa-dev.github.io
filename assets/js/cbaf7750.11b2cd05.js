@@ -183,7 +183,7 @@ function _createMdxContent(props) {
       children: ["Right now the ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "https://github.com/tc39/proposal-temporal",
         children: "Temporal proposal"
-      }), " is at Stage 3 (4 being the final stage) in the standards process. Although unlikely,\nwe want to remain on a minor version to catch any changes which come in (mosty bug fixes) before the proposal reaches stage 4\nand thus complete. We expect that to happen in Q1 2026."]
+      }), " is at Stage 3 (4 being the final stage) in the standards process. Although unlikely,\nwe want to remain on a minor version to catch any changes which come in (mostly bug fixes) before the proposal reaches stage 4\nand thus complete. We expect that to happen in Q1 2026."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
       children: "Fear not! temporal_rs passes over 4000 specification tests, is stable and ready to use."
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
@@ -213,7 +213,7 @@ function _createMdxContent(props) {
         children: "#3277"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "The PR itself stubbed out a lot of the methods, implemented some\nDuration and Instant functionality, and started the support for custom\ncalendars. There were, however, 2 major take aways from this PR:"
+      children: "The PR itself stubbed out a lot of the methods, implemented some\nDuration and Instant functionality, and started the support for custom\ncalendars. There were, however, 2 major takeaways from this PR:"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
       children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
         children: "Temporal is a massive specification update, it's the single biggest addition to ECMAScript since ES6."
@@ -256,7 +256,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["Luckily, custom calendars and time zones were removed from the\nspecification in the first half of 2024, so ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         children: "temporal_rs"
-      }), " was able to\nremove that support, which greatly benefitted the entire API. For\ninstance, here's the same code in the 0.1 version of ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+      }), " was able to\nremove that support, which greatly benefited the entire API. For\ninstance, here's the same code in the 0.1 version of ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         children: "temporal_rs"
       }), ":"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
