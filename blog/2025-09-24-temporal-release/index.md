@@ -203,7 +203,7 @@ We currently expose three types of provider implementations:
 - `ZoneInfo64TzdbProvider`, a provider using ICU's zoneinfo64 resource
   bundle.
 
-We hope to have a zerocopy compiled timezone provider available in the
+We hope to have a zero copy compiled timezone provider available in the
 near future.
 
 ## Using `temporal_rs`
