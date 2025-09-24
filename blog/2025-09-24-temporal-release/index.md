@@ -41,17 +41,16 @@ design, and then we'll walk through a couple brief examples of using
 
 ## Some background and history
 
+> _"Temporal is the single biggest addition to ECMAScript since ES6"_
+>
+> <cite>Jason Williams, TC39 Delegate</cite>
+
 In this section, we'll reflect on the overall implementation, some
 general difficulties we had along with lessons learned.
 
 The temporal implementation in Boa began over two years ago and
 culminated in an absolutely massive PR,
-[#3277](https://github.com/boa-dev/boa/pull/3277) (ASIDE from nekevss:
-mea culpa).
-
-> _"Temporal is the single biggest addition to ECMAScript since ES6"_
->
-> <cite>Jason Williams, TC39 Delegate</cite>
+[#3277](https://github.com/boa-dev/boa/pull/3277).
 
 The PR itself stubbed out a lot of the methods, implemented some
 Duration and Instant functionality, and started the support for custom
