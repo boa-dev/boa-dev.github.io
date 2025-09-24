@@ -50,6 +50,8 @@ culminated in an absolutely massive PR,
 mea culpa).
 
 > _"Temporal is the single biggest addition to ECMAScript since ES6"_
+>
+> <cite>Jason Williams, TC39 Delegate</cite>
 
 The PR itself stubbed out a lot of the methods, implemented some
 Duration and Instant functionality, and started the support for custom
@@ -356,7 +358,7 @@ your Rust library.
 
 > "_Diplomat made the FFI code extremely easy: I basically wrote the entire temporal_capi FFI layer over the course of a couple PRs, each of which probably took me ~15 minutes each of relatively mindless "tab through docs, add API" work. Diplomat is really good at this type of thing._"
 >
-> -- <cite>Manishearth [Rust Reddit Q&A](https://www.reddit.com/r/rust/comments/1logjzt/chromiumv8_implementing_temporal_api_via_rust/):</cite>
+> <cite>Manishearth [Rust Reddit Q&A](https://www.reddit.com/r/rust/comments/1logjzt/chromiumv8_implementing_temporal_api_via_rust/):</cite>
 
 There is some added benefits to offering C and C++ bindings beyond the
 classic: oh, let's (re)write it in Rust.
