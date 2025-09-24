@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6552],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[6182],{
 
 /***/ 2614:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -11,17 +11,7 @@
 
 /***/ }),
 
-/***/ 3471:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "assets/images/temporal-dependencies-a58cc2be2f3604ca72f9dd7dae52e1eb.png");
-
-/***/ }),
-
-/***/ 3558:
+/***/ 3026:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -186,7 +176,7 @@ function _createMdxContent(props) {
         href: "https://chromestatus.com/feature/5668291307634688",
         children: "estimated"
       }), " to land unflagged in ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.strong, {
-        children: "Chromium v143"
+        children: "Chromium v144"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
       id: "why-v01-why-not-v10",
@@ -797,6 +787,16 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 3471:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "assets/images/temporal-dependencies-a58cc2be2f3604ca72f9dd7dae52e1eb.png");
 
 /***/ }),
 

@@ -25,7 +25,7 @@ announced in our
 interested in learning more about small implementation details.</p>
 <p>Currently, <code>temporal_rs</code> v0.1 is being used by Boa, <a href="https://kiesel.dev/" target="_blank" rel="noopener noreferrer">Kiesel</a>,
 <a href="https://v8.dev/" target="_blank" rel="noopener noreferrer">V8</a>, and <a href="https://github.com/Sharktheone/yavashark" target="_blank" rel="noopener noreferrer">Yavashark</a> for their Temporal
-implementations (more on that later) and is <a href="https://chromestatus.com/feature/5668291307634688" target="_blank" rel="noopener noreferrer">estimated</a> to land unflagged in <strong>Chromium v143</strong>.</p>
+implementations (more on that later) and is <a href="https://chromestatus.com/feature/5668291307634688" target="_blank" rel="noopener noreferrer">estimated</a> to land unflagged in <strong>Chromium v144</strong>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-v01-why-not-v10">Why v0.1? Why not v1.0?<a href="https://boajs.dev/blog/2025/09/24/temporal-release#why-v01-why-not-v10" class="hash-link" aria-label="Direct link to Why v0.1? Why not v1.0?" title="Direct link to Why v0.1? Why not v1.0?">​</a></h3>
 <p>Right now the <a href="https://github.com/tc39/proposal-temporal" target="_blank" rel="noopener noreferrer">Temporal proposal</a> is at Stage 3 (4 being the final stage) in the standards process. Although unlikely,
 we want to remain on a minor version to catch any changes which come in (mostly bug fixes) before the proposal reaches stage 4
