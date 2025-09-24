@@ -136,16 +136,16 @@ which corresponds to a different aspect of date and time with varying
 support for calendars and time zones, which are, unsurprisingly,
 represented in `temporal_rs` by the `Calendar` and `TimeZone` types.
 
-| Temporal type  | Category                          | Calendar support | Time zone support |
-| -------------- | --------------------------------- | ---------------- | ----------------- |
-| PlainDate      | Calendar date                     | yes              | no                |
-| PlainTime      | Wall-clock time                   | no               | no                |
-| PlainDateTime  | Calendar date and wall-clock time | yes              | no                |
-| ZonedDateTime  | Calendar date and exact time      | yes              | yes               |
-| Instant        | Exact time                        | no               | no                |
-| Duration       | Time span                         | no               | no                |
-| PlainYearMonth | Calendar date                     | yes              | no                |
-| PlainMonthDay  | Calendar date                     | yes              | no                |
+| Temporal type    | Category                          | Calendar support | Time zone support |
+| ---------------- | --------------------------------- | ---------------- | ----------------- |
+| `PlainDate`      | Calendar date                     | yes              | no                |
+| `PlainTime`      | Wall-clock time                   | no               | no                |
+| `PlainDateTime`  | Calendar date and wall-clock time | yes              | no                |
+| `ZonedDateTime`  | Calendar date and exact time      | yes              | yes               |
+| `Instant`        | Exact time                        | no               | no                |
+| `Duration`       | Time span                         | no               | no                |
+| `PlainYearMonth` | Calendar date                     | yes              | no                |
+| `PlainMonthDay`  | Calendar date                     | yes              | no                |
 
 There is also `Now`, which provides access to the current host system
 time. This can then be used to map the current `Instant` to any of the
