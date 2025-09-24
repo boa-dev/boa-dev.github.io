@@ -101,6 +101,14 @@ const toc = [{
   "value": "Special thanks",
   "id": "special-thanks",
   "level": 2
+}, {
+  "value": "Discussion",
+  "id": "discussion",
+  "level": 2
+}, {
+  "value": "How can you support Boa?",
+  "id": "how-can-you-support-boa",
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -116,6 +124,7 @@ function _createMdxContent(props) {
     ol: "ol",
     p: "p",
     pre: "pre",
+    strong: "strong",
     table: "table",
     tbody: "tbody",
     td: "td",
@@ -166,7 +175,9 @@ function _createMdxContent(props) {
       }), " for their Temporal\nimplementations (more on that later) and is ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
         href: "https://chromestatus.com/feature/5668291307634688",
         children: "estimated"
-      }), " to land unflagged in Chromium v143."]
+      }), " to land unflagged in ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.strong, {
+        children: "Chromium v143"
+      }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
       id: "why-v01-why-not-v10",
       children: "Why v0.1? Why not v1.0?"
@@ -714,6 +725,51 @@ function _createMdxContent(props) {
       children: "Thanks to the University of Bergen students who helped drive some of the\nmajor conformance push earlier this year."
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
       children: "Also, a huge thanks to all the Temporal champions for all their work on\nthe specification, as well as the ICU4X project for their incredible\nongoing work on calendars and all things i18n related."
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "discussion",
+      children: "Discussion"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
+      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: ["Hackernews: ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+          href: "https://news.ycombinator.com/item?id=45361826",
+          children: "https://news.ycombinator.com/item?id=45361826"
+        })]
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: ["Reddit: ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+          href: "https://www.reddit.com/r/rust/comments/1npffdx/temporal_rs_is_here_the_datetime_library_powering/",
+          children: "https://www.reddit.com/r/rust/comments/1npffdx/temporal_rs_is_here_the_datetime_library_powering/"
+        })]
+      }), "\n"]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "how-can-you-support-boa",
+      children: "How can you support Boa?"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Boa is an independent JavaScript engine implementing the ECMAScript specification, and we rely on the\nsupport of the community to keep it going. If you want to support us, you can do so by donating to\nour ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://opencollective.com/boa",
+        children: "open collective"
+      }), ". Proceeeds here go towards this very website, the domain name, and remunerating\nmembers of the team who have worked on the features released."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["If financial contribution is not your strength, you can contribute by asking to be assigned to one of\nour ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee",
+        children: "open issues"
+      }), ", and asking for mentoring if you don't know your way around the engine. Our\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md",
+        children: "contribution guide"
+      }), " should help you here. If you are more used to working with JavaScript or frontend\nweb development, we also welcome help to improve our web presence, either in ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/boa-dev.github.io",
+        children: "our website"
+      }), ", or in our\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/boa/issues/820",
+        children: "testing representation"
+      }), " page or benchmarks page. You can also contribute to our Criterion benchmark\ncomparison GitHub ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/criterion-compare-action",
+        children: "action"
+      }), "."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["We are also looking to improve the documentation of the engine, both for developers of the engine\nitself and for users of the engine. Feel free to contact us in ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://matrix.to/#/#boa:matrix.org",
+        children: "Matrix"
+      }), "."]
     })]
   });
 }
@@ -842,7 +898,7 @@ function MDXProvider(properties) {
 /***/ 9999:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2025/09/24/temporal-release","source":"@site/blog/2025-09-24-temporal-release/index.md","title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","description":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","date":"2025-09-24T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":13.38,"hasTruncateMarker":false,"authors":[{"name":"Temporal_rs Developers","url":"https://github.com/boa-dev/temporal","key":"temporal-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","description":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","authors":"temporal-dev"},"unlisted":false,"nextItem":{"title":"Implementing Temporal, the new date/time API for JavaScript (and Rust!)","permalink":"/blog/2025/06/15/temporal-impl-1"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/2025/09/24/temporal-release","source":"@site/blog/2025-09-24-temporal-release/index.md","title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","description":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","date":"2025-09-24T00:00:00.000Z","tags":[{"inline":true,"label":"post","permalink":"/blog/tags/post"}],"readingTime":14.67,"hasTruncateMarker":false,"authors":[{"name":"Temporal_rs Developers","url":"https://github.com/boa-dev/temporal","key":"temporal-dev","page":null}],"frontMatter":{"layout":"post","tags":["post"],"title":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","description":"Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8","authors":"temporal-dev"},"unlisted":false,"nextItem":{"title":"Implementing Temporal, the new date/time API for JavaScript (and Rust!)","permalink":"/blog/2025/06/15/temporal-impl-1"}}');
 
 /***/ })
 

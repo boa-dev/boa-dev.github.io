@@ -26,7 +26,7 @@ announced in our
 interested in learning more about small implementation details.</p>
 <p>Currently, <code>temporal_rs</code> v0.1 is being used by Boa, <a href="https://kiesel.dev/" target="_blank" rel="noopener noreferrer">Kiesel</a>,
 <a href="https://v8.dev/" target="_blank" rel="noopener noreferrer">V8</a>, and <a href="https://github.com/Sharktheone/yavashark" target="_blank" rel="noopener noreferrer">Yavashark</a> for their Temporal
-implementations (more on that later) and is <a href="https://chromestatus.com/feature/5668291307634688" target="_blank" rel="noopener noreferrer">estimated</a> to land unflagged in Chromium v143.</p>
+implementations (more on that later) and is <a href="https://chromestatus.com/feature/5668291307634688" target="_blank" rel="noopener noreferrer">estimated</a> to land unflagged in <strong>Chromium v143</strong>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-v01-why-not-v10">Why v0.1? Why not v1.0?<a href="https://boajs.dev/blog/2025/09/24/temporal-release#why-v01-why-not-v10" class="hash-link" aria-label="Direct link to Why v0.1? Why not v1.0?" title="Direct link to Why v0.1? Why not v1.0?">​</a></h3>
 <p>Right now the <a href="https://github.com/tc39/proposal-temporal" target="_blank" rel="noopener noreferrer">Temporal proposal</a> is at Stage 3 (4 being the final stage) in the standards process. Although unlikely,
 we want to remain on a minor version to catch any changes which come in (mostly bug fixes) before the proposal reaches stage 4
@@ -269,7 +269,25 @@ it get to v0.1.</p>
 major conformance push earlier this year.</p>
 <p>Also, a huge thanks to all the Temporal champions for all their work on
 the specification, as well as the ICU4X project for their incredible
-ongoing work on calendars and all things i18n related.</p>]]></content:encoded>
+ongoing work on calendars and all things i18n related.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="discussion">Discussion<a href="https://boajs.dev/blog/2025/09/24/temporal-release#discussion" class="hash-link" aria-label="Direct link to Discussion" title="Direct link to Discussion">​</a></h2>
+<ul>
+<li>Hackernews: <a href="https://news.ycombinator.com/item?id=45361826" target="_blank" rel="noopener noreferrer">https://news.ycombinator.com/item?id=45361826</a></li>
+<li>Reddit: <a href="https://www.reddit.com/r/rust/comments/1npffdx/temporal_rs_is_here_the_datetime_library_powering/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/rust/comments/1npffdx/temporal_rs_is_here_the_datetime_library_powering/</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-can-you-support-boa">How can you support Boa?<a href="https://boajs.dev/blog/2025/09/24/temporal-release#how-can-you-support-boa" class="hash-link" aria-label="Direct link to How can you support Boa?" title="Direct link to How can you support Boa?">​</a></h2>
+<p>Boa is an independent JavaScript engine implementing the ECMAScript specification, and we rely on the
+support of the community to keep it going. If you want to support us, you can do so by donating to
+our <a href="https://opencollective.com/boa" target="_blank" rel="noopener noreferrer">open collective</a>. Proceeeds here go towards this very website, the domain name, and remunerating
+members of the team who have worked on the features released.</p>
+<p>If financial contribution is not your strength, you can contribute by asking to be assigned to one of
+our <a href="https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee" target="_blank" rel="noopener noreferrer">open issues</a>, and asking for mentoring if you don't know your way around the engine. Our
+<a href="https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">contribution guide</a> should help you here. If you are more used to working with JavaScript or frontend
+web development, we also welcome help to improve our web presence, either in <a href="https://github.com/boa-dev/boa-dev.github.io" target="_blank" rel="noopener noreferrer">our website</a>, or in our
+<a href="https://github.com/boa-dev/boa/issues/820" target="_blank" rel="noopener noreferrer">testing representation</a> page or benchmarks page. You can also contribute to our Criterion benchmark
+comparison GitHub <a href="https://github.com/boa-dev/criterion-compare-action" target="_blank" rel="noopener noreferrer">action</a>.</p>
+<p>We are also looking to improve the documentation of the engine, both for developers of the engine
+itself and for users of the engine. Feel free to contact us in <a href="https://matrix.to/#/#boa:matrix.org" target="_blank" rel="noopener noreferrer">Matrix</a>.</p>]]></content:encoded>
             <category>post</category>
         </item>
         <item>
