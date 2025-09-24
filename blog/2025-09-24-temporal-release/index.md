@@ -2,9 +2,6 @@
 layout: post
 tags: [post]
 title: "Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8"
-description: A release post for temporal_rs, a calendar and time zone aware Rust
-  date/time library that powers Temporal implementations in Boa, Kiesel,
-  and V8, along with any native Rust project.
 authors: temporal-dev
 ---
 
