@@ -2,6 +2,7 @@
 layout: post
 tags: [post]
 title: "Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8"
+description: Temporal_rs is here! The datetime library powering Temporal in Boa, Kiesel, and V8
 authors: temporal-dev
 ---
 
