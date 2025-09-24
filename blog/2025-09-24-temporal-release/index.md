@@ -21,7 +21,7 @@ interested in learning more about small implementation details.
 
 Currently, `temporal_rs` v0.1 is being used by Boa, [Kiesel][kiesel-site],
 [V8][v8-site], and [Yavashark][yavashark-repo] for their Temporal
-implementations (more on that later) and is [estimated](https://chromestatus.com/feature/5668291307634688) to land unflagged in **Chromium v143**.
+implementations (more on that later) and is [estimated](https://chromestatus.com/feature/5668291307634688) to land unflagged in **Chromium v144**.
 
 ### Why v0.1? Why not v1.0?
 
