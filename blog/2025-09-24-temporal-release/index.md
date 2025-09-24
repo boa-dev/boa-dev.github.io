@@ -58,7 +58,7 @@ calendars. There were, however, 2 major take aways from this PR:
 - There is a lot of room to potentially optimize Temporal if we do not deal with
 `JsValue` directly.
 
-After a couple weeks, the question came up amongst maintainers of not just Boa, but also V8:
+After a couple weeks, the question came up amongst maintainers of not just Boa, but also other engines:
 "_could we separate the datetime logic and implementation off into a completely
 separate library?_" Sure.
 
@@ -351,6 +351,12 @@ project for generating FFI definitions for Rust libraries. In general,
 it's a really cool project and we would definitely recommend checking it
 out if you're looking to generate FFI bindings for other languages for
 your Rust library.
+
+
+
+> "_Diplomat made the FFI code extremely easy: I basically wrote the entire temporal_capi FFI layer over the course of a couple PRs, each of which probably took me ~15 minutes each of relatively mindless "tab through docs, add API" work. Diplomat is really good at this type of thing._"
+>
+> -- <cite>Manishearth [Rust Reddit Q&A](https://www.reddit.com/r/rust/comments/1logjzt/chromiumv8_implementing_temporal_api_via_rust/):</cite>
 
 There is some added benefits to offering C and C++ bindings beyond the
 classic: oh, let's (re)write it in Rust.
