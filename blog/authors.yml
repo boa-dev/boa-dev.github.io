@@ -1,3 +1,6 @@
 boa-dev:
   name: Boa Developers
   url: https://github.com/boa-dev
+temporal-dev:
+  name: Temporal_rs Developers
+  url: https://github.com/boa-dev/temporal
