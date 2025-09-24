@@ -23,8 +23,7 @@ interested in learning more about small implementation details.
 
 Currently, `temporal_rs` v0.1 is being used by Boa, [Kiesel][kiesel-site],
 [V8][v8-site], and [Yavashark][yavashark-repo] for their Temporal
-implementations (more on that later) and will soon being
-[shipping in Chrome](https://chromestatus.com/feature/5668291307634688).
+implementations (more on that later) and is [estimated](https://chromestatus.com/feature/5668291307634688) to land unflagged in Chromium v143.
 
 ### Why v0.1? Why not v1.0?
 
@@ -50,18 +49,18 @@ culminated in an absolutely massive PR,
 [#3277](https://github.com/boa-dev/boa/pull/3277) (ASIDE from nekevss:
 mea culpa).
 
-> _Temporal is the single biggest addition to ECMAScript since ES6_
+> _"Temporal is the single biggest addition to ECMAScript since ES6"_
 
 The PR itself stubbed out a lot of the methods, implemented some
 Duration and Instant functionality, and started the support for custom
-calendars. There were, however, 2 major take aways from this PR, first:
-- Temporal is a massive specification update, it's the single biggest addition to ECMAScript since ES6; and second..
-- there is a lot of room to potentially optimize Temporal if we do not deal with
+calendars. There were, however, 2 major take aways from this PR:
+- Temporal is a massive specification update, it's the single biggest addition to ECMAScript since ES6.
+- There is a lot of room to potentially optimize Temporal if we do not deal with
 `JsValue` directly.
 
-After a couple weeks, the question came up amongst maintainers of not just Boa, but other engines:
-could we separate the datetime logic and implementation off into a completely
-separate library? Sure, why not.
+After a couple weeks, the question came up amongst maintainers of not just Boa, but also V8:
+"_could we separate the datetime logic and implementation off into a completely
+separate library?_" Sure.
 
 The first commit of then `boa_temporal` occurred in PR
 [#3461](https://github.com/boa-dev/boa/pull/3461), which moved the
