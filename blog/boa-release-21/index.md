@@ -38,7 +38,7 @@ grew from 40.67% to ~97%.
 
 The implementation is backed by the `temporal_rs` date/time Rust
 library, which we went over briefly in our June
-[blog post](./2025-06-15-temporal-impl-1.md) with hopefully another post
+[blog post](../2025-06-15-temporal-impl-1.md) with hopefully another post
 in the not too distant future. So far, `temporal_rs` has also been used in
 both V8 and Keisel to implement Temporal.
 
@@ -143,7 +143,7 @@ against the Web Platform Tests (WPT).
 ### NaN Boxing
 
 With this release, Boa's `JsValue` will use nan-boxing by default. The NaN boxing of `JsValue`
-increased memory and runtime performance over the older enum. 
+increased memory and runtime performance over the older enum.
 
 As a note, the current implementation is not compatible with all platforms. While we hope
 to address this in the future. The legacy enum JsValue will be available via the `jsvalue-enum`
