@@ -27,4 +27,3 @@ Hide
 Type "rm yikes.js"
 
 Enter
-
