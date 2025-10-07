@@ -66,11 +66,16 @@ biggest pain points of our API. This was mostly caused by how we defined
 `FutureJob`:
 
 ```rust
+pub struct NativeJob {
+    f: Box<dyn FnOnce(&mut Context) -> JsResult<JsValue>>,
+    realm: Option<Realm>,
+}
+
 pub type FutureJob = Pin<Box<dyn Future<Output = NativeJob> + 'static>>;
 ```
 
 With this definition, it was pretty much impossible to capture the `Context`
-inside the future, and functions that needed to interweave engine operations
+inside the `Future`, and functions that needed to interweave engine operations
 with awaiting `Future`s would have to be split into multiple parts:
 
 ```rust
@@ -99,8 +104,7 @@ let fetch = async move {
 // `JobQueue`.
 context
     .job_queue()
-    .enqueue_future_job(Box::pin(fetch), context)
-}
+    .enqueue_future_job(Box::pin(fetch), context);
 ```
 
 We wanted to improve this API, and the solution we thought about was to make
@@ -173,15 +177,227 @@ pub trait JobExecutor: Any {
 }
 ```
 
-As you can probably tell, we made a lot of changes on the `JobExecutor`:
+As you can probably tell, we made a lot of changes on `JobExecutor`:
 
-TODO
+- All methods now take `Rc<Self>` as their receiver, making it consistent with
+  how the `Context` itself stores the `JobExecutor`.
+- [`enqueue_promise_job`] and [`enqueue_future_job`] now are unified in a single
+  `enqueue_job`, where `Job` is an enum containing the type of job that needs to
+  be scheduled. This makes it much simpler to extend the engine with newer job
+  types in the future, such as the newly introduced `TimeoutJob` and `GenericJob`
+  types.
+- `run_jobs_async` was converted to a proper async function, and excluded from
+  `JobExecutor`'s VTable. Additionally, this method now takes a `&RefCell<&mut Context>`
+  as its context, which is the missing piece that enables sharing the `Context` between
+  multiple `Future`s at the same time. This, however, means that we cannot provide
+  a convenient wrapper such as [`Context::run_jobs`] anymore, which is one of the
+  reasons why we decided to exclude that method from `JobExecutor`'s VTable.
 
-### Revamped `ModuleLoader`
+These changes not only made `JobExecutor` much simpler, but it also expanded
+the places where we could use its async capabilities to handle "special"
+features of ECMAScript that are more suited to an async way of doing things.
+`ModuleLoader` is one of those places.
 
-TODO
+[`enqueue_promise_job`]: https://docs.rs/boa_engine/0.20.0/boa_engine/job/trait.JobQueue.html#tymethod.enqueue_promise_job
+[`enqueue_future_job`]: https://docs.rs/boa_engine/0.20.0/boa_engine/job/trait.JobQueue.html#tymethod.enqueue_future_job
+[`Context::run_jobs`]: https://docs.rs/boa_engine/0.20.0/boa_engine/context/struct.Context.html#method.run_jobs
+
+### Asyncified `ModuleLoader`
+
+Looking at the previous definition of `ModuleLoader`:
+
+```rust
+pub trait ModuleLoader {
+    // Required method
+    fn load_imported_module(
+        &self,
+        referrer: Referrer,
+        specifier: JsString,
+        finish_load: Box<dyn FnOnce(JsResult<Module>, &mut Context)>,
+        context: &mut Context,
+    );
+
+    // Provided methods
+    fn register_module(&self, _specifier: JsString, _module: Module) { ... }
+    fn get_module(&self, _specifier: JsString) -> Option<Module> { ... }
+    fn init_import_meta(
+        &self,
+        _import_meta: &JsObject,
+        _module: &Module,
+        _context: &mut Context,
+    ) { ... }
+}
+```
+
+... the weird `finish_load` on `load_imported_module` immediately pops up as an anomaly.
+In this case, `finish_load` is Boa's equivalent to
+[HostLoadImportedModule ( referrer, moduleRequest, hostDefined, payload )][hlim],
+which is an abstract operation that is primarily used to define how an application
+will load and resolve a "module request"; think of it as a function that takes
+the `"module-name"` from `import * as name from "module-name"`, then does
+"things" to load the module that corresponds to `"module_name"`.
+
+[hlim]: https://tc39.es/ecma262/#sec-HostLoadImportedModule
+
+The peculiarity about this abstract operation is that it doesn't return anything!
+Instead, it just has a special requirement:
+
+> The host environment must perform `FinishLoadingImportedModule(referrer, moduleRequest, payload, result)`,
+  where result is either a normal completion containing the loaded `Module Record` or a throw completion,
+  either synchronously or asynchronously.
+
+Why expose the hook this way? Well, there is a clue in the previous requirement:
+
+> ... either synchronously or asynchronously.
+
+Aha! Directly returning from the hook makes it very hard to enable use cases
+where an application wants to load multiple modules asynchronously. Thus, the
+specification instead exposes a hook to pass the name of the module that needs to
+be loaded, and delegates the task of running the "post-load" phase to the host, which
+enables fetching modules synchronously or asynchronously, depending on the specific
+requirements of each application.
+
+One downside of this definition, however, is that any data that is required
+by the engine to properly process the returned module would need to be transparently
+passed to the `FinishLoadingImportedModule` abstract operation, which is why
+the hook also has an additional requirement:
+
+> The operation must treat `payload` as an opaque value to be passed through to
+  `FinishLoadingImportedModule`.
+
+`payload` is precisely that data, and it may change depending on how the module
+is imported in the code; `import "module"` and `import("module")` are two examples
+of this.
+
+We could expose this as an opaque `*const ()` pointer argument and call it a day,
+but we're using Rust, dang it! and we like statically guaranteed safety!
+So, instead, we exposed `FinishLoadingImportedModule` as `finish_load`, which is a
+"closure" that captures `payload` on its stack, and can be called anywhere
+(like inside a `Future`) on the application with a proper `Module` and `Context`
+to further continue processing the module loaded by the `ModuleLoader`.
+
+```rust
+...
+finish_load: Box<dyn FnOnce(JsResult<Module>, &mut Context)>,
+...
+```
+
+Unfortunately,
+this API has downsides: it is still possible to forget to call `finish_load`,
+which is still safe but prone to bugs. It is also really painful to work with,
+because you cannot capture the `Context` to further process the module after
+loading it ... Sounds familiar? **This is exactly [the code snippet we talked about before!](#async-apis-enhancements)**
+
+Fast forward a couple of years and we're now changing big parts of `JobExecutor`:
+adding new job types, tinkering with `JobExecutor`, changing API signatures, etc.
+Then, while looking at the definition of `ModuleLoader`, we thought...
+
+> Huh, can't we make `load_imported_module` async now?
+
+And that's exactly what we did! Behold, the new `ModuleLoader`!
+
+```rust
+pub trait ModuleLoader: Any {
+    async fn load_imported_module(
+        self: Rc<Self>,
+        referrer: Referrer,
+        specifier: JsString,
+        context: &RefCell<&mut Context>,
+    ) -> JsResult<Module>;
+
+    fn init_import_meta(
+        self: Rc<Self>,
+        _import_meta: &JsObject,
+        _module: &Module,
+        _context: &mut Context,
+    ) {
+    }
+}
+```
+
+Then, the code snippet we mentioned before nicely simplifies to:
+
+```rust
+async fn load_imported_module(
+    self: Rc<Self>,
+    _referrer: boa_engine::module::Referrer,
+    specifier: JsString,
+    context: &RefCell<&mut Context>,
+) -> JsResult<Module> {
+    let url = specifier.to_std_string_escaped();
+
+    let response = async {
+        let request = Request::get(&url)
+            .redirect_policy(RedirectPolicy::Limit(5))
+            .body(())?;
+        let response = request.send_async().await?.text().await?;
+        Ok(response)
+    }
+    .await
+    .map_err(|err: isahc::Error| JsNativeError::typ().with_message(err.to_string()))?;
+
+    let source = Source::from_bytes(&response);
+
+    Module::parse(source, None, &mut context.borrow_mut())
+}
+```
+
+> *What about synchronous applications?*
+
+The advantage of having `JobExecutor` be the main entry point for any Rust
+`Future`s that are enqueued by the engine is that an application can decide how to
+handle all `Future`s received by the implementation of `JobExecutor`. Thus, an application
+that doesn't want to deal with async Rust executors can implement a completely synchronous
+`ModuleLoader` and poll on all futures received by `JobExecutor` using something like
+[`futures_lite::poll_once`][poll_once].
+
+> *Why not just block on each `Future` one by one instead?*
+
+Well, there is one new built-in that was introduced on this release which heavily
+depends on "properly" running `Future`s, and by "properly" we mean "not blocking
+the whole thread waiting on a future to finish". More on that in a bit.
 
 ### Built-ins updates
+
+#### Atomics.waitAsync
+
+This release adds support for the `Atomics.waitAsync` method introduced in
+ECMAScript's 2024 specification.
+This method allows doing thread synchronization just like `Atomics.wait`, but with
+the big difference that it will return a `Promise` that will resolve when the
+thread gets notified with the `Atomics.notify` method, instead of blocking until
+that happens.
+
+```javascript
+// Given an `Int32Array` shared between two threads:
+
+const sab = new SharedArrayBuffer(1024);
+const int32 = new Int32Array(sab);
+
+// Thread 1 runs the following:
+// { async: true, value: Promise {<pending>} }
+const result = Atomics.waitAsync(int32, 0, 0, 1000);
+result.value.then(() => console.log("waited!"));
+
+// And thread 2 runs the following after Thread 1:
+Atomics.notify(int32, 0);
+
+// Then, in thread 1 we will (eventually) see "waited!" printed.
+```
+
+Note that this built-in requires having a "proper" implementation of a `JobExecutor`; again, "proper"
+in the sense of "not blocking the whole thread waiting on a future to finish", which can be accomplished
+with [`FutureGroup`] and [`futures_lite::poll_once`][poll_once] if an async executor is not required
+(see [`SimpleJobExecutor`'s implementation][sje-impl]).
+This is because it heavily relies on `TimeoutJob` and `NativeAsyncJob` to timeout if a notification
+doesn't arrive and communicate with the notifier threads, respectively. This is the reason why
+we don't recommend just blocking on each received `Future`; that could cause
+`TimeoutJob`s to run much later than required, or even make it so that they don't
+run at all!
+
+[poll_once]: https://docs.rs/futures-lite/latest/futures_lite/future/fn.poll_once.html
+[`FutureGroup`]: https://docs.rs/futures-concurrency/latest/futures_concurrency/future/future_group/struct.FutureGroup.html
+[sje-impl]: https://github.com/boa-dev/boa/blob/0468498b4bb9da31caa20123201e4d8ee132c608/core/engine/src/job.rs#L678
 
 #### Set methods
 
@@ -234,12 +450,34 @@ let sum = Math.sumPrecise([1e20, 0.1, -1e20]);
 console.log(sum); // 0.1
 ```
 
-#### Atomics.waitAsync
-
-TODO
-
-
 #### Array.fromAsync
+
+This release adds support for `Array.fromAsync`, which will be introduced in
+ECMAScript's 2026 specification.
+
+`Array.fromAsync` allows to conveniently create a array from an async iterable by
+awaiting all of the items consecutively.
+
+```javascript
+// Array.fromAsync is roughly equivalent to:
+async function toArray(asyncIterator){
+    const arr=[];
+    for await(const i of asyncIterator) arr.push(i);
+    return arr;
+}
+
+async function* asyncIterable() {
+  for (let i = 0; i < 5; i++) {
+    await new Promise((resolve) => setTimeout(resolve, 10 * i));
+    yield i;
+  }
+};
+
+Array.fromAsync(asyncIterable()).then((array) => console.log(array));
+// [0, 1, 2, 3, 4]
+toArray(asyncIterable()).then((array) => console.log(array));
+// [0, 1, 2, 3, 4]
+```
 
 ## Boa Runtime
 
