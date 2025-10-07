@@ -36,7 +36,7 @@ There has been a lot of progress made on Temporal, the new Stage 3
 date/time proposal. With this release, Boa's conformance on Temporal
 grew from 40.67% to ~97%. This implementation is backed by the `temporal_rs`
 date/time Rust library, which we went over in our announcement
-[blog post](../2025-09-24-temporal-release). Give the post a read if you are
+[blog post](../2025-09-24-temporal-release/index.md). Give the post a read if you are
 interested in `temporal_rs` and its development history.
 
 ### Span nodes and error backtraces
@@ -389,10 +389,10 @@ Note that this built-in requires having a "proper" implementation of a `JobExecu
 in the sense of "not blocking the whole thread waiting on a future to finish", which can be accomplished
 with [`FutureGroup`] and [`futures_lite::poll_once`][poll_once] if an async executor is not required
 (see [`SimpleJobExecutor`'s implementation][sje-impl]).
-This is because it heavily relies on `TimeoutJob` and `NativeAsyncJob` to timeout if a notification
-doesn't arrive and communicate with the notifier threads, respectively. This is the reason why
-we don't recommend just blocking on each received `Future`; that could cause
-`TimeoutJob`s to run much later than required, or even make it so that they don't
+This is because it heavily relies on `TimeoutJob` to timeout if a notification
+doesn't arrive, and in `NativeAsyncJob` to communicate with the notifier threads using an
+async channel. This is the reason why we don't recommend just blocking on each received `Future`;
+that could cause `TimeoutJob`s to run much later than required, or even make it so that they don't
 run at all!
 
 [poll_once]: https://docs.rs/futures-lite/latest/futures_lite/future/fn.poll_once.html
