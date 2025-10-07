@@ -76,7 +76,7 @@ pub type FutureJob = Pin<Box<dyn Future<Output = NativeJob> + 'static>>;
 
 With this definition, it was pretty much impossible to capture the `Context`
 inside the `Future`, and functions that needed to interweave engine operations
-with awaiting `Future`s would have to be split into multiple parts:
+with awaiting `Future`s needed to be split into multiple parts:
 
 ```rust
 let fetch = async move {
@@ -143,7 +143,7 @@ a `Future`.
 
 After introducing the new job type, changes had to be made on
 [`JobQueue`](https://docs.rs/boa_engine/0.20.0/boa_engine/job/trait.JobQueue.html)
-to better support new job types. Thus, `JobQueue` was revamped and renamed to be the
+to better support new types of jobs. Thus, `JobQueue` was revamped and renamed to be the
 new `JobExecutor`:
 
 ```rust
@@ -283,10 +283,14 @@ finish_load: Box<dyn FnOnce(JsResult<Module>, &mut Context)>,
 ```
 
 Unfortunately,
-this API has downsides: it is still possible to forget to call `finish_load`,
-which is still safe but prone to bugs. It is also really painful to work with,
-because you cannot capture the `Context` to further process the module after
-loading it ... Sounds familiar? **This is exactly [the code snippet we talked about before!](#async-apis-enhancements)**
+this API has downsides: it is possible to forget to call `finish_load`,
+which is safer than a dangling `*const()` pointer, but still prone to bugs.
+It is also really painful to work with, because you cannot capture the `Context`
+to further process the module after loading it ... Sounds familiar?
+**[The async code snippet we showed before](#async-apis-enhancements) has this exact problem!**
+And that snippet is directly taken from [one of our `ModuleLoader` implementation examples][mod-loader].
+
+[mod-loader]: https://github.com/boa-dev/boa/blob/b345775138f56401bd627b1f36daadfc5bf75772/examples/src/bin/module_fetch.rs#L38
 
 Fast forward a couple of years and we're now changing big parts of `JobExecutor`:
 adding new job types, tinkering with `JobExecutor`, changing API signatures, etc.
@@ -294,7 +298,7 @@ Then, while looking at the definition of `ModuleLoader`, we thought...
 
 > Huh, can't we make `load_imported_module` async now?
 
-And that's exactly what we did! Behold, the new `ModuleLoader`!
+And that's exactly what we did. Behold, the new `ModuleLoader`!
 
 ```rust
 pub trait ModuleLoader: Any {
