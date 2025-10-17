@@ -110,6 +110,7 @@ context
 We wanted to improve this API, and the solution we thought about was to make
 `Context` shareable by wrapping it using `RefCell`. However, this proved to be
 very difficult for two reasons:
+
 1. We needed to change all definitions to take `&RefCell<Context>` instead
    of `&mut Context`, which meant changing pretty much the whole codebase.
 2. Some of our VM code was reentrant, which meant calling `RefCell::borrow_mut`
@@ -243,8 +244,8 @@ The peculiarity about this abstract operation is that it doesn't return anything
 Instead, it just has a special requirement:
 
 > The host environment must perform `FinishLoadingImportedModule(referrer, moduleRequest, payload, result)`,
-  where result is either a normal completion containing the loaded `Module Record` or a throw completion,
-  either synchronously or asynchronously.
+> where result is either a normal completion containing the loaded `Module Record` or a throw completion,
+> either synchronously or asynchronously.
 
 Why expose the hook this way? Well, there is a clue in the previous requirement:
 
@@ -263,7 +264,7 @@ passed to the `FinishLoadingImportedModule` abstract operation, which is why
 the hook also has an additional requirement:
 
 > The operation must treat `payload` as an opaque value to be passed through to
-  `FinishLoadingImportedModule`.
+> `FinishLoadingImportedModule`.
 
 `payload` is precisely that data, and it may change depending on how the module
 is imported in the code; `import "module"` and `import("module")` are two examples
@@ -346,7 +347,7 @@ async fn load_imported_module(
 }
 ```
 
-> *What about synchronous applications?*
+> _What about synchronous applications?_
 
 The advantage of having `JobExecutor` be the main entry point for any Rust
 `Future`s that are enqueued by the engine is that an application can decide how to
@@ -355,7 +356,7 @@ that doesn't want to deal with async Rust executors can implement a completely s
 `ModuleLoader` and poll on all futures received by `JobExecutor` using something like
 [`futures_lite::poll_once`][poll_once].
 
-> *Why not just block on each `Future` one by one instead?*
+> _Why not just block on each `Future` one by one instead?_
 
 Well, there is one new built-in that was introduced on this release which heavily
 depends on "properly" running `Future`s, and by "properly" we mean "not blocking
@@ -464,10 +465,10 @@ awaiting all of the items consecutively.
 
 ```javascript
 // Array.fromAsync is roughly equivalent to:
-async function toArray(asyncIterator){
-    const arr=[];
-    for await(const i of asyncIterator) arr.push(i);
-    return arr;
+async function toArray(asyncIterator) {
+  const arr = [];
+  for await (const i of asyncIterator) arr.push(i);
+  return arr;
 }
 
 async function* asyncIterable() {
@@ -475,7 +476,7 @@ async function* asyncIterable() {
     await new Promise((resolve) => setTimeout(resolve, 10 * i));
     yield i;
   }
-};
+}
 
 Array.fromAsync(asyncIterable()).then((array) => console.log(array));
 // [0, 1, 2, 3, 4]
@@ -523,7 +524,27 @@ Boa's virtual machine (VM) moved from a stack based VM to a register based VM in
 
 ## New Contributors
 
-TODO
+- @zzzdong made their first contribution in https://github.com/boa-dev/boa/pull/4058
+- @albertleigh made their first contribution in https://github.com/boa-dev/boa/pull/4097
+- @heygsc made their first contribution in https://github.com/boa-dev/boa/pull/4124
+- @jamesthurley made their first contribution in https://github.com/boa-dev/boa/pull/4155
+- @lockels made their first contribution in https://github.com/boa-dev/boa/pull/4189
+- @changhc made their first contribution in https://github.com/boa-dev/boa/pull/4176
+- @created-by-varun made their first contribution in https://github.com/boa-dev/boa/pull/4198
+- @tomoverlund made their first contribution in https://github.com/boa-dev/boa/pull/4254
+- @Hemenguelbindi made their first contribution in https://github.com/boa-dev/boa/pull/4145
+- @Timkarx made their first contribution in https://github.com/boa-dev/boa/pull/4276
+- @Rafferty97 made their first contribution in https://github.com/boa-dev/boa/pull/4303
+- @cijiugechu made their first contribution in https://github.com/boa-dev/boa/pull/4307
+- @countradooku made their first contribution in https://github.com/boa-dev/boa/pull/4214
+- @xubaiwang made their first contribution in https://github.com/boa-dev/boa/pull/4381
+- @hamflx made their first contribution in https://github.com/boa-dev/boa/pull/4405
+- @BDeuDev made their first contribution in https://github.com/boa-dev/boa/pull/4419
+- @jasonmilad made their first contribution in https://github.com/boa-dev/boa/pull/4430
+- @hpp2334 made their first contribution in https://github.com/boa-dev/boa/pull/4453
+- @Gumichocopengin8 made their first contribution in https://github.com/boa-dev/boa/pull/4462
+- @mdrokz made their first contribution in https://github.com/boa-dev/boa/pull/4466
+- @rrogerc made their first contribution in https://github.com/boa-dev/boa/pull/4459
 
 ## Looking Forward
 
@@ -585,10 +606,8 @@ developers of the engine itself and for users of the engine. Feel free
 to contact us in [Matrix].
 
 [open collective]: https://opencollective.com/boa
-[open issues]:
-  https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee
-[contribution guide]:
-  https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md
+[open issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee
+[contribution guide]: https://github.com/boa-dev/boa/blob/main/CONTRIBUTING.md
 [our website]: https://github.com/boa-dev/boa-dev.github.io
 [testing representation]: https://github.com/boa-dev/boa/issues/820
 [action]: https://github.com/boa-dev/criterion-compare-action
@@ -599,13 +618,10 @@ to contact us in [Matrix].
 Once again, big thanks to [all the contributors][contributors] of this
 release!!!
 
-[contributors]:
-  https://github.com/boa-dev/boa/graphs/contributors?from=2024-12-05&to=2025-08-30&type=c
+[contributors]: https://github.com/boa-dev/boa/graphs/contributors?from=2024-12-05&to=2025-08-30&type=c
 [changelog]: https://github.com/boa-dev/boa/blob/v0.21/CHANGELOG.md
 [conformance]: https://boajs.dev/boa/test262/
 [feed]: https://boajs.dev/blog/rss.xml
 [collective]: https://opencollective.com/boa
-[easy_issues]:
-  https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3AE-Easy
-[first_issues]:
-  https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
+[easy_issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3AE-Easy
+[first_issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
