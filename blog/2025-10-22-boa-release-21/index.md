@@ -802,7 +802,7 @@ Boa's virtual machine (VM) moved from a stack based VM to a register based VM in
 ### Garbage collector rewrite
 
 This has been long overdue. Boa's garbage collector is a forked and
-modified version of [`rust-gc`](github.com/Manishearth/rust-gc), and we have long
+modified version of [`rust-gc`](https://github.com/Manishearth/rust-gc), and we have long
 been pushing our forked gc to its limits.
 
 We have seen some evidence from previous pull requests that simply swapping
