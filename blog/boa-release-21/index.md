@@ -26,6 +26,9 @@ in conformance will be minor or bound to the feature size going forward.
 You can check the full list of changes [here][changelog], and the full
 information on conformance [here][conformance].
 
+[changelog]: https://github.com/boa-dev/boa/blob/v0.21/CHANGELOG.md
+[conformance]: https://boajs.dev/boa/test262/
+
 <!--truncate-->
 
 ## Feature Highlights
@@ -113,14 +116,14 @@ very difficult for two reasons:
 
 1. We needed to change all definitions to take `&RefCell<Context>` instead
    of `&mut Context`, which meant changing pretty much the whole codebase.
-2. Some of our VM code was reentrant, which meant calling `RefCell::borrow_mut`
-   would cause panics in the reentrant parts of the code; we would need to
-   redesign some parts of the engine to remove the reentrancy.
+2. Some of our VM code was reentrant, and that would cause panics in the reentrant
+   parts of the code when calling `RefCell::borrow_mut`; we would need to patch up
+   the engine to remove the reentrancy.
 
 After putting a lot of thought on this, we came up with a really nice solution;
 instead of wrapping `Context` with `RefCell`, we would wrap `&mut Context` with
 `RefCell`, and only on the async-related APIs. This would allow not only capturing
-the context to `Future`-related functions, but also doing this without having to
+the context on `Future`-related functions, but also doing this without having to
 refactor big parts of the code. Thus, we ditched `FutureJob` and introduced a new
 type of job: `NativeAsyncJob`.
 
@@ -283,13 +286,13 @@ finish_load: Box<dyn FnOnce(JsResult<Module>, &mut Context)>,
 ...
 ```
 
-Unfortunately,
-this API has downsides: it is possible to forget to call `finish_load`,
-which is safer than a dangling `*const()` pointer, but still prone to bugs.
-It is also really painful to work with, because you cannot capture the `Context`
-to further process the module after loading it ... Sounds familiar?
-**[The async code snippet we showed before](#async-apis-enhancements) has this exact problem!**
-And that snippet is directly taken from [one of our `ModuleLoader` implementation examples][mod-loader].
+Unfortunately, this API has downsides:
+- It's possible to forget to call `finish_load`, which is safer than a dangling `*const()`
+  pointer, but still prone to bugs.
+- It is also really painful to work with, because you cannot capture the `Context`
+  to further process the module after loading it. ... Sounds familiar?
+  **[The async code snippet we showed before](#async-apis-enhancements) has this exact problem!**
+  And that snippet is directly taken from [one of our `ModuleLoader` implementation examples][mod-loader].
 
 [mod-loader]: https://github.com/boa-dev/boa/blob/b345775138f56401bd627b1f36daadfc5bf75772/examples/src/bin/module_fetch.rs#L38
 
@@ -619,8 +622,6 @@ Once again, big thanks to [all the contributors][contributors] of this
 release!!!
 
 [contributors]: https://github.com/boa-dev/boa/graphs/contributors?from=2024-12-05&to=2025-08-30&type=c
-[changelog]: https://github.com/boa-dev/boa/blob/v0.21/CHANGELOG.md
-[conformance]: https://boajs.dev/boa/test262/
 [feed]: https://boajs.dev/blog/rss.xml
 [collective]: https://opencollective.com/boa
 [easy_issues]: https://github.com/boa-dev/boa/issues?q=is%3Aopen+is%3Aissue+label%3AE-Easy
