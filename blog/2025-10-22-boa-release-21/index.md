@@ -62,11 +62,227 @@ This feature has been one of the most requested ones for years,
 and we hope it will
 greatly help with debugging errors when using Boa.
 
+### Utility macros
+
+We introduced a new set of proc macros that make it much easier to create [`JsValue`]s,
+[`JsObject`]s, [`Class`]es and even [`Module`]s. Let's see them in action!
+
+#### [`js_value`]
+
+```rust
+// Simple values can be created without passing the `Context`.
+assert_eq!(js_value!( 1 ), JsValue::from(1));
+assert_eq!(js_value!( false ), JsValue::from(false));
+
+// To create arrays and objects, the context needs to be passed in.
+assert_eq!(js_value!([ 1, 2, 3 ], context).display().to_string(), "[ 1, 2, 3 ]");
+assert_eq!(
+  js_value!({
+    // Comments are allowed inside.
+    "key": (js_string!("value"))
+  }, context).display().to_string(),
+  "{\n    key: \"value\"\n}",
+);
+```
+
+#### [`js_object`]
+
+```rust
+let object = js_object!({
+  // Comments are allowed inside. String literals will always be transformed to `JsString`.
+  "key": "value",
+  // Identifiers will be used as keys, like in JavaScript.
+  alsoKey: 1,
+  // Expressions surrounded by brackets will be expressed, like in JavaScript.
+  // Note that in this case, the unit value is represented by `null`.
+  [1 + 2]: (),
+}, context);
+
+assert_eq!(
+    JsValue::from(object).display().to_string(),
+    "{\n    3: null,\n    key: \"value\",\n    alsoKey: 1\n}"
+);
+```
+
+#### [`boa_class`]
+
+```rust
+
+// All types that will be part of a class instance need to derive the
+// `Trace` and `Finalize` traits.
+#[derive(Clone, Trace, Finalize, JsData)]
+enum AnimalType {
+    Cat,
+    Dog,
+    Other,
+}
+
+#[derive(Clone, Trace, Finalize, JsData)]
+struct Animal {
+    ty: AnimalType,
+    age: i32,
+}
+
+#[boa_class]
+impl Animal {
+
+    // Sets this method as the constructor of the ECMAScript class.
+    #[boa(constructor)]
+    fn new(name: String, age: i32) -> Self {
+        let ty = match name.as_str() {
+            "cat" => AnimalType::Cat,
+            "dog" => AnimalType::Dog,
+            _ => AnimalType::Other,
+        };
+
+        Self { ty, age }
+    }
+
+    // Any method that takes `&self` will be exposed as an instance method.
+    fn speak(#[boa(error = "`this` was not an animal")] &self) -> JsString {
+        match self.ty {
+            AnimalType::Cat => js_string!("meow"),
+            AnimalType::Dog => js_string!("woof"),
+            AnimalType::Other => js_string!(r"¯\_(ツ)_/¯"),
+        }
+    }
+
+    // Force this being a method (instead of a static function) by declaring it
+    // as a method.
+    #[boa(method)]
+    #[boa(length = 11)]
+    fn method(context: &mut Context) -> JsObject {
+        let obj = JsObject::with_null_proto();
+        obj.set(js_string!("key"), 43, false, context).unwrap();
+        obj
+    }
+
+    // You can define getter methods; `animal.age` will automatically call this
+    // on read.
+    #[boa(getter)]
+    fn age(&self) -> i32 {
+        self.age
+    }
+
+    // You can also define setter methods; `animal.age = 5` will automatically call
+    // this on write.
+    #[boa(setter)]
+    #[boa(method)]
+    #[boa(rename = "age")]
+    fn set_age(&mut self, age: i32) {
+        self.age = age;
+    }
+
+    // This static method will be callable using the constructor function
+    // (`Animal.marked_static_method()`).
+    #[boa(static)]
+    fn marked_static_method() -> i32 {
+        123
+    }
+
+    // Methods without `&self` are considered static methods.
+    fn static_method() -> i32 {
+        42
+    }
+}
+
+let mut context = Context::default();
+
+// This registers the newly created class into the `Realm`.
+context.register_global_class::<Animal>().unwrap();
+
+context
+    .eval(Source::from_bytes(
+        r#"
+        let pet = new Animal("dog", 3);
+        console.log(pet.age) // 3
+        console.log(Animal.staticMethod()) // 42
+        console.log(Animal.markedStaticMethod()) // 123
+
+        v = pet.method();
+        console.log(v.key) // 43
+
+        pet.age = 4;
+        console.log(pet.age) // 4
+    "#,
+    )).unwrap();
+```
+
+#### [`boa_module`]
+
+```rust
+
+#[boa_module]
+mod hello {
+    use boa_engine::{JsString, js_string};
+
+    // Exports a function.
+    fn world() -> JsString {
+        js_string!("hello world")
+    }
+
+    // Exports the `Animal` class. This is the class that we defined in the
+    // previous section.
+    type Animal = super::Animal;
+
+    // Exports a const variable.
+    const SOME_LITERAL_NUMBER: i32 = 1234;
+
+    // You can also rename exports.
+    #[boa(rename = "this_is_different")]
+    const SOME_OTHER_LITERAL: i32 = 5678;
+}
+
+// Creates a new `MapModuleLoader` to load our created module into the
+// engine.
+let module_loader = Rc::new(MapModuleLoader::new());
+let mut context = Context::builder()
+    .module_loader(module_loader.clone())
+    .build()
+    .unwrap();
+
+// The module will be exposed as `/hello.js`.
+module_loader.insert("/hello.js", hello::boa_module(None, &mut context));
+
+let module = Module::parse(
+    Source::from_bytes(
+        r#"
+            import * as m from '/hello.js';
+
+            console.log(m.someLiteralNumber) // 1234
+            console.log(m.this_is_different) // 5678
+
+            console.log(m.world()) // "hello world"
+
+            let pet = new m.Animal("dog", 8);
+            console.log(pet.age) // 8
+            console.log(pet.speak()) // "woof"
+        "#,
+    ),
+    None,
+    &mut context,
+).unwrap();
+
+let result = module
+    .load_link_evaluate(&mut context)
+    .await_blocking(&mut context)
+    .unwrap();
+```
+
+[`JsValue`]: https://docs.rs/boa_engine/0.21.0/boa_engine/value/struct.JsValue.html
+[`JsObject`]: https://docs.rs/boa_engine/0.21.0/boa_engine/object/struct.JsObject.html
+[`Class`]: https://docs.rs/boa_engine/0.21.0/boa_engine/class/trait.Class.html
+[`Module`]: https://docs.rs/boa_engine/0.21.0/boa_engine/module/struct.Module.html
+[`js_value`]: https://docs.rs/boa_engine/0.21.0/boa_engine/macro.js_value.html
+[`js_object`]: https://docs.rs/boa_engine/0.21.0/boa_engine/macro.js_object.html
+[`boa_class`]: https://docs.rs/boa_engine/0.21.0/boa_engine/attr.boa_class.html
+[`boa_module`]: https://docs.rs/boa_engine/0.21.0/boa_engine/attr.boa_module.html
+
 ### Async APIs enhancements
 
 Historically, hooking functions returning a `Future` into Boa has been one of the
 biggest pain points of our API. This was mostly caused by how we defined
-`FutureJob`:
+[`FutureJob`]:
 
 ```rust
 pub struct NativeJob {
@@ -125,7 +341,7 @@ instead of wrapping `Context` with `RefCell`, we would wrap `&mut Context` with
 `RefCell`, and only on the async-related APIs. This would allow not only capturing
 the context on `Future`-related functions, but also doing this without having to
 refactor big parts of the code. Thus, we ditched `FutureJob` and introduced a new
-type of job: `NativeAsyncJob`.
+type of job: [`NativeAsyncJob`].
 
 ```Rust
 /// An ECMAScript [Job] that can be run asynchronously.
@@ -143,12 +359,14 @@ With this change, any API that integrates with `Future` can additionally capture
 the `&RefCell<&mut Context>` to run engine-related operations after awaiting on
 a `Future`.
 
+[`FutureJob`]: https://docs.rs/boa_engine/0.20.0/boa_engine/job/type.FutureJob.html
+[`NativeAsyncJob`]: https://docs.rs/boa_engine/0.21.0/boa_engine/job/struct.NativeAsyncJob.html
+
 ### Revamped `JobQueue`
 
 After introducing the new job type, changes had to be made on
-[`JobQueue`](https://docs.rs/boa_engine/0.20.0/boa_engine/job/trait.JobQueue.html)
-to better support new types of jobs. Thus, `JobQueue` was revamped and renamed to be the
-new `JobExecutor`:
+[`JobQueue`] to better support new types of jobs. Thus, `JobQueue` was revamped and renamed to be the
+new [`JobExecutor`]:
 
 ```rust
 /// An executor of `ECMAscript` [Jobs].
@@ -186,15 +404,15 @@ As you can probably tell, we made a lot of changes on `JobExecutor`:
 - All methods now take `Rc<Self>` as their receiver, making it consistent with
   how the `Context` itself stores the `JobExecutor`.
 - [`enqueue_promise_job`] and [`enqueue_future_job`] now are unified in a single
-  `enqueue_job`, where `Job` is an enum containing the type of job that needs to
+  [`enqueue_job`], where [`Job`] is an enum containing the type of job that needs to
   be scheduled. This makes it much simpler to extend the engine with newer job
   types in the future, such as the newly introduced `TimeoutJob` and `GenericJob`
   types.
-- `run_jobs_async` was converted to a proper async function, and excluded from
+- [`run_jobs_async`] was converted to a proper async function, and excluded from
   `JobExecutor`'s VTable. Additionally, this method now takes a `&RefCell<&mut Context>`
   as its context, which is the missing piece that enables sharing the `Context` between
   multiple `Future`s at the same time. This, however, means that we cannot provide
-  a convenient wrapper such as [`Context::run_jobs`] anymore, which is one of the
+  a convenient wrapper such as [`Context::run_jobs`] for it anymore, which is one of the
   reasons why we decided to exclude that method from `JobExecutor`'s VTable.
 
 These changes not only made `JobExecutor` much simpler, but it also expanded
@@ -202,13 +420,18 @@ the places where we could use its async capabilities to handle "special"
 features of ECMAScript that are more suited to an async way of doing things.
 `ModuleLoader` is one of those places.
 
+[`JobQueue`]: https://docs.rs/boa_engine/0.20.0/boa_engine/job/trait.JobQueue.html
+[`JobExecutor`]: https://docs.rs/boa_engine/0.21.0/boa_engine/job/trait.JobExecutor.html
 [`enqueue_promise_job`]: https://docs.rs/boa_engine/0.20.0/boa_engine/job/trait.JobQueue.html#tymethod.enqueue_promise_job
 [`enqueue_future_job`]: https://docs.rs/boa_engine/0.20.0/boa_engine/job/trait.JobQueue.html#tymethod.enqueue_future_job
-[`Context::run_jobs`]: https://docs.rs/boa_engine/0.20.0/boa_engine/context/struct.Context.html#method.run_jobs
+[`enqueue_job`]: https://docs.rs/boa_engine/0.21.0/boa_engine/job/trait.JobExecutor.html#tymethod.enqueue_job
+[`Job`]: https://docs.rs/boa_engine/0.21.0/boa_engine/job/enum.Job.html
+[`run_jobs_async`]: https://docs.rs/boa_engine/0.21.0/boa_engine/job/trait.JobExecutor.html#method.run_jobs_async
+[`Context::run_jobs`]: https://docs.rs/boa_engine/0.21.0/boa_engine/context/struct.Context.html#method.run_jobs
 
 ### Asyncified `ModuleLoader`
 
-Looking at the previous definition of `ModuleLoader`:
+Looking at the previous definition of [`ModuleLoader`][old-ml]:
 
 ```rust
 pub trait ModuleLoader {
@@ -241,6 +464,7 @@ will load and resolve a "module request"; think of it as a function that takes
 the `"module-name"` from `import * as name from "module-name"`, then does
 "things" to load the module that corresponds to `"module_name"`.
 
+[old-ml]: https://docs.rs/boa_engine/0.20.0/boa_engine/module/trait.ModuleLoader.html
 [hlim]: https://tc39.es/ecma262/#sec-HostLoadImportedModule
 
 The peculiarity about this abstract operation is that it doesn't return anything!
@@ -287,6 +511,7 @@ finish_load: Box<dyn FnOnce(JsResult<Module>, &mut Context)>,
 ```
 
 Unfortunately, this API has downsides:
+
 - It's possible to forget to call `finish_load`, which is safer than a dangling `*const()`
   pointer, but still prone to bugs.
 - It is also really painful to work with, because you cannot capture the `Context`
@@ -302,7 +527,7 @@ Then, while looking at the definition of `ModuleLoader`, we thought...
 
 > Huh, can't we make `load_imported_module` async now?
 
-And that's exactly what we did. Behold, the new `ModuleLoader`!
+And that's exactly what we did. Behold, the new [`ModuleLoader`]!
 
 ```rust
 pub trait ModuleLoader: Any {
@@ -365,15 +590,17 @@ Well, there is one new built-in that was introduced on this release which heavil
 depends on "properly" running `Future`s, and by "properly" we mean "not blocking
 the whole thread waiting on a future to finish". More on that in a bit.
 
+[`ModuleLoader`]: https://docs.rs/boa_engine/0.20.0/boa_engine/module/trait.ModuleLoader.html
+
 ### Built-ins updates
 
 #### Atomics.waitAsync
 
-This release adds support for the `Atomics.waitAsync` method introduced in
+This release adds support for the [`Atomics.waitAsync`] method introduced in
 ECMAScript's 2024 specification.
-This method allows doing thread synchronization just like `Atomics.wait`, but with
+This method allows doing thread synchronization just like [`Atomics.wait`], but with
 the big difference that it will return a `Promise` that will resolve when the
-thread gets notified with the `Atomics.notify` method, instead of blocking until
+thread gets notified with the [`Atomics.notify`] method, instead of blocking until
 that happens.
 
 ```javascript
@@ -403,6 +630,9 @@ async channel. This is the reason why we don't recommend just blocking on each r
 that could cause `TimeoutJob`s to run much later than required, or even make it so that they don't
 run at all!
 
+[`Atomics.waitAsync`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/waitAsync
+[`Atomics.wait`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait
+[`Atomics.notify`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/notify
 [poll_once]: https://docs.rs/futures-lite/latest/futures_lite/future/fn.poll_once.html
 [`FutureGroup`]: https://docs.rs/futures-concurrency/latest/futures_concurrency/future/future_group/struct.FutureGroup.html
 [sje-impl]: https://github.com/boa-dev/boa/blob/0468498b4bb9da31caa20123201e4d8ee132c608/core/engine/src/job.rs#L678
@@ -414,20 +644,28 @@ specification.
 
 The new methods are:
 
-- `Set.prototype.intersection(other)`
-- `Set.prototype.union(other)`
-- `Set.prototype.difference(other)`
-- `Set.prototype.symmetricDifference(other)`
-- `Set.prototype.isSubsetOf(other)`
-- `Set.prototype.isSupersetOf(other)`
-- `Set.prototype.isDisjointFrom(other)`
+- [`Set.prototype.intersection(other)`][inter]
+- [`Set.prototype.union(other)`][union]
+- [`Set.prototype.difference(other)`][diff]
+- [`Set.prototype.symmetricDifference(other)`][symm-diff]
+- [`Set.prototype.isSubsetOf(other)`][subset]
+- [`Set.prototype.isSupersetOf(other)`][supset]
+- [`Set.prototype.isDisjointFrom(other)`][disjoint]
 
 Thanks to [@Hemenguelbindi](https://github.com/@Hemenguelbindi) for
 their work on this feature.
 
+[inter]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection
+[union]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/union
+[diff]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference
+[symm-diff]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/symmetricDifference
+[subset]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf
+[supset]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isSupersetOf
+[disjoint]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isDisjointFrom
+
 #### Float16 support for TypedArrays, Dataview and Math built-ins
 
-This release adds support for `f16` types for the TypedArray, Dataview, and Math
+This release adds support for [`f16` types][f16] for the TypedArray, Dataview, and Math
 built-ins.
 
 ```javascript
@@ -435,9 +673,11 @@ const x = new Float16Array([37, 42.123456]);
 console.log(x[1]); // 42.125
 ```
 
+[f16]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float16Array
+
 #### Error.isError
 
-This release adds support for `Error.isError`, which will be introduced in
+This release adds support for [`Error.isError`], which will be introduced in
 ECMAScript's 2026 specification.
 
 ```javascript
@@ -445,9 +685,11 @@ console.log(Error.isError(new Error())); // true
 console.log(Error.isError({ __proto__: Error.prototype })); // false
 ```
 
+[`Error.isError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/isError
+
 #### Math.sumPrecise
 
-This release adds support for `Math.sumPrecise`, which will be introduced in
+This release adds support for [`Math.sumPrecise`], which will be introduced in
 ECMAScript's 2026 specification.
 
 We've opted for using the new [`xsum`](https://crates.io/crates/xsum) summation algorithm
@@ -458,9 +700,11 @@ let sum = Math.sumPrecise([1e20, 0.1, -1e20]);
 console.log(sum); // 0.1
 ```
 
+[`Math.sumPrecise`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sumPrecise
+
 #### Array.fromAsync
 
-This release adds support for `Array.fromAsync`, which will be introduced in
+This release adds support for [`Array.fromAsync`], which will be introduced in
 ECMAScript's 2026 specification.
 
 `Array.fromAsync` allows to conveniently create a array from an async iterable by
@@ -487,6 +731,8 @@ toArray(asyncIterable()).then((array) => console.log(array));
 // [0, 1, 2, 3, 4]
 ```
 
+[`Array.fromAsync`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync
+
 ## Boa Runtime
 
 Work on Boa's runtime crate has continued with additional APIs added.
@@ -495,11 +741,11 @@ Work on Boa's runtime crate has continued with additional APIs added.
 
 Additional APIs added the the Runtime crate include:
 
-- `fetch`
-- `setTimeout`
-- `setInterval`
-- `clearInterval`
-- `queueMicrotask`
+- [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch)
+- [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)
+- [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval)
+- [`clearInterval`](https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval)
+- [`queueMicrotask`](https://developer.mozilla.org/en-US/docs/Web/API/Window/queueMicrotask)
 
 ### Conformance testing
 
@@ -510,7 +756,7 @@ against the Web Platform Tests (WPT).
 
 ### NaN Boxing
 
-With this release, Boa's `JsValue` will use nan-boxing by default. The NaN boxing of `JsValue`
+With this release, Boa's [`JsValue`] will use nan-boxing by default. The NaN boxing of `JsValue`
 increased memory and runtime performance over the older enum.
 
 As a note, the current implementation is not compatible with all platforms. While we hope
@@ -519,6 +765,8 @@ feature flag.
 
 Unfamiliar with NaN Boxing? We won't go over it in depth here, but we recommend
 [this article](https://piotrduperas.com/posts/nan-boxing) to learn more.
+
+[`JsValue`]: https://docs.rs/boa_engine/0.21.0/boa_engine/value/struct.JsValue.html
 
 ### Register VM
 
@@ -554,8 +802,8 @@ Boa's virtual machine (VM) moved from a stack based VM to a register based VM in
 ### Garbage collector rewrite
 
 This has been long overdue. Boa's garbage collector is a forked and
-modified verison of `rust-gc`, and we have long been pushing our forked
-gc to its limits.
+modified version of [`rust-gc`](github.com/Manishearth/rust-gc), and we have long
+been pushing our forked gc to its limits.
 
 We have seen some evidence from previous pull requests that simply swapping
 allocators from Rust's global allocator can increase Boa's performance, and
@@ -565,9 +813,9 @@ GC room on [Matrix].
 
 ### Runtime functionality
 
-The `boa_runtime` crate was initially meant to contain functionality
-that was not meant to exist in the core ECMAScript implementation, for instance
-the console implementation. Noticeably, we have since added more runtime
+The [`boa_runtime`](https://crates.io/crates/boa_runtime) crate was initially meant
+to contain functionality that was not meant to exist in the core ECMAScript implementation,
+for instance the console implementation. Noticeably, we have since added more runtime
 features to the crate with even more features expected in the next release.
 
 Our current plan is if there is enough interest and the crate becomes
@@ -582,9 +830,11 @@ on improving Boa's overall performance.
 
 ### `Intl` and ECMA402 conformance
 
-We currently have some general support for the ECMA402 and ECMAScript's `Intl` object. We
+We currently have some general support for the ECMA402 and ECMAScript's [`Intl`] object. We
 will continue to some general work on ECMA402 conformance to allow Boa to be fully usable
 for internationalization use cases.
+
+[`Intl`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
 
 ## How can you support Boa?
 
