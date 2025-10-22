@@ -23,13 +23,15 @@ Currently, `temporal_rs` v0.1 is being used by Boa, [Kiesel][kiesel-site],
 [V8][v8-site], and [Yavashark][yavashark-repo] for their Temporal
 implementations (more on that later) and is [estimated](https://chromestatus.com/feature/5668291307634688) to land unflagged in **Chromium v144**.
 
+<!-- truncate -->
+
 ### Why v0.1? Why not v1.0?
 
-Right now the [Temporal proposal](https://github.com/tc39/proposal-temporal) is at Stage 3 (4 being the final stage) in the standards process. Although unlikely, 
-we want to remain on a minor version to catch any changes which come in (mostly bug fixes) before the proposal reaches stage 4 
-and thus complete. We expect that to happen in Q1 2026. 
+Right now the [Temporal proposal](https://github.com/tc39/proposal-temporal) is at Stage 3 (4 being the final stage) in the standards process. Although unlikely,
+we want to remain on a minor version to catch any changes which come in (mostly bug fixes) before the proposal reaches stage 4
+and thus complete. We expect that to happen in Q1 2026.
 
-Fear not! temporal_rs passes over 4000 specification tests, is stable and ready to use. 
+Fear not! temporal_rs passes over 4000 specification tests, is stable and ready to use.
 
 To celebrate the release of `temporal_rs`, we'll cover a short
 background of the Temporal implementation in Boa and why `temporal_rs`
@@ -53,9 +55,10 @@ culminated in an absolutely massive PR,
 The PR itself stubbed out a lot of the methods, implemented some
 Duration and Instant functionality, and started the support for custom
 calendars. There were, however, 2 major takeaways from this PR:
+
 - Temporal is a massive specification update, it's the single biggest addition to ECMAScript since ES6.
 - There is a lot of room to potentially optimize Temporal if we do not deal with
-`JsValue` directly.
+  `JsValue` directly.
 
 After a couple weeks, the question came up amongst maintainers of not just Boa, but also other engines:
 "_could we separate the datetime logic and implementation off into a completely
@@ -351,8 +354,6 @@ it's a really cool project and we would definitely recommend checking it
 out if you're looking to generate FFI bindings for other languages for
 your Rust library.
 
-
-
 > "_Diplomat made the FFI code extremely easy: I basically wrote the entire temporal_capi FFI layer over the course of a couple PRs, each of which probably took me ~15 minutes each of relatively mindless "tab through docs, add API" work. Diplomat is really good at this type of thing._"
 >
 > <cite>Manishearth [Rust Reddit Q&A](https://www.reddit.com/r/rust/comments/1logjzt/chromiumv8_implementing_temporal_api_via_rust/):</cite>
@@ -421,6 +422,7 @@ the specification, as well as the ICU4X project for their incredible
 ongoing work on calendars and all things i18n related.
 
 ## Discussion
+
 - Hackernews: https://news.ycombinator.com/item?id=45361826
 - Reddit: https://www.reddit.com/r/rust/comments/1npffdx/temporal_rs_is_here_the_datetime_library_powering/
 
@@ -448,8 +450,6 @@ itself and for users of the engine. Feel free to contact us in [Matrix].
 [testing representation]: https://github.com/boa-dev/boa/issues/820
 [action]: https://github.com/boa-dev/criterion-compare-action
 [Matrix]: https://matrix.to/#/#boa:matrix.org
-
-
 [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal
 [v8-site]: https://v8.dev/
 [kiesel-site]: https://kiesel.dev/

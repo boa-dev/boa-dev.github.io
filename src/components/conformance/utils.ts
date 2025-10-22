@@ -31,14 +31,16 @@ export function updateInitialConformanceState(
 ) {
   if (conformanceState) return conformanceState;
   const selectedTest = urlState.testPath ? urlState.selectedTest : undefined;
-  const tagName = (!urlState.versionTag) && urlState.testPath ? "main" : urlState.versionTag;
+  const tagName =
+    !urlState.versionTag && urlState.testPath ? "main" : urlState.versionTag;
   const fetchUrl =
     tagName === "main"
       ? `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json`
       : `https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/tags/${tagName}/latest.json`;
 
   const testPath = urlState.testPath || [];
-  if (!tagName && testPath.length == 0 && !selectedTest) return conformanceState;
+  if (!tagName && testPath.length == 0 && !selectedTest)
+    return conformanceState;
   return {
     version: { tagName, fetchUrl },
     testPath: [tagName, ...testPath],
