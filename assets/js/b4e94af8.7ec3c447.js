@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./.docusaurus/docusaurus-plugin-content-pages/default/site-src-pages-roadmap-md-b4e.json
-const site_src_pages_roadmap_md_b4e_namespaceObject = /*#__PURE__*/JSON.parse('{"type":"mdx","permalink":"/roadmap","source":"@site/src/pages/roadmap.md","title":"Roadmap 2026","description":"Garbage Collector Redesign and Integration","frontMatter":{},"unlisted":false}');
+const site_src_pages_roadmap_md_b4e_namespaceObject = /*#__PURE__*/JSON.parse('{"type":"mdx","permalink":"/roadmap","source":"@site/src/pages/roadmap.md","title":"Boa Roadmap","description":"Roadmap and planned features for the Boa project.","frontMatter":{"title":"Boa Roadmap","description":"Roadmap and planned features for the Boa project."},"unlisted":false}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(4848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -26,7 +26,10 @@ var lib = __webpack_require__(8453);
 ;// ./src/pages/roadmap.md
 
 
-const frontMatter = {};
+const frontMatter = {
+	title: 'Boa Roadmap',
+	description: 'Roadmap and planned features for the Boa project.'
+};
 const contentTitle = 'Roadmap 2026';
 
 const assets = {
