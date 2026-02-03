@@ -1,3 +1,8 @@
+---
+title: Boa Roadmap
+description: Roadmap and planned features for the Boa project.
+---
+
 # Roadmap 2026
 
 ## Garbage Collector Redesign and Integration
