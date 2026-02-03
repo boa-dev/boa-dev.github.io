@@ -83,6 +83,11 @@ const config: Config = {
           position: "right",
         },
         {
+          href: "/roadmap",
+          label: "Roadmap",
+          position: "right",
+        },
+        {
           href: "https://github.com/boa-dev/boa/tree/main/examples",
           label: "Examples",
           position: "right",
