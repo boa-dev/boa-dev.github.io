@@ -73,33 +73,33 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "infoSidebar",
           position: "left",
-          label: "Learn More",
+          label: "Documentation",
         },
         { to: "/blog", label: "Blog", position: "left" },
         { to: "/about", label: "About", position: "left" },
         {
-          href: "/playground",
+          to: "/roadmap",
+          label: "Roadmap",
+          position: "left",
+        },
+        {
+          to: "/playground",
           label: "Playground",
           position: "right",
         },
         {
-          href: "/roadmap",
-          label: "Roadmap",
+          to: "/conformance",
+          label: "Conformance",
+          position: "right",
+        },
+        {
+          to: "/benchmarks",
+          label: "Benchmarks",
           position: "right",
         },
         {
           href: "https://github.com/boa-dev/boa/tree/main/examples",
           label: "Examples",
-          position: "right",
-        },
-        {
-          href: "/conformance",
-          label: "Conformance",
-          position: "right",
-        },
-        {
-          href: "/benchmarks",
-          label: "Benchmarks",
           position: "right",
         },
         {
@@ -118,18 +118,18 @@ const config: Config = {
     footer: {
       links: [
         {
-          title: "Docs",
+          title: "General",
           items: [
             {
               label: "About",
               to: "/about",
             },
             {
-              label: "Learn More",
+              label: "Docs",
               to: "/docs/intro",
             },
             {
-              label: "API Documentation",
+              label: "API Docs",
               href: "https://docs.rs/boa_engine/latest",
             },
           ],
@@ -138,13 +138,13 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Discord",
-              href: "https://discord.gg/tUFFk9Y",
+              label: "Matrix",
+              href: "https://matrix.to/#/#boa:matrix.org",
             },
             {
               label: "Mastodon",
               href: "https://fosstodon.org/@boa_engine",
-            },
+            }
           ],
         },
         {
