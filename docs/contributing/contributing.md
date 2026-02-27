@@ -58,7 +58,7 @@ cargo doc --all-features --document-private-items --workspace --no-deps
 ## Debugging
 
 Knowing how to debug the interpreter should help you resolve problems quite quickly.
-See [Debugging](/category/debugging).
+See [Debugging](/docs/category/debugging).
 
 ## IDE Setup
 
