@@ -4,28 +4,12 @@ sidebar_position: 2
 
 # Testing
 
-Boa provides its own test suite, as well as a way to run the official ECMAScript conformance test suite.
-
-## Boa's tests suite
-
-Boa's test suite is implemented in the various `tests.rs` files throughout the project and driven by Rust's
-testing capabilities. So to run the Boa test suite, you can just run the normal `cargo test`.
-
-## ECMAScript's `test262` Conformance Test Suite
-
-The ECMAScript test262 is a git submodule of tc39's current version of the test suite and represents the implementation
-conformance.
-
-To run the full ECMAScript test suite, you can use the below command in Boa's root directory:
+Boa provides its own test suite, and can also run the official ECMAScript test suite. To run the Boa test
+suite, you can just run the normal `cargo test`, and to run the full ECMAScript test suite, you can run it
+with this command:
 
 ```shell
 cargo run --release --bin boa_tester -- run -v 2> error.log
-```
-
-Note that this requires the `test262` submodule to be checked out, so you will need to run the following first:
-
-```shell
-git submodule init && git submodule update
 ```
 
 This will run the test suite in verbose mode (you can remove the `-v` part to run it in non-verbose mode),
@@ -45,4 +29,31 @@ be more readable if you disable parallelism with the `-d` flag. All together it 
 
 ```shell
 cargo run --release --bin boa_tester -- run -vv -d -s test/language/types/number 2> error.log
+```
+
+To save test results for later comparison, use the `-o` flag to specify an output directory:
+
+```shell
+cargo run --release --bin boa_tester -- run -o ./test-results
+```
+
+## Comparing Test Results
+
+You can compare two test suite runs to see what changed:
+
+```shell
+cargo run --release --bin boa_tester -- compare <base-results> <new-results>
+```
+
+Both arguments can be either result files (e.g., `latest.json`) or directories containing test results.
+When directories are provided, the tester automatically uses the `latest.json` file from each directory.
+
+For example:
+
+```shell
+# Compare using directories
+cargo run --release --bin boa_tester -- compare ./test-results-main ./test-results-feature
+
+# Compare using explicit files
+cargo run --release --bin boa_tester -- compare ./test-results-main/latest.json ./test-results-feature/latest.json
 ```
