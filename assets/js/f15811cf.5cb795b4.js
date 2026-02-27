@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[712],{
+(self["webpackChunkboajs_dev"] = self["webpackChunkboajs_dev"] || []).push([[5042],{
 
-/***/ 1848:
+/***/ 1391:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,17 +13,17 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_contributing_contributing_md_869_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_contributing_contributing_md_f15_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-contributing-contributing-md-869.json
-const site_docs_contributing_contributing_md_869_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"contributing/CONTRIBUTING","title":"Contributing to Boa","description":"Boa welcomes contribution from everyone. Here are the guidelines if you are","source":"@site/docs/contributing/CONTRIBUTING.md","sourceDirName":"contributing","slug":"/contributing/","permalink":"/docs/contributing/","draft":false,"unlisted":false,"editUrl":"https://github.com/boa-dev/boa-dev.github.io/tree/main/docs/docs/contributing/CONTRIBUTING.md","tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"sidebar_position":1},"sidebar":"infoSidebar","previous":{"title":"Contributing","permalink":"/docs/category/contributing"},"next":{"title":"Testing","permalink":"/docs/contributing/testing"}}');
+;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-contributing-contributing-md-f15.json
+const site_docs_contributing_contributing_md_f15_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"contributing/contributing","title":"Contributing to Boa","description":"Boa welcomes contribution from everyone. Here are the guidelines if you are","source":"@site/docs/contributing/contributing.md","sourceDirName":"contributing","slug":"/contributing/","permalink":"/docs/contributing/","draft":false,"unlisted":false,"editUrl":"https://github.com/boa-dev/boa-dev.github.io/tree/main/docs/docs/contributing/contributing.md","tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"sidebar_position":1},"sidebar":"infoSidebar","previous":{"title":"Contributing","permalink":"/docs/category/contributing"},"next":{"title":"Testing","permalink":"/docs/contributing/testing"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(4848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(8453);
-;// ./docs/contributing/CONTRIBUTING.md
+;// ./docs/contributing/contributing.md
 
 
 const frontMatter = {
@@ -44,23 +44,23 @@ const toc = [{
 }, {
   "value": "Running the compiler",
   "id": "running-the-compiler",
-  "level": 3
+  "level": 2
 }, {
-  "value": "Web Assembly",
-  "id": "web-assembly",
-  "level": 3
+  "value": "Building the docs",
+  "id": "building-the-docs",
+  "level": 2
 }, {
-  "value": "Setup",
-  "id": "setup",
-  "level": 3
+  "value": "Debugging",
+  "id": "debugging",
+  "level": 2
 }, {
-  "value": "VSCode Plugins",
-  "id": "vscode-plugins",
-  "level": 4
+  "value": "IDE Setup",
+  "id": "ide-setup",
+  "level": 2
 }, {
-  "value": "Tasks",
-  "id": "tasks",
-  "level": 4
+  "value": "AI",
+  "id": "ai",
+  "level": 2
 }, {
   "value": "Communication",
   "id": "communication",
@@ -73,8 +73,6 @@ function _createMdxContent(props) {
     em: "em",
     h1: "h1",
     h2: "h2",
-    h3: "h3",
-    h4: "h4",
     header: "header",
     li: "li",
     p: "p",
@@ -125,7 +123,7 @@ function _createMdxContent(props) {
       children: ["Then simply clone this project and ", (0,jsx_runtime.jsx)(_components.code, {
         children: "cargo build"
       }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "running-the-compiler",
       children: "Running the compiler"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
@@ -134,53 +132,67 @@ function _createMdxContent(props) {
       }), ", and you can compile a list\nof JavaScript files by running ", (0,jsx_runtime.jsx)(_components.code, {
         children: "cargo run -- file1.js file2.js"
       }), " and so on."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "web-assembly",
-      children: "Web Assembly"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "building-the-docs",
+      children: "Building the docs"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "To build the development documentation, run:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-shell",
+        children: "cargo doc --all-features --document-private-items --workspace\n"
+      })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["If you want to develop on the web assembly side you can run ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "yarn serve"
-      }), " and then go\nto ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "http://localhost:8080",
-        children: "http://localhost:8080"
+      children: ["This will also document all the dependencies on the workspace, which could be\nheavier in size. To only generate documentation for the workspace members, just\nadd the ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "--no-deps"
+      }), " flag:"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-shell",
+        children: "cargo doc --all-features --document-private-items --workspace --no-deps\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "debugging",
+      children: "Debugging"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Knowing how to debug the interpreter should help you resolve problems quite quickly.\nSee ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/docs/category/debugging",
+        children: "Debugging"
       }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "setup",
-      children: "Setup"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "vscode-plugins",
-      children: "VSCode Plugins"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "ide-setup",
+      children: "IDE Setup"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Either the ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://marketplace.visualstudio.com/items?itemName=rust-lang.rust",
-        children: "Rust (RLS)"
-      }), " or the ", (0,jsx_runtime.jsx)(_components.a, {
+      children: ["You can work on Boa with any text editor capable of editing Rust and Javascript code.\nAn easy way of getting started is to use ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://code.visualstudio.com/",
+        children: "Visual Studio Code"
+      }), "\nwith the ", (0,jsx_runtime.jsx)(_components.a, {
         href: "https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer",
         children: "Rust Analyzer"
-      }), "\nextensions are preferred. RLS is easier to set up but some of the development is\nmoving towards Rust Analyzer. Both of these plugins will help you with your Rust\nDevelopment"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "tasks",
-      children: "Tasks"
+      }), " extension."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "ai",
+      children: "AI"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Boa has some pre-defined tasks in \".vscode/tasks.json\""
+      children: "We are usually not against using AI tools. However, their\ngeneral availability makes it much easier to fill our review capacity with\nlow-effort contributions. Therefore, every contributor must adhere to the following\nrules:"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Build - shift+cmd/ctrl+b should build and run cargo. You should be able to make changes and run this task."
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Test - (there is no shortcut, you'll need to make one) - Runs ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "Cargo Test"
-        }), ".\nI personally set a shortcut of shift+cmd+option+T (or shift+ctrl+alt+T)"]
+        children: "No spamming PRs. This includes the use of AI agents to open multiple PRs in\nsuccession."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "No PRs with massive line changes (5k+) without prior discussion and acknowledgement."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "All PR authors must be able to explain what their contribution does in detail."
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "If you don't want to install everything on your machine, you can use the Dockerfile.\nStart VSCode in container mode (you may need the docker container plugin) and use the Dockerfile."
+      children: "The maintainers reserve the right to closing any PRs that do not follow these rules,\nand recurrent offenses will result in a global ban from contributing to all\nBoa-related projects."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "communication",
       children: "Communication"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["We have a Discord server, feel free to ask questions ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://discord.gg/tUFFk9Y",
-        children: "here"
-      })]
+      children: ["Most of our communication happens in Matrix, feel free to ask questions in our\n", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://matrix.to/#/#boa:matrix.org",
+        children: "Boa space"
+      }), "."]
     })]
   });
 }

@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./.docusaurus/docusaurus-plugin-content-docs/default/site-docs-contributing-testing-md-62c.json
-const site_docs_contributing_testing_md_62c_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"contributing/testing","title":"Testing","description":"Boa provides its own test suite, as well as a way to run the official ECMAScript conformance test suite.","source":"@site/docs/contributing/testing.md","sourceDirName":"contributing","slug":"/contributing/testing","permalink":"/docs/contributing/testing","draft":false,"unlisted":false,"editUrl":"https://github.com/boa-dev/boa-dev.github.io/tree/main/docs/docs/contributing/testing.md","tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"sidebar_position":2},"sidebar":"infoSidebar","previous":{"title":"Contributing to Boa","permalink":"/docs/contributing/"},"next":{"title":"Debugging","permalink":"/docs/category/debugging"}}');
+const site_docs_contributing_testing_md_62c_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"contributing/testing","title":"Testing","description":"Boa provides its own test suite, and can also run the official ECMAScript test suite. To run the Boa test","source":"@site/docs/contributing/testing.md","sourceDirName":"contributing","slug":"/contributing/testing","permalink":"/docs/contributing/testing","draft":false,"unlisted":false,"editUrl":"https://github.com/boa-dev/boa-dev.github.io/tree/main/docs/docs/contributing/testing.md","tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"sidebar_position":2},"sidebar":"infoSidebar","previous":{"title":"Contributing to Boa","permalink":"/docs/contributing/"},"next":{"title":"Understanding the ECMAScript Specification","permalink":"/docs/contributing/ecmascript"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(4848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -38,12 +38,8 @@ const assets = {
 
 
 const toc = [{
-  "value": "Boa&#39;s tests suite",
-  "id": "boas-tests-suite",
-  "level": 2
-}, {
-  "value": "ECMAScript&#39;s <code>test262</code> Conformance Test Suite",
-  "id": "ecmascripts-test262-conformance-test-suite",
+  "value": "Comparing Test Results",
+  "id": "comparing-test-results",
   "level": 2
 }];
 function _createMdxContent(props) {
@@ -63,39 +59,14 @@ function _createMdxContent(props) {
         id: "testing",
         children: "Testing"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Boa provides its own test suite, as well as a way to run the official ECMAScript conformance test suite."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "boas-tests-suite",
-      children: "Boa's tests suite"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Boa's test suite is implemented in the various ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "tests.rs"
-      }), " files throughout the project and driven by Rust's\ntesting capabilities. So to run the Boa test suite, you can just run the normal ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Boa provides its own test suite, and can also run the official ECMAScript test suite. To run the Boa test\nsuite, you can just run the normal ", (0,jsx_runtime.jsx)(_components.code, {
         children: "cargo test"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.h2, {
-      id: "ecmascripts-test262-conformance-test-suite",
-      children: ["ECMAScript's ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "test262"
-      }), " Conformance Test Suite"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "The ECMAScript test262 is a git submodule of tc39's current version of the test suite and represents the implementation\nconformance."
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "To run the full ECMAScript test suite, you can use the below command in Boa's root directory:"
+      }), ", and to run the full ECMAScript test suite, you can run it\nwith this command:"]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
         children: "cargo run --release --bin boa_tester -- run -v 2> error.log\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Note that this requires the ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "test262"
-      }), " submodule to be checked out, so you will need to run the following first:"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-shell",
-        children: "git submodule init && git submodule update\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["This will run the test suite in verbose mode (you can remove the ", (0,jsx_runtime.jsx)(_components.code, {
@@ -127,6 +98,38 @@ function _createMdxContent(props) {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
         children: "cargo run --release --bin boa_tester -- run -vv -d -s test/language/types/number 2> error.log\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["To save test results for later comparison, use the ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "-o"
+      }), " flag to specify an output directory:"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-shell",
+        children: "cargo run --release --bin boa_tester -- run -o ./test-results\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "comparing-test-results",
+      children: "Comparing Test Results"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "You can compare two test suite runs to see what changed:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-shell",
+        children: "cargo run --release --bin boa_tester -- compare <base-results> <new-results>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Both arguments can be either result files (e.g., ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "latest.json"
+      }), ") or directories containing test results.\nWhen directories are provided, the tester automatically uses the ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "latest.json"
+      }), " file from each directory."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "For example:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-shell",
+        children: "# Compare using directories\ncargo run --release --bin boa_tester -- compare ./test-results-main ./test-results-feature\n\n# Compare using explicit files\ncargo run --release --bin boa_tester -- compare ./test-results-main/latest.json ./test-results-feature/latest.json\n"
       })
     })]
   });

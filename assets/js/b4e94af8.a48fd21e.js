@@ -45,19 +45,19 @@ const toc = [{
 }, {
   "value": "Description",
   "id": "description",
-  "level": 3
+  "level": 4
 }, {
   "value": "Expected Outcomes",
   "id": "expected-outcomes",
-  "level": 3
+  "level": 4
 }, {
   "value": "Possible Extensions",
   "id": "possible-extensions",
-  "level": 3
+  "level": 4
 }, {
   "value": "Project Discussion:",
   "id": "project-discussion",
-  "level": 3
+  "level": 4
 }, {
   "value": "Public API Audit and 1.0 Stabilization",
   "id": "public-api-audit-and-10-stabilization",
@@ -65,39 +65,39 @@ const toc = [{
 }, {
   "value": "Description",
   "id": "description-1",
-  "level": 3
+  "level": 4
 }, {
   "value": "Expected Outcomes",
   "id": "expected-outcomes-1",
-  "level": 3
+  "level": 4
 }, {
   "value": "Possible Extensions",
   "id": "possible-extensions-1",
-  "level": 3
+  "level": 4
+}, {
+  "value": "Open Issue:",
+  "id": "open-issue",
+  "level": 4
 }, {
   "value": "JavaScript Engine Performance Improvements",
   "id": "javascript-engine-performance-improvements",
   "level": 2
 }, {
-  "value": "Open Issue:",
-  "id": "open-issue",
-  "level": 2
-}, {
   "value": "Description",
   "id": "description-2",
-  "level": 3
+  "level": 4
 }, {
   "value": "Expected Outcomes",
   "id": "expected-outcomes-2",
-  "level": 3
+  "level": 4
 }, {
   "value": "Possible Extensions",
   "id": "possible-extensions-2",
-  "level": 3
+  "level": 4
 }, {
   "value": "Project Discussion",
   "id": "project-discussion-1",
-  "level": 3
+  "level": 4
 }, {
   "value": "ECMAScript Conformance and Spec Compliance",
   "id": "ecmascript-conformance-and-spec-compliance",
@@ -105,15 +105,15 @@ const toc = [{
 }, {
   "value": "Description",
   "id": "description-3",
-  "level": 3
+  "level": 4
 }, {
   "value": "Expected Outcomes",
   "id": "expected-outcomes-3",
-  "level": 3
+  "level": 4
 }, {
   "value": "Possible Extensions",
   "id": "possible-extensions-3",
-  "level": 3
+  "level": 4
 }, {
   "value": "Developer Tooling and Engine Observability",
   "id": "developer-tooling-and-engine-observability",
@@ -121,23 +121,24 @@ const toc = [{
 }, {
   "value": "Description",
   "id": "description-4",
-  "level": 3
+  "level": 4
 }, {
   "value": "Expected Outcomes",
   "id": "expected-outcomes-4",
-  "level": 3
+  "level": 4
 }, {
   "value": "Possible Extensions",
   "id": "possible-extensions-4",
-  "level": 3
+  "level": 4
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     h1: "h1",
     h2: "h2",
-    h3: "h3",
+    h4: "h4",
     header: "header",
+    hr: "hr",
     li: "li",
     p: "p",
     ul: "ul",
@@ -163,7 +164,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Preferred Skills: Garbage collection algorithms, language runtimes"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "description",
       children: "Description"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
@@ -173,7 +174,7 @@ function _createMdxContent(props) {
       }), ". While functional, the GC architecture needs significant redesign to better support performance, maintainability, and future language features."]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "This project focuses on evaluating, refining, and integrating a production-ready garbage collector into Boa."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "expected-outcomes",
       children: "Expected Outcomes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -188,7 +189,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Produce documentation explaining the design and trade-offs"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "possible-extensions",
       children: "Possible Extensions"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -199,18 +200,22 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Tooling to visualize heap and GC activity"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "project-discussion",
       children: "Project Discussion:"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: [(0,jsx_runtime.jsx)(_components.a, {
-        href: "https://matrix.to/#/!ESLxDMqdSvKbprdiyg:matrix.org?via=matrix.org&via=rrogal.ski&via=t2bot.io",
-        children: "Matrix Boa/GC"
-      }), "\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://matrix.to/#/!ZBLAwGpYvzsLqZAZZg:matrix.org?via=matrix.org&via=t2bot.io&via=mozilla.org",
-        children: "Matrix Boa/General"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://matrix.to/#/!ESLxDMqdSvKbprdiyg:matrix.org?via=matrix.org&via=rrogal.ski&via=t2bot.io",
+          children: "Matrix Boa/GC"
+        })
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://matrix.to/#/!ZBLAwGpYvzsLqZAZZg:matrix.org?via=matrix.org&via=t2bot.io&via=mozilla.org",
+          children: "Matrix Boa/General"
+        })
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.hr, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "public-api-audit-and-10-stabilization",
       children: "Public API Audit and 1.0 Stabilization"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -223,12 +228,12 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Preferred Skills: SemVer, library maintenance, documentation"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "description-1",
       children: "Description"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Boa is approaching its 1.0 release. A key requirement for this milestone is ensuring that our public APIs are well-defined, intentional, and stable, as breaking changes become significantly more costly after 1.0.\nThis project focuses on auditing Boa’s public API surface, identifying areas that may cause long-term maintenance or compatibility issues, and helping prepare the engine for a stable 1.0 release."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "expected-outcomes-1",
       children: "Expected Outcomes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -243,7 +248,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Improve documentation around public APIs and versioning guarantees"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "possible-extensions-1",
       children: "Possible Extensions"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -254,7 +259,15 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Assist in defining Boa’s post-1.0 stability and deprecation policy"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
+      id: "open-issue",
+      children: "Open Issue:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://github.com/boa-dev/boa/issues/4524",
+        children: "https://github.com/boa-dev/boa/issues/4524"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.hr, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "javascript-engine-performance-improvements",
       children: "JavaScript Engine Performance Improvements"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -267,22 +280,14 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Preferred Skills: Compiler or VM internals, benchmarking"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "open-issue",
-      children: "Open Issue:"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://github.com/boa-dev/boa/issues/4524",
-        children: "https://github.com/boa-dev/boa/issues/4524"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "description-2",
       children: "Description"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Performance is a core goal of Boa. While already competitive in many areas, there are clear opportunities to improve execution speed, memory usage, and startup time."
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "This project focuses on identifying performance bottlenecks and implementing targeted optimizations across the VM, bytecode execution, and runtime systems."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "expected-outcomes-2",
       children: "Expected Outcomes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -297,7 +302,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Document performance changes and results"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "possible-extensions-2",
       children: "Possible Extensions"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -306,7 +311,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Improve documentation and tooling for profiling and benchmarking"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "project-discussion-1",
       children: "Project Discussion"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -321,7 +326,7 @@ function _createMdxContent(props) {
           children: "Matrix Boa/General"
         })
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.hr, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "ecmascript-conformance-and-spec-compliance",
       children: "ECMAScript Conformance and Spec Compliance"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -334,14 +339,14 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Preferred Skills: JavaScript engine internals"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "description-3",
       children: "Description"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Boa already performs well on ECMAScript conformance tests, but maintaining and improving compliance is an ongoing effort as the specification evolves."
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "This project focuses on closing remaining gaps, improving correctness in edge cases, and strengthening test coverage."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "expected-outcomes-3",
       children: "Expected Outcomes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -356,7 +361,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Document tricky or non-obvious spec decisions"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "possible-extensions-3",
       children: "Possible Extensions"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -365,7 +370,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Improve error reporting and diagnostics for spec failures"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.hr, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "developer-tooling-and-engine-observability",
       children: "Developer Tooling and Engine Observability"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -378,12 +383,12 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Preferred Skills: Runtime diagnostics, profiling tools"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "description-4",
       children: "Description"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "As Boa grows, better tooling is needed to understand and debug engine behavior. This project focuses on improving observability for developers working on the engine."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "expected-outcomes-4",
       children: "Expected Outcomes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
@@ -396,7 +401,7 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Document tooling for contributors and users"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
       id: "possible-extensions-4",
       children: "Possible Extensions"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
