@@ -1,0 +1,11 @@
+"use strict";
+(globalThis["webpackChunkboajs_dev"] = globalThis["webpackChunkboajs_dev"] || []).push([[8947],{
+
+/***/ 56600
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"authors":[{"name":"Boa Developers","url":"https://github.com/boa-dev","key":"boa-dev","page":null,"count":16},{"name":"Temporal_rs Developers","url":"https://github.com/boa-dev/temporal","key":"temporal-dev","page":null,"count":1}]}');
+
+/***/ }
+
+}]);
