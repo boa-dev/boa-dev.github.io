@@ -13,7 +13,7 @@ import {
   createSearchParams,
   mapToResultInfo,
 } from "@site/src/components/conformance/utils";
-import { useHistory, useLocation } from "@docusaurus/router";
+import { useHistory } from "@docusaurus/router";
 
 import styles from "./styles.module.css";
 
@@ -211,6 +211,7 @@ export default function ResultsDisplay(props: ResultsProps): React.ReactNode {
     <div className={styles.resultsDisplay}>
       <ResultNavigation
         state={props.state}
+        editions={currentSuite ? Object.keys(currentSuite.versionedStats) : []}
         sliceNavToIndex={sliceNavToIndex}
         setEcmaScriptFlag={setEcmaScriptFlag}
         setSortOption={setSortOption}

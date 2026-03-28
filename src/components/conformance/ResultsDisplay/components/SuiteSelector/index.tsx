@@ -88,17 +88,17 @@ function SuiteStatistics({
     setFilter(filterOption);
   }, [filterOption]);
 
-  let passed =
+  const passed =
     filter == FilterOption.None || filter == FilterOption.Passed
       ? testResults.passed
       : 0;
 
-  let ignored =
+  const ignored =
     filter == FilterOption.None || filter == FilterOption.Ignored
       ? testResults.ignored
       : 0;
 
-  let failed =
+  const failed =
     filter == FilterOption.None || filter == FilterOption.Failed
       ? `${testResults.total - testResults.passed - testResults.ignored} (${testResults.panic}\u26A0)`
       : 0;
