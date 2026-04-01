@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  SpecEdition,
   TestOutcome,
   TestResult,
   SuiteResult,
@@ -64,12 +63,25 @@ function applyFilter(filter: FilterOption, outcome: TestOutcome): boolean {
   }
 }
 
+function esFlagToEdition(esFlag: string): number {
+  if (!esFlag.startsWith("es")) {
+    throw RangeError("invalid esFlag");
+  }
+
+  const parsedEsFlag = Number(esFlag.substring(2));
+  if (!Number.isInteger(parsedEsFlag)) {
+    throw RangeError("esFlag is not an integer");
+  }
+
+  return parsedEsFlag;
+}
+
 function Grid(props: GridProps): React.ReactNode {
   return (
     <>
       {props.esFlag
         ? props.tests
-            .filter((test) => test.edition <= SpecEdition[props.esFlag])
+            .filter((test) => test.edition <= esFlagToEdition(props.esFlag))
             .filter((test) => applyFilter(props.filterOption, test.result))
             .map((test) => {
               return (
