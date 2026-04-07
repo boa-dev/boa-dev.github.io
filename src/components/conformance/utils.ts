@@ -3,7 +3,6 @@ import {
   FilterOption,
   ResultInfo,
   SortOption,
-  SpecEdition,
   SuiteResult,
   TestOutcome,
   TestResult,
@@ -12,7 +11,6 @@ import {
   VersionedStats,
   VersionItem,
 } from "@site/src/components/conformance/types";
-import { url } from "node:inspector";
 
 // Take a search param and create a state object
 export function createUrlState(search: string): UrlState {
@@ -251,32 +249,16 @@ export function mapToTestStats(unmappedValue: HttpStatistics): TestStats {
 
 // Interface for the http response of boa_tester's versioned `Statistics`
 interface HttpVersionedStatistics {
-  es5: HttpStatistics;
-  es6: HttpStatistics;
-  es7: HttpStatistics;
-  es8: HttpStatistics;
-  es9: HttpStatistics;
-  es10: HttpStatistics;
-  es11: HttpStatistics;
-  es12: HttpStatistics;
-  es13: HttpStatistics;
+  [edition: string]: HttpStatistics;
 }
 
 // Function for converting an http response of boa_tester's versioned `Statistics` to `VersionedStats`
 export function mapToVersionedStats(
   unmappedValue: HttpVersionedStatistics,
 ): VersionedStats {
-  return {
-    es5: mapToTestStats(unmappedValue.es5),
-    es6: mapToTestStats(unmappedValue.es6),
-    es7: mapToTestStats(unmappedValue.es7),
-    es8: mapToTestStats(unmappedValue.es8),
-    es9: mapToTestStats(unmappedValue.es9),
-    es10: mapToTestStats(unmappedValue.es10),
-    es11: mapToTestStats(unmappedValue.es11),
-    es12: mapToTestStats(unmappedValue.es12),
-    es13: mapToTestStats(unmappedValue.es13),
-  };
+  return Object.fromEntries(
+    Object.entries(unmappedValue).map(([k, v]) => [k, mapToTestStats(v)]),
+  );
 }
 
 // Interface for the http response of boa_tester's `TestResult`
@@ -291,37 +273,10 @@ interface HttpTestResult {
 export function mapToTestResult(unmappedValue: HttpTestResult): TestResult {
   return {
     name: unmappedValue.n,
-    edition: mapToSpecEditionEnum(unmappedValue.v),
+    edition: Number(unmappedValue.v),
     strict: Boolean(unmappedValue.s),
     result: mapToTestOutcomeEnum(unmappedValue.r),
   };
-}
-
-export function mapToSpecEditionEnum(
-  unmappedValue: number | string,
-): SpecEdition {
-  switch (Number(unmappedValue)) {
-    case 5:
-      return SpecEdition.es5;
-    case 6:
-      return SpecEdition.es6;
-    case 7:
-      return SpecEdition.es7;
-    case 8:
-      return SpecEdition.es8;
-    case 9:
-      return SpecEdition.es9;
-    case 10:
-      return SpecEdition.es10;
-    case 11:
-      return SpecEdition.es11;
-    case 12:
-      return SpecEdition.es12;
-    case 13:
-      return SpecEdition.es13;
-    default:
-      return SpecEdition.ESNext;
-  }
 }
 
 export function mapToTestOutcomeEnum(unmappedValue: string): TestOutcome {
