@@ -1,5 +1,5 @@
 import React from "react";
-import { ConformanceState, FilterOption, SpecEdition } from "../types";
+import { ConformanceState, FilterOption } from "../types";
 
 import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
@@ -8,6 +8,7 @@ import { availableSortingOptions } from "../utils";
 
 type ResultsNavProps = {
   state: ConformanceState;
+  editions: string[];
   sliceNavToIndex: (number) => void;
   setEcmaScriptFlag: (string) => void;
   setSortOption: (string) => void;
@@ -21,6 +22,7 @@ export default function ResultNavigation(
     <div className={styles.resultsNav}>
       <div className={styles.navSection}>
         <EcmaScriptVersionDropdown
+          editions={props.editions}
           setEcmaScriptFlag={props.setEcmaScriptFlag}
           esVersionValue={props.state.ecmaScriptVersion}
         />
@@ -96,6 +98,7 @@ function BreadCrumbItem(props: BreadCrumbItemProps): React.ReactNode {
 
 type DropDownProps = {
   esVersionValue: string;
+  editions: string[];
   setEcmaScriptFlag: (string) => void;
 };
 
@@ -122,15 +125,13 @@ function EcmaScriptVersionDropdown(props: DropDownProps): React.ReactNode {
       </Heading>
       <select value={dropdownValue} onChange={handleVersionSelection}>
         <option value={""}>All</option>
-        {Object.keys(SpecEdition)
-          .filter((v) => isNaN(Number(v)))
-          .map((key) => {
-            return (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            );
-          })}
+        {props.editions.map((edition) => {
+          return (
+            <option key={edition} value={edition}>
+              {edition}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
