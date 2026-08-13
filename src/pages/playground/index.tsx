@@ -1,7 +1,7 @@
 import Editor from "@monaco-editor/react";
+import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 import React from "react";
-import Heading from "@theme/Heading";
 import styles from "./index.module.css";
 
 const initialCode = `function greet(targetName) {

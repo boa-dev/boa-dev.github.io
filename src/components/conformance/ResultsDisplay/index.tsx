@@ -1,19 +1,19 @@
-import React from "react";
-import SuiteDisplay from "./components/SuiteDisplay";
+import { useHistory } from "@docusaurus/router";
 import {
-  ResultInfo,
-  VersionItem,
-  SuiteResult,
   ConformanceState,
   FilterOption,
+  ResultInfo,
+  SuiteResult,
+  VersionItem,
 } from "@site/src/components/conformance/types";
-import ResultNavigation from "./nav";
 import {
-  createState,
   createSearchParams,
+  createState,
   mapToResultInfo,
 } from "@site/src/components/conformance/utils";
-import { useHistory } from "@docusaurus/router";
+import React from "react";
+import SuiteDisplay from "./components/SuiteDisplay";
+import ResultNavigation from "./nav";
 
 import styles from "./styles.module.css";
 

@@ -1,10 +1,10 @@
+import new_logo_black from "@site/static/img/new_logo_black.svg";
+import new_logo_blue from "@site/static/img/new_logo_blue.svg";
+import new_logo_yellow from "@site/static/img/new_logo_yellow.svg";
+import Heading from "@theme/Heading";
 import clsx from "clsx";
 import React from "react";
 import styles from "./styles.module.css";
-import new_logo_black from "@site/static/img/new_logo_black.svg";
-import new_logo_yellow from "@site/static/img/new_logo_yellow.svg";
-import new_logo_blue from "@site/static/img/new_logo_blue.svg";
-import Heading from "@theme/Heading";
 
 type FeatureItem = {
   title: string;

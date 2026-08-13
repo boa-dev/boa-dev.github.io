@@ -2,7 +2,7 @@ import Link from "@docusaurus/Link";
 import { BenchmarkGraphs } from "@site/src/components/benchmarks";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styles from "./styles.module.css";
 
 const engines = [
@@ -34,7 +34,7 @@ export default function Benchmarks() {
     }
   };
 
-  const handleRangeCheckboxChange = (evt: any) => {
+  const handleRangeCheckboxChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setRange(evt.target.value);
   };
 

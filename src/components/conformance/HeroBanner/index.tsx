@@ -1,16 +1,16 @@
-import React from "react";
+import { useHistory } from "@docusaurus/router";
 import {
-  VersionItem,
-  TestStats,
   ConformanceState,
+  TestStats,
+  VersionItem,
 } from "@site/src/components/conformance/types";
 import {
+  createSearchParams,
   createState,
   mapToTestStats,
-  createSearchParams,
 } from "@site/src/components/conformance/utils";
-import { useHistory } from "@docusaurus/router";
 import Heading from "@theme/Heading";
+import React from "react";
 
 import styles from "./styles.module.css";
 
