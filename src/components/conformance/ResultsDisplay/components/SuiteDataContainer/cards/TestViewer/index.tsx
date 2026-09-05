@@ -1,8 +1,8 @@
-import React from "react";
-import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
-import styles from "./styles.module.css";
 import { Editor } from "@monaco-editor/react";
+import Heading from "@theme/Heading";
+import React from "react";
+import styles from "./styles.module.css";
 
 type TestViewerProps = {
   testName: string;

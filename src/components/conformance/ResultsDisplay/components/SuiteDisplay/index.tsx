@@ -1,10 +1,10 @@
-import React from "react";
-import SuiteSelector from "../SuiteSelector";
-import SuiteDataContainer from "../SuiteDataContainer";
 import {
   ConformanceState,
   SuiteResult,
 } from "@site/src/components/conformance/types";
+import React from "react";
+import SuiteDataContainer from "../SuiteDataContainer";
+import SuiteSelector from "../SuiteSelector";
 
 import styles from "./styles.module.css";
 

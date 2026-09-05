@@ -33,6 +33,7 @@ This project focuses on evaluating, refining, and integrating a production-ready
 - Tooling to visualize heap and GC activity
 
 #### Project Discussion:
+
 - [Matrix Boa/GC](https://matrix.to/#/!ESLxDMqdSvKbprdiyg:matrix.org?via=matrix.org&via=rrogal.ski&via=t2bot.io)
 - [Matrix Boa/General](https://matrix.to/#/!ZBLAwGpYvzsLqZAZZg:matrix.org?via=matrix.org&via=t2bot.io&via=mozilla.org)
 
@@ -65,6 +66,7 @@ This project focuses on auditing Boa’s public API surface, identifying areas t
 - Assist in defining Boa’s post-1.0 stability and deprecation policy
 
 #### Open Issue:
+
 https://github.com/boa-dev/boa/issues/4524
 
 ---
@@ -96,6 +98,7 @@ This project focuses on identifying performance bottlenecks and implementing tar
 - Improve documentation and tooling for profiling and benchmarking
 
 #### Project Discussion
+
 - [Matrix Boa/Performance](https://matrix.to/#/!odQJQiuPFJtUBzgoXY:matrix.org?via=matrix.org&via=gitter.im&via=rrogal.ski)
 - [Matrix Boa/General](https://matrix.to/#/!ZBLAwGpYvzsLqZAZZg:matrix.org?via=matrix.org&via=t2bot.io&via=mozilla.org)
 

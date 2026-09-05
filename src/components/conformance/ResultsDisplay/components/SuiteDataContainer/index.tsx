@@ -1,10 +1,10 @@
-import React from "react";
-import TestsGrid from "./cards/TestGrid";
-import TestViewer from "./cards/TestViewer";
 import {
   ConformanceState,
   SuiteResult,
 } from "@site/src/components/conformance/types";
+import React from "react";
+import TestsGrid from "./cards/TestGrid";
+import TestViewer from "./cards/TestViewer";
 
 import styles from "./styles.module.css";
 

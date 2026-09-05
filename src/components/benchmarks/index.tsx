@@ -6,8 +6,8 @@ import {
   Chart as ChartJS,
   Colors,
   Legend,
-  LineElement,
   LinearScale,
+  LineElement,
   PointElement,
   Title,
   Tooltip,
@@ -69,8 +69,8 @@ export const BenchmarkGraphs: React.FC<BenchmarkGraphsProps> = ({
   return charts && charts.map((chart) => chart);
 };
 
-const normalizeBenchmarkData = (benchmarkData: any[]) => {
-  const labels = benchmarkData.map((entry: any) =>
+const normalizeBenchmarkData = (benchmarkData) => {
+  const labels = benchmarkData.map((entry) =>
     new Date(entry.date).toLocaleDateString(),
   );
 
@@ -99,7 +99,7 @@ const getBarChartData = (data) => {
   };
 };
 
-const buildChartFromBenchmark = (data: any): any[] => {
+const buildChartFromBenchmark = (data) => {
   let charts = [];
   for (const benchmark in data) {
     const normalizedData = normalizeBenchmarkData(data[benchmark]);

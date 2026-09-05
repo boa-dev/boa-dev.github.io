@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ConformanceState,
   FilterOption,
@@ -6,9 +5,9 @@ import {
   SuiteResult,
   TestStats,
 } from "@site/src/components/conformance/types";
-
-import styles from "./styles.module.css";
+import React from "react";
 import { availableSortingOptions } from "../../../utils";
+import styles from "./styles.module.css";
 
 type SelectorProps = {
   state: ConformanceState;

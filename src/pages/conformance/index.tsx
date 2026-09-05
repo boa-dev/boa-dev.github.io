@@ -1,14 +1,14 @@
+import { useLocation } from "@docusaurus/router";
 import ConformanceView from "@site/src/components/conformance";
 import {
-  VersionItem,
   ConformanceState,
   UrlState,
+  VersionItem,
 } from "@site/src/components/conformance/types";
 import {
   createUrlState,
   updateInitialConformanceState,
 } from "@site/src/components/conformance/utils";
-import { useLocation } from "@docusaurus/router";
 import Layout from "@theme/Layout";
 import React from "react";
 

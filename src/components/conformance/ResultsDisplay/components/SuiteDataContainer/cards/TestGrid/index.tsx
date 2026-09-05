@@ -1,14 +1,14 @@
-import React from "react";
 import {
-  TestOutcome,
-  TestResult,
-  SuiteResult,
   ConformanceState,
   FilterOption,
+  SuiteResult,
+  TestOutcome,
+  TestResult,
 } from "@site/src/components/conformance/types";
 import Heading from "@theme/Heading";
-import styles from "./styles.module.css";
 import clsx from "clsx";
+import React from "react";
+import styles from "./styles.module.css";
 
 type TestsGridProps = {
   state: ConformanceState;

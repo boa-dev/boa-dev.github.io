@@ -5,7 +5,7 @@ import { themes } from "prism-react-renderer";
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
-const config: Config = {
+export default {
   title: "Boa JS",
   tagline: "An ECMAScript engine written in Rust",
   favicon: "img/new_logo_yellow.svg",
@@ -37,7 +37,7 @@ const config: Config = {
       "classic",
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: "./sidebars.ts",
           editUrl:
             "https://github.com/boa-dev/boa-dev.github.io/tree/main/docs",
         },
@@ -144,7 +144,7 @@ const config: Config = {
             {
               label: "Mastodon",
               href: "https://fosstodon.org/@boa_engine",
-            }
+            },
           ],
         },
         {
@@ -221,6 +221,4 @@ const config: Config = {
       },
     ],
   ],
-};
-
-export default config;
+} satisfies Config;

@@ -1,11 +1,11 @@
-import React from "react";
 import { useHistory } from "@docusaurus/router";
 import {
   ConformanceState,
   VersionItem,
 } from "@site/src/components/conformance/types";
+import React from "react";
+import { createSearchParams, createState } from "../utils";
 import styles from "./styles.module.css";
-import { createState, createSearchParams } from "../utils";
 
 interface SelectorProps {
   availableVersions: VersionItem[];

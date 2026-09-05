@@ -72,6 +72,7 @@ We are usually not against using AI tools. However, their
 general availability makes it much easier to fill our review capacity with
 low-effort contributions. Therefore, every contributor must adhere to the following
 rules:
+
 - No spamming PRs. This includes the use of AI agents to open multiple PRs in
   succession.
 - No PRs with massive line changes (5k+) without prior discussion and acknowledgement.

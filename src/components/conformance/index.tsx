@@ -1,8 +1,8 @@
-import React from "react";
 import ConformanceHeroBanner from "@site/src/components/conformance/HeroBanner";
 import ResultsDisplay from "@site/src/components/conformance/ResultsDisplay";
 import VersionSelector from "@site/src/components/conformance/VersionSelector";
-import { VersionItem, ConformanceState } from "./types";
+import React from "react";
+import { ConformanceState, VersionItem } from "./types";
 
 type ViewProps = {
   state: undefined | ConformanceState;

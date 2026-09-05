@@ -1,10 +1,9 @@
-import React from "react";
-import { ConformanceState, FilterOption } from "../types";
-
-import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import Heading from "@theme/Heading";
+import React from "react";
+import { ConformanceState, FilterOption } from "../types";
 import { availableSortingOptions } from "../utils";
+import styles from "./styles.module.css";
 
 type ResultsNavProps = {
   state: ConformanceState;
