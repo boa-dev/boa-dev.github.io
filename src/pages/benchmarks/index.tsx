@@ -15,6 +15,10 @@ const engines = [
   "quickjs",
 ];
 
+const engineLabels: Record<string, string> = {
+  porffor: "porffor (AOT)",
+};
+
 export default function Benchmarks() {
   const [selectedEngines, setSelectedEngines] = useState<string[]>([
     "boa",
@@ -51,6 +55,12 @@ export default function Benchmarks() {
           actions.
         </p>
         <p>The higher the score the better.</p>
+        <p>
+          Porffor is an ahead-of-time compiler rather than an interpreter, so
+          its results are not a like-for-like comparison with the other engines,
+          which all run as interpreters (V8 and SpiderMonkey are run with their
+          JITs disabled). It is hidden by default.
+        </p>
         <div className={styles.benchmarkControls}>
           {engines.map((engine) => (
             <div key={engine} className={styles.benchmarkLabelWrap}>
@@ -61,7 +71,7 @@ export default function Benchmarks() {
                   checked={selectedEngines.includes(engine)}
                   onChange={() => handleEngineCheckboxChange(engine)}
                 />
-                {engine}
+                {engineLabels[engine] ?? engine}
               </label>
             </div>
           ))}
